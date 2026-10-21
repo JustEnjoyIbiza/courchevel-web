@@ -1,0 +1,28 @@
+---
+/** Visible breadcrumb trail. The matching BreadcrumbList schema is built by the page. */
+import SmartLink from './SmartLink.astro';
+
+interface Props {
+  items: { name: string; href: string }[];
+  label?: string;
+}
+
+const { items, label = 'Breadcrumb' } = Astro.props;
+---
+
+<nav aria-label={label} class="text-sm text-taupe">
+  <ol class="flex flex-wrap items-center gap-x-2 gap-y-1">
+    {items.map((item, i) => (
+      <li class="flex items-center gap-2">
+        {i < items.length - 1 ? (
+          <>
+            <SmartLink href={item.href} class="text-taupe underline decoration-line hover:text-ink">{item.name}</SmartLink>
+            <span aria-hidden="true" class="text-brass">/</span>
+          </>
+        ) : (
+          <span aria-current="page" class="text-ink">{item.name}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

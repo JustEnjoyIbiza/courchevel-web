@@ -1,0 +1,62 @@
+---
+/** /faq/ and /fr/faq/: every question, grouped by topic, with FAQPage schema. */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import FaqList from './FaqList.astro';
+import CtaBand from './CtaBand.astro';
+import LastUpdated from './LastUpdated.astro';
+import { hubs, hubsUpdated } from '../content/hubs';
+import { faq, allFaqs } from '../content/faq';
+import type { Locale } from '../data/business';
+import { t } from '../i18n/ui';
+import { localize } from '../lib/routes';
+import { breadcrumbSchema, faqSchema } from '../lib/schema';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = hubs.faq[locale];
+const s = t(locale);
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+const crumbs = [
+  { name: s.breadcrumbHome, href: localize('/', locale) },
+  { name: c.title, href: localize('/faq/', locale) },
+];
+const slug = (topic: string) => topic.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+---
+
+<BaseLayout
+  title={c.metaTitle}
+  description={c.description}
+  locale={locale}
+  alternatePath={localize('/faq/', other)}
+  schema={[breadcrumbSchema(crumbs.map((x) => ({ name: x.name, url: x.href }))), faqSchema(allFaqs(locale))]}
+>
+  <section class="border-b border-line">
+    <div class="container-site py-10 md:py-16">
+      <Breadcrumbs items={crumbs} />
+      <h1 class="mt-8 text-display">{c.title}</h1>
+      <div class="rule mt-8"></div>
+      <p class="mt-8 max-w-2xl text-lg text-ink">{c.answer}</p>
+      <nav class="mt-10" aria-label={locale === 'en' ? 'Topics' : 'Thèmes'}>
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          {faq[locale].map((g) => <li><a href={`#${slug(g.topic)}`} class="link">{g.topic}</a></li>)}
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <div class="container-site py-section">
+    {faq[locale].map((g) => (
+      <section id={slug(g.topic)} class="grid scroll-mt-28 gap-8 pb-16 md:grid-cols-12">
+        <h2 class="text-h2 md:col-span-4">{g.topic}</h2>
+        <div class="md:col-span-8"><FaqList items={g.items} /></div>
+      </section>
+    ))}
+    <LastUpdated date={hubsUpdated} locale={locale} />
+  </div>
+
+  <CtaBand locale={locale} />
+</BaseLayout>

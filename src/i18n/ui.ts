@@ -37,6 +37,17 @@ export const ui = {
       rights: 'All rights reserved.',
     },
     breadcrumbHome: 'Home',
+    page: {
+      keyFacts: 'Key facts',
+      included: 'What we arrange',
+      faq: 'Questions',
+      related: 'Related',
+      updated: 'Last updated',
+      ctaTitle: 'Tell us your dates',
+      ctaText: 'A personal reply within 15 minutes, from 8:00 to 22:00, and a tailored proposal within 24 hours. Every service is quoted for you.',
+      sections: { services: 'Services', villages: 'Villages', guides: 'Guides', pages: '' },
+      guides: 'Guides',
+    },
   },
   fr: {
     skip: 'Aller au contenu',
@@ -69,6 +80,17 @@ export const ui = {
       rights: 'Tous droits réservés.',
     },
     breadcrumbHome: 'Accueil',
+    page: {
+      keyFacts: 'L’essentiel',
+      included: 'Ce que nous organisons',
+      faq: 'Questions',
+      related: 'À lire aussi',
+      updated: 'Mis à jour le',
+      ctaTitle: 'Indiquez-nous vos dates',
+      ctaText: 'Une réponse personnelle sous 15 minutes, de 8h à 22h, et une proposition sur mesure sous 24 heures. Chaque prestation fait l’objet d’un devis personnalisé.',
+      sections: { services: 'Services', villages: 'Villages', guides: 'Guides', pages: '' },
+      guides: 'Guides',
+    },
   },
 } as const satisfies Record<Locale, unknown>;
 

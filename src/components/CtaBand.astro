@@ -1,0 +1,29 @@
+---
+/** Closing "Plan my stay" band used at the end of every content page. */
+import { t } from '../i18n/ui';
+import { localize } from '../lib/routes';
+import { whatsappHref, type Locale } from '../data/business';
+
+interface Props {
+  locale: Locale;
+  /** Pre-selects a service in the enquiry form (Phase 3). */
+  service?: string;
+}
+
+const { locale, service } = Astro.props;
+const s = t(locale);
+const enquire = localize('/enquire/', locale) + (service ? `?service=${service}` : '');
+---
+
+<section id="contact" class="bg-ink text-ivory">
+  <div class="container-site py-section">
+    <div class="max-w-2xl">
+      <h2 class="text-h2 text-ivory">{s.page.ctaTitle}</h2>
+      <p class="mt-6 text-lg text-stone">{s.page.ctaText}</p>
+      <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <a href={enquire} class="btn bg-ivory text-ink hover:bg-brass">{s.planMyStay}</a>
+        <a href={whatsappHref(locale)} class="btn-light" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+      </div>
+    </div>
+  </div>
+</section>

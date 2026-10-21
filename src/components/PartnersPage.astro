@@ -1,0 +1,47 @@
+---
+/** Partners page. Built only when src/data/partners.ts lists partners who agreed to be named. */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import CtaBand from './CtaBand.astro';
+import { partners } from '../data/partners';
+import type { Locale } from '../data/business';
+import { t } from '../i18n/ui';
+import { localize } from '../lib/routes';
+import { breadcrumbSchema } from '../lib/schema';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const s = t(locale);
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+const c = {
+  en: { title: 'Our partners', meta: 'Partners | Courchevel Luxury Concierge', description: 'The chalets, hotels and specialists in Courchevel we work with, named with their permission.' },
+  fr: { title: 'Nos partenaires', meta: 'Partenaires | Courchevel Luxury Concierge', description: 'Les chalets, hôtels et spécialistes de Courchevel avec qui nous travaillons, cités avec leur accord.' },
+}[locale];
+
+const crumbs = [
+  { name: s.breadcrumbHome, href: localize('/', locale) },
+  { name: c.title, href: localize('/partners/', locale) },
+];
+---
+
+<BaseLayout title={c.meta} description={c.description} locale={locale} alternatePath={localize('/partners/', other)} schema={[breadcrumbSchema(crumbs.map((x) => ({ name: x.name, url: x.href })))]}>
+  <section class="container-site py-section">
+    <Breadcrumbs items={crumbs} />
+    <h1 class="mt-8 text-display">{c.title}</h1>
+    <div class="rule mt-8"></div>
+    <p class="mt-8 max-w-2xl text-lg text-taupe">{c.description}</p>
+    <ul class="mt-14 grid gap-x-16 md:grid-cols-2">
+      {partners.map((p) => (
+        <li class="border-t border-line py-6">
+          <p class="eyebrow">{p.type[locale]}</p>
+          <h2 class="mt-2 text-2xl">{p.url ? <a href={p.url} class="text-ink" rel="noopener">{p.name}</a> : p.name}</h2>
+          {p.note && <p class="mt-2 text-taupe">{p.note[locale]}</p>}
+        </li>
+      ))}
+    </ul>
+  </section>
+  <CtaBand locale={locale} />
+</BaseLayout>

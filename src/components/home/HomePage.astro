@@ -10,7 +10,9 @@ import SmartLink from '../SmartLink.astro';
 import { home } from '../../content/home';
 import { services } from '../../data/services';
 import { villages } from '../../data/villages';
-import { faqs } from '../../data/faq';
+import { allFaqs } from '../../content/faq';
+import { experiences } from '../../content/experiences';
+import { photos } from '../../data/photos';
 import { reviews } from '../../data/reviews';
 import { whatsappHref, type Locale } from '../../data/business';
 import { t } from '../../i18n/ui';
@@ -18,9 +20,6 @@ import { localize } from '../../lib/routes';
 import { localBusinessSchema, faqSchema, breadcrumbSchema } from '../../lib/schema';
 
 import heroImg from '../../assets/photos/rolls-royce-helicopter-arrival.jpeg';
-import retreatImg from '../../assets/photos/stone-chalet-snow.jpeg';
-import partyImg from '../../assets/photos/lantern-snowfall.jpeg';
-import skiImg from '../../assets/photos/gondola-dusk.jpeg';
 import stepsImg from '../../assets/photos/chalet-gift-delivery.jpeg';
 import villagesImg from '../../assets/photos/wooden-chalets-gondola.jpeg';
 import aboutImg from '../../assets/photos/defender-luggage-snow.jpeg';
@@ -35,8 +34,8 @@ const c = home[locale];
 const s = t(locale);
 const other: Locale = locale === 'en' ? 'fr' : 'en';
 const enquire = localize('/enquire/', locale);
-const homeFaqs = faqs.filter((f) => f.home).map((f) => ({ q: f.q[locale], a: f.a[locale] }));
-const experienceImages = [retreatImg, partyImg, skiImg];
+const homeFaqs = allFaqs(locale).filter((f) => f.home).map(({ q, a }) => ({ q, a }));
+const featured = experiences.slice(0, 3);
 const pad = (n: number) => String(n).padStart(2, '0');
 
 const schema = [
@@ -133,19 +132,21 @@ const sectionHead = 'max-w-2xl';
       </div>
     </div>
     <ul class="container-site mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0">
-      {c.experiences.items.map((x, i) => (
+      {featured.map((x) => (
         <li class="w-[82%] shrink-0 snap-start md:w-auto">
           <Picture
-            src={experienceImages[i]}
-            alt={x.imageAlt}
+            src={photos[x.image ?? 'gondola']}
+            alt={x.imageAlt?.[locale] ?? ''}
             formats={formats}
             widths={[360, 540, 720]}
             sizes="(min-width: 768px) 33vw, 82vw"
             class="aspect-[4/5] w-full object-cover"
           />
-          <p class="eyebrow mt-6">{x.detail}</p>
-          <h3 class="mt-2 text-3xl">{x.name}</h3>
-          <p class="mt-3 text-taupe">{x.text}</p>
+          <p class="eyebrow mt-6">{x.detail[locale]}</p>
+          <h3 class="mt-2 text-3xl">
+            <SmartLink href={localize(`/experiences/`, locale) + `#${x.id}`} class="text-ink no-underline hover:text-brass-deep">{x.name[locale]}</SmartLink>
+          </h3>
+          <p class="mt-3 text-taupe">{x.text[locale]}</p>
         </li>
       ))}
     </ul>

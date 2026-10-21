@@ -32,26 +32,6 @@ export const home = {
     experiences: {
       eyebrow: 'Signature experiences',
       title: 'Ready-made ideas, tailored to you',
-      items: [
-        {
-          name: 'Winter Retreat',
-          detail: '3 to 5 nights in a chalet',
-          text: 'A chalet stay with arrival transfers, ski planning and a concierge on call throughout.',
-          imageAlt: 'Stone and wood chalet in fresh snow in Courchevel',
-        },
-        {
-          name: 'VIP Party Package',
-          detail: 'Après-ski and VIP tables',
-          text: 'Après-ski access, champagne and VIP table reservations, booked ahead of your evenings.',
-          imageAlt: 'Red lantern and clock in falling snow in Courchevel village',
-        },
-        {
-          name: 'Ski Explorer',
-          detail: 'Private guide',
-          text: 'A private instructor or certified mountain guide and a ski day planned around your level.',
-          imageAlt: 'Courchevel gondola cabin against the evening sky',
-        },
-      ],
     },
     steps: {
       eyebrow: 'How it works',
@@ -114,26 +94,6 @@ export const home = {
     experiences: {
       eyebrow: 'Expériences signature',
       title: 'Des idées prêtes, adaptées à vous',
-      items: [
-        {
-          name: 'Winter Retreat',
-          detail: '3 à 5 nuits en chalet',
-          text: 'Un séjour en chalet avec transferts, planification du ski et un concierge joignable à tout moment.',
-          imageAlt: 'Chalet en pierre et bois sous la neige fraîche à Courchevel',
-        },
-        {
-          name: 'VIP Party Package',
-          detail: 'Après-ski et tables VIP',
-          text: 'Accès après-ski, champagne et réservation de tables VIP, organisés avant vos soirées.',
-          imageAlt: 'Lanterne rouge et horloge sous la neige dans le village de Courchevel',
-        },
-        {
-          name: 'Ski Explorer',
-          detail: 'Guide privé',
-          text: 'Un moniteur privé ou un guide de haute montagne diplômé, et une journée de ski pensée pour votre niveau.',
-          imageAlt: 'Cabine de télécabine de Courchevel dans le ciel du soir',
-        },
-      ],
     },
     steps: {
       eyebrow: 'Comment ça marche',

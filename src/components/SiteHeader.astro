@@ -19,16 +19,19 @@ const { locale, alternateHref } = Astro.props;
 const s = t(locale);
 const other: Locale = locale === 'en' ? 'fr' : 'en';
 
-const items = [
+const navItems = [
   { label: s.nav.services, page: '/services/', anchor: '#services' },
   { label: s.nav.experiences, page: '/experiences/', anchor: '#experiences' },
   { label: s.nav.villages, page: '/villages/', anchor: '#villages' },
   { label: s.nav.about, page: '/about/', anchor: '#about' },
   { label: s.nav.faq, page: '/faq/', anchor: '#faq' },
-].map((item) => {
-  const page = localize(item.page, locale);
-  return { label: item.label, href: isBuilt(page) ? page : `${localize('/', locale)}${item.anchor}` };
-});
+];
+const items = await Promise.all(
+  navItems.map(async (item) => {
+    const page = localize(item.page, locale);
+    return { label: item.label, href: (await isBuilt(page)) ? page : `${localize('/', locale)}${item.anchor}` };
+  }),
+);
 
 const home = localize('/', locale);
 const enquire = localize('/enquire/', locale);

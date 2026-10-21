@@ -67,8 +67,12 @@ docs/               design directions, missing facts, decisions
 src/data/business.ts  single source of business facts
 src/lib/schema.ts   JSON-LD builders (read from business.ts)
 src/layouts/        BaseLayout (head, canonical, hreflang, schema)
-src/pages/          EN at /, FR at /fr/
-src/content/        page copy per language (Phase 2)
+src/pages/          EN at /, FR at /fr/; [...slug].astro builds all Markdown pages
+src/content/        page copy: services/, villages/, guides/, pages/ ({en,fr}/<slug>.md),
+                    plus home.ts, hubs.ts, faq.ts, experiences.ts
+src/content.config.ts  frontmatter schema (limits enforced at build)
+src/data/photos.ts  photo keys used in frontmatter; reviews.ts / partners.ts switch
+                    on /reviews/ and /partners/ when non-empty
 netlify/functions/  lead endpoint (Phase 3)
 public/             robots.txt, llms.txt, favicons (Phase 4)
 ```

@@ -1,0 +1,60 @@
+---
+/**
+ * Reviews page. Built only when src/data/reviews.ts has real reviews.
+ * Reviews are shown word for word with Review schema.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import CtaBand from './CtaBand.astro';
+import { reviews } from '../data/reviews';
+import { business, type Locale } from '../data/business';
+import { t } from '../i18n/ui';
+import { localize } from '../lib/routes';
+import { breadcrumbSchema } from '../lib/schema';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const s = t(locale);
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+const c = {
+  en: { title: 'Client reviews', meta: 'Client Reviews | Courchevel Luxury Concierge', description: 'What clients say about Courchevel Luxury Concierge: real reviews, word for word, with the service used and the date.' },
+  fr: { title: 'Avis clients', meta: 'Avis clients | Courchevel Luxury Concierge', description: 'Ce que disent nos clients de Courchevel Luxury Concierge : de vrais avis, mot pour mot, avec la prestation et la date.' },
+}[locale];
+
+const crumbs = [
+  { name: s.breadcrumbHome, href: localize('/', locale) },
+  { name: c.title, href: localize('/reviews/', locale) },
+];
+
+const schema = [
+  breadcrumbSchema(crumbs.map((x) => ({ name: x.name, url: x.href }))),
+  ...reviews.map((r) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    reviewBody: r.text,
+    author: { '@type': 'Person', name: r.author },
+    datePublished: r.date,
+    itemReviewed: { '@id': `${business.url}/#organization` },
+  })),
+];
+---
+
+<BaseLayout title={c.meta} description={c.description} locale={locale} alternatePath={localize('/reviews/', other)} schema={schema}>
+  <section class="container-site py-section">
+    <Breadcrumbs items={crumbs} />
+    <h1 class="mt-8 text-display">{c.title}</h1>
+    <div class="rule mt-8"></div>
+    <div class="mt-14 grid gap-10 md:grid-cols-2">
+      {reviews.map((r) => (
+        <figure class="border-t border-brass pt-6">
+          <blockquote class="font-serif text-2xl leading-snug">“{r.text}”</blockquote>
+          <figcaption class="mt-4 text-sm text-taupe">{r.author}, {r.service[locale]}, {r.date}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+  <CtaBand locale={locale} />
+</BaseLayout>

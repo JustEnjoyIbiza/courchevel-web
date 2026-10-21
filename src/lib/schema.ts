@@ -39,6 +39,35 @@ export function localBusinessSchema(locale: Locale = 'en') {
   };
 }
 
+/** Service page. Never add price, priceRange or offers. */
+export function serviceSchema(opts: { name: string; description: string; url: string; locale: Locale }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: opts.name,
+    serviceType: opts.name,
+    description: opts.description,
+    url: new URL(opts.url, business.url).href,
+    inLanguage: opts.locale,
+    provider: { '@id': orgId },
+    areaServed: business.areaServed.map((name) => ({ '@type': 'Place', name })),
+  };
+}
+
+export function articleSchema(opts: { headline: string; description: string; url: string; updated: Date; locale: Locale }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: opts.headline,
+    description: opts.description,
+    url: new URL(opts.url, business.url).href,
+    inLanguage: opts.locale,
+    dateModified: opts.updated.toISOString().slice(0, 10),
+    author: { '@id': orgId },
+    publisher: { '@id': orgId },
+  };
+}
+
 export function faqSchema(items: { q: string; a: string }[]) {
   return {
     '@context': 'https://schema.org',

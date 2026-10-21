@@ -1,0 +1,22 @@
+---
+/** Question/answer list. Uses <details>, so it works with JavaScript off. */
+interface Props {
+  items: { q: string; a: string }[];
+  headingLevel?: 'h2' | 'h3';
+}
+
+const { items, headingLevel = 'h3' } = Astro.props;
+const Heading = headingLevel;
+---
+
+<div>
+  {items.map((f) => (
+    <details class="group border-t border-line py-6 last:border-b">
+      <summary class="flex cursor-pointer list-none items-start justify-between gap-6 [&::-webkit-details-marker]:hidden">
+        <Heading class="text-2xl">{f.q}</Heading>
+        <span class="mt-1 text-brass-deep transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="mt-4 max-w-2xl text-taupe">{f.a}</p>
+    </details>
+  ))}
+</div>
