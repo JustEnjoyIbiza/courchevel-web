@@ -1,9 +1,11 @@
 ---
 /**
- * Plan my stay. Phase 1 version: direct contact options.
- * The 3-step enquiry form is added here in Phase 3.
+ * Plan my stay: the 3-step enquiry form, with WhatsApp, phone and email
+ * alongside for visitors who prefer to talk.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import EnquiryForm from './EnquiryForm.astro';
 import { business, telHref, mailtoHref, whatsappHref, type Locale } from '../data/business';
 import { t } from '../i18n/ui';
 import { localize } from '../lib/routes';
@@ -23,23 +25,25 @@ const copy = {
     description: 'Tell us your dates, village and group size. A personal reply within 15 minutes by WhatsApp, phone or email, and a tailored proposal within 24 hours.',
     h1: 'Plan my stay',
     lead: 'Tell us your dates, the village you are staying in, how many guests and the services you have in mind. We reply personally within 15 minutes, from 8:00 to 22:00, and send a tailored proposal within 24 hours.',
-    whatsappText: 'The fastest way to reach us. Send your dates and we reply on WhatsApp.',
+    asideTitle: 'Prefer to talk?',
+    whatsappText: 'The fastest way to reach us.',
     callText: 'Speak to us directly.',
-    emailText: 'For longer requests, or if you are booking for a client.',
+    emailText: 'For longer requests or bookings for a client.',
   },
   fr: {
     title: 'Organiser mon séjour | Courchevel Luxury Concierge',
     description: 'Vos dates, votre village, votre groupe : réponse personnelle sous 15 minutes par WhatsApp, téléphone ou e-mail, proposition sous 24 heures.',
     h1: 'Organiser mon séjour',
     lead: 'Indiquez-nous vos dates, votre village, le nombre de personnes et les services souhaités. Nous répondons personnellement sous 15 minutes, de 8h à 22h, et envoyons une proposition sur mesure sous 24 heures.',
-    whatsappText: 'Le moyen le plus rapide. Envoyez vos dates, nous répondons sur WhatsApp.',
+    asideTitle: 'Vous préférez nous parler ?',
+    whatsappText: 'Le moyen le plus rapide de nous joindre.',
     callText: 'Parlez-nous directement.',
-    emailText: 'Pour les demandes détaillées, ou si vous réservez pour un client.',
+    emailText: 'Pour les demandes détaillées ou pour un client.',
   },
 }[locale];
 
 const options = [
-  { label: s.whatsapp, value: business.phone.display, text: copy.whatsappText, href: whatsappHref(locale), event: 'whatsapp_click', primary: true },
+  { label: s.whatsapp, value: business.phone.display, text: copy.whatsappText, href: whatsappHref(locale), event: 'whatsapp_click' },
   { label: s.call, value: business.phone.display, text: copy.callText, href: telHref, event: 'phone_click' },
   { label: s.email, value: business.email, text: copy.emailText, href: mailtoHref, event: 'email_click' },
 ];
@@ -53,27 +57,35 @@ const schema = [
 ];
 ---
 
-<BaseLayout title={copy.title} description={copy.description} locale={locale} alternatePath={localize('/enquire/', other)} schema={schema}>
-  <section class="py-section">
-    <div class="container-site max-w-4xl">
-      <nav aria-label="Breadcrumb" class="text-sm text-taupe">
-        <a href={localize('/', locale)} class="text-taupe">{s.breadcrumbHome}</a> <span aria-hidden="true">/</span> {copy.h1}
-      </nav>
-      <h1 class="mt-6 text-display">{copy.h1}</h1>
+<BaseLayout title={copy.title} description={copy.description} locale={locale} alternatePath={localize('/enquire/', other)} schema={schema} enquiryPage>
+  <section class="py-10 md:py-16">
+    <div class="container-site">
+      <Breadcrumbs items={[{ name: s.breadcrumbHome, href: localize('/', locale) }, { name: copy.h1, href: localize('/enquire/', locale) }]} />
+      <h1 class="mt-8 text-display">{copy.h1}</h1>
       <div class="rule mt-8"></div>
-      <p class="mt-8 max-w-2xl text-lg text-taupe">{copy.lead}</p>
+      <p class="mt-8 max-w-2xl text-lg text-ink">{copy.lead}</p>
+    </div>
 
-      <ul class="mt-14 grid gap-6 md:grid-cols-3">
-        {options.map((o) => (
-          <li class="flex flex-col border-t border-brass pt-6">
-            <h2 class="text-3xl">{o.label}</h2>
-            <p class="mt-2 grow text-taupe">{o.text}</p>
-            <a href={o.href} class:list={[o.primary ? 'btn-primary' : 'btn-secondary', 'mt-6 normal-case tracking-normal break-all']} data-event={o.event} rel="noopener">{o.value}</a>
-          </li>
-        ))}
-      </ul>
+    <div class="container-site mt-14 grid gap-16 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <EnquiryForm locale={locale} />
+      </div>
 
-      <p class="mt-14 text-sm text-taupe">{business.availability[locale]}. {s.footer.pricing}</p>
+      <aside class="lg:col-span-4" aria-labelledby="talk-title">
+        <div class="bg-stone p-6 lg:sticky lg:top-28">
+          <h2 id="talk-title" class="text-2xl">{copy.asideTitle}</h2>
+          <ul class="mt-4">
+            {options.map((o) => (
+              <li class="border-t border-line py-4">
+                <p class="text-sm font-semibold">{o.label}</p>
+                <p class="mt-1 text-sm text-taupe">{o.text}</p>
+                <a href={o.href} class="link mt-2 inline-block break-all text-sm" data-event={o.event} rel="noopener">{o.value}</a>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-4 text-xs text-taupe">{business.availability[locale]}. {s.footer.pricing}</p>
+        </div>
+      </aside>
     </div>
   </section>
 </BaseLayout>

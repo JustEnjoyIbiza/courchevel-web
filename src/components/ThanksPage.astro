@@ -1,0 +1,33 @@
+---
+/** Thank-you page after a Plan my stay request. Not indexed. */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { enquiry } from '../content/enquiry';
+import { business, whatsappHref, type Locale } from '../data/business';
+import { t } from '../i18n/ui';
+import { localize } from '../lib/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = enquiry[locale].thanks;
+const s = t(locale);
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+---
+
+<BaseLayout title={c.meta} description={c.description} locale={locale} alternatePath={localize('/enquire/thanks/', other)} noindex enquiryPage>
+  <section class="container-site py-section">
+    <div class="max-w-2xl">
+      <h1 class="text-display">{c.title}</h1>
+      <div class="rule mt-8"></div>
+      <p class="mt-8 text-lg text-ink">{c.text}</p>
+      <p class="mt-10 text-sm text-taupe">{c.urgent}</p>
+      <div class="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <a href={whatsappHref(locale)} class="btn-primary" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+        <a href={`tel:${business.phone.e164}`} class="btn-secondary" data-event="phone_click">{business.phone.display}</a>
+      </div>
+      <p class="mt-12"><a href={localize('/', locale)} class="link">{c.back}</a></p>
+    </div>
+  </section>
+</BaseLayout>

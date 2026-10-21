@@ -66,6 +66,23 @@
   @apply inline-flex min-h-12 items-center justify-center gap-2 px-6 text-center text-sm font-semibold uppercase tracking-[0.14em] whitespace-nowrap no-underline transition-colors;
 }
 
+/*
+ * Enquiry form step mode. The <html> element gets class "js" before first paint,
+ * and the form script sets data-step="1|2|3" on the form. Unlayered, so these
+ * rules win over Tailwind utilities. Without JavaScript none of this applies.
+ */
+.js .enquiry-form .step-progress { display: grid; }
+.js .enquiry-form .form-step:not([data-step="1"]) { display: none; }
+.js .enquiry-form[data-step] .form-step { display: block; }
+.js .enquiry-form[data-step] .form-step[hidden] { display: none; }
+.js .enquiry-form .form-next { display: inline-flex; }
+.js .enquiry-form .form-submit,
+.js .enquiry-form .form-back { display: none; }
+.js .enquiry-form[data-step="3"] .form-submit { display: inline-flex; }
+.js .enquiry-form[data-step="3"] .form-next { display: none; }
+.js .enquiry-form[data-step="2"] .form-back,
+.js .enquiry-form[data-step="3"] .form-back { display: inline-flex; }
+
 @layer components {
   .container-site {
     @apply mx-auto w-full max-w-site px-5 sm:px-8;

@@ -8,6 +8,7 @@ import { getImage } from 'astro:assets';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import MobileCTA from '../components/MobileCTA.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
 import { business, type Locale } from '../data/business';
 import defaultOg from '../assets/photos/rolls-royce-helicopter-arrival.jpeg';
 
@@ -19,9 +20,13 @@ interface Props {
   alternatePath?: string;
   schema?: object[];
   ogImage?: ImageMetadata;
+  /** Keep this page out of search results (thank-you pages). */
+  noindex?: boolean;
+  /** Hide the sticky Plan my stay button (on Plan my stay itself). */
+  enquiryPage?: boolean;
 }
 
-const { title, description, locale = 'en', alternatePath, schema = [], ogImage = defaultOg } = Astro.props;
+const { title, description, locale = 'en', alternatePath, schema = [], ogImage = defaultOg, noindex = false, enquiryPage = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const other: Locale = locale === 'en' ? 'fr' : 'en';
 const alternate = alternatePath ? new URL(alternatePath, Astro.site).href : undefined;
@@ -34,9 +39,11 @@ const ogUrl = new URL(og.src, Astro.site).href;
 <html lang={locale}>
   <head>
     <meta charset="utf-8" />
+    <script is:inline>document.documentElement.classList.add('js')</script>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang={locale} href={canonical} />
     {alternate && <link rel="alternate" hreflang={other} href={alternate} />}
@@ -65,6 +72,7 @@ const ogUrl = new URL(og.src, Astro.site).href;
       <slot />
     </main>
     <SiteFooter locale={locale} />
-    <MobileCTA locale={locale} />
+    <MobileCTA locale={locale} whatsappOnly={enquiryPage} />
+    <ConsentBanner locale={locale} />
   </body>
 </html>

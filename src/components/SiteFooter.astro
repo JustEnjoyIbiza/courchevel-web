@@ -73,6 +73,7 @@ const heading = 'mb-4 font-sans text-xs font-semibold uppercase tracking-[0.22em
       <p>© {new Date().getFullYear()} {business.name}. {s.footer.rights}</p>
       <ul class="flex flex-wrap gap-x-6 gap-y-2" aria-label={s.footer.legal}>
         {legal.map((l) => <li><SmartLink href={l.href} class="text-taupe hover:text-ink">{l.label}</SmartLink></li>)}
+        {import.meta.env.PUBLIC_GA4_MEASUREMENT_ID && <li><a href="#consent" data-open-consent class="text-taupe hover:text-ink">{s.footer.cookieSettings}</a></li>}
       </ul>
     </div>
   </div>

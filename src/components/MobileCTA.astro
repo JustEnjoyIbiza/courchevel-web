@@ -6,18 +6,26 @@ import { whatsappHref, type Locale } from '../data/business';
 
 interface Props {
   locale: Locale;
+  /** On Plan my stay itself, show WhatsApp only. */
+  whatsappOnly?: boolean;
 }
 
-const { locale } = Astro.props;
+const { locale, whatsappOnly = false } = Astro.props;
 const s = t(locale);
 ---
 
-<div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-line bg-ivory/95 backdrop-blur-sm md:hidden" style="padding-bottom: env(safe-area-inset-bottom)">
-  <a href={localize('/enquire/', locale)} class="btn-primary min-h-14 px-3">{s.planMyStay}</a>
+<div
+  class:list={[
+    'fixed inset-x-0 bottom-0 z-40 grid border-t border-line bg-ivory/95 backdrop-blur-sm md:hidden',
+    whatsappOnly ? 'grid-cols-1' : 'grid-cols-2',
+  ]}
+  style="padding-bottom: env(safe-area-inset-bottom)"
+>
+  {!whatsappOnly && <a href={localize('/enquire/', locale)} class="btn-primary min-h-14 px-3">{s.planMyStay}</a>}
   <a
     href={whatsappHref(locale)}
     class="btn min-h-14 px-3 text-ink"
     data-event="whatsapp_click"
     rel="noopener"
-  >{s.whatsapp}</a>
+  >{whatsappOnly ? s.whatsappUs : s.whatsapp}</a>
 </div>

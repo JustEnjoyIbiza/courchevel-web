@@ -27,6 +27,8 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      // Thank-you pages are noindex and stay out of the sitemap.
+      filter: (page) => !page.includes('/enquire/thanks/'),
       i18n: { defaultLocale: 'en', locales: { en: 'en', fr: 'fr' } },
     }),
   ]
