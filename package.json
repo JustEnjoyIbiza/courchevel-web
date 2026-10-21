@@ -12,7 +12,11 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "test": "node --test 'tests/**/*.test.mts'"
+    "test": "node --test 'tests/**/*.test.mts'",
+    "qa:static": "node scripts/qa/static-check.mjs dist",
+    "qa:schema": "node scripts/qa/schema-check.mjs dist",
+    "qa:content": "node scripts/qa/content-lint.mjs .",
+    "qa": "npm run build && npm test && npm run qa:static && npm run qa:schema"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.5",

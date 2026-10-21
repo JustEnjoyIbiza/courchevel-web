@@ -9,6 +9,9 @@ import { business, hasStreetAddress, type Locale } from '../data/business';
 
 const orgId = `${business.url}/#organization`;
 
+/** Compact reference to the business, with name and URL so it stands alone on any page. */
+const orgRef = () => ({ '@type': 'LocalBusiness', '@id': orgId, name: business.name, url: business.url, telephone: business.phone.e164 });
+
 function postalAddress() {
   const a = business.address;
   return {
@@ -49,7 +52,7 @@ export function serviceSchema(opts: { name: string; description: string; url: st
     description: opts.description,
     url: new URL(opts.url, business.url).href,
     inLanguage: opts.locale,
-    provider: { '@id': orgId },
+    provider: orgRef(),
     areaServed: business.areaServed.map((name) => ({ '@type': 'Place', name })),
   };
 }
@@ -63,8 +66,8 @@ export function articleSchema(opts: { headline: string; description: string; url
     url: new URL(opts.url, business.url).href,
     inLanguage: opts.locale,
     dateModified: opts.updated.toISOString().slice(0, 10),
-    author: { '@id': orgId },
-    publisher: { '@id': orgId },
+    author: orgRef(),
+    publisher: orgRef(),
   };
 }
 

@@ -45,9 +45,9 @@ const ogUrl = new URL(og.src, Astro.site).href;
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang={locale} href={canonical} />
-    {alternate && <link rel="alternate" hreflang={other} href={alternate} />}
-    {enHref && <link rel="alternate" hreflang="x-default" href={enHref} />}
+    {!noindex && <link rel="alternate" hreflang={locale} href={canonical} />}
+    {!noindex && alternate && <link rel="alternate" hreflang={other} href={alternate} />}
+    {!noindex && enHref && <link rel="alternate" hreflang="x-default" href={enHref} />}
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={business.name} />

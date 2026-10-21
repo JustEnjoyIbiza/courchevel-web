@@ -99,10 +99,31 @@ WhatsApp buttons on mobile. Self-host fonts. See `docs/design-directions.md`.
 
 ## QA
 
-Run before calling a phase done (Node on PATH, `npm run build`, then `npx astro preview`):
-Lighthouse mobile on every page, the static checks (titles, descriptions, H1, canonical,
-hreflang, links, schema, prices, images), a JavaScript-off pass and a keyboard pass.
-Results go in `docs/phase-N-report.md`.
+Node: `export PATH="$HOME/.local/node/bin:$PATH"`. Before calling any change done:
+
+- `npm run qa` — build, function tests (`npm test`), static checks on every page
+  (title/description length, one H1, canonical, hreflang, internal links, images,
+  no prices, JSON-LD parses) and schema checks (Google rich-result rules, FAQ text
+  visible on the page, breadcrumb = canonical, no price/offers/streetAddress).
+- `npm run qa:content` — editorial rules on src/content (no prices, no "guaranteed /
+  exclusive / secret / best", no clichés, heli-skiing only as Italy/Switzerland day
+  trips, EN/FR pairs, related paths exist).
+- Lighthouse mobile on changed templates (>= 95 on all four; LCP < 2.5 s; CLS < 0.1),
+  a JavaScript-off pass and a keyboard pass. Results go in `docs/phase-N-report.md`.
+
+## AI and SEO layer (Phase 4)
+
+- `/robots.txt` (src/pages/robots.txt.ts): search and AI crawlers allowed, /api/ closed.
+- `/llms.txt` (src/pages/llms.txt.ts): generated from business.ts, services, villages,
+  experiences, guides and home FAQs.
+- Sitemap with lastmod from each page's `updated:` (scripts/lastmod.mjs); thank-you
+  and 404 pages excluded.
+- IndexNow: key file `/<INDEXNOW_KEY>.txt` + netlify/plugins/indexnow pings Bing after
+  each production deploy.
+- CSP: `security.csp` in astro.config.mjs (hashes generated per page). Adding a new
+  third-party script or iframe means adding its origin there. Fonts must never be
+  inlined as data: URIs.
+- 301s from old URLs and bare domain -> www: netlify.toml.
 
 ## SEO and AI-readability rules (every page)
 
@@ -150,6 +171,12 @@ Work in phases (0 setup, 1 design + homepage, 2 content pages, 3 lead system,
 4 AI/SEO layer, 5 launch). At the end of each phase: build, run that phase's
 checks, fix failures, commit with a clear message, and summarise what is needed
 from the owner. Do not start the next phase until the owner approves.
+
+**Updated 22 October 2026 (owner's decision):** build all phases without stopping
+for approval between them, run every check as you go, and collect everything that
+needs the owner in `docs/owner-checklist.md` for one review at the end. About and
+legal pages are written last. Still ask before anything touches the live site,
+DNS, accounts, or a production deploy.
 
 Production (`main`) keeps serving the old site until the Phase 5 launch.
 Rebuild work happens on `rebuild/*` branches.

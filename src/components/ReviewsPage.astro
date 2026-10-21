@@ -37,7 +37,7 @@ const schema = [
     reviewBody: r.text,
     author: { '@type': 'Person', name: r.author },
     datePublished: r.date,
-    itemReviewed: { '@id': `${business.url}/#organization` },
+    itemReviewed: { '@type': 'LocalBusiness', '@id': `${business.url}/#organization`, name: business.name, url: business.url },
   })),
 ];
 ---

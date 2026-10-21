@@ -1,5 +1,7 @@
 # Redirects for launch
 
+**Status (Phase 4):** implemented in `netlify.toml`. Test on the production domain at launch.
+
 The old site has a single page, so the redirect list is short. These go into
 `netlify.toml` in Phase 4 and are tested in Phase 5.
 
