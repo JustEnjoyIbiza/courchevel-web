@@ -1,10 +1,15 @@
 ---
 /**
- * Phase 0 base layout: head tags, canonical, hreflang and JSON-LD.
- * The design system, header, footer and sticky mobile CTA arrive in Phase 1.
+ * Base layout: head tags (canonical, hreflang, Open Graph, JSON-LD),
+ * header, footer and the sticky mobile CTA.
  */
 import '../styles/global.css';
-import type { Locale } from '../data/business';
+import { getImage } from 'astro:assets';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import MobileCTA from '../components/MobileCTA.astro';
+import { business, type Locale } from '../data/business';
+import defaultOg from '../assets/photos/rolls-royce-helicopter-arrival.jpeg';
 
 interface Props {
   title: string;
@@ -13,31 +18,53 @@ interface Props {
   /** Path of the equivalent page in the other language, e.g. '/fr/'. */
   alternatePath?: string;
   schema?: object[];
+  ogImage?: ImageMetadata;
 }
 
-const { title, description, locale = 'en', alternatePath, schema = [] } = Astro.props;
+const { title, description, locale = 'en', alternatePath, schema = [], ogImage = defaultOg } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const other: Locale = locale === 'en' ? 'fr' : 'en';
 const alternate = alternatePath ? new URL(alternatePath, Astro.site).href : undefined;
 const enHref = locale === 'en' ? canonical : alternate;
+const og = await getImage({ src: ogImage, width: 1200, height: 630, fit: 'cover', format: 'jpeg' });
+const ogUrl = new URL(og.src, Astro.site).href;
 ---
 
 <!doctype html>
 <html lang={locale}>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang={locale} href={canonical} />
     {alternate && <link rel="alternate" hreflang={other} href={alternate} />}
     {enHref && <link rel="alternate" hreflang="x-default" href={enHref} />}
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={business.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={locale === 'en' ? 'en_GB' : 'fr_FR'} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="theme-color" content="#fbf8f3" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
   </head>
   <body>
-    <slot />
+    <SiteHeader locale={locale} alternateHref={alternatePath} />
+    <main id="main">
+      <slot />
+    </main>
+    <SiteFooter locale={locale} />
+    <MobileCTA locale={locale} />
   </body>
 </html>

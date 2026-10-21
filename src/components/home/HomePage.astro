@@ -1,0 +1,297 @@
+---
+/**
+ * The homepage, shared by / and /fr/. Copy comes from src/content/home.ts,
+ * services/villages/faq from src/data/. Section ids keep the old site's
+ * anchors (#services, #about, #contact...) working.
+ */
+import { Picture } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SmartLink from '../SmartLink.astro';
+import { home } from '../../content/home';
+import { services } from '../../data/services';
+import { villages } from '../../data/villages';
+import { faqs } from '../../data/faq';
+import { reviews } from '../../data/reviews';
+import { whatsappHref, type Locale } from '../../data/business';
+import { t } from '../../i18n/ui';
+import { localize } from '../../lib/routes';
+import { localBusinessSchema, faqSchema, breadcrumbSchema } from '../../lib/schema';
+
+import heroImg from '../../assets/photos/rolls-royce-helicopter-arrival.jpeg';
+import retreatImg from '../../assets/photos/stone-chalet-snow.jpeg';
+import partyImg from '../../assets/photos/lantern-snowfall.jpeg';
+import skiImg from '../../assets/photos/gondola-dusk.jpeg';
+import stepsImg from '../../assets/photos/chalet-gift-delivery.jpeg';
+import villagesImg from '../../assets/photos/wooden-chalets-gondola.jpeg';
+import aboutImg from '../../assets/photos/defender-luggage-snow.jpeg';
+import finalImg from '../../assets/photos/courchevel-sculpture.jpeg';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = home[locale];
+const s = t(locale);
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+const enquire = localize('/enquire/', locale);
+const homeFaqs = faqs.filter((f) => f.home).map((f) => ({ q: f.q[locale], a: f.a[locale] }));
+const experienceImages = [retreatImg, partyImg, skiImg];
+const pad = (n: number) => String(n).padStart(2, '0');
+
+const schema = [
+  localBusinessSchema(locale),
+  faqSchema(homeFaqs),
+  breadcrumbSchema([{ name: s.breadcrumbHome, url: localize('/', locale) }]),
+];
+
+const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
+const sectionHead = 'max-w-2xl';
+---
+
+<BaseLayout
+  title={c.meta.title}
+  description={c.meta.description}
+  locale={locale}
+  alternatePath={localize('/', other)}
+  schema={schema}
+>
+  <!-- Hero -->
+  <section id="hero" class="border-b border-line">
+    <div class="mx-auto grid max-w-[96rem] md:min-h-[min(86vh,52rem)] md:grid-cols-2">
+      <div class="order-2 flex flex-col justify-center px-5 py-12 sm:px-8 md:order-1 md:px-12 md:py-16 lg:px-20">
+        <p class="eyebrow">{c.hero.eyebrow}</p>
+        <h1 class="mt-5 text-display">{c.hero.title}</h1>
+        <div class="rule mt-8"></div>
+        <p class="mt-8 max-w-xl text-lg text-taupe">{c.hero.lead}</p>
+        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <a href={enquire} class="btn-primary">{s.planMyStay}</a>
+          <a href={whatsappHref(locale)} class="btn-secondary" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+        </div>
+      </div>
+      <div class="relative order-1 aspect-[4/3] md:order-2 md:aspect-auto">
+        <Picture
+          src={heroImg}
+          alt={c.hero.imageAlt}
+          formats={formats}
+          widths={[480, 720, 853]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+          loading="eager"
+          fetchpriority="high"
+          class="absolute inset-0 h-full w-full object-cover object-[center_40%]"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof strip -->
+  <section aria-label={c.services.eyebrow} class="bg-stone">
+    <dl class="container-site grid grid-cols-2 gap-x-6 gap-y-8 py-10 md:grid-cols-4 md:py-12">
+      {c.proof.map((p) => (
+        <div class="flex flex-col border-t border-brass pt-4">
+          <dt class="text-sm text-taupe">{p.label}</dt>
+          <dd class="order-first font-serif text-4xl font-semibold text-brass-deep">{p.value}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-section">
+    <div class="container-site">
+      <div class={sectionHead}>
+        <p class="eyebrow">{c.services.eyebrow}</p>
+        <h2 class="mt-4 text-h2">{c.services.title}</h2>
+        <p class="mt-5 text-taupe">{c.services.intro}</p>
+      </div>
+      <ol class="mt-14 grid gap-x-16 md:grid-cols-2">
+        {services.map((svc, i) => (
+          <li class="flex gap-6 border-t border-line py-7">
+            <span class="w-8 shrink-0 pt-1 font-serif text-lg text-brass-deep" aria-hidden="true">{pad(i + 1)}</span>
+            <div>
+              <h3 class="text-2xl">
+                <SmartLink href={localize(`/services/${svc.slug}/`, locale)} class="text-ink no-underline hover:text-brass-deep">{svc.name[locale]}</SmartLink>
+              </h3>
+              <p class="mt-2 text-taupe">{svc.summary[locale]}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <div class="mt-12">
+        <a href={enquire} class="btn-primary">{s.planMyStay}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature experiences -->
+  <section id="experiences" class="border-t border-line bg-stone py-section">
+    <span id="packages" aria-hidden="true"></span>
+    <div class="container-site">
+      <div class={sectionHead}>
+        <p class="eyebrow">{c.experiences.eyebrow}</p>
+        <h2 class="mt-4 text-h2">{c.experiences.title}</h2>
+      </div>
+    </div>
+    <ul class="container-site mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0">
+      {c.experiences.items.map((x, i) => (
+        <li class="w-[82%] shrink-0 snap-start md:w-auto">
+          <Picture
+            src={experienceImages[i]}
+            alt={x.imageAlt}
+            formats={formats}
+            widths={[360, 540, 720]}
+            sizes="(min-width: 768px) 33vw, 82vw"
+            class="aspect-[4/5] w-full object-cover"
+          />
+          <p class="eyebrow mt-6">{x.detail}</p>
+          <h3 class="mt-2 text-3xl">{x.name}</h3>
+          <p class="mt-3 text-taupe">{x.text}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-section">
+    <div class="container-site grid items-center gap-12 md:grid-cols-12 md:gap-16">
+      <div class="md:col-span-5">
+        <Picture
+          src={stepsImg}
+          alt={c.steps.imageAlt}
+          formats={formats}
+          widths={[400, 600, 900]}
+          sizes="(min-width: 768px) 40vw, 100vw"
+          class="aspect-[4/5] w-full object-cover"
+        />
+      </div>
+      <div class="md:col-span-7">
+        <p class="eyebrow">{c.steps.eyebrow}</p>
+        <h2 class="mt-4 text-h2">{c.steps.title}</h2>
+        <ol class="mt-10 space-y-8">
+          {c.steps.items.map((step, i) => (
+            <li class="flex gap-6 border-t border-line pt-6">
+              <span class="font-serif text-3xl text-brass-deep" aria-hidden="true">{pad(i + 1)}</span>
+              <div>
+                <h3 class="text-2xl">{step.title}</h3>
+                <p class="mt-2 text-taupe">{step.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Villages -->
+  <section id="villages" class="border-t border-line bg-stone py-section">
+    <div class="container-site grid gap-12 md:grid-cols-12 md:gap-16">
+      <div class="md:col-span-7">
+        <p class="eyebrow">{c.villages.eyebrow}</p>
+        <h2 class="mt-4 text-h2">{c.villages.title}</h2>
+        <p class="mt-5 max-w-xl text-taupe">{c.villages.intro}</p>
+        <ul class="mt-10">
+          {villages.map((v) => (
+            <li class="border-t border-line py-5">
+              <h3 class="text-2xl">
+                <SmartLink href={localize(`/${v.slug}/`, locale)} class="text-ink no-underline hover:text-brass-deep">{v.name}</SmartLink>
+              </h3>
+              <p class="mt-1 text-taupe">{v.summary[locale]}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="md:col-span-5">
+        <Picture
+          src={villagesImg}
+          alt={c.villages.imageAlt}
+          formats={formats}
+          widths={[400, 600, 900]}
+          sizes="(min-width: 768px) 40vw, 100vw"
+          class="aspect-[4/5] w-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews: only rendered once real, attributed reviews exist (src/data/reviews.ts) -->
+  {reviews.length > 0 && (
+    <section id="testimonials" class="py-section">
+      <div class="container-site grid gap-10 md:grid-cols-3">
+        {reviews.map((r) => (
+          <figure class="border-t border-brass pt-6">
+            <blockquote class="font-serif text-2xl leading-snug">“{r.text}”</blockquote>
+            <figcaption class="mt-4 text-sm text-taupe">{r.author}, {r.service[locale]}, {r.date}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- About -->
+  <section id="about" class="py-section">
+    <div class="container-site grid items-center gap-12 md:grid-cols-12 md:gap-16">
+      <div class="md:order-2 md:col-span-6">
+        <p class="eyebrow">{c.about.eyebrow}</p>
+        <h2 class="mt-4 text-h2">{c.about.title}</h2>
+        <p class="mt-6 text-lg text-taupe">{c.about.text}</p>
+        <p class="mt-8"><SmartLink href={localize('/about/', locale)} class="link">{c.about.link}</SmartLink></p>
+      </div>
+      <div class="md:order-1 md:col-span-6">
+        <Picture
+          src={aboutImg}
+          alt={c.about.imageAlt}
+          formats={formats}
+          widths={[400, 600, 900]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+          class="aspect-[5/4] w-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="border-t border-line py-section">
+    <div class="container-site grid gap-12 md:grid-cols-12">
+      <div class="md:col-span-4">
+        <p class="eyebrow">{c.faq.eyebrow}</p>
+        <h2 class="mt-4 text-h2">{c.faq.title}</h2>
+        <p class="mt-6"><SmartLink href={localize('/faq/', locale)} class="link">{c.faq.more}</SmartLink></p>
+      </div>
+      <div class="md:col-span-8">
+        {homeFaqs.map((f) => (
+          <details class="group border-t border-line py-6 last:border-b">
+            <summary class="flex cursor-pointer list-none items-start justify-between gap-6 font-serif text-2xl [&::-webkit-details-marker]:hidden">
+              <h3 class="text-2xl">{f.q}</h3>
+              <span class="mt-1 text-brass-deep transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-4 max-w-2xl text-taupe">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="contact" class="bg-ink text-ivory">
+    <div class="mx-auto grid max-w-[96rem] md:grid-cols-2">
+      <div class="flex flex-col justify-center px-5 py-section sm:px-8 md:px-12 lg:px-20">
+        <h2 class="text-h2 text-ivory">{c.final.title}</h2>
+        <p class="mt-6 text-lg text-stone">{c.final.text}</p>
+        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <a href={enquire} class="btn bg-ivory text-ink hover:bg-brass">{s.planMyStay}</a>
+          <a href={whatsappHref(locale)} class="btn-light" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+        </div>
+      </div>
+      <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[36rem]">
+        <Picture
+          src={finalImg}
+          alt={c.final.imageAlt}
+          formats={formats}
+          widths={[480, 720, 961]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -23,7 +23,7 @@ Warm, calm and close to what clients see today. Feels like a palace-hotel letter
 | `ink` | `#231B15` | Text, headings |
 | `taupe` | `#6B5D52` | Secondary text (6.0:1 on ivory) |
 | `brass` | `#C9A15A` | Hairlines, numbers, large display accents only |
-| `brass-deep` | `#8A6A2F` | Links and small gold text (4.7:1 on ivory) |
+| `brass-deep` | `#7F6129` | Links and small gold text (5.4:1 on ivory, 4.7:1 on stone) |
 | `button` | `#231B15` with ivory text | Primary "Plan my stay" button |
 
 - **Type:** Cormorant Garamond (headings, 500/600) + Manrope (text, 400/500), both self-hosted.

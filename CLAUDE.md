@@ -82,6 +82,24 @@ sans-serif for text; a restrained palette; full-width real photography; no
 stock-looking icons; **no pop-ups**. Mobile first: sticky "Plan my stay" and
 WhatsApp buttons on mobile. Self-host fonts. See `docs/design-directions.md`.
 
+**Chosen: Direction A, "Ivory & Brass"** (approved 22 October 2026).
+- Tokens live in `src/styles/global.css` (`@theme`): ivory, stone, ink, taupe, brass,
+  brass-deep, line. Use the Tailwind classes (`bg-ivory`, `text-brass-deep`...), never raw hex.
+- `brass` is for rules and large accents only (2.3:1). Small gold text uses `brass-deep`.
+- Cormorant Garamond (headings) + Manrope (text), self-hosted via Fontsource.
+- Buttons: `btn-primary`, `btn-secondary`, `btn-light`. Links: `link`. Labels: `eyebrow`.
+- Square corners, 1 px rules, no shadows, no icons.
+- Photos go in `src/assets/photos/` with descriptive file names and are rendered with
+  `<Picture formats={['avif','webp']}>` and a descriptive alt text in both languages.
+- Internal links to pages that may not exist yet use `SmartLink`.
+
+## QA
+
+Run before calling a phase done (Node on PATH, `npm run build`, then `npx astro preview`):
+Lighthouse mobile on every page, the static checks (titles, descriptions, H1, canonical,
+hreflang, links, schema, prices, images), a JavaScript-off pass and a keyboard pass.
+Results go in `docs/phase-N-report.md`.
+
 ## SEO and AI-readability rules (every page)
 
 - All content in server-rendered HTML; fully readable with JavaScript off.

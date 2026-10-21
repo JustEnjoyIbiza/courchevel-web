@@ -1,27 +1,5 @@
 ---
-/**
- * Phase 0 placeholder. Proves the pipeline (business.ts -> HTML + schema).
- * Replaced by the real homepage in Phase 1. Not for production.
- */
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { business, telHref, mailtoHref, whatsappHref } from '../data/business';
-import { localBusinessSchema } from '../lib/schema';
+import HomePage from '../components/home/HomePage.astro';
 ---
 
-<BaseLayout
-  title="Private Concierge in Courchevel 1850 | Courchevel Luxury Concierge"
-  description="Private concierge in Courchevel 1850, 1650 and Le Praz: chalets, helicopter transfers, private chefs, ski instructors and events. Plan your stay."
-  alternatePath="/fr/"
-  schema={[localBusinessSchema('en')]}
->
-  <main class="mx-auto max-w-2xl px-4 py-16">
-    <h1 class="text-3xl">{business.name}</h1>
-    <p class="mt-4">{business.description.en}</p>
-    <ul class="mt-6 space-y-1">
-      <li><a href={whatsappHref('en')}>WhatsApp {business.phone.display}</a></li>
-      <li><a href={telHref}>{business.phone.display}</a></li>
-      <li><a href={mailtoHref}>{business.email}</a></li>
-    </ul>
-    <p class="mt-8 text-sm">Phase 0 scaffold. The homepage is built in Phase 1.</p>
-  </main>
-</BaseLayout>
+<HomePage locale="en" />

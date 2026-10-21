@@ -1,1 +1,91 @@
 @import "tailwindcss";
+
+/* Self-hosted fonts (no request to Google). Direction A: Ivory & Brass. */
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource-variable/manrope/wght.css";
+
+/*
+ * Design tokens. Contrast on ivory / stone: ink 16:1, taupe 6.0 / 5.2:1, brass-deep 5.4 / 4.7:1.
+ * brass (#C9A15A) is 2.3:1, so it is for rules, numerals and large display only, never body text.
+ */
+@theme {
+  --color-ivory: #fbf8f3;
+  --color-stone: #efe8de;
+  --color-ink: #231b15;
+  --color-taupe: #6b5d52;
+  --color-brass: #c9a15a;
+  --color-brass-deep: #7f6129;
+  --color-line: #e3d9cb;
+
+  --font-serif: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Manrope Variable", "Helvetica Neue", Arial, sans-serif;
+
+  --text-display: clamp(2.6rem, 1.6rem + 4.2vw, 4.75rem);
+  --text-display--line-height: 1.04;
+  --text-h2: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  --text-h2--line-height: 1.1;
+
+  --spacing-section: clamp(4.5rem, 3rem + 6vw, 8.5rem);
+  --container-site: 76rem;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  body {
+    @apply bg-ivory text-ink font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    /* Cormorant defaults to old-style figures ("01" reads as "oı"). */
+    font-variant-numeric: lining-nums;
+  }
+  h1, h2, h3 {
+    @apply font-serif font-medium text-ink;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  a { @apply underline-offset-4; }
+  :focus-visible {
+    outline: 2px solid var(--color-brass-deep);
+    outline-offset: 3px;
+  }
+  /* Room for the sticky mobile bar so it never covers the footer. */
+  @media (max-width: 767px) {
+    body { padding-bottom: 4.5rem; }
+  }
+}
+
+@utility btn {
+  @apply inline-flex min-h-12 items-center justify-center gap-2 px-6 text-center text-sm font-semibold uppercase tracking-[0.14em] whitespace-nowrap no-underline transition-colors;
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-site px-5 sm:px-8;
+  }
+  .eyebrow {
+    @apply font-sans text-xs font-semibold uppercase tracking-[0.22em] text-brass-deep;
+  }
+  .rule {
+    @apply h-px w-12 bg-brass;
+  }
+  .btn-primary {
+    @apply btn bg-ink text-ivory hover:bg-brass-deep;
+  }
+  .btn-secondary {
+    @apply btn border border-ink text-ink hover:bg-ink hover:text-ivory;
+  }
+  .btn-light {
+    @apply btn border border-ivory text-ivory hover:bg-ivory hover:text-ink;
+  }
+  .link {
+    @apply font-semibold text-brass-deep underline decoration-brass decoration-1 hover:text-ink;
+  }
+}

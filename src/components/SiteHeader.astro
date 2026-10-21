@@ -1,0 +1,86 @@
+---
+/**
+ * Header: wordmark, main nav, language switch and Plan my stay.
+ * The mobile menu is a <details> element, so it works with JavaScript off.
+ * Nav items point to their page once it exists, otherwise to the homepage section.
+ */
+import Wordmark from './Wordmark.astro';
+import { t } from '../i18n/ui';
+import { isBuilt, localize } from '../lib/routes';
+import type { Locale } from '../data/business';
+
+interface Props {
+  locale: Locale;
+  /** Same page in the other language, if it exists. */
+  alternateHref?: string;
+}
+
+const { locale, alternateHref } = Astro.props;
+const s = t(locale);
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+
+const items = [
+  { label: s.nav.services, page: '/services/', anchor: '#services' },
+  { label: s.nav.experiences, page: '/experiences/', anchor: '#experiences' },
+  { label: s.nav.villages, page: '/villages/', anchor: '#villages' },
+  { label: s.nav.about, page: '/about/', anchor: '#about' },
+  { label: s.nav.faq, page: '/faq/', anchor: '#faq' },
+].map((item) => {
+  const page = localize(item.page, locale);
+  return { label: item.label, href: isBuilt(page) ? page : `${localize('/', locale)}${item.anchor}` };
+});
+
+const home = localize('/', locale);
+const enquire = localize('/enquire/', locale);
+const switchHref = alternateHref ?? localize('/', other);
+---
+
+<a href="#main" class="sr-only z-50 bg-ink px-4 py-3 text-ivory focus:not-sr-only focus:fixed focus:top-2 focus:left-2">{s.skip}</a>
+
+<header class="sticky top-0 z-40 border-b border-line bg-ivory/95 backdrop-blur-sm">
+  <div class="container-site flex h-16 items-center justify-between gap-6 md:h-20">
+    <a href={home} class="no-underline">
+      <Wordmark />
+    </a>
+
+    <nav aria-label="Main" class="hidden lg:block">
+      <ul class="flex items-center gap-8 text-sm font-medium">
+        {items.map((item) => (
+          <li><a href={item.href} class="text-ink no-underline hover:text-brass-deep">{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a
+        href={switchHref}
+        hreflang={other}
+        lang={other}
+        class="text-xs font-semibold uppercase tracking-[0.18em] text-taupe no-underline hover:text-ink"
+      >{other.toUpperCase()}<span class="sr-only"> – {s.switchToLabel}</span></a>
+      <a href={enquire} class="btn-primary hidden min-h-11 px-5 sm:inline-flex">{s.planMyStay}</a>
+
+      <details class="group lg:hidden">
+        <summary class="flex min-h-11 cursor-pointer list-none items-center px-1 text-xs font-semibold uppercase tracking-[0.18em] [&::-webkit-details-marker]:hidden">
+          <span class="group-open:hidden">{s.menu}</span>
+          <span class="hidden group-open:inline">{s.close}</span>
+        </summary>
+        <nav aria-label="Mobile" class="absolute inset-x-0 top-full border-b border-line bg-ivory shadow-sm">
+          <ul class="container-site divide-y divide-line py-2">
+            {items.map((item) => (
+              <li><a href={item.href} class="block py-4 font-serif text-2xl text-ink no-underline">{item.label}</a></li>
+            ))}
+            <li class="py-4"><a href={enquire} class="btn-primary w-full">{s.planMyStay}</a></li>
+          </ul>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Progressive enhancement: close the mobile menu after tapping a same-page link.
+  document.querySelectorAll<HTMLAnchorElement>('header details nav a').forEach((a) =>
+    a.addEventListener('click', () => a.closest('details')?.removeAttribute('open')),
+  );
+</script>

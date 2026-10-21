@@ -1,27 +1,5 @@
 ---
-/**
- * Phase 0 placeholder (FR). Replaced by the real homepage in Phase 1.
- */
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { business, telHref, mailtoHref, whatsappHref } from '../../data/business';
-import { localBusinessSchema } from '../../lib/schema';
+import HomePage from '../../components/home/HomePage.astro';
 ---
 
-<BaseLayout
-  title="Conciergerie privée à Courchevel 1850 | Courchevel Luxury Concierge"
-  description="Conciergerie privée à Courchevel 1850, 1650 et Le Praz : chalets, transferts en hélicoptère, chefs privés et moniteurs de ski. Organisez votre séjour."
-  locale="fr"
-  alternatePath="/"
-  schema={[localBusinessSchema('fr')]}
->
-  <main class="mx-auto max-w-2xl px-4 py-16">
-    <h1 class="text-3xl">{business.name}</h1>
-    <p class="mt-4">{business.description.fr}</p>
-    <ul class="mt-6 space-y-1">
-      <li><a href={whatsappHref('fr')}>WhatsApp {business.phone.display}</a></li>
-      <li><a href={telHref}>{business.phone.display}</a></li>
-      <li><a href={mailtoHref}>{business.email}</a></li>
-    </ul>
-    <p class="mt-8 text-sm">Squelette de la phase 0. La page d’accueil arrive en phase 1.</p>
-  </main>
-</BaseLayout>
+<HomePage locale="fr" />

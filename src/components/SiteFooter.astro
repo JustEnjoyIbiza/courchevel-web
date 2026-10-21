@@ -1,0 +1,77 @@
+---
+/** Footer: every contact detail comes from business.ts. */
+import Wordmark from './Wordmark.astro';
+import SmartLink from './SmartLink.astro';
+import { t } from '../i18n/ui';
+import { localize } from '../lib/routes';
+import { business, telHref, mailtoHref, whatsappHref, type Locale } from '../data/business';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const s = t(locale);
+const instagram = business.sameAs.find((u) => u.includes('instagram'));
+
+const explore = [
+  { label: s.nav.services, href: '/services/' },
+  { label: s.nav.experiences, href: '/experiences/' },
+  { label: s.nav.about, href: '/about/' },
+  { label: s.nav.faq, href: '/faq/' },
+  { label: s.planMyStay, href: '/enquire/' },
+].map((l) => ({ ...l, href: localize(l.href, locale) }));
+
+const legal = [
+  { label: s.footer.legalNotice, href: '/mentions-legales/' },
+  { label: s.footer.privacy, href: '/privacy/' },
+  { label: s.footer.cookies, href: '/cookies/' },
+].map((l) => ({ ...l, href: localize(l.href, locale) }));
+
+const heading = 'mb-4 font-sans text-xs font-semibold uppercase tracking-[0.22em] text-taupe';
+---
+
+<footer class="border-t border-line bg-stone">
+  <div class="container-site grid gap-12 py-16 md:grid-cols-12">
+    <div class="md:col-span-3">
+      <Wordmark size="lg" />
+      <p class="mt-6 max-w-xs text-sm text-taupe">{business.availability[locale]}. {s.footer.pricing}</p>
+    </div>
+
+    <div class="md:col-span-4">
+      <h2 class={heading}>{s.footer.contact}</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href={whatsappHref(locale)} class="link" data-event="whatsapp_click" rel="noopener">WhatsApp {business.phone.display}</a></li>
+        <li><a href={telHref} class="link" data-event="phone_click">{business.phone.display}</a></li>
+        <li><a href={mailtoHref} class="link" data-event="email_click">{business.email}</a></li>
+        {instagram && <li><a href={instagram} class="link" rel="noopener">Instagram</a></li>}
+      </ul>
+      <p class="mt-4 text-sm text-taupe">
+        {business.address.locality}, {business.address.region}, {business.address.countryName[locale]}
+      </p>
+    </div>
+
+    <div class="md:col-span-3">
+      <h2 class={heading}>{s.footer.area}</h2>
+      <ul class="space-y-1 text-sm text-ink">
+        {business.areaServed.map((place) => <li>{place}</li>)}
+      </ul>
+    </div>
+
+    <div class="md:col-span-2">
+      <h2 class={heading}>{s.footer.explore}</h2>
+      <ul class="space-y-2 text-sm">
+        {explore.map((l) => <li><SmartLink href={l.href} class="text-ink hover:text-brass-deep">{l.label}</SmartLink></li>)}
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-line">
+    <div class="container-site flex flex-col gap-3 py-6 text-xs text-taupe md:flex-row md:items-center md:justify-between">
+      <p>© {new Date().getFullYear()} {business.name}. {s.footer.rights}</p>
+      <ul class="flex flex-wrap gap-x-6 gap-y-2" aria-label={s.footer.legal}>
+        {legal.map((l) => <li><SmartLink href={l.href} class="text-taupe hover:text-ink">{l.label}</SmartLink></li>)}
+      </ul>
+    </div>
+  </div>
+</footer>
