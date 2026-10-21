@@ -1,6 +1,6 @@
 # Redirects for launch
 
-**Status (Phase 4):** implemented in `netlify.toml`. Test on the production domain at launch.
+**Status (Phase 5):** implemented in `netlify.toml`; `/assets/logo.png` now goes to `/icon-512.png`. Tested by `scripts/qa/launch-check.mjs` on the preview and on production (`docs/launch-plan.md`).
 
 The old site has a single page, so the redirect list is short. These go into
 `netlify.toml` in Phase 4 and are tested in Phase 5.

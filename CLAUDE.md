@@ -108,6 +108,9 @@ Node: `export PATH="$HOME/.local/node/bin:$PATH"`. Before calling any change don
 - `npm run qa:content` — editorial rules on src/content (no prices, no "guaranteed /
   exclusive / secret / best", no clichés, heli-skiing only as Italy/Switzerland day
   trips, EN/FR pairs, related paths exist).
+- `node scripts/qa/launch-check.mjs <url> [--production]` — on the Netlify preview and
+  on production at launch: redirects, headers, robots/sitemap/llms.txt, 404, every
+  sitemap URL (needs Netlify; fails on `astro preview`). Plan: `docs/launch-plan.md`.
 - Lighthouse mobile on changed templates (>= 95 on all four; LCP < 2.5 s; CLS < 0.1),
   a JavaScript-off pass and a keyboard pass. Results go in `docs/phase-N-report.md`.
 

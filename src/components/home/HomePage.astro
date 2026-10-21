@@ -245,8 +245,9 @@ const sectionHead = 'max-w-2xl';
     </section>
   )}
 
-  <!-- Google reviews (live at build time when GOOGLE_PLACES_API_KEY is set, links otherwise) -->
-  <section id="google-reviews" class="border-t border-line bg-stone py-section">
+  <!-- Google reviews (live at build time when GOOGLE_PLACES_API_KEY is set, links otherwise).
+       Takes the old site's #testimonials anchor until manual reviews exist. -->
+  <section id={reviews.length > 0 ? 'google-reviews' : 'testimonials'} class="border-t border-line bg-stone py-section">
     <div class="container-site">
       <GoogleReviews locale={locale} />
     </div>

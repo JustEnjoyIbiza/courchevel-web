@@ -39,6 +39,12 @@
   force = true
 
 # Old image and stylesheet URLs (may be indexed in Google Images).
+# The old logo may be linked from Instagram or directories: send it to the new one.
+[[redirects]]
+  from = "/assets/logo.png"
+  to = "/icon-512.png"
+  status = 301
+
 [[redirects]]
   from = "/assets/*"
   to = "/"

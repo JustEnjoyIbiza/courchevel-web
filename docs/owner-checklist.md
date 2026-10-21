@@ -5,6 +5,11 @@ Details behind each item: `missing-facts.md` (Phase 0), `phase-2-report.md`, `le
 
 ## Needed to launch
 
+Full plan, dates and exact DNS records: `launch-plan.md`.
+
+- [ ] **Renew the domain at GoDaddy and turn on auto-renew. It expires 30 November 2026** (6 days after the planned launch)
+- [ ] **Search Console**: a verification record already exists on the domain. Who owns that property? Add us as a user (or we create a new Domain property)
+- [ ] Go-ahead for launch day (planned Tuesday 24 November): switch the Netlify primary domain to www, then merge
 - [ ] **GitHub access** to push the rebuild branch (sign in to GitHub in the app's browser pane, or a token on this Mac)
 - [ ] **Netlify access**: check build settings, add environment variables, see the preview
 - [ ] **Accounts for the lead system**: Supabase, Resend (with DNS records for the domain), Telegram bot, Cloudflare Turnstile. Guide: `lead-system-setup.md`
