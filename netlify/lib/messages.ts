@@ -29,7 +29,7 @@ const copy = {
     subject: 'Nous avons bien reçu votre demande | Courchevel Luxury Concierge',
     dear: (n: string) => `Bonjour ${n},`,
     thanks: (a: string, d: string, v: string) => `Merci pour votre demande du ${a} au ${d}, ${v}.`,
-    promise: (via: string) => `Nous vous répondons personnellement sous 15 minutes, de 8h à 22h, par ${via}, et vous envoyons une proposition sur mesure sous 24 heures.`,
+    promise: (via: string) => `Nous vous répondons personnellement sous 15 minutes, de 8 h à 22 h, par ${via}, et vous envoyons une proposition sur mesure sous 24 heures.`,
     summary: 'Votre demande',
     dates: 'Dates', village: 'Village', guests: 'Personnes', services: 'Services', message: 'Votre message',
     guestsValue: (a: number, c: number) => `${a} adulte${a > 1 ? 's' : ''}${c ? `, ${c} enfant${c > 1 ? 's' : ''}` : ''}`,
@@ -48,6 +48,8 @@ export function clientEmail(lead: Lead) {
   const d = formatDate(lead.departure, l);
   const v = villageLabels[l][lead.village];
   const via = contactLabels[l][lead.preferredContact];
+  // French typography puts a space before the colon.
+  const colon = l === 'fr' ? ' :' : ':';
   const rows: [string, string][] = [
     [c.dates, `${a} – ${d} (${c.nightsValue(nights(lead))})`],
     [c.village, v],
@@ -59,7 +61,7 @@ export function clientEmail(lead: Lead) {
   const text = [
     c.dear(lead.name), '',
     c.thanks(a, d, v), c.promise(via), '',
-    `${c.summary}:`, ...rows.map(([k, val]) => `- ${k}: ${val}`), '',
+    `${c.summary}${colon}`, ...rows.map(([k, val]) => `- ${k}${colon} ${val}`), '',
     `${c.urgent} ${business.phone.display}.`, whatsappHref(l), '',
     c.sign, business.name, business.url, '', c.footer,
   ].join('\n');

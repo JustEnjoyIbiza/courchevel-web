@@ -74,4 +74,4 @@ A good evening in Courchevel usually follows the same rhythm: après-ski on the 
 
 ## How to book
 
-Tell us your dates, the size of your group and the kind of evening you have in mind. We reply within 15 minutes between 8:00 and 22:00 and send a tailored proposal within 24 hours. During the winter season we are available 24/7, including late at night, if you want to add a table or change plans.
+Tell us your dates, the size of your group and the kind of evening you have in mind. We answer within 15 minutes between 8:00 and 22:00 and send a tailored proposal within 24 hours. In the winter season we are on call 24/7, late nights included, if you want to add a table or change plans.

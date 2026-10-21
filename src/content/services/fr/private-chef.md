@@ -1,9 +1,9 @@
 ---
-title: "Comment engager un chef privé pour votre chalet à Courchevel ?"
+title: "Chef à domicile et chef privé à Courchevel"
 shortTitle: Gastronomie et chefs privés
-metaTitle: "Chef privé et réservations de restaurants à Courchevel"
-description: "Chefs privés et chefs étoilés dans votre chalet à Courchevel, sommelier, livraison de vins et de champagne, courses et réservations de restaurants."
-answer: "Indiquez-nous vos dates, le nombre de convives et votre façon de manger : nous vous proposons un chef privé pour votre chalet, le temps d’un dîner ou de tout le séjour. Nous organisons aussi les petits-déjeuners, un sommelier, la livraison de vins et de courses et vos tables au restaurant, avec une proposition personnalisée sous 24 heures."
+metaTitle: "Chef à domicile à Courchevel, au chalet | CLC"
+description: "Chef à domicile et chefs étoilés dans votre chalet à Courchevel, pour un dîner ou toute la semaine, sommelier et réservations de restaurants."
+answer: "Indiquez-nous vos dates, le nombre de convives et vos habitudes alimentaires : nous vous proposons un chef privé pour votre chalet, le temps d’un dîner ou de tout le séjour. Nous organisons aussi les petits-déjeuners, un sommelier, la livraison de vins et de courses et vos tables au restaurant, avec une proposition personnalisée sous 24 heures."
 updated: 2026-10-22
 image: terrace
 imageAlt: "Tables dressées avec des verres sur la terrasse en bois d’un restaurant d’altitude à Courchevel"
@@ -28,7 +28,7 @@ includes:
   - "Réservations demandées dans les restaurants d’altitude et du village"
 faqs:
   - q: "Peut-on faire venir un chef étoilé dans son chalet à Courchevel ?"
-    a: "Oui, sur demande et selon disponibilité. Les chefs étoilés sont très sollicités pendant les fêtes : pour Noël ou le Nouvel An, nous vous conseillons de nous solliciter le plus tôt possible."
+    a: "Oui, sur demande et selon disponibilité. Les chefs étoilés sont très sollicités pendant les fêtes : pour Noël ou le Nouvel An, nous vous conseillons de nous écrire le plus tôt possible."
   - q: "Le chef privé prépare-t-il tous les repas ?"
     a: "C’est vous qui choisissez. Certains souhaitent le petit-déjeuner et le dîner chaque jour ; d’autres réservent un chef pour deux ou trois dîners et sortent le reste de la semaine. Nous fixons le rythme avec vous avant votre arrivée."
   - q: "Les allergies et régimes particuliers sont-ils pris en compte ?"
@@ -43,9 +43,9 @@ related:
 
 ## Un chef privé dans votre chalet
 
-Un chef qui cuisine au chalet change le rythme des vacances au ski : plus de réservation à tenir, les enfants dînent quand ils ont faim, et la soirée se termine au coin du feu. Nous vous proposons des chefs adaptés à votre groupe et à vos goûts, pour un seul dîner, chaque soir ou tout le séjour.
+Un chef qui cuisine au chalet change le rythme des vacances au ski : plus d’horaire de réservation à respecter, les enfants dînent quand ils ont faim, et la soirée se termine au coin du feu. Nous vous proposons des chefs adaptés à votre groupe et à vos goûts, pour un seul dîner, chaque soir ou tout le séjour.
 
-Avant le premier repas, le chef reçoit votre brief :
+Avant le premier repas, le chef reçoit vos indications :
 
 - **Convives :** nombre d’adultes et d’enfants, et qui partage quels repas.
 - **Régimes :** allergies, intolérances, prescriptions religieuses et aversions.
@@ -66,7 +66,7 @@ Les détails qui entourent les repas comptent autant que le dîner. Nous organis
 
 ## Réservations de restaurants
 
-Courchevel réunit une concentration rare de restaurants, des terrasses ensoleillées d’altitude aux grandes tables gastronomiques de Courchevel 1850. Pendant les fêtes et en février, les tables les plus recherchées se remplissent vite : nous demandons donc les réservations en votre nom le plus tôt possible, selon disponibilité. Nous pouvons aussi organiser un déjeuner sur les pistes calé sur votre cours de ski, et un chauffeur pour la soirée.
+Courchevel réunit un nombre remarquable de restaurants, des terrasses ensoleillées d’altitude aux grandes tables gastronomiques de Courchevel 1850. Pendant les fêtes et en février, les tables les plus recherchées se remplissent vite : nous demandons donc les réservations en votre nom le plus tôt possible, selon disponibilité. Nous pouvons aussi organiser un déjeuner sur les pistes calé sur votre cours de ski, et un chauffeur pour la soirée.
 
 Si vous souhaitez découvrir d’autres tables des Trois Vallées, nous réservons à Méribel ou à Val Thorens et organisons l’aller-retour : personne n’a à prendre le volant après le dîner.
 

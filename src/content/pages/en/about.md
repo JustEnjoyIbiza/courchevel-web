@@ -38,6 +38,8 @@ You have one contact from the first message to the last day of your stay. Rather
 
 We do not publish prices. Every stay is different, so each service is quoted personally once we know what you need. You see the full proposal before anything is booked, and nothing is confirmed without your agreement.
 
+For teams, our page on [corporate retreats in Courchevel](/corporate-retreats-courchevel/) shows how a group stay is organised.
+
 ## How a request is handled
 
 1. **You get in touch** by WhatsApp, phone or email, or through the Plan my stay form.
@@ -53,7 +55,7 @@ We work across all of Courchevel: 1850, 1650 Moriond, 1550 Village, 1300 Le Praz
 
 ## Availability
 
-During the winter season we are available 24/7 for clients in resort. Outside urgent matters, we reply within 15 minutes from 8:00 to 22:00. The season runs from 4 December 2026 to 18 April 2027, and the busiest weeks, Christmas, New Year and February, are best planned early.
+During the winter season we are available 24/7 for clients in resort, and we answer new messages within 15 minutes from 8:00 to 22:00. The season runs from 4 December 2026 to 18 April 2027; the busiest weeks (Christmas, New Year and February) are worth planning early.
 
 ## Who we work with
 
@@ -67,10 +69,12 @@ We work with independent professionals and companies in and around Courchevel:
 
 We do not let property, drive clients or fly aircraft ourselves. Chalets are booked with their owners, agencies or hotels, road transfers are carried out by licensed chauffeur partners, and flights by licensed operators. Our role is to choose the right people, brief them carefully and make sure everything fits together. Where something depends on others, such as a club table on New Year's Eve, we request it and tell you plainly when it is confirmed.
 
+Personal assistants, family offices and travel agents often book on behalf of clients; [how we work with them](/assistants-and-family-offices/) is explained on a page of its own.
+
 ## Discretion
 
 Privacy is part of the service. We share with each provider only what they need to do their part, and we never discuss clients or their plans with anyone else. If you prefer that we use a first name or an agreed reference with suppliers, we will.
 
 ## Plan your stay
 
-Tell us your dates, your village if you have one in mind, and who is coming. We will reply within 15 minutes during our hours and send a tailored proposal within 24 hours.
+Tell us your dates, your village if you have one in mind, and who is coming. We will reply within 15 minutes between 8:00 and 22:00 and send a tailored proposal within 24 hours.

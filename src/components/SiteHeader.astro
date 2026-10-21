@@ -42,7 +42,7 @@ const switchHref = alternateHref ?? localize('/', other);
 
 <header class="sticky top-0 z-40 border-b border-line bg-ivory/95 backdrop-blur-sm">
   <div class="container-site flex h-16 items-center justify-between gap-6 md:h-20">
-    <a href={home} class="no-underline">
+    <a href={home} class="flex min-h-11 items-center no-underline">
       <Wordmark />
     </a>
 
@@ -59,7 +59,7 @@ const switchHref = alternateHref ?? localize('/', other);
         href={switchHref}
         hreflang={other}
         lang={other}
-        class="text-xs font-semibold uppercase tracking-[0.18em] text-taupe no-underline hover:text-ink"
+        class="inline-flex min-h-11 min-w-11 items-center justify-center text-xs font-semibold uppercase tracking-[0.18em] text-taupe no-underline hover:text-ink"
       >{other.toUpperCase()}<span class="sr-only"> – {s.switchToLabel}</span></a>
       <a href={enquire} class="btn-primary hidden min-h-11 px-5 sm:inline-flex">{s.planMyStay}</a>
 

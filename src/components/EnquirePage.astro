@@ -6,6 +6,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from './Breadcrumbs.astro';
 import EnquiryForm from './EnquiryForm.astro';
+import SmartLink from './SmartLink.astro';
 import { business, telHref, mailtoHref, whatsappHref, type Locale } from '../data/business';
 import { t } from '../i18n/ui';
 import { localize } from '../lib/routes';
@@ -34,7 +35,7 @@ const copy = {
     title: 'Organiser mon séjour | Courchevel Luxury Concierge',
     description: 'Vos dates, votre village, votre groupe : réponse personnelle sous 15 minutes par WhatsApp, téléphone ou e-mail, proposition sous 24 heures.',
     h1: 'Organiser mon séjour',
-    lead: 'Indiquez-nous vos dates, votre village, le nombre de personnes et les services souhaités. Nous répondons personnellement sous 15 minutes, de 8h à 22h, et envoyons une proposition sur mesure sous 24 heures.',
+    lead: 'Indiquez-nous vos dates, votre village, le nombre de personnes et les services souhaités. Nous répondons personnellement sous 15 minutes, de 8 h à 22 h, et envoyons une proposition sur mesure sous 24 heures.',
     asideTitle: 'Vous préférez nous parler ?',
     whatsappText: 'Le moyen le plus rapide de nous joindre.',
     callText: 'Parlez-nous directement.',
@@ -79,10 +80,14 @@ const schema = [
               <li class="border-t border-line py-4">
                 <p class="text-sm font-semibold">{o.label}</p>
                 <p class="mt-1 text-sm text-taupe">{o.text}</p>
-                <a href={o.href} class="link mt-2 inline-block break-all text-sm" data-event={o.event} rel="noopener">{o.value}</a>
+                <a href={o.href} class="link mt-1 inline-flex min-h-11 items-center break-all text-sm" data-event={o.event} rel="noopener">{o.value}</a>
               </li>
             ))}
           </ul>
+          <p class="mt-4 border-t border-line pt-4 text-sm">
+            {locale === 'en' ? 'Booking for a client?' : 'Vous réservez pour un client ?'}{' '}
+            <SmartLink href={localize('/assistants-and-family-offices/', locale)} class="link">{s.footer.assistants}</SmartLink>
+          </p>
           <p class="mt-4 text-xs text-taupe">{business.availability[locale]}. {s.footer.pricing}</p>
         </div>
       </aside>

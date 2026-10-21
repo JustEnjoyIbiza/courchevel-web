@@ -76,7 +76,7 @@ Some mountain restaurants also open for dinner on certain evenings, with access 
 
 Beyond the starred tables, each village has its own places for a relaxed lunch or dinner:
 
-- **Courchevel 1850:** the hotel restaurants of Le K2 Palace (L'Altiplano), Annapurna (La Fèrma), Aman Le Mélézin (Nama) and Les Airelles (La Table des Airelles - Le Festin), as well as the INEOS Club House at the foot of the Émile-Allais stadium.
+- **Courchevel 1850:** the hotel restaurants of Le K2 Palace (L'Altiplano), Annapurna (La Fèrma), Aman Le Mélézin (Nama) and Les Airelles (La Table des Airelles – Le Festin), as well as the INEOS Club House at the foot of the Émile-Allais stadium.
 - **1650 Moriond:** La Rôtisserie at the foot of the slopes, Schuss Café at the bottom of the lifts, and Copiña.
 - **1550 Village:** La Cortona, just below the gondolas.
 - **1300 Le Praz:** La Table de Mon Grand-Père, La Glacière and Le Kiosque du Praz.
@@ -99,7 +99,7 @@ If you are planning a larger group dinner, a private room or the private hire of
 - **January and March:** a few days ahead is usually enough, sometimes the same day.
 - **Lunch on the slopes:** in the school holidays, reserve the popular terraces a few days in advance, especially for large groups.
 
-Tell us your dates, the size of your group, any allergies and the kind of evening you have in mind, and we propose and reserve a plan for the week.
+Tell us your dates, the size of your group, any allergies and the kind of evening you have in mind, and we propose a plan for the week and make the reservations.
 
 ## Dining in your chalet
 
@@ -107,4 +107,4 @@ Many evenings in Courchevel are just as good at home. A private chef shops for y
 
 After dinner, if you would like to go out, see our [nightlife service](/services/nightlife/).
 
-We reply within 15 minutes between 8:00 and 22:00, and during the winter season we are available 24/7. Send us your dates and we send a proposal within 24 hours.
+Send us your dates and the evenings that matter, and a proposal follows within 24 hours. Replies come within 15 minutes between 8:00 and 22:00, and in the winter season we are on call 24/7.

@@ -6,7 +6,7 @@ description: Le plus haut village de Courchevel, avec l’altiport, les palaces 
 answer: Courchevel 1850 est le plus haut et le plus animé des villages de Courchevel, avec l’altiport, la plupart des palaces, les boutiques de la Croisette et plusieurs restaurants étoilés au Guide Michelin. Il convient à ceux qui veulent skier depuis leur porte, dîner dehors chaque soir et tout avoir à quelques pas.
 updated: 2026-10-22
 image: gondola
-imageAlt: Cabines de télécabine au-dessus des pistes enneigées de Courchevel, au crépuscule
+imageAlt: Télécabines au-dessus des pistes enneigées de Courchevel, au crépuscule
 facts:
   - label: Altitude
     value: Environ 1 850 m ; l’altiport se trouve à environ 2 000 m
@@ -21,14 +21,14 @@ facts:
   - label: Ambiance
     value: Le cœur de la station, avec palaces, boutiques et les restaurants les plus courus
 includes:
-  - Recherche de chalet ou de palace adaptée à votre groupe
+  - Recherche d’un chalet ou d’un palace adapté à votre groupe
   - Transferts en hélicoptère ou avec chauffeur jusqu’à l’altiport ou votre porte
   - Réservations de restaurants et de déjeuners en altitude
   - Forfaits, moniteurs privés et matériel ajusté au chalet
   - Tables en club et événements privés
 faqs:
   - q: Peut-on arriver directement en avion à Courchevel 1850 ?
-    a: Oui. L’altiport de Courchevel, juste au-dessus du village, accueille hélicoptères et petits avions pilotés par des pilotes spécialement qualifiés. Les vols dépendent de la lumière du jour et de la météo ; nous prévoyons donc toujours un transfert par la route en solution de repli.
+    a: Oui. L’altiport de Courchevel, juste au-dessus du village, accueille hélicoptères et petits avions, aux commandes de pilotes spécialement qualifiés. Les vols dépendent de la lumière du jour et de la météo ; nous prévoyons donc toujours un transfert par la route en solution de repli.
   - q: Courchevel 1850 est-il skis aux pieds ?
     a: De nombreux chalets et hôtels de 1850 sont sur les pistes ou tout près, et les principales remontées partent du front de neige de la Croisette. Lors de la recherche, nous vérifions l’accès exact aux pistes avant toute réservation.
   - q: 1850 convient-il aux familles ?
@@ -43,7 +43,7 @@ related:
 
 ## Pour qui
 
-Courchevel 1850 est le cœur historique de la station, et le village auquel on pense lorsqu’on dit « Courchevel ». Il convient à ceux qui veulent les pistes, les restaurants et les boutiques à leur porte : couples, groupes d’amis et familles qui aiment autant les soirées animées que les grandes journées de ski. On y trouve la plupart des palaces et des hôtels cinq étoiles, ainsi que nombre des plus grands chalets, dans la forêt autour du Jardin Alpin et le long des routes qui mènent à l’altiport.
+Courchevel 1850 est le cœur de la station, et le village auquel on pense lorsqu’on dit « Courchevel ». Il convient à ceux qui veulent les pistes, les restaurants et les boutiques à leur porte : couples, groupes d’amis et familles qui aiment autant les soirées animées que les grandes journées de ski. On y trouve la plupart des palaces et des hôtels cinq étoiles, ainsi que nombre des plus grands chalets, dans la forêt autour du Jardin Alpin et le long des routes qui mènent à l’altiport.
 
 C’est aussi le village le plus fréquenté, surtout à Noël, au Nouvel An et pendant les vacances de février. Si vous préférez retrouver chaque soir un chalet au calme, les villages plus bas l’offrent, tout en restant reliés à 1850 par remontée mécanique.
 
@@ -51,7 +51,7 @@ C’est aussi le village le plus fréquenté, surtout à Noël, au Nouvel An et 
 
 **Par la route.** Courchevel se trouve à environ 150 km de l’aéroport de Genève, soit 2 h 15 environ dans des conditions normales, à environ 187 km de Lyon Saint-Exupéry, soit 2 h à 2 h 15, et à environ 110 km de Chambéry, soit 1 h 20 environ. La dernière partie monte depuis Moûtiers, à environ 25 km et 30 minutes de la station, qui est aussi la gare la plus proche. La neige et la circulation du samedi peuvent allonger chacun de ces temps ; nous organisons les départs en conséquence.
 
-**Par les airs.** L’altiport de Courchevel se trouve à environ 2 000 m, juste au-dessus du village. Sa piste courte et pentue accueille hélicoptères et petits avions pilotés par des pilotes spécialement qualifiés, uniquement de jour et par météo favorable. Depuis Genève, un hélicoptère met généralement bien moins d’une heure de vol. Nous organisons le vol, les bagages et une voiture qui vous attend à l’altiport, avec un transfert par la route en réserve.
+**Par les airs.** L’altiport de Courchevel se trouve à environ 2 000 m, juste au-dessus du village. Sa piste courte et pentue accueille hélicoptères et petits avions, aux commandes de pilotes spécialement qualifiés, uniquement de jour et par météo favorable. Depuis Genève, un hélicoptère met généralement bien moins d’une heure de vol. Nous organisons le vol, les bagages et une voiture qui vous attend à l’altiport, avec un transfert par la route en réserve.
 
 **Entre les villages.** La télécabine du Praz monte du Praz à 1850 en six minutes environ, et la télécabine des Grangettes relie Courchevel Village à 1850 en quelques minutes. Moriond et La Tania sont reliés par les pistes, et des navettes gratuites desservent tous les villages.
 
@@ -73,4 +73,4 @@ Si vous préférez rester au chalet, un [chef privé](/fr/services/private-chef/
 
 À 1850, l’essentiel de notre travail commence avant votre arrivée. Nous trouvons le [chalet ou le palace](/fr/services/chalets/) qui convient à votre groupe, organisons les [transferts en hélicoptère ou avec chauffeur](/fr/services/transfers/) jusqu’à l’altiport ou à votre porte, et préparons [forfaits, moniteurs et matériel](/fr/services/ski/). Pendant le séjour, nous réservons restaurants, tables pour vos [soirées](/fr/services/nightlife/) et [soins au chalet](/fr/services/wellness/), et nous occupons de tout imprévu.
 
-Nous répondons en 15 minutes entre 8 h et 22 h, envoyons une proposition sous 24 heures et sommes joignables 24 h/24 et 7 j/7 pendant la saison d’hiver. Indiquez-nous vos dates et qui vous accompagne : nous nous occupons du reste.
+Nous vous répondons sous 15 minutes entre 8 h et 22 h et vous envoyons une proposition sous 24 heures ; pendant la saison d’hiver, nous restons joignables 24 h/24 et 7 j/7. Indiquez-nous vos dates et qui vous accompagne : nous nous occupons du reste.

@@ -4,12 +4,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from './Breadcrumbs.astro';
 import FaqList from './FaqList.astro';
 import CtaBand from './CtaBand.astro';
+import SmartLink from './SmartLink.astro';
 import LastUpdated from './LastUpdated.astro';
 import { hubs, hubsUpdated } from '../content/hubs';
 import { faq, allFaqs } from '../content/faq';
 import type { Locale } from '../data/business';
 import { t } from '../i18n/ui';
-import { localize } from '../lib/routes';
+import { localize, linkTitle } from '../lib/routes';
 import { breadcrumbSchema, faqSchema } from '../lib/schema';
 
 interface Props {
@@ -24,6 +25,9 @@ const crumbs = [
   { name: s.breadcrumbHome, href: localize('/', locale) },
   { name: c.title, href: localize('/faq/', locale) },
 ];
+// Related page for each FAQ topic, in topic order (same order in EN and FR).
+const topicPages = ['/about/', '/services/chalets/', '/guides/getting-to-courchevel/', '/services/ski/', '/guides/where-to-eat/', '/guides/courchevel-with-kids/', '/services/events/', '/guides/season-dates-and-events/'];
+const topicLinks = await Promise.all(topicPages.map(async (p) => ({ href: localize(p, locale), title: (await linkTitle(p, locale)) ?? p })));
 const slug = (topic: string) => topic.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 ---
 
@@ -49,9 +53,16 @@ const slug = (topic: string) => topic.toLowerCase().normalize('NFD').replace(/[�
   </section>
 
   <div class="container-site py-section">
-    {faq[locale].map((g) => (
+    {faq[locale].map((g, i) => (
       <section id={slug(g.topic)} class="grid scroll-mt-28 gap-8 pb-16 md:grid-cols-12">
-        <h2 class="text-h2 md:col-span-4">{g.topic}</h2>
+        <div class="md:col-span-4">
+          <h2 class="text-h2">{g.topic}</h2>
+          {topicLinks[i] && (
+            <p class="mt-4 text-sm">
+              <SmartLink href={topicLinks[i].href} class="link inline-flex min-h-11 items-center">{topicLinks[i].title}</SmartLink>
+            </p>
+          )}
+        </div>
         <div class="md:col-span-8"><FaqList items={g.items} /></div>
       </section>
     ))}

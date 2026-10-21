@@ -51,7 +51,7 @@ The right team depends on the size of the chalet and how you like to live. A cou
 
 ## Laundry and garment care
 
-Ski clothes, evening wear and children's outfits all need attention in a week in the mountains. Snow, salt and wet boots take their toll on clothes, and a week of skiing produces more laundry than most guests expect. Housekeeping staff take care of washing, ironing and pressing, and delicate pieces go to a specialist cleaner. In the ski room, gloves, boots and base layers are dried and ready for the next morning.
+Ski clothes, evening wear and children's outfits all need attention in the mountains. Snow, salt and wet boots take their toll, and a week of skiing produces more laundry than most guests expect. Housekeeping staff take care of washing, ironing and pressing, and delicate pieces go to a specialist cleaner. In the ski room, gloves, boots and base layers are dried and ready for the next morning.
 
 At the end of the stay, staff pack your cases, separate what needs cleaning and arrange for anything left behind to be sent on.
 
@@ -67,6 +67,8 @@ A typical day for a fully staffed chalet might look like this:
 
 - **Morning:** breakfast served, ski clothes laid out, boots warmed in the ski room.
 - **Daytime:** rooms cleaned, laundry done, fresh flowers and supplies checked.
-- **Evening:** drinks and dinner served, beds turned down, the house prepared for the next day. During the stay you have one contact for every change, and we remain available 24/7 during the winter season.
+- **Evening:** drinks and dinner served, beds turned down, the house prepared for the next day.
 
-Send us your dates, the chalet and the number of guests. We reply within 15 minutes between 8:00 and 22:00 and send a staffing proposal within 24 hours, setting out each role, the working hours and how the team will be organised around your days on the slopes.
+During the stay you have one contact for every change, and we remain available 24/7 during the winter season.
+
+Send us your dates, the chalet and the number of guests. We reply within 15 minutes between 8:00 and 22:00. Within 24 hours you receive a staffing proposal setting out each role, the working hours and how the team fits around your days on the slopes.

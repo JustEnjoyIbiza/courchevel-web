@@ -1,8 +1,8 @@
 ---
-title: "Comment rejoindre Courchevel en hélicoptère, en jet privé ou avec chauffeur ?"
+title: "Transferts en hélicoptère et jets privés vers Courchevel"
 shortTitle: Aviation privée et transferts
-metaTitle: "Hélicoptère, jet privé et chauffeur à Courchevel | CLC"
-description: "Transferts en hélicoptère depuis Genève, Lyon, Chambéry et Milan, jets privés et voitures avec chauffeur vers Courchevel. Sur devis personnalisé."
+metaTitle: "Transfert Genève Courchevel en hélicoptère | CLC"
+description: "Transfert en hélicoptère depuis Genève, Lyon, Chambéry et Milan vers l’altiport de Courchevel, jet privé et voiture avec chauffeur. Sur devis."
 answer: "Le moyen le plus rapide de rejoindre Courchevel est l’hélicoptère jusqu’à l’altiport, à une trentaine de minutes de Genève et environ 25 minutes de Chambéry. Nous organisons le vol, le jet privé ou la voiture avec chauffeur auprès de partenaires aériens et de chauffeurs agréés, et vous adressons un devis personnalisé sous 24 heures."
 updated: 2026-10-22
 image: rolls-royce-helicopter
@@ -20,7 +20,7 @@ facts:
     value: "Sous 15 minutes de 8 h à 22 h, et 24 h/24 pendant la saison d’hiver"
 includes:
   - "Transferts en hélicoptère depuis Genève, Lyon, Chambéry et Milan"
-  - "Affrètement de jets privés vers Genève, Chambéry ou l’altiport de Courchevel"
+  - "Affrètement de jets privés vers Genève ou Chambéry, et de petits avions jusqu’à l’altiport"
   - "Mercedes Classe V, Classe S ou Range Rover avec chauffeur pour la route"
   - "Un chauffeur à disposition pendant tout votre séjour"
   - "Location de voitures de prestige livrées au chalet"
@@ -35,7 +35,7 @@ faqs:
   - q: "Peut-on venir de Milan en hélicoptère ?"
     a: "Oui. Le vol depuis la région de Milan dure environ une heure, selon le point de départ et l’itinéraire. Nous confirmons la durée exacte avec le partenaire aérien au moment du devis."
   - q: "Pilotez-vous ou conduisez-vous vous-mêmes vos clients ?"
-    a: "Non. Chaque vol est assuré par des partenaires aériens et hélicoptères agréés, chaque transfert routier par des chauffeurs professionnels agréés. Nous choisissons la solution, la réservons et la coordonnons avec le reste de votre séjour."
+    a: "Non. Chaque vol est assuré par des compagnies aériennes et d’hélicoptères agréées, chaque transfert routier par des chauffeurs professionnels agréés. Nous choisissons la solution, la réservons et la coordonnons avec le reste de votre séjour."
 related:
   - /guides/getting-to-courchevel/
   - /services/chalets/
@@ -57,10 +57,10 @@ La capacité en bagages dépend de l’appareil : indiquez-nous le nombre de val
 
 L’altiport de Courchevel possède l’une des pistes les plus courtes et les plus pentues d’Europe. Seuls de petits avions et des hélicoptères l’utilisent, avec des pilotes formés à cette approche, et chaque atterrissage dépend de la météo. La plupart des jets privés se posent donc à :
 
-- **Chambéry**, à environ une heure et demie par la route ou 25 minutes en hélicoptère ;
+- **Chambéry**, à environ 1 h 20 à 1 h 30 par la route ou 25 minutes en hélicoptère ;
 - **Genève**, à environ 149 km, avec le plus large choix d’appareils.
 
-Nous affrétons l’avion auprès de partenaires aériens agréés, calons l’heure d’arrivée sur l’hélicoptère ou la voiture qui prend le relais, et transmettons les informations au personnel de votre chalet.
+Nous organisons l’affrètement auprès de partenaires aériens agréés, calons l’heure d’arrivée sur l’hélicoptère ou la voiture qui prend le relais, et transmettons les informations au personnel de votre chalet.
 
 ## Voitures avec chauffeur et chauffeur à disposition
 

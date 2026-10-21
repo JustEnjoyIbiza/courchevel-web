@@ -49,9 +49,9 @@ On a day off the slopes, Aquamotion, the resort's large aquatic and wellness cen
 
 ## Getting there
 
-**By road.** Courchevel Village is on the road up to the resort. Guide times are about 150 km and 2 h 15 from Geneva airport, about 187 km and 2 h to 2 h 15 from Lyon Saint-Exupéry, and about 110 km and 1 h 20 from Chambéry. Moûtiers, the nearest railway station, is around 30 minutes below the resort. On busy Saturdays and snowy days the drive takes longer, and we plan the timing accordingly.
+**By road.** Courchevel Village is on the road up to the resort. As a guide, the resort is about 150 km from Geneva airport (2 h 15), 187 km from Lyon Saint-Exupéry (2 h to 2 h 15) and 110 km from Chambéry (1 h 20). Moûtiers, the nearest railway station, is around 30 minutes below the resort. On busy Saturdays and snowy days the drive takes longer, and we plan the timing accordingly.
 
-**By air.** The Courchevel altiport, above 1850, takes helicopters and small aircraft in daylight and suitable weather. A car brings you down to the Village in a few minutes.
+**By air.** Courchevel Altiport, above 1850, takes helicopters and small aircraft in daylight and suitable weather. A car brings you down to the Village in a few minutes.
 
 **Between villages.** The Grangettes gondola links Courchevel Village with 1850, and free shuttles connect all the villages on the road. Moriond is close by, and Le Praz is a short drive or ski away.
 
@@ -71,4 +71,4 @@ For a more formal evening, the Michelin-starred restaurants of 1850 are a short 
 
 In Courchevel Village we mostly look after families and larger groups. We find the right [chalet](/services/chalets/), organise [transfers](/services/transfers/) from Geneva, Lyon, Chambéry or the altiport, and prepare [ski passes, lessons and equipment](/services/ski/). We can also provide [chalet staff](/services/staff/), [childcare](/services/childcare/) and [experiences for the whole family](/services/experiences/), from snowshoe walks to evenings out in 1850.
 
-We reply within 15 minutes between 8:00 and 22:00, send a proposal within 24 hours, and are available 24/7 during the winter season. Tell us who is coming and what matters most, and we will prepare the stay around it.
+Tell us who is coming and what matters most. We reply within 15 minutes from 8:00 to 22:00 and send a proposal within 24 hours; in the winter season we are available around the clock.

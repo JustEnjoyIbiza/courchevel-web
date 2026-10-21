@@ -19,6 +19,9 @@ const explore = [
   { label: s.nav.experiences, href: '/experiences/' },
   { label: s.nav.villages, href: '/villages/' },
   { label: s.page.guides, href: '/guides/' },
+  { label: s.footer.christmas, href: '/christmas-new-year-courchevel/' },
+  { label: s.footer.corporate, href: '/corporate-retreats-courchevel/' },
+  { label: s.footer.assistants, href: '/assistants-and-family-offices/' },
   { label: s.nav.about, href: '/about/' },
   { label: s.nav.faq, href: '/faq/' },
   { label: s.planMyStay, href: '/enquire/' },
@@ -47,6 +50,7 @@ const heading = 'mb-4 font-sans text-xs font-semibold uppercase tracking-[0.22em
         <li><a href={telHref} class="link" data-event="phone_click">{business.phone.display}</a></li>
         <li><a href={mailtoHref} class="link" data-event="email_click">{business.email}</a></li>
         {instagram && <li><a href={instagram} class="link" rel="noopener">Instagram</a></li>}
+        <li><a href={business.profiles.google.mapsUrl} class="link" rel="noopener">{locale === 'en' ? 'Google reviews' : 'Avis Google'}</a></li>
       </ul>
       <p class="mt-4 text-sm text-taupe">
         {business.address.locality}, {business.address.region}, {business.address.countryName[locale]}

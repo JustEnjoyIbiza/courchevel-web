@@ -1,7 +1,7 @@
 # Owner checklist: everything that needs you
 
 One list for the end-of-project review. Updated as each phase finishes.
-Details behind each item: `missing-facts.md` (Phase 0), `phase-2-report.md`, `lead-system-setup.md`.
+Details behind each item: `missing-facts.md` (Phase 0), `phase-2-report.md`, `lead-system-setup.md`, `audit-2026-10-22.md`.
 
 ## Needed to launch
 
@@ -19,10 +19,13 @@ Details behind each item: `missing-facts.md` (Phase 0), `phase-2-report.md`, `le
 - [ ] Languages: EN + FR now. Russian, Ukrainian and Arabic later?
 - [ ] Concierge alerts by Telegram (built) or WhatsApp Cloud API (not built, needs a Meta business account)
 - [ ] The form's budget field is free text ("in your own words"), so no price bands appear on the site. OK?
+- [ ] Keep "Winter Retreat", "VIP Party Package", "Ski Explorer" in English on the French site, or translate them like the three new experiences?
+- [ ] Titles use the short brand "CLC" after the "|" to stay under 60 characters. OK, or prefer "Courchevel Concierge"?
 
 ## About page (end of project)
 
 - [ ] Founder name, photo, short story, languages, year started in Courchevel
+- [ ] Reviews name **Iván**: is he the founder? (Then he becomes the named person on About and in the schema)
 - [ ] Is the man in front of the helicopter (`audit/original-site/assets/1.jpeg`) the founder?
 - [ ] Team names and roles (optional)
 
@@ -45,6 +48,12 @@ Details behind each item: `missing-facts.md` (Phase 0), `phase-2-report.md`, `le
 
 ## Facts to re-check close to launch
 
+- [ ] Méribel / Val Thorens road distances from Courchevel (sums of verified segments)
+- [ ] Michelin listings in Méribel and Val Thorens (L'Ekrin, Les Explorateurs); Le Farçon chef name
+- [ ] Le Praz restaurants: village page and dining guide name different places; agree on one list
+- [ ] Heli-skiing destinations in Italy and Switzerland (Verbier landing sites, Valgrisenche, La Thuile)
+- [ ] GDPR wording on the assistants page ("data handled in line with GDPR")
+
 - [ ] Michelin Guide 2026 list on the Where to Eat guide (guide.michelin.com)
 - [ ] Courchevel Altiport operating this winter
 - [ ] Named restaurants open for 2026/27 (La Cortona, L'Oeil de Bœuf, Le Cap Horn especially)
@@ -59,9 +68,19 @@ Details behind each item: `missing-facts.md` (Phase 0), `phase-2-report.md`, `le
 - [ ] 20–40 more real photos (chalet interiors, chef, team, arrivals, childcare, events, each village)
 - [ ] Logo as SVG or a large transparent PNG
 
-## Off-site (plan step 4, independent of the website)
+## Off-site (plan step 4, independent of the website). Ranked in `audit-2026-10-22.md`, section 7
 
-- [ ] Google Business Profile (service-area business until the address is ready)
+- [x] Google Business Profile exists (5.0 from 14 reviews, found 22 Oct). Now fix it with `platform-profiles-kit.md`:
+  - [ ] Primary category "Travel agency" → "Concierge service"
+  - [ ] Description → the kit's text (same facts as the site)
+  - [ ] Website and booking links with UTM tags; WhatsApp messaging on; 12 services
+  - [ ] Check the Spanish July reviews describe Courchevel stays
+- [ ] Instagram: name "Courchevel Luxury Concierge", bio from the kit, **add the website link**, move Ibiza content to its own account
+- [ ] Google Places API key (`GOOGLE_PLACES_API_KEY`) so the site shows the live rating and reviews
+- [ ] Print the QR code for courchevelluxuryconcierge.com/review on the chalet welcome card
 - [ ] Bing Places, Apple Business Connect, Tripadvisor with exactly the same name, phone and description
 - [ ] Ask past clients for Google reviews
 - [ ] Baseline AI prompt test (20 prompts) saved before launch
+- [ ] Trustpilot profile; courchevel.com tourist office listing (Apidae)
+- [ ] LinkedIn company page and founder profile (for schema `sameAs` and E-E-A-T)
+- [ ] Outreach list in the audit (luxury travel sites, ski guides, the founder as expert source)

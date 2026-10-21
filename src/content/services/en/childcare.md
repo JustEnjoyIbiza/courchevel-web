@@ -49,7 +49,7 @@ The right nanny depends on your children and your days in the mountains. Before 
 - **Languages:** the language your children speak at home and any second language you would like them to hear.
 - **Ski days:** whether the nanny will walk the children to ski school, wait during the lesson and bring them back.
 
-We check every nanny's identity, references and experience with young children. In France the recognised entry-level childcare qualification is the CAP Accompagnant éducatif petite enfance, a state diploma; where a nanny holds it, or a higher nursing or early-years qualification, we tell you. You meet or speak with the nanny before the first day whenever you wish.
+We check every nanny's identity, references and experience with young children. In France, the recognised entry-level childcare qualification is a state diploma, the CAP Accompagnant éducatif petite enfance. Where a nanny holds it, or a higher nursing or early-years qualification, we tell you. You meet or speak with the nanny before the first day whenever you wish.
 
 ## Evening babysitting
 
@@ -73,4 +73,4 @@ Travelling with a baby means a lot of luggage. We arrange cots, high chairs, bab
 
 ## During your stay
 
-We stay on call for the whole stay, 24/7 in season. If a child is unwell and you need a doctor, if you want an extra evening of babysitting, or if a lesson needs to move, one message is enough. We cover Courchevel 1850, 1650 Moriond, 1550 Village, 1300 Le Praz and La Tania, as well as Méribel and Val Thorens.
+We are on call throughout, 24/7 in season. If a child is unwell and you need a doctor, if you want an extra evening of babysitting, or if a lesson needs to move, one message is enough. We cover Courchevel 1850, 1650 Moriond, 1550 Village, 1300 Le Praz and La Tania, as well as Méribel and Val Thorens.

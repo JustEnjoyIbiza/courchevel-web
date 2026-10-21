@@ -36,14 +36,20 @@ type Item = { title: string; text: string; href?: string };
 let items: Item[] = [];
 if (hub === 'services') {
   items = services.map((x) => ({ title: x.name[locale], text: x.summary[locale], href: localize(`/services/${x.slug}/`, locale) }));
-} else if (hub === 'villages') {
-  items = villages.map((v) => ({ title: v.name, text: v.summary[locale], href: localize(`/${v.slug}/`, locale) }));
 } else if (hub === 'guides') {
   items = (await getCollection('guides'))
     .filter((g) => splitId(g.id).locale === locale)
     .sort((a, b) => a.data.title.localeCompare(b.data.title))
     .map((g) => ({ title: g.data.title, text: g.data.description, href: localize(`/guides/${splitId(g.id).slug}/`, locale) }));
 }
+
+// Villages hub: a comparison table per group (Courchevel, then the rest of the Trois Vallées).
+const villageGroups = [
+  { key: 'courchevel', label: 'Courchevel' },
+  { key: 'trois-vallees', label: locale === 'en' ? 'Elsewhere in the Trois Vallées' : 'Ailleurs dans les Trois Vallées' },
+].map((g) => ({ ...g, villages: villages.filter((v) => v.group === g.key) }));
+const th = { village: 'Village', altitude: 'Altitude', suits: locale === 'en' ? 'In short' : 'En bref' };
+const nf = new Intl.NumberFormat(locale === 'en' ? 'en-GB' : 'fr-FR');
 
 const crumbs = [
   { name: s.breadcrumbHome, href: localize('/', locale) },
@@ -67,7 +73,39 @@ const crumbs = [
     </div>
   </section>
 
-  {hub === 'experiences' ? (
+  {hub === 'villages' && (
+    <section class="container-site py-section">
+      {villageGroups.map((g) => (
+        <div class="mb-16 last:mb-0">
+          <h2 class="text-h2">{g.label}</h2>
+          <div class="mt-8 overflow-x-auto">
+            <table class="w-full border-collapse text-left">
+              <thead>
+                <tr class="border-b border-brass text-sm text-taupe">
+                  <th scope="col" class="py-3 pr-6 font-semibold">{th.village}</th>
+                  <th scope="col" class="py-3 pr-6 font-semibold">{th.altitude}</th>
+                  <th scope="col" class="py-3 font-semibold">{th.suits}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {g.villages.map((v) => (
+                  <tr class="border-b border-line align-top">
+                    <th scope="row" class="py-5 pr-6 font-serif text-2xl font-medium">
+                      <SmartLink href={localize(`/${v.slug}/`, locale)} class="inline-flex min-h-11 items-center text-ink no-underline hover:text-brass-deep">{v.name}</SmartLink>
+                    </th>
+                    <td class="whitespace-nowrap py-5 pr-6 text-ink">{nf.format(v.altitude)} m</td>
+                    <td class="py-5 text-taupe">{v.summary[locale]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+    </section>
+  )}
+
+  {hub === 'villages' ? null : hub === 'experiences' ? (
     <section class="container-site py-section">
       <ul class="grid gap-x-8 gap-y-16 md:grid-cols-3">
         {experiences.map((x, i) => (
@@ -94,7 +132,14 @@ const crumbs = [
                 ))}
               </ul>
             )}
-            <a href={localize('/enquire/', locale) + `?experience=${x.id}`} class="link mt-6 inline-block">{s.planMyStay}</a>
+            <p class="mt-5 text-sm text-taupe">
+              {locale === 'en' ? 'Draws on' : 'Services associés'}{locale === 'fr' ? ' :' : ':'}{' '}
+              {x.services.map((p, n) => {
+                const svc = services.find((sv) => `/services/${sv.slug}/` === p);
+                return svc ? <>{n > 0 && ', '}<a href={localize(p, locale)} class="link">{svc.name[locale]}</a></> : null;
+              })}
+            </p>
+            <a href={localize('/enquire/', locale) + `?experience=${x.id}`} class="link mt-2 inline-flex min-h-11 items-center">{s.planMyStay}</a>
           </li>
         ))}
       </ul>
@@ -114,6 +159,14 @@ const crumbs = [
           </li>
         ))}
       </ol>
+      {hub === 'services' && (
+        <ul class="mt-12 flex flex-wrap gap-x-8 gap-y-2 border-t border-brass pt-6 text-sm">
+          <li><SmartLink href={localize('/christmas-new-year-courchevel/', locale)} class="link inline-flex min-h-11 items-center">{s.footer.christmas}</SmartLink></li>
+          <li><SmartLink href={localize('/corporate-retreats-courchevel/', locale)} class="link inline-flex min-h-11 items-center">{s.footer.corporate}</SmartLink></li>
+          <li><SmartLink href={localize('/assistants-and-family-offices/', locale)} class="link inline-flex min-h-11 items-center">{s.footer.assistants}</SmartLink></li>
+          <li><SmartLink href={localize('/guides/how-to-choose-a-concierge-in-courchevel/', locale)} class="link inline-flex min-h-11 items-center">{s.footer.chooseGuide}</SmartLink></li>
+        </ul>
+      )}
     </section>
   )}
 

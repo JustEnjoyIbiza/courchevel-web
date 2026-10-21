@@ -20,8 +20,9 @@ let fail = 0;
 const check = (route, name, ok, detail = '') => { results.push({ route, name, ok, detail }); if (!ok) fail++; };
 
 for (const { route, html } of pages) {
-  const title = one(html, /<title>([^<]*)<\/title>/);
-  const desc = one(html, /<meta name="description" content="([^"]*)"/);
+  const decode = (t) => t?.replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  const title = decode(one(html, /<title>([^<]*)<\/title>/));
+  const desc = decode(one(html, /<meta name="description" content="([^"]*)"/));
   const canonical = one(html, /<link rel="canonical" href="([^"]*)"/);
   const h1s = all(html, /<h1[^>]*>([\s\S]*?)<\/h1>/g);
   const lang = one(html, /<html lang="([^"]+)"/);

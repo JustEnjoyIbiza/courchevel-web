@@ -63,7 +63,7 @@ Certaines des plus belles soirées de Courchevel se passent à la maison. Pour u
 
 Nous vérifions au préalable avec le propriétaire le règlement du chalet en matière de bruit et de nombre d’invités.
 
-## Organiser une soirée en ville
+## Organiser une soirée au village
 
 Une belle soirée à Courchevel suit souvent le même rythme : après-ski sur les pistes, un moment de repos au chalet, un dîner tardif au village, puis le club. Nous organisons chaque étape pour que les horaires s’enchaînent :
 

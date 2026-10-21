@@ -19,7 +19,7 @@ facts:
   - label: Tailored plan
     value: Within 24 hours of your request
 includes:
-  - Venue search - your chalet, a mountain restaurant or a private room
+  - Venue search – your chalet, a mountain restaurant or a private room
   - Private chefs, catering and sommeliers
   - DJs, musicians and entertainment
   - Florists, decoration and table design
@@ -29,9 +29,9 @@ faqs:
   - q: How far ahead should I plan New Year's Eve in Courchevel?
     a: As early as possible. Chefs, DJs, musicians and the most sought-after restaurant tables for 31 December are usually reserved months in advance. If your dates are fixed, we recommend sending your request by early autumn.
   - q: Can we get legally married in Courchevel?
-    a: A civil marriage in France takes place at the town hall of a commune where one of the couple, or a parent, is domiciled or has lived continuously for at least one month, and banns must be published first. Many couples marry at home and hold a symbolic ceremony and celebration in Courchevel, which we plan in full.
+    a: In France, a civil marriage takes place at the town hall of a commune where one partner, or a parent, is domiciled or has lived continuously for at least a month. Banns must be published first. Many couples marry at home and hold a symbolic ceremony and celebration in Courchevel, which we plan in full.
   - q: Can you help plan a marriage proposal in Courchevel?
-    a: Yes. We find a setting that suits you - a private dinner in the chalet, a table on a mountain terrace or a quiet viewpoint - and arrange flowers, music and a discreet photographer to capture the moment.
+    a: Yes. We find a setting that suits you – a private dinner in the chalet, a table on a mountain terrace or a quiet viewpoint – and arrange flowers, music and a discreet photographer to capture the moment.
   - q: Do you organise corporate events and incentive groups?
     a: Yes. We plan group stays, seminars and incentive trips across Courchevel and the Trois Vallées, from accommodation and transfers to ski days, activities and a closing dinner.
 related:
@@ -61,6 +61,8 @@ For weddings, it helps to know the French rules early. A civil ceremony takes pl
 
 The resort traditionally marks midnight with fireworks, and 31 December is the busiest night of the season. Private chefs, DJs, musicians and serving staff are reserved months ahead. If you are planning a dinner or party in the chalet, send us your request as soon as your dates are confirmed. We also arrange tables for New Year's Eve dinners in restaurants and hotels, and transport for the evening.
 
+For the whole festive fortnight, from the chalet to the last transfer, see our page on [Christmas and New Year’s Eve in Courchevel](/christmas-new-year-courchevel/).
+
 ## Corporate events and incentive groups
 
 Courchevel works well for leadership retreats, client hospitality and incentive trips. We plan:
@@ -69,6 +71,8 @@ Courchevel works well for leadership retreats, client hospitality and incentive 
 - **Transfers** from Geneva, Lyon or Chambéry, and helicopter arrivals for senior guests.
 - **Programmes** of ski lessons, mountain activities and team dinners.
 - **Meeting spaces** in a chalet or hotel, with the equipment you need.
+
+How a team stay comes together, from rooms to the closing dinner, is set out on our page on [corporate retreats in Courchevel](/corporate-retreats-courchevel/).
 
 ## The suppliers behind the evening
 

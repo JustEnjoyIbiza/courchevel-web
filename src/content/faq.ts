@@ -66,7 +66,7 @@ export const faq: Record<Locale, FaqGroup[]> = {
           a: 'As early as you can. The largest chalets in Courchevel 1850 are often reserved many months before the season, so send your request as soon as your festive dates are fixed.',
         },
         {
-          q: 'Which Courchevel village is best for a luxury chalet?',
+          q: 'Which Courchevel village suits a luxury chalet?',
           a: 'Courchevel 1850 has the highest concentration of luxury chalets and the palace hotels, close to the altiport and the busiest restaurants. Families looking for more space and calm often prefer 1650 Moriond, 1550 Village or Le Praz.',
         },
         {
@@ -96,14 +96,14 @@ export const faq: Record<Locale, FaqGroup[]> = {
         },
         {
           q: 'Which airport is closest to Courchevel?',
-          a: 'Chambéry is the closest international airport, at around an hour and a half by road. Geneva and Lyon have more flights and are both roughly two hours or a little more away, and many private jets use them.',
+          a: 'Chambéry is the closest international airport, at around an hour and a half by road. Geneva and Lyon have more flights and are both a little over two hours away by road, and many private jets use them.',
         },
         {
           q: 'Can you arrange a helicopter transfer from Geneva to Courchevel?',
-          a: 'Yes. We book the flight with licensed helicopter operators from Geneva, Lyon, Chambéry or Milan to Courchevel altiport, and arrange a car to meet you on landing. Flights depend on the weather, so we always keep a road option ready.',
+          a: 'Yes. We book the flight with licensed helicopter operators from Geneva, Lyon, Chambéry or Milan to Courchevel Altiport, and arrange a car to meet you on landing. Flights depend on the weather, so we always keep a road option ready.',
         },
         {
-          q: 'Can a private jet land at Courchevel altiport?',
+          q: 'Can a private jet land at Courchevel Altiport?',
           a: 'Generally not. The altiport has a short, steep runway that only small aircraft flown by specially qualified pilots can use, so most private jets land at Geneva, Chambéry or Lyon, then continue by helicopter or chauffeured car.',
         },
         {
@@ -150,7 +150,7 @@ export const faq: Record<Locale, FaqGroup[]> = {
       topic: 'Dining',
       items: [
         {
-          q: 'Can you get a table at the best-known restaurants in Courchevel 1850 in high season?',
+          q: 'Can you get a table at the most sought-after restaurants in Courchevel 1850 in high season?',
           a: 'Often, if you ask early. We request tables as soon as your dates are set, including for the busiest festive evenings, but no table can be promised until the restaurant confirms it. If your first choice is full, we suggest alternatives for the same evening.',
         },
         {
@@ -163,7 +163,7 @@ export const faq: Record<Locale, FaqGroup[]> = {
         },
         {
           q: 'Can you cater for allergies and special diets?',
-          a: 'Yes. We pass allergies and diets to every chef and restaurant involved, and confirm in writing what they can accommodate. Kosher, halal, vegan and medical diets are best mentioned at the time of your request.',
+          a: 'Yes. We pass allergies and diets to every chef and restaurant involved, and confirm in writing what they can accommodate. Kosher, halal, vegan and medical diets are worth mentioning when you first send your request.',
         },
       ],
     },
@@ -176,7 +176,7 @@ export const faq: Record<Locale, FaqGroup[]> = {
         },
         {
           q: 'From what age can children take ski lessons in Courchevel?',
-          a: 'Ski schools in Courchevel usually take children from around three years old, in small groups or in private lessons. For younger or nervous children, a private instructor at a gentle pace often works best.',
+          a: 'Ski schools in Courchevel usually take children from around three years old, in small groups or in private lessons. For younger or nervous children, a private instructor at a gentle pace often works better.',
         },
         {
           q: 'Can you arrange evening babysitting?',
@@ -215,7 +215,7 @@ export const faq: Record<Locale, FaqGroup[]> = {
         {
           home: true,
           q: 'When is the 2026/27 ski season in Courchevel?',
-          a: 'The resort opens on 4 December 2026 and closes on 18 April 2027. Christmas, New Year and February half-term are the busiest weeks, so chalets for those dates are best booked early.',
+          a: 'The resort opens on 4 December 2026 and closes on 18 April 2027. Christmas, New Year and February half-term are the busiest weeks, so chalets for those dates should be booked early.',
         },
         {
           q: 'When is the quietest time to visit Courchevel?',
@@ -245,7 +245,7 @@ export const faq: Record<Locale, FaqGroup[]> = {
         {
           home: true,
           q: 'Sous quel délai répondez-vous ?',
-          a: `${business.replyPromise.fr}, par WhatsApp, téléphone ou e-mail selon votre préférence. Pendant la saison d’hiver, nous sommes disponibles 24h/24 pour nos clients sur place.`,
+          a: `${business.replyPromise.fr}, par WhatsApp, téléphone ou e-mail selon votre préférence. Pendant la saison d’hiver, nous sommes disponibles 24 h/24 pour nos clients sur place.`,
         },
         {
           home: true,
@@ -312,11 +312,11 @@ export const faq: Record<Locale, FaqGroup[]> = {
         },
         {
           q: 'Un jet privé peut-il atterrir à l’altiport de Courchevel ?',
-          a: 'En général, non. L’altiport dispose d’une piste courte et très pentue, réservée aux petits avions pilotés par des pilotes spécialement qualifiés. La plupart des jets privés se posent donc à Genève, Chambéry ou Lyon, puis le trajet se poursuit en hélicoptère ou en voiture avec chauffeur.',
+          a: 'En général, non. L’altiport dispose d’une piste courte et très pentue, réservée aux petits avions et à des pilotes spécialement qualifiés. La plupart des jets privés se posent donc à Genève, Chambéry ou Lyon, puis le trajet se poursuit en hélicoptère ou en voiture avec chauffeur.',
         },
         {
           q: 'Faut-il des chaînes ou des pneus hiver pour monter à Courchevel ?',
-          a: 'Oui. Du 1er novembre au 31 mars, les véhicules circulant dans les zones de montagne de Savoie doivent être équipés de pneus hiver portant le marquage 3PMSF ou détenir des chaînes ou chaussettes à neige. Par fortes chutes de neige, la signalisation peut aussi imposer les chaînes : emportez-les quels que soient vos pneus.',
+          a: 'Oui. Du 1er novembre au 31 mars, les véhicules circulant dans les zones de montagne de Savoie doivent être équipés de pneus hiver portant le marquage 3PMSF ou transporter des chaînes ou des chaussettes à neige. Par fortes chutes de neige, la signalisation peut aussi imposer les chaînes : emportez-les quels que soient vos pneus.',
         },
         {
           q: 'Peut-on venir à Courchevel en train ?',
@@ -350,7 +350,7 @@ export const faq: Record<Locale, FaqGroup[]> = {
         },
         {
           q: 'Que proposer aux personnes qui ne skient pas ?',
-          a: 'Beaucoup de choses : balades en raquettes, chiens de traîneau, journées spa, survols en hélicoptère, shopping et longs déjeuners dans des restaurants d’altitude accessibles en télécabine.',
+          a: 'Le choix ne manque pas : balades en raquettes, chiens de traîneau, journées spa, survols en hélicoptère, shopping et longs déjeuners dans des restaurants d’altitude accessibles en télécabine.',
         },
       ],
     },
@@ -367,7 +367,7 @@ export const faq: Record<Locale, FaqGroup[]> = {
         },
         {
           q: 'Pouvez-vous organiser un chef privé dans notre chalet ?',
-          a: 'Oui. Nous organisons des chefs privés pour un dîner ou pour tout le séjour, y compris des chefs passés par des maisons étoilées, et un sommelier si vous le souhaitez. Indiquez-nous vos goûts et allergies : le chef vous soumet ses menus avant votre arrivée.',
+          a: 'Oui. Nous organisons des chefs privés pour un dîner ou pour tout le séjour, y compris, sur demande et selon disponibilité, des chefs issus de maisons étoilées, et un sommelier si vous le souhaitez. Indiquez-nous vos goûts et allergies : le chef vous soumet ses menus avant votre arrivée.',
         },
         {
           q: 'Pouvez-vous tenir compte des allergies et régimes particuliers ?',
@@ -401,7 +401,7 @@ export const faq: Record<Locale, FaqGroup[]> = {
       items: [
         {
           q: 'Pouvez-vous réserver une table en club pour le réveillon du Nouvel An à Courchevel ?',
-          a: 'Nous demandons des tables dans les clubs et lieux d’après-ski de votre choix, sous réserve de disponibilité, et le 31 décembre est le premier soir complet. Envoyez votre demande tôt avec le nombre d’invités : nous confirmons dès que l’établissement le fait.',
+          a: 'Nous demandons des tables dans les clubs et lieux d’après-ski de votre choix, sous réserve de disponibilité, et le 31 décembre est le premier soir à afficher complet. Envoyez votre demande tôt avec le nombre d’invités : nous confirmons dès que l’établissement le fait.',
         },
         {
           q: 'Y a-t-il un code vestimentaire dans les clubs de Courchevel ?',
@@ -418,11 +418,11 @@ export const faq: Record<Locale, FaqGroup[]> = {
       ],
     },
     {
-      topic: 'Saison et infos pratiques',
+      topic: 'Saison et informations pratiques',
       items: [
         {
           home: true,
-          q: 'Quand a lieu la saison de ski 2026/27 à Courchevel ?',
+          q: 'Quand a lieu la saison de ski 2026–2027 à Courchevel ?',
           a: 'La station ouvre le 4 décembre 2026 et ferme le 18 avril 2027. Noël, le Nouvel An et les vacances de février sont les semaines les plus demandées : mieux vaut réserver les chalets tôt pour ces dates.',
         },
         {

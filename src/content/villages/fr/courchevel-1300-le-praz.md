@@ -69,4 +69,4 @@ Pour une soirée plus habillée, les tables étoilées de 1850 sont à six minut
 
 Au Praz, nos hôtes recherchent souvent une base calme où tout est pris en charge. Nous trouvons un [chalet](/fr/services/chalets/) adapté à votre groupe, organisons les [transferts](/fr/services/transfers/) depuis les aéroports ou l’altiport, et préparons [forfaits, moniteurs et matériel](/fr/services/ski/). Nous organisons aussi des [expériences](/fr/services/experiences/) comme les balades en raquettes et la luge, des [soins au chalet](/fr/services/wellness/) et des tables à 1850 lorsque vous souhaitez sortir.
 
-Nous répondons en 15 minutes entre 8 h et 22 h, envoyons une proposition sous 24 heures et sommes joignables 24 h/24 et 7 j/7 pendant la saison d’hiver. Indiquez-nous vos dates et vos envies : nous préparons le séjour autour.
+Une première réponse vous parvient sous 15 minutes entre 8 h et 22 h, puis une proposition sous 24 heures ; pendant la saison d’hiver, nous restons joignables 24 h/24 et 7 j/7. Indiquez-nous vos dates et vos envies : nous préparons le séjour autour.

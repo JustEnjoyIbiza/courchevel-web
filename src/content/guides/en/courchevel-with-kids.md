@@ -3,7 +3,7 @@ title: Is Courchevel good for families with young children?
 shortTitle: Courchevel with kids
 metaTitle: "Courchevel with Kids: Ski Schools, Childcare, Tips | CLC"
 description: Ski school ages, day care, nannies, activities for non-skiing children and which Courchevel village suits your family, from babies to teenagers.
-answer: Yes. Courchevel holds the national Famille Plus label, ski school starts from 18 months in nursery groups and from 3 years in the snow gardens, and children under 5 ski on a free lift pass. For babies and toddlers there are municipal day-care centres and private nannies, and the villages of 1650 Moriond, 1550 Village, Le Praz and La Tania give families calmer slopes and more space.
+answer: Yes. Courchevel holds the national Famille Plus label, and ski school starts from 18 months in nursery groups and from 3 years in the snow gardens. Children under 5 ski on a free lift pass. For babies and toddlers there are municipal day-care centres and private nannies, and the villages of 1650 Moriond, 1550 Village, Le Praz and La Tania give families calmer slopes and more space.
 updated: 2026-10-22
 image: gondola
 imageAlt: Gondola cabins above snowy slopes at dusk
@@ -26,14 +26,14 @@ includes:
   - Child seats in every transfer
 faqs:
   - q: From what age can children start ski school in Courchevel?
-    a: ESF Courchevel 1850 takes children from 18 months in its nursery groups, and from 3 years in its children's village, a protected area where the youngest learn through games. In 1650 Moriond, the ESF Mini-Piou course for 2 to 3 year olds runs outside French school holidays.
+    a: ESF Courchevel 1850 takes children from 18 months in its nursery groups, and from 3 years in its children's village, a protected area where the youngest learn through games. In 1650 Moriond, the ESF Mini-Piou course for 2- to 3-year-olds runs outside French school holidays.
   - q: Do young children need a lift pass in Courchevel?
     a: Children under 5 ski on a free pass, which you collect at the lift ticket office with an identity document showing their date of birth. Older children need a pass at the child rate; we arrange the passes for your dates.
   - q: Is a nanny or ski school the better choice?
     a: Many families use both. Ski school is a good way for children over 3 to learn with others their age, while a nanny looks after babies, collects children from lessons and covers the afternoons and evenings so parents can ski or go out to dinner.
   - q: What can children do in Courchevel if they do not ski?
     a: Sledging on the 2 km run from 1850 to Courchevel Village or the children's sledging areas, swimming at Aquamotion in Courchevel 1550, skating at the Forum ice rink in 1850, pony rides and dog sledding are all on the resort's family programme.
-  - q: Which Courchevel village is best for a family ski holiday?
+  - q: Which Courchevel village suits a family ski holiday?
     a: Courchevel 1850 has the most hotels, restaurants and services, while 1650 Moriond, 1550 Village, Le Praz and La Tania are quieter, often with more spacious chalets and easy access to gentle slopes. We help you choose based on the ages of your children and how much you want to be in the centre.
 related:
   - /services/childcare/
@@ -43,7 +43,7 @@ related:
 
 ## Ski school by age
 
-Courchevel has several ski schools, and the École du Ski Français (ESF) has schools in several of its villages. At ESF Courchevel 1850, children are grouped by age:
+Courchevel has several ski schools, and the École du Ski Français (ESF) runs schools in a number of its villages. At ESF Courchevel 1850, children are grouped by age:
 
 | Age | What is offered |
 | --- | --- |
@@ -52,7 +52,7 @@ Courchevel has several ski schools, and the École du Ski Français (ESF) has sc
 | 6 to 12 years | Group lessons by level |
 | 13 to 17 years | Teen groups |
 
-In 1650 Moriond, the ESF runs a Club Piou-Piou for children aged 3 to 5, and a Mini-Piou course for 2 to 3 year olds outside French school holidays. Group sizes, schedules and minimum numbers change from season to season, so we confirm the details for your dates when we book.
+In 1650 Moriond, the ESF runs a Club Piou-Piou for children aged 3 to 5, and a Mini-Piou course for 2- to 3-year-olds outside French school holidays. Group sizes, schedules and minimum numbers change from season to season, so we confirm the details for your dates when we book.
 
 For a shy child, a first week on skis, or a family that wants to ski together, a private instructor is often the gentler choice. Private lessons can be booked by the hour or for the day, and the same instructor can stay with your children for the whole week. We book group lessons and private instructors through our [ski services](/services/ski/).
 
@@ -60,7 +60,7 @@ For a shy child, a first week on skis, or a family that wants to ski together, a
 
 Children under 5 ski on a free lift pass. It is collected at the lift ticket office on presentation of an identity document showing the child's date of birth, so bring a passport or identity card for each young child. Children in the youngest ski school groups often stay within the snow garden and do not need a pass at all, but the school will confirm this when you book.
 
-From age 5, children need a pass at the child rate. We arrange passes for the whole family before you arrive, so nobody queues on the first morning; we quote them for your dates.
+From age 5, children need a pass at the child rate. We arrange passes for the whole family before you arrive, so nobody queues on the first morning, and include them in your personal quote.
 
 ## Childcare: day care and nannies
 
@@ -106,4 +106,4 @@ Afternoons are when non-skiing activities fit most easily: a session at the pool
 - **Ask for baby equipment in advance.** We place cots, high chairs, baby baths, stair gates and car seats in the chalet before you arrive.
 - **Helmets** are strongly recommended for every child on skis or sledges.
 
-We reply within 15 minutes between 8:00 and 22:00, and during the winter season we are available 24/7. Tell us the ages of your children and your dates, and we send a proposal within 24 hours.
+Tell us the ages of your children and your dates, and we send a proposal within 24 hours. Between 8:00 and 22:00 we reply within 15 minutes, and in the winter season we are on call 24/7.

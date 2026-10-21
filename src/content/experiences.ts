@@ -27,7 +27,7 @@ export const experiences: Experience[] = [
     detail: { en: '3 to 5 nights in a chalet', fr: '3 à 5 nuits en chalet' },
     text: {
       en: 'A chalet stay with arrival transfers, ski planning and a concierge on call throughout.',
-      fr: 'Un séjour en chalet avec transferts, planification du ski et un concierge joignable à tout moment.',
+      fr: 'Un séjour en chalet avec transferts, journées de ski organisées et un concierge joignable à tout moment.',
     },
     includes: {
       en: [
@@ -40,7 +40,7 @@ export const experiences: Experience[] = [
       fr: [
         'Un chalet ou un palace choisi pour votre groupe et vos dates',
         'Transferts aller et retour en hélicoptère ou en voiture avec chauffeur',
-        'Forfaits, essayage du matériel et moniteur privé',
+        'Forfaits, réglage du matériel et moniteur privé',
         'Réfrigérateur, cave et chambres préparés avant votre arrivée',
         'Un concierge joignable pendant tout le séjour',
       ],
@@ -55,7 +55,7 @@ export const experiences: Experience[] = [
     detail: { en: 'Après-ski and VIP tables', fr: 'Après-ski et tables VIP' },
     text: {
       en: 'Après-ski access, champagne and VIP table reservations, booked ahead of your evenings.',
-      fr: 'Accès après-ski, champagne et réservation de tables VIP, organisés avant vos soirées.',
+      fr: 'Tables d’après-ski, champagne et demandes de tables VIP, préparés avant vos soirées.',
     },
     includes: {
       en: [
@@ -92,18 +92,18 @@ export const experiences: Experience[] = [
       ],
       fr: [
         'Un moniteur privé ou un guide de haute montagne diplômé adapté à votre niveau',
-        'Une journée pensée dans les Trois Vallées selon la neige et la météo',
+        'Une journée dans les Trois Vallées, pensée selon la neige et la météo',
         'Une table réservée dans un restaurant d’altitude sur votre itinéraire',
         'Journées d’héliski en Italie ou en Suisse sur demande',
       ],
     },
     services: ['/services/ski/', '/services/experiences/', '/services/private-chef/'],
     image: 'gondola',
-    imageAlt: { en: 'Courchevel gondola cabin against the evening sky', fr: 'Cabine de télécabine de Courchevel dans le ciel du soir' },
+    imageAlt: { en: 'Courchevel gondola cabin against the evening sky', fr: 'Télécabine de Courchevel sur fond de ciel du soir' },
   },
   {
     id: 'family-week',
-    name: { en: 'Family Week', fr: 'Family Week' },
+    name: { en: 'Family Week', fr: 'Semaine en famille' },
     detail: { en: 'A week with children', fr: 'Une semaine avec des enfants' },
     text: {
       en: 'A family chalet with ski lessons for every age, a nanny for the evenings and a house ready for small children.',
@@ -131,7 +131,7 @@ export const experiences: Experience[] = [
   },
   {
     id: 'christmas-new-year',
-    name: { en: 'Christmas and New Year', fr: 'Christmas and New Year' },
+    name: { en: 'Christmas and New Year', fr: 'Noël et Nouvel An' },
     detail: { en: 'The festive fortnight', fr: 'Les deux semaines de fêtes' },
     text: {
       en: 'A chalet decorated before you arrive, Christmas dinner by a private chef and New Year’s Eve planned well in advance.',
@@ -157,11 +157,11 @@ export const experiences: Experience[] = [
   },
   {
     id: 'corporate-retreat',
-    name: { en: 'Corporate Retreat', fr: 'Corporate Retreat' },
+    name: { en: 'Corporate Retreat', fr: 'Séminaire en montagne' },
     detail: { en: 'Teams and leadership groups', fr: 'Équipes et comités de direction' },
     text: {
       en: 'A chalet or hotel for your team, with space to meet, time on the mountain and dinners planned around the programme.',
-      fr: 'Un chalet ou un hôtel pour votre équipe, avec un espace de travail, du temps en montagne et des dîners pensés autour du programme.',
+      fr: 'Un chalet ou un hôtel pour votre équipe, avec un espace de réunion, du temps en montagne et des dîners pensés autour du programme.',
     },
     includes: {
       en: [

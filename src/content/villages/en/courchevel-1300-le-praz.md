@@ -47,9 +47,9 @@ It suits families, couples and groups who want an authentic Savoyard setting and
 
 ## Getting there
 
-**By road.** Le Praz is on the road up to Courchevel, below the higher villages. Guide times to the resort are about 150 km and 2 h 15 from Geneva airport, about 187 km and 2 h to 2 h 15 from Lyon Saint-Exupéry, and about 110 km and 1 h 20 from Chambéry. Moûtiers, the nearest railway station, is around 30 minutes away. Snowy days and Saturday changeovers add time, and we plan the journey around them.
+**By road.** Le Praz is on the road up to Courchevel, below the higher villages. As a guide, the resort is about 150 km from Geneva airport (2 h 15), 187 km from Lyon Saint-Exupéry (2 h to 2 h 15) and 110 km from Chambéry (1 h 20). Moûtiers, the nearest railway station, is around 30 minutes away. Snowy days and Saturday changeovers add time, and we plan the journey around them.
 
-**By air.** The Courchevel altiport, above 1850, takes helicopters and small aircraft in daylight and suitable weather. From there a car brings you down to Le Praz.
+**By air.** Courchevel Altiport, above 1850, takes helicopters and small aircraft in daylight and suitable weather. From there a car brings you down to Le Praz.
 
 **Between villages.** The Praz gondola starts at the Alpinium, a building with a large car park in the village, and climbs to the centre of 1850 in about six minutes. Free shuttles run between all the villages, and La Tania is a short drive away along the road or across the slopes.
 
@@ -61,7 +61,7 @@ The village is also home to the Tremplin du Praz, the ski jumping complex built 
 
 ## Where to eat
 
-Le Praz has a handful of traditional restaurants. Le Bistrot du Praz, near the lake, is a long-standing address for generous, traditional cooking, such as cuts of meat to share, in a warm setting with a terrace that overlooks the lake in fine weather. It is popular in high season, so we book ahead.
+Le Praz has a handful of traditional restaurants. Le Bistrot du Praz, near the lake, is a long-standing address for generous traditional cooking and cuts of meat to share, with a terrace over the lake in fine weather. It is popular in high season, so we book ahead.
 
 For a more formal evening, the Michelin-starred restaurants of 1850 are about six minutes away by gondola, and La Tania, with its own Michelin-starred restaurant, is a short drive. Many guests in Le Praz also enjoy a quiet dinner at the chalet with a [private chef](/services/private-chef/).
 
@@ -69,4 +69,4 @@ For a more formal evening, the Michelin-starred restaurants of 1850 are about si
 
 In Le Praz, guests often want a calm base with everything handled. We find a [chalet](/services/chalets/) that suits your group, organise [transfers](/services/transfers/) from the airports or the altiport, and prepare [ski passes, instructors and equipment](/services/ski/). We also arrange [experiences](/services/experiences/) such as snowshoe walks and sledging, [in-chalet spa treatments](/services/wellness/) and tables in 1850 when you want an evening out.
 
-We reply within 15 minutes between 8:00 and 22:00, send a proposal within 24 hours, and are available 24/7 during the winter season. Tell us your dates and what you have in mind, and we will prepare the stay around it.
+Tell us your dates and what you have in mind. You will hear from us within 15 minutes between 8:00 and 22:00, with a proposal within 24 hours, and we are on call 24/7 throughout the winter season.

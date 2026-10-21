@@ -4,7 +4,7 @@
  * Order follows the plan's page rules: answer first, key facts, what is
  * included, details, FAQ, 3 related pages, last updated, Plan my stay.
  */
-import { Picture } from 'astro:assets';
+import { Picture, getImage } from 'astro:assets';
 import { render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from './Breadcrumbs.astro';
@@ -50,13 +50,15 @@ const related = await Promise.all(
 );
 
 
+const image = d.image ? photos[d.image] : undefined;
+const schemaImage = image ? (await getImage({ src: image, width: 1200, format: 'jpeg' })).src : undefined;
+
 const schema: object[] = [breadcrumbSchema(crumbs.map((c) => ({ name: c.name, url: c.href })))];
-if (collection === 'services') schema.push(serviceSchema({ name: d.title, description: d.description, url, locale }));
-if (collection === 'guides') schema.push(articleSchema({ headline: d.title, description: d.description, url, updated: d.updated, locale }));
+if (collection === 'services') schema.push(serviceSchema({ name: d.title, description: d.description, url, locale, image: schemaImage }));
+if (collection === 'guides') schema.push(articleSchema({ headline: d.title, description: d.description, url, updated: d.updated, locale, image: schemaImage }));
 if (slug === 'about') schema.push(localBusinessSchema(locale));
 if (d.faqs.length) schema.push(faqSchema(d.faqs));
 
-const image = d.image ? photos[d.image] : undefined;
 const enquire = localize('/enquire/', locale) + (collection === 'services' ? `?service=${slug}` : '');
 ---
 

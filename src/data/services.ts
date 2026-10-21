@@ -48,8 +48,8 @@ export const services: Service[] = [
     slug: 'private-chef',
     name: { en: 'Dining and private chefs', fr: 'Gastronomie et chefs privés' },
     summary: {
-      en: 'Michelin-starred and private chefs in your chalet, sommeliers and priority restaurant tables.',
-      fr: 'Chefs étoilés et chefs privés dans votre chalet, sommeliers et tables prioritaires.',
+      en: 'Michelin-starred and private chefs in your chalet, sommeliers and restaurant reservations.',
+      fr: 'Chefs étoilés et chefs privés dans votre chalet, sommeliers et réservations de restaurants.',
     },
   },
   {
@@ -65,15 +65,15 @@ export const services: Service[] = [
     name: { en: 'Household staff', fr: 'Personnel de maison' },
     summary: {
       en: 'Butlers, chalet managers, daily housekeeping, serving staff and garment care.',
-      fr: 'Majordomes, chalet managers, ménage quotidien, service à table et entretien du linge.',
+      fr: 'Majordomes, intendants, ménage quotidien, service à table et entretien du linge.',
     },
   },
   {
     slug: 'childcare',
     name: { en: 'Family and childcare', fr: 'Famille et enfants' },
     summary: {
-      en: 'Certified multilingual nannies, evening babysitting, kids’ ski lessons and baby equipment.',
-      fr: 'Nounous diplômées multilingues, baby-sitting le soir, cours de ski enfants et matériel bébé.',
+      en: 'Vetted nannies, evening babysitting, children’s ski lessons and baby equipment.',
+      fr: 'Nounous sélectionnées, baby-sitting le soir, cours de ski enfants et matériel bébé.',
     },
   },
   {
@@ -89,15 +89,15 @@ export const services: Service[] = [
     name: { en: 'Events and celebrations', fr: 'Événements et célébrations' },
     summary: {
       en: 'Birthdays, proposals, weddings, New Year’s Eve and corporate groups.',
-      fr: 'Anniversaires, demandes en mariage, mariages, Réveillon et groupes d’entreprise.',
+      fr: 'Anniversaires, demandes en mariage, mariages, réveillon du Nouvel An et groupes d’entreprise.',
     },
   },
   {
     slug: 'lifestyle',
-    name: { en: 'Lifestyle, shopping and security', fr: 'Lifestyle, shopping et sécurité' },
+    name: { en: 'Lifestyle, shopping and security', fr: 'Art de vivre, shopping et sécurité' },
     summary: {
       en: 'Personal shopping, gifts and errands, event tickets and close protection.',
-      fr: 'Personal shopping, cadeaux et courses, billetterie et protection rapprochée.',
+      fr: 'Shopping privé, cadeaux et courses, billetterie et protection rapprochée.',
     },
   },
   {

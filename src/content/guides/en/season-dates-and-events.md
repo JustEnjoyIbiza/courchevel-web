@@ -14,7 +14,7 @@ facts:
     value: 19 December 2026 to 4 January 2027, all zones
   - label: French February holidays
     value: Zone C (incl. Paris) 6 to 22 February; Zone A (incl. Lyon, Grenoble) 13 February to 1 March; Zone B 20 February to 8 March 2027
-  - label: UK February half term
+  - label: UK February half-term
     value: Week of 15 February 2027 in most English schools (check your school)
   - label: Women's Alpine Ski World Cup
     value: Night slalom, 22 December 2026, Émile-Allais stadium
@@ -30,7 +30,7 @@ faqs:
   - q: When does Courchevel open and close for the 2026/27 winter?
     a: The resort announces a season from 4 December 2026 to 18 April 2027. Opening and closing depend on snow conditions, so the tourist office and the lift company confirm the final dates closer to the time.
   - q: What are the busiest weeks in Courchevel?
-    a: Christmas and New Year, from 19 December 2026 to 4 January 2027, are the busiest weeks of the season. The French February holidays, from 6 February to 8 March 2027 across the three zones, and the UK half term in mid-February are also very busy.
+    a: Christmas and New Year, from 19 December 2026 to 4 January 2027, are the busiest weeks of the season. The French February holidays, from 6 February to 8 March 2027 across the three zones, and the UK half-term in mid-February are also very busy.
   - q: When is the quietest time to ski in Courchevel?
     a: The first two weeks of the season in December, most of January once the New Year guests have left, and the second half of March are usually the calmest. Snow is often very good in January, and March brings longer, sunnier days.
   - q: Are there events in Courchevel during the winter?
@@ -52,7 +52,7 @@ Courchevel's ski area opens on **4 December 2026** and closes on **18 April 2027
 | Opening weeks | 4 to 18 December 2026 | Quiet slopes, easier bookings |
 | Christmas and New Year | 19 December 2026 to 4 January 2027 | The busiest weeks of the season |
 | January | 4 January to 5 February 2027 | Calm and cold, often very good snow |
-| February holidays | 6 February to 8 March 2027 | Very busy, French zones in turn and UK half term |
+| February holidays | 6 February to 8 March 2027 | Very busy, French zones in turn and UK half-term |
 | March | 8 March to early April 2027 | Calmer again, longer and sunnier days |
 | Spring and Easter | Easter Sunday 28 March; French spring holidays from 3 April | Busier at weekends and over Easter, relaxed atmosphere |
 | Closing | 18 April 2027 | Last day of lifts |
@@ -67,14 +67,16 @@ Courchevel's ski area opens on **4 December 2026** and closes on **18 April 2027
 - **Zone A** (including Lyon, Grenoble, Bordeaux, Dijon): 13 February to 1 March 2027.
 - **Zone B** (including Marseille, Lille, Nantes, Strasbourg): 20 February to 8 March 2027.
 
-The UK February half term falls in the week of 15 February 2027 for most schools in England, overlapping with zones C and A; dates vary by school and by nation, so check yours. The weekend of 13 and 14 February, when zone C is still on holiday, zone A begins and many British families arrive, is usually one of the busiest moments of the winter.
+The UK February half-term falls in the week of 15 February 2027 for most schools in England, overlapping with zones C and A; dates vary by school and by nation, so check yours. The weekend of 13 and 14 February, when zone C is still on holiday, zone A begins and many British families arrive, is usually one of the busiest moments of the winter.
 
 If your dates are fixed on these weeks, we recommend sending your request as soon as possible, both for the chalet and for ski school places for young children.
+
+For the festive fortnight in detail, see [Christmas and New Year’s Eve in Courchevel](/christmas-new-year-courchevel/).
 
 ## The quieter weeks
 
 - **Early December:** from opening to mid-December, the slopes and restaurants are calm and chalets are easier to find. Some establishments open a little later, so we check what is open for your dates.
-- **January:** after 4 January the resort becomes noticeably quieter. Days are short and cold, and the snow is often very good. It is the moment for confident skiers and for couples.
+- **January:** after 4 January the resort becomes noticeably quieter. Days are short and cold, and the snow is often very good. It is a good moment for confident skiers and couples.
 - **March:** once zone B returns to school on 8 March, the resort calms again until the spring holidays. Sunshine, longer days and lunch on a terrace make March a pleasant time to come.
 - **April:** Easter Sunday is 28 March 2027, and the French spring holidays begin on 3 April for zone C, 10 April for zone A and 17 April for zone B. The final weeks are relaxed, with spring snow in the mornings.
 
@@ -106,4 +108,4 @@ Some highlights return every winter, with dates announced by the tourist office 
 
 The week you choose shapes everything else: which chalets are available, how far ahead you need to book a table, and how busy the slopes and the roads will be. If you are flexible, tell us and we suggest the weeks that fit what you want, whether that is the energy of New Year or the calm of January. For a private celebration, from a Christmas dinner in the chalet to a New Year party, see our [events service](/services/events/), and for chalets see our [chalets and palace hotels](/services/chalets/).
 
-We reply within 15 minutes between 8:00 and 22:00, and during the winter season we are available 24/7. Send us your dates and we send a proposal within 24 hours.
+Send us your dates and you will receive a proposal within 24 hours. We reply within 15 minutes from 8:00 to 22:00, and in the winter season we are available 24/7.

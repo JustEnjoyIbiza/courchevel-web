@@ -73,4 +73,4 @@ Beaucoup de familles préfèrent dîner au chalet certains soirs. Un [chef priv�
 
 À Moriond, notre rôle consiste souvent à simplifier les vacances en famille. Nous trouvons un [chalet](/fr/services/chalets/) offrant l’espace et l’accès aux pistes qui vous conviennent, organisons des [transferts](/fr/services/transfers/) avec sièges enfants, et réservons [cours de ski et matériel](/fr/services/ski/) pour que les chaussures soient ajustées au chalet avant le premier matin. Nous organisons aussi [nounous et garde d’enfants](/fr/services/childcare/), [massages au chalet](/fr/services/wellness/) et tables à 1850 lorsque vous souhaitez sortir.
 
-Nous répondons en 15 minutes entre 8 h et 22 h, envoyons une proposition sous 24 heures et sommes joignables 24 h/24 et 7 j/7 pendant la saison d’hiver. Indiquez-nous vos dates et l’âge des enfants : nous préparons le reste.
+Comptez 15 minutes pour une première réponse, entre 8 h et 22 h, et 24 heures pour une proposition complète ; en saison, nous sommes joignables à toute heure. Indiquez-nous vos dates et l’âge des enfants : nous préparons le reste.

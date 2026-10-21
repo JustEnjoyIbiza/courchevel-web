@@ -16,8 +16,8 @@ export const business = {
 
   /** The one 50-word description used on Google, Bing, Apple, directories and the site. TODO: approve final wording. */
   description: {
-    en: 'Courchevel Luxury Concierge is a private concierge service in Courchevel, French Alps. We arrange chalets and palace hotels, helicopter and chauffeur transfers, private ski instructors, private chefs, household staff, childcare and events across Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz and La Tania, 24/7 in winter.',
-    fr: 'Courchevel Luxury Concierge est une conciergerie privée à Courchevel, dans les Alpes françaises. Nous organisons chalets et palaces, transferts en hélicoptère et avec chauffeur, moniteurs de ski privés, chefs à domicile, personnel de maison, garde d’enfants et événements à Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz et La Tania, 24h/24 en hiver.',
+    en: 'Courchevel Luxury Concierge is a luxury concierge in Courchevel, French Alps. We arrange chalets and palace hotels, helicopter and chauffeur transfers, private ski instructors, private chefs, household staff, childcare and events across Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz and La Tania, 24/7 in winter.',
+    fr: 'Courchevel Luxury Concierge est une conciergerie de luxe à Courchevel, dans les Alpes françaises. Nous organisons chalets et palaces, transferts en hélicoptère et avec chauffeur, moniteurs de ski privés, chefs à domicile, personnel de maison, garde d’enfants et événements à Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz et La Tania, 24 h/24 en hiver.',
   },
 
   phone: {
@@ -72,16 +72,34 @@ export const business = {
   /** Reply promise shown on the site. TODO: confirm hours and who answers. */
   replyPromise: {
     en: 'We reply within 15 minutes, 8:00 to 22:00',
-    fr: 'Réponse sous 15 minutes, de 8h à 22h',
+    fr: 'Réponse sous 15 minutes, de 8 h à 22 h',
   },
 
   /** Winter season 2026/27 (courchevel.com). */
   season: { opens: '2026-12-04', closes: '2027-04-18' },
 
-  /** Official profiles, used for schema sameAs. Add each one as it goes live. */
+  /**
+   * Official profiles. Keep name, phone and description identical on every one
+   * (see docs/platform-profiles-kit.md). Each live profile goes into `sameAs`.
+   */
+  profiles: {
+    google: {
+      /** Google Business Profile (found 22 October 2026: 5.0 from 14 reviews). */
+      placeId: 'ChIJPRJmAL2Kv4ARuPyRohUWW9M',
+      cid: '15229790847061064888',
+      mapsUrl: 'https://maps.google.com/?cid=15229790847061064888',
+      reviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJPRJmAL2Kv4ARuPyRohUWW9M',
+    },
+    instagram: {
+      handle: 'courchevelluxuryconcierge',
+      url: 'https://www.instagram.com/courchevelluxuryconcierge/',
+    },
+  },
+
+  /** Official profiles for schema sameAs. TODO as they go live: Bing Places, Apple Business Connect, Tripadvisor, LinkedIn, Facebook, Trustpilot. */
   sameAs: [
     'https://www.instagram.com/courchevelluxuryconcierge/',
-    // TODO: Google Business Profile, Bing Places, Apple Business Connect, Tripadvisor, LinkedIn, Facebook
+    'https://maps.google.com/?cid=15229790847061064888',
   ],
 
   /** Required for the mentions légales page. */

@@ -1,7 +1,7 @@
 ---
-title: How do you hire a private chef for your chalet in Courchevel?
+title: "Private chefs for your Courchevel chalet"
 shortTitle: Dining and private chefs
-metaTitle: Private Chefs & Restaurant Bookings in Courchevel | CLC
+metaTitle: "Private Chef in Courchevel: Chalet Chefs & Dining | CLC"
 description: Private and Michelin-starred chefs in your Courchevel chalet, sommeliers, wine and champagne delivery, grocery stocking and restaurant reservations.
 answer: Tell us your dates, the number of guests and how you like to eat, and we propose a private chef for your chalet, for a single dinner or the whole stay. We also arrange breakfast, a sommelier, wine and grocery deliveries and restaurant tables, with a personal proposal within 24 hours.
 updated: 2026-10-22
@@ -51,7 +51,7 @@ Before the first meal the chef receives your brief:
 - **Diet:** allergies, intolerances, religious requirements and dislikes.
 - **Style:** Savoyard classics, light Mediterranean, Japanese, or a tasting menu for a special evening.
 
-Michelin-starred chefs are available on request, subject to availability, for a birthday, an anniversary or New Year's Eve.
+Michelin-starred chefs can be requested for a birthday, an anniversary or New Year's Eve, subject to availability.
 
 The chef shops locally each day, so the menu follows what is fresh and seasonal in Savoie, from Beaufort and Reblochon to lake fish and mountain charcuterie. If a guest wants something specific, such as a favourite dish from home or caviar for an evening, we source it in advance. Children's meals can be served earlier, separately from the adults' dinner, and the chef clears the kitchen before leaving.
 
@@ -72,4 +72,4 @@ If you would like to try restaurants elsewhere in the Trois Vallées, we book ta
 
 ## How to book
 
-Send us your dates, the number of guests and how many meals you would like in the chalet. If you are not sure yet, we can start with a few dinners and add more once you have settled in. We reply within 15 minutes between 8:00 and 22:00, send a tailored proposal with sample menus within 24 hours and remain available 24/7 during the winter season to add a dinner, a guest or a bottle.
+Send us your dates, the number of guests and how many meals you would like in the chalet. If you are not sure yet, we can start with a few dinners and add more once you have settled in. You hear from us within 15 minutes between 8:00 and 22:00, with a tailored proposal and sample menus within 24 hours. In season we are on call 24/7 to add a dinner, a guest or a bottle.

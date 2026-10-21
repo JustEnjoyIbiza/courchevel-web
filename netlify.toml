@@ -54,3 +54,17 @@
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Short links for review requests (QR code on the chalet welcome card, departure-day WhatsApp).
+# They open the Google "write a review" box for the Business Profile.
+[[redirects]]
+  from = "/review"
+  to = "https://search.google.com/local/writereview?placeid=ChIJPRJmAL2Kv4ARuPyRohUWW9M"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/avis"
+  to = "https://search.google.com/local/writereview?placeid=ChIJPRJmAL2Kv4ARuPyRohUWW9M"
+  status = 302
+  force = true

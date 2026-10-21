@@ -49,9 +49,9 @@ Moriond is also close to Aquamotion, the resort's large aquatic and wellness cen
 
 ## Getting there
 
-**By road.** Moriond lies on the road up to Courchevel. Guide times to the resort are about 150 km and 2 h 15 from Geneva airport, about 187 km and 2 h to 2 h 15 from Lyon Saint-Exupéry, and about 110 km and 1 h 20 from Chambéry. The nearest railway station is Moûtiers, around 30 minutes below the resort. Snow and Saturday changeover traffic add time, so we plan arrivals around them.
+**By road.** Moriond lies on the road up to Courchevel. As a guide, the resort is about 150 km from Geneva airport (2 h 15), 187 km from Lyon Saint-Exupéry (2 h to 2 h 15) and 110 km from Chambéry (1 h 20). The nearest railway station is Moûtiers, around 30 minutes below the resort. Snow and Saturday changeover traffic add time, so we plan arrivals around them.
 
-**By air.** The Courchevel altiport, above 1850, takes helicopters and small aircraft in daylight and suitable weather. From there a car brings you down to Moriond in a few minutes.
+**By air.** Courchevel Altiport, above 1850, takes helicopters and small aircraft in daylight and suitable weather. From there a car brings you down to Moriond in a few minutes.
 
 **Between villages.** In winter you can ski from Moriond to the slopes above 1850 and back. Free shuttles link Moriond with the other Courchevel villages, so a car is not essential, though we can arrange a private driver for evenings.
 
@@ -73,4 +73,4 @@ Many families prefer to eat in on some evenings. A [private chef](/services/priv
 
 In Moriond, our work is often about making family holidays run smoothly. We find a [chalet](/services/chalets/) with the right ski access and space, organise [transfers](/services/transfers/) with child seats, and book [ski lessons and equipment](/services/ski/) so that boots are fitted at the chalet before the first morning. We also arrange [nannies and childcare](/services/childcare/), [in-chalet massages](/services/wellness/) and restaurant tables in 1850 when you want an evening out.
 
-We reply within 15 minutes between 8:00 and 22:00, send a proposal within 24 hours, and are available 24/7 during the winter season. Tell us your dates and the ages of the children, and we will prepare the rest.
+Tell us your dates and the ages of the children, and we will prepare the rest. Expect a reply within 15 minutes between 8:00 and 22:00 and a proposal within 24 hours; during the winter season we are on call 24/7.

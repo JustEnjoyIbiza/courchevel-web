@@ -59,7 +59,9 @@ Courchevel Altiport sits just above Courchevel 1850, which makes it an easy star
 
 ## Ice driving
 
-For those who enjoy driving, the ice circuit at Val Thorens is around 800 m long at about 2,200 m altitude, one of the highest in Europe. A session with an instructor teaches car control on ice and snow. We book the session, arrange a chauffeur for the return and fit it around your ski days.
+For those who enjoy driving, the ice circuit at Val Thorens is around 800 m long at about 2,200 m altitude. A session with an instructor teaches car control on ice and snow. We book the session, arrange a chauffeur for the return and fit it around your ski days.
+
+The circuit is in [Val Thorens](/val-thorens/), the highest resort in the Trois Vallées, which also makes a fine ski day from Courchevel.
 
 ## For families
 
@@ -67,6 +69,6 @@ Children often remember the evenings more than the pistes, and many of these act
 
 ## How to plan
 
-Tell us who is coming, their ages and what appeals. We reply within 15 minutes between 8:00 and 22:00, send a tailored programme within 24 hours and remain available 24/7 during the winter season, so a cancelled flight can become a dog-sledding afternoon the same day.
+Tell us who is coming, their ages and what appeals. Our first reply comes within 15 minutes (8:00 to 22:00) and a tailored programme within 24 hours. In season we are on call 24/7, so a cancelled flight can become a dog-sledding afternoon the same day.
 
 Most activities take a few hours at most, so they fit easily into a ski day: a morning on the pistes, lunch, then an activity before the light fades. Warm clothing, transfers and any equipment are arranged in advance, and we check the weather forecast the evening before so plans can change before anyone sets out.

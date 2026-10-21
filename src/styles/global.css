@@ -21,7 +21,7 @@
   --font-serif: "Cormorant Garamond", "Times New Roman", serif;
   --font-sans: "Manrope Variable", "Helvetica Neue", Arial, sans-serif;
 
-  --text-display: clamp(2.6rem, 1.6rem + 4.2vw, 4.75rem);
+  --text-display: clamp(2.25rem, 1.4rem + 4.4vw, 4.75rem);
   --text-display--line-height: 1.04;
   --text-h2: clamp(2rem, 1.4rem + 2.4vw, 3rem);
   --text-h2--line-height: 1.1;
@@ -49,6 +49,8 @@
     @apply font-serif font-medium text-ink;
     letter-spacing: -0.01em;
     text-wrap: balance;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   p { text-wrap: pretty; }
   a { @apply underline-offset-4; }
@@ -63,7 +65,7 @@
 }
 
 @utility btn {
-  @apply inline-flex min-h-12 items-center justify-center gap-2 px-6 text-center text-sm font-semibold uppercase tracking-[0.14em] whitespace-nowrap no-underline transition-colors;
+  @apply inline-flex min-h-12 items-center justify-center gap-2 px-6 text-center text-sm font-semibold uppercase tracking-[0.14em] whitespace-normal sm:whitespace-nowrap no-underline transition-colors;
 }
 
 /*
@@ -120,7 +122,8 @@
   }
   .prose-site ol { @apply list-decimal space-y-2 pl-5 marker:text-brass-deep; }
   .prose-site a { @apply font-semibold text-brass-deep underline decoration-brass hover:text-ink; }
-  .prose-site table { @apply w-full border-collapse text-left text-sm; }
+  /* Wide tables scroll inside themselves on small phones instead of widening the page. */
+  .prose-site table { @apply block w-full max-w-full overflow-x-auto border-collapse text-left text-sm; }
   .prose-site th { @apply border-b border-brass py-2 pr-4 font-semibold text-ink; }
   .prose-site td { @apply border-b border-line py-2 pr-4 align-top text-taupe; }
 

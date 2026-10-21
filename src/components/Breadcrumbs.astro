@@ -16,7 +16,7 @@ const { items, label = 'Breadcrumb' } = Astro.props;
       <li class="flex items-center gap-2">
         {i < items.length - 1 ? (
           <>
-            <SmartLink href={item.href} class="text-taupe underline decoration-line hover:text-ink">{item.name}</SmartLink>
+            <SmartLink href={item.href} class="inline-block py-2.5 text-taupe underline decoration-line hover:text-ink">{item.name}</SmartLink>
             <span aria-hidden="true" class="text-brass">/</span>
           </>
         ) : (

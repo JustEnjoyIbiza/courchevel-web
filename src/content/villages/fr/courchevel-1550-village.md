@@ -45,7 +45,7 @@ Courchevel Village se trouve juste en dessous de 1850, en position centrale dans
 
 Il convient aux familles qui ont besoin de place, aux groupes qui préfèrent des soirées tranquilles au chalet, et à ceux qui aiment être proches de l’animation sans y loger. Beaucoup de chalets sont proches des pistes, ce qui simplifie le début de chaque journée. Avec la télécabine vers 1850 à quelques minutes, une soirée dans les restaurants du haut s’organise facilement.
 
-Pour une journée sans ski, Aquamotion, le grand centre aquatique et de bien-être de la station, est à quelques minutes à pied ou en navette, entre le Village et Moriond. C’est une bonne idée pour les enfants par un après-midi gris, comme pour les adultes qui veulent piscine, sauna et soins sans quitter la vallée.
+Pour une journée sans ski, Aquamotion, le grand centre aquatique et de bien-être de la station, est à quelques minutes à pied ou en navette, entre le Village et Moriond. Une bonne option pour les enfants par un après-midi gris, comme pour les adultes qui veulent piscine, sauna et soins sans quitter la vallée.
 
 ## Comment y aller
 
@@ -71,4 +71,4 @@ Pour une soirée plus habillée, les tables étoilées de 1850 sont à quelques 
 
 À Courchevel Village, nous accompagnons surtout des familles et des groupes nombreux. Nous trouvons le bon [chalet](/fr/services/chalets/), organisons les [transferts](/fr/services/transfers/) depuis Genève, Lyon, Chambéry ou l’altiport, et préparons [forfaits, cours et matériel](/fr/services/ski/). Nous pouvons aussi fournir le [personnel de chalet](/fr/services/staff/), la [garde d’enfants](/fr/services/childcare/) et des [expériences pour toute la famille](/fr/services/experiences/), des balades en raquettes aux soirées à 1850.
 
-Nous répondons en 15 minutes entre 8 h et 22 h, envoyons une proposition sous 24 heures et sommes joignables 24 h/24 et 7 j/7 pendant la saison d’hiver. Dites-nous qui vous accompagne et ce qui compte le plus : nous construisons le séjour autour.
+Nous vous répondons sous 15 minutes, de 8 h à 22 h, et vous adressons une proposition sous 24 heures. En saison, nous restons à votre disposition jour et nuit. Dites-nous qui vous accompagne et ce qui compte le plus : nous construisons le séjour autour.

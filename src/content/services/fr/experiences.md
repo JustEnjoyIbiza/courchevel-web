@@ -28,7 +28,7 @@ includes:
   - "Luge et patin à glace en famille"
 faqs:
   - q: "Que faire à Courchevel quand on ne skie pas ?"
-    a: "Beaucoup de choses : motoneige, chiens de traîneau, parapente, raquettes et survols en hélicoptère se pratiquent dans la station ou à proximité, sans oublier la patinoire du Forum à Courchevel 1850. Nous les associons au spa, au shopping et aux longs déjeuners pour que les non-skieurs profitent pleinement de la semaine."
+    a: "Le choix est large : motoneige, chiens de traîneau, parapente, raquettes et survols en hélicoptère se pratiquent dans la station ou à proximité, sans oublier la patinoire du Forum à Courchevel 1850. Nous les associons au spa, au shopping et aux longs déjeuners pour que les non-skieurs profitent pleinement de la semaine."
   - q: "Peut-on faire de la motoneige de nuit à Courchevel ?"
     a: "Oui. Des sorties encadrées par un professionnel ont lieu sur le domaine skiable après la fermeture des pistes, en fin d’après-midi. En journée, l’initiation se fait sur un circuit sécurisé de 700 m."
   - q: "Peut-on faire de la conduite sur glace près de Courchevel ?"
@@ -46,20 +46,22 @@ related:
 Certains des plus beaux après-midis à Courchevel se passent sans skis. Nous réservons chaque activité auprès de prestataires locaux qualifiés, choisissons le bon moment de la journée et organisons le transfert depuis votre chalet.
 
 - **Motoneige :** initiation sur un circuit sécurisé de 700 m, ou sortie encadrée sur le domaine skiable une fois les pistes fermées, à la tombée du jour.
-- **Chiens de traîneau :** installé en passager, ou aux commandes de votre propre attelage avec un musher à vos côtés.
+- **Chiens de traîneau :** confortablement installé en passager, ou aux commandes de votre propre attelage avec un musher à vos côtés.
 - **Ski joëring :** à skis, tracté par un cheval, une discipline hivernale traditionnelle réservée aux skieurs à l’aise.
 - **Raquettes :** balades accompagnées et paisibles en forêt, avec des haltes pour observer la faune, la vue ou boire un chocolat chaud.
 
 ## Dans les airs
 
-L’altiport de Courchevel domine Courchevel 1850, ce qui en fait un point de départ idéal pour un vol.
+Au-dessus de Courchevel 1850, l’altiport accueille les survols en hélicoptère, tandis que les parapentes s’élancent des hauteurs de la station.
 
 - **Parapente biplace :** un vol avec un moniteur diplômé d’État, décollage au-dessus de la station et atterrissage plus bas dans la vallée. Les vols dépendent du vent ; nous réservons un second créneau dès que possible.
-- **Survols en hélicoptère :** une boucle au-dessus des Trois Vallées ou un vol plus long vers le massif du Mont-Blanc, assurés par des partenaires hélicoptères agréés.
+- **Survols en hélicoptère :** une boucle au-dessus des Trois Vallées ou un vol plus long vers le massif du Mont-Blanc, assurés par des compagnies d’hélicoptères agréées.
 
 ## La conduite sur glace
 
-Pour les amateurs de pilotage, le circuit de glace de Val Thorens mesure environ 800 m, à quelque 2 200 m d’altitude : l’un des plus hauts d’Europe. Une session avec un instructeur apprend à maîtriser une voiture sur la glace et la neige. Nous réservons la session, prévoyons un chauffeur pour le retour et l’intégrons à vos journées de ski.
+Pour les amateurs de pilotage, le circuit de glace de Val Thorens mesure environ 800 m, à quelque 2 200 m d’altitude. Une session avec un instructeur apprend à maîtriser une voiture sur la glace et la neige. Nous réservons la session, prévoyons un chauffeur pour le retour et l’intégrons à vos journées de ski.
+
+Le circuit se trouve à [Val Thorens](/fr/val-thorens/), la station la plus haute des Trois Vallées, qui se prête aussi à une belle journée de ski depuis Courchevel.
 
 ## En famille
 
@@ -67,6 +69,6 @@ Les enfants se souviennent souvent davantage des soirées que des pistes. Une pi
 
 ## Comment organiser votre programme
 
-Dites-nous qui vous accompagne, les âges de chacun et ce qui vous tente. Nous répondons sous 15 minutes entre 8 h et 22 h, vous adressons un programme sur mesure sous 24 heures et restons joignables 24 h/24 pendant la saison d’hiver : un vol annulé peut devenir, le jour même, un après-midi en chiens de traîneau.
+Dites-nous qui vous accompagne, les âges de chacun et ce qui vous tente. Vous recevez une première réponse sous 15 minutes (de 8 h à 22 h), puis un programme sur mesure sous 24 heures. Pendant la saison d’hiver, nous restons joignables 24 h/24 : un vol annulé peut ainsi devenir, le jour même, un après-midi en chiens de traîneau.
 
 La plupart des activités ne durent que quelques heures et s’intègrent facilement à une journée de ski : une matinée sur les pistes, le déjeuner, puis une activité avant la tombée du jour. Vêtements chauds, transferts et équipement sont prévus à l’avance, et nous consultons la météo la veille au soir pour pouvoir modifier le programme avant le départ.

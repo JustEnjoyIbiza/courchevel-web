@@ -41,7 +41,7 @@ related:
 
 ## Pour qui
 
-La Tania a été construite pour les Jeux olympiques d’hiver d’Albertville en 1992, afin de loger les athlètes, et elle a gardé une taille modeste. Ses bâtiments en bois occupent une clairière en forêt et ont été conçus pour se fondre dans le paysage. L’atmosphère est paisible et le village conserve une vraie âme de village.
+La Tania a été construite pour les Jeux olympiques d’hiver d’Albertville en 1992, afin de loger les athlètes, et elle a gardé une taille modeste. Ses bâtiments en bois occupent une clairière en forêt et ont été conçus pour se fondre dans le paysage. L’atmosphère est paisible, et le lieu a gardé une vraie âme de village.
 
 Elle convient aux familles avec de jeunes enfants, aux skieurs qui veulent explorer Courchevel et Méribel depuis la même base, et à tous ceux qui préfèrent des soirées calmes en forêt à l’animation des grandes stations. Pour une soirée plus vivante, 1850 et Méribel sont accessibles en voiture.
 
@@ -71,4 +71,4 @@ Pour les autres soirées, les restaurants du Praz sont à quelques minutes en vo
 
 À La Tania, nous prenons en charge tout ce qu’un petit village ne peut offrir seul. Nous trouvons le bon [chalet](/fr/services/chalets/), organisons les [transferts](/fr/services/transfers/) depuis Genève, Lyon, Chambéry ou l’altiport, et préparons [forfaits, cours et matériel](/fr/services/ski/). Nous réservons aussi la [garde d’enfants](/fr/services/childcare/), des [soins bien-être au chalet](/fr/services/wellness/) et des tables à La Tania, à Courchevel et à Méribel, avec un chauffeur si besoin.
 
-Nous répondons en 15 minutes entre 8 h et 22 h, envoyons une proposition sous 24 heures et sommes joignables 24 h/24 et 7 j/7 pendant la saison d’hiver. Dites-nous qui vous accompagne et ce que vous souhaitez : nous nous occupons du reste.
+Vous recevez une réponse sous 15 minutes entre 8 h et 22 h, puis une proposition détaillée sous 24 heures, et nous restons joignables jour et nuit pendant la saison d’hiver. Dites-nous qui vous accompagne et ce que vous souhaitez : nous organisons le séjour en conséquence.

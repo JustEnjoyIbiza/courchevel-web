@@ -1,7 +1,7 @@
 ---
-title: Luxury chalets and palace hotels in Courchevel
+title: "Luxury chalets to rent and palace hotels in Courchevel"
 shortTitle: Chalets and palace hotels
-metaTitle: Luxury Chalets & Palace Hotels in Courchevel | CLC
+metaTitle: "Luxury Chalet Rental in Courchevel 1850 & Palaces | CLC"
 description: Ultra-luxury chalets and palace hotels in Courchevel 1850, 1650 and Le Praz, staffed and prepared before you arrive. Quoted personally.
 answer: We find the chalet or palace hotel that fits your group, village and dates, then prepare it before you land, from staff and groceries to the Christmas tree. Tell us who is coming and what matters most, and we send a shortlist with a personal quote within 24 hours.
 updated: 2026-10-22
@@ -19,13 +19,13 @@ facts:
 includes:
   - Chalet and palace hotel search matched to your brief
   - Staffed chalets with chef, butler and housekeeping
-  - Pre-arrival set-up - groceries, flowers, wine, Christmas tree and decoration
+  - Pre-arrival set-up – groceries, flowers, wine, Christmas tree and decoration
   - Personal welcome and check-in on arrival
   - Changes and extra requests during your stay
 faqs:
   - q: How far ahead should I book a chalet for Christmas or New Year in Courchevel?
     a: As early as you can. The largest chalets in Courchevel 1850 are often reserved many months before the season, so for the festive weeks we recommend sending your request as soon as your dates are fixed.
-  - q: Which village is best for a luxury chalet?
+  - q: Which village should I choose for a luxury chalet?
     a: Courchevel 1850 has the highest concentration of luxury chalets and the palace hotels, close to the altiport and the busiest restaurants. Families looking for space and calm often prefer 1650 Moriond, 1550 Village or Le Praz.
   - q: Can you prepare the chalet before we arrive?
     a: Yes. We stock the fridge and cellar to your list, arrange flowers, and set up a Christmas tree and decoration for festive stays, so the chalet is ready when you walk in.
@@ -71,4 +71,4 @@ The fastest way to a good shortlist is a short message with:
 
 ## During your stay
 
-We stay on call for the whole stay, 24/7 in season. If you want to change a dinner, add a guest, extend by a night or move a ski lesson, one message is enough.
+We remain on call throughout your stay, 24/7 in season. If you want to change a dinner, add a guest, extend by a night or move a ski lesson, one message is enough.

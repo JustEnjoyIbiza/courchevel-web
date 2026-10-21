@@ -14,6 +14,7 @@ import { splitId } from '../lib/routes';
 export const GET: APIRoute = async ({ site }) => {
   const url = (p: string) => new URL(p, site).href;
   const guides = (await getCollection('guides')).filter((g) => splitId(g.id).locale === 'en');
+  const pages = (await getCollection('pages')).filter((g) => splitId(g.id).locale === 'en' && splitId(g.id).slug !== 'about');
   const a = business.address;
   const address = hasStreetAddress()
     ? `${a.streetAddress}, ${a.postalCode} ${a.locality}, ${a.countryName.en}`
@@ -49,7 +50,11 @@ export const GET: APIRoute = async ({ site }) => {
     '',
     '## Villages',
     '',
-    ...villages.map((v) => `- [${v.name}](${url(`/${v.slug}/`)}): ${v.summary.en}`),
+    ...villages.map((v) => `- [${v.name}](${url(`/${v.slug}/`)}) (${v.altitude} m): ${v.summary.en}`),
+    '',
+    '## Planning pages',
+    '',
+    ...pages.map((g) => `- [${g.data.title}](${url(`/${splitId(g.id).slug}/`)}): ${g.data.description}`),
     '',
     '## Guides',
     '',

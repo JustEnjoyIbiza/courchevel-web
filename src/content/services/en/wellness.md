@@ -65,8 +65,8 @@ In France, anyone paid to coach sport must hold a recognised qualification and a
 
 ## Hair, make-up and manicure
 
-For a dinner at an altitude restaurant, a gala evening or New Year's Eve, we arrange hairdressers, make-up artists and manicurists who come to you. For a group we build a timetable so everyone is ready at the same time, without queueing for a mirror. Blow-dries after a day in a ski helmet are among the most frequent requests.
+For a dinner at an altitude restaurant, a gala evening or New Year's Eve, we arrange hairdressers, make-up artists and manicurists who come to you. For a group we build a timetable so everyone is ready at the same time, without queuing for a mirror. Blow-dries after a day in a ski helmet are among the most frequent requests.
 
 ## How we plan it
 
-We schedule treatments around your ski lessons, meals and transfers, and keep a note of your preferences for the rest of the stay. If you want to move a session, add a guest or book the same therapist again, one message is enough. We reply within 15 minutes between 8:00 and 22:00 and remain available 24/7 during the winter season.
+We schedule treatments around your ski lessons, meals and transfers, and keep a note of your preferences for the rest of the stay. If you want to move a session, add a guest or book the same therapist again, one message is enough. Messages sent between 8:00 and 22:00 are answered within 15 minutes, and in the winter season we are available 24/7.
