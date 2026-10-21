@@ -1,0 +1,115 @@
+/**
+ * The single source of truth for every business fact on the site.
+ *
+ * The footer, contact links, JSON-LD schema and llms.txt are all generated
+ * from this file. Never hard-code a phone number, email or address anywhere
+ * else: change it here and it changes everywhere.
+ *
+ * Values marked TODO are still missing. See docs/missing-facts.md.
+ */
+
+export type Locale = 'en' | 'fr';
+
+export const business = {
+  name: 'Courchevel Luxury Concierge',
+  url: 'https://www.courchevelluxuryconcierge.com',
+
+  /** The one 50-word description used on Google, Bing, Apple, directories and the site. TODO: approve final wording. */
+  description: {
+    en: 'Courchevel Luxury Concierge is a private concierge service in Courchevel, French Alps. We arrange chalets and palace hotels, helicopter and chauffeur transfers, private ski instructors, private chefs, household staff, childcare and events across Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz and La Tania, 24/7 in winter.',
+    fr: 'Courchevel Luxury Concierge est une conciergerie privée à Courchevel, dans les Alpes françaises. Nous organisons chalets et palaces, transferts en hélicoptère et avec chauffeur, moniteurs de ski privés, chefs à domicile, personnel de maison, garde d’enfants et événements à Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz et La Tania, 24h/24 en hiver.',
+  },
+
+  phone: {
+    display: '+33 7 57 51 80 56',
+    e164: '+33757518056',
+  },
+
+  whatsapp: {
+    number: '33757518056',
+    prefill: {
+      en: "Hello, I'm planning a stay in Courchevel from ",
+      fr: 'Bonjour, je prépare un séjour à Courchevel du ',
+    },
+  },
+
+  /** Will move to a domain address (e.g. hello@courchevelluxuryconcierge.com). Change it here only. */
+  email: 'Courchevelluxuryconcierge@gmail.com',
+
+  /**
+   * TODO (due 15 November 2026): street address.
+   * Until it is set, the site shows `locality, region, country` only and the
+   * schema outputs NO streetAddress (service-area business).
+   */
+  address: {
+    streetAddress: null as string | null,
+    postalCode: null as string | null,
+    locality: 'Courchevel',
+    region: 'Savoie',
+    countryCode: 'FR',
+    countryName: { en: 'France', fr: 'France' },
+  },
+
+  /** Approximate centre of Courchevel 1850, used for the schema geo hint only. */
+  geo: { latitude: 45.4153, longitude: 6.6346 },
+
+  areaServed: [
+    'Courchevel 1850',
+    'Courchevel 1650 Moriond',
+    'Courchevel 1550 Village',
+    'Courchevel 1300 Le Praz',
+    'La Tania',
+    'Méribel',
+    'Val Thorens',
+    'Les Trois Vallées',
+  ],
+
+  availability: {
+    en: '24/7 during the winter season',
+    fr: '24h/24 et 7j/7 pendant la saison d’hiver',
+  },
+
+  /** Reply promise shown on the site. TODO: confirm hours and who answers. */
+  replyPromise: {
+    en: 'We reply within 15 minutes, 8:00 to 22:00',
+    fr: 'Réponse sous 15 minutes, de 8h à 22h',
+  },
+
+  /** Winter season 2026/27 (courchevel.com). */
+  season: { opens: '2026-12-04', closes: '2027-04-18' },
+
+  /** Official profiles, used for schema sameAs. Add each one as it goes live. */
+  sameAs: [
+    'https://www.instagram.com/courchevelluxuryconcierge/',
+    // TODO: Google Business Profile, Bing Places, Apple Business Connect, Tripadvisor, LinkedIn, Facebook
+  ],
+
+  /** Required for the mentions légales page. */
+  legal: {
+    entityName: null as string | null, // TODO
+    legalForm: null as string | null, // TODO e.g. SAS, EI, micro-entreprise
+    siret: null as string | null, // TODO
+    vatNumber: null as string | null, // TODO if applicable
+    publisher: null as string | null, // TODO directeur de la publication
+    host: {
+      name: 'Netlify, Inc.',
+      address: null as string | null, // TODO: copy Netlify's current registered address from netlify.com before launch
+    },
+  },
+
+  founder: {
+    name: null as string | null, // TODO
+    languages: [] as string[], // TODO
+    sinceYear: null as number | null, // TODO year started in Courchevel
+  },
+
+  /** Every service is quoted personally. Never add prices, ranges or "from" prices. */
+  pricing: 'on-request' as const,
+} as const;
+
+export const hasStreetAddress = () => Boolean(business.address.streetAddress && business.address.postalCode);
+
+export const telHref = `tel:${business.phone.e164}`;
+export const mailtoHref = `mailto:${business.email}`;
+export const whatsappHref = (locale: Locale = 'en') =>
+  `https://wa.me/${business.whatsapp.number}?text=${encodeURIComponent(business.whatsapp.prefill[locale])}`;

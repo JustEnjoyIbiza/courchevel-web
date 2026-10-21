@@ -1,0 +1,5 @@
+/robots.txt -> 404
+/sitemap.xml -> 404
+/llms.txt -> 404
+/fr/ -> 404
+/services/ -> 404

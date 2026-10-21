@@ -1,0 +1,43 @@
+---
+/**
+ * Phase 0 base layout: head tags, canonical, hreflang and JSON-LD.
+ * The design system, header, footer and sticky mobile CTA arrive in Phase 1.
+ */
+import '../styles/global.css';
+import type { Locale } from '../data/business';
+
+interface Props {
+  title: string;
+  description: string;
+  locale?: Locale;
+  /** Path of the equivalent page in the other language, e.g. '/fr/'. */
+  alternatePath?: string;
+  schema?: object[];
+}
+
+const { title, description, locale = 'en', alternatePath, schema = [] } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+const alternate = alternatePath ? new URL(alternatePath, Astro.site).href : undefined;
+const enHref = locale === 'en' ? canonical : alternate;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={locale} href={canonical} />
+    {alternate && <link rel="alternate" hreflang={other} href={alternate} />}
+    {enHref && <link rel="alternate" hreflang="x-default" href={enHref} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
