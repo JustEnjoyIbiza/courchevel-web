@@ -88,7 +88,10 @@ Commits: author "Alin Letca" <alin.letca2010@gmail.com>, ending with the Co-Auth
    address, Netlify host details.
 4. **Preview** (~16 Nov): push branch, open PR, run `qa:launch` on the deploy preview, test lead.
 5. **Launch day** 24 Nov: follow `docs/launch-plan.md` §5.2 — only with the owner's go-ahead.
-6. After launch: daily build hook (Google reviews refresh), Search Console/Bing, off-site plan
+6. **Conversion improvements** from `docs/competitor-review-2026-10-22.md` (ranked list):
+   homepage quick-start form and "A week in 1850" example guide can be built now;
+   rating, founder, real anonymised requests and fee model need the owner.
+7. After launch: daily build hook (Google reviews refresh), Search Console/Bing, off-site plan
    (audit §7), AI prompt test at day 30.
 
 ## Docs map
@@ -98,6 +101,7 @@ Commits: author "Alin Letca" <alin.letca2010@gmail.com>, ending with the Co-Auth
 | `CLAUDE.md` | Rules, stack, structure, QA, protocol |
 | `docs/owner-checklist.md` | Everything waiting on the owner |
 | `docs/launch-plan.md` | DNS, Netlify, deploy, rollback |
+| `docs/competitor-review-2026-10-22.md` | 6 competitors scored, ranked conversion improvements |
 | `docs/audit-2026-10-22.md` | Audit findings, competitors, off-site plan, Lighthouse table |
 | `docs/platform-profiles-kit.md` | Same identity on Google, Instagram, other platforms |
 | `docs/lead-system-setup.md` | Creating Supabase, Resend, Telegram, Turnstile |
