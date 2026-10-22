@@ -87,6 +87,12 @@ Commits: author "Alin Letca" <alin.letca2010@gmail.com>, ending with the Co-Auth
      of a stay arranged by us, clearly labelled as an example, no prices, no invented clients,
      linked from the 1850 village page, the home guides section and related services.
    Then run every gate (`npm run qa`, `qa:content`, link graph, Lighthouse on home and the guide).
+   - **Personal-touch question sheet** (`docs/personal-touch-questions.md`): 2–3 questions per
+     page, in priority order (About, homepage, 12 service pages, village pages; guides/FAQ only
+     a fact check). The owner answers by voice notes or rough notes (EN, FR or ES); we then weave
+     the answers into the pages in the owner's voice, anonymised, keeping every gate passing.
+     Why: first-hand experience is what Google (E-E-A-T) and AI assistants reward and what
+     persuades clients; it is not a full rewrite.
 
 1. **Waiting on the owner** (`docs/owner-checklist.md`, "Needed to launch"): domain renewal,
    GitHub push access, Netlify access, lead accounts (`docs/lead-system-setup.md`), legal facts,
