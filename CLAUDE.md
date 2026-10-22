@@ -1,5 +1,7 @@
 # Courchevel Luxury Concierge: website rules
 
+**New session? Read `docs/RESUME.md` first**: where the project stands and what is next.
+
 Re-read this file at the start of every phase. The full project plan is
 `Courchevel_Concierge_Website_Plan.pdf` (one folder up); it is the source of
 truth. This file condenses it.
