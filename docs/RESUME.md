@@ -79,6 +79,15 @@ Commits: author "Alin Letca" <alin.letca2010@gmail.com>, ending with the Co-Auth
 
 ## Next steps (in order)
 
+0. **Owner's request for the next session (22 Oct): start with these two builds.**
+   - Homepage quick-start: dates + village + group size near the hero, continuing into
+     `/enquire/` with those fields pre-filled (EN + FR, works without JavaScript, keep
+     Lighthouse ≥ 95 and the CSP intact).
+   - Guide "A week in Courchevel 1850" (EN + FR, `src/content/guides/`): a day-by-day example
+     of a stay arranged by us, clearly labelled as an example, no prices, no invented clients,
+     linked from the 1850 village page, the home guides section and related services.
+   Then run every gate (`npm run qa`, `qa:content`, link graph, Lighthouse on home and the guide).
+
 1. **Waiting on the owner** (`docs/owner-checklist.md`, "Needed to launch"): domain renewal,
    GitHub push access, Netlify access, lead accounts (`docs/lead-system-setup.md`), legal facts,
    About facts, Search Console access.
