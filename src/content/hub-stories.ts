@@ -89,11 +89,24 @@ export const hubCopy = {
     weekLink: { en: 'A week in Courchevel 1850', fr: 'Une semaine à Courchevel 1850' },
   },
   villages: {
-    featureEyebrow: { en: 'The highest village', fr: 'Le village le plus haut' },
-    courchevelTitle: { en: 'Four more villages, four characters', fr: 'Quatre autres villages, quatre caractères' },
     beyondEyebrow: { en: 'Beyond Courchevel', fr: 'Au-delà de Courchevel' },
     beyondTitle: { en: 'Elsewhere in the Trois Vallées', fr: 'Ailleurs dans les Trois Vallées' },
     glanceTitle: { en: 'At a glance', fr: 'En un coup d’œil' },
     explore: { en: 'Explore the village', fr: 'Découvrir le village' },
+    tourEyebrow: { en: 'Find your village', fr: 'Trouvez votre village' },
+    tourTitle: { en: 'Five villages, one valley', fr: 'Cinq villages, une vallée' },
+    tourText: {
+      en: 'Each village seen from above, and where it sits on the mountain. Scroll down the valley, from 1850 to La Tania.',
+      fr: 'Chaque village vu du ciel, et sa place sur la montagne. Descendez la vallée, de 1850 à La Tania.',
+    },
+    mapAlt: {
+      en: 'Relief map of the Courchevel valley with its forests, pistes and lifts, and the five villages marked in gold',
+      fr: 'Carte en relief de la vallée de Courchevel avec ses forêts, ses pistes et ses remontées, et les cinq villages marqués en or',
+    },
+    mapNote: {
+      en: 'South at the top, looking up the valley. Relief, forests and aerial photographs: IGN. Pistes and lifts: © OpenStreetMap contributors.',
+      fr: 'Le sud en haut, en remontant la vallée. Relief, forêts et photographies aériennes : IGN. Pistes et remontées : © les contributeurs d’OpenStreetMap.',
+    },
+    aerialAlt: { en: 'Aerial photograph of', fr: 'Photographie aérienne de' },
   },
 } as const;

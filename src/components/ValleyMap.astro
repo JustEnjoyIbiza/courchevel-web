@@ -1,0 +1,77 @@
+---
+/**
+ * Relief map of the Courchevel valley with its five villages, built from real data by
+ * scripts/maps/build-village-maps.py (IGN relief and forests, OpenStreetMap pistes and lifts).
+ * South is at the top, like the Slopes page map.
+ *
+ * Two uses:
+ *  - Villages hub: markers have ids `vmark-<slug>` and light up as each village is reached
+ *    (animated by HubPage.astro).
+ *  - Village pages: pass `highlight` to show where that village sits; the others stay small.
+ */
+import { Picture } from 'astro:assets';
+import relief from '../assets/maps/valley-relief.png';
+import { valleySize, valleyPistes, valleyLifts, valleyMarkers, valleyAltiport } from '../data/village-map-geo';
+import { villages } from '../data/villages';
+import type { Locale } from '../data/business';
+
+interface Props {
+  locale: Locale;
+  alt: string;
+  highlight?: string;
+  class?: string;
+  sizes?: string;
+}
+
+const { locale, alt, highlight, class: className, sizes = '(min-width: 1024px) 40vw, 100vw' } = Astro.props;
+const { width, height } = valleySize;
+
+// Short label per village, placed beside its marker: [dx, dy, anchor].
+const short: Record<string, string> = {
+  'courchevel-1850': 'COURCHEVEL 1850',
+  'courchevel-1650-moriond': 'MORIOND 1650',
+  'courchevel-1550-village': 'VILLAGE 1550',
+  'courchevel-1300-le-praz': 'LE PRAZ 1300',
+  'la-tania': 'LA TANIA 1400',
+};
+const place: Record<string, [number, number, 'start' | 'end' | 'middle']> = {
+  'courchevel-1850': [28, 11, 'start'],
+  'courchevel-1650-moriond': [0, 56, 'middle'],
+  'courchevel-1550-village': [28, 40, 'start'],
+  'courchevel-1300-le-praz': [0, -32, 'middle'],
+  'la-tania': [-10, 58, 'middle'],
+};
+const markers = Object.entries(valleyMarkers).filter(([slug]) => villages.some((v) => v.slug === slug));
+---
+
+<div class:list={['relative', className]} style={`aspect-ratio: ${width} / ${height}`}>
+  <Picture src={relief} alt={alt} formats={['avif', 'webp']} widths={[480, 760, 1300]} sizes={sizes} loading="lazy" class="absolute inset-0 h-full w-full" />
+  <svg viewBox={`0 0 ${width} ${height}`} class="absolute inset-0 h-full w-full" aria-hidden="true">
+    <g fill="none" stroke="var(--color-taupe)" stroke-width="1.3" stroke-linecap="round" opacity="0.35">
+      {valleyPistes.map((d) => <path d={d} />)}
+    </g>
+    <g fill="none" stroke="var(--color-ink)" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.55">
+      {valleyLifts.map((d) => <path d={d} />)}
+    </g>
+    <g stroke="var(--color-brass-deep)" stroke-width="4">
+      {markers.map(([slug, [x, y]]) => (
+        <circle
+          id={`vmark-${slug}`}
+          class:list={['valley-marker', highlight && slug !== highlight && 'valley-marker-dim']}
+          cx={x}
+          cy={y}
+          r={highlight === slug ? 24 : highlight ? 9 : 16}
+          fill={highlight && slug !== highlight ? 'var(--color-ivory)' : 'var(--color-brass)'}
+        />
+      ))}
+    </g>
+    <g font-family="var(--font-sans)" font-size="32" font-weight="600" letter-spacing="0.05em" fill="var(--color-ink)" stroke="var(--color-ivory)" stroke-width="8" stroke-linejoin="round" paint-order="stroke">
+      {markers.map(([slug, [x, y]]) => {
+        const [dx, dy, anchor] = place[slug] ?? [28, 11, 'start'];
+        return (!highlight || slug === highlight) && <text x={x + dx} y={y + dy} text-anchor={anchor}>{short[slug]}</text>;
+      })}
+      <text x={valleyAltiport[0]} y={valleyAltiport[1] + 46} text-anchor="middle" font-size="26" font-weight="500" fill="var(--color-taupe)">Altiport</text>
+    </g>
+  </svg>
+  <span class="sr-only">{locale === 'en' ? 'South is at the top of the map.' : 'Le sud est en haut de la carte.'}</span>
+</div>
