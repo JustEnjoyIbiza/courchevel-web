@@ -4,7 +4,7 @@ shortTitle: Corporate retreats
 metaTitle: Corporate Retreats & Incentive Trips in Courchevel | CLC
 description: Corporate retreats and incentive trips in Courchevel – chalets or hotels, meeting space, group transfers, activities and dinners. Quoted personally.
 answer: We plan corporate retreats, leadership seminars and incentive trips in Courchevel and the Trois Vallées, from the chalet or hotel and the meeting room to group transfers, ski days and dinners. Your assistant or event team deals with one contact, and you receive a tailored proposal within 24 hours.
-updated: 2026-10-22
+updated: 2026-10-23
 image: terrace
 imageAlt: Tables laid with glasses on the wooden terrace of a mountain restaurant in Courchevel
 facts:
@@ -48,7 +48,7 @@ related:
 
 A corporate retreat in Courchevel usually mixes three things: time to work together, time on the mountain and evenings that bring the group together. We start from your programme rather than from a package. Tell us who is coming, how many working sessions you need and what the trip should achieve, whether that is a strategy offsite for a leadership team, an incentive trip for a sales team or a seminar with a client.
 
-We then propose accommodation, a meeting set-up, transfers, activities and dinners that fit, with each service quoted personally. You can see examples of what such a stay can include on our [experiences page](/experiences/#corporate-retreat).
+We then propose accommodation, a meeting set-up, transfers, activities and dinners that fit, with each service quoted personally. For activities to add to the programme, from dog sledding to a dinner above the valley, see our [experiences page](/experiences/).
 
 ## Chalets, hotels and meeting space
 

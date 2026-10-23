@@ -4,7 +4,7 @@ shortTitle: Séminaires d’entreprise
 metaTitle: "Séminaire de luxe à Courchevel et incentive | CLC"
 description: "Séminaire à Courchevel ou voyage incentive : chalet ou hôtel, salle de réunion, transferts de groupe, activités et dîners. Sur devis personnalisé."
 answer: "Nous organisons des séminaires d’entreprise, des comités de direction et des voyages incentive à Courchevel et dans les Trois Vallées : chalet ou hôtel, salle de réunion, transferts de groupe, journées de ski et dîners. Votre assistant ou votre équipe événementielle n’a qu’un seul interlocuteur, et vous recevez une proposition sur mesure sous 24 heures."
-updated: 2026-10-22
+updated: 2026-10-23
 image: terrace
 imageAlt: "Tables dressées avec des verres sur la terrasse en bois d’un restaurant d’altitude à Courchevel"
 facts:
@@ -48,7 +48,7 @@ related:
 
 Un séminaire à Courchevel associe le plus souvent trois éléments : du temps pour travailler ensemble, du temps en montagne et des soirées qui soudent le groupe. Nous partons de votre programme plutôt que d’une formule toute faite. Dites-nous qui vient, combien de sessions de travail vous prévoyez et ce que le séjour doit apporter : séminaire stratégique d’un comité de direction, voyage incentive pour une équipe commerciale ou rencontre avec un client.
 
-Nous vous proposons ensuite l’hébergement, l’organisation des réunions, les transferts, les activités et les dîners qui conviennent, chaque prestation faisant l’objet d’un devis personnalisé. Vous trouverez des exemples de ce que peut comprendre un tel séjour sur notre [page expériences](/fr/experiences/#corporate-retreat).
+Nous vous proposons ensuite l’hébergement, l’organisation des réunions, les transferts, les activités et les dîners qui conviennent, chaque prestation faisant l’objet d’un devis personnalisé. Pour les activités à ajouter au programme, du chien de traîneau au dîner au-dessus de la vallée, voir notre [page expériences](/fr/experiences/).
 
 ## Chalets, hôtels et espaces de réunion
 

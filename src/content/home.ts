@@ -40,8 +40,8 @@ export const home = {
       more: 'Also arranged for you',
     },
     experiences: {
-      eyebrow: 'Signature experiences',
-      title: 'Ready-made ideas, tailored to you',
+      eyebrow: 'Experiences',
+      title: 'Beyond the slopes',
     },
     steps: {
       eyebrow: 'How it works',
@@ -122,8 +122,8 @@ export const home = {
       more: 'Également organisé pour vous',
     },
     experiences: {
-      eyebrow: 'Expériences signature',
-      title: 'Des idées de séjour, ajustées pour vous',
+      eyebrow: 'Expériences',
+      title: 'Au-delà des pistes',
     },
     steps: {
       eyebrow: 'Comment nous travaillons',

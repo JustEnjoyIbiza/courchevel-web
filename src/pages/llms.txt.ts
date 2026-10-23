@@ -7,7 +7,7 @@ import { getCollection } from 'astro:content';
 import { business, hasStreetAddress } from '../data/business';
 import { services } from '../data/services';
 import { villages } from '../data/villages';
-import { experiences } from '../content/experiences';
+import { experiencesPage } from '../content/experiences-page';
 import { allFaqs } from '../content/faq';
 import { splitId } from '../lib/routes';
 import { skiArea } from '../content/ski-area';
@@ -45,9 +45,9 @@ export const GET: APIRoute = async ({ site }) => {
     '',
     ...services.map((s) => `- [${s.name.en}](${url(`/services/${s.slug}/`)}): ${s.summary.en}`),
     '',
-    '## Signature experiences',
+    '## Experiences (arranged on request, subject to weather and availability)',
     '',
-    ...experiences.map((x) => `- [${x.name.en}](${url(`/experiences/#${x.id}`)}): ${x.text.en}`),
+    ...experiencesPage.en.experiences.map((x) => `- [${x.title}](${url('/experiences/')}): ${x.short}`),
     '',
     '## Villages',
     '',

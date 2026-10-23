@@ -14,7 +14,7 @@ import { home } from '../../content/home';
 import { services } from '../../data/services';
 import { villages } from '../../data/villages';
 import { allFaqs } from '../../content/faq';
-import { experiences } from '../../content/experiences';
+import { experiencesPage } from '../../content/experiences-page';
 import { photos } from '../../data/photos';
 import { reviews } from '../../data/reviews';
 import { whatsappHref, type Locale } from '../../data/business';
@@ -39,7 +39,8 @@ const s = t(locale);
 const other: Locale = locale === 'en' ? 'fr' : 'en';
 const enquire = localize('/enquire/', locale);
 const homeFaqs = allFaqs(locale).filter((f) => f.home).map(({ q, a }) => ({ q, a }));
-const featured = experiences.slice(0, 3);
+// Three experiences from /experiences/, chosen so no photo repeats on the homepage.
+const featured = ['private-skiing', 'groomer-dinner', 'mountain-evenings'].map((id) => experiencesPage[locale].experiences.find((x) => x.id === id)!);
 const courchevelVillages = villages.filter((v) => v.group === 'courchevel');
 const guides = (await getCollection('guides'))
   .filter((g) => splitId(g.id).locale === locale)
@@ -193,21 +194,23 @@ const sectionHead = 'max-w-2xl';
       {featured.map((x) => (
         <li class="w-[82%] shrink-0 snap-start md:w-auto">
           <Picture
-            src={photos[x.image ?? 'gondola']}
-            alt={x.imageAlt?.[locale] ?? ''}
+            src={photos[x.photo ?? 'gondola']}
+            alt={x.alt ?? ''}
             formats={formats}
             widths={[360, 540, 720]}
             sizes="(min-width: 768px) 33vw, 82vw"
             class="aspect-[4/5] w-full object-cover"
           />
-          <p class="eyebrow mt-6">{x.detail[locale]}</p>
-          <h3 class="mt-2 text-3xl">
-            <SmartLink href={localize(`/experiences/`, locale) + `#${x.id}`} class="text-ink no-underline hover:text-brass-deep">{x.name[locale]}</SmartLink>
+          <h3 class="mt-6 text-3xl">
+            <SmartLink href={localize('/experiences/', locale)} class="text-ink no-underline hover:text-brass-deep">{x.title}</SmartLink>
           </h3>
-          <p class="mt-3 text-taupe">{x.text[locale]}</p>
+          <p class="mt-3 text-taupe">{x.short}</p>
         </li>
       ))}
     </ul>
+    <div class="container-site mt-10">
+      <SmartLink href={localize('/experiences/', locale)} class="btn-secondary">{experiencesPage[locale].hero.secondary}</SmartLink>
+    </div>
   </section>
 
   <!-- How it works: dark band, three steps with large numerals -->

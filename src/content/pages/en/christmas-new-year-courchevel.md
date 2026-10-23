@@ -4,7 +4,7 @@ shortTitle: Christmas and New Year
 metaTitle: "Christmas & New Year's Eve in Courchevel 2026/27 | CLC"
 description: Christmas and New Year's Eve in Courchevel 2026/27 – festive dates, how far ahead to book chalets, tables and transfers, and what we arrange for you.
 answer: Christmas and New Year in Courchevel fall within the French school holidays, from 19 December 2026 to 4 January 2027, the busiest fortnight of the winter. Chalets, private chefs and tables for 24 and 31 December are reserved months ahead, so the earlier your dates are fixed, the more choice you have. We prepare the chalet before you arrive, plan the festive meals and time your transfers around the busiest Saturdays.
-updated: 2026-10-22
+updated: 2026-10-23
 image: gift-delivery
 imageAlt: Wrapped Christmas presents and shopping bags being delivered to a wooden chalet in Courchevel
 facts:
@@ -72,7 +72,7 @@ Most of the work happens before you land, so the holiday starts when you walk th
 - **Evenings for the adults.** A nanny can look after the children at the chalet on Christmas Eve or New Year's Eve, so you can dine out without watching the clock.
 - **Gifts.** Send us your list and we take care of the shopping, wrapping and delivery, to your chalet or to friends staying elsewhere in the resort, through our [lifestyle and shopping service](/services/lifestyle/).
 
-All of this comes together in our [Christmas and New Year signature experience](/experiences/#christmas-new-year).
+For the days around the celebrations, see our [private experiences in Courchevel](/experiences/), from dog sledding to a dinner above the valley.
 
 ## Arriving and leaving over the holidays
 
