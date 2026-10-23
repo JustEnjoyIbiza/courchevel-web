@@ -5,7 +5,7 @@
 import type { Locale } from '../data/business';
 
 /** "Last updated" date shown on the hub and FAQ pages. Change it when their copy changes. */
-export const hubsUpdated = new Date('2026-10-22');
+export const hubsUpdated = new Date('2026-10-23');
 
 export type HubKey = 'services' | 'villages' | 'guides' | 'experiences' | 'faq';
 
