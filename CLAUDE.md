@@ -58,6 +58,9 @@ description anywhere else.
   concierge alert via WhatsApp Cloud API or Telegram (decision pending)
 - GA4 only after cookie consent (CNIL); Search Console + Bing Webmaster Tools
 - Images: Astro image pipeline, AVIF/WebP, width/height set, lazy below the fold
+- Photo library: Cloudinary folder synced with `src/assets/photos` by
+  `npm run cloudinary -- upload | pull | list` (keys in local `.env` only; the site never
+  loads from Cloudinary)
 - Node is installed at `~/.local/node/bin` (not on the default PATH):
   `export PATH="$HOME/.local/node/bin:$PATH"`
 
