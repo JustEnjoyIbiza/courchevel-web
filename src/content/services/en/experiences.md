@@ -4,7 +4,7 @@ shortTitle: Mountain experiences
 metaTitle: Snowmobiling, Dog Sledding & More in Courchevel | CLC
 description: Snowmobiling, dog sledding, paragliding, ski-joëring, ice driving, snowshoeing and scenic helicopter flights in Courchevel, arranged around your stay.
 answer: Beyond the pistes, Courchevel offers snowmobiling after the lifts close, dog sledding, tandem paragliding, ski-joëring, snowshoe walks and scenic helicopter flights, with ice driving nearby in Val Thorens. We book each activity with qualified local providers, fit it around your ski days and send a personal proposal within 24 hours.
-updated: 2026-10-22
+updated: 2026-10-23
 image: helicopter
 imageAlt: Helicopter hovering above a snowy landing area surrounded by pine trees in the French Alps
 facts:
@@ -71,4 +71,4 @@ Children often remember the evenings more than the pistes, and many of these act
 
 Tell us who is coming, their ages and what appeals. Our first reply comes within 15 minutes (8:00 to 22:00) and a tailored programme within 24 hours. In season we are on call 24/7, so a cancelled flight can become a dog-sledding afternoon the same day.
 
-Most activities take a few hours at most, so they fit easily into a ski day: a morning on the pistes, lunch, then an activity before the light fades. Warm clothing, transfers and any equipment are arranged in advance, and we check the weather forecast the evening before so plans can change before anyone sets out.
+Most activities take a few hours at most, so they fit easily into a ski day: a morning on the pistes, lunch, then an activity before the light fades. Warm clothing, transfers and any equipment are arranged in advance, and we check the weather forecast the evening before so plans can change before anyone sets out. Our [example week in Courchevel 1850](/guides/a-week-in-courchevel-1850/) shows how activities fit around ski days over a full stay.

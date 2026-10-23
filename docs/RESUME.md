@@ -88,10 +88,11 @@ Commits: author "Alin Letca" <alin.letca2010@gmail.com>, ending with the Co-Auth
      Lighthouse's full-page screenshot resizes the page and the hero date inputs re-lay out;
      with `disableFullPageScreenshot` or any second run it is 99 / CLS 0, and real loads record
      no layout shift. Judge the home on a second run.
-   - Guide "A week in Courchevel 1850" (EN + FR, `src/content/guides/`): a day-by-day example
-     of a stay arranged by us, clearly labelled as an example, no prices, no invented clients,
-     linked from the 1850 village page, the home guides section and related services.
-   Then run every gate (`npm run qa`, `qa:content`, link graph, Lighthouse on home and the guide).
+   - ~~Guide "A week in Courchevel 1850"~~ **done 23 Oct**: `guides/{en,fr}/a-week-in-courchevel-1850.md`,
+     labelled as an example (invented group: two couples, children 6 and 9), built only from facts
+     already on the site; linked from the 1850 village page, chalets, private-chef and experiences
+     (EN + FR) and listed in the home guides section. Gates pass; Lighthouse 99/100/100/100.
+     Owner to check: the day-by-day plan reads like something you would really arrange.
    - **Personal-touch question sheet** (`docs/personal-touch-questions.md`): 2–3 questions per
      page, in priority order (About, homepage, 12 service pages, village pages; guides/FAQ only
      a fact check). The owner answers by voice notes or rough notes (EN, FR or ES); we then weave

@@ -4,7 +4,7 @@ shortTitle: Gastronomie et chefs privés
 metaTitle: "Chef à domicile à Courchevel, au chalet | CLC"
 description: "Chef à domicile et chefs étoilés dans votre chalet à Courchevel, pour un dîner ou toute la semaine, sommelier et réservations de restaurants."
 answer: "Indiquez-nous vos dates, le nombre de convives et vos habitudes alimentaires : nous vous proposons un chef privé pour votre chalet, le temps d’un dîner ou de tout le séjour. Nous organisons aussi les petits-déjeuners, un sommelier, la livraison de vins et de courses et vos tables au restaurant, avec une proposition personnalisée sous 24 heures."
-updated: 2026-10-22
+updated: 2026-10-23
 image: terrace
 imageAlt: "Tables dressées avec des verres sur la terrasse en bois d’un restaurant d’altitude à Courchevel"
 facts:
@@ -71,5 +71,7 @@ Courchevel réunit un nombre remarquable de restaurants, des terrasses ensoleill
 Si vous souhaitez découvrir d’autres tables des Trois Vallées, nous réservons à Méribel ou à Val Thorens et organisons l’aller-retour : personne n’a à prendre le volant après le dîner.
 
 ## Comment réserver
+
+Pour voir comment dîners du chef et soirées au restaurant peuvent alterner pendant un séjour, lisez notre [exemple de semaine à Courchevel 1850](/fr/guides/a-week-in-courchevel-1850/).
 
 Envoyez-nous vos dates, le nombre de convives et le nombre de repas souhaités au chalet. Si vous hésitez encore, nous pouvons commencer par quelques dîners et en ajouter une fois installés. Nous répondons sous 15 minutes entre 8 h et 22 h, vous adressons une proposition sur mesure avec des exemples de menus sous 24 heures et restons joignables 24 h/24 pendant la saison d’hiver pour ajouter un dîner, un convive ou une bouteille.

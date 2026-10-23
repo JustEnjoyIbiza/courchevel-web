@@ -4,7 +4,7 @@ shortTitle: Courchevel 1850
 metaTitle: "Courchevel 1850 : séjour, ski et restaurants | CLC"
 description: Le plus haut village de Courchevel, avec l’altiport, les palaces et les tables étoilées. Pour qui, comment y aller et ce que nous organisons.
 answer: Courchevel 1850 est le plus haut et le plus animé des villages de Courchevel, avec l’altiport, la plupart des palaces, les boutiques de la Croisette et plusieurs restaurants étoilés au Guide Michelin. Il convient à ceux qui veulent skier depuis leur porte, dîner dehors chaque soir et tout avoir à quelques pas.
-updated: 2026-10-22
+updated: 2026-10-23
 image: gondola
 imageAlt: Télécabines au-dessus des pistes enneigées de Courchevel, au crépuscule
 facts:
@@ -72,5 +72,7 @@ Si vous préférez rester au chalet, un [chef privé](/fr/services/private-chef/
 ## Ce que nous organisons ici
 
 À 1850, l’essentiel de notre travail commence avant votre arrivée. Nous trouvons le [chalet ou le palace](/fr/services/chalets/) qui convient à votre groupe, organisons les [transferts en hélicoptère ou avec chauffeur](/fr/services/transfers/) jusqu’à l’altiport ou à votre porte, et préparons [forfaits, moniteurs et matériel](/fr/services/ski/). Pendant le séjour, nous réservons restaurants, tables pour vos [soirées](/fr/services/nightlife/) et [soins au chalet](/fr/services/wellness/), et nous occupons de tout imprévu.
+
+Pour voir comment un séjour entier s’organise, lisez notre [exemple de semaine à Courchevel 1850](/fr/guides/a-week-in-courchevel-1850/), jour après jour.
 
 Nous vous répondons sous 15 minutes entre 8 h et 22 h et vous envoyons une proposition sous 24 heures ; pendant la saison d’hiver, nous restons joignables 24 h/24 et 7 j/7. Indiquez-nous vos dates et qui vous accompagne : nous nous occupons du reste.

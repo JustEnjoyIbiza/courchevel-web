@@ -4,7 +4,7 @@ shortTitle: Chalets et palaces
 metaTitle: "Location de chalet de luxe à Courchevel 1850 | CLC"
 description: Chalets d’exception et palaces à Courchevel 1850, 1650 et Le Praz, avec personnel, préparés avant votre arrivée. Devis personnalisé.
 answer: Nous trouvons le chalet ou le palace adapté à votre groupe, à votre village et à vos dates, puis nous le préparons avant votre arrivée, du personnel aux courses jusqu’au sapin de Noël. Dites-nous qui vous accompagne et ce qui compte le plus pour vous, et nous vous envoyons une sélection avec un devis personnalisé sous 24 heures.
-updated: 2026-10-22
+updated: 2026-10-23
 image: white-chalet
 imageAlt: Chalet en bois blanc entouré de sapins enneigés à Courchevel
 facts:
@@ -71,4 +71,4 @@ Pour recevoir rapidement une sélection pertinente, un court message suffit :
 
 ## Pendant votre séjour
 
-Nous restons joignables pendant tout votre séjour, 24 h/24 et 7 j/7 en saison. Pour changer un dîner, ajouter un invité, prolonger d’une nuit ou décaler un cours de ski, un message suffit.
+Nous restons joignables pendant tout votre séjour, 24 h/24 et 7 j/7 en saison. Pour changer un dîner, ajouter un invité, prolonger d’une nuit ou décaler un cours de ski, un message suffit. Pour voir comment peut se dérouler une semaine au chalet, consultez notre [exemple de semaine à Courchevel 1850](/fr/guides/a-week-in-courchevel-1850/).

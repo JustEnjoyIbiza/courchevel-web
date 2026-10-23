@@ -4,7 +4,7 @@ shortTitle: Courchevel 1850
 metaTitle: "Courchevel 1850 Guide: Stay, Ski and Dine | CLC"
 description: The highest Courchevel village, with the altiport, palace hotels and starred restaurants. Who it suits, how to get there and what we arrange.
 answer: Courchevel 1850 is the highest and liveliest of the Courchevel villages, with the altiport, most of the palace hotels, the luxury boutiques of the Croisette and several Michelin-starred restaurants. It suits guests who want to ski from the door, dine out every night and have everything within a short walk.
-updated: 2026-10-22
+updated: 2026-10-23
 image: gondola
 imageAlt: Gondola cabins above snowy slopes in Courchevel at dusk
 facts:
@@ -72,5 +72,7 @@ If you would rather stay in, a [private chef](/services/private-chef/) can cook 
 ## What we arrange here
 
 Most of our work in 1850 starts before you arrive. We find the [chalet or palace hotel](/services/chalets/) that fits your group, organise [helicopter and chauffeured transfers](/services/transfers/) to the altiport or the door, and prepare the [ski passes, instructors and equipment](/services/ski/). During your stay we book restaurants, [nightlife](/services/nightlife/) tables and [spa treatments at the chalet](/services/wellness/), and look after anything that comes up.
+
+To see how a whole stay can fit together, read our [example week in Courchevel 1850](/guides/a-week-in-courchevel-1850/), day by day.
 
 Tell us your dates and who is coming, and we will take it from there. We reply within 15 minutes between 8:00 and 22:00, send a proposal within 24 hours and are on call 24/7 throughout the winter season.

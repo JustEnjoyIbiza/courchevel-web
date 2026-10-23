@@ -4,7 +4,7 @@ shortTitle: Expériences en montagne
 metaTitle: "Motoneige, chiens de traîneau et parapente à Courchevel"
 description: "Motoneige, chiens de traîneau, parapente, ski joëring, conduite sur glace, raquettes et survols en hélicoptère à Courchevel, intégrés à votre séjour."
 answer: "En dehors des pistes, Courchevel propose la motoneige après la fermeture des remontées, les chiens de traîneau, le parapente biplace, le ski joëring, les balades en raquettes et les survols en hélicoptère, avec la conduite sur glace toute proche à Val Thorens. Nous réservons chaque activité auprès de prestataires locaux qualifiés, l’intégrons à vos journées de ski et vous adressons une proposition sous 24 heures."
-updated: 2026-10-22
+updated: 2026-10-23
 image: helicopter
 imageAlt: "Hélicoptère en vol stationnaire au-dessus d’une aire enneigée entourée de sapins, dans les Alpes françaises"
 facts:
@@ -71,4 +71,4 @@ Les enfants se souviennent souvent davantage des soirées que des pistes. Une pi
 
 Dites-nous qui vous accompagne, les âges de chacun et ce qui vous tente. Vous recevez une première réponse sous 15 minutes (de 8 h à 22 h), puis un programme sur mesure sous 24 heures. Pendant la saison d’hiver, nous restons joignables 24 h/24 : un vol annulé peut ainsi devenir, le jour même, un après-midi en chiens de traîneau.
 
-La plupart des activités ne durent que quelques heures et s’intègrent facilement à une journée de ski : une matinée sur les pistes, le déjeuner, puis une activité avant la tombée du jour. Vêtements chauds, transferts et équipement sont prévus à l’avance, et nous consultons la météo la veille au soir pour pouvoir modifier le programme avant le départ.
+La plupart des activités ne durent que quelques heures et s’intègrent facilement à une journée de ski : une matinée sur les pistes, le déjeuner, puis une activité avant la tombée du jour. Vêtements chauds, transferts et équipement sont prévus à l’avance, et nous consultons la météo la veille au soir pour pouvoir modifier le programme avant le départ. Notre [exemple de semaine à Courchevel 1850](/fr/guides/a-week-in-courchevel-1850/) montre comment les activités s’intègrent aux journées de ski sur tout un séjour.

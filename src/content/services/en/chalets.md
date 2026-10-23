@@ -4,7 +4,7 @@ shortTitle: Chalets and palace hotels
 metaTitle: "Luxury Chalet Rental in Courchevel 1850 & Palaces | CLC"
 description: Ultra-luxury chalets and palace hotels in Courchevel 1850, 1650 and Le Praz, staffed and prepared before you arrive. Quoted personally.
 answer: We find the chalet or palace hotel that fits your group, village and dates, then prepare it before you land, from staff and groceries to the Christmas tree. Tell us who is coming and what matters most, and we send a shortlist with a personal quote within 24 hours.
-updated: 2026-10-22
+updated: 2026-10-23
 image: white-chalet
 imageAlt: White wooden chalet among snow-covered pine trees in Courchevel
 facts:
@@ -71,4 +71,4 @@ The fastest way to a good shortlist is a short message with:
 
 ## During your stay
 
-We remain on call throughout your stay, 24/7 in season. If you want to change a dinner, add a guest, extend by a night or move a ski lesson, one message is enough.
+We remain on call throughout your stay, 24/7 in season. If you want to change a dinner, add a guest, extend by a night or move a ski lesson, one message is enough. For an idea of how a week in the chalet can run, see our [example week in Courchevel 1850](/guides/a-week-in-courchevel-1850/).
