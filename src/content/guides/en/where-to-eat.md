@@ -4,7 +4,7 @@ shortTitle: Where to eat
 metaTitle: "Where to Eat in Courchevel: Restaurants by Village | CLC"
 description: Mountain restaurants, village tables and Michelin-starred dining in Courchevel 1850, Moriond, Village, Le Praz and La Tania, and how far ahead to book.
 answer: Courchevel has seven Michelin-starred restaurants in the 2026 Michelin Guide, led by the three-star Le 1947 à Cheval Blanc in 1850, alongside slope-side restaurants such as Le Chalet de Pierres, Le Cap Horn and Le Bel Air. In the Christmas, New Year and February holidays, book dinner as soon as your dates are fixed and lunch on the slopes a few days ahead. For a quieter evening, a private chef can cook in your chalet instead.
-updated: 2026-10-22
+updated: 2026-10-24
 image: restaurant-view
 imageAlt: "Round table under a crystal chandelier in a mountain restaurant with a wide view of the Alps"
 facts:
@@ -61,16 +61,31 @@ Several starred restaurants in Courchevel open for dinner only, some may close o
 
 ## Mountain restaurants
 
-Lunch on the slopes is part of the rhythm of a day in Courchevel. These restaurants are listed by the tourist office and sit on or beside the pistes:
+Lunch on the slopes is part of the rhythm of a day in Courchevel. These restaurants sit on or beside the pistes:
 
 - **Le Chalet de Pierres**, Courchevel 1850: on the Verdons slope at the Jardin Alpin, reachable on foot, on skis or by car, with traditional cooking and a sunny terrace.
 - **Le Cap Horn**, Courchevel 1850: on the route de l'Altiport, open since 1954 and described by the tourist office as the oldest altitude restaurant in 1850, with an emphasis on seafood.
 - **La Cave des Creux**, above the altiport: at 2,112 metres, at the top of the Gravelles area, known for Savoyard cooking.
 - **La Soucoupe**, at the top of La Loze, above Courchevel 1850.
+- **Le Panoramic**, at the top of La Saulire, with views across the Trois Vallées.
+- **La Cendrée**, on the Courchevel 1850 ski area.
 - **Le Bel Air**, 1650 Moriond: at the top of the Ariondaz gondola, with a fireplace and a south-facing terrace.
 - **Le Bouc Blanc**, La Tania: at 2,000 metres at the top of the La Tania gondola, with a large terrace and Savoyard dishes.
 
 Some mountain restaurants also open for dinner on certain evenings, with access by snowcat or car. We arrange the transfer so you do not have to think about the way back.
+
+## The tables in demand
+
+Some of the hardest tables to book in Courchevel are not starred. These are the ones our guests ask us for most, all in Courchevel 1850:
+
+- **Bagatelle**, on the slopes, for a long, festive lunch.
+- **Loulou**, for dinner in the village.
+- **Jaïs**, for Lebanese cooking.
+- **Sumosan**, for Japanese cooking.
+- **La Mangeoire**, for traditional French cooking and its piano bar.
+- **Le San Marco**, in the heart of the village.
+
+Over Christmas, New Year's Eve and the February holidays these fill first, so we request them as soon as your dates are set.
 
 ## Restaurants by village
 

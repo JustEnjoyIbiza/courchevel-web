@@ -4,7 +4,7 @@ shortTitle: Mountain experiences
 metaTitle: Snowmobiling, Dog Sledding & More in Courchevel | CLC
 description: Snowmobiling, dog sledding, paragliding, ski-joëring, ice driving, snowshoeing and scenic helicopter flights in Courchevel, arranged around your stay.
 answer: Beyond the pistes, Courchevel offers snowmobiling after the lifts close, dog sledding, tandem paragliding, ski-joëring, snowshoe walks and scenic helicopter flights, with ice driving nearby in Val Thorens. We book each activity with qualified local providers, fit it around your ski days and send a personal proposal within 24 hours.
-updated: 2026-10-23
+updated: 2026-10-24
 image: husky
 imageAlt: "Husky from a sled-dog team standing in the snow, other dogs waiting behind"
 facts:
@@ -48,6 +48,7 @@ Some of the most memorable afternoons in Courchevel happen off skis. We book eac
 - **Snowmobiling:** first rides on a secure 700 m circuit, or a guided outing on the ski area once the slopes have closed and the light is fading.
 - **Dog sledding:** sit back as a passenger, or learn to drive your own team with a musher beside you. Rides follow forest trails and take place by day or at dusk.
 - **Ski-joëring:** skiing while towed by a horse, a traditional winter discipline that suits confident skiers.
+- **Horse riding:** guided rides on winter trails for riders of every level, at a pace set by the guide.
 - **Snowshoe walks:** quiet guided walks through the forest, with stops for wildlife, views or a hot drink.
 
 ## In the air
@@ -56,6 +57,7 @@ Courchevel Altiport sits just above Courchevel 1850, which makes it an easy star
 
 - **Tandem paragliding:** a flight with a state-certified pilot, taking off above the resort and landing lower down the valley. Flights depend on the wind, so we hold a second slot when we can.
 - **Scenic helicopter flights:** a loop over the Trois Vallées, or a longer flight towards the Mont Blanc massif, run by licensed helicopter partners.
+- **Hot-air balloon flights:** a slow, silent flight above the valley with a licensed pilot, on days when the wind allows.
 
 ## Ice driving
 

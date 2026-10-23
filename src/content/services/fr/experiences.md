@@ -4,7 +4,7 @@ shortTitle: Expériences en montagne
 metaTitle: "Motoneige, chiens de traîneau et parapente à Courchevel"
 description: "Motoneige, chiens de traîneau, parapente, ski joëring, conduite sur glace, raquettes et survols en hélicoptère à Courchevel, intégrés à votre séjour."
 answer: "En dehors des pistes, Courchevel propose la motoneige après la fermeture des remontées, les chiens de traîneau, le parapente biplace, le ski joëring, les balades en raquettes et les survols en hélicoptère, avec la conduite sur glace toute proche à Val Thorens. Nous réservons chaque activité auprès de prestataires locaux qualifiés, l’intégrons à vos journées de ski et vous adressons une proposition sous 24 heures."
-updated: 2026-10-23
+updated: 2026-10-24
 image: husky
 imageAlt: "Husky d’un attelage de chiens de traîneau dans la neige, les autres chiens attendant derrière"
 facts:
@@ -48,6 +48,7 @@ Certains des plus beaux après-midis à Courchevel se passent sans skis. Nous r�
 - **Motoneige :** initiation sur un circuit sécurisé de 700 m, ou sortie encadrée sur le domaine skiable une fois les pistes fermées, à la tombée du jour.
 - **Chiens de traîneau :** confortablement installé en passager, ou aux commandes de votre propre attelage avec un musher à vos côtés.
 - **Ski joëring :** à skis, tracté par un cheval, une discipline hivernale traditionnelle réservée aux skieurs à l’aise.
+- **Balades à cheval :** sorties accompagnées sur des sentiers d’hiver, pour tous les niveaux, à l’allure choisie par le guide.
 - **Raquettes :** balades accompagnées et paisibles en forêt, avec des haltes pour observer la faune, la vue ou boire un chocolat chaud.
 
 ## Dans les airs
@@ -56,6 +57,7 @@ Au-dessus de Courchevel 1850, l’altiport accueille les survols en hélicoptèr
 
 - **Parapente biplace :** un vol avec un moniteur diplômé d’État, décollage au-dessus de la station et atterrissage plus bas dans la vallée. Les vols dépendent du vent ; nous réservons un second créneau dès que possible.
 - **Survols en hélicoptère :** une boucle au-dessus des Trois Vallées ou un vol plus long vers le massif du Mont-Blanc, assurés par des compagnies d’hélicoptères agréées.
+- **Montgolfière :** un vol lent et silencieux au-dessus de la vallée avec un pilote breveté, les jours où le vent le permet.
 
 ## La conduite sur glace
 

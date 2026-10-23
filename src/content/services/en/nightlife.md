@@ -4,7 +4,7 @@ shortTitle: Nightlife and après-ski
 metaTitle: Après-Ski & Nightclub Tables in Courchevel | CLC
 description: Après-ski tables, VIP nightclub tables, guest lists and private parties in your Courchevel chalet, requested on your behalf and planned around your stay.
 answer: We request après-ski tables, VIP nightclub tables and guest-list places in Courchevel on your behalf, subject to availability, and plan the evening around them with a driver and dinner. For a night in, we organise a private party in your chalet, and every request receives a personal proposal within 24 hours.
-updated: 2026-10-22
+updated: 2026-10-24
 image: apres-ski
 imageAlt: "Skiers gathered on a sunny après-ski terrace below snowy peaks in Courchevel"
 facts:
@@ -43,6 +43,20 @@ related:
 Après-ski in Courchevel begins on the mountain. As the lifts close in the late afternoon, terraces and slope-side bars fill with music, and the evening then moves down into the village. We request tables for your group, so you arrive straight from the last run without queuing for a place.
 
 If some of your group do not ski, we time the table so they can meet you there, and arrange a car to bring them up. For a quieter evening, we suggest a fireside bar in the village or a drink on a heated terrace instead of the busiest spots.
+
+## The tables our guests ask for most
+
+Each winter the same names come up in our requests. Tables are limited, especially over Christmas, New Year's Eve and the February holidays, so we ask early and follow up:
+
+- **Bagatelle**, on the slopes of Courchevel 1850, for a long, festive lunch that runs into the afternoon.
+- **Le Cap Horn**, on the route de l'Altiport, open since 1954, for seafood at altitude.
+- **La Soucoupe**, at the top of La Loze, for lunch above 1850.
+- **Le Chalet de Pierres**, on the Verdons slope, for traditional cooking on a sunny terrace.
+- **Le Tremplin**, at the foot of the slopes in 1850, for après-ski as the lifts close.
+- **La Mangeoire**, in the village, a piano bar and restaurant where dinner turns into the evening.
+- **Loulou**, in Courchevel 1850, for dinner.
+
+Each venue confirms subject to availability. Our guide to [where to eat in Courchevel](/guides/where-to-eat/) has more addresses for lunch and dinner.
 
 ## VIP nightclub tables and guest lists
 

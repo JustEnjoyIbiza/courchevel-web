@@ -4,7 +4,7 @@ shortTitle: Chalets and palace hotels
 metaTitle: "Luxury Chalet Rental in Courchevel 1850 & Palaces | CLC"
 description: Ultra-luxury chalets and palace hotels in Courchevel 1850, 1650 and Le Praz, staffed and prepared before you arrive. Quoted personally.
 answer: We find the chalet or palace hotel that fits your group, village and dates, then prepare it before you land, from staff and groceries to the Christmas tree. Tell us who is coming and what matters most, and we send a shortlist with a personal quote within 24 hours.
-updated: 2026-10-23
+updated: 2026-10-24
 image: chalet-living-room
 imageAlt: "Chalet living room in Courchevel with exposed beams, a stone fireplace and a chandelier"
 facts:
@@ -51,6 +51,8 @@ We then propose a small number of chalets that genuinely fit, rather than a long
 ## Palace and five-star hotels
 
 Courchevel 1850 is known for having several of France's palace-rated hotels within walking distance of each other. A hotel can make more sense than a chalet for shorter stays, couples, or groups who want a spa, restaurants and room service without staff to manage. We arrange the booking and look after everything around it: transfers, ski passes, restaurant tables and in-room requests.
+
+Among the hotels we book in Courchevel 1850: **Cheval Blanc** in the Jardin Alpin, **Les Airelles**, **Le K2 Palace**, **L'Apogée** and **Hôtel Barrière Les Neiges**; **Aman Le Mélézin**, **Le Lana** and **La Sivolière**, all ski-in, ski-out; and **Les Grandes Alpes**, **Carlina** and **Les Suites de la Potinière**, known for their spas. For a more intimate stay, **White 1921** and **Le Saint Roch** are smaller, boutique-style hotels. Over the festive weeks the finest suites go early, so we ask as soon as your dates are set.
 
 ## Before you arrive
 

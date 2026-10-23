@@ -4,7 +4,7 @@ shortTitle: Soirées et après-ski
 metaTitle: "Tables d’après-ski et de club à Courchevel | CLC"
 description: "Tables d’après-ski, tables VIP en club, listes d’invités et soirées privées au chalet à Courchevel, demandées en votre nom selon disponibilité."
 answer: "Nous demandons en votre nom des tables d’après-ski, des tables VIP en club et des places sur liste d’invités à Courchevel, selon disponibilité, et organisons la soirée autour, avec chauffeur et dîner. Pour une soirée au chalet, nous préparons une fête privée, et chaque demande reçoit une proposition personnalisée sous 24 heures."
-updated: 2026-10-22
+updated: 2026-10-24
 image: apres-ski
 imageAlt: "Skieurs réunis sur une terrasse d’après-ski ensoleillée, sous les sommets enneigés de Courchevel"
 facts:
@@ -43,6 +43,20 @@ related:
 À Courchevel, l’après-ski commence en montagne. À la fermeture des remontées, en fin d’après-midi, les terrasses et les bars en bord de piste s’animent, puis la soirée descend vers le village. Nous demandons des tables pour votre groupe : vous arrivez directement de la dernière descente, sans chercher de place.
 
 Si certains de vos proches ne skient pas, nous calons l’horaire pour qu’ils vous rejoignent et prévoyons une voiture pour les y conduire. Pour une soirée plus calme, nous vous proposons plutôt un bar au coin du feu au village ou un verre sur une terrasse chauffée.
+
+## Les tables que nos clients nous demandent le plus
+
+Chaque hiver, les mêmes noms reviennent dans les demandes. Les tables sont rares, surtout à Noël, au Nouvel An et pendant les vacances de février : nous les demandons tôt et nous relançons.
+
+- **Bagatelle**, sur les pistes de Courchevel 1850, pour un long déjeuner festif qui se prolonge l’après-midi.
+- **Le Cap Horn**, sur la route de l’Altiport, ouvert depuis 1954, pour les produits de la mer en altitude.
+- **La Soucoupe**, au sommet de La Loze, pour déjeuner au-dessus de 1850.
+- **Le Chalet de Pierres**, sur la piste des Verdons, pour une cuisine traditionnelle sur une terrasse ensoleillée.
+- **Le Tremplin**, au pied des pistes à 1850, pour l’après-ski à la fermeture des remontées.
+- **La Mangeoire**, au village, piano-bar et restaurant où le dîner se prolonge en soirée.
+- **Loulou**, à Courchevel 1850, pour le dîner.
+
+Chaque établissement confirme sous réserve de disponibilité. Notre guide [où manger à Courchevel](/fr/guides/where-to-eat/) rassemble d’autres adresses pour le déjeuner et le dîner.
 
 ## Tables VIP en club et listes d’invités
 

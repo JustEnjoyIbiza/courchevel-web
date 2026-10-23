@@ -4,7 +4,7 @@ shortTitle: Où manger
 metaTitle: "Où manger à Courchevel : restaurants par village | CLC"
 description: Restaurants d’altitude, tables de village et étoilés Michelin à Courchevel 1850, Moriond, Village, Le Praz et La Tania, et quand réserver en haute saison.
 answer: Courchevel compte sept restaurants étoilés dans le Guide Michelin 2026, emmenés par Le 1947 à Cheval Blanc, trois étoiles à 1850, ainsi que des restaurants d’altitude comme Le Chalet de Pierres, Le Cap Horn ou Le Bel Air. Pendant les vacances de Noël, du Nouvel An et de février, réservez vos dîners dès que vos dates sont arrêtées et vos déjeuners sur les pistes quelques jours à l’avance. Pour une soirée plus calme, un chef privé peut cuisiner dans votre chalet.
-updated: 2026-10-22
+updated: 2026-10-24
 image: restaurant-view
 imageAlt: "Table ronde sous un lustre en cristal dans un restaurant d’altitude avec une large vue sur les Alpes"
 facts:
@@ -61,16 +61,31 @@ Plusieurs tables étoilées de Courchevel n’ouvrent que le soir, certaines peu
 
 ## Les restaurants d’altitude
 
-Le déjeuner sur les pistes fait partie du rythme d’une journée à Courchevel. Ces restaurants figurent dans la sélection de l’office de tourisme et se trouvent sur les pistes ou à proximité :
+Le déjeuner sur les pistes fait partie du rythme d’une journée à Courchevel. Ces restaurants se trouvent sur les pistes ou à proximité :
 
 - **Le Chalet de Pierres**, Courchevel 1850 : sur la piste des Verdons, au Jardin Alpin, accessible à pied, à ski ou en voiture, avec une cuisine traditionnelle et une terrasse ensoleillée.
 - **Le Cap Horn**, Courchevel 1850 : sur la route de l’Altiport, ouvert depuis 1954 et présenté par l’office de tourisme comme le plus ancien restaurant d’altitude de 1850, avec une carte tournée vers la mer.
 - **La Cave des Creux**, au-dessus de l’altiport : à 2 112 mètres, dans le secteur des Gravelles, réputée pour sa cuisine savoyarde.
 - **La Soucoupe**, au sommet de La Loze, au-dessus de Courchevel 1850.
+- **Le Panoramic**, au sommet de la Saulire, avec la vue sur les Trois Vallées.
+- **La Cendrée**, sur le domaine skiable de Courchevel 1850.
 - **Le Bel Air**, 1650 Moriond : à l’arrivée de la télécabine de l’Ariondaz, avec une cheminée et une terrasse plein sud.
 - **Le Bouc Blanc**, La Tania : à 2 000 mètres, à l’arrivée de la télécabine de La Tania, avec une grande terrasse et des plats savoyards.
 
 Certains restaurants d’altitude ouvrent aussi le soir, avec un accès en dameuse ou en voiture. Nous organisons le transfert pour que vous n’ayez pas à penser au retour.
+
+## Les tables les plus demandées
+
+Certaines des tables les plus difficiles à obtenir à Courchevel ne sont pas étoilées. Ce sont celles que nos clients nous demandent le plus, toutes à Courchevel 1850 :
+
+- **Bagatelle**, sur les pistes, pour un long déjeuner festif.
+- **Loulou**, pour dîner au village.
+- **Jaïs**, pour la cuisine libanaise.
+- **Sumosan**, pour la cuisine japonaise.
+- **La Mangeoire**, pour la cuisine française traditionnelle et son piano-bar.
+- **Le San Marco**, au cœur du village.
+
+À Noël, au Nouvel An et pendant les vacances de février, ce sont les premières complètes : nous les demandons dès que vos dates sont fixées.
 
 ## Les restaurants par village
 

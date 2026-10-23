@@ -4,7 +4,7 @@ shortTitle: Chalets et palaces
 metaTitle: "Location de chalet de luxe à Courchevel 1850 | CLC"
 description: Chalets d’exception et palaces à Courchevel 1850, 1650 et Le Praz, avec personnel, préparés avant votre arrivée. Devis personnalisé.
 answer: Nous trouvons le chalet ou le palace adapté à votre groupe, à votre village et à vos dates, puis nous le préparons avant votre arrivée, du personnel aux courses jusqu’au sapin de Noël. Dites-nous qui vous accompagne et ce qui compte le plus pour vous, et nous vous envoyons une sélection avec un devis personnalisé sous 24 heures.
-updated: 2026-10-23
+updated: 2026-10-24
 image: chalet-living-room
 imageAlt: "Salon d’un chalet à Courchevel avec poutres apparentes, cheminée en pierre et lustre"
 facts:
@@ -51,6 +51,8 @@ Vous recevez ensuite une courte sélection de chalets choisis pour vous, plutôt
 ## Palaces et hôtels cinq étoiles
 
 Courchevel 1850 a la particularité de réunir plusieurs palaces à quelques pas les uns des autres. Pour un séjour court, un couple ou un groupe qui souhaite un spa, des restaurants et un service en chambre sans personnel à gérer, l’hôtel est parfois plus judicieux qu’un chalet. Nous nous chargeons de la réservation et de tout ce qui l’entoure : transferts, forfaits, tables au restaurant et demandes en chambre.
+
+Parmi les hôtels que nous réservons à Courchevel 1850 : **Cheval Blanc**, au Jardin Alpin, **Les Airelles**, **Le K2 Palace**, **L’Apogée** et l’**Hôtel Barrière Les Neiges** ; **Aman Le Mélézin**, **Le Lana** et **La Sivolière**, tous skis aux pieds ; **Les Grandes Alpes**, le **Carlina** et **Les Suites de la Potinière**, réputés pour leur spa. Pour un séjour plus intime, **White 1921** et **Le Saint Roch** sont des hôtels plus petits, dans l’esprit boutique. Pendant les fêtes, les plus belles suites partent tôt : nous les demandons dès que vos dates sont fixées.
 
 ## Avant votre arrivée
 
