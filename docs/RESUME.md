@@ -93,7 +93,8 @@ Commits: author "Alin Letca" <alin.letca2010@gmail.com>, ending with the Co-Auth
      already on the site; linked from the 1850 village page, chalets, private-chef and experiences
      (EN + FR) and listed in the home guides section. Gates pass; Lighthouse 99/100/100/100.
      Owner to check: the day-by-day plan reads like something you would really arrange.
-   - **Personal-touch question sheet** (`docs/personal-touch-questions.md`): 2–3 questions per
+   - ~~Personal-touch question sheet~~ **written 23 Oct**, now waiting on the owner's answers
+     (`docs/personal-touch-questions.md`, 37 questions numbered A/H/S/V/G): 2–3 questions per
      page, in priority order (About, homepage, 12 service pages, village pages; guides/FAQ only
      a fact check). The owner answers by voice notes or rough notes (EN, FR or ES); we then weave
      the answers into the pages in the owner's voice, anonymised, keeping every gate passing.

@@ -27,6 +27,10 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 - [ ] Keep "Winter Retreat", "VIP Party Package", "Ski Explorer" in English on the French site, or translate them like the three new experiences?
 - [ ] Titles use the short brand "CLC" after the "|" to stay under 60 characters. OK, or prefer "Courchevel Concierge"?
 
+## Your experience, in your words
+
+- [ ] Answer the questions in `personal-touch-questions.md` (voice notes are fine; start with About and the homepage). Also tells us if the example week in 1850 is how you would really do it
+
 ## About page (end of project)
 
 - [ ] Founder name, photo, short story, languages, year started in Courchevel
