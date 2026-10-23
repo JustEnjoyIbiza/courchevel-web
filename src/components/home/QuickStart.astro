@@ -3,6 +3,7 @@
  * Homepage quick-start: dates, village and group size, sent with a plain GET
  * to /enquire/, which arrives pre-filled (netlify/edge-functions/enquire-prefill.ts,
  * and src/scripts/enquiry-form.ts when JavaScript runs). No script on the homepage.
+ * One row on wide screens, a compact grid on phones.
  */
 import { home } from '../../content/home';
 import { enquiry } from '../../content/enquiry';
@@ -26,9 +27,12 @@ const input =
   'mt-2 block w-full min-h-12 border border-line bg-white px-3 py-2 text-base text-ink focus:border-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-brass-deep';
 ---
 
-<form method="get" action={`${localize('/enquire/', locale)}#form`} class="quick-start mt-10 border-t border-line pt-8" aria-labelledby="qs-title">
-  <h2 id="qs-title" class="font-serif text-2xl text-ink">{c.title}</h2>
-  <div class="mt-5 grid grid-cols-2 gap-x-4 gap-y-5">
+<form method="get" action={`${localize('/enquire/', locale)}#form`} class="quick-start" aria-labelledby="qs-title">
+  <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+    <h2 id="qs-title" class="font-serif text-2xl text-ink md:text-3xl">{c.title}</h2>
+    <p class="text-sm text-taupe">{c.note}</p>
+  </div>
+  <div class="mt-6 grid grid-cols-2 gap-x-4 gap-y-5 lg:grid-cols-[1fr_1fr_1.4fr_0.7fr_0.7fr_auto] lg:items-end">
     <div>
       <label class={label} for={id('arrival')}>{f.arrival}</label>
       <input class={input} id={id('arrival')} name="arrival" type="date" min={today} />
@@ -37,27 +41,24 @@ const input =
       <label class={label} for={id('departure')}>{f.departure}</label>
       <input class={input} id={id('departure')} name="departure" type="date" min={today} />
     </div>
-    <div class="col-span-2 sm:col-span-1">
+    <div class="col-span-2 lg:col-span-1">
       <label class={label} for={id('village')}>{c.village}</label>
       <select class={input} id={id('village')} name="village">
         <option value="">{c.villagePlaceholder}</option>
         {VILLAGES.map((v) => <option value={v}>{villageLabels[locale][v]}</option>)}
       </select>
     </div>
-    <div class="col-span-2 grid grid-cols-2 gap-x-4 sm:col-span-1">
-      <div>
-        <label class={label} for={id('adults')}>{f.adults}</label>
-        <input class={input} id={id('adults')} name="adults" type="number" inputmode="numeric" min="1" max="99" value="2" />
-      </div>
-      <div>
-        <label class={label} for={id('children')}>{f.children}</label>
-        <input class={input} id={id('children')} name="children" type="number" inputmode="numeric" min="0" max="99" value="0" />
-      </div>
+    <div>
+      <label class={label} for={id('adults')}>{f.adults}</label>
+      <input class={input} id={id('adults')} name="adults" type="number" inputmode="numeric" min="1" max="99" value="2" />
+    </div>
+    <div>
+      <label class={label} for={id('children')}>{f.children}</label>
+      <input class={input} id={id('children')} name="children" type="number" inputmode="numeric" min="0" max="99" value="0" />
+    </div>
+    <div class="col-span-2 lg:col-span-1">
+      <button type="submit" class="btn-primary w-full">{c.submit}</button>
     </div>
   </div>
-  <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-    <button type="submit" class="btn-primary">{c.submit}</button>
-    <slot />
-  </div>
-  <p class="mt-3 text-sm text-taupe">{c.note}</p>
+  <slot />
 </form>

@@ -45,6 +45,19 @@ const guides = (await getCollection('guides'))
   .filter((g) => splitId(g.id).locale === locale)
   .map((g) => ({ title: g.data.shortTitle ?? g.data.title, text: g.data.description, href: localize(`/guides/${splitId(g.id).slug}/`, locale) }));
 const pad = (n: number) => String(n).padStart(2, '0');
+const serviceEntries = (await getCollection('services')).filter((e) => splitId(e.id).locale === locale);
+const featuredSlugs = [
+  { slug: 'chalets', image: 'white-chalet' },
+  { slug: 'transfers', image: 'helicopter' },
+  { slug: 'private-chef', image: 'terrace' },
+] as const;
+const featuredServices = featuredSlugs.map(({ slug, image }) => {
+  const svc = services.find((x) => x.slug === slug)!;
+  // Alt text comes from the service page that uses the same photo, in this language.
+  const alt = serviceEntries.find((e) => e.data.image === image)?.data.imageAlt ?? '';
+  return { svc, image, alt };
+});
+const otherServices = services.filter((x) => !featuredSlugs.some((f) => f.slug === x.slug));
 
 const heroForSchema = (await getImage({ src: heroImg, width: 1200, format: 'jpeg' })).src;
 const schema = [
@@ -65,43 +78,64 @@ const sectionHead = 'max-w-2xl';
   alternatePath={localize('/', other)}
   schema={schema}
 >
-  <!-- Hero -->
-  <section id="hero" class="border-b border-line">
-    <div class="mx-auto grid max-w-[96rem] md:min-h-[min(86vh,52rem)] md:grid-cols-2">
-      <div class="order-2 flex flex-col justify-center px-5 py-12 sm:px-8 md:order-1 md:px-12 md:py-16 lg:px-20">
-        <p class="eyebrow">{c.hero.eyebrow}</p>
-        <h1 class="mt-5 text-display">{c.hero.title}</h1>
-        <div class="rule mt-8"></div>
-        <p class="mt-8 max-w-xl text-lg text-taupe">{c.hero.lead}</p>
-        <QuickStart locale={locale}>
-          <a href={whatsappHref(locale)} class="btn-secondary" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
-        </QuickStart>
-      </div>
-      <div class="relative order-1 aspect-[4/3] md:order-2 md:aspect-auto">
+  <!-- Hero: dark editorial band, headline and two portrait photos -->
+  <section id="hero" class="hero relative overflow-hidden bg-ink text-ivory">
+    <div class="mx-auto grid max-w-[96rem] md:grid-cols-12 md:items-center md:gap-10 md:px-12 md:py-20 lg:px-20 lg:py-24">
+      <div class="relative md:order-2 md:col-span-6 md:h-[min(78vh,46rem)]">
         <Picture
           src={heroImg}
           alt={c.hero.imageAlt}
           formats={formats}
           widths={[480, 720, 853]}
-          sizes="(min-width: 768px) 50vw, 100vw"
+          sizes="(min-width: 768px) 34vw, 100vw"
           loading="eager"
           fetchpriority="high"
-          class="absolute inset-0 h-full w-full object-cover object-[center_40%]"
+          class="aspect-[4/5] w-full object-cover object-[center_40%] md:absolute md:top-0 md:right-0 md:aspect-auto md:h-[88%] md:w-[68%]"
         />
+        <Picture
+          src={photos['hot-tub']}
+          alt={c.hero.secondImageAlt}
+          formats={formats}
+          widths={[320, 480, 640]}
+          sizes="20vw"
+          loading="lazy"
+          class="hidden border-[10px] border-ink object-cover md:absolute md:bottom-0 md:left-0 md:block md:h-[52%] md:w-[44%]"
+        />
+      </div>
+      <div class="px-5 py-12 sm:px-8 md:order-1 md:col-span-6 md:px-0 md:py-0">
+        <p class="eyebrow text-brass">{c.hero.eyebrow}</p>
+        <h1 class="mt-6 text-[clamp(2.75rem,1.7rem+4vw,5.25rem)] leading-[1.02] text-ivory">{c.hero.title}</h1>
+        <p class="hero-fade mt-8 max-w-xl font-serif text-[clamp(1.5rem,1.2rem+1vw,2.1rem)] leading-snug italic text-brass">{c.hero.tagline}</p>
+        <p class="hero-fade mt-6 max-w-lg text-stone/90">{c.hero.short}</p>
+        <div class="hero-fade mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <a href={enquire} class="btn bg-ivory text-ink hover:bg-brass">{s.planMyStay}</a>
+          <a href={whatsappHref(locale)} class="btn-light" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Proof strip -->
-  <section aria-label={c.services.eyebrow} class="bg-stone">
-    <dl class="container-site grid grid-cols-2 gap-x-6 gap-y-8 py-10 md:grid-cols-4 md:py-12">
-      {c.proof.map((p) => (
-        <div class="flex flex-col border-t border-brass pt-4">
-          <dt class="text-sm text-taupe">{p.label}</dt>
-          <dd class="order-first font-serif text-4xl font-semibold text-brass-deep">{p.value}</dd>
-        </div>
-      ))}
-    </dl>
+  <!-- Quick-start: dates, village and group size, continuing into the enquiry form -->
+  <section aria-label={c.quickStart.title} class="border-b border-line bg-ivory">
+    <div class="container-site py-10 md:py-12">
+      <QuickStart locale={locale} />
+    </div>
+  </section>
+
+  <!-- Statement: the direct answer, then the key facts -->
+  <section class="py-section">
+    <div class="container-site">
+      <div class="rule mx-auto"></div>
+      <p class="mx-auto mt-10 max-w-4xl text-center font-serif text-[clamp(1.45rem,1.15rem+1vw,2.1rem)] leading-snug text-ink">{c.hero.lead}</p>
+      <dl class="mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+        {c.proof.map((p) => (
+          <div class="flex flex-col items-center text-center">
+            <dt class="mt-3 text-sm text-taupe">{p.label}</dt>
+            <dd class="order-first font-serif text-5xl font-medium text-brass-deep md:text-6xl">{p.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
   </section>
 
   <!-- Seasonal: Christmas and New Year (shown once that page exists) -->
@@ -112,7 +146,7 @@ const sectionHead = 'max-w-2xl';
     </p>
   </div>
 
-  <!-- Services -->
+  <!-- Services: three large photo tiles, then the other nine as an index -->
   <section id="services" class="py-section">
     <div class="container-site">
       <div class={sectionHead}>
@@ -120,19 +154,37 @@ const sectionHead = 'max-w-2xl';
         <h2 class="mt-4 text-h2">{c.services.title}</h2>
         <p class="mt-5 text-taupe">{c.services.intro}</p>
       </div>
-      <ol class="mt-14 grid gap-x-16 md:grid-cols-2">
-        {services.map((svc, i) => (
-          <li class="flex gap-6 border-t border-line py-7">
-            <span class="w-8 shrink-0 pt-1 font-serif text-lg text-brass-deep" aria-hidden="true">{pad(i + 1)}</span>
-            <div>
-              <h3 class="text-2xl">
-                <SmartLink href={localize(`/services/${svc.slug}/`, locale)} class="text-ink no-underline hover:text-brass-deep">{svc.name[locale]}</SmartLink>
+      <ul class="mt-14 grid gap-5 md:grid-cols-3 md:gap-6">
+        {featuredServices.map((f) => (
+          <li class="group relative overflow-hidden bg-ink">
+            <Picture
+              src={photos[f.image]}
+              alt={f.alt}
+              formats={formats}
+              widths={[400, 600, 800]}
+              sizes="(min-width: 768px) 33vw, 100vw"
+              class="aspect-[4/5] w-full object-cover opacity-90 transition duration-700 ease-out group-hover:scale-[1.04] group-hover:opacity-100 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+            />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/70 to-transparent px-6 pt-24 pb-7">
+              <h3 class="text-3xl text-ivory">
+                <SmartLink href={localize(`/services/${f.svc.slug}/`, locale)} class="text-ivory no-underline after:absolute after:inset-0 hover:text-brass">{f.svc.name[locale]}</SmartLink>
               </h3>
-              <p class="mt-2 text-taupe">{svc.summary[locale]}</p>
+              <p class="mt-2 text-sm text-stone">{f.svc.summary[locale]}</p>
             </div>
           </li>
         ))}
-      </ol>
+      </ul>
+      <p class="eyebrow mt-16">{c.services.more}</p>
+      <ul class="mt-6 grid gap-x-12 sm:grid-cols-2 lg:grid-cols-3">
+        {otherServices.map((svc) => (
+          <li class="border-t border-line py-5">
+            <h3 class="text-xl">
+              <SmartLink href={localize(`/services/${svc.slug}/`, locale)} class="text-ink no-underline hover:text-brass-deep">{svc.name[locale]}</SmartLink>
+            </h3>
+            <p class="mt-1 text-sm text-taupe">{svc.summary[locale]}</p>
+          </li>
+        ))}
+      </ul>
       <div class="mt-12">
         <a href={enquire} class="btn-primary">{s.planMyStay}</a>
       </div>
@@ -169,34 +221,30 @@ const sectionHead = 'max-w-2xl';
     </ul>
   </section>
 
-  <!-- How it works -->
-  <section class="py-section">
-    <div class="container-site grid items-center gap-12 md:grid-cols-12 md:gap-16">
-      <div class="md:col-span-5">
+  <!-- How it works: dark band, three steps with large numerals -->
+  <section class="bg-ink py-section text-ivory">
+    <div class="container-site grid gap-14 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <p class="eyebrow text-brass">{c.steps.eyebrow}</p>
+        <h2 class="mt-4 text-h2 text-ivory">{c.steps.title}</h2>
         <Picture
           src={stepsImg}
           alt={c.steps.imageAlt}
           formats={formats}
-          widths={[400, 600, 900]}
-          sizes="(min-width: 768px) 40vw, 100vw"
-          class="aspect-[4/5] w-full object-cover"
+          widths={[400, 600, 800]}
+          sizes="(min-width: 1024px) 28vw, 100vw"
+          class="mt-10 hidden aspect-[4/5] w-full object-cover lg:block"
         />
       </div>
-      <div class="md:col-span-7">
-        <p class="eyebrow">{c.steps.eyebrow}</p>
-        <h2 class="mt-4 text-h2">{c.steps.title}</h2>
-        <ol class="mt-10 space-y-8">
-          {c.steps.items.map((step, i) => (
-            <li class="flex gap-6 border-t border-line pt-6">
-              <span class="font-serif text-3xl text-brass-deep" aria-hidden="true">{pad(i + 1)}</span>
-              <div>
-                <h3 class="text-2xl">{step.title}</h3>
-                <p class="mt-2 text-taupe">{step.text}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </div>
+      <ol class="grid gap-10 md:grid-cols-3 lg:col-span-8 lg:self-end">
+        {c.steps.items.map((step, i) => (
+          <li class="border-t border-brass/60 pt-6">
+            <span class="block font-serif text-7xl leading-none text-brass" aria-hidden="true">{pad(i + 1)}</span>
+            <h3 class="mt-6 text-2xl text-ivory">{step.title}</h3>
+            <p class="mt-3 text-stone/85">{step.text}</p>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 

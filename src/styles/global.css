@@ -3,6 +3,7 @@
 /* Self-hosted fonts (no request to Google). Direction A: Ivory & Brass. */
 @import "@fontsource/cormorant-garamond/500.css";
 @import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/cormorant-garamond/500-italic.css";
 @import "@fontsource-variable/manrope/wght.css";
 
 /*
@@ -84,6 +85,19 @@
 .js .enquiry-form[data-step="3"] .form-next { display: none; }
 .js .enquiry-form[data-step="2"] .form-back,
 .js .enquiry-form[data-step="3"] .form-back { display: inline-flex; }
+
+/* Homepage hero: the tagline and buttons rise in softly. The H1 and the photo are
+   never animated, so the largest paint is not delayed. */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-fade { animation: hero-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.hero-fade + .hero-fade { animation-delay: 0.12s; }
+.hero-fade + .hero-fade + .hero-fade { animation-delay: 0.24s; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade { animation: none; }
+}
 
 @layer components {
   .container-site {
