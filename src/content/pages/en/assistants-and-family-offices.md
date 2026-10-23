@@ -5,8 +5,8 @@ metaTitle: Courchevel Concierge for Assistants & Family Offices | CLC
 description: Personal assistants, family offices and travel agents can book Courchevel stays for clients – one contact, discretion and written confirmations.
 answer: Personal assistants, family offices and travel agents may book for clients, and we deal with you directly. You have one contact for chalets, transfers, chefs, staff and ski, every booking is confirmed in writing, and changes are handled at short notice, 24/7 during the winter season.
 updated: 2026-10-22
-image: luggage
-imageAlt: Luggage being loaded into a four-wheel-drive car in the snow
+image: van-interior
+imageAlt: "Open door of a chauffeured van showing cream leather seats and a blanket, mountains behind"
 facts:
   - label: Who can book
     value: Personal assistants, family offices, travel agents and private office staff, for their clients

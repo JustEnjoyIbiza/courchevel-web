@@ -5,8 +5,8 @@ metaTitle: Private Events & Celebrations in Courchevel | CLC
 description: Birthdays, proposals, weddings, New Year's Eve and corporate groups in Courchevel, from venue and chef to DJ, florist and photographer. Quoted personally.
 answer: We plan private events in Courchevel from a proposal for two to a corporate group, and coordinate the venue, chef, music, flowers and photographer. Tell us the occasion, the date and the number of guests, and we send a tailored proposal within 24 hours.
 updated: 2026-10-22
-image: terrace
-imageAlt: Tables laid with glasses on the wooden terrace of a mountain restaurant in Courchevel
+image: party-table
+imageAlt: "Long table dressed for a private party under a mirror-ball chandelier"
 facts:
   - label: New Year's Eve
     value: Start planning by early autumn; venues, chefs and DJs are booked months ahead

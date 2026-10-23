@@ -5,8 +5,8 @@ metaTitle: "Une semaine à Courchevel 1850 : exemple de séjour | CLC"
 description: Un exemple de séjour de sept nuits à Courchevel 1850, jour après jour, de l’arrivée en hélicoptère au dernier dîner, et ce que nous organisons.
 answer: Voici un exemple de séjour de sept nuits à Courchevel 1850, de l’arrivée en hélicoptère à l’altiport jusqu’au dîner d’adieu préparé par un chef à domicile. Il ne s’agit pas du voyage d’un vrai client ni d’une formule figée ; chaque journée s’organise selon vos dates, votre groupe et la neige. Servez-vous-en comme point de départ et dites-nous ce qu’il faut changer.
 updated: 2026-10-23
-image: terrace
-imageAlt: Terrasse ensoleillée d’un restaurant d’altitude au-dessus des pistes de Courchevel
+image: lunch-table
+imageAlt: "Table de déjeuner sur une terrasse d’altitude ensoleillée, face à un sommet enneigé"
 facts:
   - label: Ce qu’est cette page
     value: Un exemple pour montrer le déroulé d’une semaine, pas le séjour d’un vrai client

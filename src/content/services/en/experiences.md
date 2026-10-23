@@ -5,8 +5,8 @@ metaTitle: Snowmobiling, Dog Sledding & More in Courchevel | CLC
 description: Snowmobiling, dog sledding, paragliding, ski-joëring, ice driving, snowshoeing and scenic helicopter flights in Courchevel, arranged around your stay.
 answer: Beyond the pistes, Courchevel offers snowmobiling after the lifts close, dog sledding, tandem paragliding, ski-joëring, snowshoe walks and scenic helicopter flights, with ice driving nearby in Val Thorens. We book each activity with qualified local providers, fit it around your ski days and send a personal proposal within 24 hours.
 updated: 2026-10-23
-image: helicopter
-imageAlt: Helicopter hovering above a snowy landing area surrounded by pine trees in the French Alps
+image: husky
+imageAlt: "Husky from a sled-dog team standing in the snow, other dogs waiting behind"
 facts:
   - label: Snowmobiling
     value: A secure 700 m circuit for first rides, and guided night outings after the slopes close

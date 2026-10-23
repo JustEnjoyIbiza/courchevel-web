@@ -48,9 +48,9 @@ const guides = (await getCollection('guides'))
 const pad = (n: number) => String(n).padStart(2, '0');
 const serviceEntries = (await getCollection('services')).filter((e) => splitId(e.id).locale === locale);
 const featuredSlugs = [
-  { slug: 'chalets', image: 'white-chalet' },
-  { slug: 'transfers', image: 'helicopter' },
-  { slug: 'private-chef', image: 'terrace' },
+  { slug: 'chalets', image: 'chalet-living-room' },
+  { slug: 'transfers', image: 'private-jet' },
+  { slug: 'private-chef', image: 'dining-table' },
 ] as const;
 const featuredServices = featuredSlugs.map(({ slug, image }) => {
   const svc = services.find((x) => x.slug === slug)!;

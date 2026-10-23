@@ -5,8 +5,8 @@ metaTitle: "Chef à domicile à Courchevel, au chalet | CLC"
 description: "Chef à domicile et chefs étoilés dans votre chalet à Courchevel, pour un dîner ou toute la semaine, sommelier et réservations de restaurants."
 answer: "Indiquez-nous vos dates, le nombre de convives et vos habitudes alimentaires : nous vous proposons un chef privé pour votre chalet, le temps d’un dîner ou de tout le séjour. Nous organisons aussi les petits-déjeuners, un sommelier, la livraison de vins et de courses et vos tables au restaurant, avec une proposition personnalisée sous 24 heures."
 updated: 2026-10-23
-image: terrace
-imageAlt: "Tables dressées avec des verres sur la terrasse en bois d’un restaurant d’altitude à Courchevel"
+image: dining-table
+imageAlt: "Table en bois dressée pour le dîner devant une fenêtre ouverte sur les sommets enneigés"
 facts:
   - label: Noël et Nouvel An
     value: "Réservez chefs et dîners de fête dès vos dates arrêtées"

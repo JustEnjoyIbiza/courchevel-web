@@ -5,8 +5,8 @@ metaTitle: "Conciergerie Courchevel pour assistants et family offices"
 description: "Assistants personnels, family offices et agences de voyage réservent pour leurs clients : un seul interlocuteur, discrétion, confirmations écrites."
 answer: "Assistants personnels, family offices et agences de voyage peuvent réserver pour leurs clients, et nous traitons directement avec vous. Vous avez un seul interlocuteur pour les chalets, les transferts, les chefs, le personnel et le ski ; chaque réservation est confirmée par écrit, et les changements de dernière minute sont pris en charge 24 h/24 pendant la saison d’hiver."
 updated: 2026-10-22
-image: luggage
-imageAlt: "Bagages chargés dans un véhicule tout-terrain sous la neige"
+image: van-interior
+imageAlt: "Portière ouverte d’un van avec chauffeur, sièges en cuir crème et plaid, montagnes en arrière-plan"
 facts:
   - label: Qui peut réserver
     value: "Assistants personnels, family offices, agences de voyage et équipes de bureaux privés, pour leurs clients"

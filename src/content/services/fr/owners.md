@@ -5,8 +5,8 @@ metaTitle: Services aux propriétaires de chalets à Courchevel
 description: Gardiennage des clés, visites de contrôle, accueil des hôtes, ménage et entretien pour les propriétaires de chalets à Courchevel, toute l’année.
 answer: Nous veillons sur votre chalet à Courchevel en votre absence – gardiennage des clés, visites de contrôle régulières, ménage, entretien et accueil personnalisé pour vous ou vos hôtes. Nous ne louons pas et ne gérons pas de locations ; nous travaillons aux côtés de votre agence ou de votre gestionnaire locatif.
 updated: 2026-10-22
-image: stone-chalet
-imageAlt: Chalet en pierre et bois aux balcons en bois sous la neige à Courchevel
+image: stone-chalet-deep-snow
+imageAlt: "Chalet en pierre et bois avec balcons, dans la neige profonde entre les sapins de Courchevel"
 facts:
   - label: Période
     value: Toute l’année, avec une disponibilité 24 h/24 et 7 j/7 pendant la saison d’hiver

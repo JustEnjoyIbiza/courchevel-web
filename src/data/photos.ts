@@ -15,6 +15,25 @@ import gondola from '../assets/photos/gondola-dusk.jpeg';
 import lantern from '../assets/photos/lantern-snowfall.jpeg';
 import sculpture from '../assets/photos/courchevel-sculpture.jpeg';
 import hotTub from '../assets/photos/outdoor-hot-tub-pines.jpeg';
+// Owner's own photos, added 23 October 2026
+import chaletLivingRoom from '../assets/photos/chalet-living-room-fireplace.jpeg';
+import chaletLounge from '../assets/photos/chalet-lounge-chandelier.jpeg';
+import stoneChaletDeepSnow from '../assets/photos/stone-chalet-deep-snow.jpeg';
+import privateJet from '../assets/photos/private-jet-cabin.jpeg';
+import diningTable from '../assets/photos/dining-table-mountain-window.jpeg';
+import partyTable from '../assets/photos/party-table-mirror-ball.jpeg';
+import apresSki from '../assets/photos/apres-ski-terrace-sun.jpeg';
+import skiers from '../assets/photos/skiers-below-chalets.jpeg';
+import husky from '../assets/photos/husky-sled-dog-snow.jpeg';
+import boutiquesNight from '../assets/photos/courchevel-1850-boutiques-night.jpeg';
+import restaurantView from '../assets/photos/restaurant-chandelier-mountain-view.jpeg';
+import vanSnow from '../assets/photos/black-van-snow-peaks.jpeg';
+import lunchTable from '../assets/photos/terrace-lunch-table-peak.jpeg';
+import christmasTree from '../assets/photos/christmas-tree-mountains.jpeg';
+import firePit from '../assets/photos/terrace-fire-pit.jpeg';
+import vanInterior from '../assets/photos/van-leather-seats-open-door.jpeg';
+import paraglider from '../assets/photos/paraglider-over-valley.jpeg';
+import courchevelGondola from '../assets/photos/courchevel-gondola-cabin.jpeg';
 
 export const photos = {
   'rolls-royce-helicopter': rollsRoyceHelicopter,
@@ -29,6 +48,24 @@ export const photos = {
   lantern,
   sculpture,
   'hot-tub': hotTub,
+  'chalet-living-room': chaletLivingRoom,
+  'chalet-lounge': chaletLounge,
+  'stone-chalet-deep-snow': stoneChaletDeepSnow,
+  'private-jet': privateJet,
+  'dining-table': diningTable,
+  'party-table': partyTable,
+  'apres-ski': apresSki,
+  skiers,
+  husky,
+  'boutiques-night': boutiquesNight,
+  'restaurant-view': restaurantView,
+  'van-snow': vanSnow,
+  'lunch-table': lunchTable,
+  'christmas-tree': christmasTree,
+  'fire-pit': firePit,
+  'van-interior': vanInterior,
+  paraglider,
+  'courchevel-gondola': courchevelGondola,
 } as const;
 
 export type PhotoKey = keyof typeof photos;

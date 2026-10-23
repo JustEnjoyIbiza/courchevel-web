@@ -5,8 +5,8 @@ metaTitle: "Noël et réveillon à Courchevel 2026–2027 | CLC"
 description: "Noël et réveillon du Nouvel An à Courchevel 2026–2027 : dates des fêtes, quand réserver chalet, tables et transferts, et ce que nous organisons."
 answer: "Noël et le Nouvel An à Courchevel tombent pendant les vacances scolaires, du 19 décembre 2026 au 4 janvier 2027, la quinzaine la plus chargée de l’hiver. Chalets, chefs à domicile et tables des 24 et 31 décembre se réservent des mois à l’avance : plus vos dates sont arrêtées tôt, plus le choix est large. Nous préparons le chalet avant votre arrivée, organisons les repas de fête et calons vos transferts en dehors des samedis les plus chargés."
 updated: 2026-10-23
-image: gift-delivery
-imageAlt: "Cadeaux de Noël emballés et sacs de boutiques livrés devant un chalet en bois à Courchevel"
+image: christmas-tree
+imageAlt: "Sapin de Noël décoré devant les montagnes enneigées de Courchevel"
 facts:
   - label: Ouverture de la saison
     value: 4 décembre 2026

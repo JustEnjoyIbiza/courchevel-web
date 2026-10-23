@@ -5,8 +5,8 @@ metaTitle: "A Week in Courchevel 1850: Example Itinerary | CLC"
 description: An example seven-night stay in Courchevel 1850, day by day, from the helicopter arrival to the last dinner, and what we arrange behind each day.
 answer: This is an example of how we can arrange seven nights in Courchevel 1850, from a helicopter arrival at the altiport to a farewell dinner by a private chef. It is not a real client's trip and there is no fixed package; every day is planned around your dates, your group and the snow. Use it as a starting point and tell us what to change.
 updated: 2026-10-23
-image: terrace
-imageAlt: Sunny terrace of a mountain restaurant above the slopes in Courchevel
+image: lunch-table
+imageAlt: "Lunch table on a sunny mountain terrace facing a snow-covered peak"
 facts:
   - label: What this page is
     value: An example to show how a week can run, not a real client's stay

@@ -5,8 +5,8 @@ metaTitle: "Transfert Genève Courchevel en hélicoptère | CLC"
 description: "Transfert en hélicoptère depuis Genève, Lyon, Chambéry et Milan vers l’altiport de Courchevel, jet privé et voiture avec chauffeur. Sur devis."
 answer: "Le moyen le plus rapide de rejoindre Courchevel est l’hélicoptère jusqu’à l’altiport, à une trentaine de minutes de Genève et environ 25 minutes de Chambéry. Nous organisons le vol, le jet privé ou la voiture avec chauffeur auprès de partenaires aériens et de chauffeurs agréés, et vous adressons un devis personnalisé sous 24 heures."
 updated: 2026-10-22
-image: rolls-royce-helicopter
-imageAlt: "Hélicoptère posé sur une aire enneigée dans les Alpes, vu depuis l’avant d’une voiture avec chauffeur"
+image: private-jet
+imageAlt: "Fauteuils en cuir crème et table dressée dans la cabine d’un jet privé"
 facts:
   - label: Hélicoptère depuis Genève
     value: "Environ 30 à 35 minutes jusqu’à l’altiport de Courchevel"

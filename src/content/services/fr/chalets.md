@@ -5,8 +5,8 @@ metaTitle: "Location de chalet de luxe à Courchevel 1850 | CLC"
 description: Chalets d’exception et palaces à Courchevel 1850, 1650 et Le Praz, avec personnel, préparés avant votre arrivée. Devis personnalisé.
 answer: Nous trouvons le chalet ou le palace adapté à votre groupe, à votre village et à vos dates, puis nous le préparons avant votre arrivée, du personnel aux courses jusqu’au sapin de Noël. Dites-nous qui vous accompagne et ce qui compte le plus pour vous, et nous vous envoyons une sélection avec un devis personnalisé sous 24 heures.
 updated: 2026-10-23
-image: white-chalet
-imageAlt: Chalet en bois blanc entouré de sapins enneigés à Courchevel
+image: chalet-living-room
+imageAlt: "Salon d’un chalet à Courchevel avec poutres apparentes, cheminée en pierre et lustre"
 facts:
   - label: Villages
     value: 1850, 1650 Moriond, 1550 Village, 1300 Le Praz, La Tania

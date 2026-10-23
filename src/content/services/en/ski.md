@@ -5,8 +5,8 @@ metaTitle: "Private Ski Instructors in Courchevel | CLC"
 description: Certified private ski instructors, off-piste guides, heli-skiing day trips to Italy or Switzerland, and ski passes delivered to your Courchevel chalet.
 answer: We book certified private ski instructors for adults and children, high-mountain guides for off-piste days, and heli-skiing day trips to Italy or Switzerland, since heli-drops are banned in France. Ski passes and equipment are delivered to your chalet, and you receive a personal proposal within 24 hours.
 updated: 2026-10-23
-image: gondola
-imageAlt: Gondola cabin above snow-covered pine trees at dusk in Courchevel
+image: skiers
+imageAlt: "Two skiers on a groomed slope in front of wooden chalets in Courchevel"
 facts:
   - label: Ski area
     value: About 150 km of pistes in Courchevel, linked to around 600 km in the Trois Vallées

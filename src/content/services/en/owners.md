@@ -5,8 +5,8 @@ metaTitle: Chalet Owner Services in Courchevel | CLC
 description: Key holding, property checks, guest welcome, cleaning and maintenance for chalet owners in Courchevel, all year round. Quoted personally.
 answer: We look after your chalet in Courchevel while you are away – key holding, regular property checks, cleaning, maintenance and a personal welcome for you or your guests. We do not let or manage rentals; we work alongside your rental agency or manager.
 updated: 2026-10-22
-image: stone-chalet
-imageAlt: Stone and timber chalet with wooden balconies in falling snow in Courchevel
+image: stone-chalet-deep-snow
+imageAlt: "Stone and wood chalet with balconies in deep snow among pine trees in Courchevel"
 facts:
   - label: Cover
     value: All year, with 24/7 availability during the winter season

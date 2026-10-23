@@ -113,6 +113,8 @@ export const experiencesPage: Record<Locale, ExperiencesPageCopy> = {
           'Flights depend on the wind and the light, so I hold a second slot whenever possible and arrange the transfer to the take-off point.',
         ],
         note: 'No experience needed. Flights are confirmed on the day according to the weather.',
+        photo: 'paraglider',
+        alt: 'Paraglider flying over the valley above a gondola and snowy slopes',
       },
       {
         id: 'scenic-flights',
@@ -288,6 +290,8 @@ export const experiencesPage: Record<Locale, ExperiencesPageCopy> = {
           'Les vols dépendent du vent et de la lumière : je réserve un second créneau dès que possible et organise le transfert jusqu’au décollage.',
         ],
         note: 'Aucune expérience nécessaire. Les vols sont confirmés le jour même selon la météo.',
+        photo: 'paraglider',
+        alt: 'Parapente au-dessus de la vallée, d’une télécabine et des pistes enneigées',
       },
       {
         id: 'scenic-flights',

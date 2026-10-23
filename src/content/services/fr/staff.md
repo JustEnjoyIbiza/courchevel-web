@@ -5,8 +5,8 @@ metaTitle: "Majordome et personnel de chalet à Courchevel | CLC"
 description: "Majordomes, intendants, ménage quotidien, maîtres d’hôtel et entretien du linge pour votre chalet à Courchevel, pour une semaine ou toute la saison."
 answer: "Nous mettons à votre disposition du personnel de maison expérimenté pour votre chalet à Courchevel, du majordome ou de l’intendant (chalet manager) au ménage quotidien, en passant par le service à table et l’entretien du linge. Indiquez-nous la taille du chalet, le nombre d’hôtes et le niveau de service attendu : vous recevez une proposition sous 24 heures."
 updated: 2026-10-22
-image: stone-chalet
-imageAlt: "Chalet en pierre et en bois avec balcons sous la neige à Courchevel"
+image: chalet-lounge
+imageAlt: "Salon de chalet prêt pour l’arrivée des invités, lustre allumé au-dessus de la cheminée en pierre"
 facts:
   - label: Durée
     value: "Une soirée, une semaine ou toute la saison d’hiver"

@@ -5,8 +5,8 @@ metaTitle: "Helicopter Transfer to Courchevel & Private Jets | CLC"
 description: "Helicopter transfers from Geneva, Lyon, Chambéry and Milan to Courchevel Altiport, private jets and chauffeured cars. Arranged and quoted personally."
 answer: The fastest way to reach Courchevel is a helicopter transfer to Courchevel Altiport, around 30 minutes from Geneva and 25 minutes from Chambéry. We arrange the flight, the private jet or the chauffeured car with licensed aviation and chauffeur partners, and send a personal quote within 24 hours.
 updated: 2026-10-22
-image: rolls-royce-helicopter
-imageAlt: Helicopter waiting on a snow-covered landing area in the Alps, seen from the front seat of a chauffeured car
+image: private-jet
+imageAlt: "Cream leather seats and a table laid for a meal in a private jet cabin"
 facts:
   - label: Helicopter from Geneva
     value: About 30 to 35 minutes to Courchevel Altiport

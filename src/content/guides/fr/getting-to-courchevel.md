@@ -5,8 +5,8 @@ metaTitle: "Transfert Genève Courchevel : hélicoptère, voiture | CLC"
 description: Genève, Lyon, Chambéry ou Milan jusqu’à Courchevel en voiture, train, hélicoptère ou avion privé, avec les temps de trajet, l’altiport et la loi Montagne.
 answer: Le moyen le plus rapide de rejoindre Courchevel est l’hélicoptère, environ 25 à 40 minutes depuis Chambéry, Genève ou Lyon, avec atterrissage à l’altiport de Courchevel. Par la route, l’aéroport de Genève est à 149 km (environ 2 h 15 en conditions normales), Lyon à 187 km et Chambéry à 110 km. La gare la plus proche est Moûtiers, à 25 km et une trentaine de minutes de la station.
 updated: 2026-10-22
-image: helicopter
-imageAlt: Hélicoptère se posant sur une hélisurface enneigée entourée de sapins dans les Alpes
+image: van-snow
+imageAlt: "Van noir avec chauffeur garé sur la neige, sommets en arrière-plan"
 facts:
   - label: Aéroport de Genève par la route
     value: 149 km, environ 2 h 15 sans trafic

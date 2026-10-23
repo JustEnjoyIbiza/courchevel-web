@@ -5,8 +5,8 @@ metaTitle: "Geneva to Courchevel Transfer: Helicopter, Car, Jet | CLC"
 description: Geneva, Lyon, Chambéry and Milan to Courchevel by car, train, helicopter or private plane, with travel times, the altiport rules and winter driving law.
 answer: The fastest way to reach Courchevel is by helicopter, about 25 to 40 minutes from Chambéry, Geneva or Lyon, landing at Courchevel Altiport. By road, Geneva airport is 149 km away (about 2 hours 15 minutes in normal conditions), Lyon 187 km and Chambéry 110 km. The nearest railway station is Moûtiers, 25 km and about 30 minutes below the resort.
 updated: 2026-10-22
-image: helicopter
-imageAlt: Helicopter landing on a snow-covered pad among pine trees in the Alps
+image: van-snow
+imageAlt: "Black chauffeured van parked on snow with mountain peaks behind"
 facts:
   - label: Geneva airport by road
     value: 149 km, about 2 h 15 without traffic

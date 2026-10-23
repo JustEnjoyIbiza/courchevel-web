@@ -5,8 +5,8 @@ metaTitle: Après-Ski & Nightclub Tables in Courchevel | CLC
 description: Après-ski tables, VIP nightclub tables, guest lists and private parties in your Courchevel chalet, requested on your behalf and planned around your stay.
 answer: We request après-ski tables, VIP nightclub tables and guest-list places in Courchevel on your behalf, subject to availability, and plan the evening around them with a driver and dinner. For a night in, we organise a private party in your chalet, and every request receives a personal proposal within 24 hours.
 updated: 2026-10-22
-image: lantern
-imageAlt: Snow falling on a street lamp and a carved wooden chalet facade in Courchevel village
+image: apres-ski
+imageAlt: "Skiers gathered on a sunny après-ski terrace below snowy peaks in Courchevel"
 facts:
   - label: Peak nights
     value: Christmas, New Year's Eve and the February school holidays; ask as early as possible

@@ -5,8 +5,8 @@ metaTitle: "Luxury Chalet Rental in Courchevel 1850 & Palaces | CLC"
 description: Ultra-luxury chalets and palace hotels in Courchevel 1850, 1650 and Le Praz, staffed and prepared before you arrive. Quoted personally.
 answer: We find the chalet or palace hotel that fits your group, village and dates, then prepare it before you land, from staff and groceries to the Christmas tree. Tell us who is coming and what matters most, and we send a shortlist with a personal quote within 24 hours.
 updated: 2026-10-23
-image: white-chalet
-imageAlt: White wooden chalet among snow-covered pine trees in Courchevel
+image: chalet-living-room
+imageAlt: "Chalet living room in Courchevel with exposed beams, a stone fireplace and a chandelier"
 facts:
   - label: Villages
     value: 1850, 1650 Moriond, 1550 Village, 1300 Le Praz, La Tania

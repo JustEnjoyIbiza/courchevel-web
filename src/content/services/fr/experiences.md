@@ -5,8 +5,8 @@ metaTitle: "Motoneige, chiens de traîneau et parapente à Courchevel"
 description: "Motoneige, chiens de traîneau, parapente, ski joëring, conduite sur glace, raquettes et survols en hélicoptère à Courchevel, intégrés à votre séjour."
 answer: "En dehors des pistes, Courchevel propose la motoneige après la fermeture des remontées, les chiens de traîneau, le parapente biplace, le ski joëring, les balades en raquettes et les survols en hélicoptère, avec la conduite sur glace toute proche à Val Thorens. Nous réservons chaque activité auprès de prestataires locaux qualifiés, l’intégrons à vos journées de ski et vous adressons une proposition sous 24 heures."
 updated: 2026-10-23
-image: helicopter
-imageAlt: "Hélicoptère en vol stationnaire au-dessus d’une aire enneigée entourée de sapins, dans les Alpes françaises"
+image: husky
+imageAlt: "Husky d’un attelage de chiens de traîneau dans la neige, les autres chiens attendant derrière"
 facts:
   - label: Motoneige
     value: "Circuit sécurisé de 700 m pour s’initier, et sorties encadrées le soir après la fermeture des pistes"

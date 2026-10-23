@@ -5,8 +5,8 @@ metaTitle: "Séminaire de luxe à Courchevel et incentive | CLC"
 description: "Séminaire à Courchevel ou voyage incentive : chalet ou hôtel, salle de réunion, transferts de groupe, activités et dîners. Sur devis personnalisé."
 answer: "Nous organisons des séminaires d’entreprise, des comités de direction et des voyages incentive à Courchevel et dans les Trois Vallées : chalet ou hôtel, salle de réunion, transferts de groupe, journées de ski et dîners. Votre assistant ou votre équipe événementielle n’a qu’un seul interlocuteur, et vous recevez une proposition sur mesure sous 24 heures."
 updated: 2026-10-23
-image: terrace
-imageAlt: "Tables dressées avec des verres sur la terrasse en bois d’un restaurant d’altitude à Courchevel"
+image: fire-pit
+imageAlt: "Terrasse d’altitude avec un brasero allumé et des assises pour un groupe"
 facts:
   - label: Groupes
     value: "Comité de direction dans un chalet, groupes plus nombreux répartis entre plusieurs chalets ou un hôtel"

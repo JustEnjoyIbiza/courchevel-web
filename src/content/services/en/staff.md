@@ -5,8 +5,8 @@ metaTitle: Butlers & Chalet Staff in Courchevel | CLC
 description: Butlers, majordomos, chalet managers, daily housekeeping, serving staff and garment care for your chalet in Courchevel, arranged for a week or the season.
 answer: We provide experienced household staff for your Courchevel chalet, from a butler or chalet manager to daily housekeeping, serving staff and laundry care. Tell us the size of the chalet, the number of guests and the level of service you expect, and we send a staffing proposal within 24 hours.
 updated: 2026-10-22
-image: stone-chalet
-imageAlt: Stone and timber chalet with wooden balconies under falling snow in Courchevel
+image: chalet-lounge
+imageAlt: "Chalet lounge prepared for guests, with a lit chandelier above the stone fireplace"
 facts:
   - label: Duration
     value: A single evening, a week or the whole winter season

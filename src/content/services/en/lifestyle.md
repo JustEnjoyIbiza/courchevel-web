@@ -5,8 +5,8 @@ metaTitle: Shopping, Errands & Security in Courchevel | CLC
 description: Personal shopping, watches and jewellery, gifts, event tickets, pet care and close protection in Courchevel, handled discreetly. Quoted personally.
 answer: We take care of the requests that fall between the big bookings – personal shopping, gifts and errands, tickets, pet care and close protection through licensed security partners. Tell us what you need, and we reply within 15 minutes from 8:00 to 22:00; during the winter season we are available around the clock.
 updated: 2026-10-22
-image: gift-delivery
-imageAlt: Wrapped presents and shopping bags unloaded from two cars outside a wooden chalet in Courchevel
+image: boutiques-night
+imageAlt: "Chalet-style boutiques lit up at night in Courchevel 1850, with a Christmas tree in front"
 facts:
   - label: Reply time
     value: Within 15 minutes, 8:00 to 22:00

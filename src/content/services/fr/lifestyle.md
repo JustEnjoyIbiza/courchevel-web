@@ -5,8 +5,8 @@ metaTitle: Shopping, courses et sécurité à Courchevel | CLC
 description: Shopping privé, montres et joaillerie, cadeaux, billetterie, garde d’animaux et protection rapprochée à Courchevel, en toute discrétion. Sur devis.
 answer: Nous prenons en charge les demandes qui se glissent entre les grandes réservations – shopping privé, cadeaux et courses, billetterie, garde d’animaux et protection rapprochée par l’intermédiaire de partenaires de sécurité agréés. Dites-nous ce dont vous avez besoin ; nous répondons sous 15 minutes entre 8 h et 22 h, et à toute heure pendant la saison d’hiver.
 updated: 2026-10-22
-image: gift-delivery
-imageAlt: Cadeaux emballés et sacs de boutiques déchargés de deux voitures devant un chalet en bois à Courchevel
+image: boutiques-night
+imageAlt: "Boutiques de style chalet illuminées la nuit à Courchevel 1850, un sapin de Noël devant"
 facts:
   - label: Délai de réponse
     value: Sous 15 minutes, de 8 h à 22 h

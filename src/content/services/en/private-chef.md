@@ -5,8 +5,8 @@ metaTitle: "Private Chef in Courchevel: Chalet Chefs & Dining | CLC"
 description: Private and Michelin-starred chefs in your Courchevel chalet, sommeliers, wine and champagne delivery, grocery stocking and restaurant reservations.
 answer: Tell us your dates, the number of guests and how you like to eat, and we propose a private chef for your chalet, for a single dinner or the whole stay. We also arrange breakfast, a sommelier, wine and grocery deliveries and restaurant tables, with a personal proposal within 24 hours.
 updated: 2026-10-23
-image: terrace
-imageAlt: Tables laid with glasses on the wooden terrace of a mountain restaurant in Courchevel
+image: dining-table
+imageAlt: "Wooden dining table set for dinner by a window facing snow-covered peaks"
 facts:
   - label: Christmas and New Year
     value: Book chefs and festive dinners as soon as your dates are fixed

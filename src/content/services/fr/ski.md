@@ -5,8 +5,8 @@ metaTitle: "Moniteur de ski privé à Courchevel | CLC"
 description: "Moniteurs de ski privés diplômés, guides hors-piste, journées d’héliski en Italie ou en Suisse, forfaits et matériel livrés à votre chalet de Courchevel."
 answer: "Nous réservons des moniteurs de ski privés diplômés pour adultes et enfants, des guides de haute montagne pour le hors-piste et des journées d’héliski en Italie ou en Suisse, la dépose étant interdite en France. Forfaits et matériel sont livrés au chalet, et vous recevez une proposition personnalisée sous 24 heures."
 updated: 2026-10-23
-image: gondola
-imageAlt: "Télécabine au-dessus des sapins enneigés de Courchevel, à la tombée du jour"
+image: skiers
+imageAlt: "Deux skieurs sur une piste damée devant des chalets en bois à Courchevel"
 facts:
   - label: Domaine skiable
     value: "Environ 150 km de pistes à Courchevel, reliés aux quelque 600 km des Trois Vallées"

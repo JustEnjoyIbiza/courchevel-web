@@ -5,8 +5,8 @@ metaTitle: Événements privés et célébrations à Courchevel | CLC
 description: Anniversaires, demandes en mariage, mariages, Saint-Sylvestre et séminaires à Courchevel, du lieu au chef, DJ, fleuriste et photographe. Sur devis.
 answer: Nous organisons vos événements privés à Courchevel, d’une demande en mariage en tête-à-tête à un séminaire d’entreprise, en coordonnant le lieu, le chef, la musique, les fleurs et le photographe. Indiquez-nous l’occasion, la date et le nombre d’invités, et nous vous adressons une proposition sur mesure sous 24 heures.
 updated: 2026-10-22
-image: terrace
-imageAlt: Tables dressées avec verres sur la terrasse en bois d’un restaurant d’altitude à Courchevel
+image: party-table
+imageAlt: "Longue table dressée pour une soirée privée sous un lustre à boules à facettes"
 facts:
   - label: Réveillon du Nouvel An
     value: Commencez à l’organiser dès le début de l’automne ; lieux, chefs et DJ sont réservés des mois à l’avance

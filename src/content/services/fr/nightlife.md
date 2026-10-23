@@ -5,8 +5,8 @@ metaTitle: "Tables d’après-ski et de club à Courchevel | CLC"
 description: "Tables d’après-ski, tables VIP en club, listes d’invités et soirées privées au chalet à Courchevel, demandées en votre nom selon disponibilité."
 answer: "Nous demandons en votre nom des tables d’après-ski, des tables VIP en club et des places sur liste d’invités à Courchevel, selon disponibilité, et organisons la soirée autour, avec chauffeur et dîner. Pour une soirée au chalet, nous préparons une fête privée, et chaque demande reçoit une proposition personnalisée sous 24 heures."
 updated: 2026-10-22
-image: lantern
-imageAlt: "Neige tombant sur un réverbère et une façade de chalet en bois sculpté au village de Courchevel"
+image: apres-ski
+imageAlt: "Skieurs réunis sur une terrasse d’après-ski ensoleillée, sous les sommets enneigés de Courchevel"
 facts:
   - label: Soirées les plus demandées
     value: "Noël, le Nouvel An et les vacances de février ; demandez le plus tôt possible"
