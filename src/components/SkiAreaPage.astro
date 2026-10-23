@@ -104,8 +104,8 @@ const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
     <div class="container-site relative z-[1] lg:grid lg:grid-cols-12 lg:gap-12">
       <!-- The map: above the stops on phones, kept in view beside them on wide screens -->
       <figure class="skimap-panel pt-14 lg:sticky lg:top-24 lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:h-[calc(100svh-7rem)] lg:self-start lg:pt-6">
-        <SkiMap labels={c.mapLabels} class="mx-auto h-auto max-h-[70svh] w-full max-w-md lg:h-full lg:max-h-none lg:max-w-none" />
-        <figcaption class="mt-2 text-center text-xs text-taupe">{c.mapNote}</figcaption>
+        <SkiMap labels={c.mapLabels} alt={c.mapAlt} class="mx-auto w-full max-w-md lg:h-[calc(100%-3.5rem)] lg:w-auto lg:max-w-full" />
+        <figcaption class="mx-auto mt-3 max-w-md text-center text-xs text-taupe">{c.mapNote}</figcaption>
       </figure>
     <ol class="lg:col-span-7 lg:row-start-1">
       {c.stops.map((stop, i) => (

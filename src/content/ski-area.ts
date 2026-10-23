@@ -51,6 +51,7 @@ interface SkiAreaCopy {
   heroPhoto: PhotoKey;
   mapLabels: { saulire: string; station: string; c1850: string; c1650: string; c1550: string; praz: string; altiport: string };
   mapNote: string;
+  mapAlt: string;
   stops: Stop[];
   practicalEyebrow: string;
   practicalTitle: string;
@@ -82,7 +83,8 @@ export const skiArea: Record<Locale, SkiAreaCopy> = {
     altitudeLabel: 'Altitude',
     heroPhoto: 'gondola',
     mapLabels: { saulire: 'LA SAULIRE · 2,740 m', station: 'CABLE CAR · 2,077 m', c1850: 'COURCHEVEL 1850', c1650: 'MORIOND 1650', c1550: 'VILLAGE 1550', praz: 'LE PRAZ · 1,300 m', altiport: 'Altiport' },
-    mapNote: 'Illustration, not to scale.',
+    mapNote: 'Seen looking up the valley from Le Praz, south at the top. Relief and forests: IGN. Pistes and lifts: © OpenStreetMap contributors.',
+    mapAlt: 'Relief map of the Courchevel valley showing the slopes, forests and lifts, with the descent from La Saulire to Le Praz marked in gold',
     stops: [
       {
         id: 'la-saulire',
@@ -210,7 +212,8 @@ export const skiArea: Record<Locale, SkiAreaCopy> = {
     altitudeLabel: 'Altitude',
     heroPhoto: 'gondola',
     mapLabels: { saulire: 'LA SAULIRE · 2 740 m', station: 'TÉLÉPHÉRIQUE · 2 077 m', c1850: 'COURCHEVEL 1850', c1650: 'MORIOND 1650', c1550: 'VILLAGE 1550', praz: 'LE PRAZ · 1 300 m', altiport: 'Altiport' },
-    mapNote: 'Illustration, sans échelle.',
+    mapNote: 'Vue depuis Le Praz en remontant la vallée, le sud en haut. Relief et forêts : IGN. Pistes et remontées : © les contributeurs d’OpenStreetMap.',
+    mapAlt: 'Carte en relief de la vallée de Courchevel avec les pistes, les forêts et les remontées, et la descente de la Saulire au Praz tracée en or',
     stops: [
       {
         id: 'la-saulire',
