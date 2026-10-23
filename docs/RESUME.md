@@ -13,6 +13,12 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
 
 ## Where the work is
 
+- **Private preview (23 Oct):** https://preview--courchevel-luxury-concierge.netlify.app, a CLI draft
+  deploy on the production Netlify site (alias `preview`, not production; live site untouched).
+  Redeploy after changes: `npx netlify deploy --build --site d05bccf4-0865-430f-82d7-8febd6ed5430
+  --alias preview` (netlify-cli is not a project dependency; install it anywhere). Drafts send no
+  noindex header: don't link the URL publicly. Netlify env set so far: `BASIN_FORM_URL` (all contexts).
+
 - Repo: this folder, branch **`rebuild/phase-0-setup`**, remote `JustEnjoyIbiza/courchevel-web`
   (no push access yet). `main` = old site, which Netlify serves in production.
 - Backup of the whole repo (all branches, history): `../courchevel-web-backup-2026-10-22.bundle`

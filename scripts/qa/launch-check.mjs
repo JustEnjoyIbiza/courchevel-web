@@ -77,8 +77,15 @@ if (indexnowKey) {
 }
 const missing = await get(`${base}/this-page-does-not-exist/`);
 check('unknown URL returns 404', missing.status === 404, `got ${missing.status}`);
-const lead = await get(`${base}/api/lead`);
-check('lead endpoint deployed (/api/lead not 404)', lead.status !== 404, `got ${lead.status}`);
+// The function only accepts POST (a GET is a 404 by design); an empty JSON body is
+// answered 422 with field errors, which proves it is deployed without creating a lead.
+const lead = await fetch(`${base}/api/lead`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+  body: '{}',
+  signal: AbortSignal.timeout(15000),
+});
+check('lead endpoint deployed (POST /api/lead answers 422)', lead.status === 422, `got ${lead.status}`);
 
 // Every sitemap URL answers 200 on this host.
 const index = await (await get(`${base}/sitemap-index.xml`)).text();
