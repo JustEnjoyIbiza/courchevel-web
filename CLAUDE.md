@@ -98,7 +98,8 @@ WhatsApp buttons on mobile. Self-host fonts. See `docs/design-directions.md`.
 - `brass` is for rules and large accents only (2.3:1). Small gold text uses `brass-deep`.
 - Cormorant Garamond (headings) + Manrope (text), self-hosted via Fontsource.
 - Buttons: `btn-primary`, `btn-secondary`, `btn-light`. Links: `link`. Labels: `eyebrow`.
-- Square corners, 1 px rules, no shadows, no icons.
+- Square corners, 1 px rules, no shadows, no icons. One exception (owner, 24 Oct 2026):
+  the round WhatsApp button with its icon, bottom right on md+ (`WhatsAppFloat.astro`).
 - Photos go in `src/assets/photos/` with descriptive file names and are rendered with
   `<Picture formats={['avif','webp']}>` and a descriptive alt text in both languages.
 - Internal links to pages that may not exist yet use `SmartLink`.
