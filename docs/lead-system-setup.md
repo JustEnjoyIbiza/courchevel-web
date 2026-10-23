@@ -6,6 +6,24 @@ accounts (all have free tiers that cover this site), then put the keys in
 
 About 45 minutes in total.
 
+## 0. Basin (done 23 Oct 2026): leads work with this alone
+
+Form "Courchevel Luxury Concierge – Plan my stay" in the owner's Basin account
+(project "Just Enjoy Ibiza Boats"). Basin keeps every lead for 365 days and emails
+**Courchevelluxuryconcierge@gmail.com** only (owner's choice, 23 Oct), until the domain email
+exists; then change it in Basin → form → Notifications → "Send emails to". The Gmail address
+must be verified first: open Basin's verification email in that inbox and click the link.
+
+| Netlify variable | Value |
+|---|---|
+| `BASIN_FORM_URL` | `https://usebasin.com/f/ba03d712d447` |
+
+Basin's spam filter reads the message text: a test worded "TEST… ignore… safe to
+delete" went to Spam (no email is sent for spam on the current plan), a normally
+worded one reached the Inbox. Check Basin's Spam folder now and then.
+The old site's form (`/f/34a5258d7b37`) is separate and stays until launch.
+
+
 ## 1. Supabase (lead database), about 10 min
 
 1. Create a project at supabase.com. Choose an **EU region (Paris, eu-west-3)** so data stays in the EU.
@@ -68,10 +86,10 @@ Events sent: `form_start`, `form_submit`, `whatsapp_click`, `phone_click`, `emai
 1. Visitor sends the form (with or without JavaScript) → `POST /api/lead`.
 2. Spam checks: hidden honeypot field, at least 3 seconds to fill, Turnstile.
 3. Validation (same rules in the browser and on the server: `src/lib/lead.ts`).
-4. In parallel: row in Supabase, email to the concierge (reply-to = client),
+4. In parallel: row in Supabase, copy to Basin, email to the concierge (reply-to = client),
    Telegram alert, confirmation email to the client in their language.
-5. The visitor sees the thank-you page as soon as **at least one** of database,
-   concierge email or Telegram worked. If all three fail, the form asks them to use WhatsApp.
+5. The visitor sees the thank-you page as soon as **at least one** of database, Basin,
+   concierge email or Telegram worked. If all fail, the form asks them to use WhatsApp.
 
 ## Testing after setup
 

@@ -54,7 +54,7 @@ description anywhere else.
 - Astro 7 (static output) + TypeScript (strict) + Tailwind CSS 4 (`@tailwindcss/vite`)
 - Content in Markdown/MDX per page and language (`src/content/`)
 - Netlify hosting, auto-deploys from GitHub; `netlify.toml` holds build + headers
-- Leads: Netlify Function -> Supabase table `leads`; email via Resend;
+- Leads: Netlify Function -> Basin (`BASIN_FORM_URL`, live) + Supabase table `leads`; email via Resend;
   concierge alert via WhatsApp Cloud API or Telegram (decision pending)
 - GA4 only after cookie consent (CNIL); Search Console + Bing Webmaster Tools
 - Images: Astro image pipeline, AVIF/WebP, width/height set, lazy below the fold

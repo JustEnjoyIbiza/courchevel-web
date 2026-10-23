@@ -5,14 +5,14 @@
  * off, answered with a redirect to the thank-you page).
  *
  * Steps: spam checks (honeypot, minimum fill time, Turnstile) -> validation ->
- * in parallel: save to Supabase, email the concierge, email the client,
- * Telegram alert. The request succeeds when the concierge is reached by at
- * least one channel (database, email or alert), so a lead is never lost
+ * in parallel: save to Supabase, forward to Basin, email the concierge, email
+ * the client, Telegram alert. The request succeeds when the concierge is
+ * reached by at least one channel (database, Basin, email or alert), so a lead is never lost
  * because one service is down.
  */
 import { validateLead } from '../../src/lib/lead.ts';
 import { clientEmail, conciergeEmail, telegramAlert } from '../lib/messages.ts';
-import { saveLead, sendEmail, sendTelegram, verifyTurnstile, type Env, type Outcome } from '../lib/integrations.ts';
+import { saveLead, sendBasin, sendEmail, sendTelegram, verifyTurnstile, type Env, type Outcome } from '../lib/integrations.ts';
 
 export const config = { path: '/api/lead', method: ['POST'] };
 
@@ -86,6 +86,7 @@ export async function handleLead(req: Request, env: Env, now = new Date()): Prom
   const client = clientEmail(lead);
   const tasks: Record<string, Promise<Outcome>> = {
     db: saveLead(lead, env),
+    basin: sendBasin(lead, env),
     conciergeEmail: sendEmail(env, { to: env.CONCIERGE_EMAIL ?? '', ...concierge, replyTo: lead.email }),
     alert: sendTelegram(env, telegramAlert(lead)),
     clientEmail: sendEmail(env, { to: lead.email, ...client, replyTo: env.CONCIERGE_EMAIL }),
@@ -99,7 +100,7 @@ export async function handleLead(req: Request, env: Env, now = new Date()): Prom
   });
   console.log('lead received', JSON.stringify({ locale, village: lead.village, outcome }));
 
-  const reached = outcome.db === 'ok' || outcome.conciergeEmail === 'ok' || outcome.alert === 'ok';
+  const reached = outcome.db === 'ok' || outcome.basin === 'ok' || outcome.conciergeEmail === 'ok' || outcome.alert === 'ok';
   const nothingConfigured = Object.values(outcome).every((o) => o === 'skipped');
 
   if (reached || (nothingConfigured && env.LEAD_DRY_RUN === '1')) return done();

@@ -90,6 +90,43 @@ export async function sendTelegram(env: Env, html: string): Promise<Outcome> {
   return 'ok';
 }
 
+/**
+ * Forward the lead to the Basin form (usebasin.com): Basin stores it and emails
+ * the concierge, so leads arrive even before Supabase and Resend are set up.
+ */
+export async function sendBasin(lead: Lead, env: Env): Promise<Outcome> {
+  if (!env.BASIN_FORM_URL) return 'skipped';
+  await call(env.BASIN_FORM_URL, {
+    method: 'POST',
+    headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: lead.name,
+      email: lead.email,
+      phone: lead.phone || '',
+      preferred_contact: lead.preferredContact,
+      arrival: lead.arrival,
+      departure: lead.departure,
+      dates_flexible: lead.datesFlexible ? 'yes' : 'no',
+      village: lead.village,
+      adults: lead.adults,
+      children: lead.children,
+      children_ages: lead.childrenAges || '',
+      services: lead.services.join(', '),
+      experience: lead.experience || '',
+      budget: lead.budget || '',
+      booking_for: lead.bookingFor,
+      message: lead.message || '',
+      locale: lead.locale,
+      page: lead.page || '',
+      referrer: lead.referrer || '',
+      utm_source: lead.utmSource || '',
+      utm_medium: lead.utmMedium || '',
+      utm_campaign: lead.utmCampaign || '',
+    }),
+  });
+  return 'ok';
+}
+
 /** Verify a Cloudflare Turnstile token. Returns true when Turnstile is not configured. */
 export async function verifyTurnstile(env: Env, token: string, ip: string | null): Promise<boolean> {
   if (!env.TURNSTILE_SECRET_KEY) return true;

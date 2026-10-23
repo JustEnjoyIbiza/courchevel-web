@@ -12,7 +12,7 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 - [ ] Go-ahead for launch day (planned Tuesday 24 November): switch the Netlify primary domain to www, then merge
 - [ ] **GitHub access** to push the rebuild branch (sign in to GitHub in the app's browser pane, or a token on this Mac)
 - [ ] **Netlify access**: check build settings, add environment variables, see the preview
-- [ ] **Accounts for the lead system**: Supabase, Resend (with DNS records for the domain), Telegram bot, Cloudflare Turnstile. Guide: `lead-system-setup.md`
+- [ ] **Accounts for the lead system**: Supabase, Resend (with DNS records for the domain), Telegram bot, Cloudflare Turnstile. Guide: `lead-system-setup.md`. Basin is set up (23 Oct) and emails leads to the Courchevel Gmail once `BASIN_FORM_URL` is set in Netlify. **Click Basin's verification link in that Gmail inbox**; switch to the domain email when it exists.
 - [ ] **Legal**: legal entity name and form, SIRET, VAT number if any, *directeur de la publication*, registered address. Then we write mentions légales, privacy and cookie pages
 - [ ] **Street address** (due 15 November). Until then the site and schema show Courchevel, Savoie, France only
 - [ ] **Domain email** (e.g. hello@courchevelluxuryconcierge.com) for sending lead emails; needed by Resend

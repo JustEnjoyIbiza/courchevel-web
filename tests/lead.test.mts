@@ -1,5 +1,5 @@
 /**
- * Tests for the lead function, with Supabase, Resend, Telegram and Turnstile
+ * Tests for the lead function, with Supabase, Basin, Resend, Telegram and Turnstile
  * replaced by a fake fetch. Run: npm test
  */
 import { test, beforeEach, afterEach } from 'node:test';
@@ -156,6 +156,23 @@ test('when nobody can be reached the visitor is told to use WhatsApp', async () 
   const res = await handleLead(post(valid), ENV, NOW);
   assert.equal(res.status, 503);
   assert.equal((await res.json()).error, 'unavailable');
+});
+
+test('with only Basin configured, the lead is forwarded to Basin as JSON', async () => {
+  const res = await handleLead(post(valid), { BASIN_FORM_URL: 'https://usebasin.com/f/test123' }, NOW);
+  assert.equal(res.status, 200);
+  const basin = calls.find((c) => c.url === 'https://usebasin.com/f/test123')!;
+  assert.ok(basin, 'sent to Basin');
+  assert.equal((basin.init.headers as Record<string, string>).Accept, 'application/json');
+  assert.equal(basin.body.email, 'anna@example.com');
+  assert.equal(basin.body.services, 'chalets, transfers, childcare');
+  assert.equal(basin.body.utm_source, 'chatgpt.com');
+});
+
+test('Basin down and nothing else configured: the visitor is told to use WhatsApp', async () => {
+  failHosts = ['usebasin.com'];
+  const res = await handleLead(post(valid), { BASIN_FORM_URL: 'https://usebasin.com/f/test123' }, NOW);
+  assert.equal(res.status, 503);
 });
 
 test('with no integrations configured the function refuses, unless dry run is on', async () => {
