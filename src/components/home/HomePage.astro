@@ -9,6 +9,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SmartLink from '../SmartLink.astro';
 import GoogleReviews from '../GoogleReviews.astro';
+import QuickStart from './QuickStart.astro';
 import { home } from '../../content/home';
 import { services } from '../../data/services';
 import { villages } from '../../data/villages';
@@ -72,10 +73,9 @@ const sectionHead = 'max-w-2xl';
         <h1 class="mt-5 text-display">{c.hero.title}</h1>
         <div class="rule mt-8"></div>
         <p class="mt-8 max-w-xl text-lg text-taupe">{c.hero.lead}</p>
-        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <a href={enquire} class="btn-primary">{s.planMyStay}</a>
+        <QuickStart locale={locale}>
           <a href={whatsappHref(locale)} class="btn-secondary" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
-        </div>
+        </QuickStart>
       </div>
       <div class="relative order-1 aspect-[4/3] md:order-2 md:aspect-auto">
         <Picture

@@ -113,6 +113,8 @@ The current DMARC record sends reports to GoDaddy (`onsecureserver.net`). To rec
 2. Run `node scripts/qa/launch-check.mjs <preview URL>`: redirects, headers, robots, sitemap, llms.txt,
    404, lead endpoint, and all 74 sitemap URLs. Expected: **0 failed** (except the IndexNow file, which only exists in production).
 3. Lighthouse mobile on the preview (home, a service, a village, a guide, enquire, EN + FR).
+   Homepage quick-start with JavaScript off: fill it in, continue, and check `/enquire/` arrives pre-filled
+   (edge function `enquire-prefill`, listed under Netlify → Logs → Edge Functions).
 4. Send a real test enquiry from a phone: lead in Supabase, client email, concierge email, Telegram alert, all in under 30 s. Delete the test row.
 5. Owner reviews the preview on phone and desktop and signs off.
 

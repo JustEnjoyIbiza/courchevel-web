@@ -80,9 +80,14 @@ Commits: author "Alin Letca" <alin.letca2010@gmail.com>, ending with the Co-Auth
 ## Next steps (in order)
 
 0. **Owner's request for the next session (22 Oct): start with these two builds.**
-   - Homepage quick-start: dates + village + group size near the hero, continuing into
-     `/enquire/` with those fields pre-filled (EN + FR, works without JavaScript, keep
-     Lighthouse ≥ 95 and the CSP intact).
+   - ~~Homepage quick-start~~ **done 23 Oct**: `src/components/home/QuickStart.astro` (plain GET,
+     no script) → `/enquire/?arrival=…&village=…&adults=…`, pre-filled by the edge function
+     `netlify/edge-functions/enquire-prefill.ts` (JS off) and `enquiry-form.ts` (JS on); shared
+     parser `src/lib/prefill.ts`. The JS-off pre-fill only runs on Netlify: test it on the preview.
+     Lighthouse note: the first run in a fresh Chrome scores the home ~82 (CLS 0.35) because
+     Lighthouse's full-page screenshot resizes the page and the hero date inputs re-lay out;
+     with `disableFullPageScreenshot` or any second run it is 99 / CLS 0, and real loads record
+     no layout shift. Judge the home on a second run.
    - Guide "A week in Courchevel 1850" (EN + FR, `src/content/guides/`): a day-by-day example
      of a stay arranged by us, clearly labelled as an example, no prices, no invented clients,
      linked from the 1850 village page, the home guides section and related services.

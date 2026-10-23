@@ -4,6 +4,7 @@
  * Without this script the form still works as a normal form post.
  */
 import { track, getUtm } from './analytics';
+import { parsePrefill } from '../lib/prefill';
 
 type Errors = Record<string, string>;
 
@@ -31,6 +32,14 @@ export function initEnquiryForm(form: HTMLFormElement) {
   setHidden('page', location.pathname + location.search);
   setHidden('referrer', document.referrer.slice(0, 300));
   setHidden('started', String(Date.now()));
+
+  // Homepage quick-start answers (the edge function also writes these into the HTML).
+  const prefill = parsePrefill(params, new Date().toISOString().slice(0, 10));
+  for (const key of ['arrival', 'departure', 'adults', 'children'] as const) {
+    const input = form.querySelector<HTMLInputElement>(`#${key}`);
+    if (input && prefill[key]) input.value = prefill[key];
+  }
+  if (prefill.village) form.querySelectorAll<HTMLInputElement>(`input[name=village][value="${prefill.village}"]`).forEach((i) => (i.checked = true));
 
   // Pre-select from ?service=chalets or ?experience=winter-retreat.
   const service = params.get('service');

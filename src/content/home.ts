@@ -18,6 +18,13 @@ export const home = {
       lead: 'Courchevel Luxury Concierge is a luxury concierge in Courchevel that arranges everything around your stay: chalets and palace hotels, helicopter transfers, private chefs, ski instructors and staff. Tell us your dates and we send a personal proposal, quoted for you rather than taken from a price list.',
       imageAlt: 'View from a chauffeured Rolls-Royce of a helicopter waiting on the snow for its passengers',
     },
+    quickStart: {
+      title: 'Start with your dates',
+      village: 'Village',
+      villagePlaceholder: 'Choose a village',
+      submit: 'Continue to my request',
+      note: 'Next: the services you would like and how to reach you.',
+    },
     proof: [
       { value: '15 min', label: 'Reply time, 8:00 to 22:00' },
       { value: '24/7', label: 'On call during the winter season' },
@@ -89,6 +96,13 @@ export const home = {
       title: 'Conciergerie de luxe à Courchevel',
       lead: 'Courchevel Luxury Concierge est une conciergerie de luxe à Courchevel qui organise tout votre séjour : chalets et palaces, transferts en hélicoptère, chefs à domicile, moniteurs de ski et personnel. Indiquez-nous vos dates et nous vous adressons une proposition personnalisée, établie pour vous plutôt que tirée d’une grille tarifaire.',
       imageAlt: 'Vue depuis une Rolls-Royce avec chauffeur d’un hélicoptère attendant ses passagers sur la neige',
+    },
+    quickStart: {
+      title: 'Commencez par vos dates',
+      village: 'Village',
+      villagePlaceholder: 'Choisir un village',
+      submit: 'Continuer ma demande',
+      note: 'Ensuite : les services souhaités et comment vous joindre.',
     },
     proof: [
       { value: '15 min', label: 'Délai de réponse, de 8 h à 22 h' },

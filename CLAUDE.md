@@ -76,6 +76,7 @@ src/content.config.ts  frontmatter schema (limits enforced at build)
 src/data/photos.ts  photo keys used in frontmatter; reviews.ts / partners.ts switch
                     on /reviews/ and /partners/ when non-empty
 netlify/functions/  lead endpoint (Phase 3)
+netlify/edge-functions/  /enquire/ pre-fill from the homepage quick-start
 public/             robots.txt, llms.txt, favicons (Phase 4)
 ```
 
