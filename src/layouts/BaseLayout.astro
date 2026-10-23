@@ -8,6 +8,7 @@ import { getImage } from 'astro:assets';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import MobileCTA from '../components/MobileCTA.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
 import { business, type Locale } from '../data/business';
 import defaultOg from '../assets/photos/rolls-royce-helicopter-arrival.jpeg';
@@ -73,6 +74,7 @@ const ogUrl = new URL(og.src, Astro.site).href;
     </main>
     <SiteFooter locale={locale} />
     <MobileCTA locale={locale} whatsappOnly={enquiryPage} />
+    <WhatsAppFloat locale={locale} />
     <ConsentBanner locale={locale} />
   </body>
 </html>

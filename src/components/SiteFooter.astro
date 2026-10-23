@@ -73,8 +73,9 @@ const heading = 'mb-4 font-sans text-xs font-semibold uppercase tracking-[0.22em
     </div>
   </div>
 
+  <!-- md:pb-30 keeps the last row clear of the pinned WhatsApp button -->
   <div class="border-t border-line">
-    <div class="container-site flex flex-col gap-3 py-6 text-xs text-taupe md:flex-row md:items-center md:justify-between">
+    <div class="container-site flex flex-col gap-3 pt-6 pb-6 md:pb-30 text-xs text-taupe md:flex-row md:items-center md:justify-between">
       <p>© {new Date().getFullYear()} {business.name}. {s.footer.rights}</p>
       <ul class="flex flex-wrap gap-x-6 gap-y-2" aria-label={s.footer.legal}>
         {legal.map((l) => <li><SmartLink href={l.href} class="text-taupe hover:text-ink">{l.label}</SmartLink></li>)}

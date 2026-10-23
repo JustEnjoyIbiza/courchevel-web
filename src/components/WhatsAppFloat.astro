@@ -1,0 +1,23 @@
+---
+/** WhatsApp button pinned bottom left on tablets and computers (phones have MobileCTA). */
+import { t } from '../i18n/ui';
+import { business, whatsappHref, type Locale } from '../data/business';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const s = t(locale);
+---
+
+<a
+  href={whatsappHref(locale)}
+  class="fixed bottom-6 left-6 z-40 hidden flex-col items-start bg-ink px-5 py-3.5 text-ivory no-underline transition-colors hover:bg-brass-deep md:flex print:hidden"
+  data-event="whatsapp_click"
+  rel="noopener"
+>
+  <span class="h-px w-6 bg-brass" aria-hidden="true"></span>
+  <span class="mt-2.5 text-xs font-semibold uppercase tracking-[0.18em]">{s.whatsappUs}</span>
+  <span class="mt-1 text-xs text-ivory/75">{business.replyPromise[locale]}</span>
+</a>
