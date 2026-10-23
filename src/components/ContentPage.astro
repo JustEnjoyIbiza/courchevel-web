@@ -12,8 +12,6 @@ import FaqList from './FaqList.astro';
 import CtaBand from './CtaBand.astro';
 import SmartLink from './SmartLink.astro';
 import LastUpdated from './LastUpdated.astro';
-import ValleyMap from './ValleyMap.astro';
-import { valleyMarkers } from '../data/village-map-geo';
 import { photos } from '../data/photos';
 import { whatsappHref, type Locale } from '../data/business';
 import { t } from '../i18n/ui';
@@ -60,15 +58,6 @@ if (collection === 'services') schema.push(serviceSchema({ name: d.title, descri
 if (collection === 'guides') schema.push(articleSchema({ headline: d.title, description: d.description, url, updated: d.updated, locale, image: schemaImage }));
 if (slug === 'about') schema.push(localBusinessSchema(locale));
 if (d.faqs.length) schema.push(faqSchema(d.faqs));
-
-// Village pages: the village from above (IGN aerial photograph) and where it sits in the valley.
-const aerials = import.meta.glob<{ default: ImageMetadata }>('../assets/maps/aerial-*.jpg', { eager: true });
-const aerial = collection === 'villages' ? aerials[`../assets/maps/aerial-${slug}.jpg`]?.default : undefined;
-const inValley = slug in valleyMarkers;
-const fromAbove = {
-  en: { eyebrow: 'From above', title: 'The village from above', aerialAlt: `Aerial photograph of ${d.shortTitle ?? d.title}`, mapTitle: 'Where it sits in the valley', mapAlt: `Relief map of the Courchevel valley with ${d.shortTitle ?? d.title} marked in gold`, credit: 'Aerial photograph and relief: IGN, toned in our colours. Map: south at the top; pistes and lifts © OpenStreetMap contributors.' },
-  fr: { eyebrow: 'Vu du ciel', title: 'Le village vu du ciel', aerialAlt: `Photographie aérienne de ${d.shortTitle ?? d.title}`, mapTitle: 'Sa place dans la vallée', mapAlt: `Carte en relief de la vallée de Courchevel avec ${d.shortTitle ?? d.title} marqué en or`, credit: 'Photographie aérienne et relief : IGN, aux couleurs de la maison. Carte : le sud en haut ; pistes et remontées © les contributeurs d’OpenStreetMap.' },
-}[locale];
 
 const enquire = localize('/enquire/', locale) + (collection === 'services' ? `?service=${slug}` : '');
 ---
@@ -160,27 +149,6 @@ const enquire = localize('/enquire/', locale) + (collection === 'services' ? `?s
               </ul>
             </div>
           )}
-        </div>
-      </section>
-    )}
-
-    {aerial && (
-      <section class="border-b border-line py-section" aria-labelledby="from-above">
-        <div class="container-site">
-          <p class="eyebrow">{fromAbove.eyebrow}</p>
-          <h2 id="from-above" class="mt-4 text-h2">{fromAbove.title}</h2>
-          <div class="mt-10 grid gap-10 lg:grid-cols-12 lg:items-start">
-            <div class:list={[inValley ? 'lg:col-span-7' : 'lg:col-span-12']}>
-              <Picture src={aerial} alt={fromAbove.aerialAlt} formats={['avif', 'webp']} widths={[480, 760, 1200]} sizes={inValley ? '(min-width: 1024px) 58vw, 100vw' : '100vw'} class="aspect-[4/3] w-full object-cover" />
-            </div>
-            {inValley && (
-              <figure class="lg:col-span-5">
-                <figcaption class="eyebrow mb-4">{fromAbove.mapTitle}</figcaption>
-                <ValleyMap locale={locale} alt={fromAbove.mapAlt} highlight={slug} class="w-full" sizes="(min-width: 1024px) 40vw, 100vw" />
-              </figure>
-            )}
-          </div>
-          <p class="mt-4 text-xs text-taupe">{fromAbove.credit}</p>
         </div>
       </section>
     )}
