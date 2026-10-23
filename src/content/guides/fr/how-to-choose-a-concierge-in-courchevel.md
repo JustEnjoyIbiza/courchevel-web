@@ -1,10 +1,10 @@
 ---
-title: "Comment choisir une conciergerie de luxe à Courchevel : la liste des questions à poser"
-shortTitle: Choisir une conciergerie
-metaTitle: "Comment choisir une conciergerie à Courchevel | CLC"
-description: "Les questions à poser à toute conciergerie de luxe à Courchevel : délais de réponse, présence locale, partenaires agréés, contrat du chalet, devis."
-answer: "La conciergerie qui vous convient à Courchevel est celle qui répond vite, reste présente en station pendant la saison et ne travaille qu’avec des partenaires dûment agréés. Avant de vous engager, demandez qui répond et dans quel délai, comment chauffeurs, moniteurs et agents de sécurité sont habilités, qui signe le contrat du chalet et comment les devis sont présentés. La liste ci-dessous vaut pour toute conciergerie, y compris la nôtre."
-updated: 2026-10-22
+title: "Choisir une conciergerie à Courchevel : ce que vous pouvez attendre, et notre façon de travailler"
+shortTitle: Ce qu’offre une bonne conciergerie
+metaTitle: "Choisir une conciergerie à Courchevel | CLC"
+description: "Délais de réponse, partenaires agréés, contrat du chalet, devis clairs : ce qu’une conciergerie à Courchevel doit offrir, et comment nous y répondons."
+answer: "Nous répondons sous 15 minutes de 8 h à 22 h, restons joignables 24 h/24 pendant la saison d’hiver, ne travaillons qu’avec des partenaires agréés et établissons un devis personnalisé pour chaque service avant toute réservation. C’est ce qu’une bonne conciergerie à Courchevel doit offrir : des réponses rapides et personnelles, des chauffeurs, moniteurs et agents de sécurité habilités, et un contrat clair pour le chalet. Voici notre façon de travailler point par point, puis les questions à poser."
+updated: 2026-10-24
 image: sculpture
 imageAlt: "Les lettres rouges de Courchevel, sculpture dressée dans la neige"
 facts:
@@ -21,11 +21,11 @@ facts:
   - label: Notre délai de réponse
     value: "Sous 15 minutes de 8 h à 22 h, et 24 h/24 pendant la saison d’hiver"
 includes:
-  - "Dix questions à poser à toute conciergerie"
+  - "Notre façon de travailler : réponses, devis, partenaires agréés et chalets"
   - "Les habilitations françaises des chauffeurs, moniteurs, guides et agents de sécurité"
   - "Comment se contracte une location de chalet en France"
   - "Ce que doit montrer un devis clair et personnalisé"
-  - "Notre façon de travailler, au regard de cette même liste"
+  - "Dix questions à poser avant de réserver"
 faqs:
   - q: "Quelles questions poser à une conciergerie à Courchevel avant de réserver ?"
     a: "Demandez qui répond à vos messages et dans quel délai, si l’équipe est présente en station pendant la saison, comment ses chauffeurs, moniteurs, guides et agents de sécurité sont habilités, qui signe le contrat du chalet, comment vos données sont traitées et comment les devis sont présentés. Une conciergerie sérieuse répond clairement à chaque point."
@@ -43,9 +43,22 @@ related:
   - /faq/
 ---
 
+## Notre façon de travailler, point par point
+
+Voici ce que vous pouvez attendre de nous, avant même de le demander.
+
+- **Réponses :** nous répondons sous 15 minutes de 8 h à 22 h, et pendant la saison d’hiver nous sommes joignables 24 h/24, par WhatsApp, téléphone ou e-mail.
+- **Propositions et devis :** vous recevez une proposition sur mesure sous 24 heures. Nous ne publions pas de tarifs ; chaque prestation fait l’objet d’un devis personnalisé, et rien n’est réservé sans votre accord.
+- **Partenaires agréés :** nous ne conduisons ni ne pilotons jamais nous-mêmes. Les transferts routiers sont assurés par des chauffeurs professionnels agréés et les vols par des opérateurs agréés ; la protection rapprochée passe uniquement par des partenaires autorisés par le CNAPS, comme l’explique notre page [shopping, courses et sécurité](/fr/services/lifestyle/).
+- **Chalets :** nous ne louons jamais de bien et n’encaissons jamais de loyer. Le chalet est loué directement auprès de son propriétaire, d’une agence ou de l’hôtel, et nous organisons tout autour du séjour ; voir notre service de [location de chalet de luxe](/fr/services/chalets/).
+- **Secteur :** Courchevel 1850, 1650 Moriond, 1550 Village, 1300 Le Praz et La Tania, ainsi que les Trois Vallées, dont Méribel et Val Thorens.
+- **Réserver pour un tiers :** assistants personnels, family offices et agents de voyage peuvent réserver pour le compte de leurs clients.
+
+Le traitement d’une demande, étape par étape, est détaillé sur notre page [à propos](/fr/about/).
+
 ## Pourquoi ce choix compte à Courchevel
 
-Un séjour à Courchevel repose sur de nombreux intervenants : le propriétaire ou l’agence du chalet, les chauffeurs et les compagnies d’hélicoptères, les moniteurs, les chefs, les nounous et parfois la sécurité. Une conciergerie ne les remplace pas ; elle les choisit, les réserve et les fait travailler ensemble. La qualité du séjour dépend donc moins des promesses que de la façon dont la conciergerie répond, des personnes avec qui elle travaille et de la clarté avec laquelle elle explique ce que vous payez. Les questions ci-dessous vous permettent de comparer toute conciergerie de luxe sur les mêmes critères.
+Un séjour à Courchevel repose sur de nombreux intervenants : le propriétaire ou l’agence du chalet, les chauffeurs et les compagnies d’hélicoptères, les moniteurs, les chefs, les nounous et parfois la sécurité. Une conciergerie ne les remplace pas ; elle les choisit, les réserve et les fait travailler ensemble. La qualité du séjour dépend donc moins des promesses que de la façon dont la conciergerie répond, des personnes avec qui elle travaille et de la clarté avec laquelle elle explique ce que vous payez. Les questions ci-dessous valent d’être posées à tous, et nous répondons volontiers à chacune d’elles.
 
 ## La liste : dix questions à poser
 
@@ -65,19 +78,6 @@ Un séjour à Courchevel repose sur de nombreux intervenants : le propriétaire 
 Si vos projets dépassent un seul village, vérifiez que la conciergerie les couvre. Le domaine de Courchevel compte cinq villages, de 1850 à [Courchevel 1550 Village](/fr/courchevel-1550-village/) et [La Tania](/fr/la-tania/), et les remontées relient l’ensemble des Trois Vallées : un déjeuner à Méribel ou une journée à Val Thorens font partie de nombreux séjours. Demandez aussi si elle organise le trajet lui-même ; notre guide [comment venir à Courchevel](/fr/guides/getting-to-courchevel/) montre combien tout dépend du jour et de l’itinéraire.
 
 Si vous séjournez dans un palace, sa conciergerie couvre peut-être déjà l’essentiel de vos besoins. Notre comparatif [conciergerie privée ou conciergerie d’hôtel](/fr/guides/private-concierge-vs-hotel-concierge/) vous aide à trancher.
-
-## Notre façon de travailler, au regard de cette liste
-
-Nous préférons que vous nous compariez sur ces points plutôt que de nous croire sur parole.
-
-- **Réponses :** nous répondons sous 15 minutes de 8 h à 22 h, et pendant la saison d’hiver nous sommes joignables 24 h/24, par WhatsApp, téléphone ou e-mail.
-- **Propositions et devis :** vous recevez une proposition sur mesure sous 24 heures. Nous ne publions pas de tarifs ; chaque prestation fait l’objet d’un devis personnalisé, et rien n’est réservé sans votre accord.
-- **Partenaires agréés :** nous ne conduisons ni ne pilotons jamais nous-mêmes. Les transferts routiers sont assurés par des chauffeurs professionnels agréés et les vols par des opérateurs agréés ; la protection rapprochée passe uniquement par des partenaires autorisés par le CNAPS, comme l’explique notre page [shopping, courses et sécurité](/fr/services/lifestyle/).
-- **Chalets :** nous ne louons jamais de bien et n’encaissons jamais de loyer. Le chalet est loué directement auprès de son propriétaire, d’une agence ou de l’hôtel, et nous organisons tout autour du séjour ; voir notre service de [location de chalet de luxe](/fr/services/chalets/).
-- **Secteur :** Courchevel 1850, 1650 Moriond, 1550 Village, 1300 Le Praz et La Tania, ainsi que les Trois Vallées, dont Méribel et Val Thorens.
-- **Réserver pour un tiers :** assistants personnels, family offices et agents de voyage peuvent réserver pour le compte de leurs clients.
-
-Le traitement d’une demande, étape par étape, est détaillé sur notre page [à propos](/fr/about/).
 
 ## Posez-nous les mêmes questions
 

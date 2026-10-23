@@ -42,8 +42,11 @@ const homeFaqs = allFaqs(locale).filter((f) => f.home).map(({ q, a }) => ({ q, a
 // Three experiences from /experiences/, chosen so no photo repeats on the homepage.
 const featured = ['private-skiing', 'groomer-dinner', 'mountain-evenings'].map((id) => experiencesPage[locale].experiences.find((x) => x.id === id)!);
 const courchevelVillages = villages.filter((v) => v.group === 'courchevel');
+// The concierge checklist stays on /guides/ and in search, not on the homepage:
+// visitors here have already found us (owner, 24 Oct 2026).
+const homeGuideExclude = ['how-to-choose-a-concierge-in-courchevel'];
 const guides = (await getCollection('guides'))
-  .filter((g) => splitId(g.id).locale === locale)
+  .filter((g) => splitId(g.id).locale === locale && !homeGuideExclude.includes(splitId(g.id).slug))
   .map((g) => ({ title: g.data.shortTitle ?? g.data.title, text: g.data.description, href: localize(`/guides/${splitId(g.id).slug}/`, locale) }));
 const pad = (n: number) => String(n).padStart(2, '0');
 const serviceEntries = (await getCollection('services')).filter((e) => splitId(e.id).locale === locale);
