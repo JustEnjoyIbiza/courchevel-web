@@ -16,10 +16,9 @@ export const home = {
       eyebrow: 'Courchevel 1850 · 1650 · 1550 · Le Praz · La Tania',
       title: 'Luxury concierge in Courchevel',
       lead: 'Courchevel Luxury Concierge is a luxury concierge in Courchevel that arranges everything around your stay: chalets and palace hotels, helicopter transfers, private chefs, ski instructors and staff. Tell us your dates and we send a personal proposal, quoted for you rather than taken from a price list.',
-      imageAlt: 'View from a chauffeured Rolls-Royce of a helicopter waiting on the snow for its passengers',
+      imageAlt: 'Steaming outdoor hot tub on a chalet terrace facing snow-covered pine trees in Courchevel',
       tagline: 'Chalets, helicopters, chefs and every evening in between, arranged by one contact.',
       short: 'Tell us your dates. We reply within 15 minutes and send a personal proposal within 24 hours.',
-      secondImageAlt: 'Steaming outdoor hot tub on a chalet terrace facing snow-covered pine trees in Courchevel',
     },
     quickStart: {
       title: 'Start with your dates',
@@ -99,10 +98,9 @@ export const home = {
       eyebrow: 'Courchevel 1850 · 1650 · 1550 · Le Praz · La Tania',
       title: 'Conciergerie de luxe à Courchevel',
       lead: 'Courchevel Luxury Concierge est une conciergerie de luxe à Courchevel qui organise tout votre séjour : chalets et palaces, transferts en hélicoptère, chefs à domicile, moniteurs de ski et personnel. Indiquez-nous vos dates et nous vous adressons une proposition personnalisée, établie pour vous plutôt que tirée d’une grille tarifaire.',
-      imageAlt: 'Vue depuis une Rolls-Royce avec chauffeur d’un hélicoptère attendant ses passagers sur la neige',
+      imageAlt: 'Bain nordique fumant sur la terrasse d’un chalet face aux sapins enneigés à Courchevel',
       tagline: 'Chalets, hélicoptères, chefs et chaque soirée entre les deux, organisés par un seul interlocuteur.',
       short: 'Indiquez-nous vos dates : réponse sous 15 minutes, proposition personnalisée sous 24 heures.',
-      secondImageAlt: 'Bain nordique fumant sur la terrasse d’un chalet face aux sapins enneigés à Courchevel',
     },
     quickStart: {
       title: 'Commencez par vos dates',
