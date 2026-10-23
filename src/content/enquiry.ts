@@ -20,6 +20,8 @@ export const enquiry = {
     children: 'Children',
     childrenAges: 'Children’s ages (optional)',
     childrenAgesHint: 'For example 4, 7 and 11',
+    // Shown on step 2 when the homepage quick-start already answered step 1.
+    summary: { label: 'Your stay', change: 'Change', adults: ['adult', 'adults'], children: ['child', 'children'] },
     services: 'What should we arrange?',
     servicesHint: 'Choose everything that applies. You can change it later.',
     budget: 'Approximate budget for the stay (optional)',
@@ -71,6 +73,7 @@ export const enquiry = {
     children: 'Enfants',
     childrenAges: 'Âge des enfants (facultatif)',
     childrenAgesHint: 'Par exemple 4, 7 et 11 ans',
+    summary: { label: 'Votre séjour', change: 'Modifier', adults: ['adulte', 'adultes'], children: ['enfant', 'enfants'] },
     services: 'Que devons-nous organiser ?',
     servicesHint: 'Cochez tout ce qui vous intéresse ; vous pourrez modifier votre choix plus tard.',
     budget: 'Budget indicatif pour le séjour (facultatif)',

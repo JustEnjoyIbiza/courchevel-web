@@ -23,6 +23,8 @@ export function initEnquiryForm(form: HTMLFormElement) {
   };
   let current = 0;
   let started = false;
+  let summaryOn = false;
+  const summary = form.querySelector<HTMLElement>('.stay-summary');
 
   // Hidden context fields.
   const params = new URLSearchParams(location.search);
@@ -87,19 +89,20 @@ export function initEnquiryForm(form: HTMLFormElement) {
   });
   back.addEventListener('click', () => show(current - 1));
 
-  function show(i: number) {
+  function show(i: number, focus = started) {
     current = Math.max(0, Math.min(steps.length - 1, i));
     steps.forEach((s, n) => {
       s.hidden = n !== current;
       s.classList.toggle('mt-14', false);
     });
     form.dataset.step = String(current + 1); // drives button visibility in global.css
+    if (current === 1 && summaryOn) renderSummary();
     progress?.querySelectorAll<HTMLElement>('.step-progress-item').forEach((el, n) => {
       el.classList.toggle('border-ink', n <= current);
       el.classList.toggle('text-ink', n === current);
       el.classList.toggle('border-line', n > current);
     });
-    if (started) {
+    if (focus) {
       steps[current].querySelector('legend')?.setAttribute('tabindex', '-1');
       (steps[current].querySelector('legend') as HTMLElement | null)?.focus();
       form.scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -157,6 +160,20 @@ export function initEnquiryForm(form: HTMLFormElement) {
     return true;
   }
 
+  /** One line on step 2 recalling step 1: "26 Dec 2026 – 2 Jan 2027 · Courchevel 1850 · 4 adults, 2 children". */
+  function renderSummary() {
+    if (!summary) return;
+    const words = JSON.parse(form.dataset.summary || '{}') as Record<'adults' | 'children', [string, string]>;
+    const fmt = new Intl.DateTimeFormat(form.dataset.locale === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+    const date = (v: string) => fmt.format(new Date(`${v}T00:00:00Z`));
+    const count = (name: 'adults' | 'children') => Number((field(name) as HTMLInputElement).value || 0);
+    const people = (name: 'adults' | 'children') => `${count(name)} ${words[name][count(name) === 1 ? 0 : 1]}`;
+    const village = form.querySelector('input[name=village]:checked')?.closest('label')?.textContent?.trim();
+    const parts = [`${date(arrival.value)} – ${date(departure.value)}`, village, people('adults') + (count('children') ? `, ${people('children')}` : '')];
+    summary.querySelector('.stay-summary-text')!.textContent = parts.filter(Boolean).join(' · ');
+    summary.classList.replace('hidden', 'flex');
+  }
+
   function showAlert(text: string) {
     alertBox.textContent = text;
     alertBox.classList.remove('hidden');
@@ -212,4 +229,12 @@ export function initEnquiryForm(form: HTMLFormElement) {
       submit.textContent = label;
     }
   });
+
+  // The homepage quick-start already answered step 1: open on the services,
+  // with the answers recalled and a link back to change them.
+  if (prefill.arrival && prefill.departure && prefill.village && stepFields[0].every((name) => !checkField(name))) {
+    summaryOn = true;
+    show(1);
+  }
+  summary?.querySelector('.stay-summary-change')?.addEventListener('click', () => show(0, true));
 }
