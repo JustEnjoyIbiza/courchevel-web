@@ -13,6 +13,7 @@ import SmartLink from './SmartLink.astro';
 import CtaBand from './CtaBand.astro';
 import LastUpdated from './LastUpdated.astro';
 import FaqList from './FaqList.astro';
+import SkiMap from './SkiMap.astro';
 import { photos } from '../data/photos';
 import { whatsappHref, type Locale } from '../data/business';
 import { skiArea, skiAreaUpdated } from '../content/ski-area';
@@ -81,7 +82,7 @@ const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
   <!-- The descent -->
   <section class="descent relative overflow-clip bg-ivory" aria-label={c.descentLabel}>
     <!-- Ski track: a brass line from the summit to the valley, drawn as you scroll -->
-    <svg class="descent-track pointer-events-none absolute inset-0 -z-0 h-full w-full" viewBox="0 0 100 1000" preserveAspectRatio="none" aria-hidden="true">
+    <svg class="descent-track pointer-events-none absolute inset-0 -z-0 h-full w-full lg:hidden" viewBox="0 0 100 1000" preserveAspectRatio="none" aria-hidden="true">
       <path
         d="M50 0 C 90 60, 90 120, 50 170 S 10 280, 50 340 S 90 450, 50 510 S 10 620, 50 680 S 90 790, 50 850 S 30 960, 50 1000"
         pathLength="1"
@@ -100,11 +101,17 @@ const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
       </p>
     </div>
 
-    <ol class="relative z-[1]">
+    <div class="container-site relative z-[1] lg:grid lg:grid-cols-12 lg:gap-12">
+      <!-- The map: above the stops on phones, kept in view beside them on wide screens -->
+      <figure class="skimap-panel pt-14 lg:sticky lg:top-24 lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:h-[calc(100svh-7rem)] lg:self-start lg:pt-6">
+        <SkiMap labels={c.mapLabels} class="mx-auto h-auto max-h-[70svh] w-full max-w-md lg:h-full lg:max-h-none lg:max-w-none" />
+        <figcaption class="mt-2 text-center text-xs text-taupe">{c.mapNote}</figcaption>
+      </figure>
+    <ol class="lg:col-span-7 lg:row-start-1">
       {c.stops.map((stop, i) => (
-        <li class="descent-stop py-section" id={stop.id}>
-          <div class="container-site">
-            <article class:list={['grid gap-8 md:w-[62%] md:grid-cols-1', i % 2 === 1 ? 'md:ml-auto' : 'md:mr-auto']}>
+        <li class:list={['descent-stop py-section', `stop-${i}`]} id={stop.id}>
+          <div>
+            <article class:list={['grid gap-8 md:w-[62%] md:grid-cols-1 lg:w-full', i % 2 === 1 ? 'md:ml-auto' : 'md:mr-auto']}>
               <div class="bg-ivory/90 md:p-2">
                 <p class="font-serif text-[clamp(3.5rem,2.4rem+4.5vw,6.5rem)] leading-none text-brass-deep">{nf.format(stop.altitude)}<span class="ml-2 text-3xl">m</span></p>
                 <p class="eyebrow mt-5">{stop.eyebrow}</p>
@@ -142,6 +149,7 @@ const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
         </li>
       ))}
     </ol>
+    </div>
   </section>
 
   <!-- Practical notes -->
@@ -189,7 +197,7 @@ const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
 
 <style>
   /* Track: fully drawn by default (static fallback). */
-  .descent-track path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+  .descent-track path, :global(.skimap-route) { stroke-dasharray: 1; stroke-dashoffset: 0; }
   .descent-meter { display: none; }
 
   @property --alt {
@@ -228,6 +236,35 @@ const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
         .descent-alt::after { content: counter(alt) ' m'; }
       }
     }
+  }
+
+
+  /* Map markers: filled by default (static fallback). */
+  :global(.skimap-stop) { fill: var(--color-brass); }
+  .descent { timeline-scope: --stop-0, --stop-1, --stop-2, --stop-3, --stop-4, --stop-5; }
+  .stop-0 { view-timeline-name: --stop-0; }
+  .stop-1 { view-timeline-name: --stop-1; }
+  .stop-2 { view-timeline-name: --stop-2; }
+  .stop-3 { view-timeline-name: --stop-3; }
+  .stop-4 { view-timeline-name: --stop-4; }
+  .stop-5 { view-timeline-name: --stop-5; }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
+      :global(.skimap-route) { animation-name: draw-track; animation-timing-function: linear; animation-fill-mode: both; }
+      .descent :global(.skimap-route) { animation-timeline: --descent; animation-range: contain 0% contain 100%; }
+      :global(.skimap-stop) { animation-name: light-stop; animation-timing-function: linear; animation-fill-mode: both; }
+      .descent :global(#stop-saulire) { animation-timeline: --stop-0; animation-range: entry 60% cover 45%; }
+      .descent :global(#stop-cable-car) { animation-timeline: --stop-1; animation-range: entry 60% cover 45%; }
+      .descent :global(#stop-1850) { animation-timeline: --stop-2; animation-range: entry 60% cover 45%; }
+      .descent :global(#stop-1650) { animation-timeline: --stop-3; animation-range: entry 60% cover 45%; }
+      .descent :global(#stop-1550) { animation-timeline: --stop-4; animation-range: entry 60% cover 45%; }
+      .descent :global(#stop-le-praz) { animation-timeline: --stop-5; animation-range: entry 60% cover 45%; }
+    }
+  }
+  @keyframes light-stop {
+    from { fill: var(--color-ivory); }
+    to { fill: var(--color-brass); }
   }
 
   @keyframes draw-track {

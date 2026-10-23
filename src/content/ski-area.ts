@@ -49,6 +49,8 @@ interface SkiAreaCopy {
   descentLabel: string;
   altitudeLabel: string;
   heroPhoto: PhotoKey;
+  mapLabels: { saulire: string; station: string; c1850: string; c1650: string; c1550: string; praz: string; altiport: string };
+  mapNote: string;
   stops: Stop[];
   practicalEyebrow: string;
   practicalTitle: string;
@@ -79,6 +81,8 @@ export const skiArea: Record<Locale, SkiAreaCopy> = {
     descentLabel: 'The descent from La Saulire to Le Praz',
     altitudeLabel: 'Altitude',
     heroPhoto: 'gondola',
+    mapLabels: { saulire: 'LA SAULIRE · 2,740 m', station: 'CABLE CAR · 2,077 m', c1850: 'COURCHEVEL 1850', c1650: 'MORIOND 1650', c1550: 'VILLAGE 1550', praz: 'LE PRAZ · 1,300 m', altiport: 'Altiport' },
+    mapNote: 'Illustration, not to scale.',
     stops: [
       {
         id: 'la-saulire',
@@ -205,6 +209,8 @@ export const skiArea: Record<Locale, SkiAreaCopy> = {
     descentLabel: 'La descente de la Saulire au Praz',
     altitudeLabel: 'Altitude',
     heroPhoto: 'gondola',
+    mapLabels: { saulire: 'LA SAULIRE · 2 740 m', station: 'TÉLÉPHÉRIQUE · 2 077 m', c1850: 'COURCHEVEL 1850', c1650: 'MORIOND 1650', c1550: 'VILLAGE 1550', praz: 'LE PRAZ · 1 300 m', altiport: 'Altiport' },
+    mapNote: 'Illustration, sans échelle.',
     stops: [
       {
         id: 'la-saulire',

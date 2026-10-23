@@ -1,0 +1,138 @@
+---
+/**
+ * Draft illustration of the Courchevel side, La Saulire to Le Praz, drawn in
+ * code until the commissioned artwork arrives (docs/ski-map-illustrator-brief.md).
+ * Not to scale. Same structure the illustrator will deliver: a static
+ * `mountain` group, one `route` path drawn summit to valley, and `stop-*`
+ * markers. Labels are SVG text so they follow the page language.
+ * The route and markers are animated by SkiAreaPage.astro.
+ */
+interface Props {
+  labels: { saulire: string; station: string; c1850: string; c1650: string; c1550: string; praz: string; altiport: string };
+  class?: string;
+}
+
+const { labels, class: className } = Astro.props;
+
+// Forest: small pine marks scattered on the lower slopes (fixed, so the build is stable).
+const pines: [number, number, number][] = [];
+let seed = 7;
+const rand = () => ((seed = (seed * 9301 + 49297) % 233280) / 233280);
+const forestZones = [
+  { x: [40, 260], y: [600, 760], n: 70 },
+  { x: [60, 220], y: [780, 960], n: 60 },
+  { x: [380, 560], y: [640, 820], n: 55 },
+  { x: [330, 560], y: [840, 980], n: 45 },
+  { x: [150, 330], y: [520, 600], n: 20 },
+];
+for (const z of forestZones) {
+  for (let i = 0; i < z.n; i++) {
+    const x = z.x[0] + rand() * (z.x[1] - z.x[0]);
+    const y = z.y[0] + rand() * (z.y[1] - z.y[0]);
+    pines.push([Math.round(x), Math.round(y), 6 + Math.round(rand() * 6)]);
+  }
+}
+// Keep the route corridor and the villages clear of trees.
+// Label boxes (x1, y1, x2, y2) matching the <text> positions below.
+const labelBoxes = [
+  [90, 610, 205, 632],
+  [325, 915, 470, 936],
+  [345, 478, 470, 498],
+  [434, 588, 540, 608],
+];
+const clear = (x: number, y: number) =>
+  (Math.abs(x - 300) < 34 && y > 600) ||
+  Math.hypot(x - 300, y - 905) < 55 ||
+  Math.hypot(x - 210, y - 650) < 45 ||
+  Math.hypot(x - 470, y - 565) < 50 ||
+  labelBoxes.some(([x1, y1, x2, y2]) => x > x1 - 8 && x < x2 + 8 && y > y1 - 4 && y < y2 + 14);
+const forest = pines.filter(([x, y]) => !clear(x, y));
+
+const chalet = (x: number, y: number, s = 1) =>
+  `M${x - 7 * s} ${y} v${-7 * s} l${7 * s} ${-6 * s} l${7 * s} ${6 * s} v${7 * s} z`;
+const village = (cx: number, cy: number, n: number) =>
+  Array.from({ length: n }, (_, i) => {
+    const row = Math.floor(i / 4);
+    const col = i % 4;
+    return chalet(cx - 30 + col * 18 + (row % 2) * 9, cy + row * 14, 0.9);
+  }).join(' ');
+---
+
+<svg viewBox="0 0 600 1000" class={className} role="img" aria-labelledby="skimap-title">
+  <title id="skimap-title">{`${labels.saulire} – ${labels.praz}`}</title>
+  <g id="mountain">
+    <!-- Distant ridges -->
+    <path d="M0 210 L60 170 L120 190 L170 130 L230 82 L290 140 L350 110 L420 160 L480 120 L540 170 L600 140" fill="none" stroke="var(--color-taupe)" stroke-width="1" opacity="0.45" />
+    <!-- Main ridge and summit -->
+    <path d="M0 260 L70 220 L140 180 L200 120 L232 88 L262 118 L300 150 L360 190 L430 175 L500 215 L560 200 L600 230" fill="none" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round" />
+    <!-- Shadowed faces -->
+    <path d="M232 88 L262 118 L300 150 L330 260 L285 330 L250 230 Z" fill="var(--color-stone)" />
+    <path d="M430 175 L500 215 L560 200 L540 320 L470 360 L440 280 Z" fill="var(--color-stone)" opacity="0.8" />
+    <path d="M70 220 L140 180 L200 120 L190 230 L120 320 L60 300 Z" fill="var(--color-stone)" opacity="0.7" />
+    <!-- Rock hatching near the summit -->
+    <g stroke="var(--color-ink)" stroke-width="0.8" opacity="0.6">
+      <path d="M240 110 l-10 22 M250 118 l-9 24 M262 128 l-8 22 M274 138 l-7 20 M214 118 l-6 18 M206 132 l-5 16" />
+      <path d="M455 200 l-8 18 M468 206 l-7 18 M482 214 l-6 16 M150 200 l-6 16 M162 192 l-6 16" />
+    </g>
+    <!-- Slope contours -->
+    <g fill="none" stroke="var(--color-taupe)" stroke-width="0.7" opacity="0.4">
+      <path d="M110 360 C 200 330, 380 330, 520 380" />
+      <path d="M80 440 C 200 410, 400 420, 560 460" />
+      <path d="M60 530 C 200 505, 420 515, 580 545" />
+    </g>
+    <!-- Saulire cable car -->
+    <g stroke="var(--color-taupe)" stroke-width="0.9">
+      <path d="M236 96 L300 328" />
+      <rect x="259" y="170" width="7" height="6" fill="var(--color-taupe)" />
+      <rect x="278" y="250" width="7" height="6" fill="var(--color-taupe)" />
+    </g>
+    <!-- Altiport strip above 1850 -->
+    <path d="M392 412 L428 400" stroke="var(--color-ink)" stroke-width="4" stroke-linecap="round" />
+    <!-- Forest -->
+    <g fill="var(--color-ink)" opacity="0.85">
+      {forest.map(([x, y, h]) => <path d={`M${x} ${y - h} L${x + h * 0.45} ${y} L${x - h * 0.45} ${y} Z`} />)}
+    </g>
+    <!-- Villages -->
+    <g fill="var(--color-ivory)" stroke="var(--color-ink)" stroke-width="1">
+      <path d={village(340, 468, 10)} />
+      <path d={village(478, 566, 7)} />
+      <path d={village(214, 648, 6)} />
+      <path d={village(304, 900, 7)} />
+    </g>
+    <!-- Ski jumps at Le Praz -->
+    <path d="M360 860 C 372 870, 384 884, 392 900" fill="none" stroke="var(--color-ink)" stroke-width="1.2" />
+  </g>
+
+  <!-- The descent (animated): La Saulire to Le Praz -->
+  <path
+    id="route"
+    class="skimap-route"
+    d="M232 96 C 250 160, 230 220, 270 270 S 300 320, 300 330 C 320 380, 290 420, 334 468 C 360 500, 300 540, 270 575 S 240 640, 260 690 S 330 760, 300 810 S 290 870, 302 895"
+    pathLength="1"
+    fill="none"
+    stroke="var(--color-brass)"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+
+  <!-- Stops -->
+  <g class="skimap-stops" stroke="var(--color-brass-deep)" stroke-width="2">
+    <circle id="stop-saulire" class="skimap-stop" cx="232" cy="96" r="7" />
+    <circle id="stop-cable-car" class="skimap-stop" cx="300" cy="330" r="7" />
+    <circle id="stop-1850" class="skimap-stop" cx="334" cy="468" r="7" />
+    <circle id="stop-1650" class="skimap-stop" cx="478" cy="550" r="7" />
+    <circle id="stop-1550" class="skimap-stop" cx="214" cy="632" r="7" />
+    <circle id="stop-le-praz" class="skimap-stop" cx="302" cy="895" r="7" />
+  </g>
+
+  <!-- Labels (page language) -->
+  <g class="skimap-labels" font-family="var(--font-sans)" font-size="13" fill="var(--color-ink)" letter-spacing="0.08em" stroke="var(--color-ivory)" stroke-width="4" stroke-linejoin="round" paint-order="stroke">
+    <text x="252" y="80">{labels.saulire}</text>
+    <text x="316" y="336">{labels.station}</text>
+    <text x="436" y="398" fill="var(--color-taupe)" font-size="11">{labels.altiport}</text>
+    <text x="352" y="492">{labels.c1850}</text>
+    <text x="440" y="602">{labels.c1650}</text>
+    <text x="96" y="626">{labels.c1550}</text>
+    <text x="330" y="930">{labels.praz}</text>
+  </g>
+</svg>
