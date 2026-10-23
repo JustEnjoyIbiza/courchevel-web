@@ -10,6 +10,7 @@ import { villages } from '../data/villages';
 import { experiences } from '../content/experiences';
 import { allFaqs } from '../content/faq';
 import { splitId } from '../lib/routes';
+import { skiArea } from '../content/ski-area';
 
 export const GET: APIRoute = async ({ site }) => {
   const url = (p: string) => new URL(p, site).href;
@@ -55,6 +56,7 @@ export const GET: APIRoute = async ({ site }) => {
     '## Planning pages',
     '',
     ...pages.map((g) => `- [${g.data.title}](${url(`/${splitId(g.id).slug}/`)}): ${g.data.description}`),
+    `- [${skiArea.en.title}](${url('/courchevel-ski-area/')}): ${skiArea.en.description}`,
     '',
     '## Guides',
     '',

@@ -57,7 +57,7 @@ It is also the busiest village, particularly over Christmas, New Year and the Fe
 
 ## Skiing from the village
 
-The main lifts leave from the snow front at the Croisette, at the centre of the village. From there you reach the Saulire, the Verdons and the high slopes above the altiport, and from the Saulire you can continue towards Méribel and the rest of the Trois Vallées. The Courchevel valley has around 150 km of pistes on its own, and the Trois Vallées around 600 km.
+The main lifts leave from the snow front at the Croisette, at the centre of the village. From there you reach the Saulire, the Verdons and the high slopes above the altiport, and from the Saulire you can continue towards Méribel and the rest of the Trois Vallées. The Courchevel valley has around 150 km of pistes on its own, and the Trois Vallées around 600 km. Our page on [the Courchevel ski area](/courchevel-ski-area/) follows the slopes from the summit down to Le Praz.
 
 Several of the ski schools have meeting points on the snow front, which makes mornings simpler with children. For stronger skiers, we arrange private instructors and mountain guides for off-piste days, with equipment fitted at the chalet the evening before.
 

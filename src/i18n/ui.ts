@@ -21,6 +21,7 @@ export const ui = {
     nav: {
       services: 'Services',
       experiences: 'Experiences',
+      slopes: 'Slopes',
       villages: 'Villages',
       about: 'About',
       faq: 'FAQ',
@@ -70,6 +71,7 @@ export const ui = {
     nav: {
       services: 'Services',
       experiences: 'Expériences',
+      slopes: 'Pistes',
       villages: 'Villages',
       about: 'À propos',
       faq: 'FAQ',

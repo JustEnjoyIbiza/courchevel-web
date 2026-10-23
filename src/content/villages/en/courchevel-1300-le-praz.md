@@ -4,7 +4,7 @@ shortTitle: Courchevel 1300 Le Praz
 metaTitle: "Courchevel 1300 Le Praz Village Guide | CLC"
 description: Le Praz is Courchevel's original village of stone and wood, with a lake, the Olympic ski jumps and a gondola to 1850. Who it suits and what we arrange.
 answer: Courchevel Le Praz, known as Courchevel 1300, is the resort's historic village, with stone and wood houses, a small lake and the ski jumps built for the 1992 Olympics. It suits guests who want an authentic Savoyard village and quiet evenings, with 1850 about six minutes away by gondola.
-updated: 2026-10-22
+updated: 2026-10-23
 image: stone-chalet
 imageAlt: Stone chalet in the snow in Courchevel
 facts:
@@ -55,7 +55,7 @@ It suits families, couples and groups who want an authentic Savoyard setting and
 
 ## Skiing from the village
 
-From Le Praz, the gondola takes you straight up to 1850, where the main lifts leave towards the Saulire and the high slopes of the Courchevel valley, and on to Méribel and the rest of the Trois Vallées. At the end of the day, pistes come back down through the forest to the village. At around 1,300 m, the lower slopes depend more on snow conditions than those higher up, so on some days the gondola is the simpler way home.
+From Le Praz, the gondola takes you straight up to 1850, where the main lifts leave towards the Saulire and the high slopes of the Courchevel valley, and on to Méribel and the rest of the Trois Vallées. At the end of the day, pistes come back down through the forest to the village. At around 1,300 m, the lower slopes depend more on snow conditions than those higher up, so on some days the gondola is the simpler way home. The longest run in Courchevel ends here, 7.9 km from the top of La Saulire; see [the Courchevel ski area](/courchevel-ski-area/).
 
 The village is also home to the Tremplin du Praz, the ski jumping complex built for the 1992 Albertville Winter Olympics, where the ski jumping and Nordic combined events were held. It still hosts competitions, including a summer ski jumping Grand Prix, and is a striking sight from the village.
 

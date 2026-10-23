@@ -4,7 +4,7 @@ shortTitle: Ski privé et montagne
 metaTitle: "Moniteur de ski privé à Courchevel | CLC"
 description: "Moniteurs de ski privés diplômés, guides hors-piste, journées d’héliski en Italie ou en Suisse, forfaits et matériel livrés à votre chalet de Courchevel."
 answer: "Nous réservons des moniteurs de ski privés diplômés pour adultes et enfants, des guides de haute montagne pour le hors-piste et des journées d’héliski en Italie ou en Suisse, la dépose étant interdite en France. Forfaits et matériel sont livrés au chalet, et vous recevez une proposition personnalisée sous 24 heures."
-updated: 2026-10-22
+updated: 2026-10-23
 image: gondola
 imageAlt: "Télécabine au-dessus des sapins enneigés de Courchevel, à la tombée du jour"
 facts:
@@ -42,7 +42,7 @@ related:
 
 ## Moniteurs privés pour adultes et enfants
 
-Courchevel compte environ 150 km de pistes, reliés aux quelque 600 km des Trois Vallées : un moniteur privé fait gagner du temps autant que de la technique. Nous réservons des moniteurs diplômés d’État, en ski comme en snowboard, à la demi-journée, à la journée ou à la semaine, en fonction de chacun :
+Courchevel compte environ 150 km de pistes, reliés aux quelque 600 km des Trois Vallées : un moniteur privé fait gagner du temps autant que de la technique. Nous réservons des moniteurs diplômés d’État, en ski comme en snowboard, à la demi-journée, à la journée ou à la semaine, en fonction de chacun : Pour parcourir les pistes du sommet de la Saulire jusqu’au Praz, voir [le domaine skiable de Courchevel](/fr/courchevel-ski-area/).
 
 - **Enfants :** des moniteurs patients, habitués aux premiers cours, aux tout-petits comme aux adolescents qui veulent aller plus vite.
 - **Adultes :** technique, reprise en douceur après une pause, ou simplement un moniteur du pays qui sait où trouver la bonne neige ce matin-là.

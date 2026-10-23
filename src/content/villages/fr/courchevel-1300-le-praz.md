@@ -4,7 +4,7 @@ shortTitle: Courchevel 1300 Le Praz
 metaTitle: "Courchevel 1300 Le Praz : guide du village | CLC"
 description: Le Praz, village d’origine de Courchevel en pierre et bois, avec son lac, les tremplins olympiques et une télécabine vers 1850. Pour qui et nos services.
 answer: Courchevel Le Praz, ou Courchevel 1300, est le village historique de la station, avec ses maisons de pierre et de bois, son petit lac et les tremplins construits pour les Jeux olympiques de 1992. Il convient à ceux qui recherchent un authentique village savoyard et des soirées calmes, avec 1850 à environ six minutes en télécabine.
-updated: 2026-10-22
+updated: 2026-10-23
 image: stone-chalet
 imageAlt: Chalet en pierre sous la neige à Courchevel
 facts:
@@ -55,7 +55,7 @@ Il convient aux familles, aux couples et aux groupes en quête d’un cadre savo
 
 ## Skier depuis le village
 
-Depuis Le Praz, la télécabine vous monte directement à 1850, d’où partent les principales remontées vers la Saulire et les pistes d’altitude de la vallée de Courchevel, puis vers Méribel et le reste des Trois Vallées. En fin de journée, des pistes redescendent à travers la forêt jusqu’au village. À environ 1 300 m, les pistes du bas dépendent davantage de l’enneigement que celles d’en haut : certains jours, la télécabine est le moyen le plus simple de rentrer.
+Depuis Le Praz, la télécabine vous monte directement à 1850, d’où partent les principales remontées vers la Saulire et les pistes d’altitude de la vallée de Courchevel, puis vers Méribel et le reste des Trois Vallées. En fin de journée, des pistes redescendent à travers la forêt jusqu’au village. À environ 1 300 m, les pistes du bas dépendent davantage de l’enneigement que celles d’en haut : certains jours, la télécabine est le moyen le plus simple de rentrer. La plus longue piste de Courchevel se termine ici, à 7,9 km du sommet de la Saulire ; voir [le domaine skiable de Courchevel](/fr/courchevel-ski-area/).
 
 Le village abrite aussi le Tremplin du Praz, le complexe de saut à ski construit pour les Jeux olympiques d’hiver d’Albertville en 1992, où se sont déroulées les épreuves de saut à ski et de combiné nordique. Il accueille toujours des compétitions, dont un Grand Prix d’été de saut à ski, et sa silhouette domine le village.
 

@@ -10,7 +10,7 @@ const files = [];
 
 const valid = new Set(['/services/', '/villages/', '/guides/', '/experiences/', '/faq/', '/about/', '/enquire/',
   ...['chalets','transfers','ski','experiences','private-chef','nightlife','staff','childcare','wellness','events','lifestyle','owners'].map(s => `/services/${s}/`),
-  ...['courchevel-1850','courchevel-1650-moriond','courchevel-1550-village','courchevel-1300-le-praz','la-tania','meribel','val-thorens','christmas-new-year-courchevel','corporate-retreats-courchevel','assistants-and-family-offices'].map(s => `/${s}/`),
+  ...['courchevel-1850','courchevel-1650-moriond','courchevel-1550-village','courchevel-1300-le-praz','la-tania','meribel','val-thorens','christmas-new-year-courchevel','corporate-retreats-courchevel','assistants-and-family-offices','courchevel-ski-area'].map(s => `/${s}/`),
   ...['getting-to-courchevel','courchevel-with-kids','season-dates-and-events','where-to-eat','how-to-choose-a-concierge-in-courchevel','private-concierge-vs-hotel-concierge','heli-skiing-from-courchevel','a-week-in-courchevel-1850'].map(s => `/guides/${s}/`)]);
 
 const rules = [

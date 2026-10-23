@@ -57,7 +57,7 @@ C’est aussi le village le plus fréquenté, surtout à Noël, au Nouvel An et 
 
 ## Skier depuis le village
 
-Les principales remontées partent du front de neige de la Croisette, au centre du village. De là, vous rejoignez la Saulire, les Verdons et les pistes d’altitude au-dessus de l’altiport, puis, depuis la Saulire, Méribel et le reste des Trois Vallées. La vallée de Courchevel compte à elle seule environ 150 km de pistes, et les Trois Vallées environ 600 km.
+Les principales remontées partent du front de neige de la Croisette, au centre du village. De là, vous rejoignez la Saulire, les Verdons et les pistes d’altitude au-dessus de l’altiport, puis, depuis la Saulire, Méribel et le reste des Trois Vallées. La vallée de Courchevel compte à elle seule environ 150 km de pistes, et les Trois Vallées environ 600 km. Notre page sur [le domaine skiable de Courchevel](/fr/courchevel-ski-area/) suit les pistes du sommet jusqu’au Praz.
 
 Plusieurs écoles de ski ont leurs points de rendez-vous sur le front de neige, ce qui simplifie les matinées avec des enfants. Pour les bons skieurs, nous réservons moniteurs privés et guides de haute montagne pour les journées hors-piste, avec un matériel ajusté au chalet la veille.
 
