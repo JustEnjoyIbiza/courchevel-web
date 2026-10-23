@@ -5,6 +5,8 @@ metaTitle: Nounous et garde d’enfants à Courchevel | CLC
 description: Nounous sélectionnées, baby-sitting le soir, cours de ski enfants, activités et matériel bébé à Courchevel, organisés avant votre arrivée. Sur devis.
 answer: Nous trouvons une nounou pour la journée ou tout le séjour, une baby-sitter pour vos soirées, des cours de ski pour les enfants dès 3 ans et le matériel bébé dont votre chalet a besoin. Indiquez-nous l’âge de vos enfants et vos dates, et nous vous adressons une proposition personnalisée sous 24 heures.
 updated: 2026-10-22
+image: wooden-chalets
+imageAlt: Chalets en bois avec balcons et une télécabine au-dessus, à Courchevel
 facts:
   - label: Cours de ski
     value: Les cours collectifs pour enfants commencent généralement à 3 ans

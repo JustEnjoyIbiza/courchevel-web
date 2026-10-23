@@ -5,6 +5,8 @@ metaTitle: "Val Thorens depuis Courchevel : ski et transferts | CLC"
 description: "Val Thorens, à environ 2 300 m, est la station la plus haute des Trois Vallées. Comment la rejoindre depuis Courchevel à skis ou par la route."
 answer: "Val Thorens est la station la plus haute des Trois Vallées, à environ 2 300 m, au fond de la vallée des Belleville. Depuis Courchevel, on la rejoint à skis par la vallée de Méribel au cours d’une longue journée, ou en voiture en environ une heure et quart par Moûtiers. Nous y organisons journées de ski, transferts, conduite sur glace et réservations de restaurants."
 updated: 2026-10-22
+image: gondola
+imageAlt: Télécabines au-dessus des pistes enneigées au crépuscule
 facts:
   - label: Altitude
     value: "Environ 2 300 m, la station la plus haute des Trois Vallées"

@@ -5,6 +5,8 @@ metaTitle: "Val Thorens from Courchevel: Ski Days & Transfers | CLC"
 description: Val Thorens, at around 2,300 m, is the highest resort in the Trois Vallées. How to reach it from Courchevel by ski or road, and what we arrange there.
 answer: Val Thorens is the highest resort in the Trois Vallées, at around 2,300 m, at the head of the Belleville valley. From Courchevel you can ski there through the Méribel valley in a long day, or drive in around an hour and a quarter via Moûtiers. We arrange ski days, transfers, ice driving and restaurant tables there.
 updated: 2026-10-22
+image: gondola
+imageAlt: Gondola cabins above snowy slopes at dusk
 facts:
   - label: Altitude
     value: Around 2,300 m, the highest resort in the Trois Vallées

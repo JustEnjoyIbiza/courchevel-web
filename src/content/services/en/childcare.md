@@ -5,6 +5,8 @@ metaTitle: Nannies & Childcare in Courchevel | CLC
 description: Vetted nannies, evening babysitting, kids' ski lessons, activities and baby equipment in Courchevel, arranged before you arrive. Quoted personally.
 answer: We arrange nannies for the day or the whole stay, babysitters for the evening, ski lessons for children from 3 and the baby equipment your chalet needs. Tell us the ages of your children and your dates, and we send a personal proposal within 24 hours.
 updated: 2026-10-22
+image: wooden-chalets
+imageAlt: Wooden chalets with balconies and a gondola passing above in Courchevel
 facts:
   - label: Ski lessons
     value: Group lessons for children usually start at 3 years old

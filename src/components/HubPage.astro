@@ -51,6 +51,30 @@ const villageGroups = [
 const th = { village: 'Village', altitude: 'Altitude', suits: locale === 'en' ? 'In short' : 'En bref' };
 const nf = new Intl.NumberFormat(locale === 'en' ? 'en-GB' : 'fr-FR');
 
+// Header photo per hub; alt texts match the pages that use the same photo.
+const heroes = {
+  services: { image: 'white-chalet', alt: { en: 'White wooden chalet among snow-covered pine trees in Courchevel', fr: 'Chalet en bois blanc entouré de sapins enneigés à Courchevel' } },
+  villages: { image: 'wooden-chalets', alt: { en: 'Wooden chalets with balconies and a gondola passing above in Courchevel', fr: 'Chalets en bois avec balcons et une télécabine au-dessus, à Courchevel' } },
+  guides: { image: 'terrace', alt: { en: 'Sunny terrace of a mountain restaurant above the slopes in Courchevel', fr: 'Terrasse ensoleillée d’un restaurant d’altitude au-dessus des pistes de Courchevel' } },
+  experiences: { image: 'helicopter', alt: { en: 'Helicopter on a snowy landing area among pine trees in the Alps', fr: 'Hélicoptère se posant sur une hélisurface enneigée entourée de sapins dans les Alpes' } },
+} as const;
+const hero = heroes[hub];
+
+// Services hub: the same services, grouped by the stage of the stay.
+const stages = [
+  { title: { en: 'Before you arrive', fr: 'Avant votre arrivée' }, text: { en: 'The chalet chosen, staffed and stocked to your list, with children’s equipment in place.', fr: 'Le chalet choisi, le personnel en place et la cuisine approvisionnée selon votre liste, avec l’équipement pour les enfants.' }, slugs: ['chalets', 'staff', 'childcare'] },
+  { title: { en: 'Arrival and departure', fr: 'Arrivée et départ' }, text: { en: 'Helicopter or chauffeured car from the airport, timed to your flight, with a road transfer on standby.', fr: 'Hélicoptère ou voiture avec chauffeur depuis l’aéroport, calés sur votre vol, avec un transfert routier en réserve.' }, slugs: ['transfers'] },
+  { title: { en: 'On the mountain', fr: 'Sur la montagne' }, text: { en: 'Instructors and guides matched to each skier, and afternoons off the pistes.', fr: 'Moniteurs et guides adaptés à chaque skieur, et des après-midi hors des pistes.' }, slugs: ['ski', 'experiences'] },
+  { title: { en: 'Evenings', fr: 'En soirée' }, text: { en: 'A chef at the chalet, the right table in the village, or a party of your own.', fr: 'Un chef au chalet, la bonne table au village, ou votre propre soirée.' }, slugs: ['private-chef', 'nightlife', 'events'] },
+  { title: { en: 'Throughout your stay', fr: 'Pendant tout le séjour' }, text: { en: 'Treatments at the chalet, errands and anything that comes up, with one contact on call.', fr: 'Soins au chalet, courses et imprévus, avec un seul interlocuteur joignable.' }, slugs: ['wellness', 'lifestyle'] },
+];
+const stageCopy = {
+  eyebrow: { en: 'Your stay, stage by stage', fr: 'Votre séjour, étape par étape' },
+  title: { en: 'Arranged around the way a stay unfolds', fr: 'Organisé au fil de votre séjour' },
+  owners: { en: 'Own a chalet in Courchevel?', fr: 'Propriétaire d’un chalet à Courchevel ?' },
+};
+const serviceName = (slug: string) => services.find((x) => x.slug === slug)?.name[locale] ?? slug;
+
 const crumbs = [
   { name: s.breadcrumbHome, href: localize('/', locale) },
   { name: c.title, href: localize(path, locale) },
@@ -64,12 +88,28 @@ const crumbs = [
   alternatePath={localize(path, other)}
   schema={[breadcrumbSchema(crumbs.map((x) => ({ name: x.name, url: x.href })))]}
 >
-  <section class="border-b border-line">
-    <div class="container-site py-10 md:py-16">
-      <Breadcrumbs items={crumbs} />
-      <h1 class="mt-8 max-w-4xl text-display">{c.title}</h1>
+  <!-- Photo header, then the direct answer as a statement -->
+  <header class="relative isolate flex min-h-[56svh] items-end overflow-hidden bg-ink text-ivory md:min-h-[min(64vh,38rem)]">
+    <Picture
+      src={photos[hero.image]}
+      alt={hero.alt[locale]}
+      formats={['avif', 'webp']}
+      widths={[480, 720, 1000]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="absolute inset-0 -z-20 h-full w-full object-cover"
+    />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/50 to-ink/30" aria-hidden="true"></div>
+    <div class="container-site pt-24 pb-12 md:pb-16">
+      <Breadcrumbs items={crumbs} tone="light" />
+      <h1 class="mt-6 max-w-4xl text-display text-ivory">{c.title}</h1>
       <div class="rule mt-8"></div>
-      <p class="mt-8 max-w-2xl text-lg text-ink">{c.answer}</p>
+    </div>
+  </header>
+  <section class="border-b border-line">
+    <div class="container-site py-14 md:py-20">
+      <p class="max-w-4xl font-serif text-[clamp(1.4rem,1.15rem+0.9vw,2rem)] leading-snug text-ink">{c.answer}</p>
     </div>
   </section>
 
@@ -117,8 +157,7 @@ const crumbs = [
                 formats={['avif', 'webp']}
                 widths={[360, 540, 720]}
                 sizes="(min-width: 768px) 33vw, 100vw"
-                loading={i === 0 ? 'eager' : 'lazy'}
-                fetchpriority={i === 0 ? 'high' : 'auto'}
+                loading="lazy"
                 class="aspect-[4/5] w-full object-cover"
               />
             )}
@@ -159,6 +198,32 @@ const crumbs = [
           </li>
         ))}
       </ol>
+      {hub === 'services' && (
+        <section class="mt-section" aria-labelledby="stages-title">
+          <p class="eyebrow">{stageCopy.eyebrow[locale]}</p>
+          <h2 id="stages-title" class="mt-4 max-w-2xl text-h2">{stageCopy.title[locale]}</h2>
+          <ol class="mt-10">
+            {stages.map((st, i) => (
+              <li class="grid gap-4 border-t border-line py-8 md:grid-cols-12 md:gap-8">
+                <span class="font-serif text-4xl leading-none text-brass-deep md:col-span-1" aria-hidden="true">{pad(i + 1)}</span>
+                <div class="md:col-span-5">
+                  <h3 class="text-2xl">{st.title[locale]}</h3>
+                  <p class="mt-2 text-taupe">{st.text[locale]}</p>
+                </div>
+                <ul class="flex flex-wrap content-start gap-x-6 gap-y-1 md:col-span-6 md:pt-1">
+                  {st.slugs.map((slug) => (
+                    <li><SmartLink href={localize(`/services/${slug}/`, locale)} class="link inline-flex min-h-11 items-center">{serviceName(slug)}</SmartLink></li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+          <p class="mt-6 border-t border-line pt-6 text-taupe">
+            {stageCopy.owners[locale]}{' '}
+            <SmartLink href={localize('/services/owners/', locale)} class="link inline-flex min-h-11 items-center">{serviceName('owners')}</SmartLink>
+          </p>
+        </section>
+      )}
       {hub === 'services' && (
         <ul class="mt-12 flex flex-wrap gap-x-8 gap-y-2 border-t border-brass pt-6 text-sm">
           <li><SmartLink href={localize('/christmas-new-year-courchevel/', locale)} class="link inline-flex min-h-11 items-center">{s.footer.christmas}</SmartLink></li>
