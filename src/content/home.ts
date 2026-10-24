@@ -15,9 +15,9 @@ export const home = {
     hero: {
       eyebrow: 'Courchevel 1850 · 1650 · 1550 · Le Praz · La Tania',
       title: 'Luxury concierge in Courchevel',
-      lead: 'Courchevel Luxury Concierge is a luxury concierge in Courchevel that arranges everything around your stay: chalets and palace hotels, helicopter transfers, private chefs, ski instructors and staff. Tell us your dates and we send a personal proposal, quoted for you rather than taken from a price list.',
+      lead: 'From a private chalet and a helicopter arrival to a VIP table, a ski instructor or a private chef, every part of your time in Courchevel is arranged personally around you. Share the full picture, or simply what you need next. We take it from there, with discretion and a proposal quoted for you.',
       imageAlt: 'Steaming outdoor hot tub on a chalet terrace facing snow-covered pine trees in Courchevel',
-      tagline: 'Chalets, helicopters, chefs and every evening in between, arranged by one contact.',
+      tagline: 'The whole stay. Or just tonight.',
       short: 'Tell us your dates. We reply within 15 minutes and send a personal proposal within 24 hours.',
     },
     quickStart: {
@@ -97,9 +97,9 @@ export const home = {
     hero: {
       eyebrow: 'Courchevel 1850 · 1650 · 1550 · Le Praz · La Tania',
       title: 'Conciergerie de luxe à Courchevel',
-      lead: 'Courchevel Luxury Concierge est une conciergerie de luxe à Courchevel qui organise tout votre séjour : chalets et palaces, transferts en hélicoptère, chefs à domicile, moniteurs de ski et personnel. Indiquez-nous vos dates et nous vous adressons une proposition personnalisée, établie pour vous plutôt que tirée d’une grille tarifaire.',
+      lead: 'Du chalet privé et de l’arrivée en hélicoptère à la table VIP, au moniteur de ski ou au chef à domicile, chaque détail de votre passage à Courchevel est organisé personnellement, autour de vous. Racontez-nous tout, ou seulement ce dont vous avez besoin maintenant. Nous nous chargeons du reste, avec discrétion et une proposition établie pour vous.',
       imageAlt: 'Bain nordique fumant sur la terrasse d’un chalet face aux sapins enneigés à Courchevel',
-      tagline: 'Chalets, hélicoptères, chefs et chaque soirée entre les deux, organisés par un seul interlocuteur.',
+      tagline: 'Tout votre séjour. Ou simplement ce soir.',
       short: 'Indiquez-nous vos dates : réponse sous 15 minutes, proposition personnalisée sous 24 heures.',
     },
     quickStart: {
