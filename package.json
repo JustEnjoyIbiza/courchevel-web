@@ -18,6 +18,7 @@
     "qa:content": "node scripts/qa/content-lint.mjs .",
     "qa:launch": "node scripts/qa/launch-check.mjs",
     "cloudinary": "node --env-file-if-exists=.env scripts/cloudinary.mjs",
+    "telegram": "node --env-file-if-exists=.env scripts/telegram.mjs",
     "qa": "npm run build && npm test && npm run qa:static && npm run qa:schema"
   },
   "dependencies": {

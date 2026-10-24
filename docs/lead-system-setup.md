@@ -53,9 +53,14 @@ new → contacted → proposal_sent → booked / lost.
 
 ## 3. Telegram alert, about 5 min
 
-1. In Telegram, message **@BotFather** → `/newbot` → pick a name → copy the **token**.
-2. Send any message to your new bot from the phone that should receive alerts.
-3. Open `https://api.telegram.org/bot<TOKEN>/getUpdates` in a browser and copy `chat.id`.
+1. In Telegram, message **@BotFather** → `/newbot` → pick a name and a username ending in
+   `bot` → it replies with the **token**.
+2. Create a group (e.g. "CLC Leads"), add the bot, and send a message there. A group lets
+   you add team members later without changing anything; a private chat with the bot
+   (press Start) works too.
+3. Put the token in `.env` as `TELEGRAM_BOT_TOKEN`, then `npm run telegram -- chats` lists
+   the group's id (a negative number). Put it in `.env` as `TELEGRAM_CHAT_ID` and run
+   `npm run telegram -- test`: a sample alert arrives in the group.
 
 | Netlify variable | Value |
 |---|---|

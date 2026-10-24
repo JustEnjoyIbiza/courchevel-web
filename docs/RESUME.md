@@ -1,6 +1,6 @@
 # Project resume: read this first in a new session
 
-Last updated **24 October 2026** (session of 23–24 Oct, see below). This file replaces re-reading the
+Last updated **25 October 2026** (sessions of 23–25 Oct, see below). This file replaces re-reading the
 whole history. Rules live in `CLAUDE.md`; the owner's open items in `docs/owner-checklist.md`.
 
 ## In one paragraph
@@ -10,6 +10,24 @@ bilingual EN/FR Astro 7 site on Netlify, built for leads, Google and AI assistan
 Phases 0–5 are built and committed. **Nothing is pushed to GitHub or deployed:** the live
 site is still the old one. Launch is planned for **Tuesday 24 November 2026** (season opens
 4 December). What is left is mostly the owner's: accounts, access, facts, then About and legal pages.
+
+## Session of 25 October 2026
+
+- f803a48: homepage hero line "The whole stay. Or just tonight." and a new intro that no longer
+  repeats the brand name (owner's idea, EN/FR). On the preview.
+- The owner wants a candid strategist, not an executor: challenge weak ideas, recommend one option,
+  keep facts apart from judgment.
+- **Telegram alerts, stopped halfway (owner had no Telegram access).** Built `npm run telegram --
+  chats | test` (`scripts/telegram.mjs`); `.env` has empty `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID`
+  lines. Next: owner creates the bot with @BotFather and a group "CLC Leads" with the bot in it, pastes
+  the token in `.env` (TextEdit: no code editor on this Mac); then `chats` gives the group id, `test`
+  sends a sample alert; then both variables in Netlify (token as a secret, Production, Deploy Previews,
+  Branch deploys), redeploy the preview with `--skip-functions-cache`, one test request (ask first).
+- Checked in Netlify (25 Oct): only `BASIN_FORM_URL`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` are
+  set. No alert, no Turnstile, no client email (Resend needs the domain email) yet.
+- Agreed priorities after Telegram: Turnstile; the legal notice and privacy pages (neither exists; need
+  the company details); founder and real reviews for trust; a "Just one thing?" row of request links
+  under the homepage dates form (proposed, not built). Domain expires **30 Nov**: owner to renew.
 
 ## Session of 23–24 October 2026 (owner working live, preview updated after each step)
 

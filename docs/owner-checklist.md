@@ -22,7 +22,7 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 
 - [ ] Prices: the site follows the Website Plan (no prices anywhere). The Acquisition Plan wanted "from" prices. Confirm
 - [ ] Languages: EN + FR now. Russian, Ukrainian and Arabic later?
-- [ ] Concierge alerts by Telegram (built) or WhatsApp Cloud API (not built, needs a Meta business account)
+- [x] Concierge alerts by Telegram (chosen 25 Oct; bot and group still to create, see `lead-system-setup.md`)
 - [ ] The form's budget field is free text ("in your own words"), so no price bands appear on the site. OK?
 - [ ] Keep "Winter Retreat", "VIP Party Package", "Ski Explorer" in English on the French site, or translate them like the three new experiences?
 - [ ] Titles use the short brand "CLC" after the "|" to stay under 60 characters. OK, or prefer "Courchevel Concierge"?
