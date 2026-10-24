@@ -17,7 +17,14 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   deploy on the production Netlify site (alias `preview`, not production; live site untouched).
   Redeploy after changes: `npx netlify deploy --build --site d05bccf4-0865-430f-82d7-8febd6ed5430
   --alias preview` (netlify-cli is not a project dependency; install it anywhere). Drafts send no
-  noindex header: don't link the URL publicly. Netlify env set so far: `BASIN_FORM_URL` (all contexts).
+  noindex header: don't link the URL publicly. Netlify env set so far: `BASIN_FORM_URL` (all contexts),
+  `SUPABASE_URL` (all contexts) and `SUPABASE_SERVICE_ROLE_KEY` (secret `sb_secret_` key; Production,
+  Deploy Previews, Branch deploys).
+- **Supabase (24 Oct):** project "Courchevel Luxury Concierge", West EU (Paris), ref `aqonenwnonefcsbkjgmt`,
+  in the owner's "Just Enjoy Ibiza" organization. Migrations 001 + 002 applied; a test table request
+  (name "TEST – Claude") saved from the preview and can be deleted. The organization's other project,
+  "Just Enjoy Ibiza Data Base", belongs to the Ibiza business and has its own `leads` table: never run
+  Courchevel migrations there.
 
 - Repo: this folder, branch **`rebuild/phase-0-setup`**, remote `JustEnjoyIbiza/courchevel-web`
   (no push access yet). `main` = old site, which Netlify serves in production.

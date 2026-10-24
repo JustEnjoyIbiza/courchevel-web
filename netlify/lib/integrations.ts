@@ -87,7 +87,9 @@ export async function saveLead(lead: AnyLead, env: Env): Promise<Outcome> {
     method: 'POST',
     headers: {
       apikey: env.SUPABASE_SERVICE_ROLE_KEY,
-      Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`,
+      // Legacy service_role keys are JWTs and also go in Authorization; the newer
+      // secret keys (sb_secret_...) are sent in the apikey header only.
+      ...(env.SUPABASE_SERVICE_ROLE_KEY.startsWith('sb_') ? {} : { Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}` }),
       'Content-Type': 'application/json',
       Prefer: 'return=minimal',
     },

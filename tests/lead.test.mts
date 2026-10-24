@@ -287,3 +287,11 @@ test('Basin receives the request type, summary and fields', async () => {
   assert.equal(basin.body.item, 'Bagatelle');
   assert.equal(basin.body.guests, 6);
 });
+
+test('a new-style Supabase secret key goes in the apikey header only', async () => {
+  await handleLead(post(valid), { ...ENV, SUPABASE_SERVICE_ROLE_KEY: 'sb_secret_abc' }, NOW);
+  const db = calls.find((c) => c.url.endsWith('/rest/v1/leads'))!;
+  const headers = db.init.headers as Record<string, string>;
+  assert.equal(headers.apikey, 'sb_secret_abc');
+  assert.equal(headers.Authorization, undefined);
+});
