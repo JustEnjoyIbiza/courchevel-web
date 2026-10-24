@@ -1,6 +1,6 @@
 # Project resume: read this first in a new session
 
-Last updated **22 October 2026**, end of Phase 5 prep. This file replaces re-reading the
+Last updated **24 October 2026** (session of 23–24 Oct, see below). This file replaces re-reading the
 whole history. Rules live in `CLAUDE.md`; the owner's open items in `docs/owner-checklist.md`.
 
 ## In one paragraph
@@ -11,7 +11,32 @@ Phases 0–5 are built and committed. **Nothing is pushed to GitHub or deployed:
 site is still the old one. Launch is planned for **Tuesday 24 November 2026** (season opens
 4 December). What is left is mostly the owner's: accounts, access, facts, then About and legal pages.
 
-## Where the work is
+## Session of 23–24 October 2026 (owner working live, preview updated after each step)
+
+All committed on `rebuild/phase-0-setup`, deployed to the private preview, nothing pushed.
+
+| Commit | What |
+|---|---|
+| 11b644c | Cloudinary photo library sync (`npm run cloudinary -- upload \| pull \| list`, keys in local `.env`) |
+| 552bf1c | 18 owner photos on service, guide and planning pages (EN/FR alt text) |
+| f762c3a, ae2e71c | WhatsApp button pinned bottom right on md+, round with icon (owner's design exception) |
+| 058e2d8 | Plan my stay opens on step 2 when the homepage quick-start answered step 1 |
+| f07529c | Concierge-checklist guide off the homepage, rewritten to lead with how we work |
+| eee6d3e | Named venues: 13 hotels (chalets page), tables guests ask for (nightlife), balloon + horse riding |
+| 7ee32b7, 67eb355, 612f9d5 | Where to eat: "Ten tables to know" right after the answer, a photo for each (credits in `docs/photo-credits.md`); Barrière Les Neiges is now Fouquet's Courchevel |
+| 53346d6 | Calls to action per page + 10 short request forms (`/enquire/<type>/`), see `src/content/requests.ts` |
+| a8882e1 | Supabase connected (new Courchevel project, migrations 001 + 002, test lead saved) |
+
+Open from this session:
+- Venue photo permissions: record each venue's OK in `docs/photo-credits.md` (La Soucoupe and La Mangeoire
+  were not worked with last winter; the owner is asking).
+- Delete the test lead "TEST – Claude" in Supabase (owner's action); a matching Basin email arrived.
+- `Photos /` (owner's 90 originals, 28 MB) sits untracked in the repo root: keep out of git or move it.
+- Not re-measured since these changes: Lighthouse mobile on the changed templates (Where to eat, request pages).
+- French copy added in this session (alt texts, requests, venues) needs the native-speaker review.
+- Ideas raised, not built: village required in the homepage quick-start (so it always skips step 1);
+  per-item request buttons on the nightlife and hotel lists (currently prose); no-JS pre-fill of ?item=.
+
 
 - **Private preview (23 Oct):** https://preview--courchevel-luxury-concierge.netlify.app, a CLI draft
   deploy on the production Netlify site (alias `preview`, not production; live site untouched).
