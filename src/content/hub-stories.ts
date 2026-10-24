@@ -52,6 +52,8 @@ export const photoAlt: Record<PhotoKey, L> = {
   'le-strato': { en: 'Le Strato hotel in Courchevel 1850 lit up at dusk, with deep snow in front', fr: 'L’hôtel Le Strato à Courchevel 1850 illuminé à la tombée du jour, devant une épaisse couche de neige' },
   'le-chabichou': { en: 'The dining room of Le Chabichou in Courchevel 1850, with a crystal chandelier and a wood-panelled ceiling', fr: 'La salle du Chabichou à Courchevel 1850, avec un lustre en cristal et un plafond lambrissé' },
   loulou: { en: 'A booth at Loulou Courchevel with tartan walls, carved wood and a table set for dinner', fr: 'Une alcôve chez Loulou Courchevel, murs en tartan, bois sculpté et table dressée pour le dîner' },
+  'la-soucoupe': { en: 'The busy sunny terrace of La Soucoupe at the top of La Loze, facing snow-covered peaks', fr: 'La terrasse ensoleillée et animée de La Soucoupe au sommet de La Loze, face aux sommets enneigés' },
+  'la-mangeoire': { en: 'The dining room of La Mangeoire in Courchevel 1850, with candlelit tables and deep velvet armchairs', fr: 'La salle de La Mangeoire à Courchevel 1850, tables éclairées à la bougie et profonds fauteuils de velours' },
 };
 
 /** Services hub: the line under each service name and the photo it is shown with. */

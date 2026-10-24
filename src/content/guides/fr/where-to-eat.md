@@ -91,6 +91,9 @@ highlights:
       place: Sommet de La Loze, au-dessus de Courchevel 1850
       kind: Déjeuner sur les pistes
       text: "Une salle chaleureuse et rustique au sommet de La Loze, réputée pour ses viandes grillées au feu de bois. Un déjeuner plus calme que les terrasses les plus animées, avec toute la vallée en contrebas."
+      photo: la-soucoupe
+      alt: "La terrasse ensoleillée et animée de La Soucoupe au sommet de La Loze, face aux sommets enneigés"
+      credit: "Photo : La Soucoupe"
     - name: Loulou
       place: Fouquet’s Courchevel, Courchevel 1850
       kind: Cuisine italienne de montagne
@@ -102,6 +105,9 @@ highlights:
       place: Courchevel 1850, au village
       kind: Dîner et soirée
       text: "L’adresse des dîners festifs à Courchevel : grillades au feu de bois, fondue et rôtisserie, un piano-bar, et une soirée qui se prolonge bien après le dessert."
+      photo: la-mangeoire
+      alt: "La salle de La Mangeoire à Courchevel 1850, tables éclairées à la bougie et profonds fauteuils de velours"
+      credit: "Photo : La Mangeoire"
 related:
   - /services/private-chef/
   - /services/nightlife/

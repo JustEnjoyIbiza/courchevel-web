@@ -91,6 +91,9 @@ highlights:
       place: Top of La Loze, above Courchevel 1850
       kind: Lunch on the slopes
       text: "A warm, rustic dining room at the top of La Loze, known for meat grilled over an open fire. A quieter lunch than the busiest terraces, with the whole valley below."
+      photo: la-soucoupe
+      alt: "The busy sunny terrace of La Soucoupe at the top of La Loze, facing snow-covered peaks"
+      credit: "Photo: La Soucoupe"
     - name: Loulou
       place: Fouquet's Courchevel, Courchevel 1850
       kind: Italian mountain cooking
@@ -102,6 +105,9 @@ highlights:
       place: Courchevel 1850 village
       kind: Dinner and late nights
       text: "Courchevel's festive dinner address: wood-fire grills, fondue and rotisserie dishes, a piano bar, and an evening that carries on long after dessert."
+      photo: la-mangeoire
+      alt: "The dining room of La Mangeoire in Courchevel 1850, with candlelit tables and deep velvet armchairs"
+      credit: "Photo: La Mangeoire"
 related:
   - /services/private-chef/
   - /services/nightlife/

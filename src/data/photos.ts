@@ -44,6 +44,8 @@ import sylvestreWahid from '../assets/photos/sylvestre-wahid-dish.jpeg';
 import leStrato from '../assets/photos/le-strato-dusk.jpeg';
 import leChabichou from '../assets/photos/le-chabichou-dining-room.jpeg';
 import loulou from '../assets/photos/loulou-courchevel-booth.jpeg';
+import laSoucoupe from '../assets/photos/la-soucoupe-terrace.jpeg';
+import laMangeoire from '../assets/photos/la-mangeoire-dining-room.jpeg';
 
 export const photos = {
   'rolls-royce-helicopter': rollsRoyceHelicopter,
@@ -84,6 +86,8 @@ export const photos = {
   'le-strato': leStrato,
   'le-chabichou': leChabichou,
   loulou,
+  'la-soucoupe': laSoucoupe,
+  'la-mangeoire': laMangeoire,
 } as const;
 
 export type PhotoKey = keyof typeof photos;
