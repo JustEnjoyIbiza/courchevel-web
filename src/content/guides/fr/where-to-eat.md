@@ -19,6 +19,7 @@ facts:
   - label: Alternative
     value: Un chef privé dans votre chalet, pour dîner chez vous
 includes:
+  - Dix tables à connaître, et ce qui fait la réputation de chacune
   - Réservations de restaurants dans tous les villages de Courchevel
   - Tables pour le déjeuner sur les pistes, calées sur votre journée de ski
   - Transferts en dameuse ou en voiture pour les dîners en altitude
@@ -35,6 +36,57 @@ faqs:
     a: Oui. Beaucoup de vacanciers alternent dîners dehors et soirées au chalet. Un chef privé fait les courses, cuisine et sert chez vous, ce qui convient aux familles avec de jeunes enfants et aux soirs où l’on préfère ne pas ressortir dans le froid.
   - q: Faut-il réserver pour déjeuner sur les pistes ?
     a: Pendant les vacances scolaires, oui, pour les terrasses les plus fréquentées. Une réservation vous permet d’organiser votre matinée de ski autour d’un horaire fixe et d’éviter l’attente au moment du coup de feu.
+highlights:
+  eyebrow: Notre sélection
+  title: Dix tables à connaître à Courchevel
+  intro: "Quatre tables étoilées et six adresses que nos clients nous demandent chaque hiver. Nous les réservons toutes, et vérifions qu’elles sont ouvertes à vos dates."
+  items:
+    - name: Le 1947 à Cheval Blanc
+      place: Cheval Blanc, Courchevel 1850
+      kind: Trois étoiles Michelin
+      text: "Le seul trois étoiles de Courchevel, une salle intime à l’hôtel Cheval Blanc où la cuisine française du chef Yannick Alléno est servie à très peu de tables. L’une des premières réservations complètes chaque hiver."
+    - name: Sylvestre Wahid
+      place: Les Grandes Alpes, Courchevel 1850
+      kind: Deux étoiles Michelin
+      text: "Sylvestre Wahid avait déjà obtenu deux étoiles au Strato et à Paris avant d’ouvrir son restaurant aux Grandes Alpes en 2021. La première étoile est arrivée en quelques mois, la seconde en 2024."
+    - name: Slalom 1850
+      place: Le Strato, Courchevel 1850
+      kind: Deux étoiles Michelin
+      text: "Formé à L’Oustau de Baumanière en Provence, le chef Thomas Prod’homme marie produits alpins et saveurs d’hiver avec une touche du Sud. Le restaurant s’appelait encore récemment Baumanière 1850."
+    - name: Le Chabichou
+      place: Le Chabichou, Courchevel 1850
+      kind: Une étoile Michelin
+      text: "Meilleur Ouvrier de France, Stéphane Buron cuisine avec son fils Antonin, entre souvenirs de Savoie et voyages au Japon. Un menu unique qui se termine par le chariot de fromages."
+    - name: Bagatelle
+      place: Sommet de la télécabine des Chenus, 2 250 m
+      kind: Déjeuner sur les pistes
+      text: "L’adresse montagne des restaurants Bagatelle : une cuisine méditerranéenne sur une grande terrasse panoramique face au Mont-Blanc, et un déjeuner qui se transforme en fête au fil de l’après-midi."
+      photo: bagatelle
+      alt: "L’arche Bagatelle sur la terrasse du restaurant, face aux sommets enneigés au-dessus de Courchevel 1850"
+    - name: Le Chalet de Pierres
+      place: Piste des Verdons, Courchevel 1850
+      kind: Déjeuner sur les pistes
+      text: "Une institution de Courchevel, accessible à ski, à pied ou en voiture. Fondue, la tarte au beaufort de la maison et un grand buffet de desserts, sur une terrasse plein sud sous la télécabine."
+      photo: chalet-de-pierres
+      alt: "Le Chalet de Pierres sur la piste des Verdons à Courchevel 1850, une télécabine passant au-dessus des sapins"
+    - name: Le Cap Horn
+      place: Route de l’Altiport, Courchevel 1850
+      kind: La mer en altitude
+      text: "Ouvert depuis 1954, le plus ancien restaurant d’altitude de 1850 : produits de la mer, une belle carte des vins et une terrasse plein sud. En haute saison, les tables en terrasse partent en premier."
+      photo: cap-horn
+      alt: "L’enseigne Cap Horn Courchevel 1954 devant une terrasse ensoleillée et animée"
+    - name: La Soucoupe
+      place: Sommet de La Loze, au-dessus de Courchevel 1850
+      kind: Déjeuner sur les pistes
+      text: "Une salle chaleureuse et rustique au sommet de La Loze, réputée pour ses viandes grillées au feu de bois. Un déjeuner plus calme que les terrasses les plus animées, avec toute la vallée en contrebas."
+    - name: Loulou
+      place: Fouquet’s Courchevel, Courchevel 1850
+      kind: Cuisine italienne de montagne
+      text: "L’adresse courchevelloise de Loulou, au pied de la piste de Bellecôte : des plats du Piémont et de Lombardie aux côtés des classiques de la maison, comme la pizza à la truffe, et une terrasse très demandée."
+    - name: La Mangeoire
+      place: Courchevel 1850, au village
+      kind: Dîner et soirée
+      text: "L’adresse des dîners festifs à Courchevel : grillades au feu de bois, fondue et rôtisserie, un piano-bar, et une soirée qui se prolonge bien après le dessert."
 related:
   - /services/private-chef/
   - /services/nightlife/
@@ -74,24 +126,11 @@ Le déjeuner sur les pistes fait partie du rythme d’une journée à Courchevel
 
 Certains restaurants d’altitude ouvrent aussi le soir, avec un accès en dameuse ou en voiture. Nous organisons le transfert pour que vous n’ayez pas à penser au retour.
 
-## Les tables les plus demandées
-
-Certaines des tables les plus difficiles à obtenir à Courchevel ne sont pas étoilées. Ce sont celles que nos clients nous demandent le plus, toutes à Courchevel 1850 :
-
-- **Bagatelle**, sur les pistes, pour un long déjeuner festif.
-- **Loulou**, pour dîner au village.
-- **Jaïs**, pour la cuisine libanaise.
-- **Sumosan**, pour la cuisine japonaise.
-- **La Mangeoire**, pour la cuisine française traditionnelle et son piano-bar.
-- **Le San Marco**, au cœur du village.
-
-À Noël, au Nouvel An et pendant les vacances de février, ce sont les premières complètes : nous les demandons dès que vos dates sont fixées.
-
 ## Les restaurants par village
 
 Au-delà des tables étoilées, chaque village a ses adresses pour un déjeuner ou un dîner plus détendu :
 
-- **Courchevel 1850 :** les restaurants des hôtels, comme L’Altiplano au K2 Palace, La Fèrma à l’Annapurna, Nama à l’Aman Le Mélézin ou La Table des Airelles – Le Festin aux Airelles, ainsi que l’INEOS Club House au pied du stade Émile-Allais.
+- **Courchevel 1850 :** les restaurants des hôtels, comme L’Altiplano au K2 Palace, La Fèrma à l’Annapurna, Nama à l’Aman Le Mélézin ou La Table des Airelles – Le Festin aux Airelles, ainsi que l’INEOS Club House au pied du stade Émile-Allais. Au village, Jaïs propose une cuisine libanaise et Sumosan une cuisine japonaise, et Le San Marco se trouve au cœur de la station.
 - **1650 Moriond :** La Rôtisserie au pied des pistes, le Schuss Café en bas des remontées, et Copiña.
 - **1550 Village :** La Cortona, juste sous les télécabines.
 - **1300 Le Praz :** La Table de Mon Grand-Père, La Glacière et Le Kiosque du Praz.

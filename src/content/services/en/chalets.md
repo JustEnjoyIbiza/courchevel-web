@@ -52,7 +52,7 @@ We then propose a small number of chalets that genuinely fit, rather than a long
 
 Courchevel 1850 is known for having several of France's palace-rated hotels within walking distance of each other. A hotel can make more sense than a chalet for shorter stays, couples, or groups who want a spa, restaurants and room service without staff to manage. We arrange the booking and look after everything around it: transfers, ski passes, restaurant tables and in-room requests.
 
-Among the hotels we book in Courchevel 1850: **Cheval Blanc** in the Jardin Alpin, **Les Airelles**, **Le K2 Palace**, **L'Apogée** and **Hôtel Barrière Les Neiges**; **Aman Le Mélézin**, **Le Lana** and **La Sivolière**, all ski-in, ski-out; and **Les Grandes Alpes**, **Carlina** and **Les Suites de la Potinière**, known for their spas. For a more intimate stay, **White 1921** and **Le Saint Roch** are smaller, boutique-style hotels. Over the festive weeks the finest suites go early, so we ask as soon as your dates are set.
+Among the hotels we book in Courchevel 1850: **Cheval Blanc** in the Jardin Alpin, **Les Airelles**, **Le K2 Palace**, **L'Apogée** and **Fouquet's Courchevel**; **Aman Le Mélézin**, **Le Lana** and **La Sivolière**, all ski-in, ski-out; and **Les Grandes Alpes**, **Carlina** and **Les Suites de la Potinière**, known for their spas. For a more intimate stay, **White 1921** and **Le Saint Roch** are smaller, boutique-style hotels. Over the festive weeks the finest suites go early, so we ask as soon as your dates are set.
 
 ## Before you arrive
 

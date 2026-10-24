@@ -52,7 +52,7 @@ Vous recevez ensuite une courte sélection de chalets choisis pour vous, plutôt
 
 Courchevel 1850 a la particularité de réunir plusieurs palaces à quelques pas les uns des autres. Pour un séjour court, un couple ou un groupe qui souhaite un spa, des restaurants et un service en chambre sans personnel à gérer, l’hôtel est parfois plus judicieux qu’un chalet. Nous nous chargeons de la réservation et de tout ce qui l’entoure : transferts, forfaits, tables au restaurant et demandes en chambre.
 
-Parmi les hôtels que nous réservons à Courchevel 1850 : **Cheval Blanc**, au Jardin Alpin, **Les Airelles**, **Le K2 Palace**, **L’Apogée** et l’**Hôtel Barrière Les Neiges** ; **Aman Le Mélézin**, **Le Lana** et **La Sivolière**, tous skis aux pieds ; **Les Grandes Alpes**, le **Carlina** et **Les Suites de la Potinière**, réputés pour leur spa. Pour un séjour plus intime, **White 1921** et **Le Saint Roch** sont des hôtels plus petits, dans l’esprit boutique. Pendant les fêtes, les plus belles suites partent tôt : nous les demandons dès que vos dates sont fixées.
+Parmi les hôtels que nous réservons à Courchevel 1850 : **Cheval Blanc**, au Jardin Alpin, **Les Airelles**, **Le K2 Palace**, **L’Apogée** et le **Fouquet’s Courchevel** ; **Aman Le Mélézin**, **Le Lana** et **La Sivolière**, tous skis aux pieds ; **Les Grandes Alpes**, le **Carlina** et **Les Suites de la Potinière**, réputés pour leur spa. Pour un séjour plus intime, **White 1921** et **Le Saint Roch** sont des hôtels plus petits, dans l’esprit boutique. Pendant les fêtes, les plus belles suites partent tôt : nous les demandons dès que vos dates sont fixées.
 
 ## Avant votre arrivée
 

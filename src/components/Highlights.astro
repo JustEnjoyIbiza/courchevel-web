@@ -1,0 +1,52 @@
+---
+/**
+ * Numbered editorial selection shown right after a page's answer (the
+ * `highlights` frontmatter field), e.g. "Ten tables to know" on Where to eat.
+ * One column, a thin rule between entries, an optional photo on the right.
+ */
+import { Picture } from 'astro:assets';
+import { photos, type PhotoKey } from '../data/photos';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  intro?: string;
+  items: { name: string; place: string; kind: string; text: string; photo?: PhotoKey; alt?: string }[];
+}
+
+const { eyebrow, title, intro, items } = Astro.props;
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+
+<section class="py-section" aria-labelledby="highlights-title">
+  <div class="container-site">
+    <div class="max-w-2xl">
+      <p class="eyebrow">{eyebrow}</p>
+      <h2 id="highlights-title" class="mt-4 text-h2">{title}</h2>
+      {intro && <p class="mt-5 text-taupe">{intro}</p>}
+    </div>
+    <ol class="mt-12 max-w-5xl">
+      {items.map((x, i) => (
+        <li class="grid gap-5 border-t border-line py-8 md:grid-cols-[4rem_minmax(0,1fr)_13rem] md:gap-8">
+          <span class="font-serif text-3xl leading-none text-brass-deep" aria-hidden="true">{pad(i + 1)}</span>
+          <div>
+            <h3 class="text-3xl">{x.name}</h3>
+            <p class="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-taupe">{x.place} · {x.kind}</p>
+            <p class="mt-4 max-w-[60ch] text-ink">{x.text}</p>
+          </div>
+          {x.photo && (
+            <Picture
+              src={photos[x.photo]}
+              alt={x.alt ?? ''}
+              formats={['avif', 'webp']}
+              widths={[400, 640]}
+              sizes="(min-width: 768px) 13rem, 100vw"
+              loading="lazy"
+              class="aspect-[16/10] w-full object-cover md:aspect-[4/5]"
+            />
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

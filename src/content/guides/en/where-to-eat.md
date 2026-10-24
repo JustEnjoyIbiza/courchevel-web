@@ -19,6 +19,7 @@ facts:
   - label: Alternative
     value: A private chef in your chalet, for dinners at home
 includes:
+  - Ten tables to know, and what each is known for
   - Restaurant reservations across all Courchevel villages
   - Lunch tables on the slopes, timed around your skiing
   - Snowcat or car transfers to mountain dinners
@@ -35,6 +36,57 @@ faqs:
     a: Yes. Many guests alternate evenings out with dinners at home. A private chef shops, cooks and serves in your chalet, which suits families with young children and evenings when you would rather not go out in the cold.
   - q: Do I need to reserve lunch on the slopes?
     a: In the school holidays, yes, for the popular terraces. A reservation lets you plan the morning's skiing around a fixed time and avoids waiting at the busiest hour.
+highlights:
+  eyebrow: Our selection
+  title: Ten tables to know in Courchevel
+  intro: "Four starred dining rooms and six places our guests ask us for every winter. We book all of them, and confirm each one is open for your dates."
+  items:
+    - name: Le 1947 à Cheval Blanc
+      place: Cheval Blanc, Courchevel 1850
+      kind: Three Michelin stars
+      text: "Courchevel's only three-star restaurant, in an intimate dining room at the Cheval Blanc hotel, where chef Yannick Alléno's French cooking is served to very few tables. One of the first reservations to fill each winter."
+    - name: Sylvestre Wahid
+      place: Les Grandes Alpes, Courchevel 1850
+      kind: Two Michelin stars
+      text: "Sylvestre Wahid had already earned two stars at Le Strato and in Paris before opening his own restaurant at Les Grandes Alpes in 2021. The first star came within months, the second in 2024."
+    - name: Slalom 1850
+      place: Le Strato, Courchevel 1850
+      kind: Two Michelin stars
+      text: "Chef Thomas Prod'homme, trained at L'Oustau de Baumanière in Provence, cooks Alpine produce and winter flavours with a touch of the south. Until recently the restaurant was known as Baumanière 1850."
+    - name: Le Chabichou
+      place: Le Chabichou, Courchevel 1850
+      kind: One Michelin star
+      text: "Stéphane Buron, a Meilleur Ouvrier de France, cooks with his son Antonin from memories of Savoie and travels in Japan. A single set menu ends with the cheese trolley."
+    - name: Bagatelle
+      place: Top of the Chenus gondola, 2,250 m
+      kind: Lunch on the slopes
+      text: "The mountain address of the Bagatelle restaurants: Mediterranean cooking on a large panoramic terrace facing Mont Blanc, and a lunch that turns into a party as the afternoon goes on."
+      photo: bagatelle
+      alt: "The Bagatelle arch on the restaurant’s terrace, facing snow-covered peaks above Courchevel 1850"
+    - name: Le Chalet de Pierres
+      place: Verdons slope, Courchevel 1850
+      kind: Lunch on the slopes
+      text: "A Courchevel institution, reached on skis, on foot or by car. Fondue, the house Beaufort tart and a long dessert buffet, served on a south-facing terrace below the gondola."
+      photo: chalet-de-pierres
+      alt: "Le Chalet de Pierres on the Verdons slope in Courchevel 1850, with a gondola passing above the trees"
+    - name: Le Cap Horn
+      place: Route de l'Altiport, Courchevel 1850
+      kind: Seafood at altitude
+      text: "Open since 1954, the oldest altitude restaurant in 1850: seafood, a long wine list and a south-facing terrace. In high season the terrace tables go first."
+      photo: cap-horn
+      alt: "The Cap Horn Courchevel 1954 sign in front of a busy sunny terrace"
+    - name: La Soucoupe
+      place: Top of La Loze, above Courchevel 1850
+      kind: Lunch on the slopes
+      text: "A warm, rustic dining room at the top of La Loze, known for meat grilled over an open fire. A quieter lunch than the busiest terraces, with the whole valley below."
+    - name: Loulou
+      place: Fouquet's Courchevel, Courchevel 1850
+      kind: Italian mountain cooking
+      text: "The Courchevel outpost of Loulou, at the foot of the Bellecôte piste: dishes from Piedmont and Lombardy alongside Loulou's classics, such as the truffle pizza, and a terrace in great demand."
+    - name: La Mangeoire
+      place: Courchevel 1850 village
+      kind: Dinner and late nights
+      text: "Courchevel's festive dinner address: wood-fire grills, fondue and rotisserie dishes, a piano bar, and an evening that carries on long after dessert."
 related:
   - /services/private-chef/
   - /services/nightlife/
@@ -74,24 +126,11 @@ Lunch on the slopes is part of the rhythm of a day in Courchevel. These restaura
 
 Some mountain restaurants also open for dinner on certain evenings, with access by snowcat or car. We arrange the transfer so you do not have to think about the way back.
 
-## The tables in demand
-
-Some of the hardest tables to book in Courchevel are not starred. These are the ones our guests ask us for most, all in Courchevel 1850:
-
-- **Bagatelle**, on the slopes, for a long, festive lunch.
-- **Loulou**, for dinner in the village.
-- **Jaïs**, for Lebanese cooking.
-- **Sumosan**, for Japanese cooking.
-- **La Mangeoire**, for traditional French cooking and its piano bar.
-- **Le San Marco**, in the heart of the village.
-
-Over Christmas, New Year's Eve and the February holidays these fill first, so we request them as soon as your dates are set.
-
 ## Restaurants by village
 
 Beyond the starred tables, each village has its own places for a relaxed lunch or dinner:
 
-- **Courchevel 1850:** the hotel restaurants of Le K2 Palace (L'Altiplano), Annapurna (La Fèrma), Aman Le Mélézin (Nama) and Les Airelles (La Table des Airelles – Le Festin), as well as the INEOS Club House at the foot of the Émile-Allais stadium.
+- **Courchevel 1850:** the hotel restaurants of Le K2 Palace (L'Altiplano), Annapurna (La Fèrma), Aman Le Mélézin (Nama) and Les Airelles (La Table des Airelles – Le Festin), as well as the INEOS Club House at the foot of the Émile-Allais stadium. In the village, Jaïs serves Lebanese cooking and Sumosan Japanese, and Le San Marco is in the heart of the resort.
 - **1650 Moriond:** La Rôtisserie at the foot of the slopes, Schuss Café at the bottom of the lifts, and Copiña.
 - **1550 Village:** La Cortona, just below the gondolas.
 - **1300 Le Praz:** La Table de Mon Grand-Père, La Glacière and Le Kiosque du Praz.

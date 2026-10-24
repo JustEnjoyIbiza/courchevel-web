@@ -32,6 +32,29 @@ const pageFields = {
   related: z.array(z.string().regex(/^\/[a-z0-9\-/]*\/$/)).length(3),
   /** Shorter name for breadcrumbs and link lists. */
   shortTitle: z.string().optional(),
+  /** Numbered selection shown right after the answer (e.g. ten tables to know). */
+  highlights: z
+    .object({
+      eyebrow: z.string(),
+      title: z.string(),
+      intro: z.string().optional(),
+      items: z
+        .array(
+          z.object({
+            name: z.string(),
+            /** Where it is, e.g. "Cheval Blanc, Courchevel 1850". */
+            place: z.string(),
+            /** Short label, e.g. "Three Michelin stars". */
+            kind: z.string(),
+            text: z.string(),
+            photo: z.enum(photoKeys).optional(),
+            alt: z.string().optional(),
+          }),
+        )
+        .min(3)
+        .max(12),
+    })
+    .optional(),
 };
 
 const services = defineCollection({

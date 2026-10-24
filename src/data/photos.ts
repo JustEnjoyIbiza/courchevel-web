@@ -34,6 +34,9 @@ import firePit from '../assets/photos/terrace-fire-pit.jpeg';
 import vanInterior from '../assets/photos/van-leather-seats-open-door.jpeg';
 import paraglider from '../assets/photos/paraglider-over-valley.jpeg';
 import courchevelGondola from '../assets/photos/courchevel-gondola-cabin.jpeg';
+import bagatelle from '../assets/photos/bagatelle-arch-mountain-terrace.jpeg';
+import capHorn from '../assets/photos/cap-horn-1954-sign.jpeg';
+import chaletDePierres from '../assets/photos/chalet-de-pierres-gondola.jpeg';
 
 export const photos = {
   'rolls-royce-helicopter': rollsRoyceHelicopter,
@@ -66,6 +69,9 @@ export const photos = {
   'van-interior': vanInterior,
   paraglider,
   'courchevel-gondola': courchevelGondola,
+  bagatelle,
+  'cap-horn': capHorn,
+  'chalet-de-pierres': chaletDePierres,
 } as const;
 
 export type PhotoKey = keyof typeof photos;

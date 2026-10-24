@@ -44,6 +44,9 @@ export const photoAlt: Record<PhotoKey, L> = {
   'van-interior': { en: 'Open door of a chauffeured van showing cream leather seats and a blanket, mountains behind', fr: 'Portière ouverte d’un van avec chauffeur, sièges en cuir crème et plaid, montagnes en arrière-plan' },
   'paraglider': { en: 'Paraglider flying over the valley above a gondola and snowy slopes', fr: 'Parapente au-dessus de la vallée, d’une télécabine et des pistes enneigées' },
   'courchevel-gondola': { en: 'Courchevel gondola cabin with the snowflake logo against snowy peaks', fr: 'Cabine de télécabine aux couleurs de Courchevel, logo flocon, devant les sommets enneigés' },
+  bagatelle: { en: 'The Bagatelle arch on the restaurant’s terrace, facing snow-covered peaks above Courchevel 1850', fr: 'L’arche Bagatelle sur la terrasse du restaurant, face aux sommets enneigés au-dessus de Courchevel 1850' },
+  'cap-horn': { en: 'The Cap Horn Courchevel 1954 sign in front of a busy sunny terrace', fr: 'L’enseigne Cap Horn Courchevel 1954 devant une terrasse ensoleillée et animée' },
+  'chalet-de-pierres': { en: 'Le Chalet de Pierres on the Verdons slope in Courchevel 1850, with a gondola passing above the trees', fr: 'Le Chalet de Pierres sur la piste des Verdons à Courchevel 1850, une télécabine passant au-dessus des sapins' },
 };
 
 /** Services hub: the line under each service name and the photo it is shown with. */
