@@ -11,6 +11,7 @@ import MobileCTA from '../components/MobileCTA.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
 import { business, type Locale } from '../data/business';
+import type { Cta } from '../lib/cta';
 import defaultOg from '../assets/photos/rolls-royce-helicopter-arrival.jpeg';
 
 interface Props {
@@ -25,9 +26,11 @@ interface Props {
   noindex?: boolean;
   /** Hide the sticky Plan my stay button (on Plan my stay itself). */
   enquiryPage?: boolean;
+  /** The page's request: the phone bar's button and the WhatsApp message (src/lib/cta.ts). */
+  cta?: Cta;
 }
 
-const { title, description, locale = 'en', alternatePath, schema = [], ogImage = defaultOg, noindex = false, enquiryPage = false } = Astro.props;
+const { title, description, locale = 'en', alternatePath, schema = [], ogImage = defaultOg, noindex = false, enquiryPage = false, cta } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const other: Locale = locale === 'en' ? 'fr' : 'en';
 const alternate = alternatePath ? new URL(alternatePath, Astro.site).href : undefined;
@@ -73,8 +76,8 @@ const ogUrl = new URL(og.src, Astro.site).href;
       <slot />
     </main>
     <SiteFooter locale={locale} />
-    <MobileCTA locale={locale} whatsappOnly={enquiryPage} />
-    <WhatsAppFloat locale={locale} />
+    <MobileCTA locale={locale} whatsappOnly={enquiryPage} cta={cta} />
+    <WhatsAppFloat locale={locale} whatsapp={cta?.whatsapp} />
     <ConsentBanner locale={locale} />
   </body>
 </html>

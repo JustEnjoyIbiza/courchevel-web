@@ -80,7 +80,7 @@ export const experiencesPage: Record<Locale, ExperiencesPageCopy> = {
     discover: 'Discover',
     close: 'Close',
     goodToKnow: 'Good to know',
-    enquireAbout: 'Enquire about this experience',
+    enquireAbout: 'Request this experience',
     experiences: [
       {
         id: 'private-skiing',
@@ -257,7 +257,7 @@ export const experiencesPage: Record<Locale, ExperiencesPageCopy> = {
     discover: 'Découvrir',
     close: 'Fermer',
     goodToKnow: 'Bon à savoir',
-    enquireAbout: 'Demander cette expérience',
+    enquireAbout: 'Demander cette activité',
     experiences: [
       {
         id: 'private-skiing',

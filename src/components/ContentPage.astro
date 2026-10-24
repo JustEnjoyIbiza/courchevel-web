@@ -14,7 +14,8 @@ import SmartLink from './SmartLink.astro';
 import LastUpdated from './LastUpdated.astro';
 import Highlights from './Highlights.astro';
 import { photos } from '../data/photos';
-import { whatsappHref, type Locale } from '../data/business';
+import { business, type Locale } from '../data/business';
+import { pageCta } from '../lib/cta';
 import { t } from '../i18n/ui';
 import { localize, isBuilt, linkTitle, type ContentPage } from '../lib/routes';
 import { breadcrumbSchema, faqSchema, serviceSchema, articleSchema, localBusinessSchema } from '../lib/schema';
@@ -60,7 +61,8 @@ if (collection === 'guides') schema.push(articleSchema({ headline: d.title, desc
 if (slug === 'about') schema.push(localBusinessSchema(locale));
 if (d.faqs.length) schema.push(faqSchema(d.faqs));
 
-const enquire = localize('/enquire/', locale) + (collection === 'services' ? `?service=${slug}` : '');
+// The request this page leads to (Request a table, Request a transfer... or Plan my stay).
+const cta = pageCta(locale, collection, slug);
 ---
 
 <BaseLayout
@@ -70,6 +72,7 @@ const enquire = localize('/enquire/', locale) + (collection === 'services' ? `?s
   alternatePath={hasAlternate ? alternate : undefined}
   schema={schema}
   ogImage={image}
+  cta={cta}
 >
   <article>
     {image ? (
@@ -98,8 +101,9 @@ const enquire = localize('/enquire/', locale) + (collection === 'services' ? `?s
           <div class="container-site grid gap-10 py-14 md:grid-cols-12 md:items-end md:py-20">
             <p class="font-serif text-[clamp(1.4rem,1.15rem+0.9vw,2rem)] leading-snug text-ink md:col-span-8">{d.answer}</p>
             <div class="flex flex-col gap-3 md:col-span-4 md:items-end">
-              <a href={enquire} class="btn-primary w-full md:w-auto">{s.planMyStay}</a>
-              <a href={whatsappHref(locale)} class="btn-secondary w-full md:w-auto" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+              <a href={cta.href} class="btn-primary w-full md:w-auto">{cta.label}</a>
+              <a href={cta.whatsapp} class="btn-secondary w-full md:w-auto" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+              <p class="text-xs text-taupe md:text-right">{business.replyPromise[locale]}</p>
             </div>
           </div>
         </section>
@@ -113,15 +117,16 @@ const enquire = localize('/enquire/', locale) + (collection === 'services' ? `?s
             <div class="rule mt-8"></div>
             <p class="mt-8 max-w-2xl text-lg text-ink">{d.answer}</p>
             <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a href={enquire} class="btn-primary">{s.planMyStay}</a>
-              <a href={whatsappHref(locale)} class="btn-secondary" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+              <a href={cta.href} class="btn-primary">{cta.label}</a>
+              <a href={cta.whatsapp} class="btn-secondary" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
             </div>
+            <p class="mt-4 text-xs text-taupe">{business.replyPromise[locale]}</p>
           </div>
         </div>
       </header>
     )}
 
-    {d.highlights && <Highlights {...d.highlights} />}
+    {d.highlights && <Highlights {...d.highlights} locale={locale} />}
 
     {(d.facts.length > 0 || d.includes.length > 0) && (
       <section class="bg-stone">
@@ -186,5 +191,5 @@ const enquire = localize('/enquire/', locale) + (collection === 'services' ? `?s
     </div>
   </article>
 
-  <CtaBand locale={locale} service={collection === 'services' ? slug : undefined} />
+  <CtaBand locale={locale} cta={cta} />
 </BaseLayout>

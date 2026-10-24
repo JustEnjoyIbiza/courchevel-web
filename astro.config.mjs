@@ -62,8 +62,8 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      // Thank-you pages are noindex and stay out of the sitemap.
-      filter: (page) => !page.includes('/enquire/thanks/'),
+      // Thank-you and short request pages (/enquire/<type>/) are noindex and stay out of the sitemap.
+      filter: (page) => !/\/enquire\/[a-z-]+\/$/.test(page),
       i18n: { defaultLocale: 'en', locales: { en: 'en', fr: 'fr' } },
       serialize(item) {
         const lastmod = lastmodFor(item.url);

@@ -15,7 +15,8 @@ import LastUpdated from './LastUpdated.astro';
 import FaqList from './FaqList.astro';
 import SkiMap from './SkiMap.astro';
 import { photos } from '../data/photos';
-import { whatsappHref, type Locale } from '../data/business';
+import { type Locale } from '../data/business';
+import { requestCta } from '../lib/cta';
 import { skiArea, skiAreaUpdated } from '../content/ski-area';
 import { photoAlt } from '../content/hub-stories';
 import { t } from '../i18n/ui';
@@ -39,9 +40,11 @@ const crumbs = [
 ];
 const schema = [breadcrumbSchema(crumbs.map((x) => ({ name: x.name, url: x.href }))), faqSchema(c.faqs)];
 const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
+// The slopes page leads to a ski instructor request.
+const cta = requestCta(locale, { type: 'instructor' });
 ---
 
-<BaseLayout title={c.metaTitle} description={c.description} locale={locale} alternatePath={localize(path, other)} schema={schema} ogImage={photos[c.heroPhoto]}>
+<BaseLayout title={c.metaTitle} description={c.description} locale={locale} alternatePath={localize(path, other)} schema={schema} ogImage={photos[c.heroPhoto]} cta={cta}>
   <!-- Photo header -->
   <header class="relative isolate flex min-h-[calc(100svh-4rem)] items-end overflow-hidden bg-ink text-ivory md:min-h-[min(88vh,52rem)]">
     <Picture
@@ -179,8 +182,8 @@ const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
         <p class="mt-5 max-w-2xl text-lg text-taupe">{c.arrangeText}</p>
       </div>
       <div class="flex flex-col gap-3 md:col-span-4 md:items-end">
-        <a href={localize('/enquire/', locale) + '?service=ski'} class="btn-primary w-full md:w-auto">{s.planMyStay}</a>
-        <a href={whatsappHref(locale)} class="btn-secondary w-full md:w-auto" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+        <a href={cta.href} class="btn-primary w-full md:w-auto">{cta.label}</a>
+        <a href={cta.whatsapp} class="btn-secondary w-full md:w-auto" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
       </div>
     </div>
     <div class="container-site mt-section max-w-4xl">
@@ -192,7 +195,7 @@ const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
     </div>
   </section>
 
-  <CtaBand locale={locale} service="ski" />
+  <CtaBand locale={locale} cta={cta} />
 </BaseLayout>
 
 <style>

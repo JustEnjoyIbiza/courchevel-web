@@ -9,14 +9,17 @@ import { business, whatsappHref, type Locale } from '../data/business';
 
 interface Props {
   locale: Locale;
+  /** Full WhatsApp link with the page's own message (src/lib/cta.ts). */
+  whatsapp?: string;
 }
 
-const { locale } = Astro.props;
+const { locale, whatsapp } = Astro.props;
 const s = t(locale);
 ---
 
 <a
-  href={whatsappHref(locale)}
+  href={whatsapp ?? whatsappHref(locale)}
+  data-request-whatsapp
   class="group fixed right-6 bottom-6 z-40 hidden size-14 items-center justify-center rounded-full bg-ink text-brass ring-1 ring-brass/60 transition-colors hover:bg-brass-deep hover:text-ivory md:flex print:hidden"
   data-event="whatsapp_click"
   rel="noopener"

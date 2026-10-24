@@ -1,20 +1,22 @@
 ---
-/** Closing "Plan my stay" band used at the end of every content page. */
+/** Closing band at the end of every content page: the page's request (Plan my stay by default), WhatsApp, phone and email. */
 import { t } from '../i18n/ui';
 import { localize } from '../lib/routes';
 import { business, telHref, mailtoHref, whatsappHref, type Locale } from '../data/business';
+import type { Cta } from '../lib/cta';
 
 interface Props {
   locale: Locale;
-  /** Pre-selects a service in the enquiry form (Phase 3). */
-  service?: string;
+  /** The page's request (src/lib/cta.ts); defaults to Plan my stay. */
+  cta?: Cta;
 }
 
-const { locale, service } = Astro.props;
+const { locale, cta } = Astro.props;
 const s = t(locale);
-const enquire = localize('/enquire/', locale) + (service ? `?service=${service}` : '');
+const enquire = cta?.href ?? localize('/enquire/', locale);
+const whatsapp = cta?.whatsapp ?? whatsappHref(locale);
 const channels = [
-  { label: s.whatsapp, value: business.phone.display, href: whatsappHref(locale), event: 'whatsapp_click' },
+  { label: s.whatsapp, value: business.phone.display, href: whatsapp, event: 'whatsapp_click' },
   { label: s.call, value: business.phone.display, href: telHref, event: 'phone_click' },
   { label: s.email, value: business.email, href: mailtoHref, event: 'email_click' },
 ];
@@ -26,8 +28,8 @@ const channels = [
       <h2 class="text-h2 text-ivory">{s.page.ctaTitle}.{' '}<span class="mt-2 block italic text-brass">{s.page.ctaAccent}</span></h2>
       <p class="mt-6 max-w-xl text-lg text-stone">{s.page.ctaText}</p>
       <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-        <a href={enquire} class="btn bg-ivory text-ink hover:bg-brass">{s.planMyStay}</a>
-        <a href={whatsappHref(locale)} class="btn-light" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+        <a href={enquire} class="btn bg-ivory text-ink hover:bg-brass">{cta?.label ?? s.planMyStay}</a>
+        <a href={whatsapp} class="btn-light" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
       </div>
     </div>
     <ul class="self-end lg:col-span-5">

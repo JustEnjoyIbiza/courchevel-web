@@ -3,14 +3,17 @@
 import { t } from '../i18n/ui';
 import { localize } from '../lib/routes';
 import { whatsappHref, type Locale } from '../data/business';
+import type { Cta } from '../lib/cta';
 
 interface Props {
   locale: Locale;
   /** On Plan my stay itself, show WhatsApp only. */
   whatsappOnly?: boolean;
+  /** The page's own request (e.g. Request a table); defaults to Plan my stay. */
+  cta?: Cta;
 }
 
-const { locale, whatsappOnly = false } = Astro.props;
+const { locale, whatsappOnly = false, cta } = Astro.props;
 const s = t(locale);
 ---
 
@@ -21,9 +24,10 @@ const s = t(locale);
   ]}
   style="padding-bottom: env(safe-area-inset-bottom)"
 >
-  {!whatsappOnly && <a href={localize('/enquire/', locale)} class="btn-primary min-h-14 px-3">{s.planMyStay}</a>}
+  {!whatsappOnly && <a href={cta?.href ?? localize('/enquire/', locale)} class="btn-primary min-h-14 px-3">{cta?.label ?? s.planMyStay}</a>}
   <a
-    href={whatsappHref(locale)}
+    href={cta?.whatsapp ?? whatsappHref(locale)}
+    data-request-whatsapp
     class="btn min-h-14 px-3 text-ink"
     data-event="whatsapp_click"
     rel="noopener"

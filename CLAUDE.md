@@ -13,7 +13,9 @@ lead-generation site that Google and AI assistants (ChatGPT, Claude, Perplexity,
 Gemini, Copilot) can read, understand and cite. Live before the winter season
 (opens 4 December 2026; launch in the last week of November).
 
-Every page leads to one action: **Plan my stay**.
+Every page leads to one action: **the request that fits it** (owner, 24 Oct 2026).
+Stay pages keep **Plan my stay**; service pages lead to a short request (Request a
+table, Request a transfer...). Mapping and copy: `src/content/requests.ts`.
 
 ## Business facts
 
@@ -55,6 +57,8 @@ description anywhere else.
 - Content in Markdown/MDX per page and language (`src/content/`)
 - Netlify hosting, auto-deploys from GitHub; `netlify.toml` holds build + headers
 - Leads: Netlify Function -> Basin (`BASIN_FORM_URL`, live) + Supabase table `leads`; email via Resend;
+  two kinds: a full stay (3-step form at /enquire/) and a short request for one service
+  (/enquire/<type>/, types and fields in `src/lib/requests.ts`; needs Supabase migration 002);
   concierge alert via WhatsApp Cloud API or Telegram (decision pending)
 - GA4 only after cookie consent (CNIL); Search Console + Bing Webmaster Tools
 - Images: Astro image pipeline, AVIF/WebP, width/height set, lazy below the fold

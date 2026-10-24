@@ -5,7 +5,7 @@
 import { test, beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert/strict';
 import { handleLead } from '../netlify/functions/lead.mts';
-import { validateLead } from '../src/lib/lead.ts';
+import { validateLead, validateRequest } from '../src/lib/lead.ts';
 
 const NOW = new Date('2026-11-20T10:00:00Z');
 const ENV = {
@@ -202,4 +202,88 @@ test('validation rules: phone needed for WhatsApp/phone replies, not for email; 
   assert.equal(validateLead({ ...valid, arrival: '2026-11-01' }, NOW).errors.arrival, 'range');
   assert.equal(validateLead({ ...valid, village: 'paris' }, NOW).errors.village, 'invalid');
   assert.equal(validateLead({ ...valid, services: ['chalets', 'yachts'] }, NOW).lead?.services.join(), 'chalets');
+});
+
+// Short requests: one service, one date (src/lib/requests.ts).
+const table = {
+  locale: 'en',
+  requestType: 'table',
+  item: 'Bagatelle',
+  date: '2026-12-28',
+  time: '13:00',
+  guests: '6',
+  details: 'A birthday lunch.',
+  staying: 'Chalet in 1850',
+  name: 'Anna Example',
+  email: 'anna@example.com',
+  phone: '+44 7700 900123',
+  preferredContact: 'whatsapp',
+  consent: 'on',
+  started: String(NOW.getTime() - 60_000),
+  page: '/guides/where-to-eat/',
+  website: '',
+};
+
+test('a table request is saved, emailed and alerted with its summary', async () => {
+  const res = await handleLead(post(table), ENV, NOW);
+  assert.equal(res.status, 200);
+
+  const db = calls.find((c) => c.url.endsWith('/rest/v1/leads'))!;
+  assert.equal(db.body.request_type, 'table');
+  assert.equal(db.body.request.item, 'Bagatelle');
+  assert.equal(db.body.request.guests, 6);
+  assert.equal(db.body.arrival, '2026-12-28');
+  assert.deepEqual(db.body.services, ['nightlife']);
+  assert.equal(db.body.village, undefined);
+
+  const concierge = calls.find((c) => c.url.includes('resend') && c.body.to[0] === 'concierge@example.com')!;
+  assert.match(concierge.body.subject, /^New request: Table · Bagatelle · .*28 December 2026, 13:00 · Guests: 6 · Anna Example$/);
+  const client = calls.find((c) => c.url.includes('resend') && c.body.to[0] === 'anna@example.com')!;
+  assert.match(client.body.text, /Restaurant: Bagatelle/);
+  assert.doesNotMatch(client.body.text, /nights|proposal within 24 hours/);
+
+  const tg = calls.find((c) => c.url.includes('telegram'))!;
+  assert.match(tg.body.text, /New request<\/b> · Anna Example/);
+  assert.match(tg.body.text, /Table · Bagatelle/);
+  assert.match(tg.body.text, /Staying at: Chalet in 1850/);
+});
+
+test('a French transfer request gets the French labels', async () => {
+  await handleLead(post({ ...table, locale: 'fr', requestType: 'transfer', item: '', from: 'Aéroport de Genève', to: 'Courchevel 1850', flight: 'EZY123' }), ENV, NOW);
+  const client = calls.find((c) => c.url.includes('resend') && c.body.to[0] === 'anna@example.com')!;
+  assert.match(client.body.text, /Départ : Aéroport de Genève/);
+  assert.match(client.body.text, /Passagers : 6/);
+});
+
+test('request validation: required fields, dates, guests and service', () => {
+  const missing = validateRequest({ ...table, date: '', guests: '' }, NOW);
+  assert.deepEqual(Object.keys(missing.errors).sort(), ['date', 'guests']);
+  assert.equal(validateRequest({ ...table, date: '2026-11-01' }, NOW).errors.date, 'range');
+  assert.equal(validateRequest({ ...table, requestType: 'instructor', dateTo: '2026-12-27' }, NOW).errors.dateTo, 'end');
+  assert.equal(validateRequest({ ...table, time: '25:00' }, NOW).errors.time, 'invalid');
+  assert.equal(validateRequest({ ...table, requestType: 'yacht' }, NOW).errors.requestType, 'invalid');
+  // Optional item, fields of other types ignored.
+  const ok = validateRequest({ ...table, item: '', from: 'Geneva' }, NOW);
+  assert.equal(ok.ok, true);
+  assert.equal(ok.lead?.from, '');
+  // General requests need a description; the service can be chosen among the allowed ones.
+  assert.equal(validateRequest({ ...table, requestType: 'general', details: '' }, NOW).errors.details, 'required');
+  assert.equal(validateRequest({ ...table, requestType: 'general', service: 'owners' }, NOW).lead?.service, 'owners');
+  assert.equal(validateRequest({ ...table, requestType: 'general', service: 'chalets' }, NOW).lead?.service, 'lifestyle');
+});
+
+test('an invalid request posted without JavaScript goes back to its own form', async () => {
+  const req = new Request('https://site.test/api/lead', { method: 'POST', body: new URLSearchParams({ locale: 'fr', requestType: 'table', name: 'X' }) });
+  const res = await handleLead(req, ENV, NOW);
+  assert.equal(res.status, 303);
+  assert.equal(res.headers.get('location'), '/fr/enquire/table/?error=invalid#form');
+});
+
+test('Basin receives the request type, summary and fields', async () => {
+  await handleLead(post(table), { BASIN_FORM_URL: 'https://usebasin.com/f/test123' }, NOW);
+  const basin = calls.find((c) => c.url === 'https://usebasin.com/f/test123')!;
+  assert.equal(basin.body.request_type, 'table');
+  assert.match(basin.body.summary, /^Table · Bagatelle/);
+  assert.equal(basin.body.item, 'Bagatelle');
+  assert.equal(basin.body.guests, 6);
 });

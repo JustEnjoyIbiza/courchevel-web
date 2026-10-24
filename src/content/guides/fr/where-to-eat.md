@@ -40,6 +40,7 @@ highlights:
   eyebrow: Notre sélection
   title: Dix tables à connaître à Courchevel
   intro: "Quatre tables étoilées et six adresses que nos clients nous demandent chaque hiver. Nous les réservons toutes, et vérifions qu’elles sont ouvertes à vos dates."
+  request: table
   items:
     - name: Le 1947 à Cheval Blanc
       place: Cheval Blanc, Courchevel 1850

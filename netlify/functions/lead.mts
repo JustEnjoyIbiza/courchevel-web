@@ -1,5 +1,6 @@
 /**
- * POST /api/lead — receives the Plan my stay form.
+ * POST /api/lead — receives the Plan my stay form and the short request forms
+ * (/enquire/<type>/, identified by their `requestType` field).
  *
  * Accepts JSON (the form with JavaScript) or a normal form post (JavaScript
  * off, answered with a redirect to the thank-you page).
@@ -10,7 +11,8 @@
  * reached by at least one channel (database, Basin, email or alert), so a lead is never lost
  * because one service is down.
  */
-import { validateLead } from '../../src/lib/lead.ts';
+import { validateLead, validateRequest, type AnyLead, type ValidationResult } from '../../src/lib/lead.ts';
+import { isRequestType } from '../../src/lib/requests.ts';
 import { clientEmail, conciergeEmail, telegramAlert } from '../lib/messages.ts';
 import { saveLead, sendBasin, sendEmail, sendTelegram, verifyTurnstile, type Env, type Outcome } from '../lib/integrations.ts';
 
@@ -52,6 +54,9 @@ export async function handleLead(req: Request, env: Env, now = new Date()): Prom
   const locale = fields.locale === 'fr' ? 'fr' : 'en';
   const base = locale === 'fr' ? '/fr' : '';
   const thanks = `${base}/enquire/thanks/`;
+  // Errors from a no-JavaScript post go back to the form that was filled in.
+  const requestType = String(fields.requestType ?? '');
+  const formPath = isRequestType(requestType) ? `${base}/enquire/${requestType}/` : `${base}/enquire/`;
   const done = () => (isJson ? json(200, { ok: true }) : redirect(thanks));
 
   // Spam: hidden honeypot field filled, or the form was submitted too fast.
@@ -63,7 +68,7 @@ export async function handleLead(req: Request, env: Env, now = new Date()): Prom
 
   const ip = req.headers.get('x-nf-client-connection-ip');
   if (!(await verifyTurnstile(env, String(fields['cf-turnstile-response'] ?? ''), ip))) {
-    return isJson ? json(400, { ok: false, error: 'captcha' }) : redirect(`${base}/enquire/?error=captcha#form`);
+    return isJson ? json(400, { ok: false, error: 'captcha' }) : redirect(`${formPath}?error=captcha#form`);
   }
 
   // Without JavaScript the hidden "page" field is empty: fall back to the Referer header.
@@ -76,9 +81,10 @@ export async function handleLead(req: Request, env: Env, now = new Date()): Prom
     }
   }
 
-  const result = validateLead(fields as Record<string, string | string[]>, now);
+  const input = fields as Record<string, string | string[]>;
+  const result: ValidationResult<AnyLead> = isRequestType(requestType) ? validateRequest(input, now) : validateLead(input, now);
   if (!result.ok || !result.lead) {
-    return isJson ? json(422, { ok: false, error: 'invalid', fields: result.errors }) : redirect(`${base}/enquire/?error=invalid#form`);
+    return isJson ? json(422, { ok: false, error: 'invalid', fields: result.errors }) : redirect(`${formPath}?error=invalid#form`);
   }
   const lead = result.lead;
 
@@ -98,7 +104,8 @@ export async function handleLead(req: Request, env: Env, now = new Date()): Prom
     outcome[names[i]] = r.status === 'fulfilled' ? r.value : 'failed';
     if (r.status === 'rejected') console.error(`lead: ${names[i]} failed:`, r.reason instanceof Error ? r.reason.message : r.reason);
   });
-  console.log('lead received', JSON.stringify({ locale, village: lead.village, outcome }));
+  const kind = lead.kind === 'stay' ? { village: lead.village } : { request: lead.requestType };
+  console.log('lead received', JSON.stringify({ locale, ...kind, outcome }));
 
   const reached = outcome.db === 'ok' || outcome.basin === 'ok' || outcome.conciergeEmail === 'ok' || outcome.alert === 'ok';
   const nothingConfigured = Object.values(outcome).every((o) => o === 'skipped');
@@ -106,7 +113,7 @@ export async function handleLead(req: Request, env: Env, now = new Date()): Prom
   if (reached || (nothingConfigured && env.LEAD_DRY_RUN === '1')) return done();
 
   // Nobody was reached: tell the visitor to use WhatsApp instead.
-  return isJson ? json(503, { ok: false, error: nothingConfigured ? 'not_configured' : 'unavailable' }) : redirect(`${base}/enquire/?error=unavailable#form`);
+  return isJson ? json(503, { ok: false, error: nothingConfigured ? 'not_configured' : 'unavailable' }) : redirect(`${formPath}?error=unavailable#form`);
 }
 
 export default async (req: Request) => handleLead(req, process.env);

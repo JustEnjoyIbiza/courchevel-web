@@ -40,6 +40,7 @@ highlights:
   eyebrow: Our selection
   title: Ten tables to know in Courchevel
   intro: "Four starred dining rooms and six places our guests ask us for every winter. We book all of them, and confirm each one is open for your dates."
+  request: table
   items:
     - name: Le 1947 à Cheval Blanc
       place: Cheval Blanc, Courchevel 1850

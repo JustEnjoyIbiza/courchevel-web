@@ -13,6 +13,7 @@ import LastUpdated from './LastUpdated.astro';
 import { experiencesPage } from '../content/experiences-page';
 import { photos } from '../data/photos';
 import { whatsappHref, type Locale } from '../data/business';
+import { requestCopy } from '../content/requests';
 import { t } from '../i18n/ui';
 import { localize, linkTitle } from '../lib/routes';
 import { breadcrumbSchema } from '../lib/schema';
@@ -67,9 +68,12 @@ const label = 'block text-sm font-semibold text-ink';
 const input =
   'mt-2 block w-full min-h-12 border border-line bg-white px-4 py-3 text-base text-ink focus:border-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-brass-deep aria-[invalid=true]:border-red-700';
 const err = 'mt-2 text-sm font-medium text-red-800';
+// Phone bar and WhatsApp button: the experience request, answered by the form on this page.
+const xp = requestCopy[locale].types.experience;
+const cta = { label: xp.button, href: '#enquire', whatsapp: whatsappHref(locale, xp.whatsapp()) };
 ---
 
-<BaseLayout title={c.metaTitle} description={c.description} locale={locale} alternatePath={localize(path, other)} schema={schema} ogImage={photos['white-chalet']}>
+<BaseLayout title={c.metaTitle} description={c.description} locale={locale} alternatePath={localize(path, other)} schema={schema} ogImage={photos['white-chalet']} cta={cta}>
   <!-- Hero -->
   <header class="relative isolate flex min-h-[calc(100svh-4rem)] items-end overflow-hidden bg-ink text-ivory md:min-h-[min(92vh,60rem)]">
     <Picture
@@ -296,8 +300,6 @@ const err = 'mt-2 text-sm font-medium text-red-800';
     </div>
   </section>
 
-  <!-- Discreet contact button on wider screens (phones have the sticky bar) -->
-  <a href={whatsappHref(locale)} class="btn fixed right-6 bottom-6 z-30 hidden border border-ink bg-ivory/95 text-ink backdrop-blur-sm hover:bg-ink hover:text-ivory md:inline-flex" data-event="whatsapp_click" rel="noopener">{c.speak}</a>
 </BaseLayout>
 
 {turnstileKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}

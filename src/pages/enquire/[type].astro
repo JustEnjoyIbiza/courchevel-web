@@ -1,0 +1,9 @@
+---
+import RequestPage from '../../components/RequestPage.astro';
+import { REQUEST_TYPES, type RequestType } from '../../lib/requests';
+
+export const getStaticPaths = () => REQUEST_TYPES.map((type) => ({ params: { type } }));
+const type = Astro.params.type as RequestType;
+---
+
+<RequestPage locale="en" type={type} />

@@ -129,5 +129,6 @@ export const hasStreetAddress = () => Boolean(business.address.streetAddress && 
 
 export const telHref = `tel:${business.phone.e164}`;
 export const mailtoHref = `mailto:${business.email}`;
-export const whatsappHref = (locale: Locale = 'en') =>
-  `https://wa.me/${business.whatsapp.number}?text=${encodeURIComponent(business.whatsapp.prefill[locale])}`;
+/** WhatsApp chat link; `text` replaces the default stay message (see src/content/requests.ts). */
+export const whatsappHref = (locale: Locale = 'en', text?: string) =>
+  `https://wa.me/${business.whatsapp.number}?text=${encodeURIComponent(text ?? business.whatsapp.prefill[locale])}`;

@@ -3,7 +3,8 @@
  * Cloudflare Turnstile (spam check). Plain fetch, no SDKs, so the function stays
  * small and every call can be mocked in tests. Each call has a timeout.
  */
-import type { Lead } from '../../src/lib/lead.ts';
+import type { AnyLead, RequestLead } from '../../src/lib/lead.ts';
+import { requestSummary } from '../../src/lib/request-labels.ts';
 
 export type Env = Record<string, string | undefined>;
 
@@ -17,34 +18,71 @@ async function call(url: string, init: RequestInit): Promise<Response> {
   return res;
 }
 
-/** Insert the lead into the Supabase `leads` table (service role key, server only). */
-export async function saveLead(lead: Lead, env: Env): Promise<Outcome> {
+const source = (lead: AnyLead) => ({
+  locale: lead.locale,
+  page: lead.page || null,
+  referrer: lead.referrer || null,
+  utm_source: lead.utmSource || null,
+  utm_medium: lead.utmMedium || null,
+  utm_campaign: lead.utmCampaign || null,
+});
+
+/** A short request's own fields, as stored in the `request` column and sent to Basin. */
+const requestFields = (lead: RequestLead) => ({
+  item: lead.item,
+  from: lead.from,
+  to: lead.to,
+  date: lead.date,
+  date_to: lead.dateTo,
+  time: lead.time,
+  flight: lead.flight,
+  guests: lead.guests,
+  details: lead.details,
+  staying: lead.staying,
+});
+
+/**
+ * Insert the lead into the Supabase `leads` table (service role key, server only).
+ * Short requests need supabase/migrations/002_short_requests.sql; stays work with 001 alone.
+ */
+export async function saveLead(lead: AnyLead, env: Env): Promise<Outcome> {
   if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY) return 'skipped';
-  const row = {
-    arrival: lead.arrival,
-    departure: lead.departure,
-    dates_flexible: lead.datesFlexible,
-    village: lead.village,
-    adults: lead.adults,
-    children: lead.children,
-    children_ages: lead.childrenAges || null,
-    services: lead.services,
-    experience: lead.experience || null,
-    budget: lead.budget || null,
-    booking_for: lead.bookingFor,
-    name: lead.name,
-    email: lead.email,
-    phone: lead.phone || null,
-    preferred_contact: lead.preferredContact,
-    message: lead.message || null,
-    consent: true,
-    locale: lead.locale,
-    page: lead.page || null,
-    referrer: lead.referrer || null,
-    utm_source: lead.utmSource || null,
-    utm_medium: lead.utmMedium || null,
-    utm_campaign: lead.utmCampaign || null,
-  };
+  const row =
+    lead.kind === 'request'
+      ? {
+          request_type: lead.requestType,
+          request: requestFields(lead),
+          arrival: lead.date || null,
+          departure: lead.dateTo || null,
+          services: [lead.service],
+          name: lead.name,
+          email: lead.email,
+          phone: lead.phone || null,
+          preferred_contact: lead.preferredContact,
+          message: lead.details || null,
+          consent: true,
+          ...source(lead),
+        }
+      : {
+          arrival: lead.arrival,
+          departure: lead.departure,
+          dates_flexible: lead.datesFlexible,
+          village: lead.village,
+          adults: lead.adults,
+          children: lead.children,
+          children_ages: lead.childrenAges || null,
+          services: lead.services,
+          experience: lead.experience || null,
+          budget: lead.budget || null,
+          booking_for: lead.bookingFor,
+          name: lead.name,
+          email: lead.email,
+          phone: lead.phone || null,
+          preferred_contact: lead.preferredContact,
+          message: lead.message || null,
+          consent: true,
+          ...source(lead),
+        };
   await call(`${env.SUPABASE_URL.replace(/\/$/, '')}/rest/v1/leads`, {
     method: 'POST',
     headers: {
@@ -94,35 +132,45 @@ export async function sendTelegram(env: Env, html: string): Promise<Outcome> {
  * Forward the lead to the Basin form (usebasin.com): Basin stores it and emails
  * the concierge, so leads arrive even before Supabase and Resend are set up.
  */
-export async function sendBasin(lead: Lead, env: Env): Promise<Outcome> {
+export async function sendBasin(lead: AnyLead, env: Env): Promise<Outcome> {
   if (!env.BASIN_FORM_URL) return 'skipped';
+  const contact = {
+    name: lead.name,
+    email: lead.email,
+    phone: lead.phone || '',
+    preferred_contact: lead.preferredContact,
+  };
+  const tracking = {
+    locale: lead.locale,
+    page: lead.page || '',
+    referrer: lead.referrer || '',
+    utm_source: lead.utmSource || '',
+    utm_medium: lead.utmMedium || '',
+    utm_campaign: lead.utmCampaign || '',
+  };
+  const payload =
+    lead.kind === 'request'
+      ? { request_type: lead.requestType, summary: requestSummary(lead, 'en'), ...contact, services: lead.service, ...requestFields(lead), guests: lead.guests ?? '', ...tracking }
+      : {
+          ...contact,
+          arrival: lead.arrival,
+          departure: lead.departure,
+          dates_flexible: lead.datesFlexible ? 'yes' : 'no',
+          village: lead.village,
+          adults: lead.adults,
+          children: lead.children,
+          children_ages: lead.childrenAges || '',
+          services: lead.services.join(', '),
+          experience: lead.experience || '',
+          budget: lead.budget || '',
+          booking_for: lead.bookingFor,
+          message: lead.message || '',
+          ...tracking,
+        };
   await call(env.BASIN_FORM_URL, {
     method: 'POST',
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      name: lead.name,
-      email: lead.email,
-      phone: lead.phone || '',
-      preferred_contact: lead.preferredContact,
-      arrival: lead.arrival,
-      departure: lead.departure,
-      dates_flexible: lead.datesFlexible ? 'yes' : 'no',
-      village: lead.village,
-      adults: lead.adults,
-      children: lead.children,
-      children_ages: lead.childrenAges || '',
-      services: lead.services.join(', '),
-      experience: lead.experience || '',
-      budget: lead.budget || '',
-      booking_for: lead.bookingFor,
-      message: lead.message || '',
-      locale: lead.locale,
-      page: lead.page || '',
-      referrer: lead.referrer || '',
-      utm_source: lead.utmSource || '',
-      utm_medium: lead.utmMedium || '',
-      utm_campaign: lead.utmCampaign || '',
-    }),
+    body: JSON.stringify(payload),
   });
   return 'ok';
 }

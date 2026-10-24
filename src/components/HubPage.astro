@@ -15,6 +15,7 @@ import { experiences } from '../content/experiences';
 import { services } from '../data/services';
 import { villages } from '../data/villages';
 import { photos } from '../data/photos';
+import { pageCta } from '../lib/cta';
 import type { Locale } from '../data/business';
 import { t } from '../i18n/ui';
 import { localize, splitId } from '../lib/routes';
@@ -160,7 +161,7 @@ const crumbs = [
                 <p class="mt-5 text-lg text-taupe">{f.summary}</p>
                 <div class="mt-8 flex flex-wrap items-center gap-6">
                   <SmartLink href={f.href} class="btn-secondary">{hc.services.discover[locale]}</SmartLink>
-                  <a href={localize('/enquire/', locale) + `?service=${f.slug}`} class="link inline-flex min-h-11 items-center">{s.planMyStay}</a>
+                  <a href={pageCta(locale, 'services', f.slug).href} class="link inline-flex min-h-11 items-center">{pageCta(locale, 'services', f.slug).label}</a>
                 </div>
               </div>
             </article>

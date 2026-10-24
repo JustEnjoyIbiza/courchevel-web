@@ -2,19 +2,25 @@
 /**
  * Numbered editorial selection shown right after a page's answer (the
  * `highlights` frontmatter field), e.g. "Ten tables to know" on Where to eat.
- * One column, a thin rule between entries, an optional photo on the right.
+ * One column, a thin rule between entries, an optional photo on the right,
+ * and, with `request`, a request button per entry (e.g. Request a table).
  */
 import { Picture } from 'astro:assets';
 import { photos, type PhotoKey } from '../data/photos';
+import { requestCta } from '../lib/cta';
+import type { RequestType } from '../lib/requests';
+import type { Locale } from '../data/business';
 
 interface Props {
   eyebrow: string;
   title: string;
   intro?: string;
   items: { name: string; place: string; kind: string; text: string; photo?: PhotoKey; alt?: string; credit?: string }[];
+  request?: RequestType;
+  locale: Locale;
 }
 
-const { eyebrow, title, intro, items } = Astro.props;
+const { eyebrow, title, intro, items, request, locale } = Astro.props;
 const pad = (n: number) => String(n).padStart(2, '0');
 ---
 
@@ -33,6 +39,15 @@ const pad = (n: number) => String(n).padStart(2, '0');
             <h3 class="text-3xl">{x.name}</h3>
             <p class="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-taupe">{x.place} · {x.kind}</p>
             <p class="mt-4 max-w-[60ch] text-ink">{x.text}</p>
+            {request && (() => {
+              const cta = requestCta(locale, { type: request }, x.name);
+              return (
+                <p class="mt-4 flex flex-wrap items-center gap-x-6 text-sm">
+                  <a href={cta.href} class="link inline-flex min-h-11 items-center font-semibold">{cta.label}<span class="sr-only">: {x.name}</span></a>
+                  <a href={cta.whatsapp} class="link inline-flex min-h-11 items-center" data-event="whatsapp_click" rel="noopener">WhatsApp<span class="sr-only">: {x.name}</span></a>
+                </p>
+              );
+            })()}
           </div>
           {x.photo && (
             <figure>

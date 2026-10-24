@@ -9,6 +9,7 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { photoKeys } from './data/photos';
+import { REQUEST_TYPES } from './lib/requests';
 
 const pageFields = {
   /** The H1. */
@@ -38,6 +39,8 @@ const pageFields = {
       eyebrow: z.string(),
       title: z.string(),
       intro: z.string().optional(),
+      /** Each entry gets a request button for this type, pre-filled with its name. */
+      request: z.enum(REQUEST_TYPES).optional(),
       items: z
         .array(
           z.object({
