@@ -11,7 +11,7 @@ interface Props {
   eyebrow: string;
   title: string;
   intro?: string;
-  items: { name: string; place: string; kind: string; text: string; photo?: PhotoKey; alt?: string }[];
+  items: { name: string; place: string; kind: string; text: string; photo?: PhotoKey; alt?: string; credit?: string }[];
 }
 
 const { eyebrow, title, intro, items } = Astro.props;
@@ -35,15 +35,18 @@ const pad = (n: number) => String(n).padStart(2, '0');
             <p class="mt-4 max-w-[60ch] text-ink">{x.text}</p>
           </div>
           {x.photo && (
-            <Picture
-              src={photos[x.photo]}
-              alt={x.alt ?? ''}
-              formats={['avif', 'webp']}
-              widths={[400, 640]}
-              sizes="(min-width: 768px) 13rem, 100vw"
-              loading="lazy"
-              class="aspect-[16/10] w-full object-cover md:aspect-[4/5]"
-            />
+            <figure>
+              <Picture
+                src={photos[x.photo]}
+                alt={x.alt ?? ''}
+                formats={['avif', 'webp']}
+                widths={[400, 640]}
+                sizes="(min-width: 768px) 13rem, 100vw"
+                loading="lazy"
+                class="aspect-[16/10] w-full object-cover md:aspect-[4/5]"
+              />
+              {x.credit && <figcaption class="mt-2 text-xs text-taupe">{x.credit}</figcaption>}
+            </figure>
           )}
         </li>
       ))}

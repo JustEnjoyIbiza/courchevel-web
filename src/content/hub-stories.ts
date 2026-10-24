@@ -47,6 +47,11 @@ export const photoAlt: Record<PhotoKey, L> = {
   bagatelle: { en: 'The Bagatelle arch on the restaurant’s terrace, facing snow-covered peaks above Courchevel 1850', fr: 'L’arche Bagatelle sur la terrasse du restaurant, face aux sommets enneigés au-dessus de Courchevel 1850' },
   'cap-horn': { en: 'The Cap Horn Courchevel 1954 sign in front of a busy sunny terrace', fr: 'L’enseigne Cap Horn Courchevel 1954 devant une terrasse ensoleillée et animée' },
   'chalet-de-pierres': { en: 'Le Chalet de Pierres on the Verdons slope in Courchevel 1850, with a gondola passing above the trees', fr: 'Le Chalet de Pierres sur la piste des Verdons à Courchevel 1850, une télécabine passant au-dessus des sapins' },
+  'le-1947': { en: 'The white, sculptural dining room of Le 1947 at Cheval Blanc Courchevel, with snowy trees outside', fr: 'La salle blanche et sculpturale du 1947 au Cheval Blanc Courchevel, les sapins enneigés derrière les fenêtres' },
+  'sylvestre-wahid': { en: 'A dish from Sylvestre Wahid served on a carved, mountain-shaped stand', fr: 'Un plat de Sylvestre Wahid servi sur un socle sculpté en forme de montagne' },
+  'le-strato': { en: 'Le Strato hotel in Courchevel 1850 lit up at dusk, with deep snow in front', fr: 'L’hôtel Le Strato à Courchevel 1850 illuminé à la tombée du jour, devant une épaisse couche de neige' },
+  'le-chabichou': { en: 'The dining room of Le Chabichou in Courchevel 1850, with a crystal chandelier and a wood-panelled ceiling', fr: 'La salle du Chabichou à Courchevel 1850, avec un lustre en cristal et un plafond lambrissé' },
+  loulou: { en: 'A booth at Loulou Courchevel with tartan walls, carved wood and a table set for dinner', fr: 'Une alcôve chez Loulou Courchevel, murs en tartan, bois sculpté et table dressée pour le dîner' },
 };
 
 /** Services hub: the line under each service name and the photo it is shown with. */

@@ -45,18 +45,30 @@ highlights:
       place: Cheval Blanc, Courchevel 1850
       kind: Trois étoiles Michelin
       text: "Le seul trois étoiles de Courchevel, une salle intime à l’hôtel Cheval Blanc où la cuisine française du chef Yannick Alléno est servie à très peu de tables. L’une des premières réservations complètes chaque hiver."
+      photo: le-1947
+      alt: "La salle blanche et sculpturale du 1947 au Cheval Blanc Courchevel, les sapins enneigés derrière les fenêtres"
+      credit: "Photo : Cheval Blanc Courchevel"
     - name: Sylvestre Wahid
       place: Les Grandes Alpes, Courchevel 1850
       kind: Deux étoiles Michelin
       text: "Sylvestre Wahid avait déjà obtenu deux étoiles au Strato et à Paris avant d’ouvrir son restaurant aux Grandes Alpes en 2021. La première étoile est arrivée en quelques mois, la seconde en 2024."
+      photo: sylvestre-wahid
+      alt: "Un plat de Sylvestre Wahid servi sur un socle sculpté en forme de montagne"
+      credit: "Photo : Sylvestre, Les Grandes Alpes"
     - name: Slalom 1850
       place: Le Strato, Courchevel 1850
       kind: Deux étoiles Michelin
       text: "Formé à L’Oustau de Baumanière en Provence, le chef Thomas Prod’homme marie produits alpins et saveurs d’hiver avec une touche du Sud. Le restaurant s’appelait encore récemment Baumanière 1850."
+      photo: le-strato
+      alt: "L’hôtel Le Strato à Courchevel 1850 illuminé à la tombée du jour, devant une épaisse couche de neige"
+      credit: "Photo : Le Strato"
     - name: Le Chabichou
       place: Le Chabichou, Courchevel 1850
       kind: Une étoile Michelin
       text: "Meilleur Ouvrier de France, Stéphane Buron cuisine avec son fils Antonin, entre souvenirs de Savoie et voyages au Japon. Un menu unique qui se termine par le chariot de fromages."
+      photo: le-chabichou
+      alt: "La salle du Chabichou à Courchevel 1850, avec un lustre en cristal et un plafond lambrissé"
+      credit: "Photo : Le Chabichou"
     - name: Bagatelle
       place: Sommet de la télécabine des Chenus, 2 250 m
       kind: Déjeuner sur les pistes
@@ -83,6 +95,9 @@ highlights:
       place: Fouquet’s Courchevel, Courchevel 1850
       kind: Cuisine italienne de montagne
       text: "L’adresse courchevelloise de Loulou, au pied de la piste de Bellecôte : des plats du Piémont et de Lombardie aux côtés des classiques de la maison, comme la pizza à la truffe, et une terrasse très demandée."
+      photo: loulou
+      alt: "Une alcôve chez Loulou Courchevel, murs en tartan, bois sculpté et table dressée pour le dîner"
+      credit: "Photo : Loulou Courchevel"
     - name: La Mangeoire
       place: Courchevel 1850, au village
       kind: Dîner et soirée

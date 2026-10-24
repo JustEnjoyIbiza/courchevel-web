@@ -45,18 +45,30 @@ highlights:
       place: Cheval Blanc, Courchevel 1850
       kind: Three Michelin stars
       text: "Courchevel's only three-star restaurant, in an intimate dining room at the Cheval Blanc hotel, where chef Yannick Alléno's French cooking is served to very few tables. One of the first reservations to fill each winter."
+      photo: le-1947
+      alt: "The white, sculptural dining room of Le 1947 at Cheval Blanc Courchevel, with snowy trees outside"
+      credit: "Photo: Cheval Blanc Courchevel"
     - name: Sylvestre Wahid
       place: Les Grandes Alpes, Courchevel 1850
       kind: Two Michelin stars
       text: "Sylvestre Wahid had already earned two stars at Le Strato and in Paris before opening his own restaurant at Les Grandes Alpes in 2021. The first star came within months, the second in 2024."
+      photo: sylvestre-wahid
+      alt: "A dish from Sylvestre Wahid served on a carved, mountain-shaped stand"
+      credit: "Photo: Sylvestre, Les Grandes Alpes"
     - name: Slalom 1850
       place: Le Strato, Courchevel 1850
       kind: Two Michelin stars
       text: "Chef Thomas Prod'homme, trained at L'Oustau de Baumanière in Provence, cooks Alpine produce and winter flavours with a touch of the south. Until recently the restaurant was known as Baumanière 1850."
+      photo: le-strato
+      alt: "Le Strato hotel in Courchevel 1850 lit up at dusk, with deep snow in front"
+      credit: "Photo: Le Strato"
     - name: Le Chabichou
       place: Le Chabichou, Courchevel 1850
       kind: One Michelin star
       text: "Stéphane Buron, a Meilleur Ouvrier de France, cooks with his son Antonin from memories of Savoie and travels in Japan. A single set menu ends with the cheese trolley."
+      photo: le-chabichou
+      alt: "The dining room of Le Chabichou in Courchevel 1850, with a crystal chandelier and a wood-panelled ceiling"
+      credit: "Photo: Le Chabichou"
     - name: Bagatelle
       place: Top of the Chenus gondola, 2,250 m
       kind: Lunch on the slopes
@@ -83,6 +95,9 @@ highlights:
       place: Fouquet's Courchevel, Courchevel 1850
       kind: Italian mountain cooking
       text: "The Courchevel outpost of Loulou, at the foot of the Bellecôte piste: dishes from Piedmont and Lombardy alongside Loulou's classics, such as the truffle pizza, and a terrace in great demand."
+      photo: loulou
+      alt: "A booth at Loulou Courchevel with tartan walls, carved wood and a table set for dinner"
+      credit: "Photo: Loulou Courchevel"
     - name: La Mangeoire
       place: Courchevel 1850 village
       kind: Dinner and late nights

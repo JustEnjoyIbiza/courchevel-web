@@ -49,6 +49,8 @@ const pageFields = {
             text: z.string(),
             photo: z.enum(photoKeys).optional(),
             alt: z.string().optional(),
+            /** Shown under the photo, e.g. "Photo: Le Chabichou" (venue photos; sources in docs/photo-credits.md). */
+            credit: z.string().optional(),
           }),
         )
         .min(3)

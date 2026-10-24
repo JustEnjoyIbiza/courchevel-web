@@ -37,6 +37,13 @@ import courchevelGondola from '../assets/photos/courchevel-gondola-cabin.jpeg';
 import bagatelle from '../assets/photos/bagatelle-arch-mountain-terrace.jpeg';
 import capHorn from '../assets/photos/cap-horn-1954-sign.jpeg';
 import chaletDePierres from '../assets/photos/chalet-de-pierres-gondola.jpeg';
+// Venue photos from the Courchevel tourist office listings, used with the
+// venues' agreement (owner, 24 Oct 2026). Sources: docs/photo-credits.md
+import le1947 from '../assets/photos/le-1947-dining-room.jpeg';
+import sylvestreWahid from '../assets/photos/sylvestre-wahid-dish.jpeg';
+import leStrato from '../assets/photos/le-strato-dusk.jpeg';
+import leChabichou from '../assets/photos/le-chabichou-dining-room.jpeg';
+import loulou from '../assets/photos/loulou-courchevel-booth.jpeg';
 
 export const photos = {
   'rolls-royce-helicopter': rollsRoyceHelicopter,
@@ -72,6 +79,11 @@ export const photos = {
   bagatelle,
   'cap-horn': capHorn,
   'chalet-de-pierres': chaletDePierres,
+  'le-1947': le1947,
+  'sylvestre-wahid': sylvestreWahid,
+  'le-strato': leStrato,
+  'le-chabichou': leChabichou,
+  loulou,
 } as const;
 
 export type PhotoKey = keyof typeof photos;
