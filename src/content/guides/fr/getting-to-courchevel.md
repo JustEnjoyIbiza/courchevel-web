@@ -3,21 +3,21 @@ title: "Transfert Genève Courchevel et autres accès : toutes les options"
 shortTitle: Venir à Courchevel
 metaTitle: "Transfert Genève Courchevel : hélicoptère, voiture | CLC"
 description: Genève, Lyon, Chambéry ou Milan jusqu’à Courchevel en voiture, train, hélicoptère ou avion privé, avec les temps de trajet, l’altiport et la loi Montagne.
-answer: Le moyen le plus rapide de rejoindre Courchevel est l’hélicoptère, environ 25 à 40 minutes depuis Chambéry, Genève ou Lyon, avec atterrissage à l’altiport de Courchevel. Par la route, l’aéroport de Genève est à 149 km (environ 2 h 15 en conditions normales), Lyon à 187 km et Chambéry à 110 km. La gare la plus proche est Moûtiers, à 25 km et une trentaine de minutes de la station.
-updated: 2026-10-22
+answer: Le moyen le plus rapide de rejoindre Courchevel est l’hélicoptère, environ 25 à 40 minutes depuis Chambéry, Genève ou Lyon, avec atterrissage à l’altiport de Courchevel. Par la route, l’aéroport de Genève est à 149 km (2 h 15 à 2 h 45 en conditions normales), Lyon à 187 km et Chambéry à 110 km. La gare la plus proche est Moûtiers, à 25 km et une trentaine de minutes de la station.
+updated: 2026-10-25
 image: van-snow
 imageAlt: "Van noir avec chauffeur garé sur la neige, sommets en arrière-plan"
 facts:
   - label: Aéroport de Genève par la route
-    value: 149 km, environ 2 h 15 sans trafic
+    value: 149 km, environ 2 h 15 à 2 h 45 sans trafic
   - label: Lyon Saint-Exupéry par la route
-    value: 187 km, environ 2 h à 2 h 15
+    value: 187 km, environ 2 h 20 à 2 h 50
   - label: Chambéry par la route
     value: 110 km, environ 1 h 20 à 1 h 30
   - label: Gare la plus proche
     value: Moûtiers, à 25 km et environ 30 minutes de Courchevel
   - label: Altiport de Courchevel
-    value: Piste de 537 m à 2 008 m d’altitude, pente de 18,6 % ; petits turbopropulseurs et hélicoptères uniquement
+    value: Piste de 536 m à environ 2 008 m d’altitude, pente jusqu’à 18,5 % ; hélicoptères et avions à hélice de 5,7 tonnes au plus uniquement
   - label: Loi Montagne
     value: Pneus hiver (3PMSF) ou chaînes ou chaussettes à neige à bord, du 1er novembre 2026 au 31 mars 2027
 includes:
@@ -30,7 +30,7 @@ faqs:
   - q: Quel est l’aéroport le plus proche de Courchevel ?
     a: Chambéry est l’aéroport le plus proche accueillant des vols réguliers et privés, à environ 110 km par la route. Genève offre bien plus de vols et se trouve à 149 km, Lyon Saint-Exupéry à 187 km. Pour les petits avions privés, l’altiport de Courchevel se trouve dans la station même.
   - q: Un jet privé peut-il atterrir à Courchevel ?
-    a: Non. La piste de l’altiport ne mesure que 537 mètres et présente une forte pente ; elle accueille de petits turbopropulseurs comme le Pilatus PC-12 et des hélicoptères. Les jets privés se posent à Chambéry ou à Genève, et la fin du trajet se fait en hélicoptère ou en voiture.
+    a: Non. La piste de l’altiport ne mesure que 536 mètres et présente une forte pente ; elle accueille les hélicoptères et les avions à hélice jusqu’à 5,7 tonnes, comme le Pilatus PC-12, et seulement depuis l’espace Schengen. Les jets privés se posent à Chambéry ou à Genève, et la fin du trajet se fait en hélicoptère ou en voiture.
   - q: Peut-on venir à Courchevel en train ?
     a: Les trains s’arrêtent à Moûtiers, à 25 km en contrebas de la station, puis la route prend environ 30 minutes. Pour l’hiver 2026–2027, le train des neiges Eurostar relie Londres à Moûtiers le samedi, du 19 décembre 2026 au 20 février 2027, avec un changement à Lille.
   - q: Les chaînes sont-elles obligatoires pour monter à Courchevel ?
@@ -49,10 +49,10 @@ Courchevel se trouve au bout d’une route unique qui monte depuis Moûtiers, da
 
 | Trajet | En voiture | En hélicoptère |
 | --- | --- | --- |
-| Aéroport de Genève | 149 km, environ 2 h 15 | environ 30 min |
-| Lyon Saint-Exupéry | 187 km, environ 2 h à 2 h 15 | environ 40 min |
+| Aéroport de Genève | 149 km, environ 2 h 15 à 2 h 45 | environ 30 à 35 min |
+| Lyon Saint-Exupéry | 187 km, environ 2 h 20 à 2 h 50 | environ 40 à 45 min |
 | Aéroport de Chambéry | 110 km, environ 1 h 20 à 1 h 30 | environ 25 min |
-| Milan | environ 4 h, par le tunnel du Mont-Blanc ou du Fréjus | environ 1 h |
+| Milan | 4 h 30 à 5 h, par le tunnel du Fréjus ou du Mont-Blanc | 50 min à 1 h |
 | Gare de Moûtiers | 25 km, environ 30 min | rarement utile |
 
 Les temps en hélicoptère sont les durées de vol habituelles annoncées par les opérateurs, sans les courts transferts au départ et à l’arrivée.
@@ -78,7 +78,7 @@ Un chauffeur vous attend sur le quai à Moûtiers et prend vos bagages en charge
 
 ## En hélicoptère
 
-L’hélicoptère est le moyen le plus rapide d’arriver, et le plus sûr pour éviter les bouchons du samedi. Les vols se posent à l’altiport de Courchevel, au-dessus de 1850, à quelques minutes des chalets et des hôtels de 1850. Depuis Genève, deux heures de route deviennent une demi-heure de vol ; depuis Milan, où la route par le tunnel du Mont-Blanc ou du Fréjus prend environ quatre heures, le vol dure environ une heure.
+L’hélicoptère est le moyen le plus rapide d’arriver, et le plus sûr pour éviter les bouchons du samedi. Les vols se posent à l’altiport de Courchevel, au-dessus de 1850, à quelques minutes des chalets et des hôtels de 1850. Depuis Genève, deux heures de route deviennent une demi-heure de vol ; depuis Milan, où la route par le tunnel du Fréjus ou du Mont-Blanc prend quatre heures et demie à cinq heures, le vol dure de 50 minutes à une heure. Tous les trajets, avec des prix indicatifs, figurent sur notre [page transferts](/fr/services/transfers/).
 
 En montagne, les hélicoptères volent à vue : nuages bas ou fortes chutes de neige peuvent retarder ou annuler un vol. Lorsque nous organisons un hélicoptère, une voiture reste prête en solution de repli.
 
@@ -86,9 +86,9 @@ La dépose en héliski est interdite en France. Si vous souhaitez skier depuis u
 
 ## En avion privé : l’altiport de Courchevel
 
-L’altiport de Courchevel compte parmi les aérodromes les plus singuliers d’Europe. Sa piste mesure 537 mètres, se situe à 2 008 mètres d’altitude et présente une pente de 18,6 %. Il n’y a ni procédure d’approche aux instruments ni balisage lumineux, et le relief interdit toute remise de gaz : chaque atterrissage est engagé et doit se faire avec une bonne visibilité.
+L’altiport de Courchevel compte parmi les aérodromes les plus singuliers d’Europe. Sa piste mesure 536 mètres, se situe à environ 2 008 mètres d’altitude et présente une pente allant jusqu’à 18,5 %. Il n’y a ni procédure d’approche aux instruments ni balisage lumineux, et le relief interdit toute remise de gaz : chaque atterrissage est engagé et doit se faire avec une bonne visibilité.
 
-Pour cette raison, les pilotes d’avion doivent détenir la qualification montagne française et une autorisation propre au site de Courchevel, délivrée après un vol de contrôle. En pratique, l’altiport accueille des hélicoptères et de petits turbopropulseurs monomoteurs comme le Pilatus PC-12 ou le Cessna 208 Caravan.
+Pour cette raison, les pilotes d’avion doivent détenir la qualification montagne ou une autorisation propre à l’altiport de Courchevel. En pratique, l’altiport accueille des hélicoptères et des avions à hélice de 5,7 tonnes au plus, comme le Pilatus PC-12, et seulement des vols partis de l’espace Schengen : un avion venu de Londres ne peut pas s’y poser directement.
 
 **Les jets privés ne se posent pas à Courchevel.** Ils utilisent l’aéroport Chambéry Savoie Mont Blanc, doté d’un terminal dédié à l’aviation d’affaires, ou celui de Genève. Depuis l’un ou l’autre, nous organisons la dernière étape en hélicoptère ou en voiture, calée sur votre atterrissage. Si vous voyagez en avion privé, indiquez-nous votre assistance en escale et votre heure d’arrivée, nous coordonnons le reste.
 

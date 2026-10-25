@@ -30,6 +30,11 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
     require Atout France registration (IM number), a financial guarantee and professional insurance.
   - Consumer mediator: businesses selling to consumers must offer one and name it on the site (Code de la
     consommation, L.612-1).
+- [ ] **Transfer prices** (`/services/transfers/`, built 25 Oct). The page shows market reference prices from
+  published price lists (helicopter and car; sources in `docs/transfer-prices.md`) with a "Draft"
+  line, and the launch check fails until you confirm them. For each route: keep, or send your partners' price
+  (one way, per helicopter or car, **VAT included**). Also: which helicopter and car partners you use, and whether
+  their prices include the altiport landing fee
 - [ ] Confirm the retention periods in the privacy policy: requests without a booking 3 years after last contact;
   booked stays 5 years after the relationship; invoices 10 years
 - [ ] Accept the data processing agreement (DPA) in each provider's account: Netlify, Supabase, Basin (and Resend,
@@ -88,7 +93,7 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 - [ ] Named restaurants open for 2026/27 (La Cortona, L'Oeil de Bœuf, Le Cap Horn especially)
 - [ ] 2026/27 events and Eurostar ski train dates on the Season guide
 - [ ] ESF age groups, free lift pass under 5, Les Marmots and La Tanière des Croès day care
-- [ ] Milan helicopter time ("around an hour") is an estimate
+- [ ] Transfer prices and times on `/services/transfers/` (operators raised helicopter prices between July and October)
 
 ## Content and photos
 

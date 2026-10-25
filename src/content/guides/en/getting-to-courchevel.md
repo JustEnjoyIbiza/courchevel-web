@@ -3,21 +3,21 @@ title: "Getting to Courchevel from Geneva, Lyon and Chambéry: every option comp
 shortTitle: Getting to Courchevel
 metaTitle: "Geneva to Courchevel Transfer: Helicopter, Car, Jet | CLC"
 description: Geneva, Lyon, Chambéry and Milan to Courchevel by car, train, helicopter or private plane, with travel times, the altiport rules and winter driving law.
-answer: The fastest way to reach Courchevel is by helicopter, about 25 to 40 minutes from Chambéry, Geneva or Lyon, landing at Courchevel Altiport. By road, Geneva airport is 149 km away (about 2 hours 15 minutes in normal conditions), Lyon 187 km and Chambéry 110 km. The nearest railway station is Moûtiers, 25 km and about 30 minutes below the resort.
-updated: 2026-10-22
+answer: The fastest way to reach Courchevel is by helicopter, about 25 to 40 minutes from Chambéry, Geneva or Lyon, landing at Courchevel Altiport. By road, Geneva airport is 149 km away (2 hours 15 to 2 hours 45 in normal conditions), Lyon 187 km and Chambéry 110 km. The nearest railway station is Moûtiers, 25 km and about 30 minutes below the resort.
+updated: 2026-10-25
 image: van-snow
 imageAlt: "Black chauffeured van parked on snow with mountain peaks behind"
 facts:
   - label: Geneva airport by road
-    value: 149 km, about 2 h 15 without traffic
+    value: 149 km, about 2 h 15 to 2 h 45 without traffic
   - label: Lyon Saint-Exupéry by road
-    value: 187 km, about 2 h to 2 h 15
+    value: 187 km, about 2 h 20 to 2 h 50
   - label: Chambéry by road
     value: 110 km, about 1 h 20 to 1 h 30
   - label: Nearest station
     value: Moûtiers, 25 km and about 30 minutes from Courchevel
   - label: Courchevel Altiport
-    value: 537 m runway at 2,008 m altitude with an 18.6% slope; small turboprops and helicopters only
+    value: 536 m runway at about 2,008 m altitude with a slope of up to 18.5%; helicopters and propeller aircraft up to 5.7 tonnes only
   - label: Winter equipment law
     value: Winter tyres (3PMSF) or chains or snow socks in the car, 1 November 2026 to 31 March 2027
 includes:
@@ -30,7 +30,7 @@ faqs:
   - q: Which airport is closest to Courchevel?
     a: Chambéry is the closest airport with scheduled and private flights, about 110 km by road. Geneva has far more flights and is 149 km away, and Lyon Saint-Exupéry is 187 km away. For small private aircraft, Courchevel Altiport sits in the resort itself.
   - q: Can a private jet land in Courchevel?
-    a: No. The altiport runway is only 537 metres long and steeply sloped, so it takes small turboprops such as the Pilatus PC-12 and helicopters. Private jets land at Chambéry or Geneva, and the last stretch is made by helicopter or by car.
+    a: No. The altiport runway is only 536 metres long and steeply sloped, so it takes helicopters and propeller aircraft up to 5.7 tonnes, such as the Pilatus PC-12, and only from inside the Schengen area. Private jets land at Chambéry or Geneva, and the last stretch is made by helicopter or by car.
   - q: Is there a train to Courchevel?
     a: Trains stop at Moûtiers, 25 km below the resort, and the road up takes about 30 minutes. In winter 2026/27 the Eurostar ski train runs from London to Moûtiers on Saturdays from 19 December 2026 to 20 February 2027, with a change at Lille.
   - q: Do I need snow chains to drive to Courchevel?
@@ -49,10 +49,10 @@ Courchevel sits at the top of a single access road above Moûtiers, in the Taren
 
 | Route | By car | By helicopter |
 | --- | --- | --- |
-| Geneva airport | 149 km, about 2 h 15 | about 30 min |
-| Lyon Saint-Exupéry | 187 km, about 2 h to 2 h 15 | about 40 min |
+| Geneva airport | 149 km, about 2 h 15 to 2 h 45 | about 30 to 35 min |
+| Lyon Saint-Exupéry | 187 km, about 2 h 20 to 2 h 50 | about 40 to 45 min |
 | Chambéry airport | 110 km, about 1 h 20 to 1 h 30 | about 25 min |
-| Milan | about 4 h, via the Mont Blanc or Fréjus tunnel | roughly 1 h |
+| Milan | 4 h 30 to 5 h, via the Fréjus or Mont Blanc tunnel | 50 min to 1 h |
 | Moûtiers station | 25 km, about 30 min | not usually needed |
 
 Helicopter times are operators' typical flight times between landing sites and do not include the short transfers at each end.
@@ -78,7 +78,7 @@ We meet you on the platform at Moûtiers with a car and take your luggage, so th
 
 ## By helicopter
 
-A helicopter is the quickest way in, and the most reliable way to avoid Saturday traffic. Flights land at Courchevel Altiport, a short drive above the chalets and hotels of 1850. From Geneva, a helicopter turns a drive of more than two hours into about half an hour in the air; from Milan, where the drive through the Mont Blanc or Fréjus tunnel takes around four hours, the flight takes roughly an hour.
+A helicopter is the quickest way in, and the most reliable way to avoid Saturday traffic. Flights land at Courchevel Altiport, a short drive above the chalets and hotels of 1850. From Geneva, a helicopter turns a drive of more than two hours into about half an hour in the air; from Milan, where the drive through the Fréjus or Mont Blanc tunnel takes four and a half to five hours, the flight takes 50 minutes to an hour. Every route, with indicative prices, is on our [transfers page](/services/transfers/).
 
 Helicopters fly by sight in the mountains, so low cloud or heavy snow can delay or cancel a flight. When we arrange a helicopter, we keep a car ready as a back-up.
 
@@ -86,9 +86,9 @@ Heli-skiing drops are not allowed in France. If you would like to ski from a hel
 
 ## By private plane and Courchevel Altiport
 
-Courchevel Altiport is one of the most unusual airfields in Europe. Its runway is 537 metres long, sits at 2,008 metres above sea level and climbs at a gradient of 18.6%. There is no instrument approach and no runway lighting, and the terrain rules out a go-around, so every landing has to be committed and made in good visibility.
+Courchevel Altiport is one of the most unusual airfields in Europe. Its runway is 536 metres long, sits at about 2,008 metres above sea level and climbs at a gradient of up to 18.5%. There is no instrument approach and no runway lighting, and the terrain rules out a go-around, so every landing has to be committed and made in good visibility.
 
-Because of this, aeroplane pilots need the French mountain rating and a specific authorisation for the Courchevel site, granted after a check flight. In practice the altiport takes helicopters and small single-engine turboprops such as the Pilatus PC-12 and the Cessna 208 Caravan.
+Because of this, aeroplane pilots need the French mountain rating or a specific authorisation for Courchevel Altiport. In practice the altiport takes helicopters and propeller aircraft up to 5.7 tonnes, such as the Pilatus PC-12, and only flights from inside the Schengen area: a plane from London cannot land there directly.
 
 **Private jets do not land at Courchevel.** They use Chambéry Savoie Mont Blanc, which has a dedicated business aviation terminal, or Geneva. From either airport we arrange the last leg by helicopter or by car, timed to your landing. If you fly privately, tell us your handler and arrival time and we coordinate the rest.
 

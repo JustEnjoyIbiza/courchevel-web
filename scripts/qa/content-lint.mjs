@@ -59,7 +59,11 @@ for (const f of files) {
     const hotelWords = m && /^hotels: true$/m.test(fm) && fs.existsSync(hotelDir)
       ? fs.readdirSync(hotelDir).map(h => (fs.readFileSync(path.join(hotelDir, h), 'utf8').match(/^card: "?(.+?)"?$/m) ?? [, ''])[1]).join(' ').split(/\s+/).filter(Boolean).length
       : 0;
-    const wc = (txt.split('---').slice(2).join('---')).split(/\s+/).filter(Boolean).length + listWords + chaletWords + hotelWords;
+    // A page showing the transfer routes (transfers: true) also carries their notes (src/content/transfers.ts).
+    const transferWords = m && /^transfers: true$/m.test(fm)
+      ? [...fs.readFileSync(path.join(root, 'src/content/transfers.ts'), 'utf8').split(/^  fr: \{$/m)[m[2] === 'fr' ? 1 : 0].matchAll(/'([^']{60,})'/g)].map(x => x[1]).join(' ').split(/\s+/).filter(Boolean).length
+      : 0;
+    const wc = (txt.split('---').slice(2).join('---')).split(/\s+/).filter(Boolean).length + listWords + chaletWords + hotelWords + transferWords;
     // Hotel pages are fact sheets (facts, restaurants, photos in frontmatter), not articles.
     if (wc < 350 && m?.[1] !== 'hotels') issues.push(`${rel} [short body] ${wc} words`);
   }

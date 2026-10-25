@@ -51,12 +51,12 @@ for (const { route, html } of pages) {
     check(route, 'JSON-LD has no price/offers/streetAddress', !/"(price|priceRange|offers|streetAddress)"/.test(block));
   }
 
-  // Visible text: no prices. One exception (owner, 25 Oct 2026): the weekly chalet prices on
-  // the chalets page and each chalet's page, each in a <p data-price>, and only with the note
-  // that they vary.
+  // Visible text: no prices. Two exceptions (owner, 25 Oct 2026): the weekly chalet prices on
+  // the chalets page and each chalet's page, and the "from" transfer prices on the transfers
+  // page, each in a <p data-price>, and only with the note that they vary.
   let visible = html;
-  if (/^\/(fr\/)?services\/chalets\/([a-z0-9-]+\/)?$/.test(route)) {
-    check(route, 'chalet prices come with the note that they vary', !/\sdata-price[\s>]/.test(html) || /\sdata-price-note[\s>]/.test(html));
+  if (/^\/(fr\/)?services\/(chalets\/([a-z0-9-]+\/)?|transfers\/)$/.test(route)) {
+    check(route, 'prices come with the note that they vary', !/\sdata-price[\s>]/.test(html) || /\sdata-price-note[\s>]/.test(html));
     visible = visible.replace(/<p[^>]*\sdata-price[\s>][\s\S]*?<\/p>/g, '');
   }
   const text = visible.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ');

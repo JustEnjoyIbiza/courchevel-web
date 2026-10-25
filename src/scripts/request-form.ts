@@ -36,6 +36,12 @@ export function initRequestForm(form: HTMLFormElement) {
   const item = (params.get('item') ?? '').slice(0, 120).trim();
   const itemInput = form.querySelector<HTMLInputElement>('#rq-item');
   if (item && itemInput) itemInput.value = item;
+  // ?from=Geneva%20airport&to=Courchevel from a route on the transfers page.
+  for (const name of ['from', 'to']) {
+    const value = (params.get(name) ?? '').slice(0, 80).trim();
+    const input = form.querySelector<HTMLInputElement>(`#rq-${name}`);
+    if (value && input && !input.value) input.value = value;
+  }
   const service = params.get('service');
   if (service) setHidden('service', service.slice(0, 30));
 

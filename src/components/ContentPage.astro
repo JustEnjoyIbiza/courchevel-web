@@ -16,6 +16,8 @@ import Highlights from './Highlights.astro';
 import ChaletList from './ChaletList.astro';
 import HotelList from './HotelList.astro';
 import LegalFacts from './LegalFacts.astro';
+import TransferRoutes from './TransferRoutes.astro';
+import JetBand from './JetBand.astro';
 import { photos } from '../data/photos';
 import { business, type Locale } from '../data/business';
 import { pageCta } from '../lib/cta';
@@ -132,6 +134,8 @@ const cta = pageCta(locale, collection, slug);
     {d.chalets && <ChaletList locale={locale} />}
     {d.hotels && <HotelList locale={locale} />}
     {d.legal && <LegalFacts kind={d.legal} locale={locale} />}
+    {d.transfers && <TransferRoutes locale={locale} />}
+    {d.transfers && <JetBand locale={locale} />}
     {d.highlights?.map((h, i) => <Highlights {...h} index={i} locale={locale} />)}
 
     {(d.facts.length > 0 || d.includes.length > 0) && (

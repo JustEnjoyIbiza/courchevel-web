@@ -43,11 +43,13 @@ description anywhere else.
 
 ## Hard rules
 
-1. **No prices anywhere,** with one exception. No prices, ranges or "from" prices in
+1. **No prices anywhere,** with two exceptions. No prices, ranges or "from" prices in
    text, schema (`price`, `offers`, `priceRange`) or llms.txt. Every service ends with a
-   personal-quote call to action. Exception (owner, 25 Oct 2026): the weekly price of
-   each chalet on the chalets page (`src/content/chalets.ts`), for the week shown, with
-   the note that prices vary. Never on hotels or services, never in schema or llms.txt.
+   personal-quote call to action. Exceptions (owner, 25 Oct 2026): the weekly price of
+   each chalet on the chalets pages (`src/content/chalets.ts`), for the week shown, and the
+   "from" transfer prices (helicopter and car, nearby airports only) on `/services/transfers/`
+   (`src/content/transfers.ts`, sources in `docs/transfer-prices.md`), each with the note
+   that prices vary. Never on hotels or other services, never in schema, FAQ answers or llms.txt.
 2. **Never invent facts,** reviews, awards, partners, statistics or client names.
    Missing information becomes a clearly marked `TODO` and is listed in the phase summary.
 3. **Heli-skiing:** drops are banned in France. Describe it only as day trips to

@@ -69,6 +69,17 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   chef, something else). Lighthouse mobile on the preview (performance / accessibility / best
   practices / SEO): home 98/100/100/100, chalets 98/100/100/100, chalet page 98/100/100/100, hotels
   99/100/100/100, hotel page 99/100/100/100; LCP 1.7-2.1 s, CLS 0, TBT 0 ms.
+- **Transfers page rebuilt (owner, 25 Oct: "the prices are mostly fixed"):** `/services/transfers/` shows each
+  route with helicopter time and price per helicopter and road time with V-Class / S-Class prices.
+  Data `src/content/transfers.ts`, components `TransferRoutes.astro` / `JetBand.astro` (`transfers: true`),
+  sources `docs/transfer-prices.md`. Second price exception in hard rule 1.
+  Prices are **market references** until the owner confirms (`pricesConfirmed`); the page shows a Draft line and
+  the launch check fails until then. Each row opens the transfer request with from/to filled in (`?from=&to=`).
+  Body cut to three short sections. **Then trimmed (owner, same day):** only the nearby airports a helicopter
+  flies from (Geneva, Chambéry, Lyon, Grenoble, Annecy, Sion), Milan/Turin and four resorts folded (`<details>`,
+  rows in `TransferRouteList.astro`); the jet table became a short band without prices (`JetBand.astro`).
+  Getting to Courchevel guide corrected: Geneva 2 h 15-2 h 45, Lyon 2 h 20-2 h 50,
+  Milan 4 h 30-5 h by road and 50 min-1 h by helicopter, runway 536 m, slope up to 18.5%, no non-Schengen flights.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

@@ -59,12 +59,20 @@ check('CSP meta tag', /http-equiv="content-security-policy"/i.test(html), 'missi
 check('canonical is the www URL', html.includes(`<link rel="canonical" href="${SITE}/"`), 'wrong or missing');
 check('hreflang fr', html.includes(`hreflang="fr" href="${SITE}/fr/"`), 'missing');
 // Legal pages: every company detail filled in (LegalFacts shows [data-pending] until then).
-for (const path of ['/mentions-legales/', '/privacy/', '/fr/mentions-legales/', '/fr/privacy/']) {
-  try {
-    const page = await (await fetch(base + path)).text();
-    check(`${path} has no detail left to confirm`, !page.includes('data-pending'), 'company details missing in src/data/business.ts (legal)');
-  } catch (e) {
-    check(`${path} has no detail left to confirm`, false, e.message);
+// Transfers page: the draft market prices replaced by the owner's (pricesConfirmed in src/content/transfers.ts).
+const pending = {
+  '/mentions-legales/': 'company details missing in src/data/business.ts (legal)',
+  '/privacy/': 'company details missing in src/data/business.ts (legal)',
+  '/services/transfers/': 'transfer prices not confirmed in src/content/transfers.ts',
+};
+for (const [p, why] of Object.entries(pending)) {
+  for (const path of [p, `/fr${p}`]) {
+    try {
+      const page = await (await fetch(base + path)).text();
+      check(`${path} has no detail left to confirm`, !page.includes('data-pending'), why);
+    } catch (e) {
+      check(`${path} has no detail left to confirm`, false, e.message);
+    }
   }
 }
 check('old #services / #contact anchors', /id="services"/.test(html) && /id="contact"/.test(html), 'missing');

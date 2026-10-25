@@ -1,39 +1,42 @@
 ---
 title: "Helicopter transfers and private jets to Courchevel"
 shortTitle: Private aviation and transfers
-metaTitle: "Helicopter Transfer to Courchevel & Private Jets | CLC"
-description: "Helicopter transfers from Geneva, Lyon, Chambéry and Milan to Courchevel Altiport, private jets and chauffeured cars. Arranged and quoted personally."
-answer: The fastest way to reach Courchevel is a helicopter transfer to Courchevel Altiport, around 30 minutes from Geneva and 25 minutes from Chambéry. We arrange the flight, the private jet or the chauffeured car with licensed aviation and chauffeur partners, and send a personal quote within 24 hours.
-updated: 2026-10-22
+metaTitle: "Helicopter Transfer to Courchevel: Routes & Prices | CLC"
+description: "Helicopter, chauffeured car or private jet to Courchevel from Geneva, Lyon, Chambéry, Milan and more: every route with times and indicative prices."
+answer: "The fastest way to reach Courchevel is a helicopter to Courchevel Altiport: about 30 minutes from Geneva and 25 from Chambéry, priced per helicopter rather than per seat. Below, every nearby airport with its helicopter and chauffeured-car times and indicative prices; your personal quote follows within 24 hours."
+updated: 2026-10-25
+transfers: true
 image: private-jet
 imageAlt: "Cream leather seats and a table laid for a meal in a private jet cabin"
 facts:
   - label: Helicopter from Geneva
-    value: About 30 to 35 minutes to Courchevel Altiport
-  - label: Helicopter from Chambéry and Lyon
-    value: About 25 minutes from Chambéry, about 40 minutes from Lyon
-  - label: By road from Geneva
-    value: 149 km, usually 2 h 15 to 2 h 30 in good conditions
+    value: 30 to 35 minutes to Courchevel Altiport
+  - label: Nearest jet airport
+    value: Chambéry, 25 minutes by helicopter or about 1 h 30 by road
+  - label: How helicopters are priced
+    value: Per helicopter, not per seat; a light helicopter takes five or six passengers
   - label: Courchevel Altiport
-    value: 2,008 m altitude, above Courchevel 1850; small aircraft and helicopters only
+    value: Helicopters and propeller aircraft up to 5.7 tonnes; no jets, and no flights from outside the Schengen area
   - label: Reply time
     value: Within 15 minutes, 8:00 to 22:00; on call 24/7 in the winter season
 includes:
-  - Helicopter transfers from Geneva, Lyon, Chambéry and Milan to Courchevel
-  - Private jet charters to Geneva, Chambéry or Courchevel Altiport
+  - Helicopter transfers from the airports of France, Switzerland and Italy
+  - Private jets to Chambéry or Geneva, and small planes to Courchevel Altiport
   - Chauffeured Mercedes V-Class, S-Class or Range Rover for road transfers
   - A driver on call for the length of your stay
   - Luxury car rental delivered to your chalet
   - Flight and arrival times passed to your chalet staff
 faqs:
   - q: How long is the helicopter transfer from Geneva to Courchevel?
-    a: The flight itself takes about 30 to 35 minutes, compared with roughly two and a half hours by road. Add a few minutes at each end for boarding and the short drive from the altiport to your chalet.
+    a: The flight takes about 30 to 35 minutes, compared with 2 hours 15 to 2 hours 45 by road. Add a few minutes at each end for boarding and the short drive from the altiport to your chalet.
+  - q: How are helicopter transfers priced?
+    a: Per helicopter, not per seat, so the price is the same for one passenger or five. The routes above show an indicative price from each airport; the date, the aircraft and your luggage set the final price in your quote.
   - q: Can a private jet land directly in Courchevel?
-    a: Only small aircraft can use Courchevel Altiport, whose short, steep runway requires pilots with specific training. Most private jets land at Chambéry or Geneva, and you continue by helicopter or chauffeured car.
+    a: No. Courchevel Altiport takes helicopters and propeller aircraft up to 5.7 tonnes, such as the Pilatus PC-12, flown by pilots cleared for its short, steep runway, and only from inside the Schengen area. Jets land at Chambéry or Geneva, and you continue by helicopter or chauffeured car.
   - q: What happens if the weather stops the helicopter?
     a: Flights to the altiport depend on visibility, so we always keep a chauffeured car on standby for helicopter arrivals. If the flight is cancelled, you continue by road without having to organise anything.
   - q: Can I fly from Milan to Courchevel?
-    a: Yes. A helicopter transfer from the Milan area takes around an hour, depending on the departure point and the route. We confirm the exact timing with the aviation partner when we quote.
+    a: Yes. A helicopter from Milan takes about 50 minutes to an hour, against four and a half to five hours by road through the Fréjus or Mont Blanc tunnel. We confirm the exact timing with the aviation partner when we quote.
   - q: Do you drive or fly clients yourselves?
     a: No. Every flight is operated by licensed helicopter and aviation partners, and every road transfer by licensed chauffeur partners. We choose the option, book it and coordinate it with the rest of your stay.
 related:
@@ -42,34 +45,14 @@ related:
   - /courchevel-1850/
 ---
 
-## Helicopter transfers to Courchevel Altiport
+## Weather, luggage and a car on standby
 
-A helicopter is the quickest way into the resort. Flights land at Courchevel Altiport, at 2,008 m just above Courchevel 1850, and a car takes you the last few minutes to your chalet or hotel. Typical flight times:
+Helicopters fly by sight in the mountains, so low cloud or heavy snow can delay a flight. When the forecast is poor we switch you to the car in advance, and every helicopter arrival has a car on standby, so nothing needs organising on the day. For larger groups we arrange several helicopters, or a helicopter for the guests and a van for the luggage.
 
-- **Geneva:** about 30 to 35 minutes
-- **Chambéry:** about 25 minutes
-- **Lyon:** about 40 minutes
-- **Milan:** around an hour, depending on the departure point
+## A driver for your stay
 
-Luggage allowances depend on the aircraft, so tell us how many bags and ski cases you are travelling with. For larger groups we arrange several aircraft or a helicopter for the guests and a car for the luggage.
-
-## Private jets: Geneva, Chambéry or the altiport
-
-Courchevel Altiport has one of the shortest and steepest runways in Europe. Only small aircraft and helicopters use it, flown by pilots trained for the approach, and landings depend on the weather. Most private jets therefore land at:
-
-- **Chambéry**, about 1 h 20 to 1 h 30 by road or 25 minutes by helicopter
-- **Geneva**, 149 km away by road, with the widest choice of aircraft
-
-We arrange the charter with licensed aviation partners, match the arrival time to the onward helicopter or car, and pass the details to your chalet staff.
-
-## Chauffeured cars and a driver on call
-
-For road transfers we book licensed chauffeur partners with a Mercedes V-Class, a Mercedes S-Class or a Range Rover, chosen for the size of your group and your luggage. The drive from Geneva takes between two and a quarter and two and a half hours in good conditions, longer on busy Saturdays in high season, and Moûtiers railway station is about 30 minutes away.
-
-During your stay a driver can stay on call for dinners in Courchevel 1850, a day in Méribel or Val Thorens, shopping or a late return from a nightclub. If you would rather drive yourself, we arrange a luxury car rental delivered to your chalet, fitted for winter roads.
-
-The last part of the journey climbs from Moûtiers to Courchevel on a mountain road. In Savoie, winter tyres, or chains carried in the car, are compulsory in designated mountain areas between 1 November and 31 March, so every car we book is equipped for snow. Saturdays in high season bring the heaviest traffic, as most chalets change guests that day; arriving on another day, or by helicopter, avoids the queues in the valley.
+A chauffeur can stay on call for dinners in Courchevel 1850, a day in Méribel or Val Thorens, or a late return from a nightclub. If you would rather drive yourself, we have a luxury car delivered to your chalet. In Savoie, winter tyres or chains are compulsory in the mountain areas from 1 November to 31 March, so every car we book is equipped for snow.
 
 ## How we plan your arrival
 
-Send us your dates, the airport you prefer and the number of passengers and bags. We reply within 15 minutes between 8:00 and 22:00 and send a tailored proposal within 24 hours, with a road option alongside every flight in case of bad weather. On the day we follow your flight, keep the chalet informed and stay available 24/7 during the winter season.
+Send us your dates, your airport and the number of passengers and bags. We reply within 15 minutes between 8:00 and 22:00 and send a tailored proposal within 24 hours, with a road option alongside every flight. On the day we follow your flight, keep the chalet informed and stay available 24/7 during the winter season.

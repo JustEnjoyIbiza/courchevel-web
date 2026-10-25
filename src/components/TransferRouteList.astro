@@ -1,0 +1,73 @@
+---
+/**
+ * One group of transfer routes as rows (TransferRoutes.astro): on md+ a header
+ * row and four columns (from, helicopter, car, request); on phones each route
+ * stacks with its own labels. The whole row opens the transfer request with the
+ * route filled in (the name is the link, stretched over the row). Prices sit in
+ * [data-price] elements; the note that they vary is in TransferRoutes.
+ */
+import { transfersCopy, type TransferRoute } from '../content/transfers';
+import type { Locale } from '../data/business';
+import { euros } from '../lib/chalet-format';
+import { distance, duration, routeRequestHref } from '../lib/transfers';
+
+interface Props {
+  items: TransferRoute[];
+  locale: Locale;
+}
+
+const { items, locale } = Astro.props;
+const c = transfersCopy[locale];
+const price = (amount: number) => `${c.from} ${euros(amount, locale)}`;
+const cols = 'md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1.3fr)_minmax(0,0.9fr)]';
+const label = 'text-xs font-semibold uppercase tracking-[0.14em] text-taupe';
+const href = (r: TransferRoute) => routeRequestHref(locale, r.name[locale], r.group === 'resorts');
+---
+
+<div class={`mt-6 hidden gap-8 pb-3 md:grid ${cols} ${label}`} aria-hidden="true">
+  <span>{c.cols.from}</span>
+  <span>{c.cols.heli}</span>
+  <span>{c.cols.car}</span>
+  <span></span>
+</div>
+<ul class="mt-6 md:mt-0">
+  {items.map((r) => (
+    <li class={`group relative grid grid-cols-2 gap-x-6 gap-y-3 border-t border-line py-5 md:items-start md:gap-8 md:py-6 ${cols}`}>
+      <div class="col-span-2 flex items-start justify-between gap-4 md:col-span-1 md:block">
+        <div>
+          <h4 class="text-2xl">
+            <a href={href(r)} class="text-ink no-underline transition-colors after:absolute after:inset-0 group-hover:text-brass-deep">
+              {r.name[locale]}<span class="sr-only">{c.requestFor(c.request)}</span>
+            </a>
+          </h4>
+          {r.km && <p class="mt-1 text-sm text-taupe">{c.km(distance(r.km, locale))}</p>}
+        </div>
+        <span class="link mt-1.5 shrink-0 text-sm font-semibold md:hidden" aria-hidden="true">{c.requestShort}</span>
+      </div>
+      <div>
+        <p class={`${label} mb-1 md:sr-only`}>{c.cols.heli}</p>
+        <p class="font-serif text-2xl">{duration(r.heli.time)}</p>
+        {r.heli.from ? <p class="mt-1 text-sm" data-price>{price(r.heli.from)}</p> : <p class="mt-1 text-sm text-taupe">{c.onRequest}</p>}
+      </div>
+      <div>
+        <p class={`${label} mb-1 md:sr-only`}>{c.cols.car}</p>
+        {r.car ? (
+          <>
+            <p class="font-serif text-2xl">{duration(r.car.time)}</p>
+            {r.car.van || r.car.saloon ? (
+              <p class="mt-1 text-sm" data-price>
+                {r.car.van && <span class="block">{c.van} · {price(r.car.van)}</span>}
+                {r.car.saloon && <span class="block">{c.saloon} · {price(r.car.saloon)}</span>}
+              </p>
+            ) : (
+              <p class="mt-1 text-sm text-taupe">{c.onRequest}</p>
+            )}
+          </>
+        ) : (
+          <p class="text-sm text-taupe">{c.onRequest}</p>
+        )}
+      </div>
+      <span class="link hidden self-start justify-self-end pt-1.5 text-sm font-semibold md:inline" aria-hidden="true">{c.request}</span>
+    </li>
+  ))}
+</ul>
