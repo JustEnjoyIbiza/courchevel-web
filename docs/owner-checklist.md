@@ -32,7 +32,8 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
     consommation, L.612-1).
 - [ ] **Transfer prices** (`/services/transfers/`, built 25 Oct). The page shows market reference prices from
   published price lists (helicopter and car; sources in `docs/transfer-prices.md`) with a "Draft"
-  line, and the launch check fails until you confirm them. For each route: keep, or send your partners' price
+  line, and the launch check fails until you confirm them. Re-checked 25 Oct (cars at the market median,
+  helicopters at the lowest current H125 price): make sure your partners will honour them. For each route: keep, or send your partners' price
   (one way, per helicopter or car, **VAT included**). Also: which helicopter and car partners you use, and whether
   their prices include the altiport landing fee
 - [ ] Confirm the retention periods in the privacy policy: requests without a booking 3 years after last contact;

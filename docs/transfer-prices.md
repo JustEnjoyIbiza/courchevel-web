@@ -16,6 +16,40 @@ or replaces it** with our partners' rates; set `pricesConfirmed = true` then. Re
 
 ## Helicopter (to Courchevel Altiport)
 
+### Second check (25 Oct 2026, live pages only): the prices on the page
+
+The owner found the first helicopter prices inflated. They were Héli Sécurité's October 2026 grid, which rose 13-31%
+over its 2025/26 grid, while brokers still publish 2025/26-level prices for 2026/27. **The page now uses the lowest
+price on dated 2025/26 or 2026/27 pages for a light helicopter (H125, 5 passengers), one way, whole aircraft.**
+Undated pages (Get Heli's Courchevel page, Leader, Gatsby & Sons, Savoie Hélicoptères...) are context only; the one
+archived figure (Jet Systems, 4 June 2023) is not used. Many sources are not
+independent: Leader Limousines resells Héli Sécurité's grid; The Private Keeper and Alps2Alps reproduce its older
+grid; Flyin' and Get Heli are brokers. **Before launch, a supplier must confirm it honours these prices.**
+
+| Route | Current published prices (€) | Page from |
+|---|---|---|
+| Geneva | Private Keeper 2,750 H125 / 3,190 H130 (2025/26); Get Heli 2,790 for 5 (2026/27); Flyin' 2,850 H125 / 3,000 H130, VAT and handling incl. (2026/27; the H125 leaves from a French-side heliport ~22 min from the airport); Alps2Alps ~2,750 (Jan 2026); Héli Sécurité and Leader 3,100. Undated: 2,900, CHF 2,900 + CHF 350-450 Geneva handling, CHF 3,300, 3,520, 3,650-3,750 | 2,850 |
+| Chambéry | Flyin' 2,300 H125 / 2,500 H130 (2026/27); Private Keeper 2,450 / 2,950; Get Heli 2,275; Alps2Alps ~2,300; Héli Sécurité 2,700 | 2,300 |
+| Lyon Saint-Exupéry | Flyin' 3,950 (Bron 3,880) (2026/27); Private Keeper 3,900 (2025/26); Héli Sécurité 3,950; Get Heli 3,030 "Lyon airports" (undated) | 3,950 |
+| Grenoble | Private Keeper and Flyin' 2,750 H125 / 3,190 H130; Get Heli 2,755; Héli Sécurité 3,100 | 2,750 |
+| Annecy | Private Keeper and Flyin' 1,950 H125 (H130 2,300); Get Heli 1,945; Héli Sécurité 2,000 | 1,950 |
+| Sion | Private Keeper 3,800 H125 / 4,900 H130 (2025/26); Héli Sécurité 3,950; no Swiss operator publishes one | 3,800 |
+| Val d'Isère | Private Keeper 1,400 H125 / 1,700 H130; Flyin' 1,400 (2026/27) | 1,400 |
+| Megève | Héli Sécurité and Leader 1,450 H125; Flyin' 1,800 (2026/27); Get Heli 2,385 | 1,450 |
+| Méribel | Monacair 600 (Oct 2026); Leader 500 H125 / 600 H130; Flyin' 825 (2026/27) | 600 |
+| Val Thorens | Flyin' 990 (2026/27, the only dated price); Leader 600 / 700 (undated) | 990 |
+| Milan, Turin | only undated figures (Milan 4,300-4,500; Turin 2,300-3,200) | on request |
+
+Shared seats exist: Get Heli Geneva-Courchevel from €950 per seat (2026/27). An H130 costs €300-500 more than an
+H125; twins about 1.6-1.8×. Extra fees seen: Geneva handling CHF 350-450, terminal assistance €400, altiport tax
+€12 per passenger, de-icing. Sources: theprivatekeeper.com/fr/helicopteres/courchevel; flyincharter.com/courchevel
+and flyincharter.com/<city>-to-courchevel-helicopter; getheli.com/destinations/charter-a-helicopter-courchevel;
+getheli.com/transfers/helicopter-transfer-Courchevel-Geneva; alps2alps.com/blog/how-to-get-to-courchevel-the-ultimate-2026-travel-guide;
+leaderlimousines.com/pages/helicopter-transfer-courchevel; monacair.mc/en/destinations/meribel; helisecurite.fr.
+
+### First check (replaced)
+
+
 Prices: Héli Sécurité / MONACAIR grid, "from €X*, *indicative", basis and VAT not stated
 (https://helisecurite.fr/en/destinations/courchevel, same grid on monacair.mc). They rose between July and
 October 2026 (Geneva €2,750 → €3,100; Chambéry €2,300 → €2,700; Val d'Isère €1,300 → €1,700). PrivateFly gives
@@ -45,6 +79,41 @@ TARIFS_VALIDES_2026-2027_HELICOS_HIVER.pdf); no operator says whether its price 
 Luggage: about 4 soft bags or 2 suitcases in an H125/H130 (PrivateFly).
 
 ## Chauffeured car (to Courchevel 1850)
+
+### Second check (25 Oct 2026, live pages only): the prices on the page
+
+The owner found the first car prices inflated. A wider check (about 30 companies, live pages) confirmed it: the
+first figures all came from C-Limousine, at the top of the published range, 15-85% above the median. **The page now
+uses the median of published premium fares, rounded** (medians leave out C-Limousine; CHF and GBP converted at the
+ECB rate of 23 Oct 2026: €1 = CHF 0.9227 = £0.83728). Kiwitaxi (KT) fares are live pre-season prices quoted in the
+reverse direction from Courchevel 1300.
+
+| Route | V-Class offers (€) | V median | S-Class offers (€) | S median | Page V / S |
+|---|---|---|---|---|---|
+| Geneva | Alpine Ride 410, ByCar 450, KT 564, Leader 690, Hoppa 735, Geneva Ways 748, JSR 768 | 735 | KT 691, ByCar 700, Geneva Ways 965, JSR 1,008, airportstaxitransfers 1,101 | 975 | 750 / 950 |
+| Lyon Saint-Exupéry | ByCar 470, KT 564, Drivigo 597, lyon-vtc 645, Leader 820, MyDriverParis 1,001 | ~620 | KT 691, ByCar 750, MyDriverParis 1,329 | 750 | 650 / 800 |
+| Chambéry | Leader 380, ByCar 430, KT 480 | ~405 | KT 494, ByCar 580 | ~537 | 450 / 550 |
+| Grenoble | ByCar 470, French Cab Car 480, airportstaxitransfers 525, Leader 560, KT 635 | 525 | KT 564, ByCar 750 | ~657 | 550 / 650 |
+| Annecy | ByCar 330, KT 564, MyTransfers 687 | 564 | ByCar 400, KT 564, MyTransfers 613 | 564 | 550 / 600 |
+| Milan Malpensa | ByCar 760, MilanobyCar 1,216, KT 1,255, Leader 1,390 | ~1,236 | Suntransfers VIP 1,603, KT 1,904 | ~1,750 | 1,250 / 1,750 |
+| Turin | ByCar 740, airportstaxitransfers 763 (KT 2,256 looks wrong) | ~750 | KT 987, ByCar 1,200 | ~1,100 | 800 / 1,100 |
+| Méribel (from Courchevel) | no premium fare published; monTransport standard average 137 | – | – | – | 180 / on request |
+| Val Thorens (from Courchevel) | KT 353; standard 179-240 | 353 | KT 311 | 311 | 350 / 380 |
+
+Standard (non-premium) minivans, for reference: Geneva 260-577 (median ~370), Lyon 408-555, Chambéry 240-423
+(regulated taxi 195 by day, 280 at night). Surcharges seen: Saturdays +28% (JamTransfer) or +€60-100, Sundays
++10%, nights +2-44%, school holidays +10-15%; Leader, Prestigo and Transfer Courchevel advertise flat fares.
+Sources: leaderlimousines.com/pages/chauffeur-service-courchevel, kiwitaxi.com/en/france/courchevel-geneva-airport
+(and -lyon-airport, -chambery-airport, -grenoble-airport, -annecy, -malpensa-airport, -turin-airport, -val-thorens),
+alpine-ride-courchevel.com/en/transfert-geneve-courchevel, bycar.su/en/3valless/transfers/, hoppa.com/en/france/courchevel,
+genevaways.com/courchevel/, jsrlimousine.ch, drivigo.fr/taxi/vtc-lyon-courchevel, lyon-vtc.com/tarifs-taxi-vtc-lyon/,
+mydriverparis.com/courchevel-chauffeur-service/, vbprestige.com/en/prices, jamtransfer.com, airportstaxitransfers.com,
+montransport.com, mytransfers.com, milanobycar.com, suntransfers.com, taxi-albatros.fr, taxivalthorens.com,
+chronosvtc.fr, vtc-geneve-courchevel.com, alp-transfer.com, prestigo-chauffeur.com, transfercourchevel.fr,
+taxi-chambery.com/en/prices.
+
+### First check (replaced)
+
 
 Prices: C-Limousine grid updated 14 Oct 2026, VAT included (https://c-limousine.com/prix-transfert-van-courchevel/,
 https://c-limousine.com/prix-transfert-station-inter-station-courchevel/): Vito 8 seats / V-Class 7 / S-Class 3.

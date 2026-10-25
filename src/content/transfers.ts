@@ -9,8 +9,11 @@
  * VAT included, for the whole helicopter or car, as "from" prices next to the note
  * that they vary. Never in schema, llms.txt or FAQ answers.
  *
- * The prices below are market references from published price lists (helicopters:
- * Héli Sécurité; cars: C-Limousine), not yet our partners' rates. Until the owner
+ * The prices below are market references, not yet our partners' rates. Second check
+ * (25 Oct 2026, live pages only): cars at the median of published premium fares (the
+ * first figures, from one top-of-market firm, were 15-85% above it); helicopters at
+ * the lowest price on dated 2025/26 or 2026/27 pages for an H125 (the first figures
+ * were Héli Sécurité's October grid, up to 31% above the 2026/27 broker prices). Until the owner
  * confirms or replaces them, `pricesConfirmed` stays false: the page shows a draft
  * line ([data-pending]) and the launch check fails.
  *
@@ -41,19 +44,19 @@ export interface TransferRoute {
 }
 
 export const routes: TransferRoute[] = [
-  { id: 'geneva', group: 'airports', name: { en: 'Geneva airport', fr: 'Aéroport de Genève' }, km: 149, heli: { time: [30, 35], from: 3100 }, car: { time: [135, 165], van: 850, saloon: 1100 } },
-  { id: 'chambery', group: 'airports', name: { en: 'Chambéry airport', fr: 'Aéroport de Chambéry' }, km: 110, heli: { time: [25, 25], from: 2700 }, car: { time: [80, 90], van: 650, saloon: 800 } },
-  { id: 'lyon', group: 'airports', name: { en: 'Lyon Saint-Exupéry airport', fr: 'Aéroport de Lyon Saint-Exupéry' }, km: 187, heli: { time: [40, 45], from: 3950 }, car: { time: [140, 170], van: 850, saloon: 1200 } },
-  { id: 'grenoble', group: 'airports', name: { en: 'Grenoble airport', fr: 'Aéroport de Grenoble' }, km: 175, heli: { time: [30, 40], from: 3100 }, car: { time: [130, 140], van: 800, saloon: 1100 } },
-  { id: 'annecy', group: 'airports', name: { en: 'Annecy airport', fr: 'Aéroport d’Annecy' }, km: 95, heli: { time: [20, 30], from: 2000 }, car: { time: [95, 100], van: 600, saloon: 800 } },
-  { id: 'sion', group: 'airports', name: { en: 'Sion airport', fr: 'Aéroport de Sion' }, heli: { time: [35, 40], from: 3950 } },
+  { id: 'geneva', group: 'airports', name: { en: 'Geneva airport', fr: 'Aéroport de Genève' }, km: 149, heli: { time: [30, 35], from: 2850 }, car: { time: [135, 165], van: 750, saloon: 950 } },
+  { id: 'chambery', group: 'airports', name: { en: 'Chambéry airport', fr: 'Aéroport de Chambéry' }, km: 110, heli: { time: [25, 25], from: 2300 }, car: { time: [80, 90], van: 450, saloon: 550 } },
+  { id: 'lyon', group: 'airports', name: { en: 'Lyon Saint-Exupéry airport', fr: 'Aéroport de Lyon Saint-Exupéry' }, km: 187, heli: { time: [40, 45], from: 3950 }, car: { time: [140, 170], van: 650, saloon: 800 } },
+  { id: 'grenoble', group: 'airports', name: { en: 'Grenoble airport', fr: 'Aéroport de Grenoble' }, km: 175, heli: { time: [30, 40], from: 2750 }, car: { time: [130, 140], van: 550, saloon: 650 } },
+  { id: 'annecy', group: 'airports', name: { en: 'Annecy airport', fr: 'Aéroport d’Annecy' }, km: 95, heli: { time: [20, 30], from: 1950 }, car: { time: [95, 100], van: 550, saloon: 600 } },
+  { id: 'sion', group: 'airports', name: { en: 'Sion airport', fr: 'Aéroport de Sion' }, heli: { time: [35, 40], from: 3800 } },
 
-  { id: 'milan', group: 'italy', name: { en: 'Milan, Malpensa or Linate', fr: 'Milan, Malpensa ou Linate' }, km: [350, 400], heli: { time: [50, 60] }, car: { time: [270, 300], van: 1950, saloon: 2800 } },
-  { id: 'turin', group: 'italy', name: { en: 'Turin', fr: 'Turin' }, km: 241, heli: { time: [40, 40] }, car: { time: [180, 190], van: 1400, saloon: 1700 } },
+  { id: 'milan', group: 'italy', name: { en: 'Milan, Malpensa or Linate', fr: 'Milan, Malpensa ou Linate' }, km: [350, 400], heli: { time: [50, 60] }, car: { time: [270, 300], van: 1250, saloon: 1750 } },
+  { id: 'turin', group: 'italy', name: { en: 'Turin', fr: 'Turin' }, km: 241, heli: { time: [40, 40] }, car: { time: [180, 190], van: 800, saloon: 1100 } },
 
-  { id: 'meribel', group: 'resorts', name: { en: 'Méribel', fr: 'Méribel' }, km: 31, heli: { time: [8, 10] }, car: { time: [35, 40], van: 180 } },
-  { id: 'val-thorens', group: 'resorts', name: { en: 'Val Thorens', fr: 'Val Thorens' }, km: 60, heli: { time: [15, 15] }, car: { time: [65, 80], van: 390, saloon: 450 } },
-  { id: 'val-disere', group: 'resorts', name: { en: 'Val d’Isère', fr: 'Val d’Isère' }, heli: { time: [15, 20], from: 1700 } },
+  { id: 'meribel', group: 'resorts', name: { en: 'Méribel', fr: 'Méribel' }, km: 31, heli: { time: [8, 10], from: 600 }, car: { time: [35, 40], van: 180 } },
+  { id: 'val-thorens', group: 'resorts', name: { en: 'Val Thorens', fr: 'Val Thorens' }, km: 60, heli: { time: [15, 15], from: 990 }, car: { time: [65, 80], van: 350, saloon: 380 } },
+  { id: 'val-disere', group: 'resorts', name: { en: 'Val d’Isère', fr: 'Val d’Isère' }, heli: { time: [15, 20], from: 1400 } },
   { id: 'megeve', group: 'resorts', name: { en: 'Megève', fr: 'Megève' }, heli: { time: [15, 20], from: 1450 } },
 ];
 
