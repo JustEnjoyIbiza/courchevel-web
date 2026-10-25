@@ -20,7 +20,7 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 
 ## Decisions
 
-- [ ] Prices: the site follows the Website Plan (no prices anywhere). The Acquisition Plan wanted "from" prices. Confirm
+- [x] Prices: none anywhere, except the weekly price of each chalet on the chalets page, with a note that prices vary (owner, 25 Oct 2026). Confirm with the agency that its prices, photos and chalet names may be published
 - [ ] Languages: EN + FR now. Russian, Ukrainian and Arabic later?
 - [x] Concierge alerts by Telegram (chosen 25 Oct; bot and group still to create, see `lead-system-setup.md`)
 - [ ] The form's budget field is free text ("in your own words"), so no price bands appear on the site. OK?

@@ -47,7 +47,7 @@ Downloaded on 24 October 2026; used on the owner's instruction, permission to
 be confirmed with the venue. Kept at its original 1,400 px. TODO: record the
 date of La Soucoupe's OK.
 
-## Hotel photos (Chalets and palace hotels: the five palaces and five five-star hotels)
+## Hotel photos (Palace hotels page: the five palaces and five five-star hotels)
 
 Downloaded on 25 October 2026 from each hotel's official website (gallery or
 homepage). Used on the owner's instruction: the owner works with these hotels and
@@ -58,7 +58,7 @@ TODO: owner to add the date of each hotel's OK, and confirm Le Strato and
 Annapurna (added as replacements for White 1921, four-star, and Les Grandes
 Alpes, closed since the fire of 27 January 2026).
 If a hotel asks for removal: delete the entry in
-`src/content/services/{en,fr}/chalets.md`, then the photo as described at the top.
+`src/content/pages/{en,fr}/palace-hotels-courchevel.md`, then the photo as described at the top.
 
 | File | Hotel | Credit shown | Source page | Original file |
 | --- | --- | --- | --- | --- |
@@ -73,3 +73,34 @@ If a hotel asks for removal: delete the entry in
 | le-strato-hotel-exterior.jpeg | Le Strato | Photo: Le Strato | https://www.hotelstrato.com/fr/page/presse-hotel-courchevel-luxe.4378.html | https://hapi.mmcreation.com/hapidam/51671f95-d85f-44d1-aad0-05b86dab2757/Exterieur.jpg |
 | annapurna-courchevel-exterior.jpeg | Hôtel Annapurna | Photo: Hôtel Annapurna | https://www.annapurna-courchevel.com/en/gallery.html | https://www.annapurna-courchevel.com/_novaimg/4815406-1542456_0_53_3000_1908_2200_1400.jpg |
 | matsuhisa-courchevel-dining-room.jpeg | Matsuhisa at Airelles Courchevel (Where to eat, ten tables) | Photo: Airelles Courchevel, Vincent Leroux | https://airelles.com/en/destination/courchevel-hotel/restaurants/matsuhisa-courchevel | https://assets.airelles.com/images/airelles2023/aV0ME3NYClf9o0Zi_ARL-Salle-Matsuhisa%C2%A9VincentLeroux.jpg |
+
+## Chalet photos (chalet cards and each chalet's page)
+
+10 to 16 photos per chalet in `src/assets/chalets/<slug>/` (NN-room.jpeg; 01 is
+the lead photo on the card), taken from the brochures the owner sent on
+25 October 2026 (Google Drive PDFs from the owner's partner agency), resized to
+1,600 px. Floor plans, near-duplicates and the residence restaurants (Titan) left
+out. Used on the owner's instruction; no credit shown, so the agency is not
+named on the site. The brochures themselves stay private.
+TODO: owner to confirm the agency agrees to its photos, chalet names and prices
+being published. Apartment Capucine's photos look like computer renderings
+(new building?): confirm or replace.
+If a chalet is withdrawn: remove it from `src/content/chalets.ts` and delete its
+folder in `src/assets/chalets/`.
+
+| Folder | Chalet | Brochure (private, Google Drive file id) |
+| --- | --- | --- |
+| chalet-solstice | Chalet Solstice, 1850 | 1OjqS1UI_GEVuFVwpmSrNRiaNXA8kl8AA |
+| chalet-neve | Chalet Neve, 1850 | 1ZZLW9cmN7ZsgKb19Sd_NtDlse2M-D6wF |
+| chalet-shemshak | Chalet Shemshak, 1850 | 1n6z9BPvZliRtZGMgmVWygEtfaxO-Q2I9 |
+| chalet-ellis | Chalet Ellis, 1850 | 1_i0j6_qJuEHZZsqy5n4t6cH1r7ByvG20 |
+| penthouse-ivory | Penthouse Ivory, 1850 | 12iGtb41XVscCzuicbJqneFRpeaqYbOss |
+| chalet-fleur | Chalet Fleur, 1850 | 1xB90yqNBMkZT433JJoAlUpkZOx3PoYcT |
+| chalet-elia | Chalet Elia, 1850 | 1VWZyj-bJ1VqL9jrYfCStaktA18c7aAf- |
+| chalet-sylvia | Chalet Sylvia, 1850 | 1LyY4JtOAoYE8czRwA31HJrdkwy3PHx_b |
+| chalet-king | Chalet King, 1850 | 1PUMd65pRr7X70KEVimZ-fld5LYRqkKdC |
+| chalet-titan | Chalet Titan, 1650 | 1serBlAEJ0ifDQRxIebm0UmPoHebVQIDD |
+| chalet-philip | Chalet Philip, 1650 | 15nG7O57B93cRykQrIN3fbz_MEg0SRI8a |
+| chalet-ibis | Chalet Ibis, Le Praz | 1oUYtW2-Nd1sPAFGORnkYXpIvGUVQUXP0 |
+| chalet-hugo | Chalet Hugo, Méribel | 1ly1mSVUPwlC59K7Z1pOJQMzjw5xtZTTc |
+| apartment-capucine | Apartment Capucine, Méribel | 16GdV8V0SqXM-SbMJ6BW5EvQ4JLz9R7ve |

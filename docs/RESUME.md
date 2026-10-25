@@ -34,11 +34,18 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   and an "Ask about this hotel" button that opens Plan my stay with the name in the message (`?item=`,
   edge function + script). Body cut to three steps. `highlights` is now a list of up to 3 sections.
   White 1921 (4★) and Les Grandes Alpes (closed since the fire of 27 Jan 2026) left out.
-- **Chalet section waits for the owner:** 5 real chalets, by request only (if taken, we propose similar).
-  Owner wants prices; agreed form, not built: an indicative weekly "from" price on chalet cards only,
-  never on hotels or services, never in schema (this changes hard rule 1 for chalets; confirm with
-  the owner when the details arrive). Needed per chalet: name or discreet name, village, bedrooms and
-  guests, 3-4 features, weekly from-price and weeks, photos with the owner's OK.
+- **Chalets built (later on 25 Oct):** 14 chalets and apartments from the owner's agency brochures
+  (`src/content/chalets.ts`): cards on `/services/chalets/` grouped by village, each card opening its
+  own page `/services/chalets/<slug>/` with 10-16 photos (`src/assets/chalets/<slug>/`, room in the
+  file name gives caption and alt). Weekly price for the week shown, with the note that prices vary:
+  the only prices on the site (hard rule 1 updated; static check allows `[data-price]` only on chalet
+  pages and only with `[data-price-note]`). One action per chalet: Check availability (Plan my stay
+  with the name). Agency brochures and the commission note stay private.
+- **Hotels moved to their own page** `/palace-hotels-courchevel/` (pages collection); the chalets
+  page is chalets only. Homepage chalets tile split in two halves: Chalets | Palace hotels.
+- **No WhatsApp per list item** anywhere (owner): only the site-wide button.
+- Open: agency OK for names, prices and photos; Capucine photos may be renderings; ~70 MB of chalet
+  photos now in the repo; per-chalet galleries could later get a lightbox.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

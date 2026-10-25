@@ -1,0 +1,14 @@
+---
+/** One page per chalet available this winter (src/content/chalets.ts). */
+import ChaletPage from '../../../../components/ChaletPage.astro';
+import { chalets } from '../../../../content/chalets';
+import { chaletSlug } from '../../../../lib/chalets';
+
+export function getStaticPaths() {
+  return chalets.map((chalet) => ({ params: { chalet: chaletSlug(chalet) }, props: { chalet } }));
+}
+
+const { chalet } = Astro.props;
+---
+
+<ChaletPage chalet={chalet} locale="fr" />

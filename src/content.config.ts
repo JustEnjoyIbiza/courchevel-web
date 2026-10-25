@@ -66,6 +66,8 @@ const pageFields = {
   related: z.array(z.string().regex(/^\/[a-z0-9\-/]*\/$/)).length(3),
   /** Shorter name for breadcrumbs and link lists. */
   shortTitle: z.string().optional(),
+  /** Show the chalets available this winter (src/content/chalets.ts) right after the answer. */
+  chalets: z.boolean().optional(),
   /** Numbered selections shown right after the answer, one after the other. */
   highlights: z.array(highlightSection).max(3).optional(),
 };

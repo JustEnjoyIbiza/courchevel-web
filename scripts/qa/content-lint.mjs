@@ -10,7 +10,7 @@ const files = [];
 
 const valid = new Set(['/services/', '/villages/', '/guides/', '/experiences/', '/faq/', '/about/', '/enquire/',
   ...['chalets','transfers','ski','experiences','private-chef','nightlife','staff','childcare','wellness','events','lifestyle','owners'].map(s => `/services/${s}/`),
-  ...['courchevel-1850','courchevel-1650-moriond','courchevel-1550-village','courchevel-1300-le-praz','la-tania','meribel','val-thorens','christmas-new-year-courchevel','corporate-retreats-courchevel','assistants-and-family-offices','courchevel-ski-area'].map(s => `/${s}/`),
+  ...['courchevel-1850','courchevel-1650-moriond','courchevel-1550-village','courchevel-1300-le-praz','la-tania','meribel','val-thorens','christmas-new-year-courchevel','corporate-retreats-courchevel','assistants-and-family-offices','courchevel-ski-area','palace-hotels-courchevel'].map(s => `/${s}/`),
   ...['getting-to-courchevel','courchevel-with-kids','season-dates-and-events','where-to-eat','how-to-choose-a-concierge-in-courchevel','private-concierge-vs-hotel-concierge','heli-skiing-from-courchevel','a-week-in-courchevel-1850'].map(s => `/guides/${s}/`)]);
 
 const rules = [
@@ -50,7 +50,11 @@ for (const f of files) {
     }
     // Highlights lists (their intro and entry texts) are page content too.
     const listWords = [...fm.matchAll(/^\s+(?:intro|text):\s*(.+)$/gm)].map(x => x[1]).join(' ').split(/\s+/).filter(Boolean).length;
-    const wc = (txt.split('---').slice(2).join('---')).split(/\s+/).filter(Boolean).length + listWords;
+    // A page showing the chalets (chalets: true) also carries their descriptions (src/content/chalets.ts).
+    const chaletWords = m && /^chalets: true$/m.test(fm)
+      ? [...fs.readFileSync(path.join(root, 'src/content/chalets.ts'), 'utf8').matchAll(new RegExp(`^\\s+${m[2]}: '(.+)',$`, 'gm'))].map(x => x[1]).join(' ').split(/\s+/).filter(Boolean).length
+      : 0;
+    const wc = (txt.split('---').slice(2).join('---')).split(/\s+/).filter(Boolean).length + listWords + chaletWords;
     if (wc < 350) issues.push(`${rel} [short body] ${wc} words`);
   }
 }

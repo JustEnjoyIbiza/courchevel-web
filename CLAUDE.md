@@ -16,6 +16,11 @@ Gemini, Copilot) can read, understand and cite. Live before the winter season
 Every page leads to one action: **the request that fits it** (owner, 24 Oct 2026).
 Stay pages keep **Plan my stay**; service pages lead to a short request (Request a
 table, Request a transfer...). Mapping and copy: `src/content/requests.ts`.
+No WhatsApp link per list item (chalets, hotels, restaurants): WhatsApp is the site-wide
+button only (owner, 25 Oct 2026: "WhatsApp is for closing deals, not for every click").
+Chalets: `/services/chalets/` lists them (data `src/content/chalets.ts`), each with its own
+page and gallery (`/services/chalets/<slug>/`, photos in `src/assets/chalets/<slug>/`).
+Hotels: `/palace-hotels-courchevel/` (pages collection).
 
 ## Business facts
 
@@ -36,9 +41,11 @@ description anywhere else.
 
 ## Hard rules
 
-1. **No prices anywhere.** No prices, ranges or "from" prices in text, schema
-   (`price`, `offers`, `priceRange`) or llms.txt. Every service ends with a
-   personal-quote call to action.
+1. **No prices anywhere,** with one exception. No prices, ranges or "from" prices in
+   text, schema (`price`, `offers`, `priceRange`) or llms.txt. Every service ends with a
+   personal-quote call to action. Exception (owner, 25 Oct 2026): the weekly price of
+   each chalet on the chalets page (`src/content/chalets.ts`), for the week shown, with
+   the note that prices vary. Never on hotels or services, never in schema or llms.txt.
 2. **Never invent facts,** reviews, awards, partners, statistics or client names.
    Missing information becomes a clearly marked `TODO` and is listed in the phase summary.
 3. **Heli-skiing:** drops are banned in France. Describe it only as day trips to

@@ -1,0 +1,48 @@
+---
+/**
+ * Chalets and apartments available this winter (src/content/chalets.ts), as a
+ * grid of cards grouped by village, cheapest first. Each card opens the
+ * chalet's own page. The intro carries the note that prices vary
+ * ([data-price-note]), which the static check requires next to any price.
+ */
+import ChaletCard from './ChaletCard.astro';
+import SmartLink from './SmartLink.astro';
+import { chalets, chaletAreas, chaletsCopy } from '../content/chalets';
+import type { Locale } from '../data/business';
+import { localize } from '../lib/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = chaletsCopy[locale];
+const groups = chaletAreas
+  .map((area) => ({ area, items: chalets.filter((x) => x.area === area).sort((a, b) => a.price - b.price) }))
+  .filter((g) => g.items.length);
+---
+
+<section id="chalets" class="scroll-mt-24 py-section" aria-labelledby="chalets-title">
+  <div class="container-site">
+    <div class="max-w-2xl">
+      <p class="eyebrow">{c.eyebrow}</p>
+      <h2 id="chalets-title" class="mt-4 text-h2">{c.title}</h2>
+      <p class="mt-5 text-taupe" data-price-note>{c.intro}</p>
+      <p class="mt-4 text-sm">
+        {c.hotelsLine}
+        <SmartLink href={localize('/palace-hotels-courchevel/', locale)} class="link ml-1 inline-flex min-h-11 items-center">{c.hotelsLink}</SmartLink>
+      </p>
+    </div>
+
+    {groups.map((g) => (
+      <div class="mt-14">
+        <h3 class="border-t border-line pt-6 text-3xl">{c.areas[g.area]}</h3>
+        <ul class="mt-8 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+          {g.items.map((x) => (
+            <li class="scroll-mt-24"><ChaletCard chalet={x} locale={locale} /></li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

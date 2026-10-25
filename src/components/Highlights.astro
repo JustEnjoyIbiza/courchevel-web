@@ -2,15 +2,17 @@
 /**
  * Numbered editorial selection shown right after a page's answer (the
  * `highlights` frontmatter field), e.g. "Ten tables to know" on Where to eat or
- * the five palaces on Chalets. One column, a thin rule between entries, an
+ * the five palaces on Palace hotels. One column, a thin rule between entries, an
  * optional photo on the right, and, with `request`, a request button per entry
  * (Request a table; for a stay, the Plan my stay form opened with its name).
+ * No WhatsApp link per entry (owner, 25 Oct 2026): WhatsApp is the site-wide button.
  * Each entry has an id from its name, so other pages can link to it.
  */
 import { Picture } from 'astro:assets';
 import { photos, type PhotoKey } from '../data/photos';
 import { requestCta } from '../lib/cta';
 import { localize } from '../lib/routes';
+import { anchor, highlightsTitleId } from '../lib/anchors';
 import type { RequestType } from '../lib/requests';
 import type { Locale } from '../data/business';
 
@@ -29,10 +31,7 @@ interface Props {
 
 const { eyebrow, title, intro, items, request, service, button, index = 0, locale } = Astro.props;
 const pad = (n: number) => String(n).padStart(2, '0');
-/** 'Le Chalet de Pierres' -> 'le-chalet-de-pierres' */
-const anchor = (name: string) =>
-  name.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-const titleId = index ? `highlights-title-${index + 1}` : 'highlights-title';
+const titleId = highlightsTitleId(index);
 ---
 
 <section class="py-section" aria-labelledby={titleId}>
@@ -54,9 +53,8 @@ const titleId = index ? `highlights-title-${index + 1}` : 'highlights-title';
             {request && (() => {
               const cta = requestCta(locale, { type: request, service }, x.name);
               return (
-                <p class="mt-4 flex flex-wrap items-center gap-x-6 text-sm">
+                <p class="mt-4 text-sm">
                   <a href={cta.href} class="link inline-flex min-h-11 items-center font-semibold">{button ?? cta.label}<span class="sr-only">: {x.name}</span></a>
-                  <a href={cta.whatsapp} class="link inline-flex min-h-11 items-center" data-event="whatsapp_click" rel="noopener">WhatsApp<span class="sr-only">: {x.name}</span></a>
                 </p>
               );
             })()}

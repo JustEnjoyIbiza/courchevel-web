@@ -38,6 +38,11 @@ export const home = {
       title: 'Everything for your stay, arranged by one contact',
       intro: 'Each service is planned around your dates, your group and your village, and quoted personally.',
       more: 'Also arranged for you',
+      /** The chalets tile, split in two: chalets | palace hotels. */
+      split: {
+        chalets: { label: 'Chalets', line: 'Available this winter' },
+        hotels: { label: 'Palaces', line: 'Palaces and five-star hotels' },
+      },
     },
     experiences: {
       eyebrow: 'Experiences',
@@ -120,6 +125,10 @@ export const home = {
       title: 'Tout votre séjour, organisé par un seul interlocuteur',
       intro: 'Chaque prestation est pensée selon vos dates, votre groupe et votre village, et fait l’objet d’un devis personnalisé.',
       more: 'Également organisé pour vous',
+      split: {
+        chalets: { label: 'Chalets', line: 'Disponibles cet hiver' },
+        hotels: { label: 'Palaces', line: 'Palaces et hôtels cinq étoiles' },
+      },
     },
     experiences: {
       eyebrow: 'Expériences',

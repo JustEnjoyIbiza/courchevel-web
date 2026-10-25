@@ -282,6 +282,7 @@ export interface PageRequest {
 /** Content pages by "collection/slug". Pages not listed lead to Plan my stay. */
 export const pageRequests: Record<string, PageRequest> = {
   'services/chalets': { type: 'stay', service: 'chalets' },
+  'pages/palace-hotels-courchevel': { type: 'stay', service: 'chalets' },
   'services/transfers': { type: 'transfer' },
   'services/private-chef': { type: 'chef' },
   'services/ski': { type: 'instructor' },

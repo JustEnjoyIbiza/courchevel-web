@@ -1,0 +1,133 @@
+---
+/**
+ * One chalet's page (/services/chalets/<slug>/): the lead photo, facts, the
+ * weekly price with its note, one way to ask (Check availability opens Plan my
+ * stay with the chalet's name), the photo gallery with a caption per room, and
+ * other chalets in the same village. No per-chalet WhatsApp link (owner, 25 Oct
+ * 2026); the site-wide WhatsApp button stays, with its general message.
+ */
+import { Picture } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import ChaletCard from './ChaletCard.astro';
+import { chalets, chaletsCopy, type Chalet } from '../content/chalets';
+import { business, whatsappHref, type Locale } from '../data/business';
+import { chaletPath, chaletPhotos, photoAltText } from '../lib/chalets';
+import { chaletFacts, euros, weekRange } from '../lib/chalet-format';
+import { requestCta } from '../lib/cta';
+import { breadcrumbSchema } from '../lib/schema';
+import { localize } from '../lib/routes';
+import { t } from '../i18n/ui';
+
+interface Props {
+  chalet: Chalet;
+  locale: Locale;
+}
+
+const { chalet: x, locale } = Astro.props;
+const c = chaletsCopy[locale];
+const s = t(locale);
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+const area = c.areas[x.area];
+const [lead, ...gallery] = chaletPhotos(x);
+const url = chaletPath(x, locale);
+const listUrl = localize('/services/chalets/', locale);
+
+const request = requestCta(locale, { type: 'stay', service: 'chalets' }, x.name);
+const cta = { label: c.button, href: request.href, whatsapp: whatsappHref(locale) };
+
+const title = c.metaTitle(x.name, area);
+const lead1 = `${x.name}${locale === 'fr' ? ' à ' : ' in '}${area}${locale === 'fr' ? ' : ' : ': '}${chaletFacts(x, locale)}.`;
+const description = `${lead1} ${c.metaTail}`.length <= 154 ? `${lead1} ${c.metaTail}` : lead1.slice(0, 154);
+
+const crumbs = [
+  { name: s.breadcrumbHome, href: localize('/', locale) },
+  { name: s.page.sections.services, href: localize('/services/', locale) },
+  { name: c.crumb, href: listUrl },
+  { name: x.name, href: url },
+];
+const schema = [breadcrumbSchema(crumbs.map((b) => ({ name: b.name, url: b.href })))];
+
+// Gallery rhythm: one wide photo, then two side by side.
+const wide = (i: number) => i % 3 === 0;
+const more = chalets.filter((y) => y.area === x.area && y !== x).sort((a, b) => a.price - b.price).slice(0, 3);
+---
+
+<BaseLayout title={title} description={description} locale={locale} alternatePath={chaletPath(x, other)} schema={schema} ogImage={lead.src} cta={cta}>
+  <section class="pt-10 md:pt-14">
+    <div class="container-site">
+      <Breadcrumbs items={crumbs} />
+    </div>
+    <div class="container-site mt-8">
+      <Picture
+        src={lead.src}
+        alt={photoAltText(x, lead.room, locale)}
+        formats={['avif', 'webp']}
+        widths={[640, 1024, 1600]}
+        sizes="(min-width: 1280px) 1216px, 100vw"
+        loading="eager"
+        fetchpriority="high"
+        class="aspect-[3/2] w-full object-cover md:aspect-[16/8]"
+      />
+    </div>
+
+    <div class="container-site mt-10 grid gap-10 md:mt-14 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-7">
+        <p class="eyebrow">{area}</p>
+        <h1 class="mt-4 text-display">{x.name}</h1>
+        <p class="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-taupe">{chaletFacts(x, locale)}</p>
+        <div class="rule mt-8"></div>
+        <p class="mt-8 max-w-2xl font-serif text-[clamp(1.35rem,1.15rem+0.7vw,1.75rem)] leading-snug">{x.text[locale]}</p>
+      </div>
+      <aside class="self-start bg-stone p-6 md:p-8 lg:col-span-5" aria-label={c.button}>
+        <p data-price>
+          <span class="font-serif text-4xl text-brass-deep">{euros(x.price, locale)}</span>
+          <span class="mt-1 block text-sm text-taupe">{c.perWeek} · {weekRange(x, locale)}</span>
+        </p>
+        <p class="mt-4 text-sm text-taupe" data-price-note>{c.priceNote}</p>
+        <a href={request.href} class="btn-primary mt-6 w-full">{c.button}<span class="sr-only">: {x.name}</span></a>
+        <p class="mt-4 text-sm text-taupe">{c.takenNote} {business.replyPromise[locale]}.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="py-section" aria-labelledby="photos-title">
+    <div class="container-site">
+      <h2 id="photos-title" class="eyebrow">{c.photos}</h2>
+      <ul class="mt-8 grid gap-4 md:grid-cols-2 md:gap-6">
+        {gallery.map((p, i) => (
+          <li class={wide(i) ? 'md:col-span-2' : ''}>
+            <figure>
+              <Picture
+                src={p.src}
+                alt={photoAltText(x, p.room, locale)}
+                formats={['avif', 'webp']}
+                widths={wide(i) ? [640, 1024, 1600] : [480, 800]}
+                sizes={wide(i) ? '(min-width: 1280px) 1216px, 100vw' : '(min-width: 768px) 50vw, 100vw'}
+                loading="lazy"
+                class={`w-full object-cover ${wide(i) ? 'aspect-[3/2] md:aspect-[16/8]' : 'aspect-[3/2]'}`}
+              />
+              <figcaption class="mt-2 text-xs uppercase tracking-[0.14em] text-taupe">{c.rooms[p.room]}</figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+      <div class="mt-14 flex flex-col gap-3 border-t border-line pt-10 sm:flex-row sm:items-center sm:gap-8">
+        <a href={request.href} class="btn-primary">{c.button}<span class="sr-only">: {x.name}</span></a>
+        <a href={`${listUrl}#chalets`} class="link inline-flex min-h-11 items-center">{c.all}</a>
+      </div>
+    </div>
+  </section>
+
+  {more.length > 0 && (
+    <section class="border-t border-line bg-ivory py-section" aria-labelledby="more-title">
+      <div class="container-site">
+        <h2 id="more-title" class="text-h2">{c.more(area)}</h2>
+        <p class="mt-4 text-sm text-taupe" data-price-note>{c.priceNote}</p>
+        <ul class="mt-10 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+          {more.map((y) => <li><ChaletCard chalet={y} locale={locale} heading="h3" /></li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+</BaseLayout>
