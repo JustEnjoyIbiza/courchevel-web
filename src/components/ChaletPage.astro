@@ -2,8 +2,9 @@
 /**
  * One chalet's page (/services/chalets/<slug>/): the lead photo, facts, the
  * weekly price with its note, one way to ask (Check availability opens Plan my
- * stay with the chalet's name), the photo gallery with a caption per room, and
- * other chalets in the same village. No per-chalet WhatsApp link (owner, 25 Oct
+ * stay with the chalet's name) and, under it, "Add a private chef" (the chef
+ * request with the chalet filled in), the photo gallery with a caption per room,
+ * and other chalets in the same village. No per-chalet WhatsApp link (owner, 25 Oct
  * 2026); the site-wide WhatsApp button stays, with its general message.
  */
 import { Picture } from 'astro:assets';
@@ -35,6 +36,7 @@ const listUrl = localize('/services/chalets/', locale);
 
 const request = requestCta(locale, { type: 'stay', service: 'chalets' }, x.name);
 const cta = { label: c.button, href: request.href, whatsapp: whatsappHref(locale) };
+const chefHref = `${localize('/enquire/chef/', locale)}?staying=${encodeURIComponent(x.name)}`;
 
 const title = c.metaTitle(x.name, area);
 const lead1 = `${x.name}${locale === 'fr' ? ' à ' : ' in '}${area}${locale === 'fr' ? ' : ' : ': '}${chaletFacts(x, locale)}.`;
@@ -87,6 +89,10 @@ const more = chalets.filter((y) => y.area === x.area && y !== x).sort((a, b) => 
         <p class="mt-4 text-sm text-taupe" data-price-note>{c.priceNote}</p>
         <a href={request.href} class="btn-primary mt-6 w-full">{c.button}<span class="sr-only">: {x.name}</span></a>
         <p class="mt-4 text-sm text-taupe">{c.takenNote} {business.replyPromise[locale]}.</p>
+        <div class="mt-6 border-t border-line pt-4">
+          <a href={chefHref} class="link inline-flex min-h-11 items-center text-sm font-semibold">{c.chef.label}<span class="sr-only">: {x.name}</span></a>
+          <p class="text-sm text-taupe">{c.chef.line}</p>
+        </div>
       </aside>
     </div>
   </section>
