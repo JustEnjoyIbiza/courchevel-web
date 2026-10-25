@@ -54,7 +54,7 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   photos predate the relaunch.
 - **Plan (owner, 25 Oct):** finish and polish everything here during the week of 26 October; move to
   GitHub only once it is all polished. Until then the work lives only on this Mac (latest full backup:
-  `../courchevel-web-backup-2026-10-25.bundle`, verified by a test restore; make a new one after each big session).
+  `../courchevel-web-backup-2026-10-26.bundle`, at ab6c462, verified by a test restore; make a new one after each big session).
 - **Telegram paused (26 Oct):** the owner's phone is in another city. The bot "CLC Alerts" exists and
   the owner said hello to it, but the token is not in `.env` or Netlify. When resuming: steps in
   `docs/lead-system-setup.md` (private chat works; `npm run telegram -- chats`). If the token was seen by

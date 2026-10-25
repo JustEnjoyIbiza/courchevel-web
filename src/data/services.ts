@@ -46,10 +46,10 @@ export const services: Service[] = [
   },
   {
     slug: 'private-chef',
-    name: { en: 'Dining and private chefs', fr: 'Gastronomie et chefs privés' },
+    name: { en: 'Private chef', fr: 'Chef privé' },
     summary: {
-      en: 'Michelin-starred and private chefs in your chalet, sommeliers and restaurant reservations.',
-      fr: 'Chefs étoilés et chefs privés dans votre chalet, sommeliers et réservations de restaurants.',
+      en: 'A chef in your chalet for one dinner, every evening or full board, Michelin-starred chefs on request.',
+      fr: 'Un chef dans votre chalet pour un dîner, tous les soirs ou en pension complète, chefs étoilés sur demande.',
     },
   },
   {
