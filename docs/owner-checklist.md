@@ -22,7 +22,7 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 
 - [x] Prices: none anywhere, except the weekly price of each chalet on the chalets page, with a note that prices vary (owner, 25 Oct 2026). Agency OK for prices, photos and chalet names: it offered the brochures for this (25 Oct)
 - [ ] Languages: EN + FR now. Russian, Ukrainian and Arabic later?
-- [x] Concierge alerts by Telegram (chosen 25 Oct; bot and group still to create, see `lead-system-setup.md`)
+- [x] Concierge alerts by Telegram (chosen 25 Oct). Paused 26 Oct: bot created, token not added yet (phone elsewhere). Meanwhile turn on Gmail notifications for lead emails
 - [ ] The form's budget field is free text ("in your own words"), so no price bands appear on the site. OK?
 - [ ] Keep "Winter Retreat", "VIP Party Package", "Ski Explorer" in English on the French site, or translate them like the three new experiences?
 - [ ] Titles use the short brand "CLC" after the "|" to stay under 60 characters. OK, or prefer "Courchevel Concierge"?

@@ -3,7 +3,8 @@
  * Homepage quick-start: dates, village and group size, sent with a plain GET
  * to /enquire/, which arrives pre-filled (netlify/edge-functions/enquire-prefill.ts,
  * and src/scripts/enquiry-form.ts when JavaScript runs). No script on the homepage.
- * One row on wide screens, a compact grid on phones.
+ * One row on wide screens, a compact grid on phones. Below it, links straight to
+ * the short request forms for visitors who need just one thing.
  */
 import { home } from '../../content/home';
 import { enquiry } from '../../content/enquiry';
@@ -62,3 +63,10 @@ const input =
   </div>
   <slot />
 </form>
+
+<nav aria-labelledby="qs-one-thing" class="mt-6 flex flex-wrap items-center gap-x-6 border-t border-line pt-4 text-sm">
+  <span id="qs-one-thing" class="font-semibold text-ink">{c.oneThing.label}</span>
+  {c.oneThing.links.map((l) => (
+    <a href={localize(`/enquire/${l.type}/`, locale)} class="link inline-flex min-h-11 items-center">{l.text}</a>
+  ))}
+</nav>

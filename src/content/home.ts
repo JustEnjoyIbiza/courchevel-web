@@ -26,6 +26,17 @@ export const home = {
       villagePlaceholder: 'Choose a village',
       submit: 'Continue to my request',
       note: 'Next: the services you would like and how to reach you.',
+      /** Under the form: straight to a short request, for visitors who need one thing. */
+      oneThing: {
+        label: 'Just one thing?',
+        links: [
+          { type: 'table', text: 'A table' },
+          { type: 'transfer', text: 'A transfer' },
+          { type: 'instructor', text: 'A ski instructor' },
+          { type: 'chef', text: 'A private chef' },
+          { type: 'general', text: 'Something else' },
+        ],
+      },
     },
     proof: [
       { value: '15 min', label: 'Reply time, 8:00 to 22:00' },
@@ -118,6 +129,16 @@ export const home = {
       villagePlaceholder: 'Choisir un village',
       submit: 'Continuer ma demande',
       note: 'Ensuite : les services souhaités et comment vous joindre.',
+      oneThing: {
+        label: 'Juste une chose ?',
+        links: [
+          { type: 'table', text: 'Une table' },
+          { type: 'transfer', text: 'Un transfert' },
+          { type: 'instructor', text: 'Un moniteur de ski' },
+          { type: 'chef', text: 'Un chef à domicile' },
+          { type: 'general', text: 'Autre chose' },
+        ],
+      },
     },
     proof: [
       { value: '15 min', label: 'Délai de réponse, de 8 h à 22 h' },

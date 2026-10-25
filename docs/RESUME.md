@@ -55,8 +55,16 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
 - **Plan (owner, 25 Oct):** finish and polish everything here during the week of 26 October; move to
   GitHub only once it is all polished. Until then the work lives only on this Mac (latest full backup:
   `../courchevel-web-backup-2026-10-25.bundle`, verified by a test restore; make a new one after each big session).
-- **Next session:** Telegram alerts (26 Oct, steps in `docs/lead-system-setup.md`); owner renews the
-  domain on Monday 26 Oct.
+- **Telegram paused (26 Oct):** the owner's phone is in another city. The bot "CLC Alerts" exists and
+  the owner said hello to it, but the token is not in `.env` or Netlify. When resuming: steps in
+  `docs/lead-system-setup.md` (private chat works; `npm run telegram -- chats`). If the token was seen by
+  anyone else, send /revoke to @BotFather for a new one. Stopgap meanwhile: Gmail app notifications on
+  the phone for Basin's lead emails, so the 15-minute promise holds.
+- Owner renews the domain on Monday 26 Oct.
+- **26 Oct:** homepage "Just one thing?" links under the dates form (table, transfer, instructor,
+  chef, something else). Lighthouse mobile on the preview (performance / accessibility / best
+  practices / SEO): home 98/100/100/100, chalets 98/100/100/100, chalet page 98/100/100/100, hotels
+  99/100/100/100, hotel page 99/100/100/100; LCP 1.7-2.1 s, CLS 0, TBT 0 ms.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before
