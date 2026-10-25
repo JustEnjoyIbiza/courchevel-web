@@ -83,8 +83,7 @@ the lead photo on the card), taken from the brochures the owner sent on
 out. Used on the owner's instruction; no credit shown, so the agency is not
 named on the site. The brochures themselves stay private.
 Agency OK: the agency offered the PDFs to the owner for this use (owner, 25 Oct 2026).
-TODO: Apartment Capucine's photos look like computer renderings (new building?):
-owner to confirm or replace.
+Apartment Capucine's photos are real photographs (owner, 25 Oct 2026).
 If a chalet is withdrawn: remove it from `src/content/chalets.ts` and delete its
 folder in `src/assets/chalets/`.
 
