@@ -47,32 +47,34 @@ Downloaded on 24 October 2026; used on the owner's instruction, permission to
 be confirmed with the venue. Kept at its original 1,400 px. TODO: record the
 date of La Soucoupe's OK.
 
-## Hotel photos (Palace hotels page: the five palaces and five five-star hotels)
+## Hotel photos (the hotels page and each hotel's page)
 
-Downloaded on 25 October 2026 from each hotel's official website (gallery or
-homepage). Used on the owner's instruction: the owner works with these hotels and
-approved using their press photos with a credit (25 October 2026). Hotels
-publish no open press-photo licence, so a short written OK from each (WhatsApp
-or email) is still worth keeping here. Resized to at most 2,000 px.
-TODO: owner to add the date of each hotel's OK, and confirm Le Strato and
-Annapurna (added as replacements for White 1921, four-star, and Les Grandes
-Alpes, closed since the fire of 27 January 2026).
-If a hotel asks for removal: delete the entry in
-`src/content/pages/{en,fr}/palace-hotels-courchevel.md`, then the photo as described at the top.
+3 to 15 photos per hotel in `src/assets/hotels/<slug>/` (NN-room.jpeg; 01 is the lead
+photo on the card), downloaded on 25 October 2026 and resized to 1,600 px. The credit
+line on each hotel page names the hotel. Used on the owner's instruction: the owner
+works with these hotels and approved using their press photos with a credit
+(25 October 2026). Photos where a guest or staff member is the subject, renderings
+and other properties of the same groups were left out.
 
-| File | Hotel | Credit shown | Source page | Original file |
-| --- | --- | --- | --- | --- |
-| cheval-blanc-courchevel-facade.jpeg | Cheval Blanc Courchevel | Photo: Cheval Blanc Courchevel | https://www.chevalblanc.com/en/maison/courchevel/ | https://images.prismic.io/lvmh-chevalblanc/aH9KlUMqNJQqIMdp_Light-ChevalBlancCourchevel-Ext%C3%A9rieur-EliseQuiniou-3.jpg |
-| airelles-courchevel-facade-dusk.jpeg | Airelles Courchevel | Photo: Airelles Courchevel | https://airelles.com/en/destination/courchevel-hotel | https://assets.airelles.com/images/airelles2023/aNqBhZ5xUNkB1OEm_1m.jpeg |
-| fouquets-courchevel-facade.jpeg | Fouquet's Courchevel | Photo: Fouquet's Courchevel | https://www.hotelsbarriere.com/collection-fouquet-s/courchevel | https://a.storyblok.com/f/287000/2000x1335/55030b40ac/courchevel-les-neiges-facade.jpg |
-| apogee-courchevel-aerial.jpeg | L'Apogée Courchevel | Photo: L'Apogée Courchevel, Romain Reglade | https://www.journaldespalaces.com/article-76598-france-destination-l-apogee-courchevel-se-met-sur-son-31-pour-les-fetes.html | https://www.journaldespalaces.com/LoadImgActuEnligne.php?id=76506&t=normal (1,000 px; ask Oetker Collection for a larger official file) |
-| k2-palace-courchevel-aerial.jpeg | Le K2 Palace | Photo: Le K2 Palace, Stéphane Berthe | https://www.lek2palace.com/en/gallery.html | https://www.lek2palace.com/media/cache/jadro_resize/rc/rxzEek5B1792687959/jadroRoot/medias/5c114a0d69f63/k2p_drone_exterieur_-31_stephane_berthe.jpg |
-| aman-le-melezin-dusk.jpeg | Aman Le Mélézin | Photo: Aman | https://www.aman.com/resorts/aman-le-melezin/gallery | https://www.aman.com/sites/default/files/2025-07/aman_le_melezin_france_-_resort_exterior_1.jpg |
-| le-lana-courchevel-aerial.jpeg | Le Lana | Photo: Le Lana | https://www.lelana.com/fr/galerie-photos.html | https://www.lelana.com/media/cache/jadro_resize/rc/chtrihFi1713944028/jadroRoot/medias/5af3188f6f619/dji_0047_2800x1865.jpg |
-| sivoliere-terrace-view.jpeg | Sivolière Hôtel & Résidence | Photo: Sivolière | https://www.hotel-la-sivoliere.com/en/gallery/ | https://www.hotel-la-sivoliere.com/wp-content/uploads/sites/35/2026/06/imgi_7_SIGNATURE-12.jpg |
-| le-strato-hotel-exterior.jpeg | Le Strato | Photo: Le Strato | https://www.hotelstrato.com/fr/page/presse-hotel-courchevel-luxe.4378.html | https://hapi.mmcreation.com/hapidam/51671f95-d85f-44d1-aad0-05b86dab2757/Exterieur.jpg |
-| annapurna-courchevel-exterior.jpeg | Hôtel Annapurna | Photo: Hôtel Annapurna | https://www.annapurna-courchevel.com/en/gallery.html | https://www.annapurna-courchevel.com/_novaimg/4815406-1542456_0_53_3000_1908_2200_1400.jpg |
-| matsuhisa-courchevel-dining-room.jpeg | Matsuhisa at Airelles Courchevel (Where to eat, ten tables) | Photo: Airelles Courchevel, Vincent Leroux | https://airelles.com/en/destination/courchevel-hotel/restaurants/matsuhisa-courchevel | https://assets.airelles.com/images/airelles2023/aV0ME3NYClf9o0Zi_ARL-Salle-Matsuhisa%C2%A9VincentLeroux.jpg |
+Sources, per hotel:
+- Cheval Blanc Courchevel: the hotel's image library (images.prismic.io/lvmh-chevalblanc)
+- Airelles Courchevel: airelles.com (assets.airelles.com), Courchevel images only
+- Fouquet's Courchevel: hotelsbarriere.com (a.storyblok.com)
+- L'Apogée Courchevel: the hotel's own site was unreachable. Lead photo from
+  journaldespalaces.com (© Romain Reglade / L'Apogée), the second from its Michelin Guide
+  listing (© L'Apogée Courchevel), the lounge from journaldespalaces.com. TODO: ask the
+  hotel (Oetker Collection) for press photos; the gallery has only 3.
+- Le K2 Palace: lek2palace.com gallery (Stéphane Berthe); its 3D room renderings left out
+- Aman Le Mélézin: aman.com gallery
+- Le Lana: lelana.com gallery
+- Sivolière: hotel-la-sivoliere.com; the new spa exists only as renderings, left out.
+  The room photos date from before the 2026 relaunch and may differ.
+- Le Strato: hotelstrato.com (hapidam image library)
+- Annapurna: annapurna-courchevel.com gallery (no spa photos in it)
+
+TODO: a short written OK from each hotel's press team (email is enough) before launch.
+If a hotel asks for removal: delete its folder in `src/assets/hotels/` and its files in
+`src/content/hotels/{en,fr}/`.
 
 ## Chalet photos (chalet cards and each chalet's page)
 

@@ -20,7 +20,9 @@ No WhatsApp link per list item (chalets, hotels, restaurants): WhatsApp is the s
 button only (owner, 25 Oct 2026: "WhatsApp is for closing deals, not for every click").
 Chalets: `/services/chalets/` lists them (data `src/content/chalets.ts`), each with its own
 page and gallery (`/services/chalets/<slug>/`, photos in `src/assets/chalets/<slug>/`).
-Hotels: `/palace-hotels-courchevel/` (pages collection).
+Hotels: `/palace-hotels-courchevel/` lists them as cards; each hotel has its own page
+(`/palace-hotels-courchevel/<slug>/`, facts in `src/content/hotels/{en,fr}/`, photos in
+`src/assets/hotels/<slug>/`). Hotel facts only from sourced pages, listed in `sources`.
 
 ## Business facts
 

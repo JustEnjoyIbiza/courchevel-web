@@ -54,16 +54,6 @@ export const photoAlt: Record<PhotoKey, L> = {
   loulou: { en: 'A booth at Loulou Courchevel with tartan walls, carved wood and a table set for dinner', fr: 'Une alcôve chez Loulou Courchevel, murs en tartan, bois sculpté et table dressée pour le dîner' },
   'la-soucoupe': { en: 'The busy sunny terrace of La Soucoupe at the top of La Loze, facing snow-covered peaks', fr: 'La terrasse ensoleillée et animée de La Soucoupe au sommet de La Loze, face aux sommets enneigés' },
   'la-mangeoire': { en: 'The dining room of La Mangeoire in Courchevel 1850, with candlelit tables and deep velvet armchairs', fr: 'La salle de La Mangeoire à Courchevel 1850, tables éclairées à la bougie et profonds fauteuils de velours' },
-  'cheval-blanc': { en: "Cheval Blanc Courchevel's yellow facade and wooden balconies under snow, with the hotel's mirrored horse sculpture", fr: 'La façade jaune et les balcons en bois de Cheval Blanc Courchevel sous la neige, avec la sculpture de cheval en miroir de l’hôtel' },
-  'airelles': { en: 'The turreted facade of Les Airelles in Courchevel 1850 at dusk, lit from within, above fresh snow', fr: 'La façade à tourelles des Airelles à Courchevel 1850 au crépuscule, éclairée de l’intérieur, au-dessus de la neige fraîche' },
-  'fouquets': { en: "The wooden facade of Fouquet's Courchevel among snow-covered pines in Courchevel 1850", fr: 'La façade en bois du Fouquet’s Courchevel parmi les sapins enneigés à Courchevel 1850' },
-  'apogee': { en: "L'Apogée Courchevel seen from above, its snow-covered roofs among pine trees below the peaks", fr: 'L’Apogée Courchevel vu du ciel, ses toits enneigés parmi les sapins sous les sommets' },
-  'k2-palace': { en: 'Le K2 Palace and its chalets beside a piste in Courchevel 1850, seen from above in winter', fr: 'Le K2 Palace et ses chalets au bord d’une piste à Courchevel 1850, vus du ciel en hiver' },
-  'aman-le-melezin': { en: 'Aman Le Mélézin at dusk, its name lit on the facade, with the last light on the peaks behind', fr: 'Aman Le Mélézin au crépuscule, son nom éclairé sur la façade, les sommets encore dans la lumière' },
-  'le-lana': { en: 'Aerial view of Courchevel 1850 around Hôtel Le Lana, at the foot of the slopes', fr: 'Vue aérienne de Courchevel 1850 autour de l’hôtel Le Lana, au pied des pistes' },
-  'sivoliere': { en: 'A sunny wooden terrace with two chairs facing snow-covered peaks at Sivolière, Courchevel 1850', fr: 'Une terrasse en bois ensoleillée avec deux chaises face aux sommets enneigés, à la Sivolière, Courchevel 1850' },
-  'le-strato-hotel': { en: 'Hôtel Le Strato in Courchevel 1850 beside a snowy slope, with its wooden sign in the foreground', fr: 'L’hôtel Le Strato à Courchevel 1850 au bord d’une piste enneigée, avec son panneau en bois au premier plan' },
-  'annapurna': { en: 'Hôtel Annapurna in Courchevel 1850 under a clear sky, with snow-covered peaks behind', fr: 'L’hôtel Annapurna à Courchevel 1850 sous un ciel dégagé, devant les sommets enneigés' },
   'matsuhisa': { en: 'The wood-panelled dining room of Matsuhisa at Les Airelles, Courchevel 1850, with banquettes and leather armchairs', fr: 'La salle boisée de Matsuhisa aux Airelles, Courchevel 1850, avec banquettes et fauteuils en cuir' },
 };
 

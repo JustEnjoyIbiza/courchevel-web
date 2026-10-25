@@ -1,0 +1,13 @@
+---
+/** One page per hotel (src/content/hotels/fr/). */
+import HotelPage from '../../../components/HotelPage.astro';
+import { getHotels, hotelSlug } from '../../../lib/hotels';
+
+export async function getStaticPaths() {
+  return (await getHotels('fr')).map((hotel) => ({ params: { hotel: hotelSlug(hotel) }, props: { hotel } }));
+}
+
+const { hotel } = Astro.props;
+---
+
+<HotelPage hotel={hotel} locale="fr" />

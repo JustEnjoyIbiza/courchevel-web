@@ -46,18 +46,6 @@ import leChabichou from '../assets/photos/le-chabichou-dining-room.jpeg';
 import loulou from '../assets/photos/loulou-courchevel-booth.jpeg';
 import laSoucoupe from '../assets/photos/la-soucoupe-terrace.jpeg';
 import laMangeoire from '../assets/photos/la-mangeoire-dining-room.jpeg';
-// Hotel photos from each hotel's official website, used with the hotels'
-// agreement (owner, 25 Oct 2026). Sources: docs/photo-credits.md
-import chevalBlanc from '../assets/photos/cheval-blanc-courchevel-facade.jpeg';
-import airelles from '../assets/photos/airelles-courchevel-facade-dusk.jpeg';
-import fouquets from '../assets/photos/fouquets-courchevel-facade.jpeg';
-import apogee from '../assets/photos/apogee-courchevel-aerial.jpeg';
-import k2Palace from '../assets/photos/k2-palace-courchevel-aerial.jpeg';
-import amanLeMelezin from '../assets/photos/aman-le-melezin-dusk.jpeg';
-import leLana from '../assets/photos/le-lana-courchevel-aerial.jpeg';
-import sivoliere from '../assets/photos/sivoliere-terrace-view.jpeg';
-import leStratoHotel from '../assets/photos/le-strato-hotel-exterior.jpeg';
-import annapurna from '../assets/photos/annapurna-courchevel-exterior.jpeg';
 import matsuhisa from '../assets/photos/matsuhisa-courchevel-dining-room.jpeg';
 
 export const photos = {
@@ -101,16 +89,6 @@ export const photos = {
   loulou,
   'la-soucoupe': laSoucoupe,
   'la-mangeoire': laMangeoire,
-  'cheval-blanc': chevalBlanc,
-  airelles,
-  fouquets,
-  apogee,
-  'k2-palace': k2Palace,
-  'aman-le-melezin': amanLeMelezin,
-  'le-lana': leLana,
-  sivoliere,
-  'le-strato-hotel': leStratoHotel,
-  annapurna,
   matsuhisa,
 } as const;
 

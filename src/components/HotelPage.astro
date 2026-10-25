@@ -1,0 +1,176 @@
+---
+/**
+ * One hotel's page (/palace-hotels-courchevel/<slug>/): lead photo, the
+ * facts, restaurants and facilities from src/content/hotels/, one way to ask
+ * (Ask about this hotel opens Plan my stay with the hotel's name), what we
+ * arrange around the stay, the photo gallery with the hotel's credit, other
+ * hotels of the same kind, and when the facts were checked. No prices, no
+ * per-hotel WhatsApp link (the site-wide button stays, with its general message).
+ */
+import { Picture } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import HotelCard from './HotelCard.astro';
+import { hotelsCopy } from '../content/hotels-page';
+import { business, whatsappHref, type Locale } from '../data/business';
+import { getHotels, hotelAlt, hotelPath, hotelPhotos, hotelSlug, type Hotel } from '../lib/hotels';
+import { requestCta } from '../lib/cta';
+import { breadcrumbSchema } from '../lib/schema';
+import { localize } from '../lib/routes';
+import { t } from '../i18n/ui';
+
+interface Props {
+  hotel: Hotel;
+  locale: Locale;
+}
+
+const { hotel: h, locale } = Astro.props;
+const d = h.data;
+const c = hotelsCopy[locale];
+const s = t(locale);
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+const slug = hotelSlug(h);
+const [lead, ...gallery] = hotelPhotos(slug);
+const url = hotelPath(slug, locale);
+const listUrl = localize('/palace-hotels-courchevel/', locale);
+
+const request = requestCta(locale, { type: 'stay', service: 'chalets' }, d.name);
+const cta = { label: c.button, href: request.href, whatsapp: whatsappHref(locale) };
+
+const crumbs = [
+  { name: s.breadcrumbHome, href: localize('/', locale) },
+  { name: c.crumb, href: listUrl },
+  { name: d.name, href: url },
+];
+const schema = [breadcrumbSchema(crumbs.map((b) => ({ name: b.name, url: b.href })))];
+const checked = new Intl.DateTimeFormat(locale === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(d.checked);
+
+// Gallery rhythm: one wide photo, then two side by side.
+const wide = (i: number) => i % 3 === 0;
+const more = (await getHotels(locale)).filter((y) => y.data.kind === d.kind && y.id !== h.id).slice(0, 3);
+---
+
+<BaseLayout title={d.metaTitle} description={d.description} locale={locale} alternatePath={hotelPath(slug, other)} schema={schema} ogImage={lead.src} cta={cta}>
+  <section class="pt-10 md:pt-14">
+    <div class="container-site">
+      <Breadcrumbs items={crumbs} />
+    </div>
+    <div class="container-site mt-8">
+      <Picture
+        src={lead.src}
+        alt={hotelAlt(h, lead.room, locale)}
+        formats={['avif', 'webp']}
+        widths={[640, 1024, 1600]}
+        sizes="(min-width: 1280px) 1216px, 100vw"
+        loading="eager"
+        fetchpriority="high"
+        class="aspect-[3/2] w-full object-cover md:aspect-[16/8]"
+      />
+    </div>
+
+    <div class="container-site mt-10 grid gap-10 md:mt-14 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-7">
+        <p class="eyebrow">{c.kinds[d.kind]} · {d.place}</p>
+        <h1 class="mt-4 text-display">{d.name}</h1>
+        <p class="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-taupe">{d.label}</p>
+        <div class="rule mt-8"></div>
+        <p class="mt-8 max-w-2xl font-serif text-[clamp(1.35rem,1.15rem+0.7vw,1.75rem)] leading-snug">{d.intro}</p>
+      </div>
+      <aside class="self-start bg-stone p-6 md:p-8 lg:col-span-5" aria-label={c.button}>
+        <p class="text-sm text-taupe">{c.buttonNote}</p>
+        <a href={request.href} class="btn-primary mt-6 w-full">{c.button}<span class="sr-only">: {d.name}</span></a>
+        <p class="mt-4 text-sm text-taupe">{business.replyPromise[locale]}.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="py-section">
+    <div class="container-site grid gap-14 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-7">
+        <h2 class="eyebrow">{c.facts}</h2>
+        <dl class="mt-6">
+          {d.facts.map((f) => (
+            <div class="grid gap-1 border-t border-line py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
+              <dt class="text-sm font-semibold">{f.label}</dt>
+              <dd class="text-ink">{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+        {d.restaurants.length > 0 && (
+          <>
+            <h2 class="eyebrow mt-14">{c.restaurants}</h2>
+            <ul class="mt-6">
+              {d.restaurants.map((r) => (
+                <li class="border-t border-line py-4">
+                  <h3 class="text-2xl">{r.name}</h3>
+                  <p class="mt-1 text-taupe">{r.text}</p>
+                  {r.link && <a href={localize(r.link, locale)} class="link mt-1 inline-flex min-h-11 items-center text-sm">{c.tenTables}</a>}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
+      <div class="lg:col-span-5">
+        {d.features.length > 0 && (
+          <>
+            <h2 class="eyebrow">{c.features}</h2>
+            <ul class="mt-6">
+              {d.features.map((f) => <li class="border-t border-line py-3">{f}</li>)}
+            </ul>
+          </>
+        )}
+        <h2 class="eyebrow mt-14">{c.around}</h2>
+        <ul class="mt-6">
+          {c.aroundItems.map((f) => <li class="border-t border-line py-3">{f}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {gallery.length > 0 && (
+    <section class="pb-section" aria-labelledby="photos-title">
+      <div class="container-site">
+        <h2 id="photos-title" class="eyebrow">{c.photos}</h2>
+        <ul class="mt-8 grid gap-4 md:grid-cols-2 md:gap-6">
+          {gallery.map((p, i) => (
+            <li class={wide(i) ? 'md:col-span-2' : ''}>
+              <figure>
+                <Picture
+                  src={p.src}
+                  alt={hotelAlt(h, p.room, locale)}
+                  formats={['avif', 'webp']}
+                  widths={wide(i) ? [640, 1024, 1600] : [480, 800]}
+                  sizes={wide(i) ? '(min-width: 1280px) 1216px, 100vw' : '(min-width: 768px) 50vw, 100vw'}
+                  loading="lazy"
+                  class={`w-full object-cover ${wide(i) ? 'aspect-[3/2] md:aspect-[16/8]' : 'aspect-[3/2]'}`}
+                />
+                <figcaption class="mt-2 text-xs uppercase tracking-[0.14em] text-taupe">{c.rooms[p.room]}</figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-6 text-xs text-taupe">{d.credit}</p>
+      </div>
+    </section>
+  )}
+
+  <section class="border-t border-line">
+    <div class="container-site flex flex-col gap-3 py-10 sm:flex-row sm:items-center sm:gap-8">
+      <a href={request.href} class="btn-primary">{c.button}<span class="sr-only">: {d.name}</span></a>
+      <a href={listUrl} class="link inline-flex min-h-11 items-center">{c.all}</a>
+    </div>
+    <p class="container-site pb-10 text-xs text-taupe">{c.checked(checked)}</p>
+  </section>
+
+  {more.length > 0 && (
+    <section class="border-t border-line py-section" aria-labelledby="more-title">
+      <div class="container-site">
+        <h2 id="more-title" class="text-h2">{c.more[d.kind]}</h2>
+        <ul class="mt-10 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+          {more.map((y) => <li><HotelCard hotel={y} locale={locale} /></li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+/**
+ * The hotels (src/content/hotels/) as two groups of cards: the five palaces,
+ * then the five-star hotels. Each card opens the hotel's own page.
+ */
+import HotelCard from './HotelCard.astro';
+import { hotelsCopy } from '../content/hotels-page';
+import type { Locale } from '../data/business';
+import { getHotels } from '../lib/hotels';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = hotelsCopy[locale];
+const hotels = await getHotels(locale);
+const groups = (['palace', 'five-star'] as const).map((kind) => ({ kind, items: hotels.filter((h) => h.data.kind === kind) }));
+---
+
+{groups.filter((g) => g.items.length).map((g) => (
+  <section id={g.kind === 'palace' ? 'palaces' : 'five-star-hotels'} class="scroll-mt-24 py-section" aria-labelledby={`${g.kind}-title`}>
+    <div class="container-site">
+      <div class="max-w-2xl">
+        <p class="eyebrow">{c.groups[g.kind].eyebrow}</p>
+        <h2 id={`${g.kind}-title`} class="mt-4 text-h2">{c.groups[g.kind].title}</h2>
+        <p class="mt-5 text-taupe">{c.groups[g.kind].intro}</p>
+      </div>
+      <ul class="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+        {g.items.map((h) => <li><HotelCard hotel={h} locale={locale} /></li>)}
+      </ul>
+    </div>
+  </section>
+))}

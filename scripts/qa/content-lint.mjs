@@ -54,8 +54,14 @@ for (const f of files) {
     const chaletWords = m && /^chalets: true$/m.test(fm)
       ? [...fs.readFileSync(path.join(root, 'src/content/chalets.ts'), 'utf8').matchAll(new RegExp(`^\\s+${m[2]}: '(.+)',$`, 'gm'))].map(x => x[1]).join(' ').split(/\s+/).filter(Boolean).length
       : 0;
-    const wc = (txt.split('---').slice(2).join('---')).split(/\s+/).filter(Boolean).length + listWords + chaletWords;
-    if (wc < 350) issues.push(`${rel} [short body] ${wc} words`);
+    // A page showing the hotels (hotels: true) also carries their card texts (src/content/hotels/).
+    const hotelDir = m && path.join(root, 'src/content/hotels', m[2]);
+    const hotelWords = m && /^hotels: true$/m.test(fm) && fs.existsSync(hotelDir)
+      ? fs.readdirSync(hotelDir).map(h => (fs.readFileSync(path.join(hotelDir, h), 'utf8').match(/^card: "?(.+?)"?$/m) ?? [, ''])[1]).join(' ').split(/\s+/).filter(Boolean).length
+      : 0;
+    const wc = (txt.split('---').slice(2).join('---')).split(/\s+/).filter(Boolean).length + listWords + chaletWords + hotelWords;
+    // Hotel pages are fact sheets (facts, restaurants, photos in frontmatter), not articles.
+    if (wc < 350 && m?.[1] !== 'hotels') issues.push(`${rel} [short body] ${wc} words`);
   }
 }
 for (const [k, v] of Object.entries(pairs)) if (v.length !== 2) issues.push(`${k} [missing translation] has only ${v}`);
