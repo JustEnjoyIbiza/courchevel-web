@@ -38,10 +38,15 @@ export const home = {
       title: 'Everything for your stay, arranged by one contact',
       intro: 'Each service is planned around your dates, your group and your village, and quoted personally.',
       more: 'Also arranged for you',
-      /** The chalets tile, split in two: chalets | palace hotels. */
+      /** The chalets tile, split in two halves with a photo each: chalets | palace hotels. */
       split: {
         chalets: { label: 'Chalets', line: 'Available this winter' },
-        hotels: { label: 'Palaces', line: 'Palaces and five-star hotels' },
+        hotels: {
+          label: 'Palaces',
+          line: 'Palaces and five-star hotels',
+          alt: 'The turreted facade of Les Airelles in Courchevel 1850 at dusk, lit from within, above fresh snow',
+          credit: 'Photo: Airelles Courchevel',
+        },
       },
     },
     experiences: {
@@ -127,7 +132,12 @@ export const home = {
       more: 'Également organisé pour vous',
       split: {
         chalets: { label: 'Chalets', line: 'Disponibles cet hiver' },
-        hotels: { label: 'Palaces', line: 'Palaces et hôtels cinq étoiles' },
+        hotels: {
+          label: 'Palaces',
+          line: 'Palaces et hôtels cinq étoiles',
+          alt: 'La façade à tourelles des Airelles à Courchevel 1850 au crépuscule, éclairée de l’intérieur, au-dessus de la neige fraîche',
+          credit: 'Photo : Airelles Courchevel',
+        },
       },
     },
     experiences: {
