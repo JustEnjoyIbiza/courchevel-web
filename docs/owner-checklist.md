@@ -13,7 +13,27 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 - [ ] **GitHub access** to push the rebuild branch (sign in to GitHub in the app's browser pane, or a token on this Mac)
 - [ ] **Netlify access**: check build settings, add environment variables, see the preview
 - [ ] **Accounts for the lead system**: Supabase, Resend (with DNS records for the domain), Telegram bot, Cloudflare Turnstile. Guide: `lead-system-setup.md`. Basin is set up (23 Oct): `BASIN_FORM_URL` is set in Netlify and Basin emails leads to the Courchevel Gmail (verified). Switch to the domain email when it exists.
-- [ ] **Legal**: legal entity name and form, SIRET, VAT number if any, *directeur de la publication*, registered address. Then we write mentions légales, privacy and cookie pages
+- [ ] **Legal pages** (written 26 Oct: `/mentions-legales/`, `/privacy/`, `/cookies/`, EN/FR). They show
+  "To be confirmed" until these are set in `src/data/business.ts` (`legal`), and the launch check fails until then:
+  1. Legal name of the business (company name, or your own name as an individual entrepreneur)
+  2. Legal form (SAS, SARL, EI, micro-entreprise…)
+  3. Share capital (companies only)
+  4. Registered office address
+  5. SIRET
+  6. RCS city and number (companies only)
+  7. Intra-EU VAT number, if any
+  8. Director of publication (usually the legal representative)
+- [ ] **Check with your accountant or lawyer** (each can add a line to the legal notice; not legal advice):
+  - Rental intermediation (loi Hoguet): commission on chalet rentals usually requires a professional card
+    (CCI) or working as the agent of an agency that holds one. If so: card number and guarantee on the site.
+  - Travel packages (Code du tourisme): selling combined services (e.g. stay + transfer) at your own price may
+    require Atout France registration (IM number), a financial guarantee and professional insurance.
+  - Consumer mediator: businesses selling to consumers must offer one and name it on the site (Code de la
+    consommation, L.612-1).
+- [ ] Confirm the retention periods in the privacy policy: requests without a booking 3 years after last contact;
+  booked stays 5 years after the relationship; invoices 10 years
+- [ ] Accept the data processing agreement (DPA) in each provider's account: Netlify, Supabase, Basin (and Resend,
+  Cloudflare, Google Analytics when they are switched on)
 - [ ] **Street address** (due 15 November). Until then the site and schema show Courchevel, Savoie, France only
 - [ ] **Domain email** (e.g. hello@courchevelluxuryconcierge.com) for sending lead emails; needed by Resend
 - [ ] Netlify's registered address for the mentions légales host section

@@ -58,6 +58,15 @@ for (const h of ['strict-transport-security', 'x-frame-options', 'x-content-type
 check('CSP meta tag', /http-equiv="content-security-policy"/i.test(html), 'missing');
 check('canonical is the www URL', html.includes(`<link rel="canonical" href="${SITE}/"`), 'wrong or missing');
 check('hreflang fr', html.includes(`hreflang="fr" href="${SITE}/fr/"`), 'missing');
+// Legal pages: every company detail filled in (LegalFacts shows [data-pending] until then).
+for (const path of ['/mentions-legales/', '/privacy/', '/fr/mentions-legales/', '/fr/privacy/']) {
+  try {
+    const page = await (await fetch(base + path)).text();
+    check(`${path} has no detail left to confirm`, !page.includes('data-pending'), 'company details missing in src/data/business.ts (legal)');
+  } catch (e) {
+    check(`${path} has no detail left to confirm`, false, e.message);
+  }
+}
 check('old #services / #contact anchors', /id="services"/.test(html) && /id="contact"/.test(html), 'missing');
 if (production) {
   const robotsHeader = home.headers.get('x-robots-tag') ?? '';

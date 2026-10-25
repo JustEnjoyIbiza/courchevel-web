@@ -70,6 +70,8 @@ const pageFields = {
   chalets: z.boolean().optional(),
   /** Show the hotels (src/content/hotels/) as cards right after the answer. */
   hotels: z.boolean().optional(),
+  /** Legal pages: the identity block from business.legal (src/components/LegalFacts.astro). */
+  legal: z.enum(['notice', 'privacy']).optional(),
   /** Numbered selections shown right after the answer, one after the other. */
   highlights: z.array(highlightSection).max(3).optional(),
 };

@@ -102,16 +102,29 @@ export const business = {
     'https://maps.google.com/?cid=15229790847061064888',
   ],
 
-  /** Required for the mentions légales page. */
+  /**
+   * For the legal notice (/mentions-legales/) and privacy policy (src/components/LegalFacts.astro).
+   * null = still to come from the owner: the page shows "To be confirmed" and the launch check
+   * fails until it is filled. undefined = does not apply, so the line is hidden.
+   */
   legal: {
-    entityName: null as string | null, // TODO
-    legalForm: null as string | null, // TODO e.g. SAS, EI, micro-entreprise
+    entityName: null as string | null, // TODO company or entrepreneur name
+    legalForm: null as string | null, // TODO e.g. SAS, SARL, EI, micro-entreprise
+    capital: null as string | null | undefined, // TODO share capital (companies); undefined for an EI
+    registeredAddress: null as string | null, // TODO registered office
     siret: null as string | null, // TODO
-    vatNumber: null as string | null, // TODO if applicable
+    rcs: null as string | null | undefined, // TODO RCS city and number (companies)
+    vatNumber: null as string | null | undefined, // TODO intra-EU VAT number; undefined if none
     publisher: null as string | null, // TODO directeur de la publication
+    /** Only if they apply (docs/owner-checklist.md): Atout France registration, carte professionnelle, consumer mediator. */
+    tourismRegistration: undefined as string | undefined,
+    professionalCard: undefined as string | undefined,
+    mediator: undefined as string | undefined,
     host: {
       name: 'Netlify, Inc.',
-      address: null as string | null, // TODO: copy Netlify's current registered address from netlify.com before launch
+      // From netlify.com/privacy, checked 26 Oct 2026.
+      address: '101 2nd Street, San Francisco, CA 94105, United States',
+      website: 'https://www.netlify.com',
     },
   },
 

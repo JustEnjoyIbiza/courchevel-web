@@ -61,6 +61,10 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   anyone else, send /revoke to @BotFather for a new one. Stopgap meanwhile: Gmail app notifications on
   the phone for Basin's lead emails, so the 15-minute promise holds.
 - Owner renews the domain on Monday 26 Oct.
+- **26 Oct, legal pages:** legal notice, privacy policy and cookie policy written (EN/FR, pages collection,
+  `legal:` frontmatter renders `LegalFacts.astro` from `business.legal`). Company details still missing show
+  "To be confirmed" ([data-pending]); `launch-check.mjs` fails until they are filled. GA cookies capped at 13
+  months. Owner list and three regulatory questions in `docs/owner-checklist.md` (Legal pages).
 - **26 Oct:** homepage "Just one thing?" links under the dates form (table, transfer, instructor,
   chef, something else). Lighthouse mobile on the preview (performance / accessibility / best
   practices / SEO): home 98/100/100/100, chalets 98/100/100/100, chalet page 98/100/100/100, hotels

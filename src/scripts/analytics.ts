@@ -45,7 +45,8 @@ function loadGa() {
     window.dataLayer.push(arguments);
   };
   window.gtag('js', new Date());
-  window.gtag('config', GA_ID, { anonymize_ip: true });
+  // CNIL: audience cookies last 13 months at most (src/content/pages/*/cookies.md).
+  window.gtag('config', GA_ID, { anonymize_ip: true, cookie_expires: 60 * 60 * 24 * 395 });
   const s = document.createElement('script');
   s.async = true;
   s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_ID)}`;

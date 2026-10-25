@@ -8,7 +8,7 @@ const contentDir = path.join(root, 'src/content');
 const files = [];
 (function walk(d) { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); fs.statSync(p).isDirectory() ? walk(p) : /\.(md|ts)$/.test(p) && files.push(p); } })(contentDir);
 
-const valid = new Set(['/services/', '/villages/', '/guides/', '/experiences/', '/faq/', '/about/', '/enquire/',
+const valid = new Set(['/services/', '/villages/', '/guides/', '/experiences/', '/faq/', '/about/', '/enquire/', '/mentions-legales/', '/privacy/', '/cookies/',
   ...['chalets','transfers','ski','experiences','private-chef','nightlife','staff','childcare','wellness','events','lifestyle','owners'].map(s => `/services/${s}/`),
   ...['courchevel-1850','courchevel-1650-moriond','courchevel-1550-village','courchevel-1300-le-praz','la-tania','meribel','val-thorens','christmas-new-year-courchevel','corporate-retreats-courchevel','assistants-and-family-offices','courchevel-ski-area','palace-hotels-courchevel'].map(s => `/${s}/`),
   ...['getting-to-courchevel','courchevel-with-kids','season-dates-and-events','where-to-eat','how-to-choose-a-concierge-in-courchevel','private-concierge-vs-hotel-concierge','heli-skiing-from-courchevel','a-week-in-courchevel-1850'].map(s => `/guides/${s}/`)]);
