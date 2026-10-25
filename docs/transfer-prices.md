@@ -4,8 +4,8 @@ Data: `src/content/transfers.ts` (shown on `/services/transfers/`). Researched 2
 pages only (no quotes requested). **The page shows only the nearby airports and resorts a helicopter flies from**
 (owner, 25 Oct: Geneva, Chambéry, Lyon, Grenoble, Annecy, Sion; Milan and Turin and four resorts folded). Nice,
 Zurich, Paris, the stations, Verbier/Zermatt/St. Moritz and all jet routes and guide prices below are kept as
-research only; jets appear as a short band without prices. **Every price on the page is a market reference until the owner confirms
-or replaces it** with our partners' rates; set `pricesConfirmed = true` then. Re-check before 4 December.
+research only; jets appear as a short band without prices. Prices are market references, **confirmed by the owner on 25 Oct 2026** ("we can change later");
+`pricesConfirmed` in the data file. Change any figure there when partners' rates differ. Re-check before 4 December.
 
 ## Rules for the prices
 

@@ -81,7 +81,7 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   **Prices re-checked (owner found them inflated, 25 Oct):** second pass on live pages only. Cars now at the median
   of ~30 companies' premium fares (were 15-85% above it); helicopters at the lowest current H125 price (were
   Héli Sécurité's October grid, up to 31% above 2026/27 broker prices). Méribel (€600) and Val Thorens (€990) helicopter prices added. Tables in
-  `docs/transfer-prices.md`. A supplier must confirm it honours them before `pricesConfirmed` is set.
+  `docs/transfer-prices.md`. Owner confirmed them the same day ("we can change later"): `pricesConfirmed = true`, no draft line.
   Getting to Courchevel guide corrected: Geneva 2 h 15-2 h 45, Lyon 2 h 20-2 h 50,
   Milan 4 h 30-5 h by road and 50 min-1 h by helicopter, runway 536 m, slope up to 18.5%, no non-Schengen flights.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)

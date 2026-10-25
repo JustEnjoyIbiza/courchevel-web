@@ -9,13 +9,13 @@
  * VAT included, for the whole helicopter or car, as "from" prices next to the note
  * that they vary. Never in schema, llms.txt or FAQ answers.
  *
- * The prices below are market references, not yet our partners' rates. Second check
- * (25 Oct 2026, live pages only): cars at the median of published premium fares (the
- * first figures, from one top-of-market firm, were 15-85% above it); helicopters at
- * the lowest price on dated 2025/26 or 2026/27 pages for an H125 (the first figures
- * were Héli Sécurité's October grid, up to 31% above the 2026/27 broker prices). Until the owner
- * confirms or replaces them, `pricesConfirmed` stays false: the page shows a draft
- * line ([data-pending]) and the launch check fails.
+ * The prices below are market references from a second check (25 Oct 2026, live pages
+ * only): cars at the median of published premium fares (the first figures, from one
+ * top-of-market firm, were 15-85% above it); helicopters at the lowest price on dated
+ * 2025/26 or 2026/27 pages for an H125 (the first figures were Héli Sécurité's October
+ * grid, up to 31% above the 2026/27 broker prices). Confirmed by the owner on 25 Oct
+ * 2026 ("we can change later"). While prices are being revised, set `pricesConfirmed`
+ * to false: the page then shows a draft line ([data-pending]) and the launch check fails.
  *
  * Times are in minutes, [shortest, longest], in normal conditions. Road distances
  * and times run to Courchevel 1850.
@@ -23,7 +23,7 @@
  */
 import type { Locale } from '../data/business';
 
-export const pricesConfirmed = false;
+export const pricesConfirmed = true;
 
 export const routeGroups = ['airports', 'italy', 'resorts'] as const;
 export type RouteGroup = (typeof routeGroups)[number];

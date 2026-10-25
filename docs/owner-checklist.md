@@ -30,7 +30,7 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
     require Atout France registration (IM number), a financial guarantee and professional insurance.
   - Consumer mediator: businesses selling to consumers must offer one and name it on the site (Code de la
     consommation, L.612-1).
-- [ ] **Transfer prices** (`/services/transfers/`, built 25 Oct). The page shows market reference prices from
+- [x] **Transfer prices** (`/services/transfers/`, built 25 Oct). **Confirmed by you on 25 Oct ("we can change later").** The page shows market reference prices from
   published price lists (helicopter and car; sources in `docs/transfer-prices.md`) with a "Draft"
   line, and the launch check fails until you confirm them. Re-checked 25 Oct (cars at the market median,
   helicopters at the lowest current H125 price): make sure your partners will honour them. For each route: keep, or send your partners' price
