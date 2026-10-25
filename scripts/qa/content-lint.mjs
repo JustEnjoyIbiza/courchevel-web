@@ -61,10 +61,10 @@ for (const f of files) {
       : 0;
     // A page showing the transfer routes (transfers: true) or the chef offer (dining: in) also carries
     // the texts of its data file shown on the page (src/content/transfers.ts, src/content/dining.ts;
-    // strings of 25+ characters, so labels and keys are left out).
+    // strings of 25+ characters, so labels and keys are left out; dining.ts's tile copy is on the guide, not here).
     const dataFile = !m ? null : /^transfers: true$/m.test(fm) ? 'transfers.ts' : /^dining: in$/m.test(fm) ? 'dining.ts' : null;
     const dataWords = dataFile
-      ? [...fs.readFileSync(path.join(root, 'src/content', dataFile), 'utf8').split(/^  fr: \{$/m)[m[2] === 'fr' ? 1 : 0].matchAll(/'([^']{25,})'/g)].map(x => x[1]).join(' ').split(/\s+/).filter(Boolean).length
+      ? [...fs.readFileSync(path.join(root, 'src/content', dataFile), 'utf8').split(/^  fr: \{$/m)[m[2] === 'fr' ? 1 : 0].split(/^    split: \{$/m)[0].matchAll(/'([^']{25,})'/g)].map(x => x[1]).join(' ').split(/\s+/).filter(Boolean).length
       : 0;
     const wc = (txt.split('---').slice(2).join('---')).split(/\s+/).filter(Boolean).length + listWords + chaletWords + hotelWords + dataWords;
     // Hotel pages are fact sheets (facts, restaurants, photos in frontmatter), not articles.

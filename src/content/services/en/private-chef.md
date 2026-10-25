@@ -1,7 +1,7 @@
 ---
-title: "Private chefs for your Courchevel chalet"
-shortTitle: Private chefs
-metaTitle: "Private Chef in Courchevel: Chalet Chefs & Dining | CLC"
+title: "Private chef in Courchevel"
+shortTitle: Private chef
+metaTitle: "Private Chef in Courchevel: Chefs in Your Chalet | CLC"
 description: "A private chef in your Courchevel chalet for one dinner, every evening or full board, Michelin-starred chefs on request, with menus within 24 hours."
 answer: "A private chef cooks in your chalet for one dinner, every evening or the whole stay. Tell us your dates, your guests and how you like to eat: we propose a chef and sample menus within 24 hours."
 updated: 2026-10-26
@@ -19,14 +19,14 @@ faqs:
   - q: Can I hire a Michelin-starred chef for my chalet in Courchevel?
     a: Yes, on request and subject to availability. Starred chefs are in high demand during the festive weeks, so for Christmas or New Year we recommend asking as early as possible.
   - q: Does a private chef cook every meal?
-    a: It depends on what you prefer. Some guests want breakfast and dinner every day; others book a chef for two or three dinners and eat out the rest of the week. We set the rhythm with you before you arrive.
+    a: It depends on what you prefer. Some guests want breakfast and dinner every day; others book a chef for two or three dinners of the week. We set the rhythm with you before you arrive.
   - q: Can you cater for allergies and special diets?
     a: Yes. We send the chef your allergies, intolerances and preferences in advance, whether halal, kosher, vegan, gluten-free or a children's menu, and the menus are planned around them.
-  - q: How do I get a table at a busy Courchevel restaurant?
-    a: Book early, especially for dinner in the festive weeks and February. We request reservations at mountain and village restaurants on your behalf, subject to availability, and keep track of your bookings so the evening runs to time.
+  - q: Does the chef do the shopping?
+    a: Yes. The chef shops locally each day for your menus, and anything special, such as a favourite dish from home or caviar for an evening, is sourced in advance.
 related:
+  - /services/chalets/
   - /services/staff/
-  - /guides/where-to-eat/
   - /services/events/
 ---
 
@@ -34,6 +34,10 @@ related:
 
 The chef shops in the valley each day, so the menu follows the season in Savoie, from Beaufort and Reblochon to lake fish and mountain charcuterie. Anything special, such as a favourite dish from home or caviar for an evening, is sourced in advance. Children can eat earlier, separately from the adults, and the chef clears the kitchen before leaving.
 
-## Evenings in and evenings out
+## A starred chef for one evening
 
-Most guests alternate: a few dinners by the fire, a few tables in the resort. Our [example week in Courchevel 1850](/guides/a-week-in-courchevel-1850/) shows how the two fit together. Not sure how many dinners you want? Start with one or two and add more once you have settled in; in season we are on call 24/7 to add a dinner, a guest or a bottle.
+For a birthday, an anniversary or New Year's Eve, a Michelin-starred chef can cook in your chalet, on request and subject to availability. These evenings are the first to be booked in the festive weeks, so tell us your date as early as you can and we will come back with the chefs available and their menus.
+
+## Not sure how many dinners?
+
+Start with one or two and add more once you have settled in: the same chef can come back for more evenings during your stay. In season we are on call 24/7 to add a dinner, a guest or a bottle.

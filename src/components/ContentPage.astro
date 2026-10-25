@@ -140,7 +140,7 @@ const cta = pageCta(locale, collection, slug);
     {d.transfers && <JetBand locale={locale} />}
     {d.dining === 'in' && <ChefOffer locale={locale} />}
     {d.highlights?.map((h, i) => <Highlights {...h} index={i} locale={locale} />)}
-    {d.dining && <DiningSplit current={d.dining} locale={locale} />}
+    {d.dining === 'out' && <DiningSplit current="out" locale={locale} />}
 
     {(d.facts.length > 0 || d.includes.length > 0) && (
       <section class="bg-stone">

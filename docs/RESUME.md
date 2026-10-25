@@ -86,8 +86,9 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   Milan 4 h 30-5 h by road and 50 min-1 h by helicopter, runway 536 m, slope up to 18.5%, no non-Schengen flights.
 - **26 Oct, private chef page rebuilt** (owner: shorter, clearer, better conversion; keep the restaurant guide
   separate): three format cards (One dinner / Every evening / Full board), each opening the chef request with the
-  format in a new "Format" field (`?item=`); three steps; four "around the table" lines; the "Dinner at home | A
-  table out" tile on the chef page and on Where to eat (`dining: in | out`, `src/content/dining.ts`). Body cut to two
+  format in a new "Format" field (`?item=`); three steps; four "around the table" lines. Then (owner, same day):
+  the chef page is chefs only, titled "Private chef in Courchevel" (menus: "Private chef"); no restaurant tile, FAQ
+  or link there. The "Dinner at home | A table out" tile stays on Where to eat only (`dining: out`). Body cut to two
   short sections; restaurant prose removed. Lighthouse mobile 99/100/100/100. Waiting on the owner: chef and food
   photos, one or two real menus, how chefs are charged (per dinner or per day, groceries). Each chalet page now
   has "Add a private chef" under Check availability (chef request with the chalet in "Where are you staying?", `?staying=`).

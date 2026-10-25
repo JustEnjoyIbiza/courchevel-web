@@ -1,9 +1,9 @@
 /**
- * The private chef page (/services/private-chef/, `dining: in`) and its pairing
- * with the restaurant guide (/guides/where-to-eat/, `dining: out`): the three
- * formats (each opens the chef request with the format filled in), the steps,
- * what we arrange around the table, and the "Dinner at home | A table out" tile
- * shown on both pages (owner, 26 Oct 2026: pair the pages, keep them separate).
+ * The private chef page (/services/private-chef/, `dining: in`): the three
+ * formats (each opens the chef request with the format filled in), the steps and
+ * what we arrange around the table. The chef page is about private chefs only
+ * (owner, 26 Oct 2026: restaurants stay in the restaurant guide). The "Dinner at
+ * home | A table out" tile is shown on the restaurant guide only (`dining: out`).
  * No prices. French: to be reviewed by a native speaker.
  */
 import type { Locale } from '../data/business';
