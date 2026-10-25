@@ -10,6 +10,39 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { photoKeys } from './data/photos';
 import { REQUEST_TYPES } from './lib/requests';
+import { SERVICE_SLUGS } from './lib/lead';
+
+/** A numbered selection (e.g. ten tables to know, the five palaces). */
+const highlightSection = z.object({
+  eyebrow: z.string(),
+  title: z.string(),
+  intro: z.string().optional(),
+  /** Each entry gets a request button for this type, pre-filled with its name ('stay': the Plan my stay form). */
+  request: z.enum(['stay', ...REQUEST_TYPES]).optional(),
+  /** Service ticked in the form when a stay is requested from this list, e.g. 'chalets'. */
+  service: z.enum(SERVICE_SLUGS as [string, ...string[]]).optional(),
+  /** Button label for each entry, e.g. "Ask about this hotel". Defaults to the request's own. */
+  button: z.string().optional(),
+  items: z
+    .array(
+      z.object({
+        name: z.string(),
+        /** Where it is, e.g. "Cheval Blanc, Courchevel 1850". */
+        place: z.string(),
+        /** Short label, e.g. "Three Michelin stars". */
+        kind: z.string(),
+        text: z.string(),
+        photo: z.enum(photoKeys).optional(),
+        alt: z.string().optional(),
+        /** Shown under the photo, e.g. "Photo: Le Chabichou" (venue photos; sources in docs/photo-credits.md). */
+        credit: z.string().optional(),
+        /** A related page, e.g. the hotel's restaurant on Where to eat. Unlocalized path. */
+        link: z.object({ href: z.string().regex(/^\/[a-z0-9\-/]*\/(#[a-z0-9-]+)?$/), label: z.string() }).optional(),
+      }),
+    )
+    .min(3)
+    .max(12),
+});
 
 const pageFields = {
   /** The H1. */
@@ -33,33 +66,8 @@ const pageFields = {
   related: z.array(z.string().regex(/^\/[a-z0-9\-/]*\/$/)).length(3),
   /** Shorter name for breadcrumbs and link lists. */
   shortTitle: z.string().optional(),
-  /** Numbered selection shown right after the answer (e.g. ten tables to know). */
-  highlights: z
-    .object({
-      eyebrow: z.string(),
-      title: z.string(),
-      intro: z.string().optional(),
-      /** Each entry gets a request button for this type, pre-filled with its name. */
-      request: z.enum(REQUEST_TYPES).optional(),
-      items: z
-        .array(
-          z.object({
-            name: z.string(),
-            /** Where it is, e.g. "Cheval Blanc, Courchevel 1850". */
-            place: z.string(),
-            /** Short label, e.g. "Three Michelin stars". */
-            kind: z.string(),
-            text: z.string(),
-            photo: z.enum(photoKeys).optional(),
-            alt: z.string().optional(),
-            /** Shown under the photo, e.g. "Photo: Le Chabichou" (venue photos; sources in docs/photo-credits.md). */
-            credit: z.string().optional(),
-          }),
-        )
-        .min(3)
-        .max(12),
-    })
-    .optional(),
+  /** Numbered selections shown right after the answer, one after the other. */
+  highlights: z.array(highlightSection).max(3).optional(),
 };
 
 const services = defineCollection({

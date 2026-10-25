@@ -4,14 +4,14 @@ shortTitle: Where to eat
 metaTitle: "Where to Eat in Courchevel: Restaurants by Village | CLC"
 description: Mountain restaurants, village tables and Michelin-starred dining in Courchevel 1850, Moriond, Village, Le Praz and La Tania, and how far ahead to book.
 answer: Courchevel has seven Michelin-starred restaurants in the 2026 Michelin Guide, led by the three-star Le 1947 à Cheval Blanc in 1850, alongside slope-side restaurants such as Le Chalet de Pierres, Le Cap Horn and Le Bel Air. In the Christmas, New Year and February holidays, book dinner as soon as your dates are fixed and lunch on the slopes a few days ahead. For a quieter evening, a private chef can cook in your chalet instead.
-updated: 2026-10-24
+updated: 2026-10-25
 image: restaurant-view
 imageAlt: "Round table under a crystal chandelier in a mountain restaurant with a wide view of the Alps"
 facts:
   - label: Three Michelin stars
     value: Le 1947 à Cheval Blanc, Courchevel 1850 (Michelin Guide France 2026)
   - label: Two Michelin stars
-    value: Sylvestre Wahid at Les Grandes Alpes, and Slalom 1850 at Le Strato
+    value: Slalom 1850 at Le Strato. Sylvestre Wahid, also listed, has been closed since the fire at Les Grandes Alpes in January 2026
   - label: One Michelin star
     value: Le Chabichou by Stéphane Buron, L'Altitude, Alpage (all 1850) and Le Farçon (La Tania)
   - label: Booking in high season
@@ -27,7 +27,7 @@ includes:
   - Dietary requirements and allergies passed on in advance
 faqs:
   - q: How many Michelin-starred restaurants are there in Courchevel?
-    a: In the 2026 Michelin Guide France, Courchevel has one three-star restaurant (Le 1947 à Cheval Blanc), two with two stars (Sylvestre Wahid and Slalom 1850) and four with one star (Le Chabichou by Stéphane Buron, L'Altitude, Alpage and Le Farçon in La Tania). Le Sarkara, a two-star table at Le K2 Palace, is reported closed for winter 2026/27.
+    a: In the 2026 Michelin Guide France, Courchevel has one three-star restaurant (Le 1947 à Cheval Blanc), two with two stars (Sylvestre Wahid and Slalom 1850) and four with one star (Le Chabichou by Stéphane Buron, L'Altitude, Alpage and Le Farçon in La Tania). Sylvestre Wahid has been closed since a fire at Les Grandes Alpes in January 2026, with no reopening announced. Le Sarkara, a two-star table at Le K2 Palace, is reported closed for winter 2026/27.
   - q: How far ahead should I book restaurants in Courchevel?
     a: For Christmas Eve, New Year's Eve and the February holidays, book the dinners that matter as soon as your dates are fixed, as the most sought-after tables fill early. In January and March, a few days ahead is usually enough. Slope-side lunches in high season are worth booking a few days in advance.
   - q: Which mountain restaurants are in Courchevel?
@@ -37,78 +37,78 @@ faqs:
   - q: Do I need to reserve lunch on the slopes?
     a: In the school holidays, yes, for the popular terraces. A reservation lets you plan the morning's skiing around a fixed time and avoids waiting at the busiest hour.
 highlights:
-  eyebrow: Our selection
-  title: Ten tables to know in Courchevel
-  intro: "Four starred dining rooms and six places our guests ask us for every winter. We book all of them, and confirm each one is open for your dates."
-  request: table
-  items:
-    - name: Le 1947 à Cheval Blanc
-      place: Cheval Blanc, Courchevel 1850
-      kind: Three Michelin stars
-      text: "Courchevel's only three-star restaurant, in an intimate dining room at the Cheval Blanc hotel, where chef Yannick Alléno's French cooking is served to very few tables. One of the first reservations to fill each winter."
-      photo: le-1947
-      alt: "The white, sculptural dining room of Le 1947 at Cheval Blanc Courchevel, with snowy trees outside"
-      credit: "Photo: Cheval Blanc Courchevel"
-    - name: Sylvestre Wahid
-      place: Les Grandes Alpes, Courchevel 1850
-      kind: Two Michelin stars
-      text: "Sylvestre Wahid had already earned two stars at Le Strato and in Paris before opening his own restaurant at Les Grandes Alpes in 2021. The first star came within months, the second in 2024."
-      photo: sylvestre-wahid
-      alt: "A dish from Sylvestre Wahid served on a carved, mountain-shaped stand"
-      credit: "Photo: Sylvestre, Les Grandes Alpes"
-    - name: Slalom 1850
-      place: Le Strato, Courchevel 1850
-      kind: Two Michelin stars
-      text: "Chef Thomas Prod'homme, trained at L'Oustau de Baumanière in Provence, cooks Alpine produce and winter flavours with a touch of the south. Until recently the restaurant was known as Baumanière 1850."
-      photo: le-strato
-      alt: "Le Strato hotel in Courchevel 1850 lit up at dusk, with deep snow in front"
-      credit: "Photo: Le Strato"
-    - name: Le Chabichou
-      place: Le Chabichou, Courchevel 1850
-      kind: One Michelin star
-      text: "Stéphane Buron, a Meilleur Ouvrier de France, cooks with his son Antonin from memories of Savoie and travels in Japan. A single set menu ends with the cheese trolley."
-      photo: le-chabichou
-      alt: "The dining room of Le Chabichou in Courchevel 1850, with a crystal chandelier and a wood-panelled ceiling"
-      credit: "Photo: Le Chabichou"
-    - name: Bagatelle
-      place: Top of the Chenus gondola, 2,250 m
-      kind: Lunch on the slopes
-      text: "The mountain address of the Bagatelle restaurants: Mediterranean cooking on a large panoramic terrace facing Mont Blanc, and a lunch that turns into a party as the afternoon goes on."
-      photo: bagatelle
-      alt: "The Bagatelle arch on the restaurant’s terrace, facing snow-covered peaks above Courchevel 1850"
-    - name: Le Chalet de Pierres
-      place: Verdons slope, Courchevel 1850
-      kind: Lunch on the slopes
-      text: "A Courchevel institution, reached on skis, on foot or by car. Fondue, the house Beaufort tart and a long dessert buffet, served on a south-facing terrace below the gondola."
-      photo: chalet-de-pierres
-      alt: "Le Chalet de Pierres on the Verdons slope in Courchevel 1850, with a gondola passing above the trees"
-    - name: Le Cap Horn
-      place: Route de l'Altiport, Courchevel 1850
-      kind: Seafood at altitude
-      text: "Open since 1954, the oldest altitude restaurant in 1850: seafood, a long wine list and a south-facing terrace. In high season the terrace tables go first."
-      photo: cap-horn
-      alt: "The Cap Horn Courchevel 1954 sign in front of a busy sunny terrace"
-    - name: La Soucoupe
-      place: Top of La Loze, above Courchevel 1850
-      kind: Lunch on the slopes
-      text: "A warm, rustic dining room at the top of La Loze, known for meat grilled over an open fire. A quieter lunch than the busiest terraces, with the whole valley below."
-      photo: la-soucoupe
-      alt: "The busy sunny terrace of La Soucoupe at the top of La Loze, facing snow-covered peaks"
-      credit: "Photo: La Soucoupe"
-    - name: Loulou
-      place: Fouquet's Courchevel, Courchevel 1850
-      kind: Italian mountain cooking
-      text: "The Courchevel outpost of Loulou, at the foot of the Bellecôte piste: dishes from Piedmont and Lombardy alongside Loulou's classics, such as the truffle pizza, and a terrace in great demand."
-      photo: loulou
-      alt: "A booth at Loulou Courchevel with tartan walls, carved wood and a table set for dinner"
-      credit: "Photo: Loulou Courchevel"
-    - name: La Mangeoire
-      place: Courchevel 1850 village
-      kind: Dinner and late nights
-      text: "Courchevel's festive dinner address: wood-fire grills, fondue and rotisserie dishes, a piano bar, and an evening that carries on long after dessert."
-      photo: la-mangeoire
-      alt: "The dining room of La Mangeoire in Courchevel 1850, with candlelit tables and deep velvet armchairs"
-      credit: "Photo: La Mangeoire"
+  - eyebrow: Our selection
+    title: Ten tables to know in Courchevel
+    intro: "Three starred dining rooms and seven places our guests ask us for every winter. We book all of them, and confirm each one is open for your dates."
+    request: table
+    items:
+      - name: Le 1947 à Cheval Blanc
+        place: Cheval Blanc, Courchevel 1850
+        kind: Three Michelin stars
+        text: "Courchevel's only three-star restaurant, in an intimate dining room at the Cheval Blanc hotel, where chef Yannick Alléno's French cooking is served to very few tables. One of the first reservations to fill each winter."
+        photo: le-1947
+        alt: "The white, sculptural dining room of Le 1947 at Cheval Blanc Courchevel, with snowy trees outside"
+        credit: "Photo: Cheval Blanc Courchevel"
+      - name: Slalom 1850
+        place: Le Strato, Courchevel 1850
+        kind: Two Michelin stars
+        text: "Chef Thomas Prod'homme, trained at L'Oustau de Baumanière in Provence, cooks Alpine produce and winter flavours with a touch of the south. Until recently the restaurant was known as Baumanière 1850."
+        photo: le-strato
+        alt: "Le Strato hotel in Courchevel 1850 lit up at dusk, with deep snow in front"
+        credit: "Photo: Le Strato"
+      - name: Le Chabichou
+        place: Le Chabichou, Courchevel 1850
+        kind: One Michelin star
+        text: "Stéphane Buron, a Meilleur Ouvrier de France, cooks with his son Antonin from memories of Savoie and travels in Japan. A single set menu ends with the cheese trolley."
+        photo: le-chabichou
+        alt: "The dining room of Le Chabichou in Courchevel 1850, with a crystal chandelier and a wood-panelled ceiling"
+        credit: "Photo: Le Chabichou"
+      - name: Matsuhisa
+        place: Les Airelles, Courchevel 1850
+        kind: Japanese with Peruvian touches
+        text: "Nobu Matsuhisa's restaurant inside the Les Airelles palace: sushi, robata-grilled dishes and his Black Cod Miso, in a warm, wood-panelled room made for sharing. Dinner only."
+        photo: matsuhisa
+        alt: "The wood-panelled dining room of Matsuhisa at Les Airelles, Courchevel 1850, with banquettes and leather armchairs"
+        credit: "Photo: Airelles Courchevel, Vincent Leroux"
+      - name: Bagatelle
+        place: Top of the Chenus gondola, 2,250 m
+        kind: Lunch on the slopes
+        text: "The mountain address of the Bagatelle restaurants: Mediterranean cooking on a large panoramic terrace facing Mont Blanc, and a lunch that turns into a party as the afternoon goes on."
+        photo: bagatelle
+        alt: "The Bagatelle arch on the restaurant’s terrace, facing snow-covered peaks above Courchevel 1850"
+      - name: Le Chalet de Pierres
+        place: Verdons slope, Courchevel 1850
+        kind: Lunch on the slopes
+        text: "A Courchevel institution, reached on skis, on foot or by car. Fondue, the house Beaufort tart and a long dessert buffet, served on a south-facing terrace below the gondola."
+        photo: chalet-de-pierres
+        alt: "Le Chalet de Pierres on the Verdons slope in Courchevel 1850, with a gondola passing above the trees"
+      - name: Le Cap Horn
+        place: Route de l'Altiport, Courchevel 1850
+        kind: Seafood at altitude
+        text: "Open since 1954, the oldest altitude restaurant in 1850: seafood, a long wine list and a south-facing terrace. In high season the terrace tables go first."
+        photo: cap-horn
+        alt: "The Cap Horn Courchevel 1954 sign in front of a busy sunny terrace"
+      - name: La Soucoupe
+        place: Top of La Loze, above Courchevel 1850
+        kind: Lunch on the slopes
+        text: "A warm, rustic dining room at the top of La Loze, known for meat grilled over an open fire. A quieter lunch than the busiest terraces, with the whole valley below."
+        photo: la-soucoupe
+        alt: "The busy sunny terrace of La Soucoupe at the top of La Loze, facing snow-covered peaks"
+        credit: "Photo: La Soucoupe"
+      - name: Loulou
+        place: Fouquet's Courchevel, Courchevel 1850
+        kind: Italian mountain cooking
+        text: "The Courchevel outpost of Loulou, at the foot of the Bellecôte piste: dishes from Piedmont and Lombardy alongside Loulou's classics, such as the truffle pizza, and a terrace in great demand."
+        photo: loulou
+        alt: "A booth at Loulou Courchevel with tartan walls, carved wood and a table set for dinner"
+        credit: "Photo: Loulou Courchevel"
+      - name: La Mangeoire
+        place: Courchevel 1850 village
+        kind: Dinner and late nights
+        text: "Courchevel's festive dinner address: wood-fire grills, fondue and rotisserie dishes, a piano bar, and an evening that carries on long after dessert."
+        photo: la-mangeoire
+        alt: "The dining room of La Mangeoire in Courchevel 1850, with candlelit tables and deep velvet armchairs"
+        credit: "Photo: La Mangeoire"
 related:
   - /services/private-chef/
   - /services/nightlife/
@@ -122,14 +122,14 @@ Courchevel has seven Michelin-starred restaurants, six of them in Courchevel 185
 | Restaurant | Stars | Where |
 | --- | --- | --- |
 | Le 1947 à Cheval Blanc | Three | Cheval Blanc, Courchevel 1850 |
-| Sylvestre Wahid | Two | Les Grandes Alpes, Courchevel 1850 |
+| Sylvestre Wahid (closed, see below) | Two | Les Grandes Alpes, Courchevel 1850 |
 | Slalom 1850 (formerly Baumanière 1850) | Two | Le Strato, Courchevel 1850 |
 | Le Chabichou by Stéphane Buron | One | Le Chabichou, Courchevel 1850 |
 | L'Altitude | One | Le K2 Altitude, Courchevel 1850 |
 | Alpage | One | Annapurna, Courchevel 1850 |
 | Le Farçon | One | La Tania |
 
-A few notes on the changes for this winter. L'Altitude, led by Guillaume Duchemin and Davide Sessa, received its first star in 2026. Le Chabichou moved from two stars to one. Slalom 1850 at Le Strato, the restaurant of chef Thomas Prod'homme, is the name now used by Michelin for the table previously known as Baumanière 1850. Le Sarkara at Le K2 Palace has been reported closed for the 2026/27 winter, so it is not listed here.
+A few notes on the changes for this winter. L'Altitude, led by Guillaume Duchemin and Davide Sessa, received its first star in 2026. Le Chabichou moved from two stars to one. Slalom 1850 at Le Strato, the restaurant of chef Thomas Prod'homme, is the name now used by Michelin for the table previously known as Baumanière 1850. Le Sarkara at Le K2 Palace has been reported closed for the 2026/27 winter, so it is not listed here. Sylvestre Wahid is still in the guide, but the restaurant has been closed since a fire at Les Grandes Alpes on 27 January 2026, and no reopening has been announced.
 
 Several starred restaurants in Courchevel open for dinner only, some may close one evening a week, and their seasons can start a little after the resort opens. Many have only a handful of tables. We check opening days for your dates before we book.
 
@@ -152,7 +152,7 @@ Some mountain restaurants also open for dinner on certain evenings, with access 
 
 Beyond the starred tables, each village has its own places for a relaxed lunch or dinner:
 
-- **Courchevel 1850:** the hotel restaurants of Le K2 Palace (L'Altiplano), Annapurna (La Fèrma), Aman Le Mélézin (Nama) and Les Airelles (La Table des Airelles – Le Festin), as well as the INEOS Club House at the foot of the Émile-Allais stadium. In the village, Jaïs serves Lebanese cooking and Sumosan Japanese, and Le San Marco is in the heart of the resort.
+- **Courchevel 1850:** the hotel restaurants of Le K2 Palace (L'Altiplano), Annapurna (La Fèrma), Aman Le Mélézin (Akari) and Les Airelles (La Table des Airelles – Le Festin), as well as the INEOS Club House at the foot of the Émile-Allais stadium. In the village, Jaïs serves Lebanese cooking and Sumosan Japanese, and Le San Marco is in the heart of the resort.
 - **1650 Moriond:** La Rôtisserie at the foot of the slopes, Schuss Café at the bottom of the lifts, and Copiña.
 - **1550 Village:** La Cortona, just below the gondolas.
 - **1300 Le Praz:** La Table de Mon Grand-Père, La Glacière and Le Kiosque du Praz.

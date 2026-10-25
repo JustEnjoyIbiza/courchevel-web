@@ -34,6 +34,8 @@ interface RequestCopy {
   upsellTitle: string;
   upsellLink: string;
   asideTitle: string;
+  /** A stay at one hotel or chalet of a list: its button and WhatsApp opening. */
+  stayItem: { button: string; whatsapp: (item: string) => string };
   types: Record<RequestType, TypeCopy>;
 }
 
@@ -48,6 +50,7 @@ export const requestCopy: Record<Locale, RequestCopy> = {
     upsellTitle: 'Planning the whole stay?',
     upsellLink: 'Tell us your dates and we arrange everything else.',
     asideTitle: 'Prefer to message?',
+    stayItem: { button: 'Ask about this stay', whatsapp: (item) => `Hello, I'd like to arrange a stay at ${item} from ` },
     types: {
       table: {
         button: 'Request a table',
@@ -159,6 +162,7 @@ export const requestCopy: Record<Locale, RequestCopy> = {
     upsellTitle: 'Vous organisez tout le séjour ?',
     upsellLink: 'Indiquez-nous vos dates, nous nous occupons du reste.',
     asideTitle: 'Vous préférez écrire ?',
+    stayItem: { button: 'Demander ce séjour', whatsapp: (item) => `Bonjour, je souhaite organiser un séjour (${item}) du ` },
     types: {
       table: {
         button: 'Demander une table',

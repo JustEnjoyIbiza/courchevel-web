@@ -48,7 +48,9 @@ for (const f of files) {
       if (m && m[2] === 'fr' && !l.startsWith('/fr/')) issues.push(`${rel} [FR page links to EN] ${l}`);
       if (m && m[2] === 'en' && l.startsWith('/fr/')) issues.push(`${rel} [EN page links to FR] ${l}`);
     }
-    const wc = (txt.split('---').slice(2).join('---')).split(/\s+/).filter(Boolean).length;
+    // Highlights lists (their intro and entry texts) are page content too.
+    const listWords = [...fm.matchAll(/^\s+(?:intro|text):\s*(.+)$/gm)].map(x => x[1]).join(' ').split(/\s+/).filter(Boolean).length;
+    const wc = (txt.split('---').slice(2).join('---')).split(/\s+/).filter(Boolean).length + listWords;
     if (wc < 350) issues.push(`${rel} [short body] ${wc} words`);
   }
 }

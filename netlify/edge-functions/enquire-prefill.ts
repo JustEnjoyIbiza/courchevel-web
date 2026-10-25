@@ -1,6 +1,7 @@
 /**
- * /enquire/?arrival=…&village=… — writes the homepage quick-start answers into
- * the Plan my stay form, so they arrive pre-filled even without JavaScript.
+ * /enquire/?arrival=…&village=… — writes the homepage quick-start answers (or the
+ * hotel or chalet chosen in a list, ?item=…) into the Plan my stay form, so they
+ * arrive pre-filled even without JavaScript.
  * Requests without quick-start values pass straight through to the static page.
  */
 import { hasPrefill, parsePrefill, prefillHtml } from '../../src/lib/prefill.ts';
@@ -22,5 +23,6 @@ export default async (req: Request, context: Context): Promise<Response | undefi
   const headers = new Headers(res.headers);
   headers.delete('content-length');
   headers.set('cache-control', 'private, no-store');
-  return new Response(prefillHtml(await res.text(), prefill), { status: res.status, headers });
+  const locale = url.pathname.startsWith('/fr/') ? 'fr' : 'en';
+  return new Response(prefillHtml(await res.text(), prefill, locale), { status: res.status, headers });
 };

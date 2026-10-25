@@ -67,3 +67,26 @@ test('edge function: passes through without quick-start values, rewrites with th
   assert.match(html, /value="1850" required class="size-4 accent-ink" checked>/);
   assert.match(html, /name="adults"[^>]* value="5">/);
 });
+
+const MESSAGE = '<textarea class="mt-2 block" id="message" name="message" rows="4" maxlength="3000" aria-describedby="message-hint"></textarea>';
+
+test('a hotel or chalet name is kept; anything that is not a name is dropped', () => {
+  assert.deepEqual(parsePrefill(q('item=Cheval%20Blanc&service=chalets'), TODAY), { item: 'Cheval Blanc' });
+  assert.deepEqual(parsePrefill(q("item=Fouquet's%20Courchevel"), TODAY), { item: "Fouquet's Courchevel" });
+  assert.deepEqual(parsePrefill(q('item=L%E2%80%99Apog%C3%A9e%20Courchevel'), TODAY), { item: 'L’Apogée Courchevel' });
+  assert.deepEqual(parsePrefill(q('item=%3Cscript%3Ealert(1)%3C/script%3E'), TODAY), {});
+  assert.deepEqual(parsePrefill(q(`item=${'a'.repeat(81)}`), TODAY), {});
+});
+
+test('the name opens the message, in the page language', () => {
+  assert.match(prefillHtml(MESSAGE, { item: 'Les Airelles' }), /aria-describedby="message-hint">I'd like to ask about Les Airelles\.<\/textarea>/);
+  assert.match(prefillHtml(MESSAGE, { item: 'Le K2 Palace' }, 'fr'), />Je souhaite des informations sur Le K2 Palace\.<\/textarea>/);
+  assert.match(prefillHtml(MESSAGE, { item: 'Barnes & Co' }), />I'd like to ask about Barnes &amp; Co\.<\/textarea>/);
+});
+
+test('edge function: a name from a list is written into the French form', async () => {
+  const page = () => new Response(MESSAGE, { headers: { 'content-type': 'text/html; charset=utf-8' } });
+  const res = await prefillEdge(new Request('https://site.test/fr/enquire/?service=chalets&item=Cheval%20Blanc'), { next: async () => page() });
+  assert.ok(res);
+  assert.match(await res.text(), />Je souhaite des informations sur Cheval Blanc\.<\/textarea>/);
+});

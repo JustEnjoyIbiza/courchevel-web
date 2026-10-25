@@ -1,6 +1,7 @@
 /**
  * Pre-filling the Plan my stay form from the homepage quick-start
- * (/enquire/?arrival=2026-12-26&departure=2027-01-02&village=1850&adults=4&children=2).
+ * (/enquire/?arrival=2026-12-26&departure=2027-01-02&village=1850&adults=4&children=2)
+ * and from a hotel or chalet in a list (/enquire/?service=chalets&item=Cheval%20Blanc).
  *
  * Used twice: by the Netlify Edge Function, which writes the values into the
  * HTML so it works without JavaScript, and by the form script as a fallback.
@@ -14,11 +15,26 @@ export interface Prefill {
   village?: Village;
   adults?: string;
   children?: string;
+  /** A hotel or chalet name; opens the message. */
+  item?: string;
 }
 
-export const PREFILL_KEYS = ['arrival', 'departure', 'village', 'adults', 'children'] as const;
+export const PREFILL_KEYS = ['arrival', 'departure', 'village', 'adults', 'children', 'item'] as const;
 
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
+/** Names only: letters, digits, spaces and the punctuation hotel names use. */
+const ITEM = /^[\p{L}\p{N} '’.,&()-]{1,80}$/u;
+
+/**
+ * The sentence the message opens with when the form is reached from a hotel or
+ * chalet. Kept here, not in src/content, because the edge function uses it too.
+ */
+export const itemMessage: Record<'en' | 'fr', (item: string) => string> = {
+  en: (item) => `I'd like to ask about ${item}.`,
+  fr: (item) => `Je souhaite des informations sur ${item}.`,
+};
+
+const escapeHtml = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 function count(value: string | null, min: number): string | undefined {
   if (!value || !/^\d{1,2}$/.test(value)) return undefined;
@@ -39,6 +55,8 @@ export function parsePrefill(params: URLSearchParams, today: string): Prefill {
   if (adults) p.adults = adults;
   const children = count(params.get('children'), 0);
   if (children) p.children = children;
+  const item = (params.get('item') ?? '').trim().replace(/\s+/g, ' ');
+  if (ITEM.test(item)) p.item = item;
   return p;
 }
 
@@ -49,7 +67,7 @@ export const hasPrefill = (p: Prefill) => Object.keys(p).length > 0;
  * rendered by EnquiryForm.astro; values are already validated, so they are
  * safe to place in attributes.
  */
-export function prefillHtml(html: string, p: Prefill): string {
+export function prefillHtml(html: string, p: Prefill, locale: 'en' | 'fr' = 'en'): string {
   let out = html;
   const setValue = (name: string, value: string | undefined) => {
     if (!value) return;
@@ -64,6 +82,10 @@ export function prefillHtml(html: string, p: Prefill): string {
   setValue('children', p.children);
   if (p.village) {
     out = out.replace(new RegExp(`<input([^>]*\\bname="village"[^>]*\\bvalue="${p.village}"[^>]*?)\\s*/?>`), (_tag, attrs: string) => `<input${attrs} checked>`);
+  }
+  if (p.item) {
+    const text = escapeHtml(itemMessage[locale](p.item));
+    out = out.replace(/(<textarea[^>]*\bname="message"[^>]*>)<\/textarea>/, (_tag, open: string) => `${open}${text}</textarea>`);
   }
   return out;
 }

@@ -28,6 +28,21 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
 - Agreed priorities after Telegram: Turnstile; the legal notice and privacy pages (neither exists; need
   the company details); founder and real reviews for trust; a "Just one thing?" row of request links
   under the homepage dates form (proposed, not built). Domain expires **30 Nov**: owner to renew.
+- **Chalets page rebuilt for skimming:** the five official Palaces (Atout France list of 2 June 2026) and
+  five five-star hotels (Aman Le Mélézin, Le Lana, Sivolière, Le Strato, Annapurna; star ratings from the
+  Atout France register), each with the hotel's own photo (owner's OK; sources in `docs/photo-credits.md`)
+  and an "Ask about this hotel" button that opens Plan my stay with the name in the message (`?item=`,
+  edge function + script). Body cut to three steps. `highlights` is now a list of up to 3 sections.
+  White 1921 (4★) and Les Grandes Alpes (closed since the fire of 27 Jan 2026) left out.
+- **Chalet section waits for the owner:** 5 real chalets, by request only (if taken, we propose similar).
+  Owner wants prices; agreed form, not built: an indicative weekly "from" price on chalet cards only,
+  never on hotels or services, never in schema (this changes hard rule 1 for chalets; confirm with
+  the owner when the details arrive). Needed per chalet: name or discreet name, village, bedrooms and
+  guests, 3-4 features, weekly from-price and weeks, photos with the owner's OK.
+- Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
+  replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
+  restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before
+  deleting). Owner to confirm Le Strato and Annapurna, and Matsuhisa under "places our guests ask for".
 
 ## Session of 23–24 October 2026 (owner working live, preview updated after each step)
 

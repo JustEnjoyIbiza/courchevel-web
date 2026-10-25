@@ -126,7 +126,7 @@ const cta = pageCta(locale, collection, slug);
       </header>
     )}
 
-    {d.highlights && <Highlights {...d.highlights} locale={locale} />}
+    {d.highlights?.map((h, i) => <Highlights {...h} index={i} locale={locale} />)}
 
     {(d.facts.length > 0 || d.includes.length > 0) && (
       <section class="bg-stone">

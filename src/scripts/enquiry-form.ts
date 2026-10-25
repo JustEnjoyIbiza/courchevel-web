@@ -4,7 +4,7 @@
  * Without this script the form still works as a normal form post.
  */
 import { track, getUtm } from './analytics';
-import { parsePrefill } from '../lib/prefill';
+import { parsePrefill, itemMessage } from '../lib/prefill';
 
 type Errors = Record<string, string>;
 
@@ -42,6 +42,8 @@ export function initEnquiryForm(form: HTMLFormElement) {
     if (input && prefill[key]) input.value = prefill[key];
   }
   if (prefill.village) form.querySelectorAll<HTMLInputElement>(`input[name=village][value="${prefill.village}"]`).forEach((i) => (i.checked = true));
+  const message = form.querySelector<HTMLTextAreaElement>('#message');
+  if (prefill.item && message && !message.value) message.value = itemMessage[form.dataset.locale === 'fr' ? 'fr' : 'en'](prefill.item);
 
   // Pre-select from ?service=chalets or ?experience=winter-retreat.
   const service = params.get('service');
