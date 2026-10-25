@@ -82,9 +82,9 @@ the lead photo on the card), taken from the brochures the owner sent on
 1,600 px. Floor plans, near-duplicates and the residence restaurants (Titan) left
 out. Used on the owner's instruction; no credit shown, so the agency is not
 named on the site. The brochures themselves stay private.
-TODO: owner to confirm the agency agrees to its photos, chalet names and prices
-being published. Apartment Capucine's photos look like computer renderings
-(new building?): confirm or replace.
+Agency OK: the agency offered the PDFs to the owner for this use (owner, 25 Oct 2026).
+TODO: Apartment Capucine's photos look like computer renderings (new building?):
+owner to confirm or replace.
 If a chalet is withdrawn: remove it from `src/content/chalets.ts` and delete its
 folder in `src/assets/chalets/`.
 

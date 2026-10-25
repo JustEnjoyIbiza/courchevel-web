@@ -44,8 +44,10 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
 - **Hotels moved to their own page** `/palace-hotels-courchevel/` (pages collection); the chalets
   page is chalets only. Homepage chalets tile split in two halves: Chalets | Palace hotels.
 - **No WhatsApp per list item** anywhere (owner): only the site-wide button.
-- Open: agency OK for names, prices and photos; Capucine photos may be renderings; ~70 MB of chalet
-  photos now in the repo; per-chalet galleries could later get a lightbox.
+- Agency OK (it offered the brochures); owner checked the chalet pages on a phone. Open: Capucine
+  photos may be renderings; ~70 MB of chalet photos in the repo; galleries could later get a lightbox.
+- **Next session:** Telegram alerts (26 Oct, steps in `docs/lead-system-setup.md`); owner renews the
+  domain on Monday 26 Oct.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

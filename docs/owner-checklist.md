@@ -7,7 +7,7 @@ Details behind each item: `missing-facts.md` (Phase 0), `phase-2-report.md`, `le
 
 Full plan, dates and exact DNS records: `launch-plan.md`.
 
-- [ ] **Renew the domain at GoDaddy and turn on auto-renew. It expires 30 November 2026** (6 days after the planned launch)
+- [ ] **Renew the domain at GoDaddy and turn on auto-renew. It expires 30 November 2026** (6 days after the planned launch). Owner plans it for Monday 26 October
 - [ ] **Search Console**: a verification record already exists on the domain. Who owns that property? Add us as a user (or we create a new Domain property)
 - [ ] Go-ahead for launch day (planned Tuesday 24 November): switch the Netlify primary domain to www, then merge
 - [ ] **GitHub access** to push the rebuild branch (sign in to GitHub in the app's browser pane, or a token on this Mac)
@@ -20,7 +20,7 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 
 ## Decisions
 
-- [x] Prices: none anywhere, except the weekly price of each chalet on the chalets page, with a note that prices vary (owner, 25 Oct 2026). Confirm with the agency that its prices, photos and chalet names may be published
+- [x] Prices: none anywhere, except the weekly price of each chalet on the chalets page, with a note that prices vary (owner, 25 Oct 2026). Agency OK for prices, photos and chalet names: it offered the brochures for this (25 Oct)
 - [ ] Languages: EN + FR now. Russian, Ukrainian and Arabic later?
 - [x] Concierge alerts by Telegram (chosen 25 Oct; bot and group still to create, see `lead-system-setup.md`)
 - [ ] The form's budget field is free text ("in your own words"), so no price bands appear on the site. OK?
