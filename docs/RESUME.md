@@ -52,6 +52,9 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   research passes, each with sources in the file; uncertain items left out. Open: written OK from
   each hotel's press team; L'Apogée has only 3 photos (its site blocks access); Sivolière's room
   photos predate the relaunch.
+- **Plan (owner, 25 Oct):** finish and polish everything here during the week of 26 October; move to
+  GitHub only once it is all polished. Until then the work lives only on this Mac (last full backup:
+  `../courchevel-web-backup-2026-10-22.bundle`).
 - **Next session:** Telegram alerts (26 Oct, steps in `docs/lead-system-setup.md`); owner renews the
   domain on Monday 26 Oct.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
