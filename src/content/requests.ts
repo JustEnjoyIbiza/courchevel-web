@@ -300,12 +300,6 @@ export const pageRequests: Record<string, PageRequest> = {
     label: { en: 'Request staff', fr: 'Demander du personnel' },
     whatsapp: { en: "Hello, I'm looking for chalet staff from ", fr: 'Bonjour, je cherche du personnel de chalet du ' },
   },
-  'services/owners': {
-    type: 'general',
-    service: 'owners',
-    label: { en: 'Talk to us about your chalet', fr: 'Parlons de votre chalet' },
-    whatsapp: { en: "Hello, I own a chalet in Courchevel and I'd like to talk about ", fr: 'Bonjour, je suis propriétaire d’un chalet à Courchevel et je souhaite parler de ' },
-  },
   'guides/where-to-eat': { type: 'table' },
   'guides/getting-to-courchevel': { type: 'transfer' },
   'guides/heli-skiing-from-courchevel': { // day trips to Italy or Switzerland only: heli-drops are banned in France

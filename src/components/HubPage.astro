@@ -69,11 +69,10 @@ const stages = [
 const stageCopy = {
   eyebrow: { en: 'Your stay, stage by stage', fr: 'Votre séjour, étape par étape' },
   title: { en: 'Arranged around the way a stay unfolds', fr: 'Organisé au fil de votre séjour' },
-  owners: { en: 'Own a chalet in Courchevel?', fr: 'Propriétaire d’un chalet à Courchevel ?' },
 };
 const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
 
-// Services hub: three chapters, then the other nine as tiles.
+// Services hub: three chapters, then the others as tiles.
 const toStory = (x: (typeof services)[number]) => ({
   slug: x.slug,
   name: x.name[locale],
@@ -169,7 +168,7 @@ const crumbs = [
         </div>
       </section>
 
-      <!-- The other nine as photo tiles -->
+      <!-- The others as photo tiles -->
       <section class="border-t border-line bg-stone py-section">
         <div class="container-site">
           <p class="eyebrow">{hc.services.moreEyebrow[locale]}</p>
@@ -209,10 +208,6 @@ const crumbs = [
               </li>
             ))}
           </ol>
-          <p class="mt-6 border-t border-ivory/15 pt-6 text-stone">
-            {stageCopy.owners[locale]}{' '}
-            <SmartLink href={localize('/services/owners/', locale)} class="inline-flex min-h-11 items-center text-ivory underline decoration-brass underline-offset-4 hover:text-brass">{serviceName('owners')}</SmartLink>
-          </p>
         </div>
       </section>
 

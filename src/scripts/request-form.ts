@@ -32,7 +32,7 @@ export function initRequestForm(form: HTMLFormElement) {
   setHidden('referrer', document.referrer.slice(0, 300));
   setHidden('started', String(Date.now()));
 
-  // ?item=Bagatelle from a restaurant or experience button; ?service=owners for general requests.
+  // ?item=Bagatelle from a restaurant or experience button; ?service=staff for general requests.
   const item = (params.get('item') ?? '').slice(0, 120).trim();
   const itemInput = form.querySelector<HTMLInputElement>('#rq-item');
   if (item && itemInput) itemInput.value = item;

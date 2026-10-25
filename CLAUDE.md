@@ -172,8 +172,8 @@ Node: `export PATH="$HOME/.local/node/bin:$PATH"`. Before calling any change don
 
 ## Lead system
 
-3-step form: (1) dates, village, adults/children; (2) services from the 12
-categories; (3) name, email, phone, preferred contact, booking for
+3-step form: (1) dates, village, adults/children; (2) services from the 11
+categories (chalet owner services removed 26 Oct 2026: not offered); (3) name, email, phone, preferred contact, booking for
 (myself / a client / a company), optional budget band, consent + privacy link.
 Honeypot + Cloudflare Turnstile. WhatsApp pre-filled message, phone and email links.
 

@@ -37,7 +37,7 @@ faqs:
 related:
   - /services/chalets/
   - /services/private-chef/
-  - /services/owners/
+  - /services/childcare/
 ---
 
 ## The household team

@@ -268,7 +268,7 @@ test('request validation: required fields, dates, guests and service', () => {
   assert.equal(ok.lead?.from, '');
   // General requests need a description; the service can be chosen among the allowed ones.
   assert.equal(validateRequest({ ...table, requestType: 'general', details: '' }, NOW).errors.details, 'required');
-  assert.equal(validateRequest({ ...table, requestType: 'general', service: 'owners' }, NOW).lead?.service, 'owners');
+  assert.equal(validateRequest({ ...table, requestType: 'general', service: 'staff' }, NOW).lead?.service, 'staff');
   assert.equal(validateRequest({ ...table, requestType: 'general', service: 'chalets' }, NOW).lead?.service, 'lifestyle');
 });
 

@@ -70,7 +70,6 @@ export const serviceStories: Record<string, { line: L; photo: PhotoKey }> = {
   wellness: { photo: 'hot-tub', line: { en: 'Recovery comes to the chalet.', fr: 'Le bien-être vient jusqu’au chalet.' } },
   events: { photo: 'party-table', line: { en: 'Birthdays, proposals and New Year’s Eve, set in the snow.', fr: 'Anniversaires, demandes en mariage et Saint-Sylvestre, dans la neige.' } },
   lifestyle: { photo: 'boutiques-night', line: { en: 'Errands, gifts and discreet protection, taken care of.', fr: 'Courses, cadeaux et protection discrète, pris en charge.' } },
-  owners: { photo: 'stone-chalet-deep-snow', line: { en: 'Your chalet looked after while you are away.', fr: 'Votre chalet entre de bonnes mains en votre absence.' } },
 };
 
 /** The three services told as large chapters at the top of the Services hub. */
@@ -102,7 +101,7 @@ export const hubCopy = {
   services: {
     chaptersEyebrow: { en: 'At the heart of every stay', fr: 'Au cœur de chaque séjour' },
     moreEyebrow: { en: 'And everything around it', fr: 'Et tout ce qui l’entoure' },
-    moreTitle: { en: 'Nine more ways we look after you', fr: 'Neuf autres façons de prendre soin de vous' },
+    moreTitle: { en: 'Eight more ways we look after you', fr: 'Huit autres façons de prendre soin de vous' },
     discover: { en: 'Discover', fr: 'Découvrir' },
     alsoTitle: { en: 'Also arranged for', fr: 'Également pour' },
   },

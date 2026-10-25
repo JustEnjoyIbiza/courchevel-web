@@ -92,6 +92,10 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   short sections; restaurant prose removed. Lighthouse mobile 99/100/100/100. Waiting on the owner: chef and food
   photos, one or two real menus, how chefs are charged (per dinner or per day, groceries). Each chalet page now
   has "Add a private chef" under Check availability (chef request with the chalet in "Where are you staying?", `?staying=`).
+- **26 Oct, chalet owner services removed** (owner: not offered): `/services/owners/` deleted (EN/FR), the service
+  dropped from `src/data/services.ts` (11 services now; Plan my stay lists 11 categories), the services-hub line
+  "Own a chalet in Courchevel?", the request mapping, hub story, and the staff page's related link (now childcare).
+  "Twelve kinds of service" became eleven. Household staff for owners stays on the staff page.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

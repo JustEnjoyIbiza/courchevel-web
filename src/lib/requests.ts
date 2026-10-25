@@ -40,7 +40,7 @@ export const REQUEST_SPECS: Record<RequestType, RequestSpec> = {
   nanny: spec(['childcare'], ['date', 'dateTo', 'guests', 'details', 'staying'], ['date', 'guests'], { min: 1, value: 1 }),
   treatment: spec(['wellness'], ['item', 'date', 'guests', 'details', 'staying'], ['date', 'guests'], { min: 1, value: 1 }),
   event: spec(['events'], ['item', 'date', 'guests', 'details', 'staying'], ['date', 'guests'], { min: 1, value: 10 }),
-  general: spec(['lifestyle', 'staff', 'owners'], ['date', 'details', 'staying'], ['details']),
+  general: spec(['lifestyle', 'staff'], ['date', 'details', 'staying'], ['details']),
 };
 
 export const isRequestType = (v: unknown): v is RequestType => typeof v === 'string' && (REQUEST_TYPES as readonly string[]).includes(v);

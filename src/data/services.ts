@@ -1,5 +1,6 @@
 /**
- * The 12 services, in the order and scope of the plan ("Site structure").
+ * The services, in the order and scope of the plan ("Site structure"). Chalet
+ * owner services were removed on 26 Oct 2026 (owner: not offered), leaving 11.
  * Every service is on request: no prices, ever.
  * French: to be reviewed by a native speaker.
  */
@@ -98,14 +99,6 @@ export const services: Service[] = [
     summary: {
       en: 'Personal shopping, gifts and errands, event tickets and close protection.',
       fr: 'Shopping privé, cadeaux et courses, billetterie et protection rapprochée.',
-    },
-  },
-  {
-    slug: 'owners',
-    name: { en: 'Chalet owner services', fr: 'Services aux propriétaires' },
-    summary: {
-      en: 'Key holding, property checks, guest welcome, cleaning and year-round maintenance.',
-      fr: 'Gardiennage des clés, visites de contrôle, accueil des hôtes, ménage et entretien à l’année.',
     },
   },
 ];

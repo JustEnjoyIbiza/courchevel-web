@@ -104,7 +104,7 @@ The About page is still waiting for founder facts (name, photo, languages, year 
 
 **Chalet owner services** (`/services/owners/`)
 
-- **S19.** What do owners most want to know while they are away? What is in a typical report?
+- ~~**S19.** What do owners most want to know while they are away? What is in a typical report?~~ (owner services removed 26 Oct 2026: not offered)
 
 ## 4. Villages
 
