@@ -23,6 +23,9 @@ page and gallery (`/services/chalets/<slug>/`, photos in `src/assets/chalets/<sl
 Hotels: `/palace-hotels-courchevel/` lists them as cards; each hotel has its own page
 (`/palace-hotels-courchevel/<slug>/`, facts in `src/content/hotels/{en,fr}/`, photos in
 `src/assets/hotels/<slug>/`). Hotel facts only from sourced pages, listed in `sources`.
+Dining (owner, 26 Oct 2026): the private chef page and the restaurant guide stay separate but are paired by
+the "Dinner at home | A table out" tile (`dining: in | out`, copy in `src/content/dining.ts`); the chef page
+leads with three format cards that open the chef request with the format filled in (`?item=`).
 
 ## Business facts
 

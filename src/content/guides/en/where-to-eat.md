@@ -5,6 +5,7 @@ metaTitle: "Where to Eat in Courchevel: Restaurants by Village | CLC"
 description: Mountain restaurants, village tables and Michelin-starred dining in Courchevel 1850, Moriond, Village, Le Praz and La Tania, and how far ahead to book.
 answer: Courchevel has seven Michelin-starred restaurants in the 2026 Michelin Guide, led by the three-star Le 1947 à Cheval Blanc in 1850, alongside slope-side restaurants such as Le Chalet de Pierres, Le Cap Horn and Le Bel Air. In the Christmas, New Year and February holidays, book dinner as soon as your dates are fixed and lunch on the slopes a few days ahead. For a quieter evening, a private chef can cook in your chalet instead.
 updated: 2026-10-25
+dining: out
 image: restaurant-view
 imageAlt: "Round table under a crystal chandelier in a mountain restaurant with a wide view of the Alps"
 facts:

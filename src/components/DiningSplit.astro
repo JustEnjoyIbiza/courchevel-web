@@ -1,0 +1,67 @@
+---
+/**
+ * "Dinner at home | A table out": one tile in two halves on the private chef
+ * page (current: 'in') and the restaurant guide (current: 'out'), so visitors
+ * switch between the two pages in one tap. The current half is marked and
+ * leads back to its own list on the page; the other opens the other page.
+ * Same hover effect as the homepage Chalets | Palace hotels tile.
+ */
+import { Picture } from 'astro:assets';
+import { diningCopy, diningOutOnGuide, diningPhotos, type DiningSide } from '../content/dining';
+import { photos } from '../data/photos';
+import type { Locale } from '../data/business';
+import { highlightsTitleId } from '../lib/anchors';
+import { localize } from '../lib/routes';
+
+interface Props {
+  current: DiningSide;
+  locale: Locale;
+}
+
+const { current, locale } = Astro.props;
+const s = diningCopy[locale].split;
+const pages: Record<DiningSide, { page: string; anchor: string }> = {
+  in: { page: '/services/private-chef/', anchor: '#chef' },
+  out: { page: '/guides/where-to-eat/', anchor: `#${highlightsTitleId(0)}` },
+};
+const onGuide = current === 'out';
+const halves = (['in', 'out'] as const).map((side) => ({
+  side,
+  here: side === current,
+  href: side === current ? pages[side].anchor : localize(pages[side].page, locale),
+  label: s[side].label,
+  line: s[side].line,
+  photo: side === 'out' && onGuide ? diningOutOnGuide : diningPhotos[side],
+  alt: side === 'out' && onGuide ? s.out.altGuide : s[side].alt,
+  // The terrace photo is portrait: keep the table in the frame, not the sky.
+  position: side === 'out' && onGuide ? 'object-[50%_80%]' : 'object-center',
+}));
+---
+
+<section class="border-t border-line py-section" aria-labelledby="dining-split-title">
+  <div class="container-site">
+    <p class="eyebrow">{s.eyebrow}</p>
+    <h2 id="dining-split-title" class="mt-4 text-h2">{s.title}</h2>
+    <div class="mt-10 grid bg-ink md:grid-cols-2">
+      {halves.map((h, i) => (
+        <a href={h.href} aria-current={h.here ? 'true' : undefined} class={`group/half relative block overflow-hidden no-underline ${i ? 'border-t border-brass/40 md:border-t-0 md:border-l' : ''}`}>
+          <Picture
+            src={photos[h.photo]}
+            alt={h.alt}
+            formats={['avif', 'webp']}
+            widths={[400, 640, 960]}
+            sizes="(min-width: 768px) 50vw, 100vw"
+            loading="lazy"
+            class={`aspect-[16/10] w-full object-cover ${h.position} opacity-90 transition duration-700 ease-out group-hover/half:scale-[1.04] group-hover/half:opacity-100 motion-reduce:transition-none motion-reduce:group-hover/half:scale-100 md:aspect-[3/2]`}
+          />
+          <span class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-ink via-ink/60 to-transparent" aria-hidden="true"></span>
+          {h.here && <span class="absolute top-4 left-5 text-xs font-semibold uppercase tracking-[0.14em] text-ivory sm:left-6">{s.here}</span>}
+          <span class="absolute inset-x-0 bottom-0 flex flex-col items-start px-5 pb-6 sm:px-6">
+            <span class={`inline-flex min-h-11 items-center px-4 font-serif text-2xl ring-1 transition-colors duration-300 ${h.here ? 'bg-brass-deep text-ivory ring-brass-deep' : 'bg-ink/80 text-brass ring-brass/60 group-hover/half:bg-brass-deep group-hover/half:text-ivory'}`}>{h.label}</span>
+            <span class="mt-2 text-sm text-stone">{h.line}</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

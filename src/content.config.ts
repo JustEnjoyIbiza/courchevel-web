@@ -72,6 +72,8 @@ const pageFields = {
   hotels: z.boolean().optional(),
   /** Show the transfer routes and private flights (src/content/transfers.ts) right after the answer. */
   transfers: z.boolean().optional(),
+  /** Dinner pages paired by the "Dinner at home | A table out" tile (src/content/dining.ts): 'in' also shows the chef offer. */
+  dining: z.enum(['in', 'out']).optional(),
   /** Legal pages: the identity block from business.legal (src/components/LegalFacts.astro). */
   legal: z.enum(['notice', 'privacy']).optional(),
   /** Numbered selections shown right after the answer, one after the other. */

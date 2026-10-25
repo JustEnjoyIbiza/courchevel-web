@@ -59,11 +59,14 @@ for (const f of files) {
     const hotelWords = m && /^hotels: true$/m.test(fm) && fs.existsSync(hotelDir)
       ? fs.readdirSync(hotelDir).map(h => (fs.readFileSync(path.join(hotelDir, h), 'utf8').match(/^card: "?(.+?)"?$/m) ?? [, ''])[1]).join(' ').split(/\s+/).filter(Boolean).length
       : 0;
-    // A page showing the transfer routes (transfers: true) also carries their notes (src/content/transfers.ts).
-    const transferWords = m && /^transfers: true$/m.test(fm)
-      ? [...fs.readFileSync(path.join(root, 'src/content/transfers.ts'), 'utf8').split(/^  fr: \{$/m)[m[2] === 'fr' ? 1 : 0].matchAll(/'([^']{60,})'/g)].map(x => x[1]).join(' ').split(/\s+/).filter(Boolean).length
+    // A page showing the transfer routes (transfers: true) or the chef offer (dining: in) also carries
+    // the texts of its data file shown on the page (src/content/transfers.ts, src/content/dining.ts;
+    // strings of 25+ characters, so labels and keys are left out).
+    const dataFile = !m ? null : /^transfers: true$/m.test(fm) ? 'transfers.ts' : /^dining: in$/m.test(fm) ? 'dining.ts' : null;
+    const dataWords = dataFile
+      ? [...fs.readFileSync(path.join(root, 'src/content', dataFile), 'utf8').split(/^  fr: \{$/m)[m[2] === 'fr' ? 1 : 0].matchAll(/'([^']{25,})'/g)].map(x => x[1]).join(' ').split(/\s+/).filter(Boolean).length
       : 0;
-    const wc = (txt.split('---').slice(2).join('---')).split(/\s+/).filter(Boolean).length + listWords + chaletWords + hotelWords + transferWords;
+    const wc = (txt.split('---').slice(2).join('---')).split(/\s+/).filter(Boolean).length + listWords + chaletWords + hotelWords + dataWords;
     // Hotel pages are fact sheets (facts, restaurants, photos in frontmatter), not articles.
     if (wc < 350 && m?.[1] !== 'hotels') issues.push(`${rel} [short body] ${wc} words`);
   }

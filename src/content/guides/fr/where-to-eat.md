@@ -5,6 +5,7 @@ metaTitle: "Où manger à Courchevel : restaurants par village | CLC"
 description: Restaurants d’altitude, tables de village et étoilés Michelin à Courchevel 1850, Moriond, Village, Le Praz et La Tania, et quand réserver en haute saison.
 answer: Courchevel compte sept restaurants étoilés dans le Guide Michelin 2026, emmenés par Le 1947 à Cheval Blanc, trois étoiles à 1850, ainsi que des restaurants d’altitude comme Le Chalet de Pierres, Le Cap Horn ou Le Bel Air. Pendant les vacances de Noël, du Nouvel An et de février, réservez vos dîners dès que vos dates sont arrêtées et vos déjeuners sur les pistes quelques jours à l’avance. Pour une soirée plus calme, un chef privé peut cuisiner dans votre chalet.
 updated: 2026-10-25
+dining: out
 image: restaurant-view
 imageAlt: "Table ronde sous un lustre en cristal dans un restaurant d’altitude avec une large vue sur les Alpes"
 facts:

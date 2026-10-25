@@ -84,6 +84,13 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   `docs/transfer-prices.md`. Owner confirmed them the same day ("we can change later"): `pricesConfirmed = true`, no draft line.
   Getting to Courchevel guide corrected: Geneva 2 h 15-2 h 45, Lyon 2 h 20-2 h 50,
   Milan 4 h 30-5 h by road and 50 min-1 h by helicopter, runway 536 m, slope up to 18.5%, no non-Schengen flights.
+- **26 Oct, private chef page rebuilt** (owner: shorter, clearer, better conversion; keep the restaurant guide
+  separate): three format cards (One dinner / Every evening / Full board), each opening the chef request with the
+  format in a new "Format" field (`?item=`); three steps; four "around the table" lines; the "Dinner at home | A
+  table out" tile on the chef page and on Where to eat (`dining: in | out`, `src/content/dining.ts`). Body cut to two
+  short sections; restaurant prose removed. Lighthouse mobile 99/100/100/100. Waiting on the owner: chef and food
+  photos, one or two real menus, how chefs are charged (per dinner or per day, groceries). Next idea not built:
+  "Add a private chef" line on each chalet page.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

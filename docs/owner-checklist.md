@@ -98,6 +98,8 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 
 ## Content and photos
 
+- [ ] **Private chef page** (rebuilt 26 Oct): 6-8 photos of plates and chefs at work from your chefs, one or two real menus, and how chefs are charged (per dinner or per day; groceries at cost or included)
+
 - [ ] Native French review of every French page and of the emails
 - [ ] Photo rights for the 12 photos in use; replacements for the 5 stock or non-Courchevel photos
 - [ ] 20–40 more real photos (chalet interiors, chef, team, arrivals, childcare, events, each village)
