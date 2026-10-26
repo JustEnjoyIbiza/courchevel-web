@@ -155,6 +155,11 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   "Reply time" and "Winter season" facts and includes removed, a "Pets" fact added from the page's FAQ; body 456 →
   196 words (shopping and gifts; close protection through CNAPS-authorised partners); Lighthouse EN 99/100/100,
   FR 98/100/100. All service pages now use the offer block.
+- Homepage title (owner, 26 Oct): the H1 is the company's name again, as on the old site: "Courchevel" with
+  "Luxury Concierge" in brass below, in both languages. "The whole stay. Or just tonight." and the small
+  "Luxury concierge in Courchevel" line above it are gone. The Google rating link in the trust line lost its
+  separate aria-label (its accessible name is now the visible text: Lighthouse "label in name" check).
+  Homepage Lighthouse EN 98/100/100, FR 99/100/100.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

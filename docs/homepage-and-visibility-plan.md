@@ -43,7 +43,7 @@ The story: feeling → who → what → moments → how → proof → plan → q
 
 | # | Section | For the client | For Google and AI |
 |---|---|---|---|
-| 1 | **Hero.** "The whole stay. Or just tonight." large, "Luxury concierge in Courchevel" small above it, both inside the H1; one line; one button (Plan my stay) and a WhatsApp text link. The sticky bar appears only after the hero. | One calm invitation instead of four buttons | Keyword stays in the H1 |
+| 1 | **Hero.** The company's name as the H1, "Courchevel" with "Luxury Concierge" in brass below it (owner, 26 Oct: as on the old site, instead of "The whole stay. Or just tonight."); one line; one button (Plan my stay) and a WhatsApp text link. The sticky bar appears only after the hero. | One calm invitation instead of four buttons | The exact name and "luxury concierge" in the H1 |
 | 2 | **Introduction** (~40 words, names the company once) + one trust line: ★ 5.0 on Google · replies in 15 minutes · 24/7 in season · based in Courchevel | Who you are, in one breath | The sentence AI assistants quote; entity name on the page |
 | 3 | **Services** (tiles + list, 11 services) | Unchanged, the strongest section | Descriptive links to every service |
 | 4 | **Moments** (3 experiences; carousel margin fixed on phones) | Desire | Links to experiences |

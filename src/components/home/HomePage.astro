@@ -112,12 +112,9 @@ const sectionHead = 'max-w-2xl';
     />
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-ink/75 via-ink/65 to-ink/90 md:from-ink/70 md:via-ink/45 md:to-ink/85" aria-hidden="true"></div>
     <div class="mx-auto flex max-w-4xl flex-col items-center px-5 py-20 text-center sm:px-8">
-      <!-- One H1: the search phrase as a small first line, then the headline. -->
-      <h1>
-        <span class="eyebrow block text-brass">{c.hero.title}</span><span class="sr-only">{locale === 'fr' ? ' : ' : ': '}</span>
-        <span class="mt-8 block text-[clamp(2.9rem,1.6rem+5.2vw,6.25rem)] leading-[1.02] text-ivory">
-          {c.hero.headline[0]} <em class="block text-brass">{c.hero.headline[1]}</em>
-        </span>
+      <!-- One H1: the company's name, "Courchevel" then "Luxury Concierge" in brass. -->
+      <h1 class="text-[clamp(2.9rem,1.6rem+5.2vw,6.25rem)] leading-[1.02] text-ivory">
+        {c.hero.headline[0]} <em class="block text-brass">{c.hero.headline[1]}</em>
       </h1>
       <div class="rule mt-10"></div>
       <p class="hero-fade mt-8 max-w-xl text-ivory/85">{c.hero.short}</p>
@@ -134,7 +131,7 @@ const sectionHead = 'max-w-2xl';
       <p class="mx-auto max-w-4xl text-center font-serif text-[clamp(1.45rem,1.15rem+1vw,2.1rem)] leading-snug text-ink">{c.hero.lead}</p>
       <ul class="mx-auto mt-10 flex max-w-4xl flex-col items-center gap-1 text-center text-sm text-taupe md:flex-row md:flex-wrap md:justify-center md:gap-x-3 md:gap-y-2">
         {[
-          { text: c.trust.rating(ratingText, rating.count), label: c.trust.ratingLabel(ratingText, rating.count), href: business.profiles.google.mapsUrl },
+          { text: c.trust.rating(ratingText, rating.count), href: business.profiles.google.mapsUrl },
           { text: c.trust.reply },
           { text: c.trust.season },
           { text: c.trust.based },
@@ -142,7 +139,7 @@ const sectionHead = 'max-w-2xl';
           <li class="inline-flex items-center gap-3">
             {i > 0 && <span class="hidden text-brass md:inline" aria-hidden="true">·</span>}
             {item.href ? (
-              <a href={item.href} rel="noopener" class="link inline-flex min-h-11 items-center gap-1.5" aria-label={item.label}><span class="text-brass-deep" aria-hidden="true">★</span>{item.text}</a>
+              <a href={item.href} rel="noopener" class="link inline-flex min-h-11 items-center gap-1.5"><span class="text-brass-deep" aria-hidden="true">★</span>{item.text}</a>
             ) : (
               <span class="inline-flex items-center py-1 md:min-h-11 md:py-0">{item.text}</span>
             )}

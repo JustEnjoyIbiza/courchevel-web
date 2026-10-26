@@ -13,9 +13,8 @@ export const home = {
         'Luxury concierge in Courchevel 1850, 1650 and Le Praz: chalets, Geneva helicopter transfers, private chefs and ski instructors. Reply within 15 minutes.',
     },
     hero: {
-      /** The small first line of the H1 (the search phrase); the headline follows it in the same H1. */
-      title: 'Luxury concierge in Courchevel',
-      headline: ['The whole stay.', 'Or just tonight.'],
+      /** The H1: the company's name, as on the old site (owner, 26 Oct 2026); the second line in brass. */
+      headline: ['Courchevel', 'Luxury Concierge'],
       /** The introduction under the hero: names the company once, the sentence search engines and AI assistants quote. */
       lead: 'Courchevel Luxury Concierge arranges every part of your time in Courchevel, from a private chalet and a helicopter arrival to a VIP table, a ski instructor or a private chef. Share the full picture, or simply what you need next: one contact takes it from there, with discretion.',
       imageAlt: 'Steaming outdoor hot tub on a chalet terrace facing snow-covered pine trees in Courchevel',
@@ -25,7 +24,6 @@ export const home = {
     /** One quiet line of facts under the introduction (replaces the counters). */
     trust: {
       rating: (r: string, n: number) => `${r} on Google · ${n} reviews`,
-      ratingLabel: (r: string, n: number) => `Rated ${r} out of 5 on Google from ${n} reviews`,
       reply: 'Replies within 15 minutes, 8:00 to 22:00',
       season: '24/7 in the winter season',
       based: 'Based in Courchevel',
@@ -127,8 +125,7 @@ export const home = {
         'Conciergerie de luxe à Courchevel 1850, 1650 et Le Praz : chalets, hélicoptère depuis Genève, chef à domicile, moniteurs de ski. Réponse sous 15 min.',
     },
     hero: {
-      title: 'Conciergerie de luxe à Courchevel',
-      headline: ['Tout votre séjour.', 'Ou simplement ce soir.'],
+      headline: ['Courchevel', 'Luxury Concierge'],
       lead: 'Courchevel Luxury Concierge organise chaque moment de votre séjour à Courchevel, du chalet privé et de l’arrivée en hélicoptère à la table VIP, au moniteur de ski ou au chef à domicile. Racontez-nous tout, ou seulement ce dont vous avez besoin maintenant : un seul interlocuteur s’en charge, avec discrétion.',
       imageAlt: 'Bain nordique fumant sur la terrasse d’un chalet face aux sapins enneigés à Courchevel',
       short: 'Indiquez-nous vos dates : réponse sous 15 minutes, proposition personnalisée sous 24 heures.',
@@ -136,7 +133,6 @@ export const home = {
     },
     trust: {
       rating: (r: string, n: number) => `${r} sur Google · ${n} avis`,
-      ratingLabel: (r: string, n: number) => `Noté ${r} sur 5 sur Google, ${n} avis`,
       reply: 'Réponse sous 15 minutes, de 8 h à 22 h',
       season: '24 h/24 pendant la saison d’hiver',
       based: 'Basés à Courchevel',
