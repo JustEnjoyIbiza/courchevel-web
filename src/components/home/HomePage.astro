@@ -77,6 +77,8 @@ const featuredServices = featuredSlugs.map(({ slug, image }) => {
 });
 // Palace hotels already have the second half of the chalets tile.
 const otherServices = services.filter((x) => x.slug !== 'palace-hotels' && !featuredSlugs.some((f) => f.slug === x.slug));
+// The "something else" request fills the rest of the index's last row (2 columns from sm, 3 from lg).
+const requestSpan = `${['sm:col-span-2', 'sm:col-span-1'][otherServices.length % 2]} ${['lg:col-span-3', 'lg:col-span-2', 'lg:col-span-1'][otherServices.length % 3]}`;
 
 const heroForSchema = (await getImage({ src: heroImg, width: 1200, format: 'jpeg' })).src;
 const schema = [
@@ -126,7 +128,7 @@ const sectionHead = 'max-w-2xl';
   </section>
 
   <!-- Introduction: who we are in one breath (names the company once), then one quiet line of facts -->
-  <section class="border-b border-line py-section">
+  <section class="border-b border-line pt-section pb-14 md:pb-16">
     <div class="container-site">
       <p class="mx-auto max-w-4xl text-center font-serif text-[clamp(1.45rem,1.15rem+1vw,2.1rem)] leading-snug text-ink">{c.hero.lead}</p>
       <ul class="mx-auto mt-10 flex max-w-4xl flex-col items-center gap-1 text-center text-sm text-taupe md:flex-row md:flex-wrap md:justify-center md:gap-x-3 md:gap-y-2">
@@ -150,7 +152,7 @@ const sectionHead = 'max-w-2xl';
   </section>
 
   <!-- Services: three large photo tiles, then the others as an index -->
-  <section id="services" class="py-section">
+  <section id="services" class="pt-14 pb-section md:pt-16">
     <div class="container-site">
       <div class={sectionHead}>
         <p class="eyebrow">{c.services.eyebrow}</p>
@@ -216,10 +218,16 @@ const sectionHead = 'max-w-2xl';
             <p class="mt-1 text-sm text-taupe">{svc.summary[locale]}</p>
           </li>
         ))}
+        <li class={`border-t border-line py-5 ${requestSpan}`}>
+          <div class="flex h-full flex-col items-start justify-center gap-4 bg-stone p-5 md:p-6 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p class="font-serif text-xl text-ink">{c.services.other.title}</p>
+              <p class="mt-1 text-sm text-taupe">{c.services.other.text}</p>
+            </div>
+            <a href={enquire} class="btn-primary shrink-0">{s.planMyStay}</a>
+          </div>
+        </li>
       </ul>
-      <div class="mt-12">
-        <a href={enquire} class="btn-primary">{s.planMyStay}</a>
-      </div>
     </div>
   </section>
 
@@ -255,30 +263,34 @@ const sectionHead = 'max-w-2xl';
     </div>
   </section>
 
-  <!-- How it works: dark band, three steps with large numerals -->
+  <!-- How it works: dark band, the heading, then the photo beside three steps with large numerals -->
   <section class="bg-ink py-section text-ivory">
-    <div class="container-site grid gap-14 lg:grid-cols-12">
-      <div class="lg:col-span-4">
+    <div class="container-site">
+      <div class={sectionHead}>
         <p class="eyebrow text-brass">{c.steps.eyebrow}</p>
         <h2 class="mt-4 text-h2 text-ivory">{c.steps.title}</h2>
-        <Picture
-          src={stepsImg}
-          alt={c.steps.imageAlt}
-          formats={formats}
-          widths={[400, 600, 800]}
-          sizes="(min-width: 1024px) 28vw, 100vw"
-          class="mt-10 hidden aspect-[4/5] w-full object-cover lg:block"
-        />
       </div>
-      <ol class="grid gap-8 md:grid-cols-3 md:gap-10 lg:col-span-8 lg:self-end">
-        {c.steps.items.map((step, i) => (
-          <li class="border-t border-brass/60 pt-6">
-            <span class="block font-serif text-5xl leading-none text-brass md:text-7xl" aria-hidden="true">{pad(i + 1)}</span>
-            <h3 class="mt-6 text-2xl text-ivory">{step.title}</h3>
-            <p class="mt-3 text-stone/85">{step.text}</p>
-          </li>
-        ))}
-      </ol>
+      <div class="mt-12 grid gap-14 lg:grid-cols-12 lg:items-center">
+        <div class="hidden lg:col-span-4 lg:block">
+          <Picture
+            src={stepsImg}
+            alt={c.steps.imageAlt}
+            formats={formats}
+            widths={[400, 600, 800]}
+            sizes="(min-width: 1024px) 28vw, 100vw"
+            class="aspect-[4/5] w-full object-cover"
+          />
+        </div>
+        <ol class="grid gap-8 md:grid-cols-3 md:gap-10 lg:col-span-8">
+          {c.steps.items.map((step, i) => (
+            <li class="border-t border-brass/60 pt-6">
+              <span class="block font-serif text-5xl leading-none text-brass md:text-7xl" aria-hidden="true">{pad(i + 1)}</span>
+              <h3 class="mt-6 text-2xl text-ivory">{step.title}</h3>
+              <p class="mt-3 text-stone/85">{step.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -311,26 +323,32 @@ const sectionHead = 'max-w-2xl';
             </p>
           </div>
         )}
-        <p class="mt-8"><SmartLink href={localize('/about/', locale)} class="link inline-flex min-h-11 items-center">{c.about.link}</SmartLink></p>
-      </div>
-      <div class="md:col-span-5">
-        <div class="bg-stone p-6 md:p-8" {...(rating.checked ? { 'data-rating-checked': rating.checked } : {})}>
+        <p class="mt-6"><SmartLink href={localize('/about/', locale)} class="link inline-flex min-h-11 items-center">{c.about.link}</SmartLink></p>
+        <div class="mt-8 bg-stone p-6 md:p-8" {...(rating.checked ? { 'data-rating-checked': rating.checked } : {})}>
           <p class="eyebrow">{c.about.rating.eyebrow}</p>
-          <p class="mt-4 flex items-baseline gap-3">
-            <span class="font-serif text-6xl leading-none text-brass-deep">{ratingText}</span>
-            <span class="text-taupe">{c.about.rating.outOf}</span>
-          </p>
-          <p class="mt-2 text-xl tracking-[0.2em] text-brass" aria-hidden="true">{'★'.repeat(Math.round(rating.value))}</p>
-          <p class="mt-2 text-sm text-taupe">{c.about.rating.count(rating.count)}{ratingChecked && <span> · {c.about.rating.checked(ratingChecked)}</span>}</p>
-          <a href={business.profiles.google.mapsUrl} rel="noopener" class="link mt-4 inline-flex min-h-11 items-center text-sm font-semibold">{c.about.rating.read}</a>
+          <div class="mt-4 flex flex-wrap items-end gap-x-10 gap-y-3">
+            <div>
+              <p class="flex items-baseline gap-3">
+                <span class="font-serif text-6xl leading-none text-brass-deep">{ratingText}</span>
+                <span class="text-taupe">{c.about.rating.outOf}</span>
+              </p>
+              <p class="mt-2 text-xl tracking-[0.2em] text-brass" aria-hidden="true">{'★'.repeat(Math.round(rating.value))}</p>
+            </div>
+            <div>
+              <p class="text-sm text-taupe">{c.about.rating.count(rating.count)}{ratingChecked && <span> · {c.about.rating.checked(ratingChecked)}</span>}</p>
+              <a href={business.profiles.google.mapsUrl} rel="noopener" class="link mt-1 inline-flex min-h-11 items-center text-sm font-semibold">{c.about.rating.read}</a>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="relative hidden md:col-span-5 md:block">
         <Picture
           src={aboutImg}
           alt={c.about.imageAlt}
           formats={formats}
           widths={[400, 600, 900]}
           sizes="(min-width: 768px) 40vw, 100vw"
-          class="mt-6 hidden aspect-[5/4] w-full object-cover md:block"
+          class="absolute inset-0 h-full w-full object-cover"
         />
       </div>
     </div>
@@ -385,7 +403,7 @@ const sectionHead = 'max-w-2xl';
   <!-- FAQ -->
   <section id="faq" class="border-t border-line py-section">
     <div class="container-site grid gap-12 md:grid-cols-12">
-      <div class="md:col-span-4">
+      <div class="md:sticky md:top-28 md:col-span-4 md:self-start">
         <p class="eyebrow">{c.faq.eyebrow}</p>
         <h2 class="mt-4 text-h2">{c.faq.title}</h2>
         <p class="mt-6"><SmartLink href={localize('/faq/', locale)} class="link">{c.faq.more}</SmartLink></p>

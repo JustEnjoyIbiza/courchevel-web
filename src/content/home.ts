@@ -51,6 +51,8 @@ export const home = {
       title: 'Everything for your stay, arranged by one contact',
       intro: 'Each service is planned around your dates, your group and your village, and quoted personally.',
       more: 'Also arranged for you',
+      /** Fills the rest of the index's last row, with the Plan my stay button. */
+      other: { title: 'Something else in mind?', text: 'Tell us your dates and what you would like, even if it is not on this list.' },
       /** The chalets tile, split in two halves with a photo each: chalets | palace hotels. */
       split: {
         chalets: { label: 'Chalets', line: 'Available this winter' },
@@ -159,6 +161,7 @@ export const home = {
       title: 'Tout votre séjour, organisé par un seul interlocuteur',
       intro: 'Chaque prestation est pensée selon vos dates, votre groupe et votre village, et fait l’objet d’un devis personnalisé.',
       more: 'Également organisé pour vous',
+      other: { title: 'Autre chose en tête ?', text: 'Indiquez-nous vos dates et ce que vous souhaitez, même si ce n’est pas dans cette liste.' },
       split: {
         chalets: { label: 'Chalets', line: 'Disponibles cet hiver' },
         hotels: {
