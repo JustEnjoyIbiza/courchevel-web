@@ -139,7 +139,11 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   vs signature days). **Nightlife and après-ski done:** cards Après-ski table, Nightclub table, A party in your chalet
   (all open the VIP request; its field is now "Venue or evening"); steps; extras (dinner, driver, babysitter, next
   morning); the venue list keeps only evening venues (Bagatelle, Le Tremplin, La Mangeoire), lunch restaurants left to
-  the Where to eat guide (owner's rule); body 640 → ~200 words. Next: staff, childcare, wellness, lifestyle.
+  the Where to eat guide (owner's rule); body 640 → ~200 words. **Household staff done:** cards A butler or chalet
+  manager, Daily housekeeping, Serving staff for an evening; staff requests use the general form, so the offer data
+  sets `prefill: 'details'` and `service: 'staff'` (cards open `/enquire/general/?details=…&service=staff`; the form
+  script now pre-fills details); steps; extras (laundry, ski room, packing, for owners); body ~520 → ~200 words.
+  Next: childcare, wellness, lifestyle.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

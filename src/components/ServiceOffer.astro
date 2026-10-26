@@ -2,7 +2,8 @@
 /**
  * The offer block on a service page (`offer: true`; data in src/content/offers/<slug>.ts,
  * src/lib/offers.ts): three cards, each opening the short request with the choice
- * filled in (?item=), then how it works in three steps and four extras.
+ * filled in (?item=, or ?details= with the service tag for general requests), then how
+ * it works in three steps and four extras.
  */
 import { offers } from '../lib/offers';
 import type { Locale } from '../data/business';
@@ -17,8 +18,11 @@ const { slug, locale } = Astro.props;
 const offer = offers[slug];
 if (!offer) throw new Error(`No offer data for "${slug}" (src/content/offers/${slug}.ts, src/lib/offers.ts)`);
 const { cards, steps, extras } = offer[locale];
-const requestHref = (card: (typeof cards.items)[number]) =>
-  `${localize(`/enquire/${card.request ?? offer.request}/`, locale)}?item=${encodeURIComponent(card.item ?? card.name)}`;
+const requestHref = (card: (typeof cards.items)[number]) => {
+  const q = new URLSearchParams({ [offer.prefill ?? 'item']: card.item ?? card.name });
+  if (offer.service && !card.request) q.set('service', offer.service);
+  return `${localize(`/enquire/${card.request ?? offer.request}/`, locale)}?${q}`;
+};
 ---
 
 <section id="offer" class="scroll-mt-24 py-section" aria-labelledby="offer-title">

@@ -1,7 +1,8 @@
 /**
  * The offer block on a service page (`offer: true`, ServiceOffer.astro): three
  * cards, each opening the page's short request with the choice filled in
- * (?item=), then how it works in three steps and four extras. One data file per
+ * (?item=, or ?details= for forms without a choice field), then how it works in
+ * three steps and four extras. One data file per
  * service in src/content/offers/<slug>.ts. No prices.
  */
 import type { Locale } from '../data/business';
@@ -10,6 +11,7 @@ import privateChef from '../content/offers/private-chef';
 import ski from '../content/offers/ski';
 import experiences from '../content/offers/experiences';
 import nightlife from '../content/offers/nightlife';
+import staff from '../content/offers/staff';
 
 export interface OfferCard {
   name: string;
@@ -26,6 +28,12 @@ export interface OfferCopy {
   extras: { title: string; items: { name: string; text: string }[] };
 }
 
-export type Offer = { request: RequestType } & Record<Locale, OfferCopy>;
+export type Offer = {
+  request: RequestType;
+  /** Tags the lead with this service (general requests, e.g. 'staff'). */
+  service?: string;
+  /** The request field a card fills: `item` (default), or `details` for forms without a choice field. */
+  prefill?: 'item' | 'details';
+} & Record<Locale, OfferCopy>;
 
-export const offers: Record<string, Offer> = { 'private-chef': privateChef, ski, experiences, nightlife };
+export const offers: Record<string, Offer> = { 'private-chef': privateChef, ski, experiences, nightlife, staff };

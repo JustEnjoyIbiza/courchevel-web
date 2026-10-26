@@ -37,8 +37,9 @@ export function initRequestForm(form: HTMLFormElement) {
   const itemInput = form.querySelector<HTMLInputElement>('#rq-item');
   if (item && itemInput) itemInput.value = item;
   // ?from=Geneva%20airport&to=Courchevel from a route on the transfers page;
-  // ?staying=Chalet%20Neve from "Add a private chef" on a chalet page.
-  for (const name of ['from', 'to', 'staying']) {
+  // ?staying=Chalet%20Neve from "Add a private chef" on a chalet page;
+  // ?details=Daily%20housekeeping from a card on a service page without a choice field.
+  for (const name of ['from', 'to', 'staying', 'details']) {
     const value = (params.get(name) ?? '').slice(0, 80).trim();
     const input = form.querySelector<HTMLInputElement>(`#rq-${name}`);
     if (value && input && !input.value) input.value = value;
