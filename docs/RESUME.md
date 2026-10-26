@@ -167,6 +167,11 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   services); How it works: heading on top, the photo beside the steps; About: the Google rating card under the
   text, the photo filling the block's height; FAQ heading sticky beside the questions. Laptop (1470 px) page
   8,269 px; Lighthouse home EN/FR 98/100/100.
+- Experiences drawers (owner, 26 Oct): a swipe right closes the detail card on touch screens, as well as Close,
+  Esc and a click outside (`src/scripts/drawer-swipe.ts`): the panel follows the finger, the backdrop fades,
+  it closes past a quarter of its width or on a quick flick, otherwise slides back; vertical moves still scroll
+  (`touch-action: pan-y pinch-zoom`). Tested with simulated touch on a phone viewport (open, scroll, short
+  swipe, long swipe, flick, swipe left).
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

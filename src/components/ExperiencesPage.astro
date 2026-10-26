@@ -151,7 +151,7 @@ const cta = { label: xp.button, href: '#enquire', whatsapp: whatsappHref(locale,
     </div>
   </section>
 
-  <!-- Detail drawers (native popover: opened by the "Discover" buttons, closed with Esc or Close) -->
+  <!-- Detail drawers (native popover: opened by the "Discover" buttons, closed with Esc, Close or a swipe right) -->
   {c.experiences.map((x) => (
     <div id={`xp-${x.id}`} popover class="xp-drawer" role="dialog" aria-labelledby={`xp-${x.id}-title`}>
       {x.photo && <Picture src={photos[x.photo]} alt={x.alt ?? ''} formats={formats} widths={[480, 720]} sizes="(min-width: 640px) 36rem, 100vw" loading="lazy" class="aspect-[16/10] w-full object-cover" />}
@@ -306,11 +306,14 @@ const cta = { label: xp.button, href: '#enquire', whatsapp: whatsappHref(locale,
 
 <script>
   import { initExperiencesForm } from '../scripts/experiences-form';
+  import { swipeToClose } from '../scripts/drawer-swipe';
   document.querySelectorAll<HTMLFormElement>('form.xp-form').forEach(initExperiencesForm);
+  document.querySelectorAll<HTMLElement>('.xp-drawer').forEach(swipeToClose);
 </script>
 
 <style>
-  /* Detail drawer: slides in from the right; native popover handles Esc and outside clicks. */
+  /* Detail drawer: slides in from the right; native popover handles Esc and outside clicks,
+     src/scripts/drawer-swipe.ts a swipe right (it sets --swipe from 0 to 1 while the finger moves). */
   .xp-drawer {
     position: fixed;
     inset: 0 0 0 auto;
@@ -324,10 +327,11 @@ const cta = { label: xp.button, href: '#enquire', whatsapp: whatsappHref(locale,
     background: var(--color-ivory);
     color: var(--color-ink);
     translate: 0 0;
+    touch-action: pan-y pinch-zoom;
     transition: translate 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), display 0.45s allow-discrete, overlay 0.45s allow-discrete;
   }
   .xp-drawer::backdrop {
-    background: rgb(35 27 21 / 0.45);
+    background: rgb(35 27 21 / calc(0.45 * (1 - var(--swipe, 0))));
   }
   @starting-style {
     .xp-drawer:popover-open { translate: 100% 0; }
