@@ -57,7 +57,7 @@ export const photoAlt: Record<PhotoKey, L> = {
   'matsuhisa': { en: 'The wood-panelled dining room of Matsuhisa at Les Airelles, Courchevel 1850, with banquettes and leather armchairs', fr: 'La salle boisée de Matsuhisa aux Airelles, Courchevel 1850, avec banquettes et fauteuils en cuir' },
 };
 
-/** Services hub: the line under each service name and the photo it is shown with. */
+/** Services hub: the line under each service name and the photo shown beside it. */
 export const serviceStories: Record<string, { line: L; photo: PhotoKey }> = {
   chalets: { photo: 'chalet-living-room', line: { en: 'A home on the mountain, ready before you land.', fr: 'Une maison à la montagne, prête avant votre atterrissage.' } },
   transfers: { photo: 'private-jet', line: { en: 'From the airport to the altiport, timed to your flight.', fr: 'De l’aéroport à l’altiport, calé sur votre vol.' } },
@@ -70,9 +70,6 @@ export const serviceStories: Record<string, { line: L; photo: PhotoKey }> = {
   wellness: { photo: 'hot-tub', line: { en: 'Recovery comes to the chalet.', fr: 'Le bien-être vient jusqu’au chalet.' } },
   lifestyle: { photo: 'boutiques-night', line: { en: 'Errands, gifts and discreet protection, taken care of.', fr: 'Courses, cadeaux et protection discrète, pris en charge.' } },
 };
-
-/** The three services told as large chapters at the top of the Services hub. */
-export const featuredServiceSlugs = ['chalets', 'transfers', 'private-chef'];
 
 /** Villages hub: a line and a photo per village (photos chosen so none repeats on the page). */
 export const villageStories: Record<string, { line: L; photo: PhotoKey }> = {
@@ -97,10 +94,6 @@ export const experienceMoments: Record<string, L> = {
 /** Section copy for the three hubs. */
 export const hubCopy = {
   services: {
-    chaptersEyebrow: { en: 'At the heart of every stay', fr: 'Au cœur de chaque séjour' },
-    moreEyebrow: { en: 'And everything around it', fr: 'Et tout ce qui l’entoure' },
-    moreTitle: { en: 'Seven more ways we look after you', fr: 'Sept autres façons de prendre soin de vous' },
-    discover: { en: 'Discover', fr: 'Découvrir' },
     alsoTitle: { en: 'Also arranged for', fr: 'Également pour' },
   },
   experiences: {

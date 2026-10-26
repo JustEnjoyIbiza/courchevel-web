@@ -102,6 +102,9 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   description no longer says "events" (update it on Google and other profiles too). FAQ: the birthday / proposal /
   company event question removed, "Can you organise a private party in our chalet?" kept (owner); topic renamed
   "Nightlife and parties". 10 services now. Related links repointed (staff, childcare, Where to eat, Christmas page).
+- **26 Oct, services page cut down** (owner: it repeated the homepage): `/services/` is now the stage-by-stage list
+  of all 10 services, each with a small photo, name, italic line and one-sentence description, the whole row linking
+  to the service; the three large chapters and the photo tiles are gone (`HubPage.astro`). Mobile ~11,700 → ~6,500 px.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before
