@@ -172,6 +172,12 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   it closes past a quarter of its width or on a quick flick, otherwise slides back; vertical moves still scroll
   (`touch-action: pan-y pinch-zoom`). Tested with simulated touch on a phone viewport (open, scroll, short
   swipe, long swipe, flick, swipe left).
+- Experiences drawers and Back (owner, 26 Oct: "I don't want to leave the experience page while the card is
+  open"): opening a card adds a history entry (`src/scripts/drawer-history.ts`), so the phone's back gesture or
+  the back button closes the card and the page stays; closing it any other way removes the entry, so the next
+  Back leaves as usual; opening another card replaces the entry; the enquiry link scrolls to the form without
+  jumping back (scroll restoration held for that one step). Tested: Back, Close, swipe, enquiry link, laptop
+  card switch.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

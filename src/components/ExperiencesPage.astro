@@ -151,7 +151,7 @@ const cta = { label: xp.button, href: '#enquire', whatsapp: whatsappHref(locale,
     </div>
   </section>
 
-  <!-- Detail drawers (native popover: opened by the "Discover" buttons, closed with Esc, Close or a swipe right) -->
+  <!-- Detail drawers (native popover: opened by the "Discover" buttons, closed with Esc, Close, a swipe right or Back) -->
   {c.experiences.map((x) => (
     <div id={`xp-${x.id}`} popover class="xp-drawer" role="dialog" aria-labelledby={`xp-${x.id}-title`}>
       {x.photo && <Picture src={photos[x.photo]} alt={x.alt ?? ''} formats={formats} widths={[480, 720]} sizes="(min-width: 640px) 36rem, 100vw" loading="lazy" class="aspect-[16/10] w-full object-cover" />}
@@ -307,8 +307,11 @@ const cta = { label: xp.button, href: '#enquire', whatsapp: whatsappHref(locale,
 <script>
   import { initExperiencesForm } from '../scripts/experiences-form';
   import { swipeToClose } from '../scripts/drawer-swipe';
+  import { closeOnBack } from '../scripts/drawer-history';
   document.querySelectorAll<HTMLFormElement>('form.xp-form').forEach(initExperiencesForm);
-  document.querySelectorAll<HTMLElement>('.xp-drawer').forEach(swipeToClose);
+  const drawers = [...document.querySelectorAll<HTMLElement>('.xp-drawer')];
+  drawers.forEach(swipeToClose);
+  closeOnBack(drawers);
 </script>
 
 <style>
