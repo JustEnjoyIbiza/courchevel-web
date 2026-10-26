@@ -38,8 +38,6 @@ Vous avez un seul interlocuteur, du premier message au dernier jour du séjour. 
 
 Nous ne publions pas de tarifs. Chaque séjour est différent : chaque prestation fait donc l’objet d’un devis personnalisé, une fois vos besoins connus. Vous recevez la proposition complète avant toute réservation, et rien n’est confirmé sans votre accord.
 
-Pour les équipes, notre page [séminaires et incentives à Courchevel](/fr/corporate-retreats-courchevel/) montre comment s’organise un séjour de groupe.
-
 ## Le traitement d’une demande
 
 1. **Vous nous contactez** par WhatsApp, téléphone ou e-mail, ou via le formulaire Organiser mon séjour.

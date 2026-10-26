@@ -1,6 +1,7 @@
 /**
  * The services, in the order and scope of the plan ("Site structure"). Chalet
- * owner services were removed on 26 Oct 2026 (owner: not offered), leaving 11.
+ * owner services and events were removed on 26 Oct 2026 (owner: not offered),
+ * leaving 10.
  * Every service is on request: no prices, ever.
  * French: to be reviewed by a native speaker.
  */
@@ -83,14 +84,6 @@ export const services: Service[] = [
     summary: {
       en: 'In-chalet massage, spa bookings, personal trainers, yoga, hair and make-up.',
       fr: 'Massages au chalet, réservations de spa, coachs sportifs, yoga, coiffure et maquillage.',
-    },
-  },
-  {
-    slug: 'events',
-    name: { en: 'Events and celebrations', fr: 'Événements et célébrations' },
-    summary: {
-      en: 'Birthdays, proposals, weddings, New Year’s Eve and corporate groups.',
-      fr: 'Anniversaires, demandes en mariage, mariages, réveillon du Nouvel An et groupes d’entreprise.',
     },
   },
   {

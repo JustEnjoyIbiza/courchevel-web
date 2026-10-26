@@ -16,8 +16,8 @@ export const business = {
 
   /** The one 50-word description used on Google, Bing, Apple, directories and the site. TODO: approve final wording. */
   description: {
-    en: 'Courchevel Luxury Concierge is a luxury concierge in Courchevel, French Alps. We arrange chalets and palace hotels, helicopter and chauffeur transfers, private ski instructors, private chefs, household staff, childcare and events across Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz and La Tania, 24/7 in winter.',
-    fr: 'Courchevel Luxury Concierge est une conciergerie de luxe à Courchevel, dans les Alpes françaises. Nous organisons chalets et palaces, transferts en hélicoptère et avec chauffeur, moniteurs de ski privés, chefs à domicile, personnel de maison, garde d’enfants et événements à Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz et La Tania, 24 h/24 en hiver.',
+    en: 'Courchevel Luxury Concierge is a luxury concierge in Courchevel, French Alps. We arrange chalets and palace hotels, helicopter and chauffeur transfers, private ski instructors, private chefs, household staff and childcare across Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz and La Tania, 24/7 in winter.',
+    fr: 'Courchevel Luxury Concierge est une conciergerie de luxe à Courchevel, dans les Alpes françaises. Nous organisons chalets et palaces, transferts en hélicoptère et avec chauffeur, moniteurs de ski privés, chefs à domicile, personnel de maison et garde d’enfants à Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz et La Tania, 24 h/24 en hiver.',
   },
 
   phone: {

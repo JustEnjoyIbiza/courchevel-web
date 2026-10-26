@@ -38,8 +38,6 @@ You have one contact from the first message to the last day of your stay. Rather
 
 We do not publish prices. Every stay is different, so each service is quoted personally once we know what you need. You see the full proposal before anything is booked, and nothing is confirmed without your agreement.
 
-For teams, our page on [corporate retreats in Courchevel](/corporate-retreats-courchevel/) shows how a group stay is organised.
-
 ## How a request is handled
 
 1. **You get in touch** by WhatsApp, phone or email, or through the Plan my stay form.

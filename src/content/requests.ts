@@ -132,16 +132,6 @@ export const requestCopy: Record<Locale, RequestCopy> = {
         detailsHint: 'A preferred time, injuries, a couples’ treatment…',
         whatsapp: (item) => (item ? `Hello, I'd like to book this treatment: ${item}, on ` : "Hello, I'd like a massage or treatment in my chalet on "),
       },
-      event: {
-        button: 'Plan an event',
-        h1: 'Plan an event',
-        metaTitle: 'Plan an Event in Courchevel | CLC',
-        description: 'Birthdays, proposals, New Year’s Eve, corporate retreats: tell us the date and the number of guests. A reply within 15 minutes.',
-        lead: 'Tell us the occasion, the date and how many guests. We come back with ideas, venues and a personal proposal.',
-        itemHint: 'Birthday, proposal, New Year’s Eve, retreat…',
-        detailsHint: 'The atmosphere you have in mind, venue ideas…',
-        whatsapp: (item) => (item ? `Hello, I'm planning this event in Courchevel: ${item}, on ` : "Hello, I'm planning an event in Courchevel on "),
-      },
       general: {
         button: 'Make a request',
         h1: 'Make a request',
@@ -245,16 +235,6 @@ export const requestCopy: Record<Locale, RequestCopy> = {
         detailsHint: 'Un horaire préféré, des blessures, un soin en duo…',
         whatsapp: (item) => (item ? `Bonjour, je souhaite réserver ce soin : ${item}, le ` : 'Bonjour, je souhaite un massage ou un soin au chalet le '),
       },
-      event: {
-        button: 'Organiser un événement',
-        h1: 'Organiser un événement',
-        metaTitle: 'Organiser un événement à Courchevel | CLC',
-        description: 'Anniversaires, demandes en mariage, Saint-Sylvestre, séminaires : indiquez la date et le nombre d’invités. Réponse sous 15 minutes.',
-        lead: 'Indiquez l’occasion, la date et le nombre d’invités. Nous revenons vers vous avec des idées, des lieux et une proposition personnalisée.',
-        itemHint: 'Anniversaire, demande en mariage, Saint-Sylvestre, séminaire…',
-        detailsHint: 'L’ambiance que vous imaginez, des idées de lieux…',
-        whatsapp: (item) => (item ? `Bonjour, j’organise cet événement à Courchevel : ${item}, le ` : 'Bonjour, j’organise un événement à Courchevel le '),
-      },
       general: {
         button: 'Faire une demande',
         h1: 'Faire une demande',
@@ -292,7 +272,6 @@ export const pageRequests: Record<string, PageRequest> = {
   'services/nightlife': { type: 'vip' },
   'services/childcare': { type: 'nanny' },
   'services/wellness': { type: 'treatment' },
-  'services/events': { type: 'event' },
   'services/lifestyle': { type: 'general', service: 'lifestyle' },
   'services/staff': {
     type: 'general',
@@ -306,11 +285,5 @@ export const pageRequests: Record<string, PageRequest> = {
     type: 'experience',
     item: { en: 'Heli-skiing day trip to Italy or Switzerland', fr: 'Journée d’héliski en Italie ou en Suisse' },
     label: { en: 'Plan a heli-ski day', fr: 'Organiser une journée d’héliski' },
-  },
-  'pages/corporate-retreats-courchevel': {
-    type: 'event',
-    service: 'events',
-    item: { en: 'Corporate retreat', fr: 'Séminaire d’entreprise' },
-    label: { en: 'Plan a retreat', fr: 'Organiser un séminaire' },
   },
 };

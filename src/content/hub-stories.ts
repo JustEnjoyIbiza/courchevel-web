@@ -68,7 +68,6 @@ export const serviceStories: Record<string, { line: L; photo: PhotoKey }> = {
   staff: { photo: 'chalet-lounge', line: { en: 'A household that runs quietly around you.', fr: 'Une maison qui tourne en silence autour de vous.' } },
   childcare: { photo: 'wooden-chalets', line: { en: 'Children looked after, parents free to ski.', fr: 'Les enfants entre de bonnes mains, les parents libres de skier.' } },
   wellness: { photo: 'hot-tub', line: { en: 'Recovery comes to the chalet.', fr: 'Le bien-être vient jusqu’au chalet.' } },
-  events: { photo: 'party-table', line: { en: 'Birthdays, proposals and New Year’s Eve, set in the snow.', fr: 'Anniversaires, demandes en mariage et Saint-Sylvestre, dans la neige.' } },
   lifestyle: { photo: 'boutiques-night', line: { en: 'Errands, gifts and discreet protection, taken care of.', fr: 'Courses, cadeaux et protection discrète, pris en charge.' } },
 };
 
@@ -93,7 +92,6 @@ export const experienceMoments: Record<string, L> = {
   'ski-explorer': { en: 'First lifts with a guide who has read the snow before you.', fr: 'Les premières remontées avec un guide qui a lu la neige avant vous.' },
   'family-week': { en: 'Lessons in the morning, sledging in the afternoon, a nanny for the evening.', fr: 'Les cours le matin, la luge l’après-midi, une nounou pour la soirée.' },
   'christmas-new-year': { en: 'The tree decorated before you arrive, the table set for the 24th.', fr: 'Le sapin décoré avant votre arrivée, la table dressée pour le 24.' },
-  'corporate-retreat': { en: 'Meetings in the morning, the mountain after lunch, dinner together.', fr: 'Les réunions le matin, la montagne après le déjeuner, le dîner ensemble.' },
 };
 
 /** Section copy for the three hubs. */
@@ -101,7 +99,7 @@ export const hubCopy = {
   services: {
     chaptersEyebrow: { en: 'At the heart of every stay', fr: 'Au cœur de chaque séjour' },
     moreEyebrow: { en: 'And everything around it', fr: 'Et tout ce qui l’entoure' },
-    moreTitle: { en: 'Eight more ways we look after you', fr: 'Huit autres façons de prendre soin de vous' },
+    moreTitle: { en: 'Seven more ways we look after you', fr: 'Sept autres façons de prendre soin de vous' },
     discover: { en: 'Discover', fr: 'Découvrir' },
     alsoTitle: { en: 'Also arranged for', fr: 'Également pour' },
   },

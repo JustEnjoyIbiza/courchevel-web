@@ -34,7 +34,7 @@ faqs:
     a: Yes. For a celebration or New Year's Eve we arrange a team of hairdressers and make-up artists who come to the chalet, with a timetable so everyone is ready on time. Tell us the number of people and the start time of the evening.
 related:
   - /services/ski/
-  - /services/events/
+  - /services/childcare/
   - /services/chalets/
 ---
 

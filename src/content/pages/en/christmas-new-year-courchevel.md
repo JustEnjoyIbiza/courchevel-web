@@ -40,7 +40,7 @@ faqs:
     a: The resort traditionally marks midnight on 31 December with fireworks, and festive walks, parades and torchlight descents take place in the villages over the holidays. The tourist office publishes the programme for each winter, and we confirm the details for your dates.
 related:
   - /services/private-chef/
-  - /services/events/
+  - /services/nightlife/
   - /guides/season-dates-and-events/
 ---
 
@@ -68,7 +68,7 @@ Most of the work happens before you land, so the holiday starts when you walk th
 
 - **The chalet, ready on arrival.** The tree is up and decorated, the fridge and cellar are stocked to your list, and the rooms are prepared for children. If you have not yet chosen a chalet or a hotel, see our [chalets and palace hotels](/services/chalets/).
 - **Festive meals at home.** A private chef plans the Christmas Eve dinner and the Christmas Day lunch with you, from a traditional menu to the dishes your family serves at home, and allergies and religious requirements are passed on in advance. See our [private chef service](/services/private-chef/).
-- **New Year's Eve.** We request restaurant, hotel and club tables on your behalf, subject to availability, and arrange a driver for the evening. For a dinner or party in the chalet, we bring together the chef, serving staff and music; see our [events service](/services/events/).
+- **New Year's Eve.** We request restaurant, hotel and club tables on your behalf, subject to availability, and arrange a driver for the evening. For a dinner in the chalet, a [private chef](/services/private-chef/) and serving staff look after the evening.
 - **Evenings for the adults.** A nanny can look after the children at the chalet on Christmas Eve or New Year's Eve, so you can dine out without watching the clock.
 - **Gifts.** Send us your list and we take care of the shopping, wrapping and delivery, to your chalet or to friends staying elsewhere in the resort, through our [lifestyle and shopping service](/services/lifestyle/).
 

@@ -102,7 +102,7 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 
 - [ ] Native French review of every French page and of the emails
 - [ ] Photo rights for the 12 photos in use; replacements for the 5 stock or non-Courchevel photos
-- [ ] 20–40 more real photos (chalet interiors, chef, team, arrivals, childcare, events, each village)
+- [ ] 20–40 more real photos (chalet interiors, chef, team, arrivals, childcare, each village)
 - [ ] Logo as SVG or a large transparent PNG
 - [ ] **Illustrated piste map for the Slopes page**: send `Courchevel piste illustration - brief for illustrator.docx` (in the Courchevel folder; source `docs/ski-map-illustrator-brief.md`) to 2–3 illustrators, pick one; final SVG by 13 November
 - [ ] **Your own run on film (December)**: helmet or chest camera, La Saulire to Le Praz by the Combe de la Saulire and Verdons; becomes the scroll-controlled video on the Slopes page (no drone over the ski area without authorisation)

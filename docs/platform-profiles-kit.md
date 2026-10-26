@@ -17,8 +17,8 @@ Checked 22 October 2026.
 | Area | Courchevel 1850, 1650 Moriond, 1550 Village, 1300 Le Praz, La Tania, and the Trois Vallées (Méribel, Val Thorens) |
 | Address | Service-area business (hidden) until the street address is ready |
 | Hours | 24/7 during the winter season; replies within 15 minutes, 8:00 to 22:00 |
-| Short description (EN) | Courchevel Luxury Concierge is a luxury concierge in Courchevel, French Alps. We arrange chalets and palace hotels, helicopter and chauffeur transfers, private ski instructors, private chefs, household staff, childcare and events across Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz and La Tania, 24/7 in winter. |
-| Short description (FR) | Courchevel Luxury Concierge est une conciergerie de luxe à Courchevel, dans les Alpes françaises. Nous organisons chalets et palaces, transferts en hélicoptère et avec chauffeur, moniteurs de ski privés, chefs à domicile, personnel de maison, garde d’enfants et événements à Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz et La Tania, 24 h/24 en hiver. |
+| Short description (EN) | Courchevel Luxury Concierge is a luxury concierge in Courchevel, French Alps. We arrange chalets and palace hotels, helicopter and chauffeur transfers, private ski instructors, private chefs, household staff and childcare across Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz and La Tania, 24/7 in winter. |
+| Short description (FR) | Courchevel Luxury Concierge est une conciergerie de luxe à Courchevel, dans les Alpes françaises. Nous organisons chalets et palaces, transferts en hélicoptère et avec chauffeur, moniteurs de ski privés, chefs à domicile, personnel de maison et garde d’enfants à Courchevel 1850, 1650 Moriond, 1550 Village, Le Praz et La Tania, 24 h/24 en hiver. |
 
 ## 1. Google Business Profile (exists: 5.0 from 14 reviews)
 

@@ -96,6 +96,12 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   dropped from `src/data/services.ts` (11 services now; Plan my stay lists 11 categories), the services-hub line
   "Own a chalet in Courchevel?", the request mapping, hub story, and the staff page's related link (now childcare).
   "Twelve kinds of service" became eleven. Household staff for owners stays on the staff page.
+- **26 Oct, events and corporate groups removed** (owner: not offered): `/services/events/` and
+  `/corporate-retreats-courchevel/` deleted (EN/FR), the "event" request type and `/enquire/event/` removed, the
+  Corporate Retreat package dropped from Experiences, footer and hub links removed, the 50-word business
+  description no longer says "events" (update it on Google and other profiles too). FAQ: the birthday / proposal /
+  company event question removed, "Can you organise a private party in our chalet?" kept (owner); topic renamed
+  "Nightlife and parties". 10 services now. Related links repointed (staff, childcare, Where to eat, Christmas page).
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

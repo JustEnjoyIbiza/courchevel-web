@@ -63,7 +63,7 @@ const stages = [
   { title: { en: 'Before you arrive', fr: 'Avant votre arrivée' }, text: { en: 'The chalet chosen, staffed and stocked to your list, with children’s equipment in place.', fr: 'Le chalet choisi, le personnel en place et la cuisine approvisionnée selon votre liste, avec l’équipement pour les enfants.' }, slugs: ['chalets', 'staff', 'childcare'] },
   { title: { en: 'Arrival and departure', fr: 'Arrivée et départ' }, text: { en: 'Helicopter or chauffeured car from the airport, timed to your flight, with a road transfer on standby.', fr: 'Hélicoptère ou voiture avec chauffeur depuis l’aéroport, calés sur votre vol, avec un transfert routier en réserve.' }, slugs: ['transfers'] },
   { title: { en: 'On the mountain', fr: 'Sur la montagne' }, text: { en: 'Instructors and guides matched to each skier, and afternoons off the pistes.', fr: 'Moniteurs et guides adaptés à chaque skieur, et des après-midi hors des pistes.' }, slugs: ['ski', 'experiences'] },
-  { title: { en: 'Evenings', fr: 'En soirée' }, text: { en: 'A chef at the chalet, the right table in the village, or a party of your own.', fr: 'Un chef au chalet, la bonne table au village, ou votre propre soirée.' }, slugs: ['private-chef', 'nightlife', 'events'] },
+  { title: { en: 'Evenings', fr: 'En soirée' }, text: { en: 'A chef at the chalet or the right table in the village.', fr: 'Un chef au chalet ou la bonne table au village.' }, slugs: ['private-chef', 'nightlife'] },
   { title: { en: 'Throughout your stay', fr: 'Pendant tout le séjour' }, text: { en: 'Treatments at the chalet, errands and anything that comes up, with one contact on call.', fr: 'Soins au chalet, courses et imprévus, avec un seul interlocuteur joignable.' }, slugs: ['wellness', 'lifestyle'] },
 ];
 const stageCopy = {
@@ -215,7 +215,6 @@ const crumbs = [
         <p class="eyebrow">{hc.services.alsoTitle[locale]}</p>
         <ul class="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-sm">
           <li><SmartLink href={localize('/christmas-new-year-courchevel/', locale)} class="link inline-flex min-h-11 items-center">{s.footer.christmas}</SmartLink></li>
-          <li><SmartLink href={localize('/corporate-retreats-courchevel/', locale)} class="link inline-flex min-h-11 items-center">{s.footer.corporate}</SmartLink></li>
           <li><SmartLink href={localize('/assistants-and-family-offices/', locale)} class="link inline-flex min-h-11 items-center">{s.footer.assistants}</SmartLink></li>
           <li><SmartLink href={localize('/guides/how-to-choose-a-concierge-in-courchevel/', locale)} class="link inline-flex min-h-11 items-center">{s.footer.chooseGuide}</SmartLink></li>
         </ul>

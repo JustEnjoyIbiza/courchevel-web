@@ -34,7 +34,7 @@ faqs:
     a: We book a driver who waits for your group and takes everyone back to the chalet, whether you are staying in 1850, 1650 Moriond, Le Praz or La Tania. One message is enough to bring the car forward.
 related:
   - /services/private-chef/
-  - /services/events/
+  - /guides/where-to-eat/
   - /guides/season-dates-and-events/
 ---
 

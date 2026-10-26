@@ -34,7 +34,7 @@ faqs:
     a: "Nous réservons un chauffeur qui attend votre groupe et raccompagne chacun au chalet, que vous logiez à 1850, à 1650 Moriond, au Praz ou à La Tania. Un simple message suffit pour avancer l’heure du départ."
 related:
   - /services/private-chef/
-  - /services/events/
+  - /guides/where-to-eat/
   - /guides/season-dates-and-events/
 ---
 

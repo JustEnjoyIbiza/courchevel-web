@@ -34,7 +34,7 @@ faqs:
   - q: Can you handle last-minute requests?
     a: Yes, that is a large part of what we do. A forgotten charger, a birthday cake for tonight, a dinner jacket, a pharmacy run – send us a message and we tell you quickly what is possible.
 related:
-  - /services/events/
+  - /services/staff/
   - /services/transfers/
   - /courchevel-1850/
 ---

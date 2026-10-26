@@ -39,7 +39,7 @@ faqs:
     a: Le Festival international d’art pyrotechnique de Courchevel se tient généralement en février et en mars, chaque spectacle étant précédé d’une descente aux flambeaux des écoles de ski. Les dates 2027 sont annoncées par l’office de tourisme.
 related:
   - /services/chalets/
-  - /services/events/
+  - /christmas-new-year-courchevel/
   - /guides/where-to-eat/
 ---
 
@@ -106,6 +106,6 @@ Certains temps forts reviennent chaque hiver, avec des dates annoncées par l’
 
 ## Organiser votre séjour selon le calendrier
 
-La semaine choisie conditionne tout le reste : les chalets disponibles, le délai pour réserver une table, l’affluence sur les pistes et sur la route. Si vous êtes flexible, dites-le-nous : nous vous suggérons les semaines qui correspondent à vos envies, de l’énergie du Nouvel An au calme de janvier. Pour une célébration privée, d’un dîner de Noël au chalet à une soirée du Nouvel An, découvrez notre [service événements](/fr/services/events/), et pour l’hébergement nos [chalets et palaces](/fr/services/chalets/).
+La semaine choisie conditionne tout le reste : les chalets disponibles, le délai pour réserver une table, l’affluence sur les pistes et sur la route. Si vous êtes flexible, dites-le-nous : nous vous suggérons les semaines qui correspondent à vos envies, de l’énergie du Nouvel An au calme de janvier. Pour un dîner de Noël au chalet, découvrez notre [chef privé](/fr/services/private-chef/), et pour l’hébergement nos [chalets et palaces](/fr/services/chalets/).
 
 Nous vous répondons sous 15 minutes de 8 h à 22 h ; pendant la saison d’hiver, nous restons joignables à toute heure. Envoyez-nous vos dates : nous vous adressons une proposition sous 24 heures.

@@ -6,7 +6,7 @@
  * No runtime dependencies; explicit .ts imports for Node's type stripping.
  */
 
-export const REQUEST_TYPES = ['table', 'vip', 'transfer', 'instructor', 'chef', 'experience', 'nanny', 'treatment', 'event', 'general'] as const;
+export const REQUEST_TYPES = ['table', 'vip', 'transfer', 'instructor', 'chef', 'experience', 'nanny', 'treatment', 'general'] as const;
 export type RequestType = (typeof REQUEST_TYPES)[number];
 
 export const REQUEST_FIELDS = ['item', 'from', 'to', 'date', 'dateTo', 'time', 'flight', 'guests', 'details', 'staying'] as const;
@@ -39,7 +39,6 @@ export const REQUEST_SPECS: Record<RequestType, RequestSpec> = {
   experience: spec(['experiences'], ['item', 'date', 'guests', 'details', 'staying'], ['date', 'guests']),
   nanny: spec(['childcare'], ['date', 'dateTo', 'guests', 'details', 'staying'], ['date', 'guests'], { min: 1, value: 1 }),
   treatment: spec(['wellness'], ['item', 'date', 'guests', 'details', 'staying'], ['date', 'guests'], { min: 1, value: 1 }),
-  event: spec(['events'], ['item', 'date', 'guests', 'details', 'staying'], ['date', 'guests'], { min: 1, value: 10 }),
   general: spec(['lifestyle', 'staff'], ['date', 'details', 'staying'], ['details']),
 };
 

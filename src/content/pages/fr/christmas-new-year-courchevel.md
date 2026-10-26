@@ -40,7 +40,7 @@ faqs:
     a: "La station salue traditionnellement minuit, le 31 décembre, par un feu d’artifice, et des balades festives, des défilés et des descentes aux flambeaux animent les villages pendant les vacances. L’office de tourisme publie le programme de chaque hiver, et nous vérifions les détails pour vos dates."
 related:
   - /services/private-chef/
-  - /services/events/
+  - /services/nightlife/
   - /guides/season-dates-and-events/
 ---
 
@@ -68,7 +68,7 @@ L’essentiel se prépare avant votre arrivée, pour que les fêtes commencent d
 
 - **Le chalet prêt à votre arrivée.** Le sapin est installé et décoré, le réfrigérateur et la cave sont remplis selon votre liste, les chambres des enfants sont préparées. Si vous n’avez pas encore choisi votre hébergement, découvrez notre service de [location de chalet de luxe et palaces](/fr/services/chalets/).
 - **Les repas de fête au chalet.** Un chef à domicile prépare avec vous le dîner du réveillon et le déjeuner de Noël, d’un menu traditionnel aux plats que votre famille sert chez elle ; allergies et exigences religieuses lui sont transmises à l’avance. Voir notre service de [chef à domicile](/fr/services/private-chef/).
-- **Le réveillon du Nouvel An.** Nous demandons en votre nom des tables dans les restaurants, les hôtels et les clubs, sous réserve de disponibilité, et prévoyons un chauffeur pour la soirée. Pour un dîner ou une fête au chalet, nous réunissons chef, personnel de service et musique ; voir notre service [événements](/fr/services/events/).
+- **Le réveillon du Nouvel An.** Nous demandons en votre nom des tables dans les restaurants, les hôtels et les clubs, sous réserve de disponibilité, et prévoyons un chauffeur pour la soirée. Pour un dîner au chalet, un [chef privé](/fr/services/private-chef/) et du personnel de service s’occupent de la soirée.
 - **Des soirées pour les adultes.** Une nounou peut garder les enfants au chalet le soir du réveillon de Noël ou du Nouvel An, pour que vous puissiez dîner dehors sans regarder l’heure.
 - **Les cadeaux.** Envoyez-nous votre liste : achats, emballage et livraison sont pris en charge, à votre chalet ou chez des amis logés ailleurs dans la station, par notre service [shopping et art de vivre](/fr/services/lifestyle/).
 

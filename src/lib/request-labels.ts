@@ -7,8 +7,8 @@ import type { RequestField, RequestType } from './requests.ts';
 import { formatDate } from './lead-labels.ts';
 
 export const requestNames: Record<LeadLocale, Record<RequestType, string>> = {
-  en: { table: 'Table', vip: 'VIP table', transfer: 'Transfer', instructor: 'Ski instructor', chef: 'Private chef', experience: 'Experience', nanny: 'Nanny', treatment: 'Treatment', event: 'Event', general: 'Request' },
-  fr: { table: 'Table', vip: 'Table VIP', transfer: 'Transfert', instructor: 'Moniteur de ski', chef: 'Chef privé', experience: 'Activité', nanny: 'Nounou', treatment: 'Soin', event: 'Événement', general: 'Demande' },
+  en: { table: 'Table', vip: 'VIP table', transfer: 'Transfer', instructor: 'Ski instructor', chef: 'Private chef', experience: 'Experience', nanny: 'Nanny', treatment: 'Treatment', general: 'Request' },
+  fr: { table: 'Table', vip: 'Table VIP', transfer: 'Transfert', instructor: 'Moniteur de ski', chef: 'Chef privé', experience: 'Activité', nanny: 'Nounou', treatment: 'Soin', general: 'Demande' },
 };
 
 type Labels = Record<RequestField, string>;
@@ -28,7 +28,6 @@ const overrides: Record<LeadLocale, Partial<Record<RequestType, Partial<Labels>>
     experience: { item: 'Experience' },
     nanny: { date: 'First day', guests: 'Children', details: 'Ages and times' },
     treatment: { item: 'Treatment', guests: 'People' },
-    event: { item: 'Occasion' },
     general: { date: 'Date, if any', details: 'Your request' },
   },
   fr: {
@@ -40,7 +39,6 @@ const overrides: Record<LeadLocale, Partial<Record<RequestType, Partial<Labels>>
     experience: { item: 'Activité' },
     nanny: { date: 'Premier jour', guests: 'Enfants', details: 'Âges et horaires' },
     treatment: { item: 'Soin' },
-    event: { item: 'Occasion' },
     general: { date: 'Date, le cas échéant', details: 'Votre demande' },
   },
 };

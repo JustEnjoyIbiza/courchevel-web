@@ -34,7 +34,7 @@ faqs:
   - q: Gérez-vous les demandes de dernière minute ?
     a: Oui, c’est une grande partie de notre métier. Un chargeur oublié, un gâteau d’anniversaire pour ce soir, un smoking, un passage à la pharmacie – envoyez-nous un message et nous vous disons rapidement ce qui est possible.
 related:
-  - /services/events/
+  - /services/staff/
   - /services/transfers/
   - /courchevel-1850/
 ---

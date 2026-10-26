@@ -155,32 +155,4 @@ export const experiences: Experience[] = [
     image: 'gift-delivery',
     imageAlt: { en: 'Gifts being delivered to a chalet in the snow in Courchevel', fr: 'Livraison de cadeaux à un chalet sous la neige à Courchevel' },
   },
-  {
-    id: 'corporate-retreat',
-    name: { en: 'Corporate Retreat', fr: 'Séminaire en montagne' },
-    detail: { en: 'Teams and leadership groups', fr: 'Équipes et comités de direction' },
-    text: {
-      en: 'A chalet or hotel for your team, with space to meet, time on the mountain and dinners planned around the programme.',
-      fr: 'Un chalet ou un hôtel pour votre équipe, avec un espace de réunion, du temps en montagne et des dîners pensés autour du programme.',
-    },
-    includes: {
-      en: [
-        'Accommodation with a room suited to meetings',
-        'Group transfers from Geneva, Lyon or Chambéry',
-        'Ski instructors grouped by level, and activities for non-skiers',
-        'Private dinners and one evening event for the whole group',
-        'One contact for your assistant or event team',
-      ],
-      fr: [
-        'Un hébergement avec une pièce adaptée aux réunions',
-        'Transferts de groupe depuis Genève, Lyon ou Chambéry',
-        'Moniteurs de ski par niveau et activités pour ceux qui ne skient pas',
-        'Dîners privés et une soirée pour tout le groupe',
-        'Un seul interlocuteur pour votre assistant ou votre équipe événementielle',
-      ],
-    },
-    services: ['/services/events/', '/services/transfers/', '/services/experiences/'],
-    image: 'hot-tub',
-    imageAlt: { en: 'Outdoor hot tub among snowy pine trees in Courchevel', fr: 'Bain nordique en plein air parmi les sapins enneigés à Courchevel' },
-  },
 ];

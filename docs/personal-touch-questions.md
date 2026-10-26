@@ -89,7 +89,7 @@ The About page is still waiting for founder facts (name, photo, languages, year 
 - **S14.** Which activity do clients thank you for most afterwards? Why?
 - **S15.** What do you suggest on a day with bad weather or no visibility?
 
-**Events and celebrations** (`/services/events/`)
+**Events and celebrations** (`/services/events/`): removed 26 Oct 2026 (not offered); skip these questions
 
 - **S16.** The most memorable birthday, proposal or New Year's Eve you organised. What made it work?
 

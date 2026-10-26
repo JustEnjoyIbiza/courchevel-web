@@ -27,7 +27,7 @@ faqs:
 related:
   - /services/chalets/
   - /services/staff/
-  - /services/events/
+  - /christmas-new-year-courchevel/
 ---
 
 ## Local, seasonal and made for you

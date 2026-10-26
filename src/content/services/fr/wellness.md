@@ -34,7 +34,7 @@ faqs:
     a: Oui. Pour une célébration ou le réveillon du Nouvel An, nous réunissons une équipe de coiffeurs et de maquilleurs qui viennent au chalet, avec un planning pour que chacun soit prêt à l’heure. Indiquez-nous le nombre de personnes et l’heure de début de la soirée.
 related:
   - /services/ski/
-  - /services/events/
+  - /services/childcare/
   - /services/chalets/
 ---
 

@@ -189,7 +189,7 @@ export const faq: Record<Locale, FaqGroup[]> = {
       ],
     },
     {
-      topic: 'Events and nightlife',
+      topic: 'Nightlife and parties',
       items: [
         {
           q: 'Can you book a nightclub table for New Year’s Eve in Courchevel?',
@@ -202,10 +202,6 @@ export const faq: Record<Locale, FaqGroup[]> = {
         {
           q: 'Can you organise a private party in our chalet?',
           a: 'Yes. We arrange the chef and waiting staff, drinks, music, decoration and transport home for your guests, and coordinate it all with the chalet staff so the evening runs quietly in the background.',
-        },
-        {
-          q: 'Can you organise a birthday, proposal or company event in Courchevel?',
-          a: 'Yes. Tell us the occasion, the number of guests and the feeling you want, and we propose a setting and a plan, from a private dinner on the mountain to a gathering for a whole team.',
         },
       ],
     },
@@ -397,7 +393,7 @@ export const faq: Record<Locale, FaqGroup[]> = {
       ],
     },
     {
-      topic: 'Événements et soirées',
+      topic: 'Soirées et fêtes',
       items: [
         {
           q: 'Pouvez-vous réserver une table en club pour le réveillon du Nouvel An à Courchevel ?',
@@ -410,10 +406,6 @@ export const faq: Record<Locale, FaqGroup[]> = {
         {
           q: 'Pouvez-vous organiser une soirée privée dans notre chalet ?',
           a: 'Oui. Nous organisons le chef et le service, les boissons, la musique, la décoration et le retour de vos invités, en coordination avec le personnel du chalet, pour une soirée qui se déroule en toute discrétion.',
-        },
-        {
-          q: 'Pouvez-vous organiser un anniversaire, une demande en mariage ou un événement d’entreprise ?',
-          a: 'Oui. Indiquez-nous l’occasion, le nombre d’invités et l’atmosphère souhaitée : nous vous proposons un lieu et un déroulé, d’un dîner privé en montagne à un rassemblement pour toute une équipe.',
         },
       ],
     },

@@ -26,7 +26,7 @@ const crumbs = [
   { name: c.title, href: localize('/faq/', locale) },
 ];
 // Related page for each FAQ topic, in topic order (same order in EN and FR).
-const topicPages = ['/about/', '/services/chalets/', '/guides/getting-to-courchevel/', '/services/ski/', '/guides/where-to-eat/', '/guides/courchevel-with-kids/', '/services/events/', '/guides/season-dates-and-events/'];
+const topicPages = ['/about/', '/services/chalets/', '/guides/getting-to-courchevel/', '/services/ski/', '/guides/where-to-eat/', '/guides/courchevel-with-kids/', '/services/nightlife/', '/guides/season-dates-and-events/'];
 const topicLinks = await Promise.all(topicPages.map(async (p) => ({ href: localize(p, locale), title: (await linkTitle(p, locale)) ?? p })));
 const slug = (topic: string) => topic.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 ---
