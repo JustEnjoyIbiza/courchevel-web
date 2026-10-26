@@ -143,7 +143,9 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   manager, Daily housekeeping, Serving staff for an evening; staff requests use the general form, so the offer data
   sets `prefill: 'details'` and `service: 'staff'` (cards open `/enquire/general/?details=…&service=staff`; the form
   script now pre-fills details); steps; extras (laundry, ski room, packing, for owners); body ~520 → ~200 words.
-  Next: childcare, wellness, lifestyle.
+  **Family and childcare done:** cards A nanny for the stay, Evening babysitting (nanny request, new "Type of
+  care" field), Ski lessons for children (instructor request); steps; extras (baby equipment, car seats,
+  activities, drop-off and collection); body 460 → ~180 words. Next: wellness, lifestyle.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before
