@@ -55,7 +55,7 @@ Ski clothes, evening wear and children's outfits all need attention in the mount
 
 At the end of the stay, staff pack your cases, separate what needs cleaning and arrange for anything left behind to be sent on.
 
-## Staff for owners and for single events
+## Staff for owners and for a single evening
 
 If you own a chalet in Courchevel, we can staff it for your holiday weeks or the whole season, and brief the team on the house and your routines before you arrive. For a dinner or celebration in a rented chalet, we add serving staff and a head waiter for a single evening, working alongside the chef.
 

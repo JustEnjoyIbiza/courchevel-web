@@ -98,6 +98,12 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 
 ## Content and photos
 
+- [ ] **Google profile, reviews and listings** (26 Oct): everything ready to paste is in `platform-profiles-kit.md`
+  (category, description EN/FR, the 11 services, four December posts, review requests and replies, courchevel.com
+  text, partner and press messages). Until launch use Google's full review link, not /review
+- [ ] **AI visibility test, first run this week** (before launch): 22 questions in ChatGPT, Perplexity, Gemini and
+  Google AI Mode, logged in `ai-visibility/answer-log.csv` (how-to in `ai-visibility/README.md`); then the first
+  week of each month
 - [ ] **Google rating on the homepage** (26 Oct): it shows 5.0 from 14 reviews, as checked on 22 Oct. Confirm or
   send the current figures (`profiles.google.rating` in `src/data/business.ts`); the launch check fails if it is
   more than 45 days old. Or create a Google Places API key (`GOOGLE_PLACES_API_KEY`) for live numbers

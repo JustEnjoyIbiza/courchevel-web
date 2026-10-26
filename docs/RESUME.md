@@ -121,6 +121,12 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   FAQ gains "What does a luxury concierge in Courchevel do?". Fixes: prices wording (About, FAQ, How to choose),
   Méribel 45 km / ~1 h, carousel gutter, counters (and "12 services") removed, noindex on *.netlify.app
   (edge function + tests).
+- **26 Oct, consistency sweep and owner kits:** llms.txt no longer says "no published prices" (guide prices for
+  chalets and transfers); legal notice mentions transfer prices; "private events" / "single events" wording removed
+  (1850 village page, staff page, vs-hotel-concierge guide). `docs/platform-profiles-kit.md` rewritten for the 11
+  services (GBP description EN/FR, services, four December posts, review requests and replies, courchevel.com text,
+  partner and press messages). Monthly AI visibility test set up in `docs/ai-visibility/` (22 fixed questions,
+  answer log CSV, routine; results only from the owner's runs).
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

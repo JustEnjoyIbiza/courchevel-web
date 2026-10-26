@@ -25,7 +25,7 @@ Les noms d’hôtels, de restaurants, de chalets et de marques cités sur ce sit
 
 ## Informations publiées
 
-Nous veillons à ce que les informations de ce site soient exactes et à jour. Restaurants, chefs, dates d’ouverture et disponibilités peuvent changer d’une saison à l’autre : nous confirmons donc chaque détail pour vos dates avant toute réservation. Les prix des chalets valent pour la semaine indiquée, tels qu’ils nous ont été communiqués, et varient selon les dates et les disponibilités ; toutes les autres prestations font l’objet d’un devis personnalisé.
+Nous veillons à ce que les informations de ce site soient exactes et à jour. Restaurants, chefs, dates d’ouverture et disponibilités peuvent changer d’une saison à l’autre : nous confirmons donc chaque détail pour vos dates avant toute réservation. Les prix des chalets valent pour la semaine indiquée, tels qu’ils nous ont été communiqués, et les prix des transferts sont indicatifs ; tous varient selon les dates et les disponibilités. Toutes les autres prestations font l’objet d’un devis personnalisé.
 
 ## Liens vers d’autres sites
 

@@ -25,7 +25,7 @@ includes:
   - "Comment les trois peuvent se compléter sur un même séjour"
 faqs:
   - q: "Ai-je besoin d’une conciergerie privée si je séjourne dans un palace ?"
-    a: "Souvent, non. Les palaces de Courchevel 1850 disposent d’excellentes conciergeries pour leurs clients, qui gèrent très bien tables, cours de ski et transports. Une conciergerie privée devient utile quand vos projets dépassent l’hôtel : famille ou amis dans un chalet séparé, transferts organisés avant l’arrivée, ou événement privé ailleurs."
+    a: "Souvent, non. Les palaces de Courchevel 1850 disposent d’excellentes conciergeries pour leurs clients, qui gèrent très bien tables, cours de ski et transports. Une conciergerie privée devient utile quand vos projets dépassent l’hôtel : famille ou amis dans un chalet séparé, transferts organisés avant l’arrivée, ou dîner privé dans un chalet."
   - q: "Que comprend en général le service de conciergerie d’une agence de chalets ?"
     a: "Cela varie selon l’agence, mais il couvre généralement les services liés aux chalets qu’elle loue : personnel, courses, forfaits de ski et transferts pour ses locataires. Demandez à l’agence ce qui est inclus dans la location et ce qui est organisé à part."
   - q: "Une conciergerie privée peut-elle travailler avec mon hôtel ou mon agence ?"

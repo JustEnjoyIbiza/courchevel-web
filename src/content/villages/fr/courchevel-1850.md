@@ -25,7 +25,7 @@ includes:
   - Transferts en hélicoptère ou avec chauffeur jusqu’à l’altiport ou votre porte
   - Réservations de restaurants et de déjeuners en altitude
   - Forfaits, moniteurs privés et matériel ajusté au chalet
-  - Tables en club et événements privés
+  - Tables en club et soirées privées au chalet
 faqs:
   - q: Peut-on arriver directement en avion à Courchevel 1850 ?
     a: Oui. L’altiport de Courchevel, juste au-dessus du village, accueille hélicoptères et petits avions, aux commandes de pilotes spécialement qualifiés. Les vols dépendent de la lumière du jour et de la météo ; nous prévoyons donc toujours un transfert par la route en solution de repli.

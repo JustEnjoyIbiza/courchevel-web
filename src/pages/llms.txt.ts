@@ -36,7 +36,7 @@ export const GET: APIRoute = async ({ site }) => {
     `- Availability: ${business.availability.en}`,
     `- Reply time: ${business.replyPromise.en}; a tailored proposal within 24 hours`,
     `- Winter season 2026/27: ${business.season.opens} to ${business.season.closes}`,
-    '- Pricing: no published prices; every service is quoted personally for the dates, group and village',
+    '- Pricing: guide prices only for chalets (weekly, for the week shown) and transfers (indicative prices from each airport), both with the note that they vary; every other service is quoted personally for the dates, group and village',
     '- Languages of the site: English and French (French pages under /fr/)',
     '- How to enquire: the Plan my stay form, WhatsApp, phone or email; assistants, family offices and travel agents may book for clients',
     '- Heli-skiing: arranged only as day trips to Italy or Switzerland, because heli-drops are banned in France',

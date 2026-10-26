@@ -25,7 +25,7 @@ The names of hotels, restaurants, chalets and brands mentioned on this site belo
 
 ## Information on this site
 
-We take care to keep the information on this site accurate and up to date. Restaurants, chefs, opening dates and availability can change from one season to the next, so we confirm every detail for your dates before anything is booked. The chalet prices shown are for the week stated, as quoted to us, and change with dates and availability; every other service is quoted personally.
+We take care to keep the information on this site accurate and up to date. Restaurants, chefs, opening dates and availability can change from one season to the next, so we confirm every detail for your dates before anything is booked. The chalet prices shown are for the week stated, as quoted to us, and transfer prices are indicative; both change with dates and availability. Every other service is quoted personally.
 
 ## Links to other websites
 

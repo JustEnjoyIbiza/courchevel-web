@@ -25,7 +25,7 @@ includes:
   - How the three can work together on one stay
 faqs:
   - q: Do I need a private concierge if I am staying in a palace hotel?
-    a: Often not. Palace hotels in Courchevel 1850 have excellent concierge desks for their guests, who handle restaurant tables, ski lessons and transport very well. A private concierge becomes useful when your plans extend beyond the hotel, for example family or friends in a separate chalet, transfers before you arrive or a private event elsewhere.
+    a: Often not. Palace hotels in Courchevel 1850 have excellent concierge desks for their guests, who handle restaurant tables, ski lessons and transport very well. A private concierge becomes useful when your plans extend beyond the hotel, for example family or friends in a separate chalet, transfers before you arrive or a private dinner in a chalet.
   - q: What does a chalet agency's concierge service usually include?
     a: It varies by agency, but it typically covers services around the chalets the agency lets, such as staff, groceries, ski passes and transfers for its guests. Ask the agency what is included in the rental and what is arranged separately.
   - q: Can a private concierge work alongside my hotel or chalet agency?

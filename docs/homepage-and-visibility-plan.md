@@ -83,6 +83,9 @@ after "how it works") plus the closing band.
 
 ## Part 4: measuring (monthly from launch)
 
+Set up 26 Oct: `ai-visibility/README.md` (22 fixed questions EN/FR, routine, formulas) and
+`ai-visibility/answer-log.csv`. Part 3's ready-to-paste texts are in `platform-profiles-kit.md`.
+
 - Search Console: impressions and clicks for the name, "concierge Courchevel", "conciergerie Courchevel".
 - Google Business Profile: calls, website clicks, direction requests.
 - AI test: 20 prompts (EN and FR) in ChatGPT, Perplexity, Gemini and Google AI Mode; log whether we are

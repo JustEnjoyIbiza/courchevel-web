@@ -25,7 +25,7 @@ includes:
   - Helicopter and chauffeured transfers to the altiport or your door
   - Restaurant and mountain lunch reservations
   - Ski passes, private instructors and equipment fitted at the chalet
-  - Nightlife tables and private events
+  - Nightlife tables and private parties in your chalet
 faqs:
   - q: Can you fly directly into Courchevel 1850?
     a: Yes. Courchevel Altiport, just above the village, takes helicopters and small aircraft flown by specially qualified pilots. Flights depend on daylight and the weather, so we always keep a road transfer ready as a fall-back.

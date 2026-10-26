@@ -55,7 +55,7 @@ Tenues de ski, tenues de soirée et vêtements des enfants demandent une attenti
 
 En fin de séjour, le personnel prépare vos valises, met de côté ce qui doit être nettoyé et fait suivre les objets oubliés.
 
-## Pour les propriétaires et les événements ponctuels
+## Pour les propriétaires et pour une soirée
 
 Si vous êtes propriétaire d’un chalet à Courchevel, nous pouvons le doter en personnel pour vos semaines de vacances ou pour toute la saison, et présenter à l’équipe la maison et vos habitudes avant votre arrivée. Pour un dîner ou une célébration dans un chalet loué, nous ajoutons un maître d’hôtel et du personnel de service le temps d’une soirée, aux côtés du chef.
 
