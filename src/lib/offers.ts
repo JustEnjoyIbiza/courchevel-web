@@ -9,6 +9,7 @@ import type { RequestType } from './requests';
 import privateChef from '../content/offers/private-chef';
 import ski from '../content/offers/ski';
 import experiences from '../content/offers/experiences';
+import nightlife from '../content/offers/nightlife';
 
 export interface OfferCard {
   name: string;
@@ -27,4 +28,4 @@ export interface OfferCopy {
 
 export type Offer = { request: RequestType } & Record<Locale, OfferCopy>;
 
-export const offers: Record<string, Offer> = { 'private-chef': privateChef, ski, experiences };
+export const offers: Record<string, Offer> = { 'private-chef': privateChef, ski, experiences, nightlife };

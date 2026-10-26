@@ -136,7 +136,10 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   "includes" removed. **Mountain experiences done:** cards Snowmobiling, Dog sledding, In the air (paragliding,
   scenic flight, balloon); steps; extras (ice driving, ski-joëring and riding, snowshoes, families); body 533 → ~180
   words; one sentence now links to the signature /experiences/ page (the two pages overlap; kept both: activities
-  vs signature days). Next: nightlife, staff, childcare, wellness, lifestyle.
+  vs signature days). **Nightlife and après-ski done:** cards Après-ski table, Nightclub table, A party in your chalet
+  (all open the VIP request; its field is now "Venue or evening"); steps; extras (dinner, driver, babysitter, next
+  morning); the venue list keeps only evening venues (Bagatelle, Le Tremplin, La Mangeoire), lunch restaurants left to
+  the Where to eat guide (owner's rule); body 640 → ~200 words. Next: staff, childcare, wellness, lifestyle.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

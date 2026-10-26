@@ -21,7 +21,7 @@ const base: Record<LeadLocale, Labels> = {
 const overrides: Record<LeadLocale, Partial<Record<RequestType, Partial<Labels>>>> = {
   en: {
     table: { item: 'Restaurant' },
-    vip: { item: 'Venue' },
+    vip: { item: 'Venue or evening' },
     transfer: { guests: 'Passengers' },
     instructor: { item: 'Lessons or guide', date: 'First day', guests: 'Skiers', details: 'Levels and ages' },
     chef: { item: 'Format', date: 'First evening', dateTo: 'Last evening' },
@@ -32,7 +32,7 @@ const overrides: Record<LeadLocale, Partial<Record<RequestType, Partial<Labels>>
   },
   fr: {
     table: { item: 'Restaurant' },
-    vip: { item: 'Établissement' },
+    vip: { item: 'Établissement ou soirée' },
     transfer: { guests: 'Passagers' },
     instructor: { item: 'Cours ou guide', date: 'Premier jour', guests: 'Skieurs', details: 'Niveaux et âges' },
     chef: { item: 'Formule', date: 'Premier soir', dateTo: 'Dernier soir', guests: 'Convives' },
