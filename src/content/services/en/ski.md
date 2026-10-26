@@ -4,7 +4,8 @@ shortTitle: Private ski and mountain
 metaTitle: "Private Ski Instructors in Courchevel | CLC"
 description: Certified private ski instructors, off-piste guides, heli-skiing day trips to Italy or Switzerland, and ski passes delivered to your Courchevel chalet.
 answer: We book certified private ski instructors for adults and children, high-mountain guides for off-piste days, and heli-skiing day trips to Italy or Switzerland, since heli-drops are banned in France. Ski passes and equipment are delivered to your chalet, and you receive a personal proposal within 24 hours.
-updated: 2026-10-23
+updated: 2026-10-26
+offer: true
 image: skiers
 imageAlt: "Two skiers on a groomed slope in front of wooden chalets in Courchevel"
 facts:
@@ -16,15 +17,6 @@ facts:
     value: Banned in France since the 1985 Mountain Law; day trips to Italy or Switzerland only
   - label: Christmas, New Year and February
     value: Book instructors as soon as your dates are fixed; many are reserved weeks ahead
-  - label: Proposal
-    value: Within 24 hours of your request
-includes:
-  - Certified private ski and snowboard instructors for adults and children
-  - High-mountain guides for off-piste and ski touring
-  - Heli-skiing day trips to Italy or Switzerland
-  - Ski passes and rental equipment delivered to your chalet
-  - Boot fitting at the chalet or in a specialist shop
-  - Lunch tables booked at mountain restaurants you can ski to
 faqs:
   - q: Is heli-skiing allowed in Courchevel?
     a: No. Dropping passengers by aircraft for leisure has been banned in French mountain areas since the 1985 Mountain Law. Heli-skiing from Courchevel is therefore a day trip to Italy or Switzerland, where it is permitted.
@@ -40,39 +32,14 @@ related:
   - /guides/where-to-eat/
 ---
 
-## Private instructors for adults and children
+## Heli-skiing: why Italy or Switzerland
 
-Courchevel has about 150 km of pistes and is linked to around 600 km in the Trois Vallées, so a private instructor saves time as much as technique. We book state-certified instructors for skiing and snowboarding, by the half-day, day or week, and match them to each skier: For a tour of the slopes from the summit of La Saulire to Le Praz, see [the Courchevel ski area](/courchevel-ski-area/).
+Since the 1985 Mountain Law, dropping passengers by aircraft for leisure has been banned in French mountain areas. Heli-skiing from Courchevel is therefore a day across the border, in Italy or Switzerland, where it is allowed: we arrange the transfer, a certified guide and the helicopter operator, and plan the day around the weather. Groups are small, and flights depend on visibility and snow. Our [guide to heli-skiing from Courchevel](/guides/heli-skiing-from-courchevel/) explains the French rules and the day trips to Italy or Switzerland in detail.
 
-- **Children:** patient instructors used to first lessons, very young skiers and teenagers who want to go faster.
-- **Adults:** technique, confidence after a break, or simply a local who knows where the snow is good that morning.
-- **Mixed groups:** one instructor per level, so nobody waits.
+## Off-piste, safely
 
-Tell us the ages, levels and any language preference, and we propose instructors who suit your group.
+Off-piste terrain in the Trois Vallées is outside the patrolled area. Guides choose the route from the snowpack and the avalanche bulletin, which uses a European scale of 1 to 5, and may change the plan or keep you on the pistes when the risk is too high, so we keep the day flexible and can move it to a better morning. Ski touring and first off-piste lessons are arranged the same way.
 
-## Off-piste with a high-mountain guide
+## The ski area
 
-Off-piste skiing in the Trois Vallées can be spectacular, but it is outside the patrolled area. For these days we book qualified high-mountain guides, who choose the route according to the snowpack and the avalanche bulletin and provide the safety equipment. Ski touring and first off-piste lessons are arranged the same way.
-
-Conditions change from day to day. The avalanche bulletin uses a European scale of 1 to 5, and the guide may change the plan, or keep you on the pistes, when the risk is too high. We keep the day flexible so you can move it to a better morning.
-
-## Heli-skiing: day trips to Italy or Switzerland
-
-Heli-drops are banned in France. Since the 1985 Mountain Law, dropping passengers by aircraft for leisure is prohibited in French mountain areas.
-
-Heli-skiing from Courchevel is therefore a day trip across the border, to Italy or Switzerland, where it is allowed. We arrange the transfer, a certified guide and the helicopter operator on the other side, and plan the day around the weather. Groups are small, and the flights depend on visibility and snow conditions.
-
-Our [guide to heli-skiing from Courchevel](/guides/heli-skiing-from-courchevel/) explains the French rules, the day trips to Italy or Switzerland and how the day is organised.
-
-## Passes, equipment and lunch on the slopes
-
-Before you arrive we prepare everything that usually takes the first morning:
-
-- **Ski passes** for Courchevel or the whole Trois Vallées, ready at the chalet.
-- **Equipment** delivered and fitted in your sizes, including helmets for children.
-- **Boot fitting** at the chalet or with a specialist, for skiers who struggle with comfort.
-- **Lunch:** tables reserved at mountain restaurants you can ski to, timed around your lesson.
-
-## How to book
-
-Send us your dates, the number of skiers with their ages and levels, and what you would like to do. We answer within 15 minutes from 8:00 to 22:00 and send a tailored proposal within 24 hours. During the season we are on call 24/7 to move a lesson or add a guide.
+Courchevel has about 150 km of pistes, linked to around 600 km in the Trois Vallées, so a private instructor saves time as much as technique: one instructor per level means nobody waits. For a tour from the summit of La Saulire to Le Praz, see [the Courchevel ski area](/courchevel-ski-area/). Children, beginners and teenagers who want to go faster are matched with instructors who suit them; in season we are on call 24/7 to move a lesson or add a guide.

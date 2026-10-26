@@ -25,8 +25,9 @@ Hotels: `/palace-hotels-courchevel/` lists them as cards; each hotel has its own
 `src/assets/hotels/<slug>/`). Hotel facts only from sourced pages, listed in `sources`.
 Dining (owner, 26 Oct 2026): the private chef page is about private chefs only (no restaurant content);
 restaurants live in the Where to eat guide, which carries a "Dinner at home | A table out" tile to the chef page
-(`dining: in | out`, copy in `src/content/dining.ts`). The chef page leads with three format cards that open the
-chef request with the format filled in (`?item=`).
+(`dining: out`, copy in `src/content/dining.ts`). Service pages with `offer: true` lead with three choice cards that
+open the page's short request with the choice filled in (`?item=`), then steps and extras: `ServiceOffer.astro`,
+one data file per service in `src/content/offers/<slug>.ts` (registered in `src/lib/offers.ts`).
 
 ## Business facts
 

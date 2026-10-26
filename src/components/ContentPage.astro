@@ -18,7 +18,7 @@ import HotelList from './HotelList.astro';
 import LegalFacts from './LegalFacts.astro';
 import TransferRoutes from './TransferRoutes.astro';
 import JetBand from './JetBand.astro';
-import ChefOffer from './ChefOffer.astro';
+import ServiceOffer from './ServiceOffer.astro';
 import DiningSplit from './DiningSplit.astro';
 import { photos } from '../data/photos';
 import { business, type Locale } from '../data/business';
@@ -138,7 +138,7 @@ const cta = pageCta(locale, collection, slug);
     {d.legal && <LegalFacts kind={d.legal} locale={locale} />}
     {d.transfers && <TransferRoutes locale={locale} />}
     {d.transfers && <JetBand locale={locale} />}
-    {d.dining === 'in' && <ChefOffer locale={locale} />}
+    {d.offer && <ServiceOffer slug={slug} locale={locale} />}
     {d.highlights?.map((h, i) => <Highlights {...h} index={i} locale={locale} />)}
     {d.dining === 'out' && <DiningSplit current="out" locale={locale} />}
 

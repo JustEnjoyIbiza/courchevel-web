@@ -5,7 +5,7 @@ metaTitle: "Private Chef in Courchevel: Chefs in Your Chalet | CLC"
 description: "A private chef in your Courchevel chalet for one dinner, every evening or full board, Michelin-starred chefs on request, with menus within 24 hours."
 answer: "A private chef cooks in your chalet for one dinner, every evening or the whole stay. Tell us your dates, your guests and how you like to eat: we propose a chef and sample menus within 24 hours."
 updated: 2026-10-26
-dining: in
+offer: true
 image: dining-table
 imageAlt: "Wooden dining table set for dinner by a window facing snow-covered peaks"
 facts:

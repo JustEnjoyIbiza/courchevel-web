@@ -21,7 +21,7 @@ interface Props {
 const { current, locale } = Astro.props;
 const s = diningCopy[locale].split;
 const pages: Record<DiningSide, { page: string; anchor: string }> = {
-  in: { page: '/services/private-chef/', anchor: '#chef' },
+  in: { page: '/services/private-chef/', anchor: '#offer' },
   out: { page: '/guides/where-to-eat/', anchor: `#${highlightsTitleId(0)}` },
 };
 const onGuide = current === 'out';

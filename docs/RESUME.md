@@ -127,6 +127,13 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   services (GBP description EN/FR, services, four December posts, review requests and replies, courchevel.com text,
   partner and press messages). Monthly AI visibility test set up in `docs/ai-visibility/` (22 fixed questions,
   answer log CSV, routine; results only from the owner's runs).
+- **26 Oct, service pages, same treatment as the chef page (owner):** the chef block became reusable:
+  `ServiceOffer.astro` + one data file per service in `src/content/offers/<slug>.ts` (registered in
+  `src/lib/offers.ts`), shown with `offer: true`; cards open the page's request with `?item=` (a card may open
+  another request, e.g. heli-skiing → experience). **Private ski and mountain done:** cards Private lessons,
+  Off-piste with a guide, A heli-skiing day (Italy or Switzerland); steps; extras (passes, equipment, boot fitting,
+  lunch on the slopes); instructor request gains a "Lessons or guide" field; body 488 → 251 words, facts 4,
+  "includes" removed. Next: experiences, nightlife, staff, childcare, wellness, lifestyle.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

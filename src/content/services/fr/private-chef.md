@@ -5,7 +5,7 @@ metaTitle: "Chef privé à Courchevel : un chef au chalet | CLC"
 description: "Un chef privé dans votre chalet à Courchevel pour un dîner, tous les soirs ou en pension complète, chefs étoilés sur demande, menus sous 24 heures."
 answer: "Un chef privé cuisine dans votre chalet le temps d’un dîner, chaque soir ou pendant tout le séjour. Indiquez-nous vos dates, vos convives et vos goûts : nous vous proposons un chef et des exemples de menus sous 24 heures."
 updated: 2026-10-26
-dining: in
+offer: true
 image: dining-table
 imageAlt: "Table en bois dressée pour le dîner devant une fenêtre ouverte sur les sommets enneigés"
 facts:

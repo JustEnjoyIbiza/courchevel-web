@@ -34,7 +34,7 @@ export const REQUEST_SPECS: Record<RequestType, RequestSpec> = {
   table: spec(['nightlife'], ['item', 'date', 'time', 'guests', 'details', 'staying'], ['date', 'guests']),
   vip: spec(['nightlife'], ['item', 'date', 'guests', 'details', 'staying'], ['date', 'guests'], { min: 1, value: 4 }),
   transfer: spec(['transfers'], ['from', 'to', 'date', 'time', 'flight', 'guests', 'details', 'staying'], ['from', 'to', 'date', 'guests']),
-  instructor: spec(['ski'], ['date', 'dateTo', 'guests', 'details', 'staying'], ['date', 'guests']),
+  instructor: spec(['ski'], ['item', 'date', 'dateTo', 'guests', 'details', 'staying'], ['date', 'guests']),
   chef: spec(['private-chef'], ['item', 'date', 'dateTo', 'guests', 'details', 'staying'], ['date', 'guests'], { min: 1, value: 6 }),
   experience: spec(['experiences'], ['item', 'date', 'guests', 'details', 'staying'], ['date', 'guests']),
   nanny: spec(['childcare'], ['date', 'dateTo', 'guests', 'details', 'staying'], ['date', 'guests'], { min: 1, value: 1 }),
