@@ -14,6 +14,7 @@ import nightlife from '../content/offers/nightlife';
 import staff from '../content/offers/staff';
 import childcare from '../content/offers/childcare';
 import wellness from '../content/offers/wellness';
+import lifestyle from '../content/offers/lifestyle';
 
 export interface OfferCard {
   name: string;
@@ -38,4 +39,4 @@ export type Offer = {
   prefill?: 'item' | 'details';
 } & Record<Locale, OfferCopy>;
 
-export const offers: Record<string, Offer> = { 'private-chef': privateChef, ski, experiences, nightlife, staff, childcare, wellness };
+export const offers: Record<string, Offer> = { 'private-chef': privateChef, ski, experiences, nightlife, staff, childcare, wellness, lifestyle };

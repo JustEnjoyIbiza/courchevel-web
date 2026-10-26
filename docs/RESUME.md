@@ -149,7 +149,12 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   your chalet, A hotel spa, Hair and make-up (all open the treatment request with "Treatment" filled in); steps;
   extras (couples and groups, personal training, yoga and Pilates, manicure and pedicure); "Reply time" fact and
   includes removed; body 466 → 180 words, now linking to the palace hotels page; Lighthouse EN 100/100/100,
-  FR 99/100/100 (SEO 69 = preview noindex). Next: lifestyle (the last service page).
+  FR 99/100/100 (SEO 69 = preview noindex). **Lifestyle, shopping and security done:** cards Personal shopping,
+  Last-minute requests, Close protection (general form, `prefill: 'details'`, `service: 'lifestyle'`); steps (one
+  message, a reply within 15 minutes, handled discreetly); extras (watches and jewellery, gifts, tickets, pet care);
+  "Reply time" and "Winter season" facts and includes removed, a "Pets" fact added from the page's FAQ; body 456 →
+  196 words (shopping and gifts; close protection through CNAPS-authorised partners); Lighthouse EN 99/100/100,
+  FR 98/100/100. All service pages now use the offer block.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before
