@@ -145,7 +145,11 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   script now pre-fills details); steps; extras (laundry, ski room, packing, for owners); body ~520 → ~200 words.
   **Family and childcare done:** cards A nanny for the stay, Evening babysitting (nanny request, new "Type of
   care" field), Ski lessons for children (instructor request); steps; extras (baby equipment, car seats,
-  activities, drop-off and collection); body 460 → ~180 words. Next: wellness, lifestyle.
+  activities, drop-off and collection); body 460 → ~180 words. **Wellness and beauty done:** cards Massage in
+  your chalet, A hotel spa, Hair and make-up (all open the treatment request with "Treatment" filled in); steps;
+  extras (couples and groups, personal training, yoga and Pilates, manicure and pedicure); "Reply time" fact and
+  includes removed; body 466 → 180 words, now linking to the palace hotels page; Lighthouse EN 100/100/100,
+  FR 99/100/100 (SEO 69 = preview noindex). Next: lifestyle (the last service page).
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before
