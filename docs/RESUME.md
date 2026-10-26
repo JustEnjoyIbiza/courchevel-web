@@ -133,7 +133,10 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   another request, e.g. heli-skiing → experience). **Private ski and mountain done:** cards Private lessons,
   Off-piste with a guide, A heli-skiing day (Italy or Switzerland); steps; extras (passes, equipment, boot fitting,
   lunch on the slopes); instructor request gains a "Lessons or guide" field; body 488 → 251 words, facts 4,
-  "includes" removed. Next: experiences, nightlife, staff, childcare, wellness, lifestyle.
+  "includes" removed. **Mountain experiences done:** cards Snowmobiling, Dog sledding, In the air (paragliding,
+  scenic flight, balloon); steps; extras (ice driving, ski-joëring and riding, snowshoes, families); body 533 → ~180
+  words; one sentence now links to the signature /experiences/ page (the two pages overlap; kept both: activities
+  vs signature days). Next: nightlife, staff, childcare, wellness, lifestyle.
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before
