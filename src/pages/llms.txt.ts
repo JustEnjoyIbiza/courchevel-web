@@ -5,7 +5,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { business, hasStreetAddress } from '../data/business';
-import { services } from '../data/services';
+import { services, servicePath } from '../data/services';
 import { villages } from '../data/villages';
 import { experiencesPage } from '../content/experiences-page';
 import { allFaqs } from '../content/faq';
@@ -43,7 +43,7 @@ export const GET: APIRoute = async ({ site }) => {
     '',
     '## Services',
     '',
-    ...services.map((s) => `- [${s.name.en}](${url(`/services/${s.slug}/`)}): ${s.summary.en}`),
+    ...services.map((s) => `- [${s.name.en}](${url(servicePath(s))}): ${s.summary.en}`),
     '',
     '## Experiences (arranged on request, subject to weather and availability)',
     '',

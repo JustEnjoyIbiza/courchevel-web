@@ -22,13 +22,13 @@ export const hubs: Record<HubKey, Record<Locale, HubCopy>> = {
       title: 'Concierge services in Courchevel',
       metaTitle: 'Concierge Services in Courchevel | CLC',
       description: 'Chalets, helicopter transfers, private chefs, ski instructors, staff, childcare and wellness in Courchevel, arranged by one contact and quoted personally.',
-      answer: 'We arrange ten kinds of service for stays in Courchevel and the Trois Vallées, from chalets and helicopter transfers to private chefs, nannies and nightlife. One contact plans everything around your dates and village, and every service is quoted personally.',
+      answer: 'We arrange eleven kinds of service for stays in Courchevel and the Trois Vallées, from chalets and helicopter transfers to private chefs, nannies and nightlife. One contact plans everything around your dates and village, and every service is quoted personally.',
     },
     fr: {
       title: 'Services de conciergerie de luxe à Courchevel',
       metaTitle: 'Conciergerie de luxe à Courchevel : services | CLC',
       description: 'Chalets, transferts en hélicoptère, chefs privés, moniteurs de ski, personnel, garde d’enfants et bien-être à Courchevel, sur devis personnalisé.',
-      answer: 'Nous organisons dix types de prestations pour les séjours à Courchevel et dans les Trois Vallées, des chalets et transferts en hélicoptère aux chefs privés, nounous et soirées. Un seul interlocuteur organise tout selon vos dates et votre village, et chaque prestation fait l’objet d’un devis personnalisé.',
+      answer: 'Nous organisons onze types de prestations pour les séjours à Courchevel et dans les Trois Vallées, des chalets et transferts en hélicoptère aux chefs privés, nounous et soirées. Un seul interlocuteur organise tout selon vos dates et votre village, et chaque prestation fait l’objet d’un devis personnalisé.',
     },
   },
   villages: {

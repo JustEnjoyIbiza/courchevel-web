@@ -106,6 +106,6 @@ Some highlights return every winter, with dates announced by the tourist office 
 
 ## Planning around the calendar
 
-The week you choose shapes everything else: which chalets are available, how far ahead you need to book a table, and how busy the slopes and the roads will be. If you are flexible, tell us and we suggest the weeks that fit what you want, whether that is the energy of New Year or the calm of January. For a Christmas dinner in the chalet, see our [private chef](/services/private-chef/) service, and for chalets see our [chalets and palace hotels](/services/chalets/).
+The week you choose shapes everything else: which chalets are available, how far ahead you need to book a table, and how busy the slopes and the roads will be. If you are flexible, tell us and we suggest the weeks that fit what you want, whether that is the energy of New Year or the calm of January. For a Christmas dinner in the chalet, see our [private chef](/services/private-chef/) service, and for where to stay see our [chalets](/services/chalets/) and [palace hotels](/palace-hotels-courchevel/).
 
 Send us your dates and you will receive a proposal within 24 hours. We reply within 15 minutes from 8:00 to 22:00, and in the winter season we are available 24/7.

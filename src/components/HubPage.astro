@@ -12,7 +12,7 @@ import CtaBand from './CtaBand.astro';
 import LastUpdated from './LastUpdated.astro';
 import { hubs, hubsUpdated } from '../content/hubs';
 import { experiences } from '../content/experiences';
-import { services } from '../data/services';
+import { services, servicePath } from '../data/services';
 import { villages } from '../data/villages';
 import { photos } from '../data/photos';
 import type { Locale } from '../data/business';
@@ -37,7 +37,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
 type Item = { title: string; text: string; href?: string };
 let items: Item[] = [];
 if (hub === 'services') {
-  items = services.map((x) => ({ title: x.name[locale], text: x.summary[locale], href: localize(`/services/${x.slug}/`, locale) }));
+  items = services.map((x) => ({ title: x.name[locale], text: x.summary[locale], href: localize(servicePath(x), locale) }));
 } else if (hub === 'guides') {
   items = (await getCollection('guides'))
     .filter((g) => splitId(g.id).locale === locale)
@@ -59,7 +59,7 @@ const hero = heroes[hub];
 
 // Services hub: the same services, grouped by the stage of the stay.
 const stages = [
-  { title: { en: 'Before you arrive', fr: 'Avant votre arrivée' }, text: { en: 'The chalet chosen, staffed and stocked to your list, with children’s equipment in place.', fr: 'Le chalet choisi, le personnel en place et la cuisine approvisionnée selon votre liste, avec l’équipement pour les enfants.' }, slugs: ['chalets', 'staff', 'childcare'] },
+  { title: { en: 'Before you arrive', fr: 'Avant votre arrivée' }, text: { en: 'The chalet chosen, staffed and stocked to your list, with children’s equipment in place.', fr: 'Le chalet choisi, le personnel en place et la cuisine approvisionnée selon votre liste, avec l’équipement pour les enfants.' }, slugs: ['chalets', 'palace-hotels', 'staff', 'childcare'] },
   { title: { en: 'Arrival and departure', fr: 'Arrivée et départ' }, text: { en: 'Helicopter or chauffeured car from the airport, timed to your flight, with a road transfer on standby.', fr: 'Hélicoptère ou voiture avec chauffeur depuis l’aéroport, calés sur votre vol, avec un transfert routier en réserve.' }, slugs: ['transfers'] },
   { title: { en: 'On the mountain', fr: 'Sur la montagne' }, text: { en: 'Instructors and guides matched to each skier, and afternoons off the pistes.', fr: 'Moniteurs et guides adaptés à chaque skieur, et des après-midi hors des pistes.' }, slugs: ['ski', 'experiences'] },
   { title: { en: 'Evenings', fr: 'En soirée' }, text: { en: 'A chef at the chalet or the right table in the village.', fr: 'Un chef au chalet ou la bonne table au village.' }, slugs: ['private-chef', 'nightlife'] },
@@ -76,9 +76,10 @@ const toStory = (x: (typeof services)[number]) => ({
   slug: x.slug,
   name: x.name[locale],
   summary: x.summary[locale],
-  href: localize(`/services/${x.slug}/`, locale),
+  href: localize(servicePath(x), locale),
   line: serviceStories[x.slug]?.line[locale] ?? '',
   photo: serviceStories[x.slug]?.photo ?? 'gondola',
+  credit: serviceStories[x.slug]?.credit?.[locale],
 });
 const stories = Object.fromEntries(services.map((x) => [x.slug, toStory(x)]));
 
@@ -164,6 +165,7 @@ const crumbs = [
                           <h4 class="text-xl md:text-2xl"><SmartLink href={x.href} class="text-ink no-underline transition-colors after:absolute after:inset-0 group-hover:text-brass-deep">{x.name}</SmartLink></h4>
                           <p class="mt-1 font-serif text-base leading-snug italic text-brass-deep md:text-lg">{x.line}</p>
                           <p class="mt-2 text-sm text-taupe">{x.summary}</p>
+                          {x.credit && <p class="mt-1 text-[0.7rem] text-taupe">{x.credit}</p>}
                         </div>
                       </li>
                     );
@@ -219,7 +221,7 @@ const crumbs = [
                 <p class:list={['mt-6 text-sm', dark ? 'text-stone/80' : 'text-taupe']}>
                   {locale === 'en' ? 'Draws on' : 'Services associés'}{locale === 'fr' ? ' :' : ':'}{' '}
                   {x.services.map((p, n) => {
-                    const svc = services.find((sv) => `/services/${sv.slug}/` === p);
+                    const svc = services.find((sv) => servicePath(sv) === p);
                     return svc ? <>{n > 0 && ', '}<a href={localize(p, locale)} class:list={[dark ? 'text-ivory underline decoration-brass underline-offset-4 hover:text-brass' : 'link']}>{svc.name[locale]}</a></> : null;
                   })}
                 </p>

@@ -11,7 +11,7 @@ import SmartLink from '../SmartLink.astro';
 import GoogleReviews from '../GoogleReviews.astro';
 import QuickStart from './QuickStart.astro';
 import { home } from '../../content/home';
-import { services } from '../../data/services';
+import { services, servicePath } from '../../data/services';
 import { villages } from '../../data/villages';
 import { allFaqs } from '../../content/faq';
 import { experiencesPage } from '../../content/experiences-page';
@@ -63,7 +63,8 @@ const featuredServices = featuredSlugs.map(({ slug, image }) => {
   const alt = serviceEntries.find((e) => e.data.image === image)?.data.imageAlt ?? '';
   return { svc, image, alt };
 });
-const otherServices = services.filter((x) => !featuredSlugs.some((f) => f.slug === x.slug));
+// Palace hotels already have the second half of the chalets tile.
+const otherServices = services.filter((x) => x.slug !== 'palace-hotels' && !featuredSlugs.some((f) => f.slug === x.slug));
 
 const heroForSchema = (await getImage({ src: heroImg, width: 1200, format: 'jpeg' })).src;
 const schema = [
@@ -191,7 +192,7 @@ const sectionHead = 'max-w-2xl';
             />
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/70 to-transparent px-6 pt-24 pb-7">
               <h3 class="text-3xl text-ivory">
-                <SmartLink href={localize(`/services/${f.svc.slug}/`, locale)} class="text-ivory no-underline after:absolute after:inset-0 hover:text-brass">{f.svc.name[locale]}</SmartLink>
+                <SmartLink href={localize(servicePath(f.svc), locale)} class="text-ivory no-underline after:absolute after:inset-0 hover:text-brass">{f.svc.name[locale]}</SmartLink>
               </h3>
               <p class="mt-2 text-sm text-stone">{f.svc.summary[locale]}</p>
             </div>
@@ -203,7 +204,7 @@ const sectionHead = 'max-w-2xl';
         {otherServices.map((svc) => (
           <li class="border-t border-line py-5">
             <h3 class="text-xl">
-              <SmartLink href={localize(`/services/${svc.slug}/`, locale)} class="text-ink no-underline hover:text-brass-deep">{svc.name[locale]}</SmartLink>
+              <SmartLink href={localize(servicePath(svc), locale)} class="text-ink no-underline hover:text-brass-deep">{svc.name[locale]}</SmartLink>
             </h3>
             <p class="mt-1 text-sm text-taupe">{svc.summary[locale]}</p>
           </li>

@@ -105,6 +105,11 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
 - **26 Oct, services page cut down** (owner: it repeated the homepage): `/services/` is now the stage-by-stage list
   of all 10 services, each with a small photo, name, italic line and one-sentence description, the whole row linking
   to the service; the three large chapters and the photo tiles are gone (`HubPage.astro`). Mobile ~11,700 → ~6,500 px.
+- **26 Oct, Palace hotels a service of their own** (owner: like the homepage tile): "Chalets" (→ `/services/chalets/`)
+  and "Palace hotels" (→ `/palace-hotels-courchevel/`, `path` in `src/data/services.ts`, links via `servicePath()`).
+  11 services; Plan my stay has a Palace hotels choice; hotel pages and the hotels page tag requests `palace-hotels`.
+  Body links that said "chalets and palace hotels" now link to both pages. The homepage index skips Palace hotels
+  (it is the second half of the chalets tile).
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

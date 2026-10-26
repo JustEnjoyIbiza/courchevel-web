@@ -19,6 +19,7 @@ export const photoAlt: Record<PhotoKey, L> = {
   'gift-delivery': { en: 'Two cars unloading gifts and shopping bags in front of a chalet in Courchevel', fr: 'Deux voitures déchargeant cadeaux et sacs de shopping devant un chalet à Courchevel' },
   luggage: { en: 'Land Rover Defender with luxury luggage in the snow, ready for a chalet arrival', fr: 'Land Rover Defender et bagages de luxe dans la neige, prêts pour une arrivée au chalet' },
   'white-chalet': { en: 'White wooden chalet among snow-covered pine trees in Courchevel', fr: 'Chalet en bois blanc entouré de sapins enneigés à Courchevel' },
+  'palace-airelles': { en: 'The turreted facade of Les Airelles in Courchevel 1850 at dusk, lit from within, above fresh snow', fr: 'La façade à tourelles des Airelles à Courchevel 1850 au crépuscule, éclairée de l’intérieur, au-dessus de la neige fraîche' },
   'stone-chalet': { en: 'Stone and wood chalet in fresh snow in Courchevel', fr: 'Chalet en pierre et bois sous la neige fraîche à Courchevel' },
   'wooden-chalets': { en: 'Wooden chalets with balconies and a gondola passing above in Courchevel', fr: 'Chalets en bois avec balcons et une télécabine au-dessus, à Courchevel' },
   terrace: { en: 'Sunny terrace of a mountain restaurant above the slopes in Courchevel', fr: 'Terrasse ensoleillée d’un restaurant d’altitude au-dessus des pistes de Courchevel' },
@@ -58,8 +59,9 @@ export const photoAlt: Record<PhotoKey, L> = {
 };
 
 /** Services hub: the line under each service name and the photo shown beside it. */
-export const serviceStories: Record<string, { line: L; photo: PhotoKey }> = {
+export const serviceStories: Record<string, { line: L; photo: PhotoKey; credit?: L }> = {
   chalets: { photo: 'chalet-living-room', line: { en: 'A home on the mountain, ready before you land.', fr: 'Une maison à la montagne, prête avant votre atterrissage.' } },
+  'palace-hotels': { photo: 'palace-airelles', credit: { en: 'Photo: Airelles Courchevel', fr: 'Photo : Airelles Courchevel' }, line: { en: 'Hotel life at its finest, in the heart of 1850.', fr: 'L’hôtellerie à son sommet, au cœur de 1850.' } },
   transfers: { photo: 'private-jet', line: { en: 'From the airport to the altiport, timed to your flight.', fr: 'De l’aéroport à l’altiport, calé sur votre vol.' } },
   'private-chef': { photo: 'dining-table', line: { en: 'Dinner by the fire, cooked for your table alone.', fr: 'Le dîner au coin du feu, préparé pour votre seule table.' } },
   ski: { photo: 'skiers', line: { en: 'Your pace, your level, your instructor.', fr: 'Votre rythme, votre niveau, votre moniteur.' } },

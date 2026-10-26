@@ -66,7 +66,7 @@ Pendant les vacances, la station propose balades festives, défilés et descente
 
 L’essentiel se prépare avant votre arrivée, pour que les fêtes commencent dès que vous franchissez la porte.
 
-- **Le chalet prêt à votre arrivée.** Le sapin est installé et décoré, le réfrigérateur et la cave sont remplis selon votre liste, les chambres des enfants sont préparées. Si vous n’avez pas encore choisi votre hébergement, découvrez notre service de [location de chalet de luxe et palaces](/fr/services/chalets/).
+- **Le chalet prêt à votre arrivée.** Le sapin est installé et décoré, le réfrigérateur et la cave sont remplis selon votre liste, les chambres des enfants sont préparées. Si vous n’avez pas encore choisi votre hébergement, découvrez nos [chalets](/fr/services/chalets/) et nos [palaces](/fr/palace-hotels-courchevel/).
 - **Les repas de fête au chalet.** Un chef à domicile prépare avec vous le dîner du réveillon et le déjeuner de Noël, d’un menu traditionnel aux plats que votre famille sert chez elle ; allergies et exigences religieuses lui sont transmises à l’avance. Voir notre service de [chef à domicile](/fr/services/private-chef/).
 - **Le réveillon du Nouvel An.** Nous demandons en votre nom des tables dans les restaurants, les hôtels et les clubs, sous réserve de disponibilité, et prévoyons un chauffeur pour la soirée. Pour un dîner au chalet, un [chef privé](/fr/services/private-chef/) et du personnel de service s’occupent de la soirée.
 - **Des soirées pour les adultes.** Une nounou peut garder les enfants au chalet le soir du réveillon de Noël ou du Nouvel An, pour que vous puissiez dîner dehors sans regarder l’heure.

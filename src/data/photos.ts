@@ -19,6 +19,8 @@ import hotTub from '../assets/photos/outdoor-hot-tub-pines.jpeg';
 import chaletLivingRoom from '../assets/photos/chalet-living-room-fireplace.jpeg';
 import chaletLounge from '../assets/photos/chalet-lounge-chandelier.jpeg';
 import stoneChaletDeepSnow from '../assets/photos/stone-chalet-deep-snow.jpeg';
+// Les Airelles' own photo (owner's OK, 25 Oct 2026): always shown with its credit.
+import palaceAirelles from '../assets/hotels/airelles-courchevel/01-exterior.jpeg';
 import privateJet from '../assets/photos/private-jet-cabin.jpeg';
 import diningTable from '../assets/photos/dining-table-mountain-window.jpeg';
 import partyTable from '../assets/photos/party-table-mirror-ball.jpeg';
@@ -64,6 +66,7 @@ export const photos = {
   'chalet-living-room': chaletLivingRoom,
   'chalet-lounge': chaletLounge,
   'stone-chalet-deep-snow': stoneChaletDeepSnow,
+  'palace-airelles': palaceAirelles,
   'private-jet': privateJet,
   'dining-table': diningTable,
   'party-table': partyTable,

@@ -34,7 +34,7 @@ const [lead, ...gallery] = hotelPhotos(slug);
 const url = hotelPath(slug, locale);
 const listUrl = localize('/palace-hotels-courchevel/', locale);
 
-const request = requestCta(locale, { type: 'stay', service: 'chalets' }, d.name);
+const request = requestCta(locale, { type: 'stay', service: 'palace-hotels' }, d.name);
 const cta = { label: c.button, href: request.href, whatsapp: whatsappHref(locale) };
 
 const crumbs = [

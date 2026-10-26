@@ -1,7 +1,9 @@
 /**
  * The services, in the order and scope of the plan ("Site structure"). Chalet
- * owner services and events were removed on 26 Oct 2026 (owner: not offered),
- * leaving 10.
+ * owner services and events were removed on 26 Oct 2026 (owner: not offered);
+ * palace hotels became a service of their own the same day (owner: like the
+ * homepage tile, Chalets | Palace hotels), so 11. A service whose page is not
+ * under /services/ sets `path`; use servicePath() for links.
  * Every service is on request: no prices, ever.
  * French: to be reviewed by a native speaker.
  */
@@ -11,15 +13,26 @@ export interface Service {
   slug: string;
   name: Record<Locale, string>;
   summary: Record<Locale, string>;
+  /** The page, when it is not /services/<slug>/. */
+  path?: string;
 }
 
 export const services: Service[] = [
   {
     slug: 'chalets',
-    name: { en: 'Chalets and palace hotels', fr: 'Chalets et palaces' },
+    name: { en: 'Chalets', fr: 'Chalets' },
     summary: {
-      en: 'Ultra-luxury chalets and palace hotels, staffed and prepared before you arrive.',
-      fr: 'Chalets d’exception et palaces, avec personnel, préparés avant votre arrivée.',
+      en: 'Private chalets and apartments in Courchevel and Méribel, staffed and prepared before you arrive.',
+      fr: 'Chalets et appartements privés à Courchevel et Méribel, avec personnel, préparés avant votre arrivée.',
+    },
+  },
+  {
+    slug: 'palace-hotels',
+    path: '/palace-hotels-courchevel/',
+    name: { en: 'Palace hotels', fr: 'Palaces' },
+    summary: {
+      en: 'The five palaces of Courchevel and five more five-star hotels, each with its own page.',
+      fr: 'Les cinq palaces de Courchevel et cinq autres hôtels cinq étoiles, chacun avec sa page.',
     },
   },
   {
@@ -95,3 +108,6 @@ export const services: Service[] = [
     },
   },
 ];
+
+/** '/services/chalets/', or the service's own page ('/palace-hotels-courchevel/'); unlocalized. */
+export const servicePath = (s: Service) => s.path ?? `/services/${s.slug}/`;
