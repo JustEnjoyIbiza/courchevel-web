@@ -3,12 +3,17 @@
  * The homepage, shared by / and /fr/. Copy comes from src/content/home.ts,
  * services/villages/faq from src/data/. Section ids keep the old site's
  * anchors (#services, #about, #contact...) working.
+ *
+ * The story (owner, 26 Oct 2026; docs/homepage-and-visibility-plan.md): the feeling
+ * (hero), who we are (introduction and one trust line), what we arrange (services),
+ * the moments (experiences), how simple it is (three steps, then the dates form),
+ * proof and people (Google rating, real reviews, the founder), before you come
+ * (villages and guides as short link rows), questions, the closing invitation.
  */
 import { Picture } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SmartLink from '../SmartLink.astro';
-import GoogleReviews from '../GoogleReviews.astro';
 import QuickStart from './QuickStart.astro';
 import { home } from '../../content/home';
 import { services, servicePath } from '../../data/services';
@@ -17,9 +22,10 @@ import { allFaqs } from '../../content/faq';
 import { experiencesPage } from '../../content/experiences-page';
 import { photos } from '../../data/photos';
 import { reviews } from '../../data/reviews';
-import { whatsappHref, type Locale } from '../../data/business';
+import { business, whatsappHref, type Locale } from '../../data/business';
 import { t } from '../../i18n/ui';
 import { localize, splitId } from '../../lib/routes';
+import { googleRating } from '../../lib/google-rating';
 import { getImage } from 'astro:assets';
 import { localBusinessSchema, faqSchema, breadcrumbSchema, websiteSchema } from '../../lib/schema';
 
@@ -27,7 +33,6 @@ import heroImg from '../../assets/photos/rolls-royce-helicopter-arrival.jpeg';
 import stepsImg from '../../assets/photos/chalet-gift-delivery.jpeg';
 // The palaces half of the split chalets tile (hotel's photo, credited on the tile).
 import palaceImg from '../../assets/hotels/airelles-courchevel/01-exterior.jpeg';
-import villagesImg from '../../assets/photos/wooden-chalets-gondola.jpeg';
 import aboutImg from '../../assets/photos/defender-luggage-snow.jpeg';
 import finalImg from '../../assets/photos/courchevel-sculpture.jpeg';
 
@@ -43,13 +48,20 @@ const enquire = localize('/enquire/', locale);
 const homeFaqs = allFaqs(locale).filter((f) => f.home).map(({ q, a }) => ({ q, a }));
 // Three experiences from /experiences/, chosen so no photo repeats on the homepage.
 const featured = ['private-skiing', 'groomer-dinner', 'mountain-evenings'].map((id) => experiencesPage[locale].experiences.find((x) => x.id === id)!);
-const courchevelVillages = villages.filter((v) => v.group === 'courchevel');
-// The concierge checklist stays on /guides/ and in search, not on the homepage:
-// visitors here have already found us (owner, 24 Oct 2026).
-const homeGuideExclude = ['how-to-choose-a-concierge-in-courchevel'];
+// Before you come: every village as one row of links, and four guides (the rest are on /guides/).
+const homeGuideSlugs = ['getting-to-courchevel', 'where-to-eat', 'courchevel-with-kids', 'season-dates-and-events'];
 const guides = (await getCollection('guides'))
-  .filter((g) => splitId(g.id).locale === locale && !homeGuideExclude.includes(splitId(g.id).slug))
-  .map((g) => ({ title: g.data.shortTitle ?? g.data.title, text: g.data.description, href: localize(`/guides/${splitId(g.id).slug}/`, locale) }));
+  .filter((g) => splitId(g.id).locale === locale && homeGuideSlugs.includes(splitId(g.id).slug))
+  .sort((a, b) => homeGuideSlugs.indexOf(splitId(a.id).slug) - homeGuideSlugs.indexOf(splitId(b.id).slug))
+  .map((g) => ({ title: g.data.shortTitle ?? g.data.title, href: localize(`/guides/${splitId(g.id).slug}/`, locale) }));
+
+// Proof: the Google rating (live, or last checked by hand with its date) and the founder once known.
+const rating = await googleRating(locale);
+const tag = locale === 'en' ? 'en-GB' : 'fr-FR';
+const ratingText = new Intl.NumberFormat(tag, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(rating.value);
+const ratingChecked = rating.checked ? new Intl.DateTimeFormat(tag, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(rating.checked)) : null;
+const founder = business.founder;
+const languageNames = new Intl.DisplayNames([tag], { type: 'language' });
 const pad = (n: number) => String(n).padStart(2, '0');
 const serviceEntries = (await getCollection('services')).filter((e) => splitId(e.id).locale === locale);
 const featuredSlugs = [
@@ -84,6 +96,7 @@ const sectionHead = 'max-w-2xl';
   locale={locale}
   alternatePath={localize('/', other)}
   schema={schema}
+  ctaAfter="hero"
 >
   <!-- Hero: one full-screen photo, everything centred on it -->
   <section id="hero" class="relative isolate flex min-h-[calc(100svh-4rem)] items-center justify-center overflow-hidden bg-ink text-ivory md:min-h-[min(92vh,58rem)]">
@@ -99,48 +112,45 @@ const sectionHead = 'max-w-2xl';
     />
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-ink/75 via-ink/65 to-ink/90 md:from-ink/70 md:via-ink/45 md:to-ink/85" aria-hidden="true"></div>
     <div class="mx-auto flex max-w-4xl flex-col items-center px-5 py-20 text-center sm:px-8">
-      <p class="eyebrow text-brass">{c.hero.eyebrow}</p>
-      <div class="rule mt-8"></div>
-      <h1 class="mt-8 text-[clamp(2.9rem,1.6rem+5.2vw,6.25rem)] leading-[1.0] text-ivory">{c.hero.title}</h1>
-      <p class="hero-fade mt-8 max-w-2xl font-serif text-[clamp(1.45rem,1.15rem+1.1vw,2.2rem)] leading-snug italic text-brass">{c.hero.tagline}</p>
-      <p class="hero-fade mt-6 max-w-xl text-ivory/85">{c.hero.short}</p>
-      <div class="hero-fade mt-10 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:justify-center">
-        <a href={enquire} class="btn bg-ivory text-ink hover:bg-brass">{s.planMyStay}</a>
-        <a href={whatsappHref(locale)} class="btn-light" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+      <!-- One H1: the search phrase as a small first line, then the headline. -->
+      <h1>
+        <span class="eyebrow block text-brass">{c.hero.title}</span><span class="sr-only">{locale === 'fr' ? ' : ' : ': '}</span>
+        <span class="mt-8 block text-[clamp(2.9rem,1.6rem+5.2vw,6.25rem)] leading-[1.02] text-ivory">
+          {c.hero.headline[0]} <em class="block text-brass">{c.hero.headline[1]}</em>
+        </span>
+      </h1>
+      <div class="rule mt-10"></div>
+      <p class="hero-fade mt-8 max-w-xl text-ivory/85">{c.hero.short}</p>
+      <div class="hero-fade mt-10 flex w-full flex-col items-center gap-4 sm:w-auto">
+        <a href={enquire} class="btn w-full bg-ivory text-ink hover:bg-brass sm:w-auto">{s.planMyStay}</a>
+        <a href={whatsappHref(locale)} class="inline-flex min-h-11 items-center text-sm text-ivory underline decoration-brass underline-offset-4 hover:text-brass" data-event="whatsapp_click" rel="noopener">{c.hero.whatsapp}</a>
       </div>
     </div>
   </section>
 
-  <!-- Quick-start: dates, village and group size, continuing into the enquiry form -->
-  <section aria-label={c.quickStart.title} class="border-b border-line bg-ivory">
-    <div class="container-site py-10 md:py-12">
-      <QuickStart locale={locale} />
-    </div>
-  </section>
-
-  <!-- Statement: the direct answer, then the key facts -->
-  <section class="py-section">
+  <!-- Introduction: who we are in one breath (names the company once), then one quiet line of facts -->
+  <section class="border-b border-line py-section">
     <div class="container-site">
-      <div class="rule mx-auto"></div>
-      <p class="mx-auto mt-10 max-w-4xl text-center font-serif text-[clamp(1.45rem,1.15rem+1vw,2.1rem)] leading-snug text-ink">{c.hero.lead}</p>
-      <dl class="mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
-        {c.proof.map((p) => (
-          <div class="flex flex-col items-center text-center">
-            <dt class="mt-3 text-sm text-taupe">{p.label}</dt>
-            <dd class="order-first font-serif text-5xl font-medium text-brass-deep md:text-6xl">{p.value}</dd>
-          </div>
+      <p class="mx-auto max-w-4xl text-center font-serif text-[clamp(1.45rem,1.15rem+1vw,2.1rem)] leading-snug text-ink">{c.hero.lead}</p>
+      <ul class="mx-auto mt-10 flex max-w-4xl flex-col items-center gap-1 text-center text-sm text-taupe md:flex-row md:flex-wrap md:justify-center md:gap-x-3 md:gap-y-2">
+        {[
+          { text: c.trust.rating(ratingText, rating.count), label: c.trust.ratingLabel(ratingText, rating.count), href: business.profiles.google.mapsUrl },
+          { text: c.trust.reply },
+          { text: c.trust.season },
+          { text: c.trust.based },
+        ].map((item, i) => (
+          <li class="inline-flex items-center gap-3">
+            {i > 0 && <span class="hidden text-brass md:inline" aria-hidden="true">·</span>}
+            {item.href ? (
+              <a href={item.href} rel="noopener" class="link inline-flex min-h-11 items-center gap-1.5" aria-label={item.label}><span class="text-brass-deep" aria-hidden="true">★</span>{item.text}</a>
+            ) : (
+              <span class="inline-flex items-center py-1 md:min-h-11 md:py-0">{item.text}</span>
+            )}
+          </li>
         ))}
-      </dl>
+      </ul>
     </div>
   </section>
-
-  <!-- Seasonal: Christmas and New Year (shown once that page exists) -->
-  <div class="border-b border-line">
-    <p class="container-site py-5 text-sm text-ink">
-      {c.seasonal.text}
-      <SmartLink href={localize('/christmas-new-year-courchevel/', locale)} class="link ml-1 inline-flex min-h-11 items-center">{c.seasonal.link}</SmartLink>
-    </p>
-  </div>
 
   <!-- Services: three large photo tiles, then the others as an index -->
   <section id="services" class="py-section">
@@ -188,9 +198,9 @@ const sectionHead = 'max-w-2xl';
               formats={formats}
               widths={[400, 600, 800]}
               sizes="(min-width: 768px) 33vw, 100vw"
-              class="aspect-[4/5] w-full object-cover opacity-90 transition duration-700 ease-out group-hover:scale-[1.04] group-hover:opacity-100 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+              class="aspect-[5/4] w-full object-cover opacity-90 transition duration-700 ease-out group-hover:scale-[1.04] group-hover:opacity-100 motion-reduce:transition-none motion-reduce:group-hover:scale-100 md:aspect-[4/5]"
             />
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/70 to-transparent px-6 pt-24 pb-7">
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/70 to-transparent px-6 pt-14 pb-6 md:pt-24 md:pb-7">
               <h3 class="text-3xl text-ivory">
                 <SmartLink href={localize(servicePath(f.svc), locale)} class="text-ivory no-underline after:absolute after:inset-0 hover:text-brass">{f.svc.name[locale]}</SmartLink>
               </h3>
@@ -225,7 +235,7 @@ const sectionHead = 'max-w-2xl';
         <h2 class="mt-4 text-h2">{c.experiences.title}</h2>
       </div>
     </div>
-    <ul class="container-site mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0">
+    <ul class="container-site mt-12 flex snap-x snap-mandatory scroll-pl-5 gap-5 overflow-x-auto pb-4 sm:scroll-pl-8 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0">
       {featured.map((x) => (
         <li class="w-[82%] shrink-0 snap-start md:w-auto">
           <Picture
@@ -263,10 +273,10 @@ const sectionHead = 'max-w-2xl';
           class="mt-10 hidden aspect-[4/5] w-full object-cover lg:block"
         />
       </div>
-      <ol class="grid gap-10 md:grid-cols-3 lg:col-span-8 lg:self-end">
+      <ol class="grid gap-8 md:grid-cols-3 md:gap-10 lg:col-span-8 lg:self-end">
         {c.steps.items.map((step, i) => (
           <li class="border-t border-brass/60 pt-6">
-            <span class="block font-serif text-7xl leading-none text-brass" aria-hidden="true">{pad(i + 1)}</span>
+            <span class="block font-serif text-5xl leading-none text-brass md:text-7xl" aria-hidden="true">{pad(i + 1)}</span>
             <h3 class="mt-6 text-2xl text-ivory">{step.title}</h3>
             <p class="mt-3 text-stone/85">{step.text}</p>
           </li>
@@ -275,100 +285,103 @@ const sectionHead = 'max-w-2xl';
     </div>
   </section>
 
-  <!-- Villages -->
-  <section id="villages" class="border-t border-line bg-stone py-section">
-    <div class="container-site grid gap-12 md:grid-cols-12 md:gap-16">
-      <div class="md:col-span-7">
-        <p class="eyebrow">{c.villages.eyebrow}</p>
-        <h2 class="mt-4 text-h2">{c.villages.title}</h2>
-        <p class="mt-5 max-w-xl text-taupe">{c.villages.intro}</p>
-        <ul class="mt-10">
-          {courchevelVillages.map((v) => (
-            <li class="border-t border-line py-5">
-              <h3 class="text-2xl">
-                <SmartLink href={localize(`/${v.slug}/`, locale)} class="text-ink no-underline hover:text-brass-deep">{v.name}</SmartLink>
-              </h3>
-              <p class="mt-1 text-taupe">{v.summary[locale]}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div class="md:col-span-5">
-        <Picture
-          src={villagesImg}
-          alt={c.villages.imageAlt}
-          formats={formats}
-          widths={[400, 600, 900]}
-          sizes="(min-width: 768px) 40vw, 100vw"
-          class="aspect-[4/5] w-full object-cover"
-        />
-      </div>
+  <!-- The dates form, once the visitor knows what we do and how: dates, village and group size,
+       continuing into the enquiry form; "Just one thing?" links under it -->
+  <section aria-label={c.quickStart.title} class="border-b border-line bg-ivory">
+    <div class="container-site py-12 md:py-16">
+      <QuickStart locale={locale} />
     </div>
   </section>
 
-  <!-- Reviews: only rendered once real, attributed reviews exist (src/data/reviews.ts) -->
-  {reviews.length > 0 && (
-    <section id="testimonials" class="py-section">
-      <div class="container-site grid gap-10 md:grid-cols-3">
-        {reviews.map((r) => (
+  <!-- Proof and people: who looks after you, the Google rating, real reviews once supplied, the founder once known.
+       Keeps the old site's #about and #testimonials anchors. -->
+  <section id="about" class="py-section">
+    <span id="testimonials" aria-hidden="true"></span>
+    <div class="container-site grid gap-12 md:grid-cols-12 md:gap-16">
+      <div class="md:col-span-7">
+        <p class="eyebrow">{c.about.eyebrow}</p>
+        <h2 class="mt-4 text-h2">{c.about.title}</h2>
+        <p class="mt-6 text-lg text-taupe">{c.about.text}</p>
+        {founder.name && (
+          <div class="mt-8 border-l-2 border-brass pl-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-taupe">{c.about.founder.contact}</p>
+            <p class="mt-1 font-serif text-2xl">{founder.name}</p>
+            <p class="mt-1 text-sm text-taupe">
+              {[
+                founder.sinceYear ? c.about.founder.since(founder.sinceYear) : '',
+                founder.languages.length ? c.about.founder.speaks(new Intl.ListFormat(tag, { type: 'conjunction' }).format(founder.languages.map((l) => languageNames.of(l) ?? l))) : '',
+              ].filter(Boolean).join(' · ')}
+            </p>
+          </div>
+        )}
+        <p class="mt-8"><SmartLink href={localize('/about/', locale)} class="link inline-flex min-h-11 items-center">{c.about.link}</SmartLink></p>
+      </div>
+      <div class="md:col-span-5">
+        <div class="bg-stone p-6 md:p-8" {...(rating.checked ? { 'data-rating-checked': rating.checked } : {})}>
+          <p class="eyebrow">{c.about.rating.eyebrow}</p>
+          <p class="mt-4 flex items-baseline gap-3">
+            <span class="font-serif text-6xl leading-none text-brass-deep">{ratingText}</span>
+            <span class="text-taupe">{c.about.rating.outOf}</span>
+          </p>
+          <p class="mt-2 text-xl tracking-[0.2em] text-brass" aria-hidden="true">{'★'.repeat(Math.round(rating.value))}</p>
+          <p class="mt-2 text-sm text-taupe">{c.about.rating.count(rating.count)}{ratingChecked && <span> · {c.about.rating.checked(ratingChecked)}</span>}</p>
+          <a href={business.profiles.google.mapsUrl} rel="noopener" class="link mt-4 inline-flex min-h-11 items-center text-sm font-semibold">{c.about.rating.read}</a>
+        </div>
+        <Picture
+          src={aboutImg}
+          alt={c.about.imageAlt}
+          formats={formats}
+          widths={[400, 600, 900]}
+          sizes="(min-width: 768px) 40vw, 100vw"
+          class="mt-6 hidden aspect-[5/4] w-full object-cover md:block"
+        />
+      </div>
+    </div>
+    {reviews.length > 0 && (
+      <div class="container-site mt-16 grid gap-10 md:grid-cols-3">
+        {reviews.slice(0, 3).map((r) => (
           <figure class="border-t border-brass pt-6">
             <blockquote class="font-serif text-2xl leading-snug">“{r.text}”</blockquote>
             <figcaption class="mt-4 text-sm text-taupe">{r.author}, {r.service[locale]}, {r.date}</figcaption>
           </figure>
         ))}
       </div>
-    </section>
-  )}
-
-  <!-- Google reviews (live at build time when GOOGLE_PLACES_API_KEY is set, links otherwise).
-       Takes the old site's #testimonials anchor until manual reviews exist. -->
-  <section id={reviews.length > 0 ? 'google-reviews' : 'testimonials'} class="border-t border-line bg-stone py-section">
-    <div class="container-site">
-      <GoogleReviews locale={locale} />
-    </div>
+    )}
   </section>
 
-  <!-- Guides -->
-  {guides.length > 0 && (
-    <section id="guides" class="border-t border-line py-section">
-      <div class="container-site">
-        <div class={sectionHead}>
-          <p class="eyebrow">{c.guides.eyebrow}</p>
-          <h2 class="mt-4 text-h2">{c.guides.title}</h2>
-          <p class="mt-5 text-taupe">{c.guides.intro}</p>
+  <!-- Before you come: every village and four guides as short link rows, and the festive season line.
+       Keeps the village names and the internal links that search engines use, at a fraction of the height. -->
+  <section id="villages" class="border-t border-line bg-stone py-section">
+    <div class="container-site">
+      <div class={sectionHead}>
+        <p class="eyebrow">{c.plan.eyebrow}</p>
+        <h2 class="mt-4 text-h2">{c.plan.title}</h2>
+      </div>
+      <div class="mt-12 grid gap-12 md:grid-cols-2 md:gap-16">
+        <div>
+          <h3 class="font-sans text-xs font-semibold uppercase tracking-[0.14em] text-taupe">{c.plan.villages}</h3>
+          <p class="mt-3 text-taupe">{c.plan.villagesNote}</p>
+          <ul class="mt-4 flex flex-wrap gap-x-6 gap-y-1">
+            {villages.map((v) => (
+              <li><SmartLink href={localize(`/${v.slug}/`, locale)} class="inline-flex min-h-11 items-center font-serif text-xl text-ink no-underline hover:text-brass-deep">{v.name}</SmartLink></li>
+            ))}
+          </ul>
+          <p class="mt-2"><SmartLink href={localize('/villages/', locale)} class="link inline-flex min-h-11 items-center text-sm">{c.plan.villagesAll}</SmartLink></p>
         </div>
-        <ul class="mt-12 grid gap-x-12 md:grid-cols-2">
-          {guides.map((g) => (
-            <li class="border-t border-line py-6">
-              <h3 class="text-2xl"><a href={g.href} class="text-ink no-underline hover:text-brass-deep">{g.title}</a></h3>
-              <p class="mt-2 text-taupe">{g.text}</p>
-            </li>
-          ))}
-        </ul>
-        <p class="mt-8"><a href={localize('/guides/', locale)} class="link inline-flex min-h-11 items-center">{c.guides.all}</a></p>
+        <div>
+          <h3 class="font-sans text-xs font-semibold uppercase tracking-[0.14em] text-taupe">{c.plan.guides}</h3>
+          <ul class="mt-4">
+            {guides.map((g) => (
+              <li class="border-t border-line first:border-t-0"><a href={g.href} class="flex min-h-11 items-center py-2 font-serif text-xl text-ink no-underline hover:text-brass-deep">{g.title}</a></li>
+            ))}
+          </ul>
+          <p class="mt-2"><a href={localize('/guides/', locale)} class="link inline-flex min-h-11 items-center text-sm">{c.plan.guidesAll}</a></p>
+        </div>
       </div>
-    </section>
-  )}
-
-  <!-- About -->
-  <section id="about" class="py-section">
-    <div class="container-site grid items-center gap-12 md:grid-cols-12 md:gap-16">
-      <div class="md:order-2 md:col-span-6">
-        <p class="eyebrow">{c.about.eyebrow}</p>
-        <h2 class="mt-4 text-h2">{c.about.title}</h2>
-        <p class="mt-6 text-lg text-taupe">{c.about.text}</p>
-        <p class="mt-8"><SmartLink href={localize('/about/', locale)} class="link">{c.about.link}</SmartLink></p>
-      </div>
-      <div class="md:order-1 md:col-span-6">
-        <Picture
-          src={aboutImg}
-          alt={c.about.imageAlt}
-          formats={formats}
-          widths={[400, 600, 900]}
-          sizes="(min-width: 768px) 50vw, 100vw"
-          class="aspect-[5/4] w-full object-cover"
-        />
-      </div>
+      <p class="mt-12 border-t border-line pt-6 text-sm text-ink">
+        {c.seasonal.text}
+        <SmartLink href={localize('/christmas-new-year-courchevel/', locale)} class="link ml-1 inline-flex min-h-11 items-center">{c.seasonal.link}</SmartLink>
+      </p>
     </div>
   </section>
 
@@ -382,7 +395,7 @@ const sectionHead = 'max-w-2xl';
       </div>
       <div class="md:col-span-8">
         {homeFaqs.map((f) => (
-          <details class="group border-t border-line py-6 last:border-b">
+          <details class="group border-t border-line py-4 last:border-b md:py-6">
             <summary class="flex min-h-11 cursor-pointer list-none items-start justify-between gap-6 py-1 font-serif text-2xl [&::-webkit-details-marker]:hidden">
               <h3 class="text-2xl">{f.q}</h3>
               <span class="mt-1 text-brass-deep transition-transform group-open:rotate-45" aria-hidden="true">+</span>
@@ -405,7 +418,7 @@ const sectionHead = 'max-w-2xl';
           <a href={whatsappHref(locale)} class="btn-light" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
         </div>
       </div>
-      <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[36rem]">
+      <div class="relative hidden md:block md:min-h-[36rem]">
         <Picture
           src={finalImg}
           alt={c.final.imageAlt}

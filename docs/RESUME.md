@@ -110,6 +110,17 @@ site is still the old one. Launch is planned for **Tuesday 24 November 2026** (s
   11 services; Plan my stay has a Palace hotels choice; hotel pages and the hotels page tag requests `palace-hotels`.
   Body links that said "chalets and palace hotels" now link to both pages. The homepage index skips Palace hotels
   (it is the second half of the chalets tile).
+- **26 Oct, homepage audit and the final plan:** `docs/homepage-and-visibility-plan.md` (new homepage order, on-site
+  SEO and AI fixes incl. three contradictions found, off-site steps for the owner, monthly measuring, timeline to
+  launch). **Parts 1 and 2 built on the preview the same evening:** hero with one H1 ("Luxury concierge in
+  Courchevel" small + "The whole stay. Or just tonight."), one button and a WhatsApp text link; the phone bar
+  waits until the hero has scrolled away (`ctaAfter`, MobileCTA); a ~45-word introduction naming the company
+  once + one trust line (Google rating, reply time, 24/7, based in Courchevel); the dates form moved after "How
+  it works"; "About us" with a Google rating card (live via Places API, else `profiles.google.rating` with its
+  date; launch check fails after 45 days), founder and quotes slots; villages and four guides as link rows;
+  FAQ gains "What does a luxury concierge in Courchevel do?". Fixes: prices wording (About, FAQ, How to choose),
+  Méribel 45 km / ~1 h, carousel gutter, counters (and "12 services") removed, noindex on *.netlify.app
+  (edge function + tests).
 - Where to eat: Sylvestre Wahid (destroyed by the fire, no reopening announced, still 2★ in the guide)
   replaced in the ten tables by Matsuhisa at Les Airelles; marked closed in the Michelin table. Aman's
   restaurant is Akari (not Nama). The unused `sylvestre-wahid-dish.jpeg` is still in the repo (ask before

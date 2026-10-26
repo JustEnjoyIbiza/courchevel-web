@@ -13,12 +13,22 @@ export const home = {
         'Luxury concierge in Courchevel 1850, 1650 and Le Praz: chalets, Geneva helicopter transfers, private chefs and ski instructors. Reply within 15 minutes.',
     },
     hero: {
-      eyebrow: 'Courchevel 1850 · 1650 · 1550 · Le Praz · La Tania',
+      /** The small first line of the H1 (the search phrase); the headline follows it in the same H1. */
       title: 'Luxury concierge in Courchevel',
-      lead: 'From a private chalet and a helicopter arrival to a VIP table, a ski instructor or a private chef, every part of your time in Courchevel is arranged personally around you. Share the full picture, or simply what you need next. We take it from there, with discretion and a proposal quoted for you.',
+      headline: ['The whole stay.', 'Or just tonight.'],
+      /** The introduction under the hero: names the company once, the sentence search engines and AI assistants quote. */
+      lead: 'Courchevel Luxury Concierge arranges every part of your time in Courchevel, from a private chalet and a helicopter arrival to a VIP table, a ski instructor or a private chef. Share the full picture, or simply what you need next: one contact takes it from there, with discretion.',
       imageAlt: 'Steaming outdoor hot tub on a chalet terrace facing snow-covered pine trees in Courchevel',
-      tagline: 'The whole stay. Or just tonight.',
       short: 'Tell us your dates. We reply within 15 minutes and send a personal proposal within 24 hours.',
+      whatsapp: 'Or message us on WhatsApp',
+    },
+    /** One quiet line of facts under the introduction (replaces the counters). */
+    trust: {
+      rating: (r: string, n: number) => `${r} on Google · ${n} reviews`,
+      ratingLabel: (r: string, n: number) => `Rated ${r} out of 5 on Google from ${n} reviews`,
+      reply: 'Replies within 15 minutes, 8:00 to 22:00',
+      season: '24/7 in the winter season',
+      based: 'Based in Courchevel',
     },
     quickStart: {
       title: 'Start with your dates',
@@ -38,12 +48,6 @@ export const home = {
         ],
       },
     },
-    proof: [
-      { value: '15 min', label: 'Reply time, 8:00 to 22:00' },
-      { value: '24/7', label: 'On call during the winter season' },
-      { value: '12', label: 'Services, one contact' },
-      { value: '5', label: 'Villages, plus the Trois Vallées' },
-    ],
     services: {
       eyebrow: 'Services',
       title: 'Everything for your stay, arranged by one contact',
@@ -74,17 +78,15 @@ export const home = {
       ],
       imageAlt: 'Two cars unloading gifts and shopping bags in front of a chalet in Courchevel',
     },
-    villages: {
-      eyebrow: 'Where we work',
-      title: 'Every village of Courchevel',
-      intro: 'We arrange services in all five villages of Courchevel and across the Trois Vallées, including Méribel and Val Thorens.',
-      imageAlt: 'Wooden chalets with balconies and a gondola passing above in Courchevel',
-    },
-    guides: {
-      eyebrow: 'Guides',
+    /** Before you come: the villages and four guides as short link rows, and the festive season line. */
+    plan: {
+      eyebrow: 'Before you come',
       title: 'Plan your stay in Courchevel',
-      intro: 'Practical answers to the questions clients ask before they book, updated every season.',
-      all: 'All guides',
+      villages: 'Where we work',
+      villagesNote: 'All five villages of Courchevel, and across the Trois Vallées.',
+      villagesAll: 'All villages',
+      guides: 'Guides',
+      guidesAll: 'All guides',
     },
     seasonal: {
       text: 'Christmas and New Year 2026/27: the most sought-after chalets and tables are booked early.',
@@ -96,6 +98,15 @@ export const home = {
       text: 'We are based in Courchevel and work with chalets, chefs, instructors, drivers and pilots across the Trois Vallées. One contact looks after your stay from the first message to your departure, in confidence.',
       link: 'More about us',
       imageAlt: 'Land Rover Defender with luxury luggage in the snow, ready for a chalet arrival',
+      /** Shown once the founder's details are in src/data/business.ts. */
+      founder: { contact: 'Your contact', since: (y: number) => `In Courchevel since ${y}`, speaks: (l: string) => `Speaks ${l}` },
+      rating: {
+        eyebrow: 'Google reviews',
+        outOf: 'out of 5',
+        count: (n: number) => `from ${n} reviews`,
+        checked: (d: string) => `As of ${d}`,
+        read: 'Read the reviews on Google',
+      },
     },
     faq: {
       eyebrow: 'Questions',
@@ -116,12 +127,19 @@ export const home = {
         'Conciergerie de luxe à Courchevel 1850, 1650 et Le Praz : chalets, hélicoptère depuis Genève, chef à domicile, moniteurs de ski. Réponse sous 15 min.',
     },
     hero: {
-      eyebrow: 'Courchevel 1850 · 1650 · 1550 · Le Praz · La Tania',
       title: 'Conciergerie de luxe à Courchevel',
-      lead: 'Du chalet privé et de l’arrivée en hélicoptère à la table VIP, au moniteur de ski ou au chef à domicile, chaque détail de votre passage à Courchevel est organisé personnellement, autour de vous. Racontez-nous tout, ou seulement ce dont vous avez besoin maintenant. Nous nous chargeons du reste, avec discrétion et une proposition établie pour vous.',
+      headline: ['Tout votre séjour.', 'Ou simplement ce soir.'],
+      lead: 'Courchevel Luxury Concierge organise chaque moment de votre séjour à Courchevel, du chalet privé et de l’arrivée en hélicoptère à la table VIP, au moniteur de ski ou au chef à domicile. Racontez-nous tout, ou seulement ce dont vous avez besoin maintenant : un seul interlocuteur s’en charge, avec discrétion.',
       imageAlt: 'Bain nordique fumant sur la terrasse d’un chalet face aux sapins enneigés à Courchevel',
-      tagline: 'Tout votre séjour. Ou simplement ce soir.',
       short: 'Indiquez-nous vos dates : réponse sous 15 minutes, proposition personnalisée sous 24 heures.',
+      whatsapp: 'Ou écrivez-nous sur WhatsApp',
+    },
+    trust: {
+      rating: (r: string, n: number) => `${r} sur Google · ${n} avis`,
+      ratingLabel: (r: string, n: number) => `Noté ${r} sur 5 sur Google, ${n} avis`,
+      reply: 'Réponse sous 15 minutes, de 8 h à 22 h',
+      season: '24 h/24 pendant la saison d’hiver',
+      based: 'Basés à Courchevel',
     },
     quickStart: {
       title: 'Commencez par vos dates',
@@ -140,12 +158,6 @@ export const home = {
         ],
       },
     },
-    proof: [
-      { value: '15 min', label: 'Délai de réponse, de 8 h à 22 h' },
-      { value: '24 h/24', label: 'Disponibles pendant la saison d’hiver' },
-      { value: '12', label: 'Services, un seul interlocuteur' },
-      { value: '5', label: 'Villages, et les Trois Vallées' },
-    ],
     services: {
       eyebrow: 'Services',
       title: 'Tout votre séjour, organisé par un seul interlocuteur',
@@ -175,17 +187,14 @@ export const home = {
       ],
       imageAlt: 'Deux voitures déchargeant cadeaux et sacs de shopping devant un chalet à Courchevel',
     },
-    villages: {
-      eyebrow: 'Où nous intervenons',
-      title: 'Tous les villages de Courchevel',
-      intro: 'Nous sommes présents dans les cinq villages de Courchevel et dans les Trois Vallées, dont Méribel et Val Thorens.',
-      imageAlt: 'Chalets en bois avec balcons et une télécabine au-dessus, à Courchevel',
-    },
-    guides: {
-      eyebrow: 'Guides',
+    plan: {
+      eyebrow: 'Avant de venir',
       title: 'Préparer votre séjour à Courchevel',
-      intro: 'Des réponses pratiques aux questions que l’on se pose avant de réserver, mises à jour à chaque saison.',
-      all: 'Tous les guides',
+      villages: 'Où nous intervenons',
+      villagesNote: 'Les cinq villages de Courchevel, et toutes les Trois Vallées.',
+      villagesAll: 'Tous les villages',
+      guides: 'Guides',
+      guidesAll: 'Tous les guides',
     },
     seasonal: {
       text: 'Noël et Nouvel An 2026–2027 : les chalets et les tables les plus demandés se réservent tôt.',
@@ -197,6 +206,14 @@ export const home = {
       text: 'Nous sommes basés à Courchevel et travaillons avec des propriétaires de chalets, des chefs, des moniteurs, des chauffeurs et des compagnies d’hélicoptères dans les Trois Vallées. Un seul interlocuteur s’occupe de votre séjour, du premier message à votre départ, en toute confidentialité.',
       link: 'En savoir plus',
       imageAlt: 'Land Rover Defender et bagages de luxe dans la neige, prêts pour une arrivée au chalet',
+      founder: { contact: 'Votre interlocuteur', since: (y: number) => `À Courchevel depuis ${y}`, speaks: (l: string) => `Parle ${l}` },
+      rating: {
+        eyebrow: 'Avis Google',
+        outOf: 'sur 5',
+        count: (n: number) => `${n} avis`,
+        checked: (d: string) => `Au ${d}`,
+        read: 'Lire les avis sur Google',
+      },
     },
     faq: {
       eyebrow: 'Questions',

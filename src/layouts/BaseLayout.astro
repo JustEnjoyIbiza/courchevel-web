@@ -28,9 +28,11 @@ interface Props {
   enquiryPage?: boolean;
   /** The page's request: the phone bar's button and the WhatsApp message (src/lib/cta.ts). */
   cta?: Cta;
+  /** Id of an element (the homepage hero) the phone bar waits for: it appears once that has scrolled away. */
+  ctaAfter?: string;
 }
 
-const { title, description, locale = 'en', alternatePath, schema = [], ogImage = defaultOg, noindex = false, enquiryPage = false, cta } = Astro.props;
+const { title, description, locale = 'en', alternatePath, schema = [], ogImage = defaultOg, noindex = false, enquiryPage = false, cta, ctaAfter } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const other: Locale = locale === 'en' ? 'fr' : 'en';
 const alternate = alternatePath ? new URL(alternatePath, Astro.site).href : undefined;
@@ -76,7 +78,7 @@ const ogUrl = new URL(og.src, Astro.site).href;
       <slot />
     </main>
     <SiteFooter locale={locale} />
-    <MobileCTA locale={locale} whatsappOnly={enquiryPage} cta={cta} />
+    <MobileCTA locale={locale} whatsappOnly={enquiryPage} cta={cta} after={ctaAfter} />
     <WhatsAppFloat locale={locale} whatsapp={cta?.whatsapp} />
     <ConsentBanner locale={locale} />
   </body>

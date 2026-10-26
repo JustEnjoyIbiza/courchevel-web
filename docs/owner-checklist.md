@@ -98,6 +98,12 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 
 ## Content and photos
 
+- [ ] **Google rating on the homepage** (26 Oct): it shows 5.0 from 14 reviews, as checked on 22 Oct. Confirm or
+  send the current figures (`profiles.google.rating` in `src/data/business.ts`); the launch check fails if it is
+  more than 45 days old. Or create a Google Places API key (`GOOGLE_PLACES_API_KEY`) for live numbers
+- [ ] **A sharper landscape hero photo** for laptops (at least 2,400 px wide, no faces, no other company's branding);
+  today's hero is 1,000 px wide
+- [ ] **Founder and client quotes** for the homepage "About us" block (see `homepage-and-visibility-plan.md`)
 - [ ] **Private chef page** (rebuilt 26 Oct): 6-8 photos of plates and chefs at work from your chefs, one or two real menus, and how chefs are charged (per dinner or per day; groceries at cost or included)
 
 - [ ] Native French review of every French page and of the emails

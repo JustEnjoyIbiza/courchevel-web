@@ -76,6 +76,12 @@ for (const [p, why] of Object.entries(pending)) {
   }
 }
 check('old #services / #contact anchors', /id="services"/.test(html) && /id="contact"/.test(html), 'missing');
+// Homepage Google rating: when it is the hand-checked figure (no Places API key), it must be recent.
+const ratingChecked = html.match(/data-rating-checked="(\d{4}-\d{2}-\d{2})"/)?.[1];
+if (ratingChecked) {
+  const days = Math.floor((Date.now() - Date.parse(ratingChecked)) / 86400000);
+  check(`Google rating checked within 45 days (${ratingChecked})`, days <= 45, `${days} days old: update profiles.google.rating in src/data/business.ts or set GOOGLE_PLACES_API_KEY`);
+}
 if (production) {
   const robotsHeader = home.headers.get('x-robots-tag') ?? '';
   check('no X-Robots-Tag noindex', !/noindex/i.test(robotsHeader), robotsHeader);

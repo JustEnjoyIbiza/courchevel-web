@@ -4,7 +4,7 @@ shortTitle: À propos
 metaTitle: À propos de Courchevel Luxury Concierge | Conciergerie
 description: "Conciergerie privée à Courchevel et dans les Trois Vallées : un seul contact pour chalets, transferts, chefs, ski et personnel, 24 h/24 en saison."
 answer: Courchevel Luxury Concierge est une conciergerie privée basée à Courchevel, dans les Alpes françaises. Un seul interlocuteur organise et suit l’ensemble de votre séjour, du chalet et des transferts aux chefs, moniteurs et à la garde d’enfants, et chaque prestation fait l’objet d’un devis personnalisé.
-updated: 2026-10-22
+updated: 2026-10-26
 image: sculpture
 imageAlt: La sculpture des lettres rouges Courchevel dans la neige
 facts:
@@ -36,7 +36,7 @@ Nous travaillons pour des familles, des couples, des groupes d’amis et des ent
 
 Vous avez un seul interlocuteur, du premier message au dernier jour du séjour. Plutôt qu’un catalogue, nous vous posons quelques questions sur votre groupe, vos dates et ce qui compte pour vous, puis nous vous proposons un nombre restreint d’options qui vous correspondent vraiment.
 
-Nous ne publions pas de tarifs. Chaque séjour est différent : chaque prestation fait donc l’objet d’un devis personnalisé, une fois vos besoins connus. Vous recevez la proposition complète avant toute réservation, et rien n’est confirmé sans votre accord.
+Nous ne publions des prix indicatifs que pour les chalets et les transferts. Chaque séjour est différent : tout le reste fait donc l’objet d’un devis personnalisé, une fois vos besoins connus. Vous recevez la proposition complète avant toute réservation, et rien n’est confirmé sans votre accord.
 
 ## Le traitement d’une demande
 

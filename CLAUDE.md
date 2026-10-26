@@ -139,6 +139,8 @@ Node: `export PATH="$HOME/.local/node/bin:$PATH"`. Before calling any change don
   sitemap URL (needs Netlify; fails on `astro preview`). Plan: `docs/launch-plan.md`.
 - Lighthouse mobile on changed templates (>= 95 on all four; LCP < 2.5 s; CLS < 0.1),
   a JavaScript-off pass and a keyboard pass. Results go in `docs/phase-N-report.md`.
+  On any *.netlify.app address (the preview) SEO shows 69: the only failing audit must be
+  `is-crawlable`, the intended `X-Robots-Tag: noindex` (netlify/edge-functions/noindex-previews.ts).
 
 ## AI and SEO layer (Phase 4)
 
@@ -193,7 +195,7 @@ GA4 events: `form_start`, `form_submit`, `whatsapp_click`, `phone_click`,
 - No broken links; form works by keyboard; WhatsApp opens the app on mobile
 - Test lead reaches Supabase, client email and concierge alert in under 30 s
 - Security headers set; no secret keys in code
-- **No prices anywhere**
+- **No prices anywhere** outside the two exceptions in hard rule 1 (chalets, transfers)
 
 ## Working protocol
 

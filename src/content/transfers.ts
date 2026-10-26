@@ -54,7 +54,8 @@ export const routes: TransferRoute[] = [
   { id: 'milan', group: 'italy', name: { en: 'Milan, Malpensa or Linate', fr: 'Milan, Malpensa ou Linate' }, km: [350, 400], heli: { time: [50, 60] }, car: { time: [270, 300], van: 1250, saloon: 1750 } },
   { id: 'turin', group: 'italy', name: { en: 'Turin', fr: 'Turin' }, km: 241, heli: { time: [40, 40] }, car: { time: [180, 190], van: 800, saloon: 1100 } },
 
-  { id: 'meribel', group: 'resorts', name: { en: 'Méribel', fr: 'Méribel' }, km: 31, heli: { time: [8, 10], from: 600 }, car: { time: [35, 40], van: 180 } },
+  // By road via Moûtiers (about 45 km); the shorter Col de la Loze road is for bikes only and closed in winter.
+  { id: 'meribel', group: 'resorts', name: { en: 'Méribel', fr: 'Méribel' }, km: 45, heli: { time: [8, 10], from: 600 }, car: { time: [55, 65], van: 180 } },
   { id: 'val-thorens', group: 'resorts', name: { en: 'Val Thorens', fr: 'Val Thorens' }, km: 60, heli: { time: [15, 15], from: 990 }, car: { time: [65, 80], van: 350, saloon: 380 } },
   { id: 'val-disere', group: 'resorts', name: { en: 'Val d’Isère', fr: 'Val d’Isère' }, heli: { time: [15, 20], from: 1400 } },
   { id: 'megeve', group: 'resorts', name: { en: 'Megève', fr: 'Megève' }, heli: { time: [15, 20], from: 1450 } },

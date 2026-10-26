@@ -136,7 +136,7 @@ Standard (non-premium) reference: French Cab Car V-Class Geneva €480 weekdays,
 | Paris | 670 | about 7 h 10 | €2,300 / €3,600 |
 | Moûtiers station | 24 | 30 min | €140 / €160 |
 | Albertville station | 51 | 45-50 min | on request |
-| Méribel | 31 | 35-40 min | €180 / on request |
+| Méribel | 45 (via Moûtiers; the 17 km Col de la Loze road is bikes only, closed in winter) | about 1 h | €180 / on request |
 | Val Thorens | 54-63 | 1 h 05-1 h 20 | €390 / €450 |
 
 Distances and times: OSRM and Valhalla route planners (OpenStreetMap), 25 Oct 2026, no traffic or snow; Leader

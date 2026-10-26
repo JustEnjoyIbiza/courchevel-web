@@ -4,7 +4,7 @@
  * palace hotels became a service of their own the same day (owner: like the
  * homepage tile, Chalets | Palace hotels), so 11. A service whose page is not
  * under /services/ sets `path`; use servicePath() for links.
- * Every service is on request: no prices, ever.
+ * Service summaries carry no prices (the only prices are the two exceptions in CLAUDE.md).
  * French: to be reviewed by a native speaker.
  */
 import type { Locale } from './business';

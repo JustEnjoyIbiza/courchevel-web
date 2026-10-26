@@ -4,7 +4,7 @@ shortTitle: What to expect from a concierge
 metaTitle: "Choosing a Concierge in Courchevel: How We Work | CLC"
 description: "Reply times, licensed partners, chalet contracts and clear quotes: what a Courchevel concierge should offer, and how we meet each point."
 answer: "We reply within 15 minutes from 8:00 to 22:00, are available 24/7 during the winter season, work only with licensed partners and quote every service personally before anything is booked. That is what a good concierge in Courchevel should offer: quick, personal replies, licensed chauffeurs, instructors and security, and a clear contract for the chalet. Below is how we work on each point, then the questions worth asking."
-updated: 2026-10-24
+updated: 2026-10-26
 image: sculpture
 imageAlt: The red Courchevel letters sculpture standing in the snow
 facts:
@@ -48,7 +48,7 @@ related:
 Here is what you can expect from us, before you even ask.
 
 - **Replies:** we answer within 15 minutes from 8:00 to 22:00, and during the winter season we are available 24/7. You can reach us by WhatsApp, phone or email.
-- **Proposals and quotes:** you receive a tailored proposal within 24 hours. We do not publish prices; every service is quoted personally, and nothing is booked without your agreement.
+- **Proposals and quotes:** you receive a tailored proposal within 24 hours. We publish guide prices only for chalets and transfers; everything else is quoted personally, and nothing is booked without your agreement.
 - **Licensed partners:** we never drive or fly clients ourselves. Road transfers are run by licensed chauffeur partners and flights by licensed operators; close protection is arranged only through CNAPS-authorised partners, as described on our [lifestyle and security page](/services/lifestyle/).
 - **Chalets:** we never let property or hold rent. The chalet is contracted directly with its owner, a letting agency or the hotel, and we arrange everything around the stay; see our [chalets service](/services/chalets/).
 - **Area:** Courchevel 1850, 1650 Moriond, 1550 Village, 1300 Le Praz and La Tania, and the wider Trois Vallées including Méribel and Val Thorens.

@@ -89,6 +89,12 @@ export const business = {
       cid: '15229790847061064888',
       mapsUrl: 'https://maps.google.com/?cid=15229790847061064888',
       reviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJPRJmAL2Kv4ARuPyRohUWW9M',
+      /**
+       * Rating shown on the homepage when GOOGLE_PLACES_API_KEY is not set (with the key, live numbers
+       * are read at build time). Update all three when you check the profile: the launch check fails
+       * once `checked` is more than 45 days old, so no stale number reaches clients.
+       */
+      rating: { value: 5.0, count: 14, checked: '2026-10-22' },
     },
     instagram: {
       handle: 'courchevelluxuryconcierge',
@@ -134,7 +140,10 @@ export const business = {
     sinceYear: null as number | null, // TODO year started in Courchevel
   },
 
-  /** Every service is quoted personally. Never add prices, ranges or "from" prices. */
+  /**
+   * Every service is quoted personally. The only prices shown are the two exceptions in CLAUDE.md
+   * (weekly chalet prices, "from" transfer prices), each with the note that they vary.
+   */
   pricing: 'on-request' as const,
 } as const;
 

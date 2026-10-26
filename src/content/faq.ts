@@ -1,6 +1,6 @@
 /**
  * All FAQ questions, grouped by topic. `home: true` marks the ones shown on
- * the homepage. Facts only: no prices, nothing invented.
+ * the homepage. Facts only: no price figures (they go into the FAQPage schema), nothing invented.
  * Season dates from courchevel.com. Geneva distance (149 km, about 2 h 15)
  * and Moûtiers station (about 30 minutes) from booking.courchevel.com.
  * Winter equipment rule (1 November to 31 March, 3PMSF tyres or chains)
@@ -26,8 +26,13 @@ export const faq: Record<Locale, FaqGroup[]> = {
       items: [
         {
           home: true,
+          q: 'What does a luxury concierge in Courchevel do?',
+          a: 'A luxury concierge arranges the practical side of a stay so you can simply enjoy it: the chalet or palace hotel, helicopter or chauffeured transfers, ski instructors, private chefs, household staff, nannies, restaurant and club tables, and whatever comes up while you are here. We plan it around your dates and village, book it with local partners and stay on call 24/7 during the winter season.',
+        },
+        {
+          home: true,
           q: 'Do you publish prices?',
-          a: 'No. Every stay is different, so each service is quoted personally after we know your dates, group and village. Send us your request and you receive a tailored proposal within 24 hours.',
+          a: 'Only as a guide, for chalets and transfers: each chalet shows its weekly price for the week listed, and the transfers page shows indicative prices from each airport. Everything else is quoted personally once we know your dates, group and village, and you receive a tailored proposal within 24 hours.',
         },
         {
           home: true,
@@ -124,7 +129,6 @@ export const faq: Record<Locale, FaqGroup[]> = {
       topic: 'Skiing',
       items: [
         {
-          home: true,
           q: 'Can you arrange heli-skiing from Courchevel?',
           a: 'Yes, as day trips. Helicopter drops for skiing are banned in France, so heli-skiing days take you to Italy or Switzerland with a certified mountain guide, and back to Courchevel the same day.',
         },
@@ -230,8 +234,13 @@ export const faq: Record<Locale, FaqGroup[]> = {
       items: [
         {
           home: true,
+          q: 'Que fait une conciergerie de luxe à Courchevel ?',
+          a: 'Une conciergerie de luxe s’occupe de l’organisation pratique de votre séjour pour que vous n’ayez qu’à en profiter : le chalet ou le palace, les transferts en hélicoptère ou avec chauffeur, les moniteurs de ski, les chefs à domicile, le personnel de maison, les nounous, les tables au restaurant et en club, et tout ce qui se présente sur place. Nous organisons tout selon vos dates et votre village, réservons auprès de partenaires locaux et restons joignables 24 h/24 pendant la saison d’hiver.',
+        },
+        {
+          home: true,
           q: 'Publiez-vous vos tarifs ?',
-          a: 'Non. Chaque séjour est différent : chaque prestation fait l’objet d’un devis personnalisé une fois vos dates, votre groupe et votre village connus. Envoyez-nous votre demande et recevez une proposition sur mesure sous 24 heures.',
+          a: 'Seulement à titre indicatif, pour les chalets et les transferts : chaque chalet affiche son prix à la semaine pour la semaine indiquée, et la page transferts donne des prix indicatifs depuis chaque aéroport. Tout le reste fait l’objet d’un devis personnalisé une fois vos dates, votre groupe et votre village connus, avec une proposition sur mesure sous 24 heures.',
         },
         {
           home: true,
@@ -328,7 +337,6 @@ export const faq: Record<Locale, FaqGroup[]> = {
       topic: 'Ski',
       items: [
         {
-          home: true,
           q: 'Pouvez-vous organiser de l’héliski depuis Courchevel ?',
           a: 'Oui, à la journée. La dépose en hélicoptère pour le ski est interdite en France : les journées d’héliski se déroulent donc en Italie ou en Suisse avec un guide de haute montagne diplômé, avec retour à Courchevel le soir même.',
         },

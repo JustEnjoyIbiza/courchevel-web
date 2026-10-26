@@ -4,7 +4,7 @@ shortTitle: Ce qu’offre une bonne conciergerie
 metaTitle: "Choisir une conciergerie à Courchevel | CLC"
 description: "Délais de réponse, partenaires agréés, contrat du chalet, devis clairs : ce qu’une conciergerie à Courchevel doit offrir, et comment nous y répondons."
 answer: "Nous répondons sous 15 minutes de 8 h à 22 h, restons joignables 24 h/24 pendant la saison d’hiver, ne travaillons qu’avec des partenaires agréés et établissons un devis personnalisé pour chaque service avant toute réservation. C’est ce qu’une bonne conciergerie à Courchevel doit offrir : des réponses rapides et personnelles, des chauffeurs, moniteurs et agents de sécurité habilités, et un contrat clair pour le chalet. Voici notre façon de travailler point par point, puis les questions à poser."
-updated: 2026-10-24
+updated: 2026-10-26
 image: sculpture
 imageAlt: "Les lettres rouges de Courchevel, sculpture dressée dans la neige"
 facts:
@@ -48,7 +48,7 @@ related:
 Voici ce que vous pouvez attendre de nous, avant même de le demander.
 
 - **Réponses :** nous répondons sous 15 minutes de 8 h à 22 h, et pendant la saison d’hiver nous sommes joignables 24 h/24, par WhatsApp, téléphone ou e-mail.
-- **Propositions et devis :** vous recevez une proposition sur mesure sous 24 heures. Nous ne publions pas de tarifs ; chaque prestation fait l’objet d’un devis personnalisé, et rien n’est réservé sans votre accord.
+- **Propositions et devis :** vous recevez une proposition sur mesure sous 24 heures. Nous ne publions des prix indicatifs que pour les chalets et les transferts ; tout le reste fait l’objet d’un devis personnalisé, et rien n’est réservé sans votre accord.
 - **Partenaires agréés :** nous ne conduisons ni ne pilotons jamais nous-mêmes. Les transferts routiers sont assurés par des chauffeurs professionnels agréés et les vols par des opérateurs agréés ; la protection rapprochée passe uniquement par des partenaires autorisés par le CNAPS, comme l’explique notre page [shopping, courses et sécurité](/fr/services/lifestyle/).
 - **Chalets :** nous ne louons jamais de bien et n’encaissons jamais de loyer. Le chalet est loué directement auprès de son propriétaire, d’une agence ou de l’hôtel, et nous organisons tout autour du séjour ; voir notre service de [location de chalet de luxe](/fr/services/chalets/).
 - **Secteur :** Courchevel 1850, 1650 Moriond, 1550 Village, 1300 Le Praz et La Tania, ainsi que les Trois Vallées, dont Méribel et Val Thorens.

@@ -4,7 +4,7 @@ shortTitle: About us
 metaTitle: About Courchevel Luxury Concierge | Private Concierge
 description: A private concierge in Courchevel and the Trois Vallées. One contact for chalets, transfers, chefs, ski and staff, available 24/7 in the winter season.
 answer: Courchevel Luxury Concierge is a private concierge service based in Courchevel, in the French Alps. One contact plans and looks after your whole stay, from the chalet and transfers to chefs, instructors and childcare, and every service is quoted personally.
-updated: 2026-10-22
+updated: 2026-10-26
 image: sculpture
 imageAlt: The red Courchevel letters sculpture in the snow
 facts:
@@ -36,7 +36,7 @@ We work for families, couples, groups of friends and companies. Requests from pe
 
 You have one contact from the first message to the last day of your stay. Rather than sending a catalogue, we ask a few questions about your group, your dates and what matters to you, then propose a small number of options that genuinely fit.
 
-We do not publish prices. Every stay is different, so each service is quoted personally once we know what you need. You see the full proposal before anything is booked, and nothing is confirmed without your agreement.
+We publish guide prices only for chalets and transfers. Every stay is different, so everything else is quoted personally once we know what you need. You see the full proposal before anything is booked, and nothing is confirmed without your agreement.
 
 ## How a request is handled
 
