@@ -14,15 +14,13 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
 - [ ] **Netlify access**: check build settings, add environment variables, see the preview
 - [ ] **Accounts for the lead system**: Supabase, Resend (with DNS records for the domain), Telegram bot, Cloudflare Turnstile. Guide: `lead-system-setup.md`. Basin is set up (23 Oct): `BASIN_FORM_URL` is set in Netlify and Basin emails leads to the Courchevel Gmail (verified). Switch to the domain email when it exists.
 - [ ] **Legal pages** (written 26 Oct: `/mentions-legales/`, `/privacy/`, `/cookies/`, EN/FR). They show
-  "To be confirmed" until these are set in `src/data/business.ts` (`legal`), and the launch check fails until then:
-  1. Legal name of the business (company name, or your own name as an individual entrepreneur)
-  2. Legal form (SAS, SARL, EI, micro-entreprise…)
-  3. Share capital (companies only)
-  4. Registered office address
-  5. SIRET
-  6. RCS city and number (companies only)
-  7. Intra-EU VAT number, if any
-  8. Director of publication (usually the legal representative)
+  "To be confirmed" until these are set in `src/data/business.ts` (`legal`), and the launch check fails until then.
+  **Given 3 Nov:** Ivan Savchak, autónomo registered in Spain, NIF 60888451E (so no SIRET, RCS or share
+  capital); director of publication Ivan Savchak. **Still to come:**
+  1. Business address (owner: to be confirmed, for Spain and France)
+  2. If there is also a French registration (SIRET), its number
+  VAT (owner, 3 Nov): the NIF is the VAT number. ES60888451E is not in VIES (checked 3 Nov), so no
+  intra-EU VAT number is shown; add it to `business.legal.vatNumber` if the ROI registration comes.
 - [ ] **Check with your accountant or lawyer** (each can add a line to the legal notice; not legal advice):
   - Rental intermediation (loi Hoguet): commission on chalet rentals usually requires a professional card
     (CCI) or working as the agent of an agency that holds one. If so: card number and guarantee on the site.

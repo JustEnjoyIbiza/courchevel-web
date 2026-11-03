@@ -18,25 +18,31 @@ const l = business.legal;
 const c = {
   en: {
     publisher: 'Publisher', host: 'Host', controller: 'Data controller', pending: 'To be confirmed',
-    tradingName: 'Trading name', entity: 'Company', form: 'Legal form', capital: 'Share capital', office: 'Registered office',
+    tradingName: 'Trading name', entity: 'Company', person: 'Name', form: 'Legal form', capital: 'Share capital',
+    office: 'Registered office', businessAddress: 'Business address', taxId: 'Tax ID and VAT number (NIF, Spain)',
     siret: 'SIRET', rcs: 'Trade register (RCS)', vat: 'VAT number', director: 'Director of publication', email: 'Email', phone: 'Phone',
     tourism: 'Atout France registration', card: 'Professional card', mediator: 'Consumer mediator', address: 'Address', website: 'Website',
   },
   fr: {
     publisher: 'Éditeur', host: 'Hébergeur', controller: 'Responsable du traitement', pending: 'À compléter',
-    tradingName: 'Nom commercial', entity: 'Société', form: 'Forme juridique', capital: 'Capital social', office: 'Siège social',
+    tradingName: 'Nom commercial', entity: 'Société', person: 'Nom', form: 'Forme juridique', capital: 'Capital social',
+    office: 'Siège social', businessAddress: 'Adresse professionnelle', taxId: 'NIF et n° de TVA (Espagne)',
     siret: 'SIRET', rcs: 'RCS', vat: 'N° de TVA intracommunautaire', director: 'Directeur de la publication', email: 'E-mail', phone: 'Téléphone',
     tourism: 'Immatriculation Atout France', card: 'Carte professionnelle', mediator: 'Médiateur de la consommation', address: 'Adresse', website: 'Site',
   },
 }[locale];
 
 type Row = { label: string; value: string | null | undefined; href?: string };
+// A self-employed person has a name and a business address, not a company and a registered office.
+const entity = l.individual ? c.person : c.entity;
+const office = l.individual ? c.businessAddress : c.office;
 const identity: Row[] = [
   { label: c.tradingName, value: business.name },
-  { label: c.entity, value: l.entityName },
-  { label: c.form, value: l.legalForm },
+  { label: entity, value: l.entityName },
+  { label: c.form, value: l.legalForm && l.legalForm[locale] },
   { label: c.capital, value: l.capital },
-  { label: c.office, value: l.registeredAddress },
+  { label: office, value: l.registeredAddress },
+  { label: c.taxId, value: l.taxId },
   { label: c.siret, value: l.siret },
   { label: c.rcs, value: l.rcs },
   { label: c.vat, value: l.vatNumber },
@@ -56,7 +62,7 @@ const groups =
         { title: c.publisher, rows: [...identity, { label: c.director, value: l.publisher }, ...contact, ...regulated] },
         { title: c.host, rows: [{ label: c.entity, value: l.host.name }, { label: c.address, value: l.host.address }, { label: c.website, value: l.host.website.replace(/^https:\/\//, ''), href: l.host.website }] },
       ]
-    : [{ title: c.controller, rows: [{ label: c.entity, value: l.entityName }, { label: c.office, value: l.registeredAddress }, ...contact] }];
+    : [{ title: c.controller, rows: [{ label: entity, value: l.entityName }, { label: office, value: l.registeredAddress }, ...contact] }];
 ---
 
 <section class="border-b border-line">
