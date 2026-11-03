@@ -7,8 +7,10 @@ whole history. Rules live in `CLAUDE.md`; the owner's open items in `docs/owner-
 
 Rebuild of courchevelluxuryconcierge.com (old one-page site, archived in `audit/`) as a
 bilingual EN/FR Astro 7 site on Netlify, built for leads, Google and AI assistants.
-Phases 0–5 are built and committed. **Nothing is pushed to GitHub or deployed:** the live
-site is still the old one. Launch is planned for **Tuesday 24 November 2026** (season opens
+Phases 0–5 are built and committed. **Pushed to GitHub on 3 Nov** (draft PR
+https://github.com/JustEnjoyIbiza/courchevel-web/pull/3, deploy preview
+https://deploy-preview-3--courchevel-luxury-concierge.netlify.app, rebuilt on every push). The live
+site is still the old one (`main`); never merge the PR without the owner's go-ahead. Launch is planned for **Tuesday 24 November 2026** (season opens
 4 December). What is left is mostly the owner's: accounts, access, facts, then About and legal pages.
 
 ## Session of 25 October 2026
@@ -224,7 +226,10 @@ Open from this session:
   Courchevel migrations there.
 
 - Repo: this folder, branch **`rebuild/phase-0-setup`**, remote `JustEnjoyIbiza/courchevel-web`
-  (no push access yet). `main` = old site, which Netlify serves in production.
+  (push access since 3 Nov: GitHub CLI at `~/.local/bin/gh`, signed in as JustEnjoyIbiza, set as
+  git's credential helper). `main` = old site, which Netlify serves in production. Netlify builds
+  `main` from GitHub automatically; the draft PR #3 gets a deploy preview on each push.
+  Netlify's primary domain is still the bare domain: switch it to www before merging.
 - Backup of the whole repo (all branches, history): `../courchevel-web-backup-2026-10-25.bundle` (older: 2026-10-22)
   (restore: `git clone <bundle> courchevel-web`).
 - Plans (source of truth): `../Courchevel_Concierge_Website_Plan.pdf`,
