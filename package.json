@@ -1,0 +1,39 @@
+{
+  "name": "courchevel-web",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
+    "test": "node --test 'tests/**/*.test.mts'",
+    "qa:static": "node scripts/qa/static-check.mjs dist",
+    "qa:schema": "node scripts/qa/schema-check.mjs dist",
+    "qa:content": "node scripts/qa/content-lint.mjs .",
+    "qa:launch": "node scripts/qa/launch-check.mjs",
+    "cloudinary": "node --env-file-if-exists=.env scripts/cloudinary.mjs",
+    "telegram": "node --env-file-if-exists=.env scripts/telegram.mjs",
+    "qa": "npm run build && npm test && npm run qa:static && npm run qa:schema"
+  },
+  "dependencies": {
+    "@astrojs/markdown-satteri": "^0.4.5",
+    "@astrojs/mdx": "^8.1.1",
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/manrope": "^5.3.0",
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.4.2",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@types/node": "^26.6.5",
+    "typescript": "^6.0.3"
+  }
+}

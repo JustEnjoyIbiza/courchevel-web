@@ -1,0 +1,73 @@
+---
+/**
+ * A short request page (/enquire/<type>/): the request form, WhatsApp, phone
+ * and email alongside, and a way into the full Plan my stay form. Kept out of
+ * search results and the sitemap; the content pages are what people find.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import RequestForm from './RequestForm.astro';
+import { business, telHref, mailtoHref, type Locale } from '../data/business';
+import { requestCopy } from '../content/requests';
+import { requestCta } from '../lib/cta';
+import { t } from '../i18n/ui';
+import { localize } from '../lib/routes';
+import type { RequestType } from '../lib/requests';
+
+interface Props {
+  locale: Locale;
+  type: RequestType;
+}
+
+const { locale, type } = Astro.props;
+const s = t(locale);
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+const r = requestCopy[locale];
+const tc = r.types[type];
+const path = `/enquire/${type}/`;
+const cta = requestCta(locale, { type });
+
+const options = [
+  { label: s.whatsapp, value: business.phone.display, href: cta.whatsapp, event: 'whatsapp_click', request: true },
+  { label: s.call, value: business.phone.display, href: telHref, event: 'phone_click', request: false },
+  { label: s.email, value: business.email, href: mailtoHref, event: 'email_click', request: false },
+];
+---
+
+<BaseLayout title={tc.metaTitle} description={tc.description} locale={locale} alternatePath={localize(path, other)} noindex enquiryPage cta={cta}>
+  <section class="py-10 md:py-16">
+    <div class="container-site">
+      <Breadcrumbs items={[{ name: s.breadcrumbHome, href: localize('/', locale) }, { name: tc.h1, href: localize(path, locale) }]} />
+      <h1 class="mt-8 text-display">{tc.h1}</h1>
+      <div class="rule mt-8"></div>
+      <p class="mt-8 max-w-2xl text-lg text-ink">{tc.lead}</p>
+      <p class="mt-4 text-sm text-taupe">{business.replyPromise[locale]}.</p>
+    </div>
+
+    <div class="container-site mt-14 grid gap-16 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <RequestForm locale={locale} type={type} />
+      </div>
+
+      <aside class="space-y-6 lg:col-span-4" aria-labelledby="talk-title">
+        <div class="bg-stone p-6">
+          <h2 id="talk-title" class="text-2xl">{r.asideTitle}</h2>
+          <ul class="mt-4">
+            {options.map((o) => (
+              <li class="border-t border-line py-4">
+                <p class="text-sm font-semibold">{o.label}</p>
+                <a href={o.href} class="link mt-1 inline-flex min-h-11 items-center break-all text-sm" data-event={o.event} data-request-whatsapp={o.request ? '' : undefined} rel="noopener">{o.value}</a>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-4 text-xs text-taupe">{business.availability[locale]}. {s.footer.pricing}</p>
+        </div>
+        <div class="border border-line p-6">
+          <p class="font-serif text-2xl">{r.upsellTitle}</p>
+          <p class="mt-3 text-sm text-taupe">{r.upsellLink}</p>
+          <a href={localize('/enquire/', locale)} class="link mt-3 inline-flex min-h-11 items-center text-sm">{s.planMyStay}</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

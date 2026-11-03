@@ -1,0 +1,85 @@
+---
+/**
+ * Google rating and reviews (build time), with the attribution Google requires,
+ * plus "See all on Google" and "Leave a review". Without API data it shows the
+ * two links only, so no number on the site can go stale.
+ */
+import { getGoogleReviews } from '../lib/google-reviews';
+import { business, type Locale } from '../data/business';
+
+interface Props {
+  locale: Locale;
+  /** How many reviews to show (Google returns up to 5). */
+  limit?: number;
+  heading?: 'h2' | 'h3';
+}
+
+const { locale, limit = 3, heading = 'h2' } = Astro.props;
+const data = await getGoogleReviews(locale);
+const g = business.profiles.google;
+const Heading = heading;
+const nf = new Intl.NumberFormat(locale === 'en' ? 'en-GB' : 'fr-FR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const c = {
+  en: {
+    eyebrow: 'Reviews',
+    title: 'What clients say on Google',
+    rating: (r: string, n: number) => `${r} out of 5 on Google, from ${n} review${n === 1 ? '' : 's'}`,
+    from: 'Reviews from Google',
+    all: 'See all reviews on Google',
+    leave: 'Leave a review',
+    none: 'Read what clients say about us on Google, or leave a review after your stay.',
+    stars: (n: number) => `${n} out of 5 stars`,
+  },
+  fr: {
+    eyebrow: 'Avis',
+    title: 'Ce que disent nos clients sur Google',
+    rating: (r: string, n: number) => `${r} sur 5 sur Google, ${n} avis`,
+    from: 'Avis issus de Google',
+    all: 'Voir tous les avis sur Google',
+    leave: 'Laisser un avis',
+    none: 'Lisez les avis de nos clients sur Google, ou laissez le vôtre après votre séjour.',
+    stars: (n: number) => `${n} étoiles sur 5`,
+  },
+}[locale];
+const reviews = data?.reviews.slice(0, limit) ?? [];
+---
+
+<div>
+  <p class="eyebrow">{c.eyebrow}</p>
+  <Heading class="mt-4 text-h2">{c.title}</Heading>
+
+  {data ? (
+    <p class="mt-5 flex flex-wrap items-baseline gap-x-3 text-taupe">
+      <span class="font-serif text-4xl font-semibold text-brass-deep">{nf.format(data.rating)}</span>
+      <span aria-hidden="true" class="text-brass">{'★'.repeat(Math.round(data.rating))}</span>
+      <span>{c.rating(nf.format(data.rating), data.count)}</span>
+    </p>
+  ) : (
+    <p class="mt-5 max-w-2xl text-taupe">{c.none}</p>
+  )}
+
+  {reviews.length > 0 && (
+    <ul class="mt-10 grid gap-10 md:grid-cols-3">
+      {reviews.map((r) => (
+        <li>
+          <figure class="border-t border-brass pt-6">
+            <p class="text-brass" aria-label={c.stars(r.rating)}>{'★'.repeat(Math.round(r.rating))}</p>
+            <blockquote class="mt-3 text-ink">
+              <p>{r.text.length > 420 ? `${r.text.slice(0, 420).trimEnd()}…` : r.text}</p>
+            </blockquote>
+            <figcaption class="mt-4 text-sm text-taupe">
+              {r.authorUrl ? <a href={r.authorUrl} rel="noopener nofollow" class="text-taupe underline decoration-line">{r.author}</a> : r.author}
+              {r.when && <span> · {r.when}</span>}
+            </figcaption>
+          </figure>
+        </li>
+      ))}
+    </ul>
+  )}
+
+  <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+    <a href={data?.mapsUrl ?? g.mapsUrl} class="btn-secondary" rel="noopener">{c.all}</a>
+    <a href={g.reviewUrl} class="link inline-flex min-h-11 items-center sm:ml-4" rel="noopener">{c.leave}</a>
+    {data && <span class="text-xs text-taupe sm:ml-auto">{c.from}</span>}
+  </div>
+</div>

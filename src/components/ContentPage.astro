@@ -1,0 +1,209 @@
+---
+/**
+ * Template for every Markdown content page (services, villages, guides, about).
+ * Order follows the plan's page rules: answer first, key facts, what is
+ * included, details, FAQ, 3 related pages, last updated, Plan my stay.
+ */
+import { Picture, getImage } from 'astro:assets';
+import { render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import FaqList from './FaqList.astro';
+import CtaBand from './CtaBand.astro';
+import SmartLink from './SmartLink.astro';
+import LastUpdated from './LastUpdated.astro';
+import Highlights from './Highlights.astro';
+import ChaletList from './ChaletList.astro';
+import HotelList from './HotelList.astro';
+import LegalFacts from './LegalFacts.astro';
+import TransferRoutes from './TransferRoutes.astro';
+import JetBand from './JetBand.astro';
+import ServiceOffer from './ServiceOffer.astro';
+import DiningSplit from './DiningSplit.astro';
+import { photos } from '../data/photos';
+import { business, type Locale } from '../data/business';
+import { pageCta } from '../lib/cta';
+import { t } from '../i18n/ui';
+import { localize, isBuilt, linkTitle, type ContentPage } from '../lib/routes';
+import { breadcrumbSchema, faqSchema, serviceSchema, articleSchema, localBusinessSchema } from '../lib/schema';
+
+interface Props {
+  page: ContentPage;
+}
+
+const { page } = Astro.props;
+const { collection, locale, slug, path, entry } = page;
+const d = entry.data;
+const s = t(locale);
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+const { Content } = await render(entry);
+
+const url = localize(path, locale);
+const alternate = localize(path, other);
+const hasAlternate = await isBuilt(alternate);
+
+// Breadcrumb trail: Home / Section / Page
+const hubs = { services: '/services/', villages: '/villages/', guides: '/guides/', pages: null } as const;
+const hub = hubs[collection];
+const crumbs = [
+  { name: s.breadcrumbHome, href: localize('/', locale) },
+  ...(hub ? [{ name: s.page.sections[collection], href: localize(hub, locale) }] : []),
+  { name: d.shortTitle ?? d.title, href: url },
+];
+
+const related = await Promise.all(
+  (d.related ?? []).map(async (p) => ({
+    href: localize(p, locale),
+    title: (await linkTitle(p, locale)) ?? p,
+  })),
+);
+
+
+const image = d.image ? photos[d.image] : undefined;
+const schemaImage = image ? (await getImage({ src: image, width: 1200, format: 'jpeg' })).src : undefined;
+
+const schema: object[] = [breadcrumbSchema(crumbs.map((c) => ({ name: c.name, url: c.href })))];
+if (collection === 'services') schema.push(serviceSchema({ name: d.title, description: d.description, url, locale, image: schemaImage }));
+if (collection === 'guides') schema.push(articleSchema({ headline: d.title, description: d.description, url, updated: d.updated, locale, image: schemaImage }));
+if (slug === 'about') schema.push(localBusinessSchema(locale));
+if (d.faqs.length) schema.push(faqSchema(d.faqs));
+
+// The request this page leads to (Request a table, Request a transfer... or Plan my stay).
+const cta = pageCta(locale, collection, slug);
+---
+
+<BaseLayout
+  title={d.metaTitle}
+  description={d.description}
+  locale={locale}
+  alternatePath={hasAlternate ? alternate : undefined}
+  schema={schema}
+  ogImage={image}
+  cta={cta}
+>
+  <article>
+    {image ? (
+      <>
+        <!-- Photo header: full-width photo, title set on it -->
+        <header class="relative isolate flex min-h-[62svh] items-end overflow-hidden bg-ink text-ivory md:min-h-[min(72vh,42rem)]">
+          <Picture
+            src={image}
+            alt={d.imageAlt ?? ''}
+            formats={['avif', 'webp']}
+            widths={[480, 720, 1000]}
+            sizes="100vw"
+            loading="eager"
+            fetchpriority="high"
+            class="absolute inset-0 -z-20 h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/50 to-ink/30" aria-hidden="true"></div>
+          <div class="container-site pt-24 pb-12 md:pb-16">
+            <Breadcrumbs items={crumbs} tone="light" />
+            <h1 class="mt-6 max-w-4xl text-display text-ivory">{d.title}</h1>
+            <div class="rule mt-8"></div>
+          </div>
+        </header>
+        <!-- The direct answer, set as a statement -->
+        <section class="border-b border-line">
+          <div class="container-site grid gap-10 py-14 md:grid-cols-12 md:items-end md:py-20">
+            <p class="font-serif text-[clamp(1.4rem,1.15rem+0.9vw,2rem)] leading-snug text-ink md:col-span-8">{d.answer}</p>
+            <div class="flex flex-col gap-3 md:col-span-4 md:items-end">
+              <a href={cta.href} class="btn-primary w-full md:w-auto">{cta.label}</a>
+              <a href={cta.whatsapp} class="btn-secondary w-full md:w-auto" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+              <p class="text-xs text-taupe md:text-right">{business.replyPromise[locale]}</p>
+            </div>
+          </div>
+        </section>
+      </>
+    ) : (
+      <header class="border-b border-line">
+        <div class="container-site py-10 md:py-16">
+          <div class="flex max-w-4xl flex-col justify-center">
+            <Breadcrumbs items={crumbs} />
+            <h1 class="mt-8 text-display">{d.title}</h1>
+            <div class="rule mt-8"></div>
+            <p class="mt-8 max-w-2xl text-lg text-ink">{d.answer}</p>
+            <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a href={cta.href} class="btn-primary">{cta.label}</a>
+              <a href={cta.whatsapp} class="btn-secondary" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+            </div>
+            <p class="mt-4 text-xs text-taupe">{business.replyPromise[locale]}</p>
+          </div>
+        </div>
+      </header>
+    )}
+
+    {d.chalets && <ChaletList locale={locale} />}
+    {d.hotels && <HotelList locale={locale} />}
+    {d.legal && <LegalFacts kind={d.legal} locale={locale} />}
+    {d.transfers && <TransferRoutes locale={locale} />}
+    {d.transfers && <JetBand locale={locale} />}
+    {d.offer && <ServiceOffer slug={slug} locale={locale} />}
+    {d.highlights?.map((h, i) => <Highlights {...h} index={i} locale={locale} />)}
+    {d.dining === 'out' && <DiningSplit current="out" locale={locale} />}
+
+    {(d.facts.length > 0 || d.includes.length > 0) && (
+      <section class="bg-stone">
+        <div class={`container-site grid gap-12 py-14 md:gap-16 ${d.facts.length > 0 && d.includes.length > 0 ? 'md:grid-cols-2' : ''}`}>
+          {d.facts.length > 0 && (
+            <div class="max-w-3xl">
+              <h2 class="eyebrow">{s.page.keyFacts}</h2>
+              <dl class="mt-6">
+                {d.facts.map((f) => (
+                  <div class="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-4 border-t border-line py-4">
+                    <dt class="text-sm text-taupe">{f.label}</dt>
+                    <dd class="font-medium text-ink">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          )}
+          {d.includes.length > 0 && (
+            <div>
+              <h2 class="eyebrow">{s.page.included}</h2>
+              <ul class="mt-6">
+                {d.includes.map((item) => (
+                  <li class="flex gap-4 border-t border-line py-4">
+                    <span class="mt-[0.8em] h-px w-3 shrink-0 bg-brass" aria-hidden="true"></span>
+                    <span class="text-ink">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    <div class="container-site py-section">
+      <div class="prose-site">
+        <Content />
+      </div>
+
+      {d.faqs.length > 0 && (
+        <section class="mt-section max-w-4xl" id="faq">
+          <p class="eyebrow">{s.page.faq}</p>
+          <h2 class="mt-4 text-h2">{locale === 'en' ? 'Frequently asked' : 'Questions fréquentes'}</h2>
+          <div class="mt-8"><FaqList items={d.faqs} /></div>
+        </section>
+      )}
+
+      {related.length > 0 && (
+        <nav class="mt-section" aria-label={s.page.related}>
+          <p class="eyebrow">{s.page.related}</p>
+          <ul class="mt-6 grid gap-0 md:grid-cols-3 md:gap-8">
+            {related.map((r) => (
+              <li class="border-t border-brass py-5">
+                <SmartLink href={r.href} class="font-serif text-2xl text-ink no-underline hover:text-brass-deep">{r.title}</SmartLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      <LastUpdated date={d.updated} locale={locale} class="mt-14" />
+    </div>
+  </article>
+
+  <CtaBand locale={locale} cta={cta} />
+</BaseLayout>

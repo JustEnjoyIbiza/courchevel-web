@@ -1,0 +1,341 @@
+---
+/**
+ * Hub pages: /services/, /villages/, /guides/, /experiences/ (EN and FR).
+ * Each lists its pages with a short answer and links.
+ */
+import { Picture } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import SmartLink from './SmartLink.astro';
+import CtaBand from './CtaBand.astro';
+import LastUpdated from './LastUpdated.astro';
+import { hubs, hubsUpdated } from '../content/hubs';
+import { experiences } from '../content/experiences';
+import { services, servicePath } from '../data/services';
+import { villages } from '../data/villages';
+import { photos } from '../data/photos';
+import type { Locale } from '../data/business';
+import { t } from '../i18n/ui';
+import { localize, splitId } from '../lib/routes';
+import { breadcrumbSchema } from '../lib/schema';
+import VillageCard from './VillageCard.astro';
+import { photoAlt, serviceStories, villageStories, experienceMoments, hubCopy as hc } from '../content/hub-stories';
+
+interface Props {
+  locale: Locale;
+  hub: 'services' | 'villages' | 'guides' | 'experiences';
+}
+
+const { locale, hub } = Astro.props;
+const c = hubs[hub][locale];
+const s = t(locale);
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+const path = `/${hub}/`;
+const pad = (n: number) => String(n).padStart(2, '0');
+
+type Item = { title: string; text: string; href?: string };
+let items: Item[] = [];
+if (hub === 'services') {
+  items = services.map((x) => ({ title: x.name[locale], text: x.summary[locale], href: localize(servicePath(x), locale) }));
+} else if (hub === 'guides') {
+  items = (await getCollection('guides'))
+    .filter((g) => splitId(g.id).locale === locale)
+    .sort((a, b) => a.data.title.localeCompare(b.data.title))
+    .map((g) => ({ title: g.data.title, text: g.data.description, href: localize(`/guides/${splitId(g.id).slug}/`, locale) }));
+}
+
+const th = { village: 'Village', altitude: 'Altitude', suits: locale === 'en' ? 'In short' : 'En bref' };
+const nf = new Intl.NumberFormat(locale === 'en' ? 'en-GB' : 'fr-FR');
+
+// Header photo per hub; alt texts match the pages that use the same photo.
+const heroes = {
+  services: { image: 'white-chalet', alt: { en: 'White wooden chalet among snow-covered pine trees in Courchevel', fr: 'Chalet en bois blanc entouré de sapins enneigés à Courchevel' } },
+  villages: { image: 'sculpture', alt: { en: 'The red Courchevel letters sculpture in the snow', fr: 'La sculpture des lettres rouges Courchevel dans la neige' } },
+  guides: { image: 'terrace', alt: { en: 'Sunny terrace of a mountain restaurant above the slopes in Courchevel', fr: 'Terrasse ensoleillée d’un restaurant d’altitude au-dessus des pistes de Courchevel' } },
+  experiences: { image: 'helicopter', alt: { en: 'Helicopter on a snowy landing area among pine trees in the Alps', fr: 'Hélicoptère se posant sur une hélisurface enneigée entourée de sapins dans les Alpes' } },
+} as const;
+const hero = heroes[hub];
+
+// Services hub: the same services, grouped by the stage of the stay.
+const stages = [
+  { title: { en: 'Before you arrive', fr: 'Avant votre arrivée' }, text: { en: 'The chalet chosen, staffed and stocked to your list, with children’s equipment in place.', fr: 'Le chalet choisi, le personnel en place et la cuisine approvisionnée selon votre liste, avec l’équipement pour les enfants.' }, slugs: ['chalets', 'palace-hotels', 'staff', 'childcare'] },
+  { title: { en: 'Arrival and departure', fr: 'Arrivée et départ' }, text: { en: 'Helicopter or chauffeured car from the airport, timed to your flight, with a road transfer on standby.', fr: 'Hélicoptère ou voiture avec chauffeur depuis l’aéroport, calés sur votre vol, avec un transfert routier en réserve.' }, slugs: ['transfers'] },
+  { title: { en: 'On the mountain', fr: 'Sur la montagne' }, text: { en: 'Instructors and guides matched to each skier, and afternoons off the pistes.', fr: 'Moniteurs et guides adaptés à chaque skieur, et des après-midi hors des pistes.' }, slugs: ['ski', 'experiences'] },
+  { title: { en: 'Evenings', fr: 'En soirée' }, text: { en: 'A chef at the chalet or the right table in the village.', fr: 'Un chef au chalet ou la bonne table au village.' }, slugs: ['private-chef', 'nightlife'] },
+  { title: { en: 'Throughout your stay', fr: 'Pendant tout le séjour' }, text: { en: 'Treatments at the chalet, errands and anything that comes up, with one contact on call.', fr: 'Soins au chalet, courses et imprévus, avec un seul interlocuteur joignable.' }, slugs: ['wellness', 'lifestyle'] },
+];
+const stageCopy = {
+  eyebrow: { en: 'Your stay, stage by stage', fr: 'Votre séjour, étape par étape' },
+  title: { en: 'Arranged around the way a stay unfolds', fr: 'Organisé au fil de votre séjour' },
+};
+const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
+
+// Services hub: every service as a short row, grouped by the stage of the stay.
+const toStory = (x: (typeof services)[number]) => ({
+  slug: x.slug,
+  name: x.name[locale],
+  summary: x.summary[locale],
+  href: localize(servicePath(x), locale),
+  line: serviceStories[x.slug]?.line[locale] ?? '',
+  photo: serviceStories[x.slug]?.photo ?? 'gondola',
+  credit: serviceStories[x.slug]?.credit?.[locale],
+});
+const stories = Object.fromEntries(services.map((x) => [x.slug, toStory(x)]));
+
+// Villages hub: 1850 as the feature, the other Courchevel villages, then Méribel and Val Thorens.
+const toVillage = (v: (typeof villages)[number]) => ({
+  slug: v.slug,
+  name: v.name,
+  altitude: v.altitude,
+  summary: v.summary[locale],
+  href: localize(`/${v.slug}/`, locale),
+  line: villageStories[v.slug]?.line[locale] ?? '',
+  photo: villageStories[v.slug]?.photo ?? 'gondola',
+  alt: photoAlt[villageStories[v.slug]?.photo ?? 'gondola'][locale],
+  altitudeLabel: `${nf.format(v.altitude)} m`,
+});
+const feature = villages.filter((v) => v.slug === 'courchevel-1850').map(toVillage)[0];
+const others = villages.filter((v) => v.group === 'courchevel' && v.slug !== 'courchevel-1850').map(toVillage);
+const beyond = villages.filter((v) => v.group === 'trois-vallees').map(toVillage);
+
+const crumbs = [
+  { name: s.breadcrumbHome, href: localize('/', locale) },
+  { name: c.title, href: localize(path, locale) },
+];
+---
+
+<BaseLayout
+  title={c.metaTitle}
+  description={c.description}
+  locale={locale}
+  alternatePath={localize(path, other)}
+  schema={[breadcrumbSchema(crumbs.map((x) => ({ name: x.name, url: x.href })))]}
+>
+  <!-- Photo header, then the direct answer as a statement -->
+  <header class="relative isolate flex min-h-[56svh] items-end overflow-hidden bg-ink text-ivory md:min-h-[min(64vh,38rem)]">
+    <Picture
+      src={photos[hero.image]}
+      alt={hero.alt[locale]}
+      formats={['avif', 'webp']}
+      widths={[480, 720, 1000]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="absolute inset-0 -z-20 h-full w-full object-cover"
+    />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/50 to-ink/30" aria-hidden="true"></div>
+    <div class="container-site pt-24 pb-12 md:pb-16">
+      <Breadcrumbs items={crumbs} tone="light" />
+      <h1 class="mt-6 max-w-4xl text-display text-ivory">{c.title}</h1>
+      <div class="rule mt-8"></div>
+    </div>
+  </header>
+  <section class="border-b border-line">
+    <div class="container-site py-14 md:py-20">
+      <p class="max-w-4xl font-serif text-[clamp(1.4rem,1.15rem+0.9vw,2rem)] leading-snug text-ink">{c.answer}</p>
+    </div>
+  </section>
+
+  {hub === 'services' && (
+    <>
+      <!-- Every service, grouped by the stage of the stay: a photo, the name, a line and a short description.
+           The homepage already shows the services as large tiles, so this page is the quick list (owner, 26 Oct 2026). -->
+      <section class="py-section" aria-labelledby="stages-title">
+        <div class="container-site">
+          <p class="eyebrow">{stageCopy.eyebrow[locale]}</p>
+          <h2 id="stages-title" class="mt-4 max-w-2xl text-h2">{stageCopy.title[locale]}</h2>
+          <ol class="mt-12">
+            {stages.map((st, i) => (
+              <li class="grid gap-5 border-t border-line py-8 md:grid-cols-12 md:gap-10 md:py-10">
+                <div class="md:col-span-4">
+                  <span class="font-serif text-3xl leading-none text-brass-deep md:text-4xl" aria-hidden="true">{pad(i + 1)}</span>
+                  <h3 class="mt-3 text-2xl md:text-3xl">{st.title[locale]}</h3>
+                  <p class="mt-2 text-sm text-taupe md:text-base">{st.text[locale]}</p>
+                </div>
+                <ul class="md:col-span-8">
+                  {st.slugs.map((slug) => {
+                    const x = stories[slug];
+                    return (
+                      <li class="group relative grid grid-cols-[5rem_minmax(0,1fr)] gap-4 border-t border-line py-5 first:border-t-0 first:pt-0 md:grid-cols-[7.5rem_minmax(0,1fr)] md:gap-6">
+                        <div class="self-start overflow-hidden bg-stone">
+                          <Picture src={photos[x.photo]} alt={photoAlt[x.photo][locale]} formats={formats} widths={[160, 240]} sizes="(min-width: 768px) 120px, 80px" class="aspect-square w-full object-cover transition duration-700 ease-out group-hover:scale-[1.06] motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
+                        </div>
+                        <div>
+                          <h4 class="text-xl md:text-2xl"><SmartLink href={x.href} class="text-ink no-underline transition-colors after:absolute after:inset-0 group-hover:text-brass-deep">{x.name}</SmartLink></h4>
+                          <p class="mt-1 font-serif text-base leading-snug italic text-brass-deep md:text-lg">{x.line}</p>
+                          <p class="mt-2 text-sm text-taupe">{x.summary}</p>
+                          {x.credit && <p class="mt-1 text-[0.7rem] text-taupe">{x.credit}</p>}
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section class="container-site py-14">
+        <p class="eyebrow">{hc.services.alsoTitle[locale]}</p>
+        <ul class="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-sm">
+          <li><SmartLink href={localize('/christmas-new-year-courchevel/', locale)} class="link inline-flex min-h-11 items-center">{s.footer.christmas}</SmartLink></li>
+          <li><SmartLink href={localize('/assistants-and-family-offices/', locale)} class="link inline-flex min-h-11 items-center">{s.footer.assistants}</SmartLink></li>
+          <li><SmartLink href={localize('/guides/how-to-choose-a-concierge-in-courchevel/', locale)} class="link inline-flex min-h-11 items-center">{s.footer.chooseGuide}</SmartLink></li>
+        </ul>
+      </section>
+    </>
+  )}
+
+  {hub === 'experiences' && (
+    <>
+      {experiences.map((x, i) => {
+        const dark = i % 2 === 1;
+        return (
+          <section id={x.id} class:list={['py-section', dark ? 'bg-ink text-ivory' : 'bg-ivory']}>
+            <div class="container-site grid items-center gap-10 md:grid-cols-12 md:gap-16">
+              {x.image && (
+                <div class:list={['overflow-hidden md:col-span-6', i % 2 === 1 && 'md:order-2']}>
+                  <Picture src={photos[x.image]} alt={x.imageAlt?.[locale] ?? ''} formats={formats} widths={[480, 720, 1000]} sizes="(min-width: 768px) 50vw, 100vw" class="aspect-[4/5] w-full object-cover" />
+                </div>
+              )}
+              <div class:list={['md:col-span-6', i % 2 === 1 && 'md:order-1']}>
+                <div class="flex items-baseline gap-5">
+                  <span class:list={['font-serif text-6xl leading-none', dark ? 'text-brass' : 'text-brass-deep']} aria-hidden="true">{pad(i + 1)}</span>
+                  <p class:list={['eyebrow', dark && 'text-brass']}>{x.detail[locale]}</p>
+                </div>
+                <h2 class:list={['mt-6 text-[clamp(2.4rem,1.6rem+3vw,4rem)] leading-[1.02]', dark && 'text-ivory']}>{x.name[locale]}</h2>
+                <p class:list={['mt-6 font-serif text-2xl leading-snug italic', dark ? 'text-brass' : 'text-brass-deep']}>{experienceMoments[x.id]?.[locale]}</p>
+                <p class:list={['mt-6 text-lg', dark ? 'text-stone/90' : 'text-taupe']}>{x.text[locale]}</p>
+                {x.includes[locale].length > 0 && (
+                  <>
+                    <p class:list={['eyebrow mt-8', dark && 'text-brass']}>{hc.experiences.includes[locale]}</p>
+                    <ul class="mt-3">
+                      {x.includes[locale].map((inc) => (
+                        <li class:list={['border-t py-3', dark ? 'border-ivory/15 text-ivory' : 'border-line text-ink']}>{inc}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+                <p class:list={['mt-6 text-sm', dark ? 'text-stone/80' : 'text-taupe']}>
+                  {locale === 'en' ? 'Draws on' : 'Services associés'}{locale === 'fr' ? ' :' : ':'}{' '}
+                  {x.services.map((p, n) => {
+                    const svc = services.find((sv) => servicePath(sv) === p);
+                    return svc ? <>{n > 0 && ', '}<a href={localize(p, locale)} class:list={[dark ? 'text-ivory underline decoration-brass underline-offset-4 hover:text-brass' : 'link']}>{svc.name[locale]}</a></> : null;
+                  })}
+                </p>
+                <a href={localize('/enquire/', locale) + `?experience=${x.id}`} class:list={['mt-8', dark ? 'btn bg-ivory text-ink hover:bg-brass' : 'btn-primary']}>{hc.experiences.plan[locale]}</a>
+              </div>
+            </div>
+          </section>
+        );
+      })}
+      <section class="border-t border-line bg-stone">
+        <div class="container-site grid gap-6 py-14 md:grid-cols-12 md:items-center">
+          <div class="md:col-span-8">
+            <h2 class="text-3xl">{hc.experiences.weekTitle[locale]}</h2>
+            <p class="mt-3 text-taupe">{hc.experiences.weekText[locale]}</p>
+          </div>
+          <div class="md:col-span-4 md:text-right">
+            <SmartLink href={localize('/guides/a-week-in-courchevel-1850/', locale)} class="btn-secondary">{hc.experiences.weekLink[locale]}</SmartLink>
+          </div>
+        </div>
+      </section>
+    </>
+  )}
+
+  {hub === 'villages' && (
+    <>
+      <!-- 1850 as the feature -->
+      {feature && (
+        <section class="py-section">
+          <div class="container-site grid items-center gap-10 md:grid-cols-12 md:gap-16">
+            <div class="group overflow-hidden md:col-span-7">
+              <Picture src={photos[feature.photo]} alt={feature.alt} formats={formats} widths={[480, 720, 1000]} sizes="(min-width: 768px) 58vw, 100vw" class="aspect-[4/5] w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100 md:aspect-[5/6]" />
+            </div>
+            <div class="md:col-span-5">
+              <p class="eyebrow">{hc.villages.featureEyebrow[locale]}</p>
+              <p class="mt-6 font-serif text-[clamp(3.5rem,2.5rem+4vw,6rem)] leading-none text-brass-deep">{nf.format(feature.altitude)}<span class="ml-2 text-3xl">m</span></p>
+              <h2 class="mt-4 text-h2"><SmartLink href={feature.href} class="text-ink no-underline hover:text-brass-deep">{feature.name}</SmartLink></h2>
+              <p class="mt-5 font-serif text-2xl leading-snug italic text-brass-deep">{feature.line}</p>
+              <p class="mt-5 text-lg text-taupe">{feature.summary}</p>
+              <SmartLink href={feature.href} class="btn-secondary mt-8">{hc.villages.explore[locale]}</SmartLink>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <!-- The other Courchevel villages -->
+      <section class="border-t border-line bg-stone py-section">
+        <div class="container-site">
+          <p class="eyebrow">Courchevel</p>
+          <h2 class="mt-4 max-w-2xl text-h2">{hc.villages.courchevelTitle[locale]}</h2>
+          <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:gap-6">
+            {others.map((v) => <VillageCard v={v} />)}
+          </ul>
+        </div>
+      </section>
+
+      <!-- Beyond Courchevel, on a dark band -->
+      <section class="bg-ink py-section text-ivory">
+        <div class="container-site">
+          <p class="eyebrow text-brass">{hc.villages.beyondEyebrow[locale]}</p>
+          <h2 class="mt-4 max-w-2xl text-h2 text-ivory">{hc.villages.beyondTitle[locale]}</h2>
+          <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:gap-6">
+            {beyond.map((v) => <VillageCard v={v} />)}
+          </ul>
+        </div>
+      </section>
+
+      <!-- At a glance: the comparison table, kept for quick reading -->
+      <section class="container-site py-section">
+        <h2 class="text-h2">{hc.villages.glanceTitle[locale]}</h2>
+        <div class="mt-8 overflow-x-auto">
+          <table class="w-full border-collapse text-left">
+            <thead>
+              <tr class="border-b border-brass text-sm text-taupe">
+                <th scope="col" class="py-3 pr-6 font-semibold">{th.village}</th>
+                <th scope="col" class="py-3 pr-6 font-semibold">{th.altitude}</th>
+                <th scope="col" class="py-3 font-semibold">{th.suits}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {villages.map((v) => (
+                <tr class="border-b border-line align-top">
+                  <th scope="row" class="py-4 pr-6 font-serif text-xl font-medium">
+                    <SmartLink href={localize(`/${v.slug}/`, locale)} class="inline-flex min-h-11 items-center text-ink no-underline hover:text-brass-deep">{v.name}</SmartLink>
+                  </th>
+                  <td class="whitespace-nowrap py-4 pr-6 text-ink">{nf.format(v.altitude)} m</td>
+                  <td class="py-4 text-taupe">{v.summary[locale]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </>
+  )}
+
+  {hub === 'guides' && (
+    <section class="container-site py-section">
+      <ol class="grid gap-x-16 md:grid-cols-2">
+        {items.map((item, i) => (
+          <li class="flex gap-6 border-t border-line py-7">
+            <span class="w-8 shrink-0 pt-1 font-serif text-lg text-brass-deep" aria-hidden="true">{pad(i + 1)}</span>
+            <div>
+              <h2 class="text-2xl">
+                {item.href ? <SmartLink href={item.href} class="text-ink no-underline hover:text-brass-deep">{item.title}</SmartLink> : item.title}
+              </h2>
+              <p class="mt-2 text-taupe">{item.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )}
+
+  <div class="container-site pb-16"><LastUpdated date={hubsUpdated} locale={locale} /></div>
+
+  <CtaBand locale={locale} />
+</BaseLayout>

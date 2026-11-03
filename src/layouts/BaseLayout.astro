@@ -1,0 +1,85 @@
+---
+/**
+ * Base layout: head tags (canonical, hreflang, Open Graph, JSON-LD),
+ * header, footer and the sticky mobile CTA.
+ */
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import MobileCTA from '../components/MobileCTA.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
+import { business, type Locale } from '../data/business';
+import type { Cta } from '../lib/cta';
+import defaultOg from '../assets/photos/rolls-royce-helicopter-arrival.jpeg';
+
+interface Props {
+  title: string;
+  description: string;
+  locale?: Locale;
+  /** Path of the equivalent page in the other language, e.g. '/fr/'. */
+  alternatePath?: string;
+  schema?: object[];
+  ogImage?: ImageMetadata;
+  /** Keep this page out of search results (thank-you pages). */
+  noindex?: boolean;
+  /** Hide the sticky Plan my stay button (on Plan my stay itself). */
+  enquiryPage?: boolean;
+  /** The page's request: the phone bar's button and the WhatsApp message (src/lib/cta.ts). */
+  cta?: Cta;
+  /** Id of an element (the homepage hero) the phone bar waits for: it appears once that has scrolled away. */
+  ctaAfter?: string;
+}
+
+const { title, description, locale = 'en', alternatePath, schema = [], ogImage = defaultOg, noindex = false, enquiryPage = false, cta, ctaAfter } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+const alternate = alternatePath ? new URL(alternatePath, Astro.site).href : undefined;
+const enHref = locale === 'en' ? canonical : alternate;
+const og = await getImage({ src: ogImage, width: 1200, height: 630, fit: 'cover', format: 'jpeg' });
+const ogUrl = new URL(og.src, Astro.site).href;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <script is:inline>document.documentElement.classList.add('js')</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={canonical} />
+    {!noindex && <link rel="alternate" hreflang={locale} href={canonical} />}
+    {!noindex && alternate && <link rel="alternate" hreflang={other} href={alternate} />}
+    {!noindex && enHref && <link rel="alternate" hreflang="x-default" href={enHref} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={business.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={locale === 'en' ? 'en_GB' : 'fr_FR'} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="theme-color" content="#fbf8f3" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+  </head>
+  <body>
+    <SiteHeader locale={locale} alternateHref={alternatePath} />
+    <main id="main">
+      <slot />
+    </main>
+    <SiteFooter locale={locale} />
+    <MobileCTA locale={locale} whatsappOnly={enquiryPage} cta={cta} after={ctaAfter} />
+    <WhatsAppFloat locale={locale} whatsapp={cta?.whatsapp} />
+    <ConsentBanner locale={locale} />
+  </body>
+</html>

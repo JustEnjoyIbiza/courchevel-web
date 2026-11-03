@@ -1,0 +1,8 @@
+HTTP/2 301 
+content-type: text/plain; charset=utf-8
+date: Wed, 21 Oct 2026 21:57:14 GMT
+location: https://courchevelluxuryconcierge.com/
+server: Netlify
+strict-transport-security: max-age=31536000
+x-nf-request-id: 01M5G7FVFE8M612258NDKVF9DQ
+

@@ -1,0 +1,164 @@
+---
+/**
+ * A short request form for one service (src/lib/requests.ts): only the
+ * fields that request needs, then the contact details. One page, no steps.
+ * Without JavaScript it is a normal form post to /api/lead; with
+ * src/scripts/request-form.ts it gets inline errors, a JSON submit and the
+ * restaurant / experience pre-filled from ?item=.
+ */
+import { enquiry } from '../content/enquiry';
+import { requestCopy } from '../content/requests';
+import { REQUEST_SPECS, type RequestField, type RequestType } from '../lib/requests';
+import { CONTACT_PREFS } from '../lib/lead';
+import { contactLabels } from '../lib/lead-labels';
+import { fieldLabel } from '../lib/request-labels';
+import type { Locale } from '../data/business';
+
+interface Props {
+  locale: Locale;
+  type: RequestType;
+}
+
+const { locale, type } = Astro.props;
+const c = enquiry[locale];
+const r = requestCopy[locale];
+const tc = r.types[type];
+const spec = REQUEST_SPECS[type];
+const turnstileKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined;
+const today = new Date().toISOString().slice(0, 10);
+const needs = (f: RequestField) => spec.required.includes(f);
+
+const label = 'block text-sm font-semibold text-ink';
+const input =
+  'mt-2 block w-full min-h-12 border border-line bg-white px-4 py-3 text-base text-ink placeholder:text-taupe/70 focus:border-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-brass-deep aria-[invalid=true]:border-red-700';
+const hint = 'mt-1 text-sm text-taupe';
+const err = 'field-error mt-2 text-sm font-medium text-red-800';
+const choice =
+  'flex min-h-12 cursor-pointer items-center gap-3 border border-line bg-white px-4 py-3 text-sm has-[:checked]:border-ink has-[:checked]:bg-stone has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-brass-deep';
+const legend = 'font-serif text-3xl text-ink';
+
+/** Label text, with "(optional)" for fields that are not required. */
+const fieldText = (f: RequestField) => {
+  const text = f === 'staying' ? r.stayingLabel : fieldLabel(type, f, locale);
+  return needs(f) ? text : `${text} (${r.optional})`;
+};
+const hints: Partial<Record<RequestField, string>> = { item: tc.itemHint, details: tc.detailsHint, staying: r.stayingHint };
+const placeholders: Partial<Record<RequestField, string>> = { from: tc.fromHint, to: tc.toHint };
+// Short fields sit side by side on wider screens.
+const half: RequestField[] = ['date', 'dateTo', 'time', 'guests', 'from', 'to', 'flight'];
+---
+
+<form
+  id="form"
+  method="post"
+  action="/api/lead"
+  class="request-form scroll-mt-28"
+  data-locale={locale}
+  data-errors={JSON.stringify(c.errors)}
+  data-sending={c.sending}
+  data-thanks={locale === 'fr' ? '/fr/enquire/thanks/' : '/enquire/thanks/'}
+>
+  <input type="hidden" name="requestType" value={type} />
+  <input type="hidden" name="service" value={spec.services[0]} />
+  <input type="hidden" name="locale" value={locale} />
+  <input type="hidden" name="page" value="" />
+  <input type="hidden" name="referrer" value="" />
+  <input type="hidden" name="utm_source" value="" />
+  <input type="hidden" name="utm_medium" value="" />
+  <input type="hidden" name="utm_campaign" value="" />
+  <input type="hidden" name="started" value="" />
+
+  <!-- Honeypot: invisible to people, tempting to bots. -->
+  <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+    <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+  </div>
+
+  <div class="form-alert mb-8 hidden border-l-2 border-red-800 bg-white p-4 text-sm text-ink" role="alert" tabindex="-1"></div>
+
+  <fieldset class="space-y-6">
+    <legend class={legend}>{r.requestLegend}</legend>
+    <div class="grid gap-6 pt-4 sm:grid-cols-2">
+      {spec.fields.map((f) => (
+        <div class:list={[!half.includes(f) && 'sm:col-span-2']}>
+          <label class={label} for={`rq-${f}`}>{fieldText(f)}</label>
+          {hints[f] && <p class={hint} id={`hint-${f}`}>{hints[f]}</p>}
+          {f === 'details' ? (
+            <textarea class={input} id={`rq-${f}`} name={f} rows="4" maxlength="2000" required={needs(f)} aria-describedby={`hint-${f} err-${f}`}></textarea>
+          ) : f === 'date' || f === 'dateTo' ? (
+            <input class={input} id={`rq-${f}`} name={f} type="date" min={today} required={needs(f)} aria-describedby={`err-${f}`} />
+          ) : f === 'time' ? (
+            <input class={input} id={`rq-${f}`} name={f} type="time" step="900" aria-describedby={`err-${f}`} />
+          ) : f === 'guests' ? (
+            <input class={input} id={`rq-${f}`} name={f} type="number" inputmode="numeric" min={spec.guestsMin} max="99" value={spec.guestsDefault} required={needs(f)} aria-describedby={`err-${f}`} />
+          ) : (
+            <input
+              class={input}
+              id={`rq-${f}`}
+              name={f}
+              type="text"
+              maxlength={f === 'flight' ? 40 : 120}
+              placeholder={placeholders[f]}
+              required={needs(f)}
+              aria-describedby={hints[f] ? `hint-${f} err-${f}` : `err-${f}`}
+            />
+          )}
+          <p class={err} id={`err-${f}`} hidden></p>
+        </div>
+      ))}
+    </div>
+  </fieldset>
+
+  <fieldset class="mt-14 space-y-6">
+    <legend class={legend}>{r.contactLegend}</legend>
+    <div class="grid gap-6 pt-4 sm:grid-cols-2">
+      <div class="sm:col-span-2">
+        <label class={label} for="name">{c.name}</label>
+        <input class={input} id="name" name="name" type="text" autocomplete="name" required maxlength="120" aria-describedby="err-name" />
+        <p class={err} id="err-name" hidden></p>
+      </div>
+      <div>
+        <label class={label} for="email">{c.email}</label>
+        <input class={input} id="email" name="email" type="email" autocomplete="email" required maxlength="200" aria-describedby="err-email" />
+        <p class={err} id="err-email" hidden></p>
+      </div>
+      <div>
+        <label class={label} for="phone">{c.phone}</label>
+        <input class={input} id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder={c.phoneHint} aria-describedby="err-phone" />
+        <p class={err} id="err-phone" hidden></p>
+      </div>
+    </div>
+
+    <div role="radiogroup" aria-labelledby="preferred-label">
+      <p class={label} id="preferred-label">{c.preferred}</p>
+      <div class="mt-2 grid gap-2 sm:grid-cols-3">
+        {CONTACT_PREFS.map((p, i) => (
+          <label class={choice}>
+            <input type="radio" name="preferredContact" value={p} checked={i === 0} class="size-4 accent-ink" />
+            {contactLabels[locale][p]}
+          </label>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <label class="flex items-start gap-3 text-sm text-ink">
+        <input type="checkbox" name="consent" required class="mt-0.5 size-5 shrink-0 accent-ink" aria-describedby="err-consent" />
+        <span>{c.consent}</span>
+      </label>
+      <p class={err} id="err-consent" hidden></p>
+    </div>
+
+    {turnstileKey && <div class="cf-turnstile" data-sitekey={turnstileKey} data-language={locale}></div>}
+  </fieldset>
+
+  <div class="mt-12">
+    <button type="submit" class="btn-primary form-submit w-full sm:w-auto">{r.submit}</button>
+  </div>
+</form>
+
+{turnstileKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  import { initRequestForm } from '../scripts/request-form';
+  document.querySelectorAll<HTMLFormElement>('form.request-form').forEach(initRequestForm);
+</script>

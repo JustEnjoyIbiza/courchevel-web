@@ -1,0 +1,79 @@
+---
+/**
+ * The offer block on a service page (`offer: true`; data in src/content/offers/<slug>.ts,
+ * src/lib/offers.ts): three cards, each opening the short request with the choice
+ * filled in (?item=, or ?details= with the service tag for general requests), then how
+ * it works in three steps and four extras.
+ */
+import { offers } from '../lib/offers';
+import type { Locale } from '../data/business';
+import { localize } from '../lib/routes';
+
+interface Props {
+  slug: string;
+  locale: Locale;
+}
+
+const { slug, locale } = Astro.props;
+const offer = offers[slug];
+if (!offer) throw new Error(`No offer data for "${slug}" (src/content/offers/${slug}.ts, src/lib/offers.ts)`);
+const { cards, steps, extras } = offer[locale];
+const requestHref = (card: (typeof cards.items)[number]) => {
+  const q = new URLSearchParams({ [offer.prefill ?? 'item']: card.item ?? card.name });
+  if (offer.service && !card.request) q.set('service', offer.service);
+  return `${localize(`/enquire/${card.request ?? offer.request}/`, locale)}?${q}`;
+};
+---
+
+<section id="offer" class="scroll-mt-24 py-section" aria-labelledby="offer-title">
+  <div class="container-site">
+    <div class="max-w-2xl">
+      <p class="eyebrow">{cards.eyebrow}</p>
+      <h2 id="offer-title" class="mt-4 text-h2">{cards.title}</h2>
+      <p class="mt-5 text-sm text-brass-deep">{cards.note}</p>
+    </div>
+
+    <ul class="mt-8 grid gap-3 md:mt-10 md:grid-cols-3 md:gap-6">
+      {cards.items.map((card, i) => (
+        <li>
+          <a href={requestHref(card)} class="group flex h-full flex-col border border-line bg-stone p-5 text-ink no-underline transition-colors hover:border-brass-deep md:p-8">
+            <div class="flex items-baseline justify-between gap-4">
+              <h3 class="text-2xl transition-colors group-hover:text-brass-deep md:text-3xl">{card.name}</h3>
+              <span class="font-serif text-lg text-brass-deep" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            </div>
+            <p class="mt-2 text-taupe md:mt-3">{card.line}</p>
+            <span class="link mt-auto self-start pt-4 text-sm font-semibold md:pt-6">{cards.request}<span class="sr-only">: {card.name}</span></span>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <div class="mt-16 grid gap-14 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-7">
+        <h3 class="eyebrow">{steps.title}</h3>
+        <ol class="mt-6">
+          {steps.items.map((s, i) => (
+            <li class="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-4 border-t border-line py-5">
+              <span class="font-serif text-2xl text-brass-deep" aria-hidden="true">{i + 1}</span>
+              <div>
+                <p class="font-semibold">{s.name}</p>
+                <p class="mt-1 text-taupe">{s.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div class="lg:col-span-5">
+        <h3 class="eyebrow">{extras.title}</h3>
+        <ul class="mt-6">
+          {extras.items.map((a) => (
+            <li class="border-t border-line py-4">
+              <p class="font-semibold">{a.name}</p>
+              <p class="mt-1 text-sm text-taupe">{a.text}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

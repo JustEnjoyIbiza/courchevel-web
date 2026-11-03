@@ -1,0 +1,18 @@
+---
+/** "Last updated" line, required on every page by the plan. */
+import type { Locale } from '../data/business';
+import { t } from '../i18n/ui';
+
+interface Props {
+  date: Date;
+  locale: Locale;
+  class?: string;
+}
+
+const { date, locale, class: className } = Astro.props;
+const fmt = new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : 'fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<p class:list={['text-sm text-taupe', className]}>
+  {t(locale).page.updated} <time datetime={date.toISOString().slice(0, 10)}>{fmt.format(date)}</time>
+</p>

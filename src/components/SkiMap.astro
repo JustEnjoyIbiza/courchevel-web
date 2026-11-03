@@ -1,0 +1,77 @@
+---
+/**
+ * Relief map of the Courchevel valley, La Saulire to Le Praz, built from real data by
+ * scripts/maps/build-ski-map.py: IGN shaded relief and forests (Licence Ouverte) and
+ * OpenStreetMap pistes and lifts (ODbL). South is at the top, as if looking up the
+ * valley from Le Praz, so the descent runs down the page.
+ * Same structure as the commissioned artwork will have (docs/ski-map-illustrator-brief.md):
+ * one `route` path drawn summit to valley and `stop-*` markers, animated by SkiAreaPage.astro.
+ */
+import { Picture } from 'astro:assets';
+import relief from '../assets/maps/courchevel-relief.png';
+import { mapSize, pistes, lifts, route, stops, altiport } from '../data/ski-map-geo';
+
+interface Props {
+  labels: { saulire: string; station: string; c1850: string; c1650: string; c1550: string; praz: string; altiport: string };
+  alt: string;
+  class?: string;
+}
+
+const { labels, alt, class: className } = Astro.props;
+const { width, height } = mapSize;
+
+// Label placement beside each stop: [dx, dy, text-anchor].
+const place: Record<string, [number, number, 'start' | 'end' | 'middle']> = {
+  'stop-saulire': [-26, -10, 'end'],
+  'stop-cable-car': [-26, 10, 'end'],
+  'stop-1850': [26, 10, 'start'],
+  'stop-1650': [0, 52, 'middle'],
+  'stop-1550': [26, 36, 'start'],
+  'stop-le-praz': [-26, 10, 'end'],
+};
+const text: Record<string, string> = {
+  'stop-saulire': labels.saulire,
+  'stop-cable-car': labels.station,
+  'stop-1850': labels.c1850,
+  'stop-1650': labels.c1650,
+  'stop-1550': labels.c1550,
+  'stop-le-praz': labels.praz,
+};
+---
+
+<div class:list={['relative', className]} style={`aspect-ratio: ${width} / ${height}`}>
+  <Picture
+    src={relief}
+    alt={alt}
+    formats={['avif', 'webp']}
+    widths={[480, 720, 1100]}
+    sizes="(min-width: 1024px) 40vw, 100vw"
+    loading="lazy"
+    class="absolute inset-0 h-full w-full"
+  />
+  <svg viewBox={`0 0 ${width} ${height}`} class="absolute inset-0 h-full w-full" aria-hidden="true">
+    <!-- Every downhill piste, as a fine line -->
+    <g fill="none" stroke="var(--color-taupe)" stroke-width="1.3" stroke-linecap="round" opacity="0.35">
+      {pistes.map((p) => <path d={p.d} />)}
+    </g>
+    <!-- Lifts -->
+    <g fill="none" stroke="var(--color-ink)" stroke-width="1.1" stroke-dasharray="6 5" opacity="0.55">
+      {lifts.map((l) => <path d={l.d} />)}
+    </g>
+    <!-- The descent: a dark underline for contrast, then the gold route (animated) -->
+    <path d={route} fill="none" stroke="var(--color-ivory)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+    <path id="route" class="skimap-route" d={route} pathLength="1" fill="none" stroke="var(--color-brass)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Stops -->
+    <g stroke="var(--color-brass-deep)" stroke-width="4">
+      {Object.entries(stops).map(([id, [x, y]]) => <circle id={id} class="skimap-stop" cx={x} cy={y} r="15" />)}
+    </g>
+    <!-- Labels, with an ivory halo so they read over the forest -->
+    <g font-family="var(--font-sans)" font-size="31" font-weight="600" letter-spacing="0.05em" fill="var(--color-ink)" stroke="var(--color-ivory)" stroke-width="8" stroke-linejoin="round" paint-order="stroke">
+      {Object.entries(stops).map(([id, [x, y]]) => {
+        const [dx, dy, anchor] = place[id];
+        return <text x={x + dx} y={y + dy} text-anchor={anchor}>{text[id]}</text>;
+      })}
+      <text x={altiport[0]} y={altiport[1] + 100} text-anchor="middle" font-size="24" font-weight="500" fill="var(--color-taupe)">{labels.altiport}</text>
+    </g>
+  </svg>
+</div>

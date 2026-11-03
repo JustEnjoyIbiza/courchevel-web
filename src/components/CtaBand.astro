@@ -1,0 +1,45 @@
+---
+/** Closing band at the end of every content page: the page's request (Plan my stay by default), WhatsApp, phone and email. */
+import { t } from '../i18n/ui';
+import { localize } from '../lib/routes';
+import { business, telHref, mailtoHref, whatsappHref, type Locale } from '../data/business';
+import type { Cta } from '../lib/cta';
+
+interface Props {
+  locale: Locale;
+  /** The page's request (src/lib/cta.ts); defaults to Plan my stay. */
+  cta?: Cta;
+}
+
+const { locale, cta } = Astro.props;
+const s = t(locale);
+const enquire = cta?.href ?? localize('/enquire/', locale);
+const whatsapp = cta?.whatsapp ?? whatsappHref(locale);
+const channels = [
+  { label: s.whatsapp, value: business.phone.display, href: whatsapp, event: 'whatsapp_click' },
+  { label: s.call, value: business.phone.display, href: telHref, event: 'phone_click' },
+  { label: s.email, value: business.email, href: mailtoHref, event: 'email_click' },
+];
+---
+
+<section id="contact" class="bg-ink text-ivory">
+  <div class="container-site grid gap-14 py-section lg:grid-cols-12">
+    <div class="lg:col-span-7">
+      <h2 class="text-h2 text-ivory">{s.page.ctaTitle}.{' '}<span class="mt-2 block italic text-brass">{s.page.ctaAccent}</span></h2>
+      <p class="mt-6 max-w-xl text-lg text-stone">{s.page.ctaText}</p>
+      <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <a href={enquire} class="btn bg-ivory text-ink hover:bg-brass">{cta?.label ?? s.planMyStay}</a>
+        <a href={whatsapp} class="btn-light" data-event="whatsapp_click" rel="noopener">{s.whatsappUs}</a>
+      </div>
+    </div>
+    <ul class="self-end lg:col-span-5">
+      {channels.map((ch) => (
+        <li class="grid grid-cols-[6.5rem_minmax(0,1fr)] items-baseline gap-4 border-t border-ivory/20 py-4">
+          <span class="text-xs font-semibold uppercase tracking-[0.18em] text-brass">{ch.label}</span>
+          <a href={ch.href} class="inline-flex min-h-11 items-center break-all text-ivory no-underline hover:text-brass" data-event={ch.event} rel="noopener">{ch.value}</a>
+        </li>
+      ))}
+      <li class="border-t border-ivory/20 pt-4 text-sm text-stone">{business.availability[locale]}</li>
+    </ul>
+  </div>
+</section>

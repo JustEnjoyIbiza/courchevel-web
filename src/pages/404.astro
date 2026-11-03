@@ -1,0 +1,27 @@
+---
+/** Not-found page (Netlify serves /404.html for unknown URLs). Bilingual, not indexed. */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { whatsappHref } from '../data/business';
+---
+
+<BaseLayout title="Page not found | Courchevel Luxury Concierge" description="This page does not exist. Find our services, guides and how to plan your stay in Courchevel." noindex>
+  <section class="container-site py-section">
+    <div class="max-w-2xl">
+      <p class="eyebrow">404</p>
+      <h1 class="mt-4 text-display">This page does not exist</h1>
+      <div class="rule mt-8"></div>
+      <p class="mt-8 text-lg">The link may be old, or the page has moved. These are a good place to start:</p>
+      <ul class="mt-6 space-y-2">
+        <li><a href="/" class="link">Home</a></li>
+        <li><a href="/services/" class="link">Services</a></li>
+        <li><a href="/guides/" class="link">Guides</a></li>
+        <li><a href="/enquire/" class="link">Plan my stay</a></li>
+      </ul>
+      <p class="mt-12 text-taupe" lang="fr">
+        Cette page n’existe pas. <a href="/fr/" class="link">Accueil en français</a> ·
+        <a href="/fr/enquire/" class="link">Organiser mon séjour</a>
+      </p>
+      <p class="mt-10"><a href={whatsappHref('en')} class="btn-primary" data-event="whatsapp_click" rel="noopener">WhatsApp us</a></p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+/**
+ * Generates every Markdown content page in EN and FR, plus the Reviews and
+ * Partners pages once they have real data (see conditionalPages).
+ */
+import type { GetStaticPaths } from 'astro';
+import ContentPage from '../components/ContentPage.astro';
+import ReviewsPage from '../components/ReviewsPage.astro';
+import PartnersPage from '../components/PartnersPage.astro';
+import { getContentPages, localize, getConditionalPages, type ContentPage as Page } from '../lib/routes';
+import type { Locale } from '../data/business';
+
+type Props = { kind: 'content'; page: Page } | { kind: 'reviews' | 'partners'; locale: Locale };
+
+export const getStaticPaths = (async () => {
+  const toParam = (url: string) => url.replace(/^\/|\/$/g, '');
+  const paths = (await getContentPages()).map((page) => ({
+    params: { slug: toParam(localize(page.path, page.locale)) },
+    props: { kind: 'content', page } as Props,
+  }));
+  const conditionalPages = await getConditionalPages();
+  for (const locale of ['en', 'fr'] as const) {
+    if (conditionalPages['/reviews/']) paths.push({ params: { slug: toParam(localize('/reviews/', locale)) }, props: { kind: 'reviews', locale } });
+    if (conditionalPages['/partners/']) paths.push({ params: { slug: toParam(localize('/partners/', locale)) }, props: { kind: 'partners', locale } });
+  }
+  return paths;
+}) satisfies GetStaticPaths;
+
+const props = Astro.props as Props;
+---
+
+{props.kind === 'content' && <ContentPage page={props.page} />}
+{props.kind === 'reviews' && <ReviewsPage locale={props.locale} />}
+{props.kind === 'partners' && <PartnersPage locale={props.locale} />}

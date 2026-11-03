@@ -1,0 +1,359 @@
+---
+/**
+ * /experiences/ (EN) and /fr/experiences/ (FR): curated private experiences.
+ * Hero, quiet intro, a varied grid of nine experiences whose details open in a side
+ * drawer (native popover: works without JavaScript, opens only on request), an editorial
+ * split section, three trust points and a short enquiry form that posts to /api/lead.
+ * Copy: src/content/experiences-page.ts.
+ */
+import { Picture } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import LastUpdated from './LastUpdated.astro';
+import { experiencesPage } from '../content/experiences-page';
+import { photos } from '../data/photos';
+import { whatsappHref, type Locale } from '../data/business';
+import { requestCopy } from '../content/requests';
+import { t } from '../i18n/ui';
+import { localize, linkTitle } from '../lib/routes';
+import { breadcrumbSchema } from '../lib/schema';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = experiencesPage[locale];
+const s = t(locale);
+const other: Locale = locale === 'en' ? 'fr' : 'en';
+const path = '/experiences/';
+const turnstileKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined;
+const today = new Date().toISOString().slice(0, 10);
+const updated = new Date('2026-10-23');
+const formats: ('avif' | 'webp')[] = ['avif', 'webp'];
+
+const crumbs = [
+  { name: s.breadcrumbHome, href: localize('/', locale) },
+  { name: c.breadcrumb, href: localize(path, locale) },
+];
+const schema = [breadcrumbSchema(crumbs.map((x) => ({ name: x.name, url: x.href })))];
+
+// Grid rhythm: one large photo beside a typographic card, then threes and pairs, so it
+// reads as an edited selection rather than a catalogue.
+const spans = ['lg:col-span-7', 'lg:col-span-5', 'lg:col-span-4', 'lg:col-span-4', 'lg:col-span-4', 'lg:col-span-5', 'lg:col-span-7', 'lg:col-span-6', 'lg:col-span-6'];
+const pad = (n: number) => String(n).padStart(2, '0');
+const titles = Object.fromEntries(c.experiences.map((x) => [x.id, x.title]));
+
+// "Read more" from each drawer to the page with the details behind it.
+const morePaths: Record<string, string> = {
+  'private-skiing': '/services/ski/',
+  'off-piste-guiding': '/courchevel-ski-area/',
+  paragliding: '/services/experiences/',
+  'scenic-flights': '/services/transfers/',
+  'groomer-dinner': '/guides/where-to-eat/',
+  'dog-sledding': '/services/experiences/',
+  'mountain-evenings': '/services/private-chef/',
+  wellness: '/services/wellness/',
+  'family-days': '/guides/courchevel-with-kids/',
+};
+const skiArea = { en: 'The Courchevel ski area', fr: 'Le domaine skiable de Courchevel' }[locale];
+const readMore = { en: 'Read more', fr: 'En savoir plus' }[locale];
+const more = Object.fromEntries(
+  await Promise.all(
+    Object.entries(morePaths).map(async ([id, p]) => [id, { href: localize(p, locale), label: (await linkTitle(p, locale)) ?? skiArea }]),
+  ),
+);
+
+const label = 'block text-sm font-semibold text-ink';
+const input =
+  'mt-2 block w-full min-h-12 border border-line bg-white px-4 py-3 text-base text-ink focus:border-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-brass-deep aria-[invalid=true]:border-red-700';
+const err = 'mt-2 text-sm font-medium text-red-800';
+// Phone bar and WhatsApp button: the experience request, answered by the form on this page.
+const xp = requestCopy[locale].types.experience;
+const cta = { label: xp.button, href: '#enquire', whatsapp: whatsappHref(locale, xp.whatsapp()) };
+---
+
+<BaseLayout title={c.metaTitle} description={c.description} locale={locale} alternatePath={localize(path, other)} schema={schema} ogImage={photos['white-chalet']} cta={cta}>
+  <!-- Hero -->
+  <header class="relative isolate flex min-h-[calc(100svh-4rem)] items-end overflow-hidden bg-ink text-ivory md:min-h-[min(92vh,60rem)]">
+    <Picture
+      src={photos['white-chalet']}
+      alt={c.hero.alt}
+      formats={formats}
+      widths={[480, 720, 874]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="absolute inset-0 -z-20 h-full w-full object-cover object-[center_35%]"
+    />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/50 to-ink/30" aria-hidden="true"></div>
+    <div class="container-site pt-28 pb-16 md:pb-24">
+      <Breadcrumbs items={crumbs} tone="light" />
+      <p class="eyebrow mt-10 text-ivory/90">{c.hero.eyebrow}</p>
+      <h1 class="mt-6 text-ivory">
+        <span class="block text-[clamp(3rem,1.7rem+6vw,7rem)] leading-[0.98]">{c.hero.h1}</span>
+        <span class="mt-5 block font-sans text-sm font-semibold uppercase tracking-[0.2em] text-ivory/80">{c.hero.h1Sub}</span>
+      </h1>
+      <p class="hero-fade mt-8 max-w-xl text-lg text-ivory/90">{c.hero.body}</p>
+      <div class="hero-fade mt-10 flex flex-col gap-3 sm:flex-row">
+        <a href="#enquire" class="btn bg-ivory text-ink hover:bg-brass">{c.hero.primary}</a>
+        <a href="#experiences-grid" class="btn-light">{c.hero.secondary}</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="py-section" aria-labelledby="xp-intro">
+    <div class="container-site">
+      <div class="reveal mx-auto max-w-2xl text-center">
+        <div class="rule mx-auto"></div>
+        <h2 id="xp-intro" class="mt-10 text-h2">{c.intro.h2}</h2>
+        <p class="mt-8 font-serif text-[clamp(1.35rem,1.15rem+0.7vw,1.85rem)] leading-snug text-ink">{c.intro.text}</p>
+        <p class="mt-8 text-sm text-taupe">{c.intro.note}</p>
+        <p class="mt-10 text-xs font-semibold uppercase tracking-[0.22em] text-brass-deep">{c.intro.detail}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiences -->
+  <section id="experiences-grid" class="scroll-mt-24 border-t border-line bg-stone py-section" aria-labelledby="xp-grid">
+    <div class="container-site">
+      <p class="eyebrow">{c.gridEyebrow}</p>
+      <h2 id="xp-grid" class="mt-4 max-w-2xl text-h2">{c.gridTitle}</h2>
+      <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-12 lg:gap-6">
+        {c.experiences.map((x, i) => (
+          <li class:list={['reveal', spans[i], i === 0 && 'sm:col-span-2']}>
+            <article class:list={['group relative flex h-full flex-col overflow-hidden', x.photo ? 'min-h-[26rem] justify-end bg-ink text-ivory' : 'min-h-[22rem] border border-line bg-ivory p-8 lg:p-10']}>
+              {x.photo ? (
+                <>
+                  <Picture src={photos[x.photo]} alt={x.alt ?? ''} formats={formats} widths={[480, 720, 1000]} sizes={i === 0 || i === 6 ? '(min-width: 1024px) 58vw, 100vw' : '(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw'} class="absolute inset-0 h-full w-full object-cover opacity-90 transition duration-700 ease-out group-hover:scale-[1.03] group-hover:opacity-100 motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" aria-hidden="true"></div>
+                  <div class="relative p-7 lg:p-9">
+                    <span class="font-serif text-lg text-brass" aria-hidden="true">{pad(i + 1)}</span>
+                    <h3 class:list={['mt-2 text-ivory', i === 0 || i === 6 ? 'text-4xl lg:text-5xl' : 'text-3xl']}>{x.title}</h3>
+                    <p class="mt-3 max-w-md text-sm text-stone">{x.short}</p>
+                    <button type="button" popovertarget={`xp-${x.id}`} class="mt-6 inline-flex min-h-11 items-center text-xs font-semibold uppercase tracking-[0.18em] text-ivory underline decoration-brass underline-offset-8 after:absolute after:inset-0 hover:text-brass">{c.discover}<span class="sr-only">: {x.title}</span></button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <span class="font-serif text-6xl leading-none text-brass-deep" aria-hidden="true">{pad(i + 1)}</span>
+                  <h3 class="mt-auto pt-10 text-3xl">{x.title}</h3>
+                  <p class="mt-3 text-taupe">{x.short}</p>
+                  <button type="button" popovertarget={`xp-${x.id}`} class="mt-6 inline-flex min-h-11 items-center self-start text-xs font-semibold uppercase tracking-[0.18em] text-ink underline decoration-brass underline-offset-8 after:absolute after:inset-0 hover:text-brass-deep">{c.discover}<span class="sr-only">: {x.title}</span></button>
+                </>
+              )}
+            </article>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-10 max-w-2xl text-sm text-taupe">{c.conditions}</p>
+    </div>
+  </section>
+
+  <!-- Detail drawers (native popover: opened by the "Discover" buttons, closed with Esc, Close, a swipe right or Back) -->
+  {c.experiences.map((x) => (
+    <div id={`xp-${x.id}`} popover class="xp-drawer" role="dialog" aria-labelledby={`xp-${x.id}-title`}>
+      {x.photo && <Picture src={photos[x.photo]} alt={x.alt ?? ''} formats={formats} widths={[480, 720]} sizes="(min-width: 640px) 36rem, 100vw" loading="lazy" class="aspect-[16/10] w-full object-cover" />}
+      <div class="p-8 sm:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <p class="eyebrow">{c.gridEyebrow}</p>
+          <button type="button" popovertarget={`xp-${x.id}`} popovertargetaction="hide" class="-mt-3 inline-flex min-h-11 items-center text-xs font-semibold uppercase tracking-[0.18em] text-taupe hover:text-ink">{c.close}</button>
+        </div>
+        <h3 id={`xp-${x.id}-title`} class="mt-4 text-4xl">{x.title}</h3>
+        <p class="mt-5 font-serif text-xl leading-snug italic text-brass-deep">{x.short}</p>
+        {x.detail.map((p) => <p class="mt-5 text-taupe">{p}</p>)}
+        <div class="mt-8 border-t border-line pt-5">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink">{c.goodToKnow}</p>
+          <p class="mt-2 text-sm text-taupe">{x.note}</p>
+          <p class="mt-2 text-sm text-taupe">{c.conditions}</p>
+        </div>
+        <a href={`?experience=${x.id}#enquire`} data-experience={x.id} class="btn-primary mt-8 w-full sm:w-auto">{c.enquireAbout}</a>
+        {more[x.id] && <p class="mt-6 text-sm">{readMore}: <a href={more[x.id].href} class="link inline-flex min-h-11 items-center">{more[x.id].label}</a></p>}
+      </div>
+    </div>
+  ))}
+
+  <!-- Featured editorial split -->
+  <section class="py-section" aria-labelledby="xp-featured">
+    <div class="container-site grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+      <div class="reveal overflow-hidden lg:col-span-7">
+        <Picture src={photos.terrace} alt={c.featured.alt} formats={formats} widths={[480, 760, 1018]} sizes="(min-width: 1024px) 58vw, 100vw" class="aspect-[4/5] w-full object-cover lg:aspect-[5/6]" />
+      </div>
+      <div class="reveal lg:col-span-5">
+        <p class="eyebrow">{c.featured.eyebrow}</p>
+        <h2 id="xp-featured" class="mt-5 text-h2">{c.featured.h2}</h2>
+        <p class="mt-6 text-lg text-taupe">{c.featured.text}</p>
+        <a href="#enquire" class="btn-primary mt-10">{c.featured.cta}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust -->
+  <section class="border-t border-line py-section" aria-labelledby="xp-trust">
+    <div class="container-site">
+      <h2 id="xp-trust" class="sr-only">{c.trustTitle}</h2>
+      <ul class="grid gap-12 md:grid-cols-3 md:gap-10">
+        {c.trust.map((tr) => (
+          <li class="reveal border-t border-brass pt-6">
+            <h3 class="text-2xl">{tr.title}</h3>
+            <p class="mt-3 text-taupe">{tr.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Enquiry -->
+  <section id="enquire" class="scroll-mt-20 bg-stone py-section" aria-labelledby="xp-enquire">
+    <div class="container-site grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-5">
+        <div class="rule"></div>
+        <h2 id="xp-enquire" class="mt-8 text-h2">{c.enquiry.h2}</h2>
+        <p class="mt-6 text-lg text-taupe">{c.enquiry.text}</p>
+        <p class="mt-8 text-sm text-taupe">{c.conditions}</p>
+        <LastUpdated date={updated} locale={locale} class="mt-8" />
+      </div>
+      <div class="lg:col-span-7">
+        <form
+          method="post"
+          action="/api/lead"
+          class="xp-form border border-line bg-ivory p-6 sm:p-10"
+          data-errors={JSON.stringify(c.enquiry.errors)}
+          data-titles={JSON.stringify(titles)}
+          data-sending={c.enquiry.sending}
+          data-success="xp-success"
+        >
+          <input type="hidden" name="locale" value={locale} />
+          <input type="hidden" name="village" value="not-sure" />
+          <input type="hidden" name="services" value="experiences" />
+          <input type="hidden" name="bookingFor" value="myself" />
+          <input type="hidden" name="preferredContact" value="email" />
+          <input type="hidden" name="children" value="0" />
+          <input type="hidden" name="experience" value="" />
+          <input type="hidden" name="page" value="" />
+          <input type="hidden" name="referrer" value="" />
+          <input type="hidden" name="utm_source" value="" />
+          <input type="hidden" name="utm_medium" value="" />
+          <input type="hidden" name="utm_campaign" value="" />
+          <input type="hidden" name="started" value="" />
+          <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+            <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+          </div>
+
+          <p class="form-alert mb-6 border-l-2 border-red-800 bg-white p-4 text-sm text-ink" role="alert" tabindex="-1" hidden></p>
+          <p class="chosen-experience mb-6 border-l-2 border-brass bg-white p-4 text-sm text-ink" hidden>{c.enquiry.interestedIn}: <span class="font-semibold"></span></p>
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div class="sm:col-span-2">
+              <label class={label} for="xp-name">{c.enquiry.fields.name}</label>
+              <input class={input} id="xp-name" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="xp-err-name" />
+              <p class={err} id="xp-err-name" hidden></p>
+            </div>
+            <div>
+              <label class={label} for="xp-email">{c.enquiry.fields.email}</label>
+              <input class={input} id="xp-email" name="email" type="email" autocomplete="email" required aria-describedby="xp-err-email" />
+              <p class={err} id="xp-err-email" hidden></p>
+            </div>
+            <div>
+              <label class={label} for="xp-phone">{c.enquiry.fields.phone}</label>
+              <input class={input} id="xp-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="xp-err-phone" />
+              <p class={err} id="xp-err-phone" hidden></p>
+            </div>
+            <div>
+              <label class={label} for="xp-arrival">{c.enquiry.fields.arrival}</label>
+              <input class={input} id="xp-arrival" name="arrival" type="date" min={today} required aria-describedby="xp-err-arrival" />
+              <p class={err} id="xp-err-arrival" hidden></p>
+            </div>
+            <div>
+              <label class={label} for="xp-departure">{c.enquiry.fields.departure}</label>
+              <input class={input} id="xp-departure" name="departure" type="date" min={today} required aria-describedby="xp-err-departure" />
+              <p class={err} id="xp-err-departure" hidden></p>
+            </div>
+            <div>
+              <label class={label} for="xp-adults">{c.enquiry.fields.guests}</label>
+              <input class={input} id="xp-adults" name="adults" type="number" inputmode="numeric" min="1" max="99" value="2" required aria-describedby="xp-err-adults" />
+              <p class={err} id="xp-err-adults" hidden></p>
+            </div>
+            <div class="sm:col-span-2">
+              <label class={label} for="xp-message">{c.enquiry.fields.message}</label>
+              <textarea class={`${input} min-h-32`} id="xp-message" name="message" rows="4" maxlength="3000"></textarea>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="flex items-start gap-3 text-sm text-ink">
+                <input type="checkbox" name="consent" required class="mt-1 size-5 shrink-0 accent-ink" aria-describedby="xp-err-consent" />
+                <span>{c.enquiry.consent}</span>
+              </label>
+              <p class={err} id="xp-err-consent" hidden></p>
+            </div>
+          </div>
+          {turnstileKey && <div class="cf-turnstile mt-6" data-sitekey={turnstileKey} data-language={locale}></div>}
+          <button type="submit" class="btn-primary mt-8 w-full sm:w-auto">{c.enquiry.cta}</button>
+          <p class="mt-4 text-xs text-taupe">{c.enquiry.privacy}</p>
+        </form>
+        <div id="xp-success" class="border border-line bg-ivory p-10" tabindex="-1" role="status" hidden>
+          <div class="rule"></div>
+          <p class="mt-8 font-serif text-4xl">{c.enquiry.successTitle}</p>
+          <p class="mt-4 text-lg text-taupe">{c.enquiry.successText}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+{turnstileKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  import { initExperiencesForm } from '../scripts/experiences-form';
+  import { swipeToClose } from '../scripts/drawer-swipe';
+  import { closeOnBack } from '../scripts/drawer-history';
+  document.querySelectorAll<HTMLFormElement>('form.xp-form').forEach(initExperiencesForm);
+  const drawers = [...document.querySelectorAll<HTMLElement>('.xp-drawer')];
+  drawers.forEach(swipeToClose);
+  closeOnBack(drawers);
+</script>
+
+<style>
+  /* Detail drawer: slides in from the right; native popover handles Esc and outside clicks,
+     src/scripts/drawer-swipe.ts a swipe right (it sets --swipe from 0 to 1 while the finger moves). */
+  .xp-drawer {
+    position: fixed;
+    inset: 0 0 0 auto;
+    margin: 0;
+    height: 100dvh;
+    max-height: none;
+    width: min(36rem, 100vw);
+    border: 0;
+    padding: 0;
+    overflow-y: auto;
+    background: var(--color-ivory);
+    color: var(--color-ink);
+    translate: 0 0;
+    touch-action: pan-y pinch-zoom;
+    transition: translate 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), display 0.45s allow-discrete, overlay 0.45s allow-discrete;
+  }
+  .xp-drawer::backdrop {
+    background: rgb(35 27 21 / calc(0.45 * (1 - var(--swipe, 0))));
+  }
+  @starting-style {
+    .xp-drawer:popover-open { translate: 100% 0; }
+  }
+  .xp-drawer:not(:popover-open) { translate: 100% 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .xp-drawer { transition: none; }
+  }
+
+  /* Gentle reveal as sections enter the view (CSS only; off with reduced motion).
+     The timeline sits in its own rule so the minifier keeps it out of the shorthand. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { animation-name: reveal; animation-timing-function: ease-out; animation-fill-mode: both; }
+      section .reveal { animation-timeline: view(); animation-range: entry 0% entry 60%; }
+    }
+  }
+  @keyframes reveal {
+    from { opacity: 0; translate: 0 24px; }
+    to { opacity: 1; translate: 0 0; }
+  }
+</style>

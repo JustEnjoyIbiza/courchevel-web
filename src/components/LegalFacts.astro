@@ -1,0 +1,82 @@
+---
+/**
+ * The identity block of the legal pages, from business.legal: publisher and
+ * host on the legal notice, the data controller on the privacy policy.
+ * A value still missing (null) shows "To be confirmed" with [data-pending];
+ * the launch check fails while any is left. Lines that do not apply
+ * (undefined) are hidden.
+ */
+import { business, type Locale } from '../data/business';
+
+interface Props {
+  kind: 'notice' | 'privacy';
+  locale: Locale;
+}
+
+const { kind, locale } = Astro.props;
+const l = business.legal;
+const c = {
+  en: {
+    publisher: 'Publisher', host: 'Host', controller: 'Data controller', pending: 'To be confirmed',
+    tradingName: 'Trading name', entity: 'Company', form: 'Legal form', capital: 'Share capital', office: 'Registered office',
+    siret: 'SIRET', rcs: 'Trade register (RCS)', vat: 'VAT number', director: 'Director of publication', email: 'Email', phone: 'Phone',
+    tourism: 'Atout France registration', card: 'Professional card', mediator: 'Consumer mediator', address: 'Address', website: 'Website',
+  },
+  fr: {
+    publisher: 'Éditeur', host: 'Hébergeur', controller: 'Responsable du traitement', pending: 'À compléter',
+    tradingName: 'Nom commercial', entity: 'Société', form: 'Forme juridique', capital: 'Capital social', office: 'Siège social',
+    siret: 'SIRET', rcs: 'RCS', vat: 'N° de TVA intracommunautaire', director: 'Directeur de la publication', email: 'E-mail', phone: 'Téléphone',
+    tourism: 'Immatriculation Atout France', card: 'Carte professionnelle', mediator: 'Médiateur de la consommation', address: 'Adresse', website: 'Site',
+  },
+}[locale];
+
+type Row = { label: string; value: string | null | undefined; href?: string };
+const identity: Row[] = [
+  { label: c.tradingName, value: business.name },
+  { label: c.entity, value: l.entityName },
+  { label: c.form, value: l.legalForm },
+  { label: c.capital, value: l.capital },
+  { label: c.office, value: l.registeredAddress },
+  { label: c.siret, value: l.siret },
+  { label: c.rcs, value: l.rcs },
+  { label: c.vat, value: l.vatNumber },
+];
+const contact: Row[] = [
+  { label: c.email, value: business.email, href: `mailto:${business.email}` },
+  { label: c.phone, value: business.phone.display, href: `tel:${business.phone.e164}` },
+];
+const regulated: Row[] = [
+  { label: c.tourism, value: l.tourismRegistration },
+  { label: c.card, value: l.professionalCard },
+  { label: c.mediator, value: l.mediator },
+];
+const groups =
+  kind === 'notice'
+    ? [
+        { title: c.publisher, rows: [...identity, { label: c.director, value: l.publisher }, ...contact, ...regulated] },
+        { title: c.host, rows: [{ label: c.entity, value: l.host.name }, { label: c.address, value: l.host.address }, { label: c.website, value: l.host.website.replace(/^https:\/\//, ''), href: l.host.website }] },
+      ]
+    : [{ title: c.controller, rows: [{ label: c.entity, value: l.entityName }, { label: c.office, value: l.registeredAddress }, ...contact] }];
+---
+
+<section class="border-b border-line">
+  <div class="container-site grid gap-12 py-12 md:grid-cols-2 md:gap-16">
+    {groups.map((g) => (
+      <div>
+        <h2 class="eyebrow">{g.title}</h2>
+        <dl class="mt-6">
+          {g.rows.filter((r) => r.value !== undefined).map((r) => (
+            <div class="grid gap-1 border-t border-line py-3 sm:grid-cols-[13rem_minmax(0,1fr)] sm:gap-6">
+              <dt class="text-sm font-semibold">{r.label}</dt>
+              <dd>
+                {r.value === null
+                  ? <span data-pending class="text-sm italic text-brass-deep">{c.pending}</span>
+                  : r.href ? <a href={r.href} class="link break-all">{r.value}</a> : r.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    ))}
+  </div>
+</section>

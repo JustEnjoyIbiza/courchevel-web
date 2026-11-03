@@ -1,0 +1,59 @@
+---
+/**
+ * Sticky bottom bar on phones: Plan my stay + WhatsApp, always one tap away.
+ * With `after` (the homepage hero, which has its own button), the bar slides in
+ * once that element has mostly scrolled away; without JavaScript it simply shows.
+ */
+import { t } from '../i18n/ui';
+import { localize } from '../lib/routes';
+import { whatsappHref, type Locale } from '../data/business';
+import type { Cta } from '../lib/cta';
+
+interface Props {
+  locale: Locale;
+  /** On Plan my stay itself, show WhatsApp only. */
+  whatsappOnly?: boolean;
+  /** The page's own request (e.g. Request a table); defaults to Plan my stay. */
+  cta?: Cta;
+  /** Id of the element the bar waits for. */
+  after?: string;
+}
+
+const { locale, whatsappOnly = false, cta, after } = Astro.props;
+const s = t(locale);
+---
+
+<div
+  data-mobile-cta
+  data-after={after}
+  class:list={[
+    'fixed inset-x-0 bottom-0 z-40 grid border-t border-line bg-ivory/95 backdrop-blur-sm transition-transform duration-300 ease-out data-[hidden]:translate-y-full motion-reduce:transition-none md:hidden',
+    whatsappOnly ? 'grid-cols-1' : 'grid-cols-2',
+  ]}
+  style="padding-bottom: env(safe-area-inset-bottom)"
+>
+  {!whatsappOnly && <a href={cta?.href ?? localize('/enquire/', locale)} class="btn-primary min-h-14 px-3">{cta?.label ?? s.planMyStay}</a>}
+  <a
+    href={cta?.whatsapp ?? whatsappHref(locale)}
+    data-request-whatsapp
+    class="btn min-h-14 px-3 text-ink"
+    data-event="whatsapp_click"
+    rel="noopener"
+  >{whatsappOnly ? s.whatsappUs : s.whatsapp}</a>
+</div>
+
+<script>
+  // Hide the bar while the element it waits for (the homepage hero) is mostly on screen.
+  const bar = document.querySelector<HTMLElement>('[data-mobile-cta][data-after]');
+  const target = bar?.dataset.after ? document.getElementById(bar.dataset.after) : null;
+  if (bar && target && 'IntersectionObserver' in window) {
+    new IntersectionObserver(
+      ([entry]) => {
+        const hide = entry.intersectionRatio > 0.25;
+        bar.toggleAttribute('data-hidden', hide);
+        bar.inert = hide;
+      },
+      { threshold: [0, 0.25, 0.5, 1] },
+    ).observe(target);
+  }
+</script>

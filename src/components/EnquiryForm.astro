@@ -1,0 +1,223 @@
+---
+/**
+ * The 3-step Plan my stay form.
+ * Without JavaScript: one long form with native validation, posted to /api/lead,
+ * answered with a redirect to the thank-you page.
+ * With JavaScript (src/scripts/enquiry-form.ts): one step at a time, inline
+ * errors, JSON submit, service pre-selection from ?service= / ?experience=.
+ */
+import { enquiry } from '../content/enquiry';
+import { services } from '../data/services';
+import { VILLAGES, BOOKING_FOR, CONTACT_PREFS } from '../lib/lead';
+import { villageLabels, bookingForLabels, contactLabels } from '../lib/lead-labels';
+import type { Locale } from '../data/business';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = enquiry[locale];
+const turnstileKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined;
+const today = new Date().toISOString().slice(0, 10);
+
+const label = 'block text-sm font-semibold text-ink';
+const input =
+  'mt-2 block w-full min-h-12 border border-line bg-white px-4 py-3 text-base text-ink placeholder:text-taupe/70 focus:border-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-brass-deep aria-[invalid=true]:border-red-700';
+const hint = 'mt-1 text-sm text-taupe';
+const err = 'field-error mt-2 text-sm font-medium text-red-800';
+const choice =
+  'flex min-h-12 cursor-pointer items-center gap-3 border border-line bg-white px-4 py-3 text-sm has-[:checked]:border-ink has-[:checked]:bg-stone has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-brass-deep';
+const legend = 'font-serif text-3xl text-ink';
+---
+
+<form
+  id="form"
+  method="post"
+  action="/api/lead"
+  class="enquiry-form scroll-mt-28"
+  data-locale={locale}
+  data-errors={JSON.stringify(c.errors)}
+  data-sending={c.sending}
+  data-summary={JSON.stringify(c.summary)}
+  data-thanks={locale === 'fr' ? '/fr/enquire/thanks/' : '/enquire/thanks/'}
+>
+  <input type="hidden" name="locale" value={locale} />
+  <input type="hidden" name="page" value="" />
+  <input type="hidden" name="referrer" value="" />
+  <input type="hidden" name="utm_source" value="" />
+  <input type="hidden" name="utm_medium" value="" />
+  <input type="hidden" name="utm_campaign" value="" />
+  <input type="hidden" name="experience" value="" />
+  <input type="hidden" name="started" value="" />
+
+  <!-- Honeypot: invisible to people, tempting to bots. -->
+  <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+    <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+  </div>
+
+  <div class="form-alert mb-8 hidden border-l-2 border-red-800 bg-white p-4 text-sm text-ink" role="alert" tabindex="-1"></div>
+
+  <ol class="step-progress mb-10 hidden grid-cols-3 gap-2" aria-hidden="true">
+    {c.steps.map((name, i) => (
+      <li class="step-progress-item border-t-2 border-line pt-3 text-xs font-semibold uppercase tracking-[0.14em] text-taupe" data-step={i + 1}>
+        <span class="block text-brass-deep">{String(i + 1).padStart(2, '0')}</span>
+        <span class="hidden sm:inline">{name}</span>
+      </li>
+    ))}
+  </ol>
+
+  <!-- Step 1: the stay -->
+  <fieldset class="form-step space-y-6" data-step="1">
+    <legend class={legend}><span class="step-count block font-sans text-xs font-semibold uppercase tracking-[0.18em] text-brass-deep">{c.step(1)}</span>{c.steps[0]}</legend>
+    <div class="grid gap-6 pt-4 sm:grid-cols-2">
+      <div>
+        <label class={label} for="arrival">{c.arrival}</label>
+        <input class={input} id="arrival" name="arrival" type="date" required min={today} aria-describedby="err-arrival" />
+        <p class={err} id="err-arrival" hidden></p>
+      </div>
+      <div>
+        <label class={label} for="departure">{c.departure}</label>
+        <input class={input} id="departure" name="departure" type="date" required min={today} aria-describedby="err-departure" />
+        <p class={err} id="err-departure" hidden></p>
+      </div>
+    </div>
+    <label class="flex items-center gap-3 text-sm"><input type="checkbox" name="datesFlexible" class="size-5 accent-ink" /> {c.flexible}</label>
+
+    <div role="radiogroup" aria-labelledby="village-label" aria-describedby="err-village">
+      <p class={label} id="village-label">{c.village}</p>
+      <div class="mt-2 grid gap-2 sm:grid-cols-2">
+        {VILLAGES.map((v, i) => (
+          <label class={choice}>
+            <input type="radio" name="village" value={v} required={i === 0} class="size-4 accent-ink" />
+            {villageLabels[locale][v]}
+          </label>
+        ))}
+      </div>
+      <p class={err} id="err-village" hidden></p>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-3">
+      <div>
+        <label class={label} for="adults">{c.adults}</label>
+        <input class={input} id="adults" name="adults" type="number" inputmode="numeric" min="1" max="99" value="2" required aria-describedby="err-adults" />
+        <p class={err} id="err-adults" hidden></p>
+      </div>
+      <div>
+        <label class={label} for="children">{c.children}</label>
+        <input class={input} id="children" name="children" type="number" inputmode="numeric" min="0" max="99" value="0" aria-describedby="err-children" />
+        <p class={err} id="err-children" hidden></p>
+      </div>
+      <div>
+        <label class={label} for="childrenAges">{c.childrenAges}</label>
+        <input class={input} id="childrenAges" name="childrenAges" type="text" maxlength="100" placeholder={c.childrenAgesHint} />
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Step 2: services -->
+  <fieldset class="form-step mt-14 space-y-6" data-step="2">
+    <legend class={legend}><span class="step-count block font-sans text-xs font-semibold uppercase tracking-[0.18em] text-brass-deep">{c.step(2)}</span>{c.steps[1]}</legend>
+    <!-- Filled and shown by the script when the quick-start already answered step 1. -->
+    <div class="stay-summary mt-4 hidden flex-wrap items-center justify-between gap-x-6 gap-y-2 border border-line bg-white px-4 py-3 text-sm text-ink">
+      <p><span class="font-semibold">{c.summary.label}:</span> <span class="stay-summary-text"></span></p>
+      <button type="button" class="stay-summary-change min-h-11 font-semibold text-ink underline decoration-brass underline-offset-4 hover:text-brass-deep">{c.summary.change}</button>
+    </div>
+    <div class="pt-4" role="group" aria-labelledby="services-label" aria-describedby="services-hint err-services">
+      <p class={label} id="services-label">{c.services}</p>
+      <p class={hint} id="services-hint">{c.servicesHint}</p>
+      <div class="mt-3 grid gap-2 sm:grid-cols-2">
+        {services.map((s) => (
+          <label class={choice}>
+            <input type="checkbox" name="services" value={s.slug} class="size-4 accent-ink" />
+            {s.name[locale]}
+          </label>
+        ))}
+      </div>
+      <p class={err} id="err-services" hidden></p>
+    </div>
+
+    <div role="radiogroup" aria-labelledby="bookingfor-label">
+      <p class={label} id="bookingfor-label">{c.bookingFor}</p>
+      <div class="mt-2 grid gap-2 sm:grid-cols-3">
+        {BOOKING_FOR.map((b, i) => (
+          <label class={choice}>
+            <input type="radio" name="bookingFor" value={b} checked={i === 0} class="size-4 accent-ink" />
+            {bookingForLabels[locale][b]}
+          </label>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <label class={label} for="budget">{c.budget}</label>
+      <p class={hint} id="budget-hint">{c.budgetHint}</p>
+      <input class={input} id="budget" name="budget" type="text" maxlength="120" aria-describedby="budget-hint" />
+    </div>
+
+    <div>
+      <label class={label} for="message">{c.message}</label>
+      <p class={hint} id="message-hint">{c.messageHint}</p>
+      <textarea class={input} id="message" name="message" rows="4" maxlength="3000" aria-describedby="message-hint"></textarea>
+    </div>
+  </fieldset>
+
+  <!-- Step 3: contact -->
+  <fieldset class="form-step mt-14 space-y-6" data-step="3">
+    <legend class={legend}><span class="step-count block font-sans text-xs font-semibold uppercase tracking-[0.18em] text-brass-deep">{c.step(3)}</span>{c.steps[2]}</legend>
+    <div class="grid gap-6 pt-4 sm:grid-cols-2">
+      <div class="sm:col-span-2">
+        <label class={label} for="name">{c.name}</label>
+        <input class={input} id="name" name="name" type="text" autocomplete="name" required maxlength="120" aria-describedby="err-name" />
+        <p class={err} id="err-name" hidden></p>
+      </div>
+      <div>
+        <label class={label} for="email">{c.email}</label>
+        <input class={input} id="email" name="email" type="email" autocomplete="email" required maxlength="200" aria-describedby="err-email" />
+        <p class={err} id="err-email" hidden></p>
+      </div>
+      <div>
+        <label class={label} for="phone">{c.phone}</label>
+        <input class={input} id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder={c.phoneHint} aria-describedby="err-phone" />
+        <p class={err} id="err-phone" hidden></p>
+      </div>
+    </div>
+
+    <div role="radiogroup" aria-labelledby="preferred-label">
+      <p class={label} id="preferred-label">{c.preferred}</p>
+      <div class="mt-2 grid gap-2 sm:grid-cols-3">
+        {CONTACT_PREFS.map((p, i) => (
+          <label class={choice}>
+            <input type="radio" name="preferredContact" value={p} checked={i === 0} class="size-4 accent-ink" />
+            {contactLabels[locale][p]}
+          </label>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <label class="flex items-start gap-3 text-sm text-ink">
+        <input type="checkbox" name="consent" required class="mt-0.5 size-5 shrink-0 accent-ink" aria-describedby="err-consent" />
+        <span>{c.consent}</span>
+      </label>
+      <p class={err} id="err-consent" hidden></p>
+    </div>
+
+    {turnstileKey && <div class="cf-turnstile" data-sitekey={turnstileKey} data-language={locale}></div>}
+  </fieldset>
+
+  <div class="form-nav mt-12 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <button type="button" class="btn-secondary form-back hidden">{c.back}</button>
+    <div class="flex flex-col gap-3 sm:ml-auto sm:flex-row">
+      <button type="button" class="btn-primary form-next hidden">{c.next}</button>
+      <button type="submit" class="btn-primary form-submit">{c.submit}</button>
+    </div>
+  </div>
+</form>
+
+{turnstileKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  import { initEnquiryForm } from '../scripts/enquiry-form';
+  document.querySelectorAll<HTMLFormElement>('form.enquiry-form').forEach(initEnquiryForm);
+</script>

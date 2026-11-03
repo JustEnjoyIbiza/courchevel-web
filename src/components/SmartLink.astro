@@ -1,0 +1,18 @@
+---
+/**
+ * Internal link that only renders an <a> when the target page exists.
+ * Pages from later phases show as plain text until they are built.
+ */
+import { isBuilt } from '../lib/routes';
+
+interface Props {
+  href: string;
+  class?: string;
+  [key: string]: unknown;
+}
+
+const { href, class: className, ...rest } = Astro.props;
+const live = await isBuilt(href);
+---
+
+{live ? <a href={href} class={className} {...rest}><slot /></a> : <span class={className}><slot /></span>}

@@ -1,0 +1,80 @@
+---
+/**
+ * Numbered editorial selection shown right after a page's answer (the
+ * `highlights` frontmatter field), e.g. "Ten tables to know" on Where to eat or
+ * the five palaces on Palace hotels. One column, a thin rule between entries, an
+ * optional photo on the right, and, with `request`, a request button per entry
+ * (Request a table; for a stay, the Plan my stay form opened with its name).
+ * No WhatsApp link per entry (owner, 25 Oct 2026): WhatsApp is the site-wide button.
+ * Each entry has an id from its name, so other pages can link to it.
+ */
+import { Picture } from 'astro:assets';
+import { photos, type PhotoKey } from '../data/photos';
+import { requestCta } from '../lib/cta';
+import { localize } from '../lib/routes';
+import { anchor, highlightsTitleId } from '../lib/anchors';
+import type { RequestType } from '../lib/requests';
+import type { Locale } from '../data/business';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  intro?: string;
+  items: { name: string; place: string; kind: string; text: string; photo?: PhotoKey; alt?: string; credit?: string; link?: { href: string; label: string } }[];
+  request?: RequestType | 'stay';
+  service?: string;
+  button?: string;
+  /** Position on the page, for unique ids when there are several lists. */
+  index?: number;
+  locale: Locale;
+}
+
+const { eyebrow, title, intro, items, request, service, button, index = 0, locale } = Astro.props;
+const pad = (n: number) => String(n).padStart(2, '0');
+const titleId = highlightsTitleId(index);
+---
+
+<section class="py-section" aria-labelledby={titleId}>
+  <div class="container-site">
+    <div class="max-w-2xl">
+      <p class="eyebrow">{eyebrow}</p>
+      <h2 id={titleId} class="mt-4 text-h2">{title}</h2>
+      {intro && <p class="mt-5 text-taupe">{intro}</p>}
+    </div>
+    <ol class="mt-12 max-w-5xl">
+      {items.map((x, i) => (
+        <li id={anchor(x.name)} class="grid scroll-mt-24 gap-5 border-t border-line py-8 md:grid-cols-[4rem_minmax(0,1fr)_13rem] md:gap-8">
+          <span class="font-serif text-3xl leading-none text-brass-deep" aria-hidden="true">{pad(i + 1)}</span>
+          <div>
+            <h3 class="text-3xl">{x.name}</h3>
+            <p class="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-taupe">{x.place} · {x.kind}</p>
+            <p class="mt-4 max-w-[60ch] text-ink">{x.text}</p>
+            {x.link && <p class="mt-3 text-sm"><a href={localize(x.link.href, locale)} class="link inline-flex min-h-11 items-center">{x.link.label}</a></p>}
+            {request && (() => {
+              const cta = requestCta(locale, { type: request, service }, x.name);
+              return (
+                <p class="mt-4 text-sm">
+                  <a href={cta.href} class="link inline-flex min-h-11 items-center font-semibold">{button ?? cta.label}<span class="sr-only">: {x.name}</span></a>
+                </p>
+              );
+            })()}
+          </div>
+          {x.photo && (
+            <figure class="max-md:order-first">
+              <Picture
+                src={photos[x.photo]}
+                alt={x.alt ?? ''}
+                formats={['avif', 'webp']}
+                widths={[400, 640]}
+                sizes="(min-width: 768px) 13rem, 100vw"
+                loading="lazy"
+                class="aspect-[16/10] w-full object-cover md:aspect-[4/5]"
+              />
+              {x.credit && <figcaption class="mt-2 text-xs text-taupe">{x.credit}</figcaption>}
+            </figure>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
