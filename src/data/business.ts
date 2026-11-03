@@ -114,14 +114,20 @@ export const business = {
    * fails until it is filled. undefined = does not apply, so the line is hidden.
    */
   legal: {
-    entityName: null as string | null, // TODO company or entrepreneur name
-    legalForm: null as string | null, // TODO e.g. SAS, SARL, EI, micro-entreprise
-    capital: null as string | null | undefined, // TODO share capital (companies); undefined for an EI
-    registeredAddress: null as string | null, // TODO registered office
-    siret: null as string | null, // TODO
-    rcs: null as string | null | undefined, // TODO RCS city and number (companies)
-    vatNumber: null as string | null | undefined, // TODO intra-EU VAT number; undefined if none
-    publisher: null as string | null, // TODO directeur de la publication
+    // Owner, 3 Nov 2026: a self-employed person (autónomo) registered in Spain, so no SIRET, RCS or capital.
+    individual: true,
+    entityName: 'Ivan Savchak' as string | null,
+    legalForm: {
+      en: 'Autónomo (self-employed, registered in Spain)',
+      fr: 'Autónomo (entrepreneur individuel immatriculé en Espagne)',
+    } as { en: string; fr: string } | null,
+    capital: undefined as string | null | undefined,
+    registeredAddress: null as string | null, // TODO business address (owner, 3 Nov: to be confirmed, Spain and France)
+    taxId: '60888451E' as string | null | undefined, // Spanish NIF
+    siret: undefined as string | null | undefined,
+    rcs: undefined as string | null | undefined,
+    vatNumber: null as string | null | undefined, // TODO intra-EU VAT number (ES + NIF if registered in ROI); undefined if none
+    publisher: 'Ivan Savchak' as string | null, // directeur de la publication: the entrepreneur in person
     /** Only if they apply (docs/owner-checklist.md): Atout France registration, carte professionnelle, consumer mediator. */
     tourismRegistration: undefined as string | undefined,
     professionalCard: undefined as string | undefined,

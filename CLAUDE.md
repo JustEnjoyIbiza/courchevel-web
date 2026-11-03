@@ -44,7 +44,8 @@ description anywhere else.
 - Area served: Courchevel 1850, 1650 Moriond, 1550 Village, 1300 Le Praz, La Tania,
   and the Trois Vallées (Méribel, Val Thorens)
 - Availability: 24/7 during the winter season
-- Legal entity, SIRET, founder, languages: TODO (see `docs/missing-facts.md`)
+- Legal (owner, 3 Nov 2026): Ivan Savchak, autónomo registered in Spain, NIF 60888451E;
+  business address and VAT number TODO. Founder, languages: TODO (see `docs/missing-facts.md`)
 
 ## Hard rules
 
