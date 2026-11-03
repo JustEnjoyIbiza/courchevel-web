@@ -45,7 +45,7 @@ description anywhere else.
   and the Trois Vallées (Méribel, Val Thorens)
 - Availability: 24/7 during the winter season
 - Legal (owner, 3 Nov 2026): Ivan Savchak, autónomo registered in Spain, NIF 60888451E;
-  business address and VAT number TODO. Founder, languages: TODO (see `docs/missing-facts.md`)
+  the NIF is also the VAT number (not in VIES, 3 Nov); business address TODO. Founder, languages: TODO (see `docs/missing-facts.md`)
 
 ## Hard rules
 

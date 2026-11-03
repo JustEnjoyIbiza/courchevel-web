@@ -123,10 +123,11 @@ export const business = {
     } as { en: string; fr: string } | null,
     capital: undefined as string | null | undefined,
     registeredAddress: null as string | null, // TODO business address (owner, 3 Nov: to be confirmed, Spain and France)
-    taxId: '60888451E' as string | null | undefined, // Spanish NIF
+    taxId: '60888451E' as string | null | undefined, // Spanish NIF, also the VAT number (owner, 3 Nov)
     siret: undefined as string | null | undefined,
     rcs: undefined as string | null | undefined,
-    vatNumber: null as string | null | undefined, // TODO intra-EU VAT number (ES + NIF if registered in ROI); undefined if none
+    // No intra-EU VAT number: ES60888451E not in VIES (checked 3 Nov 2026). Set it here if the ROI registration comes.
+    vatNumber: undefined as string | null | undefined,
     publisher: 'Ivan Savchak' as string | null, // directeur de la publication: the entrepreneur in person
     /** Only if they apply (docs/owner-checklist.md): Atout France registration, carte professionnelle, consumer mediator. */
     tourismRegistration: undefined as string | undefined,

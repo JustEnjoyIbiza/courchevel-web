@@ -18,8 +18,9 @@ Full plan, dates and exact DNS records: `launch-plan.md`.
   **Given 3 Nov:** Ivan Savchak, autónomo registered in Spain, NIF 60888451E (so no SIRET, RCS or share
   capital); director of publication Ivan Savchak. **Still to come:**
   1. Business address (owner: to be confirmed, for Spain and France)
-  2. Intra-EU VAT number (ES + NIF, if registered in the ROI), or "none"
-  3. If there is also a French registration (SIRET), its number
+  2. If there is also a French registration (SIRET), its number
+  VAT (owner, 3 Nov): the NIF is the VAT number. ES60888451E is not in VIES (checked 3 Nov), so no
+  intra-EU VAT number is shown; add it to `business.legal.vatNumber` if the ROI registration comes.
 - [ ] **Check with your accountant or lawyer** (each can add a line to the legal notice; not legal advice):
   - Rental intermediation (loi Hoguet): commission on chalet rentals usually requires a professional card
     (CCI) or working as the agent of an agency that holds one. If so: card number and guarantee on the site.
