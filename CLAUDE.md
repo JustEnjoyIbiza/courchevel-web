@@ -211,5 +211,6 @@ needs the owner in `docs/owner-checklist.md` for one review at the end. About an
 legal pages are written last. Still ask before anything touches the live site,
 DNS, accounts, or a production deploy.
 
-Production (`main`) keeps serving the old site until the Phase 5 launch.
-Rebuild work happens on `rebuild/*` branches.
+**Live since 3 November 2026:** `main` is the production site at https://www.courchevelluxuryconcierge.com
+and every push to it goes live. Work on a branch and open a pull request for anything beyond a small
+fix, so Netlify builds a deploy preview first; ask the owner before merging or pushing to `main`.

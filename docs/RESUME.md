@@ -1,17 +1,34 @@
 # Project resume: read this first in a new session
 
-Last updated **25 October 2026** (sessions of 23–25 Oct, see below). This file replaces re-reading the
+Last updated **3 November 2026** (launch; sessions of 23–25 Oct below). This file replaces re-reading the
 whole history. Rules live in `CLAUDE.md`; the owner's open items in `docs/owner-checklist.md`.
 
 ## In one paragraph
 
 Rebuild of courchevelluxuryconcierge.com (old one-page site, archived in `audit/`) as a
 bilingual EN/FR Astro 7 site on Netlify, built for leads, Google and AI assistants.
-Phases 0–5 are built and committed. **Pushed to GitHub on 3 Nov** (draft PR
-https://github.com/JustEnjoyIbiza/courchevel-web/pull/3, deploy preview
-https://deploy-preview-3--courchevel-luxury-concierge.netlify.app, rebuilt on every push). The live
-site is still the old one (`main`); never merge the PR without the owner's go-ahead. Launch is planned for **Tuesday 24 November 2026** (season opens
-4 December). What is left is mostly the owner's: accounts, access, facts, then About and legal pages.
+**The new site is live since 3 November 2026** (owner's go-ahead, three weeks ahead of the planned
+24 Nov): https://www.courchevelluxuryconcierge.com, served from `main`. Every push to `main` goes
+live; bigger changes go on a branch with a pull request first, to get a deploy preview. What is left
+is mostly the owner's: legal facts, accounts, About page facts (season opens 4 December).
+
+## Launch, 3 November 2026
+
+- Branch pushed, PR https://github.com/JustEnjoyIbiza/courchevel-web/pull/3 merged into `main`
+  (merge commit 748138a). Before the merge: `npm run qa` and `qa:content` 0 issues; `qa:launch` on the
+  deploy preview 29 checks, 4 failed (only the legal facts below).
+- Netlify primary domain switched to **www** (bare domain is an alias, 301 to www); certificate
+  covers both names (expires 14 Jan 2027, renews itself).
+- Production deploy `6aea3cd10ef0b488b4c75b87`; `qa:launch --production` 35 checks, 4 failed:
+  `/mentions-legales/` and `/privacy/` (EN + FR) still show "To be confirmed" for the company facts
+  (`business.legal` in `src/data/business.ts`). The owner chose to launch first and send them later.
+- **Rollback:** Netlify → Deploys → `6ad294aacfc3b8d0e82f3b94` (old site, 16 Oct) → Publish deploy.
+- Still open from the launch-day list (`docs/launch-plan.md` §5.2): a real test enquiry from a phone;
+  Search Console sitemap + Request indexing; Bing Webmaster Tools; UTM links on Google Business Profile
+  and Instagram; IndexNow key (`INDEXNOW_KEY` not set, so no ping yet); close Basin's old form after a
+  week. Also: domain renewal before **30 Nov**, Turnstile, Telegram alerts.
+- Tools on this Mac: Node `~/.local/node/bin`; GitHub CLI `~/.local/bin/gh` (signed in as
+  JustEnjoyIbiza, git's credential helper); Netlify CLI through `npx netlify-cli` (signed in).
 
 ## Session of 25 October 2026
 
@@ -323,8 +340,8 @@ Commits: author "Alin Letca" <alin.letca2010@gmail.com>, ending with the Co-Auth
 3. **Legal pages**: mentions légales, privacy policy, cookie policy (EN/FR), linked from the
    footer and the form consent. Need entity name, SIRET, VAT, directeur de la publication,
    address, Netlify host details.
-4. **Preview** (~16 Nov): push branch, open PR, run `qa:launch` on the deploy preview, test lead.
-5. **Launch day** 24 Nov: follow `docs/launch-plan.md` §5.2 — only with the owner's go-ahead.
+4. ~~**Preview**~~ **done 3 Nov** (PR #3, deploy preview); the real test lead from a phone is still to do.
+5. ~~**Launch day**~~ **launched 3 Nov**; finish the open items of `docs/launch-plan.md` §5.2 (see "Launch" above).
 6. **Conversion improvements** from `docs/competitor-review-2026-10-22.md` (ranked list):
    homepage quick-start form and "A week in 1850" example guide can be built now;
    rating, founder, real anonymised requests and fee model need the owner.
