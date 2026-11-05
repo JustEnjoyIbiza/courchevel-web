@@ -3,7 +3,7 @@ title: "Privacy policy"
 metaTitle: "Privacy Policy | Courchevel Luxury Concierge"
 description: "How Courchevel Luxury Concierge uses the personal data from its request forms, who receives it, how long it is kept and how to exercise your rights."
 answer: "We collect only what you send us through our forms or messages, to answer your request and arrange your stay, and we never sell it. This page explains what we collect, why, who receives it, how long we keep it and how to exercise your rights under the GDPR."
-updated: 2026-10-26
+updated: 2026-11-03
 legal: privacy
 ---
 

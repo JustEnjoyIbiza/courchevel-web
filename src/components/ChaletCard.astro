@@ -29,8 +29,8 @@ const Heading = heading;
       src={lead.src}
       alt={photoAltText(x, lead.room, locale)}
       formats={['avif', 'webp']}
-      widths={[400, 640, 960]}
-      sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
+      widths={[400, 640, 720, 960]}
+      sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
       loading="lazy"
       class="aspect-[3/2] w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
     />

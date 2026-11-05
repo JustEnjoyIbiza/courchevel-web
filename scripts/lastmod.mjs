@@ -1,7 +1,9 @@
 /**
  * Map of page URL -> last updated date, read from content frontmatter
- * (`updated:`), for <lastmod> in the sitemap. Pages without their own date
- * (home, hubs, FAQ, enquire) use the hub date from src/content/hubs.ts.
+ * (`updated:`), for <lastmod> in the sitemap. Hotel pages use the date their
+ * facts were checked (`checked:`), chalet pages chaletsChecked in
+ * src/content/chalets.ts. Pages without their own date (home, hubs, FAQ,
+ * enquire) use the hub date from src/content/hubs.ts.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -23,5 +25,16 @@ export function buildLastmod(root, site) {
       }
     }
   }
-  return (url) => map.get(url) ?? fallback;
+  for (const locale of ['en', 'fr']) {
+    const dir = path.join(root, 'src/content/hotels', locale);
+    if (!fs.existsSync(dir)) continue;
+    for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.md'))) {
+      const checked = fs.readFileSync(path.join(dir, file), 'utf8').match(/^checked:\s*['"]?(\d{4}-\d{2}-\d{2})/m)?.[1];
+      const p = `/palace-hotels-courchevel/${file.replace(/\.md$/, '')}/`;
+      if (checked) map.set(new URL((locale === 'fr' ? '/fr' : '') + p, site).href, checked);
+    }
+  }
+  const chalets = fs.readFileSync(path.join(root, 'src/content/chalets.ts'), 'utf8').match(/chaletsChecked = new Date\('(\d{4}-\d{2}-\d{2})'\)/)?.[1];
+  const isChaletPage = (url) => /\/services\/chalets\/[^/]+\/$/.test(new URL(url).pathname);
+  return (url) => map.get(url) ?? (chalets && isChaletPage(url) ? chalets : fallback);
 }

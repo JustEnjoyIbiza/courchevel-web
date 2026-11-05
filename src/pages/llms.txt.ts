@@ -47,7 +47,10 @@ export const GET: APIRoute = async ({ site }) => {
     '',
     '## Experiences (arranged on request, subject to weather and availability)',
     '',
-    ...experiencesPage.en.experiences.map((x) => `- [${x.title}](${url('/experiences/')}): ${x.short}`),
+    // All on one page, so one link and the experiences as plain lines (not nine links to the same URL).
+    `All on one page: [Experiences](${url('/experiences/')})`,
+    '',
+    ...experiencesPage.en.experiences.map((x) => `- ${x.title}: ${x.short}`),
     '',
     '## Villages',
     '',

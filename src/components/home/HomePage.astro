@@ -106,7 +106,7 @@ const sectionHead = 'max-w-2xl';
       src={photos['hot-tub']}
       alt={c.hero.imageAlt}
       formats={formats}
-      widths={[480, 720, 1000]}
+      widths={[480, 720, 800, 1000]}
       sizes="100vw"
       loading="eager"
       fetchpriority="high"
@@ -175,8 +175,8 @@ const sectionHead = 'max-w-2xl';
                     src={half.img}
                     alt={half.alt}
                     formats={formats}
-                    widths={[400, 640, 800]}
-                    sizes="(min-width: 768px) 17vw, 100vw"
+                    widths={[400, 640, 720, 800]}
+                    sizes="(min-width: 768px) 17vw, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
                     class="aspect-[4/3] h-full w-full object-cover opacity-90 transition duration-700 ease-out group-hover/half:scale-[1.04] group-hover/half:opacity-100 motion-reduce:transition-none motion-reduce:group-hover/half:scale-100 md:aspect-auto"
                   />
                   <span class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-ink via-ink/60 to-transparent" aria-hidden="true"></span>
@@ -195,8 +195,8 @@ const sectionHead = 'max-w-2xl';
               src={photos[f.image]}
               alt={f.alt}
               formats={formats}
-              widths={[400, 600, 800]}
-              sizes="(min-width: 768px) 33vw, 100vw"
+              widths={[400, 600, 720, 800]}
+              sizes="(min-width: 768px) 33vw, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
               class="aspect-[5/4] w-full object-cover opacity-90 transition duration-700 ease-out group-hover:scale-[1.04] group-hover:opacity-100 motion-reduce:transition-none motion-reduce:group-hover:scale-100 md:aspect-[4/5]"
             />
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/70 to-transparent px-6 pt-14 pb-6 md:pt-24 md:pb-7">

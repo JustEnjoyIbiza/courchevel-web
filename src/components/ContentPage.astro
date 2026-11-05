@@ -63,8 +63,8 @@ const image = d.image ? photos[d.image] : undefined;
 const schemaImage = image ? (await getImage({ src: image, width: 1200, format: 'jpeg' })).src : undefined;
 
 const schema: object[] = [breadcrumbSchema(crumbs.map((c) => ({ name: c.name, url: c.href })))];
-if (collection === 'services') schema.push(serviceSchema({ name: d.title, description: d.description, url, locale, image: schemaImage }));
-if (collection === 'guides') schema.push(articleSchema({ headline: d.title, description: d.description, url, updated: d.updated, locale, image: schemaImage }));
+if (collection === 'services') schema.push(serviceSchema({ name: d.title, description: d.description, url, image: schemaImage }));
+if (collection === 'guides') schema.push(articleSchema({ headline: d.title, description: d.description, url, updated: d.updated, published: d.published, locale, image: schemaImage }));
 if (slug === 'about') schema.push(localBusinessSchema(locale));
 if (d.faqs.length) schema.push(faqSchema(d.faqs));
 
@@ -90,7 +90,7 @@ const cta = pageCta(locale, collection, slug);
             src={image}
             alt={d.imageAlt ?? ''}
             formats={['avif', 'webp']}
-            widths={[480, 720, 1000]}
+            widths={[480, 720, 800, 1000]}
             sizes="100vw"
             loading="eager"
             fetchpriority="high"
