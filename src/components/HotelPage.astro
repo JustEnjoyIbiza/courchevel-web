@@ -67,8 +67,8 @@ const more = (await getHotels(locale)).filter((y) => y.data.kind === d.kind && y
         src={lead.src}
         alt={hotelAlt(h, lead.room, locale)}
         formats={['avif', 'webp']}
-        widths={[640, 1024, 1600]}
-        sizes="(min-width: 1280px) 1216px, 100vw"
+        widths={[640, 720, 800, 1024, 1600]}
+        sizes="(min-width: 1280px) 1216px, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
         loading="eager"
         fetchpriority="high"
         class="aspect-[3/2] w-full object-cover md:aspect-[16/8]"
@@ -147,8 +147,8 @@ const more = (await getHotels(locale)).filter((y) => y.data.kind === d.kind && y
                   src={p.src}
                   alt={hotelAlt(h, p.room, locale)}
                   formats={['avif', 'webp']}
-                  widths={wide(i) ? [640, 1024, 1600] : [480, 800]}
-                  sizes={wide(i) ? '(min-width: 1280px) 1216px, 100vw' : '(min-width: 768px) 50vw, 100vw'}
+                  widths={wide(i) ? [640, 720, 800, 1024, 1600] : [480, 720, 800]}
+                  sizes={wide(i) ? '(min-width: 1280px) 1216px, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)' : '(min-width: 768px) 50vw, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)'}
                   loading="lazy"
                   class={`w-full object-cover ${wide(i) ? 'aspect-[3/2] md:aspect-[16/8]' : 'aspect-[3/2]'}`}
                 />

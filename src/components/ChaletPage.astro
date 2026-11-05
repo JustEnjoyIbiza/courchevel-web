@@ -75,8 +75,8 @@ const more = chalets.filter((y) => y.area === x.area && y !== x).sort((a, b) => 
         src={lead.src}
         alt={photoAltText(x, lead.room, locale)}
         formats={['avif', 'webp']}
-        widths={[640, 1024, 1600]}
-        sizes="(min-width: 1280px) 1216px, 100vw"
+        widths={[640, 720, 800, 1024, 1600]}
+        sizes="(min-width: 1280px) 1216px, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
         loading="eager"
         fetchpriority="high"
         class="aspect-[3/2] w-full object-cover md:aspect-[16/8]"
@@ -118,8 +118,8 @@ const more = chalets.filter((y) => y.area === x.area && y !== x).sort((a, b) => 
                 src={p.src}
                 alt={photoAltText(x, p.room, locale)}
                 formats={['avif', 'webp']}
-                widths={wide(i) ? [640, 1024, 1600] : [480, 800]}
-                sizes={wide(i) ? '(min-width: 1280px) 1216px, 100vw' : '(min-width: 768px) 50vw, 100vw'}
+                widths={wide(i) ? [640, 720, 800, 1024, 1600] : [480, 720, 800]}
+                sizes={wide(i) ? '(min-width: 1280px) 1216px, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)' : '(min-width: 768px) 50vw, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)'}
                 loading="lazy"
                 class={`w-full object-cover ${wide(i) ? 'aspect-[3/2] md:aspect-[16/8]' : 'aspect-[3/2]'}`}
               />
