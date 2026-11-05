@@ -102,7 +102,7 @@ footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule);
 </head>
 <body>
 <main class="wrap">
-  <p class="eyebrow">courchevelluxuryconcierge.com · SEO and AI search audit · 5 November 2026</p>
+  <p class="eyebrow">courchevelluxuryconcierge.com · SEO and AI search audit · 5 November 2026 · code fixes live 6 November</p>
   <h1>Can Google and AI find you?</h1>
   <p class="lede">A full check of the live site, two days after launch: every page as Google, Bing, ChatGPT, Claude and Perplexity receive it, the machine-readable layer, speed, what is indexed today, and your Google Business Profile.</p>
 
@@ -139,7 +139,7 @@ footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule);
         <tr><td>robots.txt</td><td><span class="chip pass">Pass</span></td><td>Names 13 search and AI agents and allows each, closes only <code>/api/</code> (the form endpoint), lists the sitemap. Training crawlers (GPTBot, ClaudeBot, Google-Extended) are allowed too: a policy choice that maximises AI visibility, not a defect.</td></tr>
         <tr><td>Structured data (JSON-LD)</td><td><span class="chip pass">Pass</span></td><td>On all 128 pages: the business record (LocalBusiness with phone, email, area served, map, Instagram, languages, services), plus Service on service pages, Article on 16 guides, FAQPage on 62 pages, BreadcrumbList everywhere. Every page points to the same business ID, so engines see one entity. Validator: 0 errors.</td></tr>
         <tr><td>llms.txt</td><td><span class="chip pass">Pass</span></td><td>Valid format (title, summary, key facts, 37 links in sections, an Optional section), generated from the same data as the site. Low impact: Google says it ignores llms.txt, and other engines do not document using it to pick sources. Harmless and correct to have.</td></tr>
-        <tr><td>Answers AI can quote</td><td><span class="chip pass">Pass</span></td><td>Each page opens with a 2–3 sentence answer, then facts, FAQ and a "Last updated" date (missing on 48 hotel and chalet pages, see issues). Clear facts: altiport, transfer times, season dates, heli-skiing law.</td></tr>
+        <tr><td>Answers AI can quote</td><td><span class="chip pass">Pass</span></td><td>Each page opens with a 2–3 sentence answer, then facts, FAQ and a "Last updated" date (hotel pages show when their facts were checked; added to the chalet pages on 6 November). Clear facts: altiport, transfer times, season dates, heli-skiing law.</td></tr>
         <tr><td>Bing (feeds ChatGPT search and Copilot)</td><td><span class="chip pass">Pass</span></td><td>Bing's live test: "URL can be indexed", "No SEO/GEO issues found", 2 markup types found. IndexNow accepted all 128 pages on 5 November.</td></tr>
       </tbody>
     </table></div>
@@ -183,7 +183,7 @@ footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule);
         <tr><td>Request form</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">1.1 s</td><td class="num">0</td><td class="num">0 ms</td></tr>
       </tbody>
     </table></div>
-    <p class="note">Google's thresholds: LCP (main image or text visible) under 2.5 s, CLS (layout shift) under 0.1. All pages pass. Lighthouse suggests about 150 KB of image savings on the homepage and chalets list (slightly larger photos than the phone needs): a small gain, not a problem. Real-user speed data appears in Search Console after about four weeks of visits.</p>
+    <p class="note">Google's thresholds: LCP (main image or text visible) under 2.5 s, CLS (layout shift) under 0.1. All pages pass. On 6 November photo sizes were matched to phone screens: oversized-image weight fell from 152 to 88 KiB on the homepage, from 138 to 16 KiB on the chalets list, and to none on chalet pages (main photo 1.7 s → 1.2 s on Chalet Titan; 1.8 s → 1.4 s on Les Airelles). Real-user speed data appears in Search Console after about four weeks of visits.</p>
   </section>
 
   <section aria-labelledby="s-tech">
@@ -221,12 +221,12 @@ footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule);
       <tbody>
         <tr><td>10 chalet pages (Ibis, Capucine, Hugo, Titan, Philip; EN and FR)</td><td>Thin: 155–288 words. Google may leave them out of its index.</td><td><span class="chip warn">Medium</span></td><td>Add real facts per chalet (bedrooms, sleeps, distances, what is included, a short FAQ). Needs the agency's details; no facts are invented.</td></tr>
         <tr><td>Legal notice and privacy (EN, FR)</td><td>Business address still "To be confirmed".</td><td><span class="chip warn">Medium</span></td><td>Add the address when it is ready (15 Nov).</td></tr>
-        <tr><td>Legal notice and privacy</td><td>Show "Last updated 26 October" although your details were added on 3 November.</td><td><span class="chip na">Low</span></td><td>Set the date to 3 November. Code, 2 minutes.</td></tr>
-        <tr><td>16 guides</td><td>Article data has the modified date but no publication date (Google recommends both).</td><td><span class="chip na">Low</span></td><td>Add <code>datePublished</code>. Code.</td></tr>
-        <tr><td>10 hotel and 14 chalet pages, each in EN and FR</td><td>No visible "Last updated" date, and no structured data saying what the page is about (only breadcrumbs).</td><td><span class="chip na">Low</span></td><td>Add the date, plus <code>Hotel</code> / <code>Accommodation</code> data from the sourced facts already on the page (no prices). Code.</td></tr>
-        <tr><td>Service pages (20)</td><td>Validator warning: <code>inLanguage</code> is not a property of Service (ignored by Google).</td><td><span class="chip na">Low</span></td><td>Remove it. Code.</td></tr>
-        <tr><td>llms.txt</td><td>Nine experience links all point to the same <code>/experiences/</code> page.</td><td><span class="chip na">Low</span></td><td>Point each to its section, or keep one link. Code.</td></tr>
-        <tr><td>About (EN, FR)</td><td>A hidden "TODO" note sits in the page source (not visible to visitors, visible to bots).</td><td><span class="chip na">Low</span></td><td>Remove the comment; add the founder when known. Code.</td></tr>
+        <tr><td>Legal notice and privacy</td><td>Showed "Last updated 26 October" although your details were added on 3 November.</td><td><span class="chip pass">Fixed 6 Nov</span></td><td>Dated 3 November.</td></tr>
+        <tr><td>16 guides</td><td>Article data had the modified date but no publication date (Google recommends both).</td><td><span class="chip pass">Fixed 6 Nov</span></td><td><code>datePublished</code> added.</td></tr>
+        <tr><td>10 hotel and 14 chalet pages, each in EN and FR</td><td>No structured data saying what the page is about (only breadcrumbs); chalet pages had no visible date (hotel pages already showed when their facts were checked).</td><td><span class="chip pass">Fixed 6 Nov</span></td><td>Added <code>Hotel</code> / <code>House</code> / <code>Apartment</code> data from the facts already on each page (no prices), "Last updated" on chalet pages, real dates in the sitemap.</td></tr>
+        <tr><td>Service pages (20)</td><td>Validator warning: <code>inLanguage</code> is not a property of Service (ignored by Google).</td><td><span class="chip pass">Fixed 6 Nov</span></td><td>Removed.</td></tr>
+        <tr><td>llms.txt</td><td>Nine experience links all pointed to the same <code>/experiences/</code> page.</td><td><span class="chip pass">Fixed 6 Nov</span></td><td>One link, the experiences listed under it.</td></tr>
+        <tr><td>About (EN, FR)</td><td>A hidden "TODO" note sat in the page source (not visible to visitors, visible to bots).</td><td><span class="chip pass">Fixed 6 Nov</span></td><td>Note moved out of the page's HTML; the founder still to come from you.</td></tr>
         <tr><td>http non-www address</td><td>Takes two redirects to reach www (one is ideal; Google follows up to ten).</td><td><span class="chip na">Low</span></td><td>Leave as is; Netlify adds the HTTPS step first.</td></tr>
       </tbody>
     </table></div>
@@ -309,14 +309,14 @@ footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule);
         </ul>
       </div>
       <div class="card">
-        <p class="who">Me · code, about an hour, on a preview first</p>
+        <p class="who">Me · code · done and live 6 November</p>
         <ul>
           <li>Publication dates on the 16 guides.</li>
-          <li>"Last updated" dates on hotel and chalet pages; 3 November on the legal pages.</li>
-          <li>Hotel and Accommodation structured data from the facts already on those pages (no prices).</li>
-          <li>Remove <code>inLanguage</code> from Service data.</li>
-          <li>Tidy llms.txt experience links; remove the hidden note on About.</li>
-          <li>Slightly smaller photo sizes on the homepage and chalets list.</li>
+          <li>"Last updated" on chalet pages; 3 November on the legal pages; real dates in the sitemap.</li>
+          <li>Hotel, House and Apartment structured data from the facts already on those pages (no prices).</li>
+          <li><code>inLanguage</code> removed from Service data.</li>
+          <li>llms.txt experience links tidied; the hidden note on About removed.</li>
+          <li>Photo sizes matched to phone screens on the homepage, lists, chalet and hotel pages.</li>
         </ul>
         <p class="who" style="margin-top:20px">Me · to follow up</p>
         <ul>

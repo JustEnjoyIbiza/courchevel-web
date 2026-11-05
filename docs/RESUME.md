@@ -43,9 +43,16 @@ is mostly the owner's: legal facts, accounts, About page facts (season opens 4 D
   (managed by courchevelluxuryconcierge@gmail.com) is **unverified**, category "Travel agency", website set
   to the bare domain, 7 reviews (14 on 22 Oct), one review from the owner's own account "Not published";
   Bing Places import shows 0 listings because Bing imports verified profiles only. Google still chose the
-  bare domain as canonical for the homepage on 5 Nov (301 to www in place). Code quick wins listed in the
-  audit (guide `datePublished`, "Last updated" on hotel/chalet pages, Hotel/Accommodation schema, legal
-  pages dated 3 Nov, `inLanguage` off Service, llms.txt experience links), not done yet.
+  bare domain as canonical for the homepage on 5 Nov (301 to www in place).
+- **Audit code fixes, live 6 Nov** (PR #5, merge 12a3b3a, owner's go-ahead): hotel pages carry a WebPage
+  `about` Hotel (official site = first source not on a guide/press host, `hotelWebsite` in src/lib/hotels.ts;
+  none for L'Apogée), chalet pages `about` House/Apartment (bedrooms, guests, size, ski-in; never price) and
+  a visible "Last updated" (`chaletsChecked` in src/content/chalets.ts: update it with new chalet details);
+  sitemap lastmod from hotel `checked:` and `chaletsChecked`; guides `datePublished` (optional `published:`,
+  else `updated`); Service data without `inLanguage`; legal pages `updated: 2026-11-03`; llms.txt one
+  Experiences link; About TODO now a YAML frontmatter comment (content lint skips those); photo `widths`/
+  `sizes` matched to the page margins (Lighthouse: Chalet Titan no oversized images, LCP 1.2 s; Les Airelles
+  LCP 1.4 s). Checked against the schema.org vocabulary: 0 problems.
 - Off-site link plan (5 Nov): `docs/link-plan.html`, published as a private checklist page for the owner.
 - Still open from the launch-day list (`docs/launch-plan.md` §5.2): a real test enquiry from a phone;
   UTM links on Google Business Profile
