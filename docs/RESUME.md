@@ -23,8 +23,17 @@ is mostly the owner's: legal facts, accounts, About page facts (season opens 4 D
   `/mentions-legales/` and `/privacy/` (EN + FR) still show "To be confirmed" for the company facts
   (`business.legal` in `src/data/business.ts`). The owner chose to launch first and send them later.
 - **Rollback:** Netlify → Deploys → `6ad294aacfc3b8d0e82f3b94` (old site, 16 Oct) → Publish deploy.
+- **Search Console (5 Nov):** URL-prefix property `https://www.courchevelluxuryconcierge.com/` in the owner's
+  Google account (the one that also holds the justenjoyibiza.com properties; only owner). Verified by the
+  file `public/googlebfe6888232f75337.html`: never delete it (the QA page checks skip it). Sitemap
+  `/sitemap-index.xml` read: Success, 128 pages. Request indexing done for /, /fr/, /services/,
+  /services/chalets/, /services/transfers/, /courchevel-1850/, /palace-hotels-courchevel/,
+  /services/private-chef/, /fr/services/, /fr/courchevel-1850/ (about 10 a day allowed). Before that
+  Google knew www only as "page with redirect" (last crawl 3 Nov, before the www switch). Two older
+  `google-site-verification` TXT records at GoDaddy belong to other, unknown accounts.
+- Off-site link plan (5 Nov): `docs/link-plan.html`, published as a private checklist page for the owner.
 - Still open from the launch-day list (`docs/launch-plan.md` §5.2): a real test enquiry from a phone;
-  Search Console sitemap + Request indexing; Bing Webmaster Tools; UTM links on Google Business Profile
+  Bing Webmaster Tools; UTM links on Google Business Profile
   and Instagram; IndexNow key (`INDEXNOW_KEY` not set, so no ping yet); close Basin's old form after a
   week. Also: domain renewal before **30 Nov**, Turnstile, Telegram alerts.
 - Tools on this Mac: Node `~/.local/node/bin`; GitHub CLI `~/.local/bin/gh` (signed in as
