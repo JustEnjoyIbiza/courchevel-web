@@ -36,6 +36,16 @@ is mostly the owner's: legal facts, accounts, About page facts (season opens 4 D
   **IndexNow:** `INDEXNOW_KEY` set in Netlify (production context); key file live at
   `/aafc51e39dc5414594dae62d86da3a36.txt`; a manual ping of all 128 URLs answered 200. Every production
   deploy now pings IndexNow (plugin `netlify/plugins/indexnow`). Launch check passes with `--indexnow-key`.
+- **SEO and AI-search audit (5 Nov):** `docs/seo-audit-2026-11-05.html`, published for the owner at
+  https://claude.ai/artifact/4YtMpxiJm5FH4N5Tfb86XS. Site technically clean (128/128 indexable, 0 broken
+  links, hreflang complete, 0 schema errors, Lighthouse mobile 98–100 on 8 pages, 15 crawler identities get
+  identical full HTML). Findings outside the code: domain still expires 30 Nov; the Google Business Profile
+  (managed by courchevelluxuryconcierge@gmail.com) is **unverified**, category "Travel agency", website set
+  to the bare domain, 7 reviews (14 on 22 Oct), one review from the owner's own account "Not published";
+  Bing Places import shows 0 listings because Bing imports verified profiles only. Google still chose the
+  bare domain as canonical for the homepage on 5 Nov (301 to www in place). Code quick wins listed in the
+  audit (guide `datePublished`, "Last updated" on hotel/chalet pages, Hotel/Accommodation schema, legal
+  pages dated 3 Nov, `inLanguage` off Service, llms.txt experience links), not done yet.
 - Off-site link plan (5 Nov): `docs/link-plan.html`, published as a private checklist page for the owner.
 - Still open from the launch-day list (`docs/launch-plan.md` §5.2): a real test enquiry from a phone;
   UTM links on Google Business Profile

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courchevel SEO Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Ivory & Brass, the site's own palette. Layout: one reading column; verdict first, then evidence tables, then the action plan. */
+:root {
+  --bg: #fbf8f3;
+  --panel: #efe8de;
+  --ink: #231b15;
+  --muted: #6b5d52;
+  --accent: #7f6129;
+  --rule: #e3d9cb;
+  --brass: #c9a15a;
+  --pass: #2f6b3a;
+  --pass-bg: #e3efe2;
+  --warn: #8a5a12;
+  --warn-bg: #f6ead2;
+  --fail: #9b2c22;
+  --fail-bg: #f6dcd7;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1b1612; --panel: #251f1a; --ink: #f1ebe2; --muted: #b5a798; --accent: #d9b574; --rule: #3a3129; --brass: #c9a15a;
+    --pass: #9fd59a; --pass-bg: #1f3320; --warn: #f2c77a; --warn-bg: #3a2c14; --fail: #f3a196; --fail-bg: #3d1d19;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1b1612; --panel: #251f1a; --ink: #f1ebe2; --muted: #b5a798; --accent: #d9b574; --rule: #3a3129; --brass: #c9a15a;
+  --pass: #9fd59a; --pass-bg: #1f3320; --warn: #f2c77a; --warn-bg: #3a2c14; --fail: #f3a196; --fail-bg: #3d1d19;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--font-body); }
+.wrap { max-width: 920px; margin: 0 auto; padding: 48px 20px 80px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.2rem); line-height: 1.05; }
+h2 { font-size: 1.9rem; line-height: 1.15; }
+h3 { font-size: 1.35rem; line-height: 1.2; margin-top: 28px; }
+p { max-width: 68ch; }
+.eyebrow { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.lede { color: var(--muted); margin: 16px 0 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+code { font-size: .88em; background: var(--panel); padding: 1px 5px; }
+section { margin: 56px 0 0; }
+section > header { border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; }
+section > header p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+.verdict { margin: 32px 0 0; padding: 22px 24px; background: var(--panel); border-left: 3px solid var(--brass); }
+.verdict p { margin: 8px 0 0; }
+.verdict strong { color: var(--ink); }
+
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 24px 0 0; }
+.tile { background: var(--bg); padding: 14px 16px; }
+.tile b { display: block; font-family: var(--font-display); font-size: 2rem; font-weight: 600; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tile span { font-size: .82rem; color: var(--muted); }
+
+.prio { counter-reset: p; display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.prio li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 4px 14px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.prio li::before { counter-increment: p; content: counter(p); font-family: var(--font-display); font-size: 2rem; line-height: 1; color: var(--accent); grid-row: span 2; }
+.prio b { display: block; }
+.prio p { margin: 4px 0 0; }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--rule); }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th, td { text-align: left; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid var(--rule); }
+th { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; background: var(--panel); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.chip { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .03em; padding: 2px 8px; white-space: nowrap; }
+.pass { background: var(--pass-bg); color: var(--pass); }
+.warn { background: var(--warn-bg); color: var(--warn); }
+.fail { background: var(--fail-bg); color: var(--fail); }
+.na { background: var(--panel); color: var(--muted); }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.card { border: 1px solid var(--rule); padding: 18px 20px; }
+.card h3 { margin-top: 0; }
+.card ul, .plain { margin: 10px 0 0; padding-left: 18px; }
+.card li, .plain li { margin: 6px 0; }
+.who { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.note { font-size: .85rem; color: var(--muted); }
+footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: .82rem; color: var(--muted); }
+
+@media (max-width: 640px) {
+  .wrap { padding: 32px 16px 64px; }
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .split { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">courchevelluxuryconcierge.com · SEO and AI search audit · 5 November 2026</p>
+  <h1>Can Google and AI find you?</h1>
+  <p class="lede">A full check of the live site, two days after launch: every page as Google, Bing, ChatGPT, Claude and Perplexity receive it, the machine-readable layer, speed, what is indexed today, and your Google Business Profile.</p>
+
+  <div class="verdict">
+    <p class="eyebrow">Verdict</p>
+    <p><strong>The website itself is in excellent shape.</strong> All 128 pages are readable by every search engine and AI assistant tested, carry valid structured data, and score 98 to 100 on Google's own speed test. Nothing in the code blocks you.</p>
+    <p><strong>What decides your visibility now is outside the code:</strong> the domain must be renewed before 30 November, your Google Business Profile is not verified (and is listed as a "Travel agency"), and almost no other websites link to you yet.</p>
+  </div>
+
+  <div class="tiles" aria-label="Key numbers">
+    <div class="tile"><b>128/128</b><span>pages load, indexable, in the sitemap</span></div>
+    <div class="tile"><b>98–100</b><span>Google Lighthouse speed, mobile, 8 pages</span></div>
+    <div class="tile"><b>15/15</b><span>search and AI crawlers get the full page</span></div>
+    <div class="tile"><b>0</b><span>structured-data errors (Schema.org validator)</span></div>
+  </div>
+
+  <section aria-labelledby="s-prio">
+    <header><h2 id="s-prio">The three things that matter most</h2><p>In order</p></header>
+    <ol class="prio">
+      <li><b>Renew the domain before 30 November 2026</b><p>The public register still shows courchevelluxuryconcierge.com expiring on 30 November at GoDaddy (checked 5 November). If it lapses, the site, its Google ranking and every link to it stop working. Renew it and turn on auto-renew: 10 minutes.</p></li>
+      <li><b>Verify your Google Business Profile and fix two settings</b><p>The profile, managed from courchevelluxuryconcierge@gmail.com, says "Verification required". Unverified, Google limits what you can change and publish, and Bing Places cannot import it (it imports verified profiles only, which is why it shows 0 listings). Once verified: change the category from "Travel agency" to "Concierge service", and set the website to the www address. That last change also helps Google move its main address to www (see below).</p></li>
+      <li><b>Build trust signals off the site</b><p>Only one website links to you today (Seobility). Real client reviews, the founder on the About page, the street address (due 15 November) and links from partners and the tourist office are what move rankings and AI recommendations from here. The <a href="https://claude.ai/artifact/Bne7sdrgWJ5jitbAmU3Bhu">link plan</a> lists the sites, in order.</p></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="s-ai">
+    <header><h2 id="s-ai">Is the site written so AI can read it?</h2><p>Yes, on every count</p></header>
+    <p>AI assistants and search engines read three things: the page text in the HTML, the structured data (a machine-readable description of the business in the schema.org vocabulary, the "language" bots understand), and the rules in robots.txt. All three are in place.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>What bots need</th><th>Status</th><th>What I found</th></tr></thead>
+      <tbody>
+        <tr><td>Full text without JavaScript</td><td><span class="chip pass">Pass</span></td><td>Every page is built as plain HTML on the server. A crawler that runs no scripts gets the complete text, headings and links (homepage: 1,111 words in the raw HTML).</td></tr>
+        <tr><td>Access for each crawler</td><td><span class="chip pass">Pass</span></td><td>Fetched 3 pages as 15 agents: Googlebot, Bingbot, ChatGPT (OAI-SearchBot, ChatGPT-User, GPTBot), Claude (Claude-SearchBot, Claude-User, ClaudeBot), Perplexity (PerplexityBot, Perplexity-User), Applebot, Amazon, Meta, DuckDuckGo. All got the same 200 response, same size, same structured data. No firewall rules in the project's Netlify configuration.</td></tr>
+        <tr><td>robots.txt</td><td><span class="chip pass">Pass</span></td><td>Names 13 search and AI agents and allows each, closes only <code>/api/</code> (the form endpoint), lists the sitemap. Training crawlers (GPTBot, ClaudeBot, Google-Extended) are allowed too: a policy choice that maximises AI visibility, not a defect.</td></tr>
+        <tr><td>Structured data (JSON-LD)</td><td><span class="chip pass">Pass</span></td><td>On all 128 pages: the business record (LocalBusiness with phone, email, area served, map, Instagram, languages, services), plus Service on service pages, Article on 16 guides, FAQPage on 62 pages, BreadcrumbList everywhere. Every page points to the same business ID, so engines see one entity. Validator: 0 errors.</td></tr>
+        <tr><td>llms.txt</td><td><span class="chip pass">Pass</span></td><td>Valid format (title, summary, key facts, 37 links in sections, an Optional section), generated from the same data as the site. Low impact: Google says it ignores llms.txt, and other engines do not document using it to pick sources. Harmless and correct to have.</td></tr>
+        <tr><td>Answers AI can quote</td><td><span class="chip pass">Pass</span></td><td>Each page opens with a 2–3 sentence answer, then facts, FAQ and a "Last updated" date (missing on 48 hotel and chalet pages, see issues). Clear facts: altiport, transfer times, season dates, heli-skiing law.</td></tr>
+        <tr><td>Bing (feeds ChatGPT search and Copilot)</td><td><span class="chip pass">Pass</span></td><td>Bing's live test: "URL can be indexed", "No SEO/GEO issues found", 2 markup types found. IndexNow accepted all 128 pages on 5 November.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="s-index">
+    <header><h2 id="s-index">What Google and Bing have indexed today</h2><p>Two days after launch</p></header>
+    <div class="split">
+      <div class="card">
+        <h3>Google</h3>
+        <ul>
+          <li>Sitemap read: <strong>Success, 128 pages</strong>.</li>
+          <li>Already in Google with their new titles: the French homepage, chalets, palace hotels, Courchevel 1850, About, a guide (a <code>site:</code> search on 5 November).</li>
+          <li><strong>Homepage:</strong> crawled again on 5 November at 13:29 after the indexing request, but Google still treats the old non-www address as the main one ("Google chose different canonical"). The search result still shows the old site's description. The non-www address now answers with a permanent 301 redirect to www, so Google normally switches within days to a few weeks. Pointing your Google profile and Instagram at the www address speeds it up.</li>
+          <li>Page reports in Search Console: "Processing data", ready in a day or two.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Bing</h3>
+        <ul>
+          <li>Homepage: <strong>"Indexed successfully"</strong>. Its stored copy is the older one; the live page passes all checks.</li>
+          <li>Sitemap: Success. IndexNow: 128 pages accepted on 5 November; every future publish pings Bing automatically.</li>
+          <li>Bing Places: blocked until the Google profile is verified.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="s-speed">
+    <header><h2 id="s-speed">Speed and Core Web Vitals</h2><p>Google Lighthouse 12.8, mobile, second run</p></header>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Page</th><th>Speed</th><th>Access.</th><th>Best pr.</th><th>SEO</th><th>LCP</th><th>CLS</th><th>Blocking</th></tr></thead>
+      <tbody>
+        <tr><td>Homepage</td><td class="num">98</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">1.9 s</td><td class="num">0</td><td class="num">0 ms</td></tr>
+        <tr><td>Homepage, French</td><td class="num">98</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">2.0 s</td><td class="num">0.003</td><td class="num">0 ms</td></tr>
+        <tr><td>Transfers</td><td class="num">99</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">1.8 s</td><td class="num">0</td><td class="num">0 ms</td></tr>
+        <tr><td>Chalets</td><td class="num">98</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">2.0 s</td><td class="num">0</td><td class="num">0 ms</td></tr>
+        <tr><td>Chalet Ibis</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">1.3 s</td><td class="num">0</td><td class="num">0 ms</td></tr>
+        <tr><td>Guide: Geneva to Courchevel</td><td class="num">99</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">1.9 s</td><td class="num">0</td><td class="num">0 ms</td></tr>
+        <tr><td>Palace hotels</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">1.0 s</td><td class="num">0</td><td class="num">0 ms</td></tr>
+        <tr><td>Request form</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">1.1 s</td><td class="num">0</td><td class="num">0 ms</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Google's thresholds: LCP (main image or text visible) under 2.5 s, CLS (layout shift) under 0.1. All pages pass. Lighthouse suggests about 150 KB of image savings on the homepage and chalets list (slightly larger photos than the phone needs): a small gain, not a problem. Real-user speed data appears in Search Console after about four weeks of visits.</p>
+  </section>
+
+  <section aria-labelledby="s-tech">
+    <header><h2 id="s-tech">Technical checklist</h2><p>All 128 sitemap pages and 340 internal links</p></header>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Check</th><th>Status</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Domain registration</td><td><span class="chip fail">Fail</span></td><td>Expires 30 November 2026 (GoDaddy). Not yet renewed.</td></tr>
+        <tr><td>Google Business Profile</td><td><span class="chip fail">Fail</span></td><td>"Verification required"; category "Travel agency"; website set to the non-www address.</td></tr>
+        <tr><td>Links from other websites</td><td><span class="chip fail">Fail</span></td><td>1 referring domain (Seobility, 5 Nov).</td></tr>
+        <tr><td>Google's chosen main address</td><td><span class="chip warn">Warning</span></td><td>Homepage still filed under non-www in Google; correct 301 in place, switch expected.</td></tr>
+        <tr><td>HTTPS and redirects</td><td><span class="chip pass">Pass</span></td><td>HTTPS with HSTS. Non-www, http, missing slash, capitals, <code>/index.html</code> and old-site URLs all 301 to the right www page.</td></tr>
+        <tr><td>Canonical tags</td><td><span class="chip pass">Pass</span></td><td>128/128 point to themselves; tracking links (<code>?utm=</code>) point to the clean URL.</td></tr>
+        <tr><td>XML sitemap</td><td><span class="chip pass">Pass</span></td><td>128 URLs, each with last-modified date and EN/FR alternates. Read by Google and Bing.</td></tr>
+        <tr><td>Index control</td><td><span class="chip pass">Pass</span></td><td>No page blocked by mistake. The 18 short request forms are deliberately <code>noindex</code>; the Netlify test address sends <code>noindex</code>.</td></tr>
+        <tr><td>Unknown pages</td><td><span class="chip pass">Pass</span></td><td>Return a real 404.</td></tr>
+        <tr><td>Broken links</td><td><span class="chip pass">Pass</span></td><td>0 of 340 internal link targets broken or redirected. No orphan pages.</td></tr>
+        <tr><td>Languages (hreflang)</td><td><span class="chip pass">Pass</span></td><td>Every page pairs EN ↔ FR plus x-default, both ways; <code>lang</code> attribute correct.</td></tr>
+        <tr><td>Titles</td><td><span class="chip pass">Pass</span></td><td>All unique, 26–59 characters.</td></tr>
+        <tr><td>Meta descriptions</td><td><span class="chip pass">Pass</span></td><td>All unique, 74–154 characters.</td></tr>
+        <tr><td>Headings</td><td><span class="chip pass">Pass</span></td><td>One H1 per page, no skipped levels.</td></tr>
+        <tr><td>Images</td><td><span class="chip pass">Pass</span></td><td>970 images: all with alt text and dimensions, served as AVIF/WebP.</td></tr>
+        <tr><td>Social sharing</td><td><span class="chip pass">Pass</span></td><td>Open Graph and large-image cards on every page.</td></tr>
+        <tr><td>Mobile and accessibility</td><td><span class="chip pass">Pass</span></td><td>Lighthouse accessibility 100 on all 8 pages tested.</td></tr>
+        <tr><td>Security headers</td><td><span class="chip pass">Pass</span></td><td>HSTS, content security policy, frame and content-type protection.</td></tr>
+        <tr><td>Rich results</td><td><span class="chip na">Note</span></td><td>Breadcrumbs are eligible. Google shows FAQ rich results only for well-known government and health sites since 2023, so the 62 FAQ blocks help understanding, not search appearance.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="s-issues">
+    <header><h2 id="s-issues">Issues found on the pages</h2><p>None blocks indexing</p></header>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Pages</th><th>Issue</th><th>Severity</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr><td>10 chalet pages (Ibis, Capucine, Hugo, Titan, Philip; EN and FR)</td><td>Thin: 155–288 words. Google may leave them out of its index.</td><td><span class="chip warn">Medium</span></td><td>Add real facts per chalet (bedrooms, sleeps, distances, what is included, a short FAQ). Needs the agency's details; no facts are invented.</td></tr>
+        <tr><td>Legal notice and privacy (EN, FR)</td><td>Business address still "To be confirmed".</td><td><span class="chip warn">Medium</span></td><td>Add the address when it is ready (15 Nov).</td></tr>
+        <tr><td>Legal notice and privacy</td><td>Show "Last updated 26 October" although your details were added on 3 November.</td><td><span class="chip na">Low</span></td><td>Set the date to 3 November. Code, 2 minutes.</td></tr>
+        <tr><td>16 guides</td><td>Article data has the modified date but no publication date (Google recommends both).</td><td><span class="chip na">Low</span></td><td>Add <code>datePublished</code>. Code.</td></tr>
+        <tr><td>10 hotel and 14 chalet pages, each in EN and FR</td><td>No visible "Last updated" date, and no structured data saying what the page is about (only breadcrumbs).</td><td><span class="chip na">Low</span></td><td>Add the date, plus <code>Hotel</code> / <code>Accommodation</code> data from the sourced facts already on the page (no prices). Code.</td></tr>
+        <tr><td>Service pages (20)</td><td>Validator warning: <code>inLanguage</code> is not a property of Service (ignored by Google).</td><td><span class="chip na">Low</span></td><td>Remove it. Code.</td></tr>
+        <tr><td>llms.txt</td><td>Nine experience links all point to the same <code>/experiences/</code> page.</td><td><span class="chip na">Low</span></td><td>Point each to its section, or keep one link. Code.</td></tr>
+        <tr><td>About (EN, FR)</td><td>A hidden "TODO" note sits in the page source (not visible to visitors, visible to bots).</td><td><span class="chip na">Low</span></td><td>Remove the comment; add the founder when known. Code.</td></tr>
+        <tr><td>http non-www address</td><td>Takes two redirects to reach www (one is ideal; Google follows up to ten).</td><td><span class="chip na">Low</span></td><td>Leave as is; Netlify adds the HTTPS step first.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="s-gbp">
+    <header><h2 id="s-gbp">Google Business Profile, as Google shows it today</h2><p>Your strongest asset for "concierge Courchevel"</p></header>
+    <ul class="plain">
+      <li><strong>5.0★ from 7 reviews</strong>, "Open 24 hours", phone correct. My notes from 22 October recorded 14 reviews; Google does not say why the count changed.</li>
+      <li><strong>Category "Travel agency".</strong> Clients search for a concierge; set the primary category to "Concierge service".</li>
+      <li><strong>Website link: the non-www address.</strong> Change it to <code>https://www.courchevelluxuryconcierge.com/</code> with the tagged link in <code>platform-profiles-kit.md</code>.</li>
+      <li><strong>One review was written from your own "Just Enjoy" Google account</strong>, and Google marks it "Not published". Google's rules do not allow reviews from a business's owner or staff; delete it, and ask only real clients.</li>
+      <li>One review says "Best concierge service in Ibiza!" on the Courchevel listing. You cannot remove it; once verified, a short thank-you reply is enough.</li>
+      <li><strong>Verification:</strong> Google offers the method (often a short video of the business and its tools, or a call). It needs you in person; ideally once the address is settled.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="s-kw">
+    <header><h2 id="s-kw">Keyword map</h2><p>From the October research; no SEO tool connected, so no search volumes</p></header>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Search</th><th>Intent</th><th>Difficulty (estimate)</th><th>Opportunity</th><th>Page that answers it</th></tr></thead>
+      <tbody>
+        <tr><td>luxury concierge Courchevel</td><td>Commercial</td><td>Hard</td><td><span class="chip pass">High</span></td><td><code>/</code></td></tr>
+        <tr><td>conciergerie de luxe Courchevel</td><td>Commercial</td><td>Moderate</td><td><span class="chip pass">High</span></td><td><code>/fr/</code></td></tr>
+        <tr><td>best concierge Courchevel</td><td>Commercial</td><td>Hard</td><td><span class="chip pass">High</span></td><td><code>/guides/how-to-choose-a-concierge-in-courchevel/</code></td></tr>
+        <tr><td>helicopter transfer Courchevel</td><td>Transactional</td><td>Hard</td><td><span class="chip pass">High</span></td><td><code>/services/transfers/</code></td></tr>
+        <tr><td>Geneva to Courchevel transfer</td><td>Informational</td><td>Moderate</td><td><span class="chip pass">High</span></td><td><code>/guides/getting-to-courchevel/</code></td></tr>
+        <tr><td>Christmas / New Year's Eve Courchevel</td><td>Seasonal</td><td>Moderate</td><td><span class="chip pass">High</span> now</td><td><code>/christmas-new-year-courchevel/</code></td></tr>
+        <tr><td>private chef Courchevel</td><td>Transactional</td><td>Moderate</td><td><span class="chip pass">High</span></td><td><code>/services/private-chef/</code></td></tr>
+        <tr><td>chef à domicile Courchevel</td><td>Transactional</td><td>Moderate</td><td><span class="chip warn">Medium</span></td><td><code>/fr/services/private-chef/</code></td></tr>
+        <tr><td>transfert Genève Courchevel</td><td>Transactional</td><td>Moderate</td><td><span class="chip warn">Medium</span></td><td><code>/fr/services/transfers/</code></td></tr>
+        <tr><td>luxury chalet rental Courchevel 1850</td><td>Transactional</td><td>Hard (agencies)</td><td><span class="chip warn">Medium</span></td><td><code>/services/chalets/</code></td></tr>
+        <tr><td>private ski instructor Courchevel</td><td>Transactional</td><td>Hard (ski schools)</td><td><span class="chip warn">Medium</span></td><td><code>/services/ski/</code></td></tr>
+        <tr><td>palace hotels Courchevel</td><td>Informational</td><td>Hard</td><td><span class="chip warn">Medium</span></td><td><code>/palace-hotels-courchevel/</code></td></tr>
+        <tr><td>where to eat in Courchevel</td><td>Informational</td><td>Hard</td><td><span class="chip warn">Medium</span></td><td><code>/guides/where-to-eat/</code></td></tr>
+        <tr><td>heli-skiing Courchevel</td><td>Informational</td><td>Moderate</td><td><span class="chip warn">Medium</span></td><td><code>/guides/heli-skiing-from-courchevel/</code></td></tr>
+        <tr><td>Méribel / Val Thorens concierge</td><td>Commercial</td><td>Moderate</td><td><span class="chip warn">Medium</span></td><td><code>/meribel/</code>, <code>/val-thorens/</code></td></tr>
+        <tr><td>private vs hotel concierge</td><td>Informational</td><td>Easy</td><td><span class="chip warn">Medium</span></td><td><code>/guides/private-concierge-vs-hotel-concierge/</code></td></tr>
+        <tr><td>concierge for assistants / family offices</td><td>Commercial (niche)</td><td>Easy</td><td><span class="chip warn">Medium</span></td><td><code>/assistants-and-family-offices/</code></td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Every target search already has its own page with a matching title. Rankings cannot be measured yet: Search Console starts showing searches and positions a few days after a site is added. Re-check this table at the end of November.</p>
+  </section>
+
+  <section aria-labelledby="s-comp">
+    <header><h2 id="s-comp">Against the competitors</h2><p>Competitor facts from the 22 October review</p></header>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Dimension</th><th>Your site today</th><th>Competitors</th><th>Ahead</th></tr></thead>
+      <tbody>
+        <tr><td>Content depth</td><td>128 pages EN/FR, median 793 words; 8 guides, village pages</td><td>Nightfall ~1,000 words, AC Private ~900 words, on one main page</td><td>You</td></tr>
+        <tr><td>FAQ coverage</td><td>62 FAQ blocks</td><td>Nightfall 12, AC Private 12</td><td>You</td></tr>
+        <tr><td>Technical and AI readiness</td><td>98–100 speed, schema everywhere, all AI crawlers allowed</td><td>Not measured</td><td>Likely you</td></tr>
+        <tr><td>Reviews</td><td>5.0 from 7 on Google</td><td>Homebooker 4.9 from 312; Nightfall Trustpilot 4.5</td><td>Them</td></tr>
+        <tr><td>Trust facts</td><td>No founder named, no street address yet</td><td>Courchevel Concierge "since 1987" with address; White Management names its lead</td><td>Them</td></tr>
+        <tr><td>Mentions and links</td><td>1 referring domain</td><td>Nightfall: Forbes and Maxim mentions</td><td>Them</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">The site is now the most complete in the field; the gap is trust and reputation, which only reviews, a named founder, an address and mentions can close.</p>
+  </section>
+
+  <section aria-labelledby="s-plan">
+    <header><h2 id="s-plan">Action plan</h2><p>Who does what</p></header>
+    <div class="split">
+      <div class="card">
+        <p class="who">You · this week</p>
+        <ul>
+          <li><strong>Renew the domain</strong>, auto-renew on (10 min).</li>
+          <li><strong>Verify the Google profile</strong>, then category "Concierge service" and website link to www (30 min plus Google's check).</li>
+          <li><strong>Delete the review from your own account.</strong></li>
+          <li><strong>Instagram bio link</strong> to the www address (2 min).</li>
+          <li>Ask 5 recent clients for a Google review (message in <code>platform-profiles-kit.md</code>).</li>
+        </ul>
+        <p class="who" style="margin-top:20px">You · this season</p>
+        <ul>
+          <li>Street address (15 Nov) into the site, Google and Bing.</li>
+          <li>Founder name, photo and story for the About page.</li>
+          <li>Facts for the five thinnest chalets from the agency.</li>
+          <li>The link plan: partners, tourist office, Bing Places, Apple.</li>
+          <li>Reviews: aim for 30 by Christmas, real clients only.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="who">Me · code, about an hour, on a preview first</p>
+        <ul>
+          <li>Publication dates on the 16 guides.</li>
+          <li>"Last updated" dates on hotel and chalet pages; 3 November on the legal pages.</li>
+          <li>Hotel and Accommodation structured data from the facts already on those pages (no prices).</li>
+          <li>Remove <code>inLanguage</code> from Service data.</li>
+          <li>Tidy llms.txt experience links; remove the hidden note on About.</li>
+          <li>Slightly smaller photo sizes on the homepage and chalets list.</li>
+        </ul>
+        <p class="who" style="margin-top:20px">Me · to follow up</p>
+        <ul>
+          <li>Search Console in a week: canonical switch, pages indexed, first searches.</li>
+          <li>Bing Places import once the profile is verified.</li>
+          <li>The monthly AI test: 20 questions to ChatGPT, Perplexity and Google, logged in <code>docs/ai-visibility/</code>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>How this was checked, 5 November 2026: a crawl of all 128 sitemap pages and 340 internal links; each page fetched as 15 crawler identities; Schema.org validator on 7 templates; Google Lighthouse 12.8.2 (mobile, simulated slow 4G) on 8 pages, second run; Google Search Console and Bing Webmaster Tools URL inspection; a Google <code>site:</code> search; the public Google Maps listing and Business Profile Manager; Seobility; the public domain register. Not measured: search volumes and rankings (no SEO tool connected, too early for Search Console), and IP-level blocking, which can only be seen in server logs.</p>
+  </footer>
+</main>
+</body>
+</html>
