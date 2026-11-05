@@ -55,6 +55,8 @@ const pageFields = {
   answer: z.string(),
   /** "Last updated" date shown on the page. */
   updated: z.coerce.date(),
+  /** First published, for the guides' Article data (datePublished). Defaults to `updated`. */
+  published: z.coerce.date().optional(),
   image: z.enum(photoKeys).optional(),
   imageAlt: z.string().optional(),
   /** Key facts as label/value pairs (times, distances, how far ahead to book). */

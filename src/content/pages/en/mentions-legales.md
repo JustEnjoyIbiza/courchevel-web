@@ -3,7 +3,7 @@ title: "Legal notice"
 metaTitle: "Legal Notice | Courchevel Luxury Concierge"
 description: "Legal notice for courchevelluxuryconcierge.com: who publishes and hosts the site, intellectual property, photo credits and how to contact us."
 answer: "This page identifies who publishes this website and who hosts it, as French law requires (law no. 2004-575 of 21 June 2004, article 6), and sets out the rules for using its content."
-updated: 2026-10-26
+updated: 2026-11-03
 legal: notice
 ---
 

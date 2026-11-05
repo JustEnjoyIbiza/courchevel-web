@@ -36,6 +36,9 @@ export interface Chalet {
 /** Shown in this order: Courchevel first, then Méribel. */
 export const chaletAreas: ChaletArea[] = ['1850', '1650', 'le-praz', 'meribel'];
 
+/** When these details came in (the brochures of 25 Oct 2026): "Last updated" on each chalet page and its sitemap date. Change it with the details. */
+export const chaletsChecked = new Date('2026-10-25');
+
 export const chalets: Chalet[] = [
   {
     name: 'Chalet Solstice',

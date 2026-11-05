@@ -7,15 +7,15 @@
  * hotels of the same kind, and when the facts were checked. No prices, no
  * per-hotel WhatsApp link (the site-wide button stays, with its general message).
  */
-import { Picture } from 'astro:assets';
+import { Picture, getImage } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from './Breadcrumbs.astro';
 import HotelCard from './HotelCard.astro';
 import { hotelsCopy } from '../content/hotels-page';
 import { business, whatsappHref, type Locale } from '../data/business';
-import { getHotels, hotelAlt, hotelPath, hotelPhotos, hotelSlug, type Hotel } from '../lib/hotels';
+import { getHotels, hotelAlt, hotelPath, hotelPhotos, hotelSlug, hotelWebsite, type Hotel } from '../lib/hotels';
 import { requestCta } from '../lib/cta';
-import { breadcrumbSchema } from '../lib/schema';
+import { breadcrumbSchema, hotelPageSchema } from '../lib/schema';
 import { localize } from '../lib/routes';
 import { t } from '../i18n/ui';
 
@@ -42,7 +42,14 @@ const crumbs = [
   { name: c.crumb, href: listUrl },
   { name: d.name, href: url },
 ];
-const schema = [breadcrumbSchema(crumbs.map((b) => ({ name: b.name, url: b.href })))];
+const schemaImage = (await getImage({ src: lead.src, width: 1200, format: 'jpeg' })).src;
+const schema = [
+  breadcrumbSchema(crumbs.map((b) => ({ name: b.name, url: b.href }))),
+  hotelPageSchema({
+    url, title: d.metaTitle, locale, checked: d.checked,
+    name: d.name, description: d.description, place: d.place, website: hotelWebsite(h), image: schemaImage,
+  }),
+];
 const checked = new Intl.DateTimeFormat(locale === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(d.checked);
 
 // Gallery rhythm: one wide photo, then two side by side.
@@ -60,8 +67,8 @@ const more = (await getHotels(locale)).filter((y) => y.data.kind === d.kind && y
         src={lead.src}
         alt={hotelAlt(h, lead.room, locale)}
         formats={['avif', 'webp']}
-        widths={[640, 1024, 1600]}
-        sizes="(min-width: 1280px) 1216px, 100vw"
+        widths={[640, 720, 800, 1024, 1600]}
+        sizes="(min-width: 1280px) 1216px, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
         loading="eager"
         fetchpriority="high"
         class="aspect-[3/2] w-full object-cover md:aspect-[16/8]"
@@ -140,8 +147,8 @@ const more = (await getHotels(locale)).filter((y) => y.data.kind === d.kind && y
                   src={p.src}
                   alt={hotelAlt(h, p.room, locale)}
                   formats={['avif', 'webp']}
-                  widths={wide(i) ? [640, 1024, 1600] : [480, 800]}
-                  sizes={wide(i) ? '(min-width: 1280px) 1216px, 100vw' : '(min-width: 768px) 50vw, 100vw'}
+                  widths={wide(i) ? [640, 720, 800, 1024, 1600] : [480, 720, 800]}
+                  sizes={wide(i) ? '(min-width: 1280px) 1216px, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)' : '(min-width: 768px) 50vw, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)'}
                   loading="lazy"
                   class={`w-full object-cover ${wide(i) ? 'aspect-[3/2] md:aspect-[16/8]' : 'aspect-[3/2]'}`}
                 />

@@ -23,6 +23,12 @@ const files = import.meta.glob<ImageMetadata>('../assets/hotels/*/*.jpeg', { eag
 export const hotelSlug = (h: Hotel) => splitId(h.id).slug;
 export const hotelPath = (slug: string, locale: Locale) => localize(`/palace-hotels-courchevel/${slug}/`, locale);
 
+/** Guides, the tourist office and press: sources, but not a hotel's own website. */
+const thirdParty = /(^|\.)(michelin\.com|courchevel\.com|journaldespalaces\.com|france\.fr)$/;
+
+/** The hotel's own website: its first source that is not a guide or press page (none if only those). */
+export const hotelWebsite = (h: Hotel) => h.data.sources.find((u) => !thirdParty.test(new URL(u).hostname));
+
 /** The hotels in one language: palaces first, then five-star hotels, each in their set order. */
 export async function getHotels(locale: Locale): Promise<Hotel[]> {
   const rank = { palace: 0, 'five-star': 1 } as const;

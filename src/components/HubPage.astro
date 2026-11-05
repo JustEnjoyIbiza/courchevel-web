@@ -118,7 +118,7 @@ const crumbs = [
       src={photos[hero.image]}
       alt={hero.alt[locale]}
       formats={['avif', 'webp']}
-      widths={[480, 720, 1000]}
+      widths={[480, 720, 800, 1000]}
       sizes="100vw"
       loading="eager"
       fetchpriority="high"
@@ -197,7 +197,7 @@ const crumbs = [
             <div class="container-site grid items-center gap-10 md:grid-cols-12 md:gap-16">
               {x.image && (
                 <div class:list={['overflow-hidden md:col-span-6', i % 2 === 1 && 'md:order-2']}>
-                  <Picture src={photos[x.image]} alt={x.imageAlt?.[locale] ?? ''} formats={formats} widths={[480, 720, 1000]} sizes="(min-width: 768px) 50vw, 100vw" class="aspect-[4/5] w-full object-cover" />
+                  <Picture src={photos[x.image]} alt={x.imageAlt?.[locale] ?? ''} formats={formats} widths={[480, 720, 1000]} sizes="(min-width: 768px) 50vw, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)" class="aspect-[4/5] w-full object-cover" />
                 </div>
               )}
               <div class:list={['md:col-span-6', i % 2 === 1 && 'md:order-1']}>
@@ -252,7 +252,7 @@ const crumbs = [
         <section class="py-section">
           <div class="container-site grid items-center gap-10 md:grid-cols-12 md:gap-16">
             <div class="group overflow-hidden md:col-span-7">
-              <Picture src={photos[feature.photo]} alt={feature.alt} formats={formats} widths={[480, 720, 1000]} sizes="(min-width: 768px) 58vw, 100vw" class="aspect-[4/5] w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100 md:aspect-[5/6]" />
+              <Picture src={photos[feature.photo]} alt={feature.alt} formats={formats} widths={[480, 720, 1000]} sizes="(min-width: 768px) 58vw, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)" class="aspect-[4/5] w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100 md:aspect-[5/6]" />
             </div>
             <div class="md:col-span-5">
               <p class="eyebrow">{hc.villages.featureEyebrow[locale]}</p>

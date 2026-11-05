@@ -22,9 +22,9 @@ related:
   - /services/
   - /experiences/
   - /faq/
+# TODO: founder name, photo, story, languages, year started in Courchevel — waiting for the owner
+# (a YAML comment, so it never reaches the page's HTML)
 ---
-
-<!-- TODO: founder name, photo, story, languages, year started in Courchevel — waiting for the owner -->
 
 ## Qui nous sommes
 

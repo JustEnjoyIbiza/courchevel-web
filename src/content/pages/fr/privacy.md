@@ -3,7 +3,7 @@ title: "Politique de confidentialité"
 metaTitle: "Politique de confidentialité | CLC"
 description: "Comment Courchevel Luxury Concierge utilise les données de ses formulaires, qui les reçoit, leur durée de conservation et comment exercer vos droits."
 answer: "Nous ne collectons que ce que vous nous envoyez par nos formulaires ou vos messages, pour répondre à votre demande et organiser votre séjour, et nous ne le vendons jamais. Cette page explique ce que nous collectons, pourquoi, qui le reçoit, combien de temps nous le conservons et comment exercer vos droits au titre du RGPD."
-updated: 2026-10-26
+updated: 2026-11-03
 legal: privacy
 ---
 

@@ -3,7 +3,7 @@ title: "Mentions légales"
 metaTitle: "Mentions légales | Courchevel Luxury Concierge"
 description: "Mentions légales de courchevelluxuryconcierge.com : éditeur et hébergeur du site, propriété intellectuelle, crédits photo et contact."
 answer: "Cette page indique qui édite et qui héberge ce site, comme l’exige la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique (article 6), et précise les règles d’utilisation de son contenu."
-updated: 2026-10-26
+updated: 2026-11-03
 legal: notice
 ---
 

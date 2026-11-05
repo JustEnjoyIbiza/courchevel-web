@@ -3,20 +3,22 @@
  * One chalet's page (/services/chalets/<slug>/): the lead photo, facts, the
  * weekly price with its note, one way to ask (Check availability opens Plan my
  * stay with the chalet's name) and, under it, "Add a private chef" (the chef
- * request with the chalet filled in), the photo gallery with a caption per room,
- * and other chalets in the same village. No per-chalet WhatsApp link (owner, 25 Oct
- * 2026); the site-wide WhatsApp button stays, with its general message.
+ * request with the chalet filled in), the photo gallery with a caption per room
+ * and the "Last updated" date (chaletsChecked), and other chalets in the same village.
+ * No per-chalet WhatsApp link (owner, 25 Oct 2026); the site-wide WhatsApp button
+ * stays, with its general message.
  */
-import { Picture } from 'astro:assets';
+import { Picture, getImage } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from './Breadcrumbs.astro';
 import ChaletCard from './ChaletCard.astro';
-import { chalets, chaletsCopy, type Chalet } from '../content/chalets';
+import LastUpdated from './LastUpdated.astro';
+import { chalets, chaletsChecked, chaletsCopy, type Chalet } from '../content/chalets';
 import { business, whatsappHref, type Locale } from '../data/business';
 import { chaletPath, chaletPhotos, photoAltText } from '../lib/chalets';
 import { chaletFacts, euros, weekRange } from '../lib/chalet-format';
 import { requestCta } from '../lib/cta';
-import { breadcrumbSchema } from '../lib/schema';
+import { accommodationPageSchema, breadcrumbSchema } from '../lib/schema';
 import { localize } from '../lib/routes';
 import { t } from '../i18n/ui';
 
@@ -48,7 +50,15 @@ const crumbs = [
   { name: c.crumb, href: listUrl },
   { name: x.name, href: url },
 ];
-const schema = [breadcrumbSchema(crumbs.map((b) => ({ name: b.name, url: b.href })))];
+const schemaImage = (await getImage({ src: lead.src, width: 1200, format: 'jpeg' })).src;
+const schema = [
+  breadcrumbSchema(crumbs.map((b) => ({ name: b.name, url: b.href }))),
+  accommodationPageSchema({
+    url, title, locale, checked: chaletsChecked,
+    name: x.name, description: x.text[locale], locality: area, apartment: /^(Apartment|Penthouse)\b/.test(x.name),
+    bedrooms: x.bedrooms, guests: x.guests, size: x.size, skiInOut: x.skiInOut, image: schemaImage,
+  }),
+];
 
 // Gallery rhythm: one wide photo, then two side by side.
 const wide = (i: number) => i % 3 === 0;
@@ -65,8 +75,8 @@ const more = chalets.filter((y) => y.area === x.area && y !== x).sort((a, b) => 
         src={lead.src}
         alt={photoAltText(x, lead.room, locale)}
         formats={['avif', 'webp']}
-        widths={[640, 1024, 1600]}
-        sizes="(min-width: 1280px) 1216px, 100vw"
+        widths={[640, 720, 800, 1024, 1600]}
+        sizes="(min-width: 1280px) 1216px, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
         loading="eager"
         fetchpriority="high"
         class="aspect-[3/2] w-full object-cover md:aspect-[16/8]"
@@ -108,8 +118,8 @@ const more = chalets.filter((y) => y.area === x.area && y !== x).sort((a, b) => 
                 src={p.src}
                 alt={photoAltText(x, p.room, locale)}
                 formats={['avif', 'webp']}
-                widths={wide(i) ? [640, 1024, 1600] : [480, 800]}
-                sizes={wide(i) ? '(min-width: 1280px) 1216px, 100vw' : '(min-width: 768px) 50vw, 100vw'}
+                widths={wide(i) ? [640, 720, 800, 1024, 1600] : [480, 720, 800]}
+                sizes={wide(i) ? '(min-width: 1280px) 1216px, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)' : '(min-width: 768px) 50vw, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)'}
                 loading="lazy"
                 class={`w-full object-cover ${wide(i) ? 'aspect-[3/2] md:aspect-[16/8]' : 'aspect-[3/2]'}`}
               />
@@ -122,6 +132,7 @@ const more = chalets.filter((y) => y.area === x.area && y !== x).sort((a, b) => 
         <a href={request.href} class="btn-primary">{c.button}<span class="sr-only">: {x.name}</span></a>
         <a href={`${listUrl}#chalets`} class="link inline-flex min-h-11 items-center">{c.all}</a>
       </div>
+      <LastUpdated date={chaletsChecked} locale={locale} class="mt-10" />
     </div>
   </section>
 

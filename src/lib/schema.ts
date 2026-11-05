@@ -13,6 +13,9 @@ const orgId = `${business.url}/#organization`;
 /** Compact reference to the business, with name and URL so it stands alone on any page. */
 const orgRef = () => ({ '@type': 'LocalBusiness', '@id': orgId, name: business.name, url: business.url, telephone: business.phone.e164 });
 
+/** YYYY-MM-DD, the form used for every date in the schema. */
+const day = (d: Date) => d.toISOString().slice(0, 10);
+
 function postalAddress() {
   const a = business.address;
   return {
@@ -69,8 +72,8 @@ export function websiteSchema(locale: Locale) {
   };
 }
 
-/** Service page. Never add price, priceRange or offers. */
-export function serviceSchema(opts: { name: string; description: string; url: string; locale: Locale; image?: string }) {
+/** Service page. Never add price, priceRange or offers. (Service has no inLanguage in schema.org.) */
+export function serviceSchema(opts: { name: string; description: string; url: string; image?: string }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -78,14 +81,13 @@ export function serviceSchema(opts: { name: string; description: string; url: st
     serviceType: opts.name,
     description: opts.description,
     url: new URL(opts.url, business.url).href,
-    inLanguage: opts.locale,
     ...(opts.image ? { image: new URL(opts.image, business.url).href } : {}),
     provider: orgRef(),
     areaServed: business.areaServed.map((name) => ({ '@type': 'Place', name })),
   };
 }
 
-export function articleSchema(opts: { headline: string; description: string; url: string; updated: Date; locale: Locale; image?: string }) {
+export function articleSchema(opts: { headline: string; description: string; url: string; updated: Date; published?: Date; locale: Locale; image?: string }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -93,11 +95,76 @@ export function articleSchema(opts: { headline: string; description: string; url
     description: opts.description,
     url: new URL(opts.url, business.url).href,
     inLanguage: opts.locale,
-    dateModified: opts.updated.toISOString().slice(0, 10),
+    datePublished: day(opts.published ?? opts.updated),
+    dateModified: day(opts.updated),
     ...(opts.image ? { image: new URL(opts.image, business.url).href } : {}),
     author: orgRef(),
     publisher: orgRef(),
   };
+}
+
+/**
+ * A page about someone else's place (a hotel, a chalet): a WebPage of this site whose `about` is that
+ * place, so engines never read it as the place's own site. Facts only from the page's data; no price,
+ * offers or rating (hard rule 1).
+ */
+function placePageSchema(opts: { url: string; title: string; locale: Locale; updated: Date; about: Record<string, unknown> }) {
+  const url = new URL(opts.url, business.url).href;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${url}#webpage`,
+    url,
+    name: opts.title,
+    inLanguage: opts.locale,
+    dateModified: day(opts.updated),
+    isPartOf: { '@type': 'WebSite', '@id': `${business.url}/#website`, name: business.name, url: business.url },
+    publisher: orgRef(),
+    about: opts.about,
+  };
+}
+
+/** Hotel page: the hotel's name, place and own website, from its sourced facts. */
+export function hotelPageSchema(opts: {
+  url: string; title: string; locale: Locale; checked: Date;
+  name: string; description: string; place: string; website?: string; image?: string;
+}) {
+  return placePageSchema({
+    url: opts.url, title: opts.title, locale: opts.locale, updated: opts.checked,
+    about: {
+      '@type': 'Hotel',
+      name: opts.name,
+      description: opts.description,
+      address: opts.place,
+      ...(opts.website ? { url: opts.website } : {}),
+      ...(opts.image ? { image: new URL(opts.image, business.url).href } : {}),
+    },
+  });
+}
+
+/** Chalet or apartment page: size, bedrooms, guests and village from src/content/chalets.ts. */
+export function accommodationPageSchema(opts: {
+  url: string; title: string; locale: Locale; checked: Date;
+  name: string; description: string; locality: string; apartment: boolean;
+  bedrooms: number; guests: string; size?: number | [number, number]; skiInOut?: boolean; image?: string;
+}) {
+  // "10–14" -> min 10, max 14; "12" -> max 12.
+  const [lo, hi] = opts.guests.split(/[–-]/).map((n) => Number(n.trim()));
+  const area = Array.isArray(opts.size) ? { minValue: opts.size[0], maxValue: opts.size[1] } : { value: opts.size };
+  return placePageSchema({
+    url: opts.url, title: opts.title, locale: opts.locale, updated: opts.checked,
+    about: {
+      '@type': opts.apartment ? 'Apartment' : 'House',
+      name: opts.name,
+      description: opts.description,
+      address: { '@type': 'PostalAddress', addressLocality: opts.locality, addressRegion: business.address.region, addressCountry: business.address.countryCode },
+      numberOfBedrooms: opts.bedrooms,
+      occupancy: { '@type': 'QuantitativeValue', ...(hi ? { minValue: lo, maxValue: hi } : { maxValue: lo }) },
+      ...(opts.size === undefined ? {} : { floorSize: { '@type': 'QuantitativeValue', ...area, unitCode: 'MTK' } }),
+      ...(opts.skiInOut ? { amenityFeature: { '@type': 'LocationFeatureSpecification', name: 'Ski-in, ski-out', value: true } } : {}),
+      ...(opts.image ? { image: new URL(opts.image, business.url).href } : {}),
+    },
+  });
 }
 
 export function faqSchema(items: { q: string; a: string }[]) {

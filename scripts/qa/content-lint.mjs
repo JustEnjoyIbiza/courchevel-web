@@ -27,7 +27,11 @@ const pairs = {};
 for (const f of files) {
   const rel = path.relative(root, f);
   let txt = fs.readFileSync(f, 'utf8');
-  const scan = txt.replace(/<!--[\s\S]*?-->/g, '').replace(/^\s*(\/\/|\*|\/\*).*$/gm, '');
+  const scan = txt
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/^\s*(\/\/|\*|\/\*).*$/gm, '')
+    // YAML comments in a Markdown file's frontmatter never reach the page (lines kept, so numbers stay right).
+    .replace(/^---\n[\s\S]*?\n---/, (fm) => (f.endsWith('.md') ? fm.replace(/^\s*#.*$/gm, '') : fm));
   scan.split('\n').forEach((line, i) => {
     for (const [name, re] of rules) {
       if (name === 'exclamation' && f.endsWith('.ts')) continue;
