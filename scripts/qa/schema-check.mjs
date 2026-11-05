@@ -5,7 +5,7 @@ import path from 'node:path';
 const dist = process.argv[2];
 const SITE = 'https://www.courchevelluxuryconcierge.com';
 const files = [];
-(function walk(d) { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); fs.statSync(p).isDirectory() ? walk(p) : p.endsWith('.html') && files.push(p); } })(dist);
+(function walk(d) { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); fs.statSync(p).isDirectory() ? walk(p) : p.endsWith('.html') && !/^google[0-9a-f]+\.html$/.test(f) && files.push(p); } })(dist);
 
 const issues = [];
 const counts = {};

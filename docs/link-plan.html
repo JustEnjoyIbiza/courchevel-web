@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courchevel Link Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Ivory & Brass, the site's own palette. Layout: one reading column, tiers as ruled sections, each link a checklist row. */
+:root {
+  --bg: #fbf8f3;
+  --panel: #efe8de;
+  --ink: #231b15;
+  --muted: #6b5d52;
+  --accent: #7f6129;
+  --rule: #e3d9cb;
+  --brass: #c9a15a;
+  --wait: #8a4b1f;
+  --wait-bg: #f6e6d6;
+  --done: #3f6a3a;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1b1612; --panel: #251f1a; --ink: #f1ebe2; --muted: #b5a798; --accent: #d9b574;
+    --rule: #3a3129; --brass: #c9a15a; --wait: #f0b483; --wait-bg: #3a2718; --done: #9fcf96;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1b1612; --panel: #251f1a; --ink: #f1ebe2; --muted: #b5a798; --accent: #d9b574;
+  --rule: #3a3129; --brass: #c9a15a; --wait: #f0b483; --wait-bg: #3a2718; --done: #9fcf96;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--font-body); }
+.wrap { max-width: 860px; margin: 0 auto; padding: 48px 20px 80px; }
+h1, h2 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.2rem); line-height: 1.05; }
+h2 { font-size: 1.9rem; line-height: 1.15; }
+.eyebrow { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.lede { max-width: 65ch; color: var(--muted); margin: 16px 0 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 32px 0 0; }
+.fact { background: var(--bg); padding: 16px 18px; }
+.fact b { display: block; font-family: var(--font-display); font-size: 2rem; font-weight: 600; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.fact span { font-size: .85rem; color: var(--muted); }
+
+.progress { display: flex; align-items: center; gap: 14px; margin: 28px 0 0; font-size: .9rem; color: var(--muted); }
+.bar { flex: 1; height: 4px; background: var(--rule); }
+.bar i { display: block; height: 100%; width: 0; background: var(--brass); transition: width .3s; }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+
+.rules { margin: 40px 0 0; padding: 20px 22px; background: var(--panel); border-left: 3px solid var(--brass); }
+.rules h2 { font-size: 1.4rem; }
+.rules ul { margin: 10px 0 0; padding-left: 18px; }
+.rules li { margin: 4px 0; }
+
+section.tier { margin: 56px 0 0; }
+.tier header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; border-bottom: 1px solid var(--ink); padding-bottom: 10px; }
+.tier header p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+.item { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 4px 14px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+.item input { width: 20px; height: 20px; margin: 4px 0 0; accent-color: var(--accent); cursor: pointer; }
+.item label { font-weight: 700; cursor: pointer; }
+.item .meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 2px; }
+.item p { margin: 6px 0 0; max-width: 65ch; }
+.item .how { font-size: .92rem; color: var(--muted); }
+.chip { font-size: .72rem; font-weight: 700; letter-spacing: .04em; padding: 2px 8px; border: 1px solid var(--rule); color: var(--muted); white-space: nowrap; }
+.chip.wait { border-color: transparent; background: var(--wait-bg); color: var(--wait); }
+.item.checked label { text-decoration: line-through; text-decoration-color: var(--muted); color: var(--muted); }
+.item.checked .chip.wait { display: none; }
+.item .done-note { display: none; color: var(--done); font-size: .8rem; font-weight: 700; }
+.item.checked .done-note { display: inline; }
+
+.after { margin: 56px 0 0; padding-top: 20px; border-top: 1px solid var(--ink); }
+.after ol { padding-left: 20px; max-width: 65ch; }
+.after li { margin: 6px 0; }
+footer { margin-top: 48px; font-size: .8rem; color: var(--muted); }
+
+@media (max-width: 560px) {
+  .wrap { padding: 32px 16px 64px; }
+  .facts { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">Courchevel Luxury Concierge · off-site plan · 5 November 2026</p>
+  <h1>Sites that should link to you</h1>
+  <p class="lede">The new website is technically sound (Seobility 84%, server 100%). What holds it back is outside it: only one other website links to it. Every item below is a real site, checked on 5 November, with the reason it matters and what you need. Do them roughly in this order. Tick each one as you finish; your ticks stay in this browser.</p>
+
+  <div class="facts" aria-label="Where things stand">
+    <div class="fact"><b>1</b><span>website links to you today (Seobility, 5 Nov)</span></div>
+    <div class="fact"><b>3%</b><span>Seobility "external factors" score: the weak point</span></div>
+    <div class="fact"><b>15 Nov</b><span>street address due: unlocks the tourist office, Apple Maps and PagesJaunes</span></div>
+  </div>
+
+  <div class="progress"><span id="count">0 of 0 done</span><div class="bar" aria-hidden="true"><i id="fill"></i></div></div>
+
+  <aside class="rules">
+    <h2>Three rules that protect you</h2>
+    <ul>
+      <li><strong>Never buy links</strong> or "100 backlinks" packages. Google can push the whole site down for it.</li>
+      <li><strong>Only real relationships.</strong> A partner page only for people you really work with, and never a brand called a partner when it is not.</li>
+      <li><strong>The same identity everywhere:</strong> Courchevel Luxury Concierge, +33 7 57 51 80 56, www.courchevelluxuryconcierge.com, and the description in <code>docs/platform-profiles-kit.md</code>. Assistants such as ChatGPT trust a business they see described the same way on many sites.</li>
+    </ul>
+  </aside>
+
+  <section class="tier" aria-labelledby="t1">
+    <header><h2 id="t1">1 · This week</h2><p>Free, you control them, about 2 hours in all</p></header>
+
+    <div class="item"><input type="checkbox" id="gbp"><div>
+      <label for="gbp">Google Business Profile: point it at the new site</label>
+      <div class="meta"><span class="chip">10 min</span><span class="chip">Biggest single effect</span><span class="done-note">Done</span></div>
+      <p>Your 5.0★ profile is how most clients find a concierge in Courchevel (Google Maps). Set the website to the new homepage, primary category "Concierge service", and add the services and photos.</p>
+      <p class="how">How: <a href="https://business.google.com/">business.google.com</a> → Edit profile → Website. Wording and the tagged link are in <code>platform-profiles-kit.md</code>, section 1.</p>
+    </div></div>
+
+    <div class="item"><input type="checkbox" id="ig"><div>
+      <label for="ig">Instagram: bio link and bio text</label>
+      <div class="meta"><span class="chip">5 min</span><span class="done-note">Done</span></div>
+      <p>The bio still mixes in Ibiza. One clean Courchevel bio with the new website link.</p>
+      <p class="how">How: Instagram → Edit profile → Links. Text in <code>platform-profiles-kit.md</code>, section 3.</p>
+    </div></div>
+
+    <div class="item"><input type="checkbox" id="bing"><div>
+      <label for="bing">Bing Places</label>
+      <div class="meta"><span class="chip">15 min</span><span class="chip">Feeds ChatGPT search and Copilot</span><span class="done-note">Done</span></div>
+      <p>Bing's business listings feed Bing, Copilot and ChatGPT search. You can import everything from your Google profile in one step.</p>
+      <p class="how">How: <a href="https://www.bing.com/forbusiness/">bing.com/forbusiness</a> → sign in with the Google account → Import from Google Business Profile.</p>
+    </div></div>
+
+    <div class="item"><input type="checkbox" id="partners"><div>
+      <label for="partners">The partners you already work with</label>
+      <div class="meta"><span class="chip">1 email each</span><span class="chip">Best-quality links</span><span class="done-note">Done</span></div>
+      <p>Links from local, relevant businesses count most: the chalet agency that sent you the chalet PDFs, the helicopter operator, drivers, private chefs, ski instructors, the nanny agency. Many keep a "partners" or "useful contacts" page.</p>
+      <p class="how">How: the ready-made email (EN and FR) is in <code>platform-profiles-kit.md</code>, section 5. Send it to five partners this week. Offer a link back only where it is useful to your clients.</p>
+    </div></div>
+
+    <div class="item"><input type="checkbox" id="jei"><div>
+      <label for="jei">Your own Ibiza website</label>
+      <div class="meta"><span class="chip">5 min</span><span class="done-note">Done</span></div>
+      <p>justenjoyibiza.com does not link to the Courchevel site today (checked 5 Nov). A line such as "Our concierge in the Alps: Courchevel Luxury Concierge" in its footer or about page is an honest, relevant link.</p>
+      <p class="how">How: in that site's editor. One link is enough; no swaps of dozens of links between your own sites.</p>
+    </div></div>
+  </section>
+
+  <section class="tier" aria-labelledby="t2">
+    <header><h2 id="t2">2 · Once the address is ready (15 Nov)</h2><p>The most trusted local listings</p></header>
+
+    <div class="item"><input type="checkbox" id="cct"><div>
+      <label for="cct">Courchevel Tourisme: courchevel.com</label>
+      <div class="meta"><span class="chip wait">Needs the address</span><span class="chip">Most trusted local link</span><span class="done-note">Done</span></div>
+      <p>The official resort site has a "Useful services → Concierge" category. A competitor, La Conciergerie de Courchevel, is already listed there with its address, phones and email. The office invites businesses established in the resort to become partners ("adhérer"); listings go into Apidae, the regional tourism database.</p>
+      <p class="how">How: email <strong>digital@courchevel.com</strong> (from <a href="https://courchevel.com/fr/espace-socio-professionnels/">courchevel.com/fr/espace-socio-professionnels</a>). Ask: how to be listed under Concierge, what membership costs, and whether a business registered in Spain (autónomo, NIF) is accepted. Ready text (EN/FR, 299 characters) in <code>platform-profiles-kit.md</code>, section 4.</p>
+    </div></div>
+
+    <div class="item"><input type="checkbox" id="apple"><div>
+      <label for="apple">Apple Business Connect</label>
+      <div class="meta"><span class="chip wait">May need the address</span><span class="chip">Apple Maps and Siri</span><span class="done-note">Done</span></div>
+      <p>iPhone users who ask Siri or Apple Maps for a concierge in Courchevel see these listings.</p>
+      <p class="how">How: <a href="https://business.apple.com/">business.apple.com</a> → Add a business. Use the same name, phone, website and description.</p>
+    </div></div>
+
+    <div class="item"><input type="checkbox" id="review"><div>
+      <label for="review">One review platform: Tripadvisor (or Trustpilot)</label>
+      <div class="meta"><span class="chip">30 min</span><span class="chip">AI cites them for "best concierge"</span><span class="done-note">Done</span></div>
+      <p>AI answers to "best concierge in Courchevel" cite review sites; a competitor, Nightfall, shows Trustpilot 4.5. Pick one platform and ask past clients there after Google, never instead of Google.</p>
+      <p class="how">How: <a href="https://www.tripadvisor.com/Owners">tripadvisor.com/Owners</a> or <a href="https://business.trustpilot.com/">business.trustpilot.com</a>. Real reviews only, never swapped or paid.</p>
+    </div></div>
+
+    <div class="item"><input type="checkbox" id="pj"><div>
+      <label for="pj">PagesJaunes</label>
+      <div class="meta"><span class="chip wait">Needs the address</span><span class="chip">French clients</span><span class="done-note">Done</span></div>
+      <p>The main French business directory. It may ask for a French SIRET; if it refuses a Spanish registration, skip it.</p>
+      <p class="how">How: <a href="https://www.pagesjaunes.fr/">pagesjaunes.fr</a> → Professionnels → add your business (free basic listing).</p>
+    </div></div>
+  </section>
+
+  <section class="tier" aria-labelledby="t3">
+    <header><h2 id="t3">3 · More mentions</h2><p>Quick profiles that repeat the same identity, 20 min each</p></header>
+
+    <div class="item"><input type="checkbox" id="li"><div>
+      <label for="li">LinkedIn company page</label>
+      <div class="meta"><span class="chip">20 min</span><span class="chip">Assistants, family offices</span><span class="done-note">Done</span></div>
+      <p>Assistants and family offices, the clients behind the "for assistants" page, look you up here.</p>
+      <p class="how">How: LinkedIn → For Business → Create a company page.</p>
+    </div></div>
+
+    <div class="item"><input type="checkbox" id="fb"><div>
+      <label for="fb">Facebook page</label>
+      <div class="meta"><span class="chip">20 min</span><span class="done-note">Done</span></div>
+      <p>Another consistent mention; link it from Instagram's account centre.</p>
+      <p class="how">How: Facebook → Pages → Create new page.</p>
+    </div></div>
+
+    <div class="item"><input type="checkbox" id="yelp"><div>
+      <label for="yelp">Yelp and Foursquare</label>
+      <div class="meta"><span class="chip">20 min each</span><span class="done-note">Done</span></div>
+      <p>Smaller, but several map and travel apps read their listings.</p>
+      <p class="how">How: <a href="https://business.yelp.com/">business.yelp.com</a> and <a href="https://foursquare.com/">foursquare.com</a> → claim or add the business.</p>
+    </div></div>
+  </section>
+
+  <section class="tier" aria-labelledby="t4">
+    <header><h2 id="t4">4 · Press and travel sites</h2><p>Strongest links, slowest to win; best with the founder's story</p></header>
+
+    <div class="item"><input type="checkbox" id="cited"><div>
+      <label for="cited">Pages AI assistants already quote about Courchevel</label>
+      <div class="meta"><span class="chip wait">Better with founder details</span><span class="done-note">Done</span></div>
+      <p>Found in the October audit: <a href="https://www.les3vallees.com/">les3vallees.com</a> (partners), <a href="https://theluxuryeditor.com/">theluxuryeditor.com</a>, <a href="https://www.aluxurytravelblog.com/">aluxurytravelblog.com</a>, <a href="https://www.luxurytravelmagazine.com/">luxurytravelmagazine.com</a>, <a href="https://www.sno.co.uk/">sno.co.uk</a>, <a href="https://www.skiline.co.uk/">skiline.co.uk</a>, <a href="https://www.cherifaistesvalises.com/">cherifaistesvalises.com</a> (FR). Offer facts and quotes, not adverts.</p>
+      <p class="how">How: the pitch email is in <code>platform-profiles-kit.md</code>, section 5. Two a week.</p>
+    </div></div>
+
+    <div class="item"><input type="checkbox" id="press"><div>
+      <label for="press">Travel press, for winter 2026/27 pieces</label>
+      <div class="meta"><span class="chip wait">Needs founder details</span><span class="done-note">Done</span></div>
+      <p>Condé Nast Traveller, Robb Report and the Telegraph's ski section, plus the regional paper <a href="https://www.ledauphine.com/">Le Dauphiné Libéré</a>. Offer to be a source on what you know first-hand: arriving by helicopter, heli-skiing as Italy or Switzerland day trips, the festive weeks, private chefs.</p>
+      <p class="how">How: same pitch email; send it in early December when the season opens.</p>
+    </div></div>
+  </section>
+
+  <section class="after">
+    <h2>Each time something goes live</h2>
+    <ol>
+      <li>Send me the profile's link. I add it to the website's data for Google (<code>sameAs</code> in <code>business.ts</code>), which ties all the profiles to one business.</li>
+      <li>Check the details match: same name, phone, website, description.</li>
+      <li>Once a month, re-run the free <a href="https://www.seobility.net/en/seocheck/">Seobility check</a>; the "external factors" score is the one to watch. Search Console's Links report shows the same once it is set up.</li>
+    </ol>
+  </section>
+
+  <footer>Sites checked on 5 November 2026. Source notes: docs/audit-2026-10-22.md section 7, docs/platform-profiles-kit.md.</footer>
+</main>
+<script>
+(function () {
+  var KEY = 'clc-link-plan';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { state = {}; }
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.item input[type="checkbox"]'));
+  function render() {
+    var done = 0;
+    boxes.forEach(function (b) {
+      b.closest('.item').classList.toggle('checked', b.checked);
+      if (b.checked) done++;
+    });
+    document.getElementById('count').textContent = done + ' of ' + boxes.length + ' done';
+    document.getElementById('fill').style.width = (boxes.length ? (done / boxes.length) * 100 : 0) + '%';
+  }
+  boxes.forEach(function (b) {
+    b.checked = !!state[b.id];
+    b.addEventListener('change', function () {
+      state[b.id] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+      render();
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>
