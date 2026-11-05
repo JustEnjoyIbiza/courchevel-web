@@ -31,10 +31,15 @@ is mostly the owner's: legal facts, accounts, About page facts (season opens 4 D
   /services/private-chef/, /fr/services/, /fr/courchevel-1850/ (about 10 a day allowed). Before that
   Google knew www only as "page with redirect" (last crawl 3 Nov, before the www switch). Two older
   `google-site-verification` TXT records at GoDaddy belong to other, unknown accounts.
+- **Bing Webmaster Tools (5 Nov):** site added in the Google account courchevelluxuryconcierge@gmail.com
+  (owner's choice), verified by `public/BingSiteAuth.xml` (never delete it); sitemap submitted.
+  **IndexNow:** `INDEXNOW_KEY` set in Netlify (production context); key file live at
+  `/aafc51e39dc5414594dae62d86da3a36.txt`; a manual ping of all 128 URLs answered 200. Every production
+  deploy now pings IndexNow (plugin `netlify/plugins/indexnow`). Launch check passes with `--indexnow-key`.
 - Off-site link plan (5 Nov): `docs/link-plan.html`, published as a private checklist page for the owner.
 - Still open from the launch-day list (`docs/launch-plan.md` §5.2): a real test enquiry from a phone;
-  Bing Webmaster Tools; UTM links on Google Business Profile
-  and Instagram; IndexNow key (`INDEXNOW_KEY` not set, so no ping yet); close Basin's old form after a
+  UTM links on Google Business Profile
+  and Instagram; close Basin's old form after a
   week. Also: domain renewal before **30 Nov**, Turnstile, Telegram alerts.
 - Tools on this Mac: Node `~/.local/node/bin`; GitHub CLI `~/.local/bin/gh` (signed in as
   JustEnjoyIbiza, git's credential helper); Netlify CLI through `npx netlify-cli` (signed in).
